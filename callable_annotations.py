@@ -3,7 +3,7 @@ from typing import Iterable, List, Callable
 
 import libcst as cst
 import libcst.codemod as codemod
-from libcst import matchers as m
+import libcst.matchers as m
 from pathlib import Path
 import sys
 import argparse
@@ -13,7 +13,15 @@ import textwrap
 callable_annotation_matcher = m.Annotation(
     m.Subscript(m.Name("Callable")) | m.Name("Callable")
 )
-arbitrary_parameter_callable_matcher = m.Annotation(m.Name("Callable"))
+arbitrary_parameter_callable_matcher = m.Annotation(
+    ~m.Subscript(
+        m.Name("Callable"),
+        slice=[
+            m.SubscriptElement(m.Index(m.List(elements=[m.AtLeastN(n=0)]))),
+            m.ZeroOrMore(),
+        ],
+    )
+)
 MAX_ARITY = 5
 
 
