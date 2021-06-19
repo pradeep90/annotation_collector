@@ -1,7 +1,22 @@
 import unittest
 import libcst as cst
 import libcst.matchers as m
-import callable_annotations
+from typing import List, Optional
+from callable_annotations import (
+    callable_annotation_matcher,
+    callable_annotations,
+    arbitrary_parameter_callable_matcher,
+    annotation_to_string,
+)
+
+
+def get_callable_annotations(source: str) -> List[str]:
+    return [
+        annotation_to_string(annotation)
+        for annotation in callable_annotations(
+            cst.parse_module(source),
+        )
+    ]
 
 
 class CallableAnnotationsTest(unittest.TestCase):
@@ -19,12 +34,40 @@ class CallableAnnotationsTest(unittest.TestCase):
     def test_arbitrary_parameter_callable(self) -> None:
         self.assert_not_matches(
             "Callable[[int], str]",
-            callable_annotations.arbitrary_parameter_callable_matcher,
+            arbitrary_parameter_callable_matcher,
         )
-        self.assert_matches(
-            "Callable", callable_annotations.arbitrary_parameter_callable_matcher
-        )
+        self.assert_matches("Callable", arbitrary_parameter_callable_matcher)
         self.assert_matches(
             "Callable[..., None]",
-            callable_annotations.arbitrary_parameter_callable_matcher,
+            arbitrary_parameter_callable_matcher,
+        )
+
+    def test_callable_onnotations(self) -> None:
+        self.assertEqual(
+            get_callable_annotations(
+                "f: Callable[[int], str]",
+            ),
+            ["Callable[[int], str]"],
+        )
+        self.assertEqual(
+            get_callable_annotations(
+                "f: List[Callable[[int], str]]",
+            ),
+            ["Callable[[int], str]"],
+        )
+        self.assertEqual(
+            get_callable_annotations(
+                "f: Callable[[Callable[[int], str]], bool]",
+            ),
+            ["Callable[[Callable[[int], str]], bool]"],
+        )
+        self.assertEqual(
+            get_callable_annotations(
+                "f: Union[int, Callable[[int], str]]",
+            ),
+            ["Callable[[int], str]"],
+        )
+        self.assertEqual(
+            get_callable_annotations("f: int"),
+            [],
         )

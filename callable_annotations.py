@@ -10,9 +10,21 @@ import argparse
 import textwrap
 
 
+top_level_callable_annotation_matcher = m.SaveMatchedNode(
+    m.Name("Callable"), name="callable"
+) | m.SaveMatchedNode(m.Subscript(m.Name("Callable")), name="callable")
+
 callable_annotation_matcher = m.Annotation(
-    m.Subscript(m.Name("Callable")) | m.Name("Callable")
+    top_level_callable_annotation_matcher
+    | m.Subscript(
+        slice=[
+            m.ZeroOrMore(),
+            m.SubscriptElement(slice=m.Index(top_level_callable_annotation_matcher)),
+            m.ZeroOrMore(),
+        ]
+    )
 )
+
 arbitrary_parameter_callable_matcher = m.Annotation(
     ~m.Subscript(
         m.Name("Callable"),
@@ -32,6 +44,17 @@ def annotation_to_string(annotation: cst.Annotation) -> str:
         )
         .code.strip()
         .split(": ")[1]
+    )
+
+
+def callable_annotations(module: cst.Module) -> List[cst.Annotation]:
+    return list(
+        cst.Annotation(callable_)
+        for dictionary in m.extractall(
+            module,
+            callable_annotation_matcher,
+        )
+        for callable_ in dictionary.values()
     )
 
 
@@ -72,19 +95,18 @@ def main(roots: Iterable[Path], *, show_callables: bool) -> None:
     paths = [
         path for root in roots for path in (*root.rglob("*.py"), *root.rglob("*.pyi"))
     ]
-    callable_annotations = [
+    annotations = [
         annotation
         for path in paths
-        for annotation in m.findall(
+        for annotation in callable_annotations(
             cst.parse_module(Path(path).read_text()),
-            callable_annotation_matcher,
         )
     ]
 
     for arity in range(MAX_ARITY + 1):
         print_callables(
             f"Callables of arity {arity}",
-            callables_of_arity(callable_annotations, arity),
+            callables_of_arity(annotations, arity),
             show_callables,
         )
 
@@ -92,7 +114,7 @@ def main(roots: Iterable[Path], *, show_callables: bool) -> None:
         f"Callables with arbitrary parameters",
         [
             annotation
-            for annotation in callable_annotations
+            for annotation in annotations
             if m.matches(annotation, arbitrary_parameter_callable_matcher)
         ],
         show_callables,
