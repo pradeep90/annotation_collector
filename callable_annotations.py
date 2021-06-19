@@ -69,7 +69,9 @@ def print_callables(
 
 
 def main(roots: Iterable[Path], *, show_callables: bool) -> None:
-    paths = [path for root in roots for path in root.rglob("*.py")]
+    paths = [
+        path for root in roots for path in (*root.rglob("*.py"), *root.rglob("*.pyi"))
+    ]
     callable_annotations = [
         annotation
         for path in paths
