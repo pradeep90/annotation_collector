@@ -54,7 +54,7 @@ callback_protocol_matcher = m.ClassDef(
     bases=[m.ZeroOrMore(), m.Arg(m.Name("Protocol")), m.ZeroOrMore()],
     body=m.IndentedBlock(body=[m.ZeroOrMore(), dunder_call_matcher, m.ZeroOrMore()]),
 )
-MAX_ARITY = 5
+MAX_NUM_PARAMETERS = 5
 
 
 def annotation_to_string(annotation: cst.Annotation) -> str:
@@ -96,14 +96,14 @@ def class_definition_to_string(class_: cst.ClassDef) -> str:
 
 
 def callables_of_arity(
-    callable_annotations: List[cst.Annotation], arity: int
+    callable_annotations: List[cst.Annotation], num_parameters: int
 ) -> List[cst.Annotation]:
     callable_arity_matcher = m.Annotation(
         m.Subscript(
             m.Name("Callable"),
             slice=[
                 m.SubscriptElement(
-                    m.Index(m.List(elements=[m.DoNotCare() for _ in range(arity)]))
+                    m.Index(m.List(elements=[m.DoNotCare() for _ in range(num_parameters)]))
                 ),
                 m.ZeroOrMore(),
             ],
@@ -138,10 +138,10 @@ def print_callable_data(modules: List[cst.Module], show_callables: bool) -> None
         )
     ]
 
-    for arity in range(MAX_ARITY + 1):
+    for num_parameters in range(MAX_NUM_PARAMETERS + 1):
         print_callables(
-            f"Callables of arity {arity}",
-            callables_of_arity(annotations, arity),
+            f"Callables with {num_parameters} parameters",
+            callables_of_arity(annotations, num_parameters),
             show_callables,
         )
 

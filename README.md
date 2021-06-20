@@ -17,20 +17,20 @@ For example:
 
 ```bash
 $ ./callable_annotations.py ~/Programs/typeshed/stdlib/xmlrpc/
-Callables of arity 0: 2
-Callables of arity 1: 15
-Callables of arity 2: 5
-Callables of arity 3: 1
-Callables of arity 4: 0
-Callables of arity 5: 0
+Callables with 0 parameters: 2
+Callables with 1 parameters: 15
+Callables with 2 parameters: 5
+Callables with 3 parameters: 1
+Callables with 4 parameters: 0
+Callables with 5 parameters: 0
 Callables with arbitrary parameters: 2
 Callback Protocols: 6
 
 $ ./callable_annotations.py ~/Programs/typeshed/stdlib/concurrent/ --show-callables
-Callables of arity 0: 2
+Callables with 0 parameters: 2
     Callable[[], None]
     Callable[[], None]
-Callables of arity 1: 15
+Callables with 1 parameters: 15
     Callable[[Any], None]
     Callable[[str], Any]
     Callable[[str], Any]
@@ -46,16 +46,16 @@ Callables of arity 1: 15
     Callable[[str], Any]
     Callable[[str], str]
     Callable[[str], str]
-Callables of arity 2: 5
+Callables with 2 parameters: 5
     Callable[[Optional[str], Tuple[_Marshallable, ...]], Union[Fault, Tuple[_Marshallable, ...]]]
     Callable[[Optional[str], Tuple[_Marshallable, ...]], Union[Fault, Tuple[_Marshallable, ...]]]
     Callable[[Unmarshaller, str], None]
     Callable[[str, Tuple[_Marshallable, ...]], _Marshallable]
     Callable[[str, Tuple[_Marshallable, ...]], _Marshallable]
-Callables of arity 3: 1
+Callables with 3 parameters: 1
     Callable[[Marshaller, Any, Callable[[str], Any]], None]
-Callables of arity 4: 0
-Callables of arity 5: 0
+Callables with 4 parameters: 0
+Callables with 5 parameters: 0
 Callables with arbitrary parameters: 2
     Callable[..., Any]
     Callable[..., Any]
@@ -84,12 +84,12 @@ Computed for the following repositories. Click to see the raw stats and callable
 Combined stats:
 
 ```
-Callables of arity 0: 459 (16.19%)
-Callables of arity 1: 1124 (39.65%)
-Callables of arity 2: 321 (11.32%)
-Callables of arity 3: 81 (2.86%)
-Callables of arity 4: 27 (0.95%)
-Callables of arity 5: 16 (0.56%)
+Callables with 0 parameters: 459 (16.19%)
+Callables with 1 parameters: 1124 (39.65%)
+Callables with 2 parameters: 321 (11.32%)
+Callables with 3 parameters: 81 (2.86%)
+Callables with 4 parameters: 27 (0.95%)
+Callables with 5 parameters: 16 (0.56%)
 Callables with arbitrary parameters: 731 (25.78%)
 Callback Protocols: 76 (2.68%)
 ```
@@ -105,12 +105,12 @@ Callback Protocols: 76 (2.68%)
 Combined stats:
 
 ```
-Callables of arity 0: 13 (1.73%)
-Callables of arity 1: 62 (8.24%)
-Callables of arity 2: 19 (2.53%)
-Callables of arity 3: 9 (1.20%)
-Callables of arity 4: 3 (0.40%)
-Callables of arity 5: 0 (0.00%)
+Callables with 0 parameters: 13 (1.73%)
+Callables with 1 parameters: 62 (8.24%)
+Callables with 2 parameters: 19 (2.53%)
+Callables with 3 parameters: 9 (1.20%)
+Callables with 4 parameters: 3 (0.40%)
+Callables with 5 parameters: 0 (0.00%)
 Callables with arbitrary parameters: 626 (83.24%)
 Callback Protocols: 0 (0.00%)
 ```
