@@ -1,9 +1,9 @@
-Callables of arity 0: 4
+Callables with 0 parameters: 4
     Callable[[], Any]
     Callable[[], Any]
     Callable[[], StreamingContext]
     Callable[[], StreamingContext]
-Callables of arity 1: 107
+Callables with 1 parameters: 107
     Callable[["Series"], "Series"]
     Callable[[Any], Any]
     Callable[[Any], T]
@@ -111,7 +111,7 @@ Callables of arity 1: 107
     Callable[[str], bool]
     Callable[[str], bool]
     Callable[[str], str]
-Callables of arity 2: 49
+Callables with 2 parameters: 49
     Callable[[Column, Column], Column]
     Callable[[Column, Column], Column]
     Callable[[Column, Column], Column]
@@ -161,7 +161,7 @@ Callables of arity 2: 49
     Callable[[spark.Column, spark.Column], spark.Column]
     Callable[[spark.Column, spark.Column], spark.Column]
     Callable[[spark.Column, spark.Column], spark.Column]
-Callables of arity 3: 6
+Callables with 3 parameters: 6
     Callable[
         [spark.Column, spark.Column, Callable[[spark.Column, spark.Column], spark.Column]],
         spark.Column,
@@ -174,8 +174,8 @@ Callables of arity 3: 6
     Callable[[Column, Column, Column], Column]
     Callable[[datetime.datetime, RDD[T], RDD[U]], RDD[V]]
     Callable[[int, int, AccumulatorParam[T]], Accumulator[T]]
-Callables of arity 4: 0
-Callables of arity 5: 0
+Callables with 4 parameters: 0
+Callables with 5 parameters: 0
 Callables with arbitrary parameters: 26
     Callable
     Callable

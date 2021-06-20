@@ -1,4 +1,4 @@
-Callables of arity 0: 220
+Callables with 0 parameters: 220
     Callable[[], Any]
     Callable[[], Any]
     Callable[[], Any]
@@ -219,7 +219,7 @@ Callables of arity 0: 220
     Callable[[], str]
     Callable[[], streams.StreamReaderProtocol]
     Callable[[], streams.StreamReaderProtocol]
-Callables of arity 1: 521
+Callables with 1 parameters: 521
     Callable[[AnyStr], AnyStr]
     Callable[[AnyStr], Any]
     Callable[[AnyStr], Any]
@@ -741,7 +741,7 @@ Callables of arity 1: 521
     Callable[[tkinter.StringVar], Any]
     Callable[[types.MethodType], Any]
     Callable[[types.ModuleType], IResourceProvider]
-Callables of arity 2: 137
+Callables with 2 parameters: 137
     Callable[[AbstractEventLoop, Generator[Any, None, _T]], Future[_T]]
     Callable[[AbstractEventLoop, Generator[Any, None, _T]], Future[_T]]
     Callable[[AbstractEventLoop, Generator[Any, None, _T]], Future[_T]]
@@ -879,7 +879,7 @@ Callables of arity 2: 137
     Callable[[str, str], str]
     Callable[[str, str], str]
     Callable[[type, Attribute], Any]
-Callables of arity 3: 43
+Callables with 3 parameters: 43
     Callable[[Any, Any, Any], Any]
     Callable[[Any, _AnyPath, Any], Any]
     Callable[[AnyStr, AnyStr, AnyStr], AnyStr]
@@ -923,7 +923,7 @@ Callables of arity 3: 43
     Callable[[str, str, str], Any]
     Callable[[str, str, str], Any]
     Callable[[str, str, str], Any]
-Callables of arity 4: 13
+Callables with 4 parameters: 13
     Callable[[_T1, _T2, _T3, _T4], _S]
     Callable[[_T1, _T2, _T3, _T4], _S]
     Callable[[_T1, _T2, _T3, _T4], _S]
@@ -937,7 +937,7 @@ Callables of arity 4: 13
     Callable[[str, Optional[str], str, Optional[str]], Any]
     Callable[[str, Optional[str], str, Optional[str]], Any]
     Callable[[str, Union[str, Sequence[str]], str, str], None]
-Callables of arity 5: 8
+Callables with 5 parameters: 8
     Callable[[_T1, _T2, _T3, _T4, _T5], _S]
     Callable[[_T1, _T2, _T3, _T4, _T5], _S]
     Callable[[_T1, _T2, _T3, _T4, _T5], _S]

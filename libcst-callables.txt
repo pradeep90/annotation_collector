@@ -1,4 +1,4 @@
-Callables of arity 0: 22
+Callables with 0 parameters: 22
     Callable[[], cst.CSTNode]
     Callable[[], cst.CSTNode]
     Callable[[], cst.CSTNode]
@@ -21,7 +21,7 @@ Callables of arity 0: 22
     Callable[[], PartialParserConfig]
     Callable[[], PartialParserConfig]
     Callable[[], object]
-Callables of arity 1: 22
+Callables with 1 parameters: 22
     Callable[[int], str]
     Callable[[int], Any]
     Callable[[str], cst.BaseExpression]
@@ -44,7 +44,7 @@ Callables of arity 1: 22
     Callable[[int], str]
     Callable[[int], Any]
     Callable[[cst.CSTNode], bool]
-Callables of arity 2: 12
+Callables with 2 parameters: 12
     Callable[[Config, State], _T]
     Callable[[meta.ProviderT, libcst.CSTNode], object]
     Callable[[meta.ProviderT, libcst.CSTNode], object]
@@ -65,9 +65,9 @@ Callables of arity 2: 12
         ],
         Union[MaybeSentinel, RemovalSentinel, libcst.CSTNode],
     ]
-Callables of arity 3: 0
-Callables of arity 4: 0
-Callables of arity 5: 0
+Callables with 3 parameters: 0
+Callables with 4 parameters: 0
+Callables with 5 parameters: 0
 Callables with arbitrary parameters: 13
     Callable
     Callable[..., str]

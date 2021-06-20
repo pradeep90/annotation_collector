@@ -12,8 +12,8 @@ Incomplete input. Encountered '}', but expected 'FSTRING_END', 'FSTRING_STRING',
                                                           ^
 
 
-Callables of arity 0: 0
-Callables of arity 1: 23
+Callables with 0 parameters: 0
+Callables with 1 parameters: 23
     Callable[[Any], Any]
     Callable[[Any], Any]
     Callable[[Any], Any]
@@ -37,18 +37,18 @@ Callables of arity 1: 23
     Callable[[str], Any]
     Callable[[str], tzinfo]
     Callable[[type[_T]], type[_T]]
-Callables of arity 2: 6
+Callables with 2 parameters: 6
     Callable[[Any, Any], Any]
     Callable[[FrameOrSeriesUnion, FrameOrSeriesUnion], FrameOrSeriesUnion]
     Callable[[FrameOrSeriesUnion, FrameOrSeriesUnion], FrameOrSeriesUnion]
     Callable[[Series, Any], Series]
     Callable[[Series, Any], Series]
     Callable[[np.ndarray, np.ndarray], float]
-Callables of arity 3: 1
+Callables with 3 parameters: 1
     Callable[[np.ndarray, int, int], np.ndarray]
-Callables of arity 4: 1
+Callables with 4 parameters: 1
     Callable[[np.ndarray, np.ndarray, np.ndarray, int], np.ndarray]
-Callables of arity 5: 0
+Callables with 5 parameters: 0
 Callables with arbitrary parameters: 100
     Callable
     Callable

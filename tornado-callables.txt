@@ -1,4 +1,4 @@
-Callables of arity 0: 17
+Callables with 0 parameters: 17
     Callable[[], Any]
     Callable[[], None]
     Callable[[], None]
@@ -16,7 +16,7 @@ Callables of arity 0: 17
     Callable[[], float]
     Callable[[], float]
     Callable[[], float]
-Callables of arity 1: 28
+Callables with 1 parameters: 28
     Callable[["Future[Union[None, str, bytes]]"], None]
     Callable[["Future[WebSocketClientConnection]"], None]
     Callable[["Future[_T]"], None]
@@ -45,16 +45,16 @@ Callables of arity 1: 28
     Callable[[str], None]
     Callable[[str], None]
     Callable[[str], str]
-Callables of arity 2: 4
+Callables with 2 parameters: 4
     Callable[
             [socket.AddressFamily, Tuple], Tuple[IOStream, "Future[IOStream]"]
         ]
     Callable[[_S, int], None]
     Callable[[int, int], None]
     Callable[[socket.socket, Any], None]
-Callables of arity 3: 0
-Callables of arity 4: 0
-Callables of arity 5: 0
+Callables with 3 parameters: 0
+Callables with 4 parameters: 0
+Callables with 5 parameters: 0
 Callables with arbitrary parameters: 51
     Callable
     Callable

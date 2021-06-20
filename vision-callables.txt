@@ -1,5 +1,5 @@
-Callables of arity 0: 0
-Callables of arity 1: 11
+Callables with 0 parameters: 0
+Callables with 1 parameters: 11
     Callable[[int], Union[Sequence[int], int]]
     Callable[[int], Union[Sequence[int], int]]
     Callable[[int], str]
@@ -11,12 +11,12 @@ Callables of arity 1: 11
     Callable[[str], bool]
     Callable[[str], bool]
     Callable[[str], bool]
-Callables of arity 2: 0
-Callables of arity 3: 2
+Callables with 2 parameters: 0
+Callables with 3 parameters: 2
     Callable[[int, int, int], None]
     Callable[[str, str, Optional[str]], None]
-Callables of arity 4: 0
-Callables of arity 5: 0
+Callables with 4 parameters: 0
+Callables with 5 parameters: 0
 Callables with arbitrary parameters: 94
     Callable
     Callable

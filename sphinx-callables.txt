@@ -4,11 +4,11 @@ Incomplete input. Encountered '/', but expected ')'.
 def bar(a, b, /, c, d):
               ^
 Could not parse path /Users/pradeepkumars/Programs/sphinx/tests/roots/test-pycode/cp_1251_coded.py: 'utf-8' codec can't decode byte 0xd5 in position 47: invalid continuation byte
-Callables of arity 0: 3
+Callables with 0 parameters: 3
     Callable[[], ASTExpression]
     Callable[[], ASTExpression]
     Callable[[], int]
-Callables of arity 1: 8
+Callables with 1 parameters: 8
     Callable[[Any], str]
     Callable[[Any], str]
     Callable[[str], Any]
@@ -17,19 +17,19 @@ Callables of arity 1: 8
     Callable[[str], str]
     Callable[[str], str]
     Callable[[str], str]
-Callables of arity 2: 4
+Callables with 2 parameters: 4
     Callable[["Symbol", ASTIdentifier], "Symbol"]
     Callable[[Any, str], Any]
     Callable[[int, str], int]
     Callable[[str, Exception], None]
-Callables of arity 3: 3
+Callables with 3 parameters: 3
     Callable[[Any, str, Any], Any]
     Callable[[Any, str, Any], Any]
     Callable[[Any, str, Any], Any]
-Callables of arity 4: 2
+Callables with 4 parameters: 2
     Callable[["GenericObject", "BuildEnvironment", str, desc_signature], str]
     Callable[["Symbol", Union[ASTIdentifier, ASTOperator], Any, ASTTemplateArgs], "Symbol"]
-Callables of arity 5: 0
+Callables with 5 parameters: 0
 Callables with arbitrary parameters: 66
     Callable
     Callable

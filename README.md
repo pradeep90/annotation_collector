@@ -77,21 +77,21 @@ Computed for the following repositories. Click to see the raw stats and callable
 ## Projects with well-typed callables
 
 + [typeshed](./typeshed-callables.txt)
-+ [mypy](./mypy-callables.txt) - well typed.
++ [mypy](./mypy-non-typeshed-callables.txt) - well typed. **Note**: I'm excluding Mypy's internal copy of typeshed.
 + [spark](./spark-callables.txt) - pretty well typed. Very few `Callable`s with untyped parameters.
 + [tornado](./tornado-callables.txt) - 50-50 well-typed and loosely-typed Callables.
 
 Combined stats:
 
 ```
-Callables with 0 parameters: 459 (16.19%)
-Callables with 1 parameters: 1124 (39.65%)
-Callables with 2 parameters: 321 (11.32%)
-Callables with 3 parameters: 81 (2.86%)
-Callables with 4 parameters: 27 (0.95%)
-Callables with 5 parameters: 16 (0.56%)
-Callables with arbitrary parameters: 731 (25.78%)
-Callback Protocols: 76 (2.68%)
+Callables with 0 parameters: 258 (14.86%)
+Callables with 1 parameters: 712 (41.01%)
+Callables with 2 parameters: 210 (12.10%)
+Callables with 3 parameters: 49 (2.82%)
+Callables with 4 parameters: 15 (0.86%)
+Callables with 5 parameters: 8 (0.46%)
+Callables with arbitrary parameters: 443 (25.52%)
+Callback Protocols: 41 (2.36%)
 ```
 
 ## Projects with loosely-typed callables (mostly `f: Callable`)

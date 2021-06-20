@@ -1,4 +1,4 @@
-Callables of arity 0: 10
+Callables with 0 parameters: 10
     Callable[[], None]
     Callable[[], None]
     Callable[[], None]
@@ -9,7 +9,7 @@ Callables of arity 0: 10
     Callable[[], object]
     Callable[[], object]
     Callable[[], object]
-Callables of arity 1: 28
+Callables with 1 parameters: 28
     Callable[["Argument"], None]
     Callable[["os.DirEntry[str]"], bool]
     Callable[["sys.UnraisableHookArgs"], Any]
@@ -38,7 +38,7 @@ Callables of arity 1: 28
     Callable[[str], bool]
     Callable[[str], bool]
     Callable[[str], bool]
-Callables of arity 2: 7
+Callables with 2 parameters: 7
     Callable[[Config, "Session"], Optional[Union[int, ExitCode]]]
     Callable[[str, object], None]
     Callable[[str, object], None]
@@ -46,11 +46,11 @@ Callables of arity 2: 7
     Callable[[str, str], bool]
     Callable[[str, str], bool]
     Callable[[str, str], bool]
-Callables of arity 3: 2
+Callables with 3 parameters: 2
     Callable[[int, str, str], None]
     Callable[[str, object, object], Optional[str]]
-Callables of arity 4: 0
-Callables of arity 5: 0
+Callables with 4 parameters: 0
+Callables with 5 parameters: 0
 Callables with arbitrary parameters: 11
     Callable[..., Any]
     Callable[..., Any]

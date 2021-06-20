@@ -1,4 +1,4 @@
-Callables of arity 0: 10
+Callables with 0 parameters: 10
     Callable[[], Any]
     Callable[[], Optional[Tuple[pxla.PartitionsOrReplicated, ...]]]
     Callable[[], Sequence[ArrayMapping]]
@@ -9,7 +9,7 @@ Callables of arity 0: 10
     Callable[[], Tuple[core.Jaxpr, Sequence[Any]]]
     Callable[[], Tuple[core.Jaxpr, Sequence[Any]]]
     Callable[[], Tuple[pxla.PartitionsOrReplicated, ...]]
-Callables of arity 1: 20
+Callables with 1 parameters: 20
     Callable[
                                    [List[xb.xla_client._xla.PyLocalBuffer]], Any]
     Callable[['AbstractValue'], Var]
@@ -31,7 +31,7 @@ Callables of arity 1: 20
     Callable[[core.Jaxpr], core.Jaxpr]
     Callable[[int], str]
     Callable[[str], None]
-Callables of arity 2: 8
+Callables with 2 parameters: 8
     Callable[[Any, Any], Any]
     Callable[[Any, Optional[Device]], Tuple[Any]]
     Callable[[Any, Sequence[Any]], T]
@@ -40,12 +40,12 @@ Callables of arity 2: 8
     Callable[[T, Any], T]
     Callable[[T, Any], T]
     Callable[[lu.WrappedFun, Tuple[core.Value, ...]], Tuple[core.Value]]
-Callables of arity 3: 3
+Callables with 3 parameters: 3
     Callable[[Any, Any, Any], Sequence[Any]]
     Callable[[ParamDict, AxisSubst, bool], ParamDict]
     Callable[[int, int, Any], Any]
-Callables of arity 4: 0
-Callables of arity 5: 0
+Callables with 4 parameters: 0
+Callables with 5 parameters: 0
 Callables with arbitrary parameters: 194
     Callable
     Callable

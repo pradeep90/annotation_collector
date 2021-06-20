@@ -5,12 +5,12 @@ Internal error: There must be at least one space before 'as'.
                           ^
 
 
-Callables of arity 0: 0
-Callables of arity 1: 0
-Callables of arity 2: 0
-Callables of arity 3: 0
-Callables of arity 4: 0
-Callables of arity 5: 0
+Callables with 0 parameters: 0
+Callables with 1 parameters: 0
+Callables with 2 parameters: 0
+Callables with 3 parameters: 0
+Callables with 4 parameters: 0
+Callables with 5 parameters: 0
 Callables with arbitrary parameters: 8
     Callable
     Callable
