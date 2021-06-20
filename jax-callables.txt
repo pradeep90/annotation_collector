@@ -1,0 +1,247 @@
+Callables of arity 0: 10
+    Callable[[], Any]
+    Callable[[], Optional[Tuple[pxla.PartitionsOrReplicated, ...]]]
+    Callable[[], Sequence[ArrayMapping]]
+    Callable[[], Sequence[AxisNamePos]]
+    Callable[[], Sequence[Optional[int]]]
+    Callable[[], Tuple[core.Jaxpr, Sequence[Any]]]
+    Callable[[], Tuple[core.Jaxpr, Sequence[Any]]]
+    Callable[[], Tuple[core.Jaxpr, Sequence[Any]]]
+    Callable[[], Tuple[core.Jaxpr, Sequence[Any]]]
+    Callable[[], Tuple[pxla.PartitionsOrReplicated, ...]]
+Callables of arity 1: 20
+    Callable[
+                                   [List[xb.xla_client._xla.PyLocalBuffer]], Any]
+    Callable[['AbstractValue'], Var]
+    Callable[[Any], AbstractValue]
+    Callable[[Any], List[Any]]
+    Callable[[Any], List[Any]]
+    Callable[[Any], bool]
+    Callable[[Any], bool]
+    Callable[[Any], core.AbstractValue]
+    Callable[[JaxprTracer], core.Atom]
+    Callable[[Optional[bool]], None]
+    Callable[[Optional[str]], None]
+    Callable[[Rng], Any]
+    Callable[[T], T]
+    Callable[[T], Tuple[Sequence[Any], Any]]
+    Callable[[T], bool]
+    Callable[[bool], None]
+    Callable[[core.AbstractValue], core.Var]
+    Callable[[core.Jaxpr], core.Jaxpr]
+    Callable[[int], str]
+    Callable[[str], None]
+Callables of arity 2: 8
+    Callable[[Any, Any], Any]
+    Callable[[Any, Optional[Device]], Tuple[Any]]
+    Callable[[Any, Sequence[Any]], T]
+    Callable[[Carry, X], Tuple[Carry, Y]]
+    Callable[[T, Any], T]
+    Callable[[T, Any], T]
+    Callable[[T, Any], T]
+    Callable[[lu.WrappedFun, Tuple[core.Value, ...]], Tuple[core.Value]]
+Callables of arity 3: 3
+    Callable[[Any, Any, Any], Sequence[Any]]
+    Callable[[ParamDict, AxisSubst, bool], ParamDict]
+    Callable[[int, int, Any], Any]
+Callables of arity 4: 0
+Callables of arity 5: 0
+Callables with arbitrary parameters: 194
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable[...,
+      Tuple[Callable[[Params], State],
+            Callable[[Step, Updates, Params], Params],
+            Callable[[State], Params]]]
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., Callable]
+    Callable[..., Callable]
+    Callable[..., Optimizer]
+    Callable[..., ReturnValue]
+    Callable[..., ReturnValue]
+    Callable[..., ReturnValue]
+    Callable[..., T]
+    Callable[..., T]
+    Callable[..., Tuple[Any, ...]]
+    Callable[..., Tuple[Any, ...]]
+    Callable[..., Tuple[Any, Any]]
+    Callable[..., Tuple[Any, Any]]
+    Callable[..., Tuple[ReturnValue, Any]]
+    Callable[..., Tuple[ReturnValue, Any]]
+    Callable[..., Tuple[ReturnValue, ReturnValue]]
+    Callable[..., Tuple[ReturnValue, ReturnValue]]
+    Callable[..., Tuple[T, U]]
+    Callable[..., core.ClosedJaxpr]
+Callback Protocols: 0

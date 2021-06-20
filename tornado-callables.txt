@@ -1,0 +1,110 @@
+Callables of arity 0: 17
+    Callable[[], Any]
+    Callable[[], None]
+    Callable[[], None]
+    Callable[[], None]
+    Callable[[], None]
+    Callable[[], None]
+    Callable[[], None]
+    Callable[[], None]
+    Callable[[], None]
+    Callable[[], None]
+    Callable[[], None]
+    Callable[[], Optional[Awaitable]]
+    Callable[[], bool]
+    Callable[[], float]
+    Callable[[], float]
+    Callable[[], float]
+    Callable[[], float]
+Callables of arity 1: 28
+    Callable[["Future[Union[None, str, bytes]]"], None]
+    Callable[["Future[WebSocketClientConnection]"], None]
+    Callable[["Future[_T]"], None]
+    Callable[["Future[_T]"], None]
+    Callable[["HTTPResponse"], None]
+    Callable[["futures.Future[_T]"], None]
+    Callable[[Any], None]
+    Callable[[Any], None]
+    Callable[[Any], None]
+    Callable[[Any], None]
+    Callable[[Callable[..., Union[Generator, "Coroutine"]]], Callable[..., None]]
+    Callable[[Callable[..., Union[Generator, "Coroutine"]]], Callable[..., None]]
+    Callable[[Callable[[bytes], None]], "Future[None]"]
+    Callable[[HTTPResponse], None]
+    Callable[[HTTPResponse], None]
+    Callable[[HTTPResponse], None]
+    Callable[[HTTPResponse], None]
+    Callable[[Union[None, str, bytes]], None]
+    Callable[[Union[None, str, bytes]], None]
+    Callable[[bytes], Any]
+    Callable[[bytes], None]
+    Callable[[httputil.HTTPServerRequest], None]
+    Callable[[httputil.HTTPServerRequest], None]
+    Callable[[httputil.HTTPServerRequest], None]
+    Callable[[int], None]
+    Callable[[str], None]
+    Callable[[str], None]
+    Callable[[str], str]
+Callables of arity 2: 4
+    Callable[
+            [socket.AddressFamily, Tuple], Tuple[IOStream, "Future[IOStream]"]
+        ]
+    Callable[[_S, int], None]
+    Callable[[int, int], None]
+    Callable[[socket.socket, Any], None]
+Callables of arity 3: 0
+Callables of arity 4: 0
+Callables of arity 5: 0
+Callables with arbitrary parameters: 51
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable[..., "Future[_T]"]
+    Callable[..., "Future[_T]"]
+    Callable[..., "Future[_T]"]
+    Callable[..., "Generator[Any, Any, _T]"]
+    Callable[..., Future]
+    Callable[..., None]
+    Callable[..., None]
+    Callable[..., None]
+    Callable[..., None]
+    Callable[..., None]
+    Callable[..., None]
+    Callable[..., None]
+    Callable[..., Optional[Awaitable[None]]]
+    Callable[..., Optional[Awaitable[None]]]
+    Callable[..., Optional[Awaitable[None]]]
+    Callable[..., Optional[Awaitable[None]]]
+    Callable[..., Optional[Awaitable[None]]]
+    Callable[..., Optional[Awaitable[None]]]
+    Callable[..., Optional[Awaitable]]
+    Callable[..., Optional[Awaitable]]
+    Callable[..., Union[Generator, "Coroutine"]]
+    Callable[..., Union[Generator, "Coroutine"]]
+    Callable[..., Union[Generator, "Coroutine"]]
+    Callable[..., _T]
+    Callable[..., _T]
+    Callable[..., _T]
+    Callable[..., _T]
+    Callable[..., _T]
+    Callable[..., _T]
+    Callable[..., bool]
+    Callable[..., str]
+    Callable[..., str]
+    Callable[..., str]
+    Callable[..., str]
+    Callable[..., str]
+Callback Protocols: 0

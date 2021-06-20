@@ -1,0 +1,29 @@
+Could not parse path /Users/pradeepkumars/Programs/scipy/scipy/optimize/_linprog_highs.py: Syntax Error @ 37:27.
+Internal error: There must be at least one space before 'as'.
+
+    as MODEL_STATUS_RDOVUB,
+                          ^
+
+
+Callables of arity 0: 0
+Callables of arity 1: 0
+Callables of arity 2: 0
+Callables of arity 3: 0
+Callables of arity 4: 0
+Callables of arity 5: 0
+Callables with arbitrary parameters: 8
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+Callback Protocols: 2
+    _MetricCallback1 - def __call__(
+        self, __XA: np.ndarray, __XB: np.ndarray
+    ) -> _FloatValue: pass
+    _MetricCallback2 - def __call__(
+        self, __XA: np.ndarray, __XB: np.ndarray, **kwargs: Any
+    ) -> _FloatValue: pass

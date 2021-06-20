@@ -1,0 +1,115 @@
+Callables of arity 0: 0
+Callables of arity 1: 11
+    Callable[[int], Union[Sequence[int], int]]
+    Callable[[int], Union[Sequence[int], int]]
+    Callable[[int], str]
+    Callable[[int], str]
+    Callable[[str], Any]
+    Callable[[str], Any]
+    Callable[[str], Any]
+    Callable[[str], bool]
+    Callable[[str], bool]
+    Callable[[str], bool]
+    Callable[[str], bool]
+Callables of arity 2: 0
+Callables of arity 3: 2
+    Callable[[int, int, int], None]
+    Callable[[str, str, Optional[str]], None]
+Callables of arity 4: 0
+Callables of arity 5: 0
+Callables with arbitrary parameters: 94
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable[..., IO]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+    Callable[..., nn.Module]
+Callback Protocols: 0

@@ -1,0 +1,10 @@
+Could not parse path /Users/pradeepkumars/Programs/pip/tests/data/packages/SetupPyLatin1/setup.py: 'utf-8' codec can't decode byte 0xfa in position 104: invalid start byte
+Callables of arity 0: 1
+    Callable[[], Iterator[IndexCandidateInfo]]
+Callables of arity 1: 0
+Callables of arity 2: 0
+Callables of arity 3: 0
+Callables of arity 4: 0
+Callables of arity 5: 0
+Callables with arbitrary parameters: 0
+Callback Protocols: 0

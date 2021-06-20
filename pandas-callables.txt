@@ -1,0 +1,153 @@
+Could not parse path /Users/pradeepkumars/Programs/pandas/pandas/io/parsers/python_parser.py: Syntax Error @ 1162:36.
+Incomplete input. Encountered '}', but expected 'FSTRING_END', 'FSTRING_STRING', or '{'.
+
+        delimiters = "".join(fr"\{x}" for x in self.delimiter)
+                                   ^
+
+
+Could not parse path /Users/pradeepkumars/Programs/pandas/pandas/io/formats/format.py: Syntax Error @ 1903:59.
+Incomplete input. Encountered '}', but expected 'FSTRING_END', 'FSTRING_STRING', or '{'.
+
+    number_regex = re.compile(fr"^\s*[\+-]?[0-9]+\{decimal}[0-9]*$")
+                                                          ^
+
+
+Callables of arity 0: 0
+Callables of arity 1: 23
+    Callable[[Any], Any]
+    Callable[[Any], Any]
+    Callable[[Any], Any]
+    Callable[[Any], Any]
+    Callable[[Any], JSONSerializable]
+    Callable[[Any], JSONSerializable]
+    Callable[[Any], JSONSerializable]
+    Callable[[Any], JSONSerializable]
+    Callable[[Any], None]
+    Callable[[Any], None]
+    Callable[[Any], None]
+    Callable[[Any], Timestamp]
+    Callable[[Any], str | None]
+    Callable[[Any], str]
+    Callable[[DtypeObj], bool]
+    Callable[[F], F]
+    Callable[[F], F]
+    Callable[[F], F]
+    Callable[[F], F]
+    Callable[[F], F]
+    Callable[[str], Any]
+    Callable[[str], tzinfo]
+    Callable[[type[_T]], type[_T]]
+Callables of arity 2: 6
+    Callable[[Any, Any], Any]
+    Callable[[FrameOrSeriesUnion, FrameOrSeriesUnion], FrameOrSeriesUnion]
+    Callable[[FrameOrSeriesUnion, FrameOrSeriesUnion], FrameOrSeriesUnion]
+    Callable[[Series, Any], Series]
+    Callable[[Series, Any], Series]
+    Callable[[np.ndarray, np.ndarray], float]
+Callables of arity 3: 1
+    Callable[[np.ndarray, int, int], np.ndarray]
+Callables of arity 4: 1
+    Callable[[np.ndarray, np.ndarray, np.ndarray, int], np.ndarray]
+Callables of arity 5: 0
+Callables with arbitrary parameters: 100
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., ArrayLike]
+    Callable[..., ArrayLike]
+    Callable[..., ArrayLike]
+    Callable[..., Index]
+    Callable[..., Index]
+    Callable[..., MultiIndex]
+    Callable[..., None]
+    Callable[..., Scalar]
+    Callable[..., Scalar]
+    Callable[..., Styler]
+    Callable[..., Styler]
+    Callable[..., T]
+    Callable[..., T]
+    Callable[..., T]
+    Callable[..., T]
+    Callable[..., bool]
+    Callable[..., np.ndarray]
+    Callable[..., np.ndarray]
+Callback Protocols: 0
