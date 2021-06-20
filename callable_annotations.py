@@ -94,9 +94,10 @@ def print_callables(
     message: str, callables: Iterable[cst.Annotation], show_callables: bool
 ) -> None:
     print(f"{message}: {len(callables)}")
-    for annotation in callables:
-        if show_callables:
-            print(textwrap.indent(annotation_to_string(annotation), " " * 4))
+    if show_callables:
+        callable_strings = [annotation_to_string(callable_) for callable_ in callables]
+        for string in sorted(callable_strings):
+            print(textwrap.indent(string, " " * 4))
 
 
 def main(roots: Iterable[Path], *, show_callables: bool) -> None:
