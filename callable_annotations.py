@@ -176,7 +176,12 @@ def main(roots: Iterable[Path], *, show_callables: bool) -> None:
         for directory in directories
         for path in (*directory.rglob("*.py"), *directory.rglob("*.pyi"))
     ]
-    modules = [cst.parse_module(Path(path).read_text()) for path in paths]
+    modules = []
+    for path in paths:
+        try:
+            modules.append(cst.parse_module(Path(path).read_text()))
+        except Exception as exception:
+            print(f"Could not parse path {path}: {exception}\n\n")
     print_callable_data(modules, show_callables)
     print_protocol_data(modules, show_callables)
 
