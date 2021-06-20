@@ -99,16 +99,12 @@ def print_callables(
         for string in sorted(callable_strings):
             print(textwrap.indent(string, " " * 4))
 
-
-def main(roots: Iterable[Path], *, show_callables: bool) -> None:
-    paths = [
-        path for root in roots for path in (*root.rglob("*.py"), *root.rglob("*.pyi"))
-    ]
+def print_callable_data(modules: List[cst.Module], show_callables: bool) -> None:
     annotations = [
         annotation
-        for path in paths
+        for module in modules
         for annotation in callable_annotations(
-            cst.parse_module(Path(path).read_text()),
+            module,
         )
     ]
 
@@ -129,6 +125,17 @@ def main(roots: Iterable[Path], *, show_callables: bool) -> None:
         show_callables,
     )
 
+
+def main(roots: Iterable[Path], *, show_callables: bool) -> None:
+    files = [path for path in roots if path.is_file()]
+    directories = [path for path in roots if not path.is_file()]
+    paths = files + [
+        path
+        for directory in directories
+        for path in (*directory.rglob("*.py"), *directory.rglob("*.pyi"))
+    ]
+    modules = [cst.parse_module(Path(path).read_text()) for path in paths]
+    print_callable_data(modules, show_callables)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
