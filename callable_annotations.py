@@ -8,6 +8,7 @@ from pathlib import Path
 import sys
 import argparse
 import textwrap
+import dataclasses
 
 
 def type_subscript_matcher(inner_matcher: m.BaseMatcherNode) -> m.BaseMatcherNode:
@@ -42,6 +43,13 @@ arbitrary_parameter_callable_matcher = m.Annotation(
         ],
     )
 )
+
+dunder_call_matcher = m.FunctionDef(name=m.Name("__call__"))
+
+callback_protocol_matcher = m.ClassDef(
+    bases=[m.ZeroOrMore(), m.Arg(m.Name("Protocol")), m.ZeroOrMore()],
+    body=m.IndentedBlock(body=[m.ZeroOrMore(), dunder_call_matcher, m.ZeroOrMore()]),
+)
 MAX_ARITY = 5
 
 
@@ -64,6 +72,23 @@ def callable_annotations(module: cst.Module) -> List[cst.Annotation]:
         )
         for callable_ in dictionary.values()
     )
+
+
+def callback_protocols(module: cst.Module) -> List[cst.ClassDef]:
+    return list(
+        m.findall(
+            module,
+            callback_protocol_matcher,
+        )
+    )
+
+
+def class_definition_to_string(class_: cst.ClassDef) -> str:
+    dunder_call_method = m.findall(class_, dunder_call_matcher)[0]
+    dunder_call_signature = cst.Module(
+        [dataclasses.replace(dunder_call_method, body=cst.SimpleStatementSuite([]))]
+    ).code.strip()
+    return f"{class_.name.value} - {dunder_call_signature}"
 
 
 def callables_of_arity(
@@ -99,6 +124,7 @@ def print_callables(
         for string in sorted(callable_strings):
             print(textwrap.indent(string, " " * 4))
 
+
 def print_callable_data(modules: List[cst.Module], show_callables: bool) -> None:
     annotations = [
         annotation
@@ -126,6 +152,22 @@ def print_callable_data(modules: List[cst.Module], show_callables: bool) -> None
     )
 
 
+def print_protocol_data(modules: List[cst.Module], show_protocols: bool) -> None:
+    protocols = [
+        protocol
+        for module in modules
+        for protocol in callback_protocols(
+            module,
+        )
+    ]
+
+    print(f"Callback Protocols: {len(protocols)}")
+    if show_protocols:
+        strings = [class_definition_to_string(protocol) for protocol in protocols]
+        for string in sorted(strings):
+            print(textwrap.indent(string, " " * 4))
+
+
 def main(roots: Iterable[Path], *, show_callables: bool) -> None:
     files = [path for path in roots if path.is_file()]
     directories = [path for path in roots if not path.is_file()]
@@ -136,6 +178,8 @@ def main(roots: Iterable[Path], *, show_callables: bool) -> None:
     ]
     modules = [cst.parse_module(Path(path).read_text()) for path in paths]
     print_callable_data(modules, show_callables)
+    print_protocol_data(modules, show_callables)
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

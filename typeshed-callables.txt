@@ -879,10 +879,11 @@ Callables of arity 2: 137
     Callable[[str, str], str]
     Callable[[str, str], str]
     Callable[[type, Attribute], Any]
-Callables of arity 3: 42
+Callables of arity 3: 43
     Callable[[Any, Any, Any], Any]
     Callable[[Any, _AnyPath, Any], Any]
     Callable[[AnyStr, AnyStr, AnyStr], AnyStr]
+    Callable[[BaseException, int, BaseException], BaseException]
     Callable[[Channel, _Addr, _Addr], None]
     Callable[[Context, List[str], str], Iterable[Union[str, Tuple[str, str]]]]
     Callable[[Context, Parameter, Optional[str]], Any]
@@ -1310,3 +1311,54 @@ Callables with arbitrary parameters: 364
     Callable[_P, AsyncIterator[_T]]
     Callable[_P, Iterator[_T]]
     Callable[_P, _GeneratorContextManager[_T]]
+Callback Protocols: 37
+    FileWrapper - def __call__(self, file: _Readable, block_size: int = ...) -> Iterable[bytes]: pass
+    FileWrapper - def __call__(self, file: _Readable, block_size: int = ...) -> Iterable[bytes]: pass
+    HTTPConnectionProtocol - def __call__(self, host: str, timeout: int = ..., **http_con_args: Any) -> HTTPConnection: pass
+    IdentityFunction - def __call__(self, __x: _T) -> _T: pass
+    IdentityFunction - def __call__(self, __x: _T) -> _T: pass
+    StartResponse - def __call__(
+        self, status: str, headers: List[Tuple[str, str]], exc_info: Optional[_OptExcInfo] = ...
+    ) -> Callable[[bytes], Any]: pass
+    StartResponse - def __call__(
+        self, status: str, headers: List[Tuple[str, str]], exc_info: Optional[_OptExcInfo] = ...
+    ) -> Callable[[bytes], Any]: pass
+    _AcquireFunc - def __call__(self, block: bool = ..., timeout: Optional[float] = ...) -> bool: pass
+    _AuthObject - @overload
+    def __call__(self, challenge: None = ...) -> Optional[str]: pass
+    _Callback - def __call__(self, attrs: _Attrs, new: bool = ...) -> _Attrs: pass
+    _Decoder - def __call__(self, input: _Encoded, errors: str = ...) -> Tuple[_Decoded, int]: pass
+    _Decoder - def __call__(self, input: bytes, errors: str = ...) -> Tuple[str, int]: pass
+    _DispatchArity0 - def __call__(self) -> _Marshallable: pass
+    _DispatchArity1 - def __call__(self, __arg1: _Marshallable) -> _Marshallable: pass
+    _DispatchArity2 - def __call__(self, __arg1: _Marshallable, __arg2: _Marshallable) -> _Marshallable: pass
+    _DispatchArity3 - def __call__(self, __arg1: _Marshallable, __arg2: _Marshallable, __arg3: _Marshallable) -> _Marshallable: pass
+    _DispatchArity4 - def __call__(
+        self, __arg1: _Marshallable, __arg2: _Marshallable, __arg3: _Marshallable, __arg4: _Marshallable
+    ) -> _Marshallable: pass
+    _DispatchArityN - def __call__(self, *args: _Marshallable) -> _Marshallable: pass
+    _Encoder - def __call__(self, input: _Decoded, errors: str = ...) -> Tuple[_Encoded, int]: pass
+    _Encoder - def __call__(self, input: str, errors: str = ...) -> Tuple[bytes, int]: pass
+    _ExceptionReportingCallback - def __call__(self, __exc: Type[BaseException], __val: BaseException, __tb: TracebackType) -> Any: pass
+    _FormatterClass - def __call__(self, prog: str) -> HelpFormatter: pass
+    _FormatterClass - def __call__(self, prog: str) -> HelpFormatter: pass
+    _IncrementalDecoder - def __call__(self, errors: str = ...) -> IncrementalDecoder: pass
+    _IncrementalDecoder - def __call__(self, errors: str = ...) -> IncrementalDecoder: pass
+    _IncrementalEncoder - def __call__(self, errors: str = ...) -> IncrementalEncoder: pass
+    _IncrementalEncoder - def __call__(self, errors: str = ...) -> IncrementalEncoder: pass
+    _PathOpenProtocol - def __call__(self, mode: str = ..., pwd: Optional[bytes] = ..., *, force_zip64: bool = ...) -> IO[bytes]: pass
+    _PathOpenProtocol - def __call__(self, mode: str = ..., pwd: Optional[bytes] = ..., *, force_zip64: bool = ...) -> IO[bytes]: pass
+    _StreamFactory - def __call__(
+        self, total_content_length: Optional[int], filename: str, content_type: str, content_length: Optional[int] = ...
+    ) -> IO[bytes]: pass
+    _StreamReader - def __call__(self, stream: IO[_Encoded], errors: str = ...) -> StreamReader: pass
+    _StreamReader - def __call__(self, stream: IO[bytes], errors: str = ...) -> StreamReader: pass
+    _StreamWriter - def __call__(self, stream: IO[_Encoded], errors: str = ...) -> StreamWriter: pass
+    _StreamWriter - def __call__(self, stream: IO[bytes], errors: str = ...) -> StreamWriter: pass
+    _Warn - def __call__(
+        self, message: str, category: Optional[Type[Warning]] = ..., stacklevel: int = ..., source: Optional[Any] = ...
+    ) -> None: pass
+    _WarnCallbackProtocol - def __call__(
+        self, message: str, category: Optional[Type[Warning]] = ..., stacklevel: int = ..., source: Optional[Any] = ...
+    ) -> None: pass
+    _WarnFunction - def __call__(self, message: str, category: Type[Warning] = ..., stacklevel: int = ..., source: PipeHandle = ...) -> None: pass

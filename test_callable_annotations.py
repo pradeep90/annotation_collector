@@ -1,12 +1,15 @@
 import unittest
 import libcst as cst
 import libcst.matchers as m
+from textwrap import dedent
 from typing import List, Optional
 from callable_annotations import (
     callable_annotation_matcher,
     callable_annotations,
     arbitrary_parameter_callable_matcher,
     annotation_to_string,
+    callback_protocols,
+    class_definition_to_string,
 )
 
 
@@ -15,6 +18,15 @@ def get_callable_annotations(source: str) -> List[str]:
         annotation_to_string(annotation)
         for annotation in callable_annotations(
             cst.parse_module(source),
+        )
+    ]
+
+
+def get_callback_protocols(source: str) -> List[str]:
+    return [
+        class_definition_to_string(protocol)
+        for protocol in callback_protocols(
+            cst.parse_module(dedent(source)),
         )
     ]
 
@@ -92,6 +104,26 @@ class CallableAnnotationsTest(unittest.TestCase):
         self.assertEqual(
             get_callable_annotations(
                 "MyAlias = Callable[[int], str]",
+            ),
+            [],
+        )
+
+    def test_callback_protocol(self) -> None:
+        self.assertEqual(
+            get_callback_protocols(
+                """
+                class Foo(Protocol):
+                    def __call__(self, x: int) -> bool: ...
+                """
+            ),
+            ["Foo - def __call__(self, x: int) -> bool: pass"],
+        )
+        self.assertEqual(
+            get_callback_protocols(
+                """
+                class NotAProtocol:
+                    def __call__(self, x: int) -> bool: ...
+                """
             ),
             [],
         )
