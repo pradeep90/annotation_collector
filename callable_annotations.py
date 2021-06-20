@@ -12,12 +12,16 @@ import dataclasses
 
 
 def type_subscript_matcher(inner_matcher: m.BaseMatcherNode) -> m.BaseMatcherNode:
-    return m.Subscript(
-        slice=[
-            m.ZeroOrMore(),
-            m.SubscriptElement(slice=m.Index(inner_matcher)),
-            m.ZeroOrMore(),
-        ]
+    return (
+        m.Subscript(
+            slice=[
+                m.ZeroOrMore(),
+                m.SubscriptElement(slice=m.Index(inner_matcher)),
+                m.ZeroOrMore(),
+            ]
+        )
+        | m.BinaryOperation(left=inner_matcher)
+        | m.BinaryOperation(right=inner_matcher)
     )
 
 

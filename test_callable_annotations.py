@@ -78,6 +78,24 @@ class CallableAnnotationsTest(unittest.TestCase):
             ["Callable[[int], str]"],
         )
         self.assertEqual(
+            get_callable_annotations(
+                "f: int | Callable[[int], str] | bool",
+            ),
+            ["Callable[[int], str]"],
+        )
+        self.assertEqual(
+            get_callable_annotations(
+                "f: int | bool | Callable[[int], str]",
+            ),
+            ["Callable[[int], str]"],
+        )
+        self.assertEqual(
+            get_callable_annotations(
+                "f: int | bool | str | Callable[[int], str] | bool | str",
+            ),
+            [],
+        )
+        self.assertEqual(
             get_callable_annotations("f: int"),
             [],
         )
