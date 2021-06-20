@@ -59,3 +59,21 @@ Callables with arbitrary parameters: 2
     Callable[..., Any]
     Callable[..., Any]
 ```
+
+## Details
+
+This includes annotations from parameter types, return types, attribute types, etc.
+
+It extracts `Callable[[int], str]` from within `List[Callable[[int], str]]`.
+
+## Limitations
+
+It doesn't:
+
++ Extract nested callables: `Callable[[Callable[[int], str]], str]`. We will only get the outer callable.
+
++ Extract types from `TypeVar` bounds.
+
++ Extract types from type aliases.
+
++ Recognize ParamSpec. It treats `Callable[P, R]` as a callable with undefined parameters.

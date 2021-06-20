@@ -41,6 +41,10 @@ class CallableAnnotationsTest(unittest.TestCase):
             "Callable[..., None]",
             arbitrary_parameter_callable_matcher,
         )
+        self.assert_matches(
+            "Callable[P, R]",
+            arbitrary_parameter_callable_matcher,
+        )
 
     def test_callable_onnotations(self) -> None:
         self.assertEqual(
@@ -57,12 +61,6 @@ class CallableAnnotationsTest(unittest.TestCase):
         )
         self.assertEqual(
             get_callable_annotations(
-                "f: Callable[[Callable[[int], str]], bool]",
-            ),
-            ["Callable[[Callable[[int], str]], bool]"],
-        )
-        self.assertEqual(
-            get_callable_annotations(
                 "f: Union[int, Callable[[int], str]]",
             ),
             ["Callable[[int], str]"],
@@ -76,4 +74,24 @@ class CallableAnnotationsTest(unittest.TestCase):
                 "f: List[Tuple[Callable[[int], str]]]",
             ),
             ["Callable[[int], str]"],
+        )
+
+    def test_limitations(self) -> None:
+        self.assertEqual(
+            get_callable_annotations(
+                "f: Callable[[Callable[[int], str]], bool]",
+            ),
+            ["Callable[[Callable[[int], str]], bool]"],
+        )
+        self.assertEqual(
+            get_callable_annotations(
+                "F = TypeVar('F', bound=Callable[[int], str])",
+            ),
+            [],
+        )
+        self.assertEqual(
+            get_callable_annotations(
+                "MyAlias = Callable[[int], str]",
+            ),
+            [],
         )
