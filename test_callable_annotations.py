@@ -71,3 +71,9 @@ class CallableAnnotationsTest(unittest.TestCase):
             get_callable_annotations("f: int"),
             [],
         )
+        self.assertEqual(
+            get_callable_annotations(
+                "f: List[Tuple[Callable[[int], str]]]",
+            ),
+            ["Callable[[int], str]"],
+        )

@@ -10,18 +10,26 @@ import argparse
 import textwrap
 
 
+def type_subscript_matcher(inner_matcher: m.BaseMatcherNode) -> m.BaseMatcherNode:
+    return m.Subscript(
+        slice=[
+            m.ZeroOrMore(),
+            m.SubscriptElement(slice=m.Index(inner_matcher)),
+            m.ZeroOrMore(),
+        ]
+    )
+
+
 top_level_callable_annotation_matcher = m.SaveMatchedNode(
     m.Name("Callable"), name="callable"
 ) | m.SaveMatchedNode(m.Subscript(m.Name("Callable")), name="callable")
 
+
 callable_annotation_matcher = m.Annotation(
     top_level_callable_annotation_matcher
-    | m.Subscript(
-        slice=[
-            m.ZeroOrMore(),
-            m.SubscriptElement(slice=m.Index(top_level_callable_annotation_matcher)),
-            m.ZeroOrMore(),
-        ]
+    | type_subscript_matcher(top_level_callable_annotation_matcher)
+    | type_subscript_matcher(
+        type_subscript_matcher(top_level_callable_annotation_matcher)
     )
 )
 
