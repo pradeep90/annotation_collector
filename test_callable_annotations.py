@@ -156,7 +156,6 @@ class CallableAnnotationsTest(unittest.TestCase):
             [],
         )
 
-
     def test_callback_parameter(self) -> None:
         self.assertEqual(
             get_callback_function_calls(
@@ -168,4 +167,24 @@ class CallableAnnotationsTest(unittest.TestCase):
                 """
             ),
             ["def foo(x, func, y): ... - func(x) - func(y) - func(*args, **kwargs)"],
+        )
+        self.assertEqual(
+            get_callback_function_calls(
+                """
+                class Foo:
+                    def foo(self, x, func, y):
+                        func(x)
+                """
+            ),
+            ["def foo(self, x, func, y): ... - func(x)"],
+        )
+        self.assertEqual(
+            get_callback_function_calls(
+                """
+                def foo(x, func, y):
+                    f = func
+                    f(x)
+                """
+            ),
+            [],
         )

@@ -56,26 +56,32 @@ callback_protocol_matcher = m.ClassDef(
 )
 MAX_NUM_PARAMETERS = 5
 
+
 @dataclasses.dataclass(frozen=True)
 class FunctionWithCallbackParameters:
     function: cst.FunctionDef
 
     @property
     def calls_to_callback_parameters(self) -> List[cst.Call]:
-        parameter_names = [parameter.name.value for parameter in self.function.params.params]
+        parameter_names = [
+            parameter.name.value for parameter in self.function.params.params
+        ]
         return [
             call
             for name in parameter_names
             for call in m.findall(self.function, m.Call(func=m.Name(value=name)))
         ]
 
-
     @staticmethod
-    def functions_with_callback_parameters(module: cst.Module) -> List["FunctionWithCallbackParameters"]:
-        return [
-            FunctionWithCallbackParameters(function)
-            for function in m.findall(module, m.FunctionDef())
-        ]
+    def functions_with_callback_parameters(
+        module: cst.Module,
+    ) -> List["FunctionWithCallbackParameters"]:
+        functions = []
+        for function_definition in m.findall(module, m.FunctionDef()):
+            function = FunctionWithCallbackParameters(function_definition)
+            if function.calls_to_callback_parameters:
+                functions.append(function)
+        return functions
 
     @staticmethod
     def function_signature_to_string(function: cst.FunctionDef) -> str:
@@ -93,7 +99,9 @@ class FunctionWithCallbackParameters:
 
     def __str__(self) -> str:
         signature = self.function_signature_to_string(self.function)
-        calls = " - ".join(self.call_to_string(call) for call in self.calls_to_callback_parameters)
+        calls = " - ".join(
+            self.call_to_string(call) for call in self.calls_to_callback_parameters
+        )
         return f"{signature} - {calls}"
 
 
