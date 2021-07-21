@@ -222,6 +222,21 @@ def print_protocol_data(modules: List[cst.Module], show_protocols: bool) -> None
             print(textwrap.indent(string, " " * 4))
 
 
+def print_functions_with_callback_parameters(modules: List[cst.Module]) -> None:
+    functions = [
+        function
+        for module in modules
+        for function in FunctionWithCallbackParameters.functions_with_callback_parameters(
+            module,
+        )
+    ]
+
+    print(f"Functions with callback parameters: {len(functions)}")
+    strings = [str(function) for function in functions]
+    for string in sorted(strings):
+        print(textwrap.indent(string, " " * 4))
+
+
 def get_modules(roots: Iterable[Path]) -> List[cst.Module]:
     files = [path for path in roots if path.is_file()]
     directories = [path for path in roots if not path.is_file()]
@@ -241,16 +256,23 @@ def get_modules(roots: Iterable[Path]) -> List[cst.Module]:
     return modules
 
 
-def main(roots: Iterable[Path], show_callables: bool) -> None:
+def main(
+    roots: Iterable[Path], show_callables: bool, show_callback_parameters: bool
+) -> None:
     modules = get_modules(roots)
 
     print_callable_data(modules, show_callables)
     print_protocol_data(modules, show_callables)
+    if show_callback_parameters:
+        print_functions_with_callback_parameters(modules)
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--show-callables", action="store_true", default=False)
+    parser.add_argument(
+        "--show-callback-parameters", action="store_true", default=False
+    )
     parser.add_argument("root", type=Path, nargs="+")
     arguments = parser.parse_args()
-    main(arguments.root, arguments.show_callables)
+    main(arguments.root, arguments.show_callables, arguments.show_callback_parameters)
