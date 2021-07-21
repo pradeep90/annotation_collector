@@ -70,6 +70,32 @@ Callback Protocols: 6
     _DispatchArityN - def __call__(self, *args: _Marshallable) -> _Marshallable: pass
 ```
 
+## Calls to Callback Parameters
+
+To see functions that call one of their parameters, use `--show-callback-parameters`:
+
+```
+$ ./callable_annotations.py --show-callback-parameters /Users/pradeepkumars/Programs/github-clones/django/django/views/decorators/http.py
+Callables with 0 parameters: 0
+Callables with 1 parameters: 0
+Callables with 2 parameters: 0
+Callables with 3 parameters: 0
+Callables with 4 parameters: 0
+Callables with 5 parameters: 0
+Callables with arbitrary parameters: 0
+Callback Protocols: 0
+Functions with callback parameters: 3
+    def condition(etag_func=None, last_modified_func=None): ...
+    	etag_func(request, *args, **kwargs)
+    	last_modified_func(request, *args, **kwargs)
+
+    def decorator(func): ...
+    	func(request, *args, **kwargs)
+
+    def decorator(func): ...
+    	func(request, *args, **kwargs)
+```
+
 # Stats
 
 Computed for the following repositories. Click to see the raw stats and callables.
