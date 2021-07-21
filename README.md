@@ -148,6 +148,59 @@ Skipped:
 + scipy - barely any callables.
 + black - same.
 
+## Projects with No Types
+
+Let's look at how callbacks are called in untyped Python code. (Click to see the individual functions.)
+
++ [django](./data/django-callback-parameters.txt): 75 functions with callback parameters (excluding calls to `cls` in `classmethod`s).
+  + Callback is called with positional arguments: 44.0% (33/75)
+  + Callback is called with `*args, **kwargs`: 37.3% (28/75)
+  + Callback is called with `*args`: 2.7% (2/75)
+  + Callback is called with `**kwargs`: 6.7% (5/75)
+  + Callback is called with a named argument: 4.0% (3/75)
+  + Miscellaneous: 1.3% (1/75)
+
+    - `_generate_altered_foo_together` - this is called with a class. Not a real "callback" as such. The type would just be `operation: Type[AlterUniqueTogether] | Type[AlterIndexTogether]`.
+
+		```
+		./db/migrations/autodetector.py:1145:        self._generate_altered_foo_together(operations.AlterUniqueTogether)
+		./db/migrations/autodetector.py:1148:        self._generate_altered_foo_together(operations.AlterIndexTogether)
+		```
+
+	- `_path`
+
+		```
+		./urls/conf.py:
+		path = partial(_path, Pattern=RoutePattern)
+		re_path = partial(_path, Pattern=RegexPattern)
+		```
+
+	- `method_set_order` - same.
+
+		```
+		./db/models/base.py:2133:def method_set_order(self, ordered_obj, id_list, using=None):
+				  ordered_obj(pk=pk, _order=order)
+		```
+
++ [sentry](./data/sentry-callback-parameters.txt): 108 functions with callback parameters (excluding calls to `cls` in `classmethod`s).
+  + Callback is called with positional arguments: 53.7% (58/108)
+  + Callback is called with `*args, **kwargs`: 37.0% (40/108)
+  + Callback is called with `*args`: 1.9% (2/108)
+  + Callback is called with `**kwargs`: 2.8% (3/108)
+  + Callback is called with a named argument: 0.9% (1/108)
+
+    - `serialize` takes a class, not a real callback. The type would be `Type[Serializer]`, not a `Callable`.
+
+		```
+		def serialize(
+				objects: Union[Any, Sequence[Any]],
+				user: Optional[Any] = None,
+				serializer: Optional[Any] = None,
+				**kwargs: Any,
+			) -> Any: ...
+				serializer(o, attrs=attrs.get(o, {}), user=user, **kwargs)
+		```
+
 # How does it work?
 
 This includes annotations from parameter types, return types, attribute types, etc.
@@ -165,3 +218,5 @@ It doesn't:
 + Extract types from type aliases.
 
 + Recognize ParamSpec. It treats `Callable[P, R]` as a callable with undefined parameters.
+
++ Get callback parameters that have been assigned to a local variable or a class attribute before being called.

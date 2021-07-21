@@ -1,0 +1,624 @@
+Callables with 0 parameters: 2
+Callables with 1 parameters: 16
+Callables with 2 parameters: 2
+Callables with 3 parameters: 2
+Callables with 4 parameters: 0
+Callables with 5 parameters: 0
+Callables with arbitrary parameters: 0
+Callback Protocols: 0
+Functions with callback parameters: 144
+    @classmethod
+    def _from_config_structure(cls, data): ...
+    	cls(
+        rules=[Rule._from_config_structure(x, version=version) for x in rules],
+        version=version,
+        bases=bases,
+    )
+
+    @classmethod
+    def _from_config_structure(cls, data): ...
+    	cls(rules=[Rule._from_config_structure(x) for x in data["rules"]], version=version)
+
+    @classmethod
+    def _from_config_structure(cls, obj): ...
+    	cls(
+        [Match._from_config_structure(x) for x in obj["matchers"]],
+        obj["fingerprint"],
+        obj.get("attributes") or {},
+    )
+
+    @classmethod
+    def _from_config_structure(cls, obj): ...
+    	cls(key, obj[1], negated)
+
+    @classmethod
+    def create_from(cls, search_config: "SearchConfig", **overrides): ...
+    	cls(**asdict(search_config))
+
+    @classmethod
+    def from_actor_identifier(cls, actor_identifier): ...
+    	cls(actor_identifier, User)
+    	cls(int(actor_identifier), User)
+    	cls(int(actor_identifier[5:]), User)
+    	cls(int(actor_identifier[5:]), Team)
+    	cls(find_users(actor_identifier)[0].id, User)
+
+    @classmethod
+    def from_config(cls, config: AppStoreConnectConfig) -> "AppConnectClient": ...
+    	cls(
+        api_credentials=api_credentials,
+        itunes_cookie=config.itunesSession,
+        itunes_org=config.orgId,
+        app_id=config.appId,
+    )
+
+    @classmethod
+    def from_cookie_or_email(cls, request, organization, email, instance=None, logger=None): ...
+    	cls(
+        request=request, member_id=om.id, token=om.token, instance=instance, logger=logger
+    )
+
+    @classmethod
+    def from_event(cls, event_data: EventData) -> Optional["CalculatedHashes"]: ...
+    	cls(
+        hashes=hashes, hierarchical_hashes=hierarchical_hashes, tree_labels=tree_labels
+    )
+
+    @classmethod
+    def from_event_json(cls, event_data): ...
+    	cls(
+        sdk_name=sdk_name,
+        sdk_version=get_path(event_data, "sdk", "version"),
+        modules=get_path(event_data, "modules"),
+        integrations=get_path(event_data, "sdk", "integrations"),
+    )
+
+    @classmethod
+    def from_exception(cls, exception): ...
+    	cls("Timed out reaching host")
+
+    @classmethod
+    def from_exception(cls, exception): ...
+    	cls("Unable to reach host")
+
+    @classmethod
+    def from_file(cls, fileobj, logger=nooplogger): ...
+    	cls(size=size, checksum=checksum)
+
+    @classmethod
+    def from_files(cls, files, organization=None, logger=nooplogger): ...
+    	cls(size=size, checksum=checksum)
+
+    @classmethod
+    def from_instance(cls, instance, **kwargs): ...
+    	cls(**values)
+
+    @classmethod
+    def from_json(cls, data: Dict[str, Any]) -> "AppStoreConnectConfig": ...
+    	cls(**data)
+
+    @classmethod
+    def from_object(cls, obj, path, name=None, debug_id=None): ...
+    	cls(
+        file_format=obj.file_format,
+        arch=obj.arch,
+        debug_id=obj_id,
+        code_id=obj.code_id,
+        path=path,
+        # TODO: Extract the object name from the object
+        name=name,
+        data={"type": obj.kind, "features": list(obj.features)},
+    )
+
+    @classmethod
+    def from_request(cls, request): ...
+    	cls(f"Timed out attempting to reach host: {host}")
+
+    @classmethod
+    def from_request(cls, request): ...
+    	cls(f"Unable to reach host: {host}")
+
+    @classmethod
+    def from_request(cls, request, token): ...
+    	cls()
+
+    @classmethod
+    def from_response(cls, response, url=None): ...
+    	cls(response.text, response.status_code, url=url)
+
+    @classmethod
+    def from_string(cls, value): ...
+    	cls(*bits)
+
+    @classmethod
+    def from_string(cls, value): ...
+    	cls(*bits)
+
+    @classmethod
+    def from_string(cls, value): ...
+    	cls(0, int(value) - 1, 0)
+
+    @classmethod
+    def get_autoassign_owners(cls, project_id, data, limit=2): ...
+    	cls(project_id=project_id)
+
+    @classmethod
+    def get_for_request(cls, request): ...
+    	cls(
+        request,
+        organization=req_state.organization,
+        provider_key=req_state.provider_key,
+        provider_model=req_state.provider_model,
+        config=config,
+    )
+
+    @classmethod
+    def get_for_request(cls, request): ...
+    	cls(
+        request,
+        req_state.organization,
+        flow,
+        auth_provider=req_state.provider_model,
+        provider_key=req_state.provider_key,
+    )
+
+    @classmethod
+    def get_message(cls, data): ...
+    	cls(data)
+
+    @classmethod
+    def get_owners(cls, project_id, data): ...
+    	cls(project_id=project_id)
+
+    @classmethod
+    def get_releasefile(cls, request, release, file_id, check_permission_fn): ...
+    	check_permission_fn()
+
+    @classmethod
+    def load(cls, data): ...
+    	cls(Matcher.load(data["matcher"]), [Owner.load(o) for o in data["owners"]])
+
+    @classmethod
+    def load(cls, data): ...
+    	cls(data["type"], data["identifier"])
+
+    @classmethod
+    def load(cls, data): ...
+    	cls(data["type"], data["pattern"])
+
+    @classmethod
+    def run(cls, *args, **kwargs): ...
+    	cls(*args, **kwargs)
+
+    @classmethod
+    def to_python(cls, data, datapath: Optional[DataPath] = None): ...
+    	cls(**data)
+
+    @classmethod
+    def wrap(cls, *args, **kwargs): ...
+    	cls(*args, **kwargs)
+
+    @pytest.fixture(autouse=True)
+    def relay_setup_fixtures(
+        self,
+        settings,
+        live_server,
+        get_relay_store_url,
+        get_relay_minidump_url,
+        get_relay_unreal_url,
+        get_relay_security_url,
+        get_relay_attachments_url,
+        wait_for_ingest_consumer,
+    ): ...
+    	wait_for_ingest_consumer(settings)
+
+    @pytest.fixture(scope="function")
+    def session_ingest_consumer(scope_consumers, kafka_admin, task_runner): ...
+    	kafka_admin(settings)
+
+    @pytest.fixture(scope="function")
+    def wait_for_ingest_consumer(session_ingest_consumer, task_runner): ...
+    	session_ingest_consumer(settings, **kwargs)
+    	task_runner()
+
+    @staticmethod
+    def _get_releasefile(release: Release, file_id: str, index_op=_get_from_index): ...
+    	index_op(release, dist, url)
+
+    def __call__(self, func, *args, **kwargs): ...
+    	func(*args, **kwargs)
+
+    def __call__(self, function): ...
+    	function()
+
+    def __call__(self, function: Callable[[], T]) -> T: ...
+    	function()
+
+    def __execute_callback(self, callback): ...
+    	callback(self)
+
+    def __init__(
+        self,
+        cluster_name,
+        consumer_group,
+        commit_log_topic,
+        synchronize_commit_group,
+        initial_offset_reset="latest",
+        on_commit=None,
+    ): ...
+    	on_commit(error, partitions)
+
+    def __init__(self, of=models.TextField, **kwargs): ...
+    	of()
+
+    def __init__(self, options_manager, cluster_type=_RBCluster): ...
+    	cluster_type()
+
+    def _build_next_values(cursor, results, key, limit, is_desc): ...
+    	key(results[0])
+    	key(results[-1])
+    	key(result)
+
+    def _build_prev_values(cursor, results, key, limit, is_desc): ...
+    	key(results[first_prev_index], for_prev=True)
+    	key(result, for_prev=True)
+
+    def _if_param(func): ...
+    	func(self, *args)
+
+    def _invoke(self, func: StrategyFunc, *args: Any, **kwargs: Any) -> ReturnedVariants: ...
+    	func(*args, **kwargs)
+
+    def _process(self, create_task, task_name): ...
+    	create_task()
+
+    def _query_tsdb_groups_chunked(func, issue_ids, start, stop, rollup): ...
+    	func(tsdb.models.group, chunk, start, stop, rollup=rollup)
+
+    def _upsert_release_file(
+        file: File, archive: ReleaseArchive, update_fn, key_fields, additional_fields
+    ) -> bool: ...
+    	update_fn(release_file, file, archive, additional_fields)
+
+    def add_integration_platform_metric_tag(func): ...
+    	func(self, *args, **kwargs)
+
+    def allow_cors_options(func): ...
+    	func(self, request, *args, **kwargs)
+
+    def apply(self, function): ...
+    	function(sequence)
+
+    def apply_values(function, mapping): ...
+    	function(values)
+
+    def assemble(data, get_extra_keys): ...
+    	get_extra_keys(checksums)
+
+    def auto_reconnect_connection(func): ...
+    	func(self, *args, **kwargs)
+    	func(self, *args, **kwargs)
+
+    def auto_reconnect_cursor(func): ...
+    	func(self, *args, **kwargs)
+    	func(self, *args, **kwargs)
+
+    def build_cursor(
+        results, key, limit=100, is_desc=False, cursor=None, hits=None, max_hits=None, on_results=None
+    ): ...
+    	on_results(results)
+
+    def build_description(event, rule_id, installation, generate_footer): ...
+    	generate_footer(rule_url)
+
+    def cache(function): ...
+    	function(*key)
+
+    def cached(cache, function, *args, **kwargs): ...
+    	function(*args)
+
+    def call_with_variants(
+        f: StrategyFunc, variants: Sequence[str], *args: Any, **kwargs: Any
+    ) -> ReturnedVariants: ...
+    	f(*args, **kwargs)
+    	f(*args, **kwargs)
+
+    def capture_transaction_exceptions(func): ...
+    	func(self, *args, **kwargs)
+
+    def catch_and_log_errors(func): ...
+    	func(*args, **kwargs)
+
+    def catch_errors(f): ...
+    	f(*args, **kwargs)
+
+    def catch_raised_errors(func): ...
+    	func(self, *args, **kwargs)
+
+    def convert_dict_key_case(obj, converter): ...
+    	converter(key)
+
+    def cursor(func, self, *args, **kwargs): ...
+    	func(self, *args, **kwargs)
+
+    def dec(func): ...
+    	func(request, request.social_auth_backend, *args, **kwargs)
+
+    def decorator(func): ...
+    	func(*args, **kwargs)
+
+    def decorator(func): ...
+    	func(self, *args, **kwargs)
+
+    def decorator(func: EndpointFunc) -> EndpointFunc: ...
+    	func(request, *args, **kwargs)
+
+    def decorator(func: EndpointFunc) -> EndpointFunc: ...
+    	func(self, request, *args, **kwargs)
+    	func(self, request, *args, **kwargs)
+
+    def delete_groups(request, projects, organization_id, search_fn): ...
+    	search_fn({"limit": 1000, "paginator_options": {"max_limit": 1000}})
+
+    def email_verification_required(func): ...
+    	func(self, request, *args, **kwargs)
+
+    def env(key, default="", type=None): ...
+    	type(rv)
+
+    def execute(function, daemon=True): ...
+    	function()
+
+    def fetch_and_cache_artifact(filename, fetch_fn, cache_key, cache_key_meta, headers, compress_fn): ...
+    	fetch_fn()
+    	compress_fn(fp)
+
+    def fetch_file(offset, getfile): ...
+    	getfile()
+
+    def filter(self, function): ...
+    	function(s)
+
+    def get(self, task=None, **kwargs): ...
+    	task(manager=self, **kwargs)
+
+    def get_crash_frame_from_event_data(data, frame_filter=None): ...
+    	frame_filter(frame)
+
+    def get_event_stats_data(
+        self,
+        request,
+        organization,
+        get_event_stats,
+        top_events=0,
+        query_column="count()",
+        params=None,
+        query=None,
+        allow_partial_buckets=False,
+    ): ...
+    	get_event_stats(query_columns, query, params, rollup)
+
+    def get_grouping_component(
+        self, event: Event, context: GroupingContext, variant: Optional[str] = None
+    ) -> Optional[ReturnedVariants]: ...
+    	self(event=event, context=context, *args)
+
+    def get_numeric_field_value(field, raw_value, type=int): ...
+    	type(raw_value[len(modifier) :])
+    	type(raw_value)
+
+    def get_username(
+        details, user=None, user_exists=UserSocialAuth.simple_user_exists, *args, **kwargs
+    ): ...
+    	user_exists(username=final_username)
+
+    def get_value(self, project, key, default=None, validate=None): ...
+    	validate(result[key])
+
+    def get_with_pagination(self, path, gen_params, get_results, *args, **kwargs): ...
+    	gen_params(i, page_size)
+    	get_results(resp)
+
+    def handle_db_failure(func): ...
+    	func(*args, **kwargs)
+
+    def ignore_unpublished_app_errors(func): ...
+    	func(sentry_app, app_platform_event, url)
+
+    def info_extractor(rule_cls): ...
+    	rule_cls(None)
+
+    def inner(func): ...
+    	func(*args, **kwargs)
+
+    def inner(func): ...
+    	func(*args, **kwargs)
+
+    def inner(function): ...
+    	function(self, request, *args, **kwargs)
+
+    def inner_func(function): ...
+    	function(request, *args, **kwargs)
+
+    def instrumented_task(name, stat_suffix=None, **kwargs): ...
+    	stat_suffix(*args, **kwargs)
+
+    def less_shitty_error_messages(func): ...
+    	func(self, sql, *args, **kwargs)
+
+    def login_required(func: EndpointFunc) -> EndpointFunc: ...
+    	func(request, *args, **kwargs)
+
+    def manytoone_to_dict(queryset, key, filter_func=None): ...
+    	filter_func(row)
+
+    def map(self, function): ...
+    	function(s)
+
+    def merge_mappings(target, other, function=operator.add): ...
+    	function(v, other[k])
+
+    def merge_sequences(target, other, function=operator.add): ...
+    	function(x, y)
+
+    def merge_series(target, other, function=operator.add): ...
+    	function(x[1], y[1])
+
+    def paginate(
+        self,
+        request,
+        on_results=None,
+        paginator=None,
+        paginator_cls=Paginator,
+        default_per_page=100,
+        max_per_page=100,
+        cursor_cls=Cursor,
+        **paginator_kwargs,
+    ): ...
+    	on_results(cursor_result.results)
+    	paginator_cls(**paginator_kwargs)
+
+    def process_metadata(form_cls, request, helper): ...
+    	form_cls()
+    	form_cls(request.POST)
+
+    def process_stacktraces(data, make_processors=None, set_raw_stacktrace=True): ...
+    	make_processors(data, infos)
+
+    def profile_call(_func, *args, **kwargs): ...
+    	_func(*args, **kwargs)
+
+    def real_decorator(func: EndpointFunc) -> EndpointFunc: ...
+    	func(request, *args, **kwargs)
+
+    def reduce(self, function, initializer): ...
+    	initializer(sequence)
+
+    def register(
+        self,
+        key,
+        default=None,
+        type=None,
+        flags=DEFAULT_FLAGS,
+        ttl=DEFAULT_KEY_TTL,
+        grace=DEFAULT_KEY_GRACE,
+    ): ...
+    	default()
+    	default()
+
+    def replace_enclosed_string(s, start, end, replacement=None): ...
+    	replacement(s[pair_start + 1 : idx], pair_start)
+
+    def request_cache(func): ...
+    	func(*args, **kwargs)
+    	func(*args, **kwargs)
+
+    def requires_auth(func): ...
+    	func(self, request, *args, **kwargs)
+
+    def reraise_as(new_exception_or_type): ...
+    	new_exception_or_type()
+
+    def resolve_complex_column(col, resolve_func, ignored): ...
+    	resolve_func(args[i])
+
+    def resolve_condition(cond, column_resolver): ...
+    	column_resolver(arg)
+    	column_resolver(arg)
+    	column_resolver(cond[0])
+
+    def resolve_snuba_aliases(snuba_filter, resolve_func, function_translations=None): ...
+    	resolve_func(col)
+    	resolve_func(col)
+    	resolve_func(aggregation[1])
+    	resolve_func(col)
+    	resolve_func(argument)
+    	resolve_func(field)
+
+    def retry(func=None, on=(Exception,), exclude=(), ignore=()): ...
+    	func(*args, **kwargs)
+
+    def safe_execute(func, *args, **kwargs): ...
+    	func(*args, **kwargs)
+    	func(*args, **kwargs)
+
+    def serialize(
+        objects: Union[Any, Sequence[Any]],
+        user: Optional[Any] = None,
+        serializer: Optional[Any] = None,
+        **kwargs: Any,
+    ) -> Any: ...
+    	serializer(o, attrs=attrs.get(o, {}), user=user, **kwargs)
+
+    def series_map(function, series): ...
+    	function(value)
+
+    def signed_auth_required(func: EndpointFunc) -> EndpointFunc: ...
+    	func(request, *args, **kwargs)
+
+    def soft_break(value, length, process=lambda chunk: chunk): ...
+    	process(chunk)
+
+    def submit(self, callable, *args, **kwargs): ...
+    	callable()
+
+    def subscribe(self, topics, on_assign=None, on_revoke=None): ...
+    	on_assign(
+        self,
+        [TopicPartition(topic, partition) for topic, partition in assignment.keys()],
+    )
+    	on_revoke(self, assignment)
+
+    def sudo_required(func): ...
+    	func(self, request, *args, **kwargs)
+
+    def suppress_errors(func): ...
+    	func(*a, **k)
+
+    def track_group_async_operation(function): ...
+    	function(*args, **kwargs)
+
+    def track_response_metric(fn): ...
+    	fn(*args, **kwargs)
+
+    def trim(
+        value,
+        max_size=settings.SENTRY_MAX_VARIABLE_SIZE,
+        max_depth=6,
+        object_hook=None,
+        _depth=0,
+        _size=0,
+        **kwargs,
+    ): ...
+    	object_hook(result)
+
+    def try_repeated(func): ...
+    	func()
+
+    def update_groups(request, group_ids, projects, organization_id, search_fn): ...
+    	search_fn({"limit": 1000, "paginator_options": {"max_limit": 1000}})
+
+    def verify(self, otp, ts=None, window=None, return_counter=False, check_counter_func=None): ...
+    	check_counter_func(counter)
+
+    def waiter(exit_predicate, max_time=MAX_SECONDS_WAITING_FOR_EVENT): ...
+    	exit_predicate()
+
+    def warn(self, message, category=None, stacklevel=None): ...
+    	category(message)
+
+    def wrapped(cls: Type[K]) -> Type[K]: ...
+    	cls()
+
+    def wrapped(func): ...
+    	func(*args, **kwargs)
+
+    def wrapper(f): ...
+    	f(*args, **kwargs)
+
+    def wrapper(f): ...
+    	f(*args, **kwargs)
+
+    def wrapper(func): ...
+    	func(*args, **kwargs)
+

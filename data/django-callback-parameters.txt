@@ -1,0 +1,333 @@
+Callables with 0 parameters: 0
+Callables with 1 parameters: 0
+Callables with 2 parameters: 0
+Callables with 3 parameters: 0
+Callables with 4 parameters: 0
+Callables with 5 parameters: 0
+Callables with arbitrary parameters: 0
+Callback Protocols: 0
+Functions with callback parameters: 88
+    @classmethod
+    def WithData(cls, original_exc, model, fk, field_value): ...
+    	cls("%s: (%s:pk=%s) field_value was '%s'" % (original_exc, model, fk, field_value))
+
+    @classmethod
+    def clear_expired(cls): ...
+    	cls(session_key)
+
+    @classmethod
+    def combine(cls, date, time): ...
+    	cls(date.year, date.month, date.day,
+               time.hour, time.minute, time.second,
+               time.microsecond, time.tzinfo)
+
+    @classmethod
+    def from_apps(cls, apps): ...
+    	cls(app_models)
+
+    @classmethod
+    def from_db(cls, db, field_names, values): ...
+    	cls(*values)
+
+    @classmethod
+    def from_dict(cls, file_dict): ...
+    	cls(file_dict['filename'],
+               file_dict['content'],
+               file_dict.get('content-type', 'text/plain'))
+
+    @classmethod
+    def from_gml(cls, gml_string): ...
+    	cls(capi.from_gml(force_bytes(gml_string)))
+
+    @classmethod
+    def from_model(cls, model, exclude_rels=False): ...
+    	cls(
+        model._meta.app_label,
+        model._meta.object_name,
+        fields,
+        options,
+        bases,
+        managers,
+    )
+
+    @classmethod
+    def from_parameter(cls, config): ...
+    	cls(config)
+
+    @classmethod
+    def fromkeys(cls, iterable, value='', mutable=False, encoding=None): ...
+    	cls('', mutable=True, encoding=encoding)
+
+    @classmethod
+    def handle_token(cls, parser, token): ...
+    	cls(varname, path)
+
+    @classmethod
+    def handle_token(cls, parser, token, name): ...
+    	cls(varname, name)
+
+    @classonlymethod
+    def as_view(cls, **initkwargs): ...
+    	cls(**initkwargs)
+
+    async def read_body(self, receive): ...
+    	receive()
+
+    async def send_response(self, response, send): ...
+    	send({
+        'type': 'http.response.start',
+        'status': response.status_code,
+        'headers': response_headers,
+    })
+    	send({
+        'type': 'http.response.body',
+        'body': chunk,
+        # Ignore "more" as there may be more parts; instead,
+        # use an empty final closing message with False.
+        'more_body': True,
+    })
+    	send({'type': 'http.response.body'})
+    	send({
+        'type': 'http.response.body',
+        'body': chunk,
+        'more_body': not last,
+    })
+
+    def SET(value): ...
+    	value()
+
+    def __call__(self, environ, start_response): ...
+    	start_response(status, response_headers)
+
+    def __call__(self, f): ...
+    	f(*args, **kwargs)
+
+    def __call__(self, func): ...
+    	func(*args, **kwargs)
+
+    def __init__(self, attrs=None, validator_class=URLValidator): ...
+    	validator_class()
+
+    def __init__(self, data=None, files=None, auto_id='id_%s', prefix=None,
+                 initial=None, error_class=ErrorList, label_suffix=None,
+                 empty_permitted=False, field_order=None, use_required_attribute=None, renderer=None): ...
+    	renderer()
+
+    def __init__(self, widget, size, **kwargs): ...
+    	widget()
+
+    def _cache_controller(viewfunc): ...
+    	viewfunc(request, *args, **kw)
+
+    def _check_inlines_item(self, obj, inline, label): ...
+    	inline(obj.model, obj.admin_site)
+
+    def _decorator(view_func): ...
+    	view_func(request, *args, **kwargs)
+
+    def _execute_with_wrappers(self, sql, params, many, executor): ...
+    	executor(sql, params, many, context)
+
+    def _generate_altered_foo_together(self, operation): ...
+    	operation(
+            name=model_name,
+            **{option_name: new_value}
+        )
+
+    def _geomgen(self, gen_func, other=None): ...
+    	gen_func(self.ptr, other.ptr)
+    	gen_func(self.ptr)
+
+    def _hash_item(self, item, key): ...
+    	key(item)
+
+    def _listarr(self, func): ...
+    	func(i)
+
+    def _listarr(self, func): ...
+    	func(self.ptr, i)
+
+    def _nested(self, obj, seen, format_callback): ...
+    	format_callback(obj)
+
+    def _path(route, view, kwargs=None, name=None, Pattern=None): ...
+    	Pattern(route, is_endpoint=False)
+    	Pattern(route, name=name, is_endpoint=True)
+
+    def _safety_decorator(safety_marker, func): ...
+    	safety_marker(func(*args, **kwargs))
+    	func(*args, **kwargs)
+
+    def _topology(self, func, other): ...
+    	func(self.ptr, other.ptr)
+
+    def _url(self, hashed_name_func, name, force=False, hashed_files=None): ...
+    	hashed_name_func(*args)
+
+    def add_post_render_callback(self, callback): ...
+    	callback(self)
+
+    def admin_view(self, view, cacheable=False): ...
+    	view(request, *args, **kwargs)
+
+    def build_instance(Model, data, db): ...
+    	Model(**data)
+    	Model(**data)
+
+    def check_errors(fn): ...
+    	fn(*args, **kwargs)
+
+    def check_password(password, encoded, setter=None, preferred='default'): ...
+    	setter(password)
+
+    def condition(etag_func=None, last_modified_func=None): ...
+    	etag_func(request, *args, **kwargs)
+    	last_modified_func(request, *args, **kwargs)
+
+    def convert_exception_to_response(get_response): ...
+    	get_response(request)
+    	get_response(request)
+
+    def csrf_exempt(view_func): ...
+    	view_func(*args, **kwargs)
+
+    def decoder(conv_func): ...
+    	conv_func(s.decode())
+
+    def decorate_callable(self, func): ...
+    	func(*args, **kwargs)
+    	func(*args, **kwargs)
+
+    def decorator(func): ...
+    	func(*args, **kwargs)
+
+    def decorator(func): ...
+    	func(*args, **kwargs)
+
+    def decorator(func): ...
+    	func(*args, **kwargs)
+
+    def decorator(func): ...
+    	func(*func_args, **func_kwargs)
+
+    def decorator(func): ...
+    	func(request, *args, **kwargs)
+
+    def decorator(func): ...
+    	func(request, *args, **kwargs)
+
+    def decorator(view): ...
+    	view(request, *args, **kwargs)
+
+    def decorator(view_func): ...
+    	view_func(request, *args, **kwargs)
+
+    def fields_for_model(model, fields=None, exclude=None, widgets=None,
+                         formfield_callback=None, localized_fields=None,
+                         labels=None, help_texts=None, error_messages=None,
+                         field_classes=None, *, apply_limit_choices_to=True): ...
+    	formfield_callback(f, **kwargs)
+
+    def formfield(self, form_class=None, choices_form_class=None, **kwargs): ...
+    	form_class(**defaults)
+
+    def get_extra_restriction(self, where_class, alias, remote_alias): ...
+    	where_class([lookup], connector=AND)
+
+    def get_form(self, form_class=None): ...
+    	form_class(**self.get_form_kwargs())
+
+    def get_or_set(self, key, default, timeout=DEFAULT_TIMEOUT, version=None): ...
+    	default()
+
+    def infix(bp, func): ...
+    	func(context, self.first, self.second)
+
+    def lazy(func, *resultclasses): ...
+    	func(*self.__args, **self.__kw)
+    	func(*self.__args, **self.__kw)
+    	func(*self.__args, **self.__kw)
+    	func(*self.__args, **self.__kw)
+    	func(*self.__args, **self.__kw)
+
+    def lazy_model_operation(self, function, *model_keys): ...
+    	function()
+
+    def lazy_number(func, resultclass, number=None, **kwargs): ...
+    	func(**kwargs)
+
+    def make_middleware_decorator(middleware_class): ...
+    	middleware_class(view_func, *m_args, **m_kwargs)
+
+    def method_set_order(self, ordered_obj, id_list, using=None): ...
+    	ordered_obj(pk=pk, _order=order)
+
+    def module_to_dict(module, omittable=lambda k: k.startswith('_') or not k.isupper()): ...
+    	omittable(k)
+
+    def never_cache(view_func): ...
+    	view_func(request, *args, **kwargs)
+
+    def new_method_proxy(func): ...
+    	func(self._wrapped, *args)
+
+    def no_append_slash(view_func): ...
+    	view_func(*args, **kwargs)
+
+    def no_translations(handle_func): ...
+    	handle_func(*args, **kwargs)
+
+    def none_guard(func): ...
+    	func(*args, **kwargs)
+
+    def on_commit(self, func): ...
+    	func()
+
+    def partition(predicate, values): ...
+    	predicate(item)
+
+    def pbkdf2(password, salt, iterations, dklen=0, digest=None): ...
+    	digest()
+
+    def prefix(bp, func): ...
+    	func(context, self.first)
+
+    def register(self, model_or_iterable, admin_class=None, **options): ...
+    	admin_class(model, self)
+
+    def register_converter(converter, type_name): ...
+    	converter()
+
+    def run(self, test): ...
+    	test(result)
+
+    def sign_object(self, obj, serializer=JSONSerializer, compress=False): ...
+    	serializer()
+
+    def stringfilter(func): ...
+    	func(*args, **kwargs)
+    	func(*args, **kwargs)
+
+    def unsign_object(self, signed_obj, serializer=JSONSerializer, **kwargs): ...
+    	serializer()
+
+    def user_passes_test(test_func, login_url=None, redirect_field_name=REDIRECT_FIELD_NAME): ...
+    	test_func(request.user)
+
+    def vary_on_cookie(func): ...
+    	func(*args, **kwargs)
+
+    def write(self, msg='', style_func=None, ending=None): ...
+    	style_func(msg)
+
+    def x_robots_tag(func): ...
+    	func(request, *args, **kwargs)
+
+    def xframe_options_deny(view_func): ...
+    	view_func(*args, **kwargs)
+
+    def xframe_options_exempt(view_func): ...
+    	view_func(*args, **kwargs)
+
+    def xframe_options_sameorigin(view_func): ...
+    	view_func(*args, **kwargs)
