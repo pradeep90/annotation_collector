@@ -56,6 +56,46 @@ callback_protocol_matcher = m.ClassDef(
 )
 MAX_NUM_PARAMETERS = 5
 
+@dataclasses.dataclass(frozen=True)
+class FunctionWithCallbackParameters:
+    function: cst.FunctionDef
+
+    @property
+    def calls_to_callback_parameters(self) -> List[cst.Call]:
+        parameter_names = [parameter.name.value for parameter in self.function.params.params]
+        return [
+            call
+            for name in parameter_names
+            for call in m.findall(self.function, m.Call(func=m.Name(value=name)))
+        ]
+
+
+    @staticmethod
+    def functions_with_callback_parameters(module: cst.Module) -> List["FunctionWithCallbackParameters"]:
+        return [
+            FunctionWithCallbackParameters(function)
+            for function in m.findall(module, m.FunctionDef())
+        ]
+
+    @staticmethod
+    def function_signature_to_string(function: cst.FunctionDef) -> str:
+        return cst.Module(
+            [
+                dataclasses.replace(
+                    function, body=cst.SimpleStatementSuite([cst.Expr(cst.Ellipsis())])
+                )
+            ]
+        ).code.strip()
+
+    @staticmethod
+    def call_to_string(call: cst.Call) -> str:
+        return cst.Module([cst.SimpleStatementLine([cst.Expr(call)])]).code.strip()
+
+    def __str__(self) -> str:
+        signature = self.function_signature_to_string(self.function)
+        calls = " - ".join(self.call_to_string(call) for call in self.calls_to_callback_parameters)
+        return f"{signature} - {calls}"
+
 
 def annotation_to_string(annotation: cst.Annotation) -> str:
     return (
@@ -103,7 +143,9 @@ def callables_of_arity(
             m.Name("Callable"),
             slice=[
                 m.SubscriptElement(
-                    m.Index(m.List(elements=[m.DoNotCare() for _ in range(num_parameters)]))
+                    m.Index(
+                        m.List(elements=[m.DoNotCare() for _ in range(num_parameters)])
+                    )
                 ),
                 m.ZeroOrMore(),
             ],

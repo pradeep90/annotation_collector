@@ -9,6 +9,7 @@ from callable_annotations import (
     arbitrary_parameter_callable_matcher,
     annotation_to_string,
     callback_protocols,
+    FunctionWithCallbackParameters,
     class_definition_to_string,
 )
 
@@ -26,6 +27,15 @@ def get_callback_protocols(source: str) -> List[str]:
     return [
         class_definition_to_string(protocol)
         for protocol in callback_protocols(
+            cst.parse_module(dedent(source)),
+        )
+    ]
+
+
+def get_callback_function_calls(source: str) -> List[str]:
+    return [
+        str(function_call)
+        for function_call in FunctionWithCallbackParameters.functions_with_callback_parameters(
             cst.parse_module(dedent(source)),
         )
     ]
@@ -144,4 +154,18 @@ class CallableAnnotationsTest(unittest.TestCase):
                 """
             ),
             [],
+        )
+
+
+    def test_callback_parameter(self) -> None:
+        self.assertEqual(
+            get_callback_function_calls(
+                """
+                def foo(x, func, y):
+                    func(x)
+                    func(y)
+                    func(*args, **kwargs)
+                """
+            ),
+            ["def foo(x, func, y): ... - func(x) - func(y) - func(*args, **kwargs)"],
         )
