@@ -166,7 +166,7 @@ class CallableAnnotationsTest(unittest.TestCase):
                     func(*args, **kwargs)
                 """
             ),
-            ["def foo(x, func, y): ... - func(x) - func(y) - func(*args, **kwargs)"],
+            ["def foo(x, func, y): ...\n\tfunc(x)\n\tfunc(y)\n\tfunc(*args, **kwargs)\n"],
         )
         self.assertEqual(
             get_callback_function_calls(
@@ -176,7 +176,7 @@ class CallableAnnotationsTest(unittest.TestCase):
                         func(x)
                 """
             ),
-            ["def foo(self, x, func, y): ... - func(x)"],
+            ["def foo(self, x, func, y): ...\n\tfunc(x)\n"],
         )
         self.assertEqual(
             get_callback_function_calls(
@@ -187,4 +187,15 @@ class CallableAnnotationsTest(unittest.TestCase):
                 """
             ),
             [],
+        )
+        self.assertEqual(
+            get_callback_function_calls(
+                """
+                class Foo:
+                    # Random header comment for method.
+                    def foo(self, func):
+                        func(42)
+                """
+            ),
+            ["def foo(self, func): ...\n\tfunc(42)\n"],
         )

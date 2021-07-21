@@ -88,7 +88,9 @@ class FunctionWithCallbackParameters:
         return cst.Module(
             [
                 dataclasses.replace(
-                    function, body=cst.SimpleStatementSuite([cst.Expr(cst.Ellipsis())])
+                    function,
+                    body=cst.SimpleStatementSuite([cst.Expr(cst.Ellipsis())]),
+                    leading_lines=[],
                 )
             ]
         ).code.strip()
@@ -99,10 +101,10 @@ class FunctionWithCallbackParameters:
 
     def __str__(self) -> str:
         signature = self.function_signature_to_string(self.function)
-        calls = " - ".join(
+        calls = "\n\t".join(
             self.call_to_string(call) for call in self.calls_to_callback_parameters
         )
-        return f"{signature} - {calls}"
+        return f"{signature}\n\t{calls}\n"
 
 
 def annotation_to_string(annotation: cst.Annotation) -> str:
