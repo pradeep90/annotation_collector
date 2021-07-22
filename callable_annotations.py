@@ -225,14 +225,21 @@ def print_protocol_data(modules: List[cst.Module], show_protocols: bool) -> None
             print(textwrap.indent(string, " " * 4))
 
 
-def print_functions_with_callback_parameters(modules: List[cst.Module]) -> None:
-    functions = [
-        function
-        for module in modules
-        for function in FunctionWithCallbackParameters.functions_with_callback_parameters(
-            module,
+def print_functions_with_callback_parameters(modules: List[cst.Module], show_progress: bool) -> None:
+    functions = []
+    for i, module in enumerate(modules):
+        functions_for_module = (
+            FunctionWithCallbackParameters.functions_with_callback_parameters(
+                module,
+            )
         )
-    ]
+        functions.extend(functions_for_module)
+        if show_progress:
+            print(
+                f"Progress: {i}/{len(modules)}."
+                f" Current module had {len(functions_for_module)} callbacks."
+                f" Total so far: {len(functions)}"
+            )
 
     print(f"Functions with callback parameters: {len(functions)}")
     strings = [str(function) for function in functions]
@@ -260,14 +267,14 @@ def get_modules(roots: Iterable[Path]) -> List[cst.Module]:
 
 
 def main(
-    roots: Iterable[Path], show_callables: bool, show_callback_parameters: bool
+        roots: Iterable[Path], show_callables: bool, show_callback_parameters: bool, show_progress: bool
 ) -> None:
     modules = get_modules(roots)
 
     print_callable_data(modules, show_callables)
     print_protocol_data(modules, show_callables)
     if show_callback_parameters:
-        print_functions_with_callback_parameters(modules)
+        print_functions_with_callback_parameters(modules, show_progress)
 
 
 if __name__ == "__main__":
@@ -276,6 +283,9 @@ if __name__ == "__main__":
     parser.add_argument(
         "--show-callback-parameters", action="store_true", default=False
     )
+    parser.add_argument(
+        "--show-progress", action="store_true", default=False
+    )
     parser.add_argument("root", type=Path, nargs="+")
     arguments = parser.parse_args()
-    main(arguments.root, arguments.show_callables, arguments.show_callback_parameters)
+    main(arguments.root, arguments.show_callables, arguments.show_callback_parameters, arguments.show_progress)

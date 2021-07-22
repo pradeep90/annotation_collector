@@ -166,7 +166,9 @@ class CallableAnnotationsTest(unittest.TestCase):
                     func(*args, **kwargs)
                 """
             ),
-            ["def foo(x, func, y): ...\n\tfunc(x)\n\tfunc(y)\n\tfunc(*args, **kwargs)\n"],
+            [
+                "def foo(x, func, y): ...\n\tfunc(x)\n\tfunc(y)\n\tfunc(*args, **kwargs)\n"
+            ],
         )
         self.assertEqual(
             get_callback_function_calls(
