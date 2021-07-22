@@ -91,6 +91,7 @@ class FunctionWithCallbackParameters:
                     function,
                     body=cst.SimpleStatementSuite([cst.Expr(cst.Ellipsis())]),
                     leading_lines=[],
+                    decorators=[],
                 )
             ]
         ).code.strip()

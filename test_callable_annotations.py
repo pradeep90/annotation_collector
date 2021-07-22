@@ -193,6 +193,10 @@ class CallableAnnotationsTest(unittest.TestCase):
                 """
                 class Foo:
                     # Random header comment for method.
+                    @some_decorator(
+                        1,
+                        2,
+                    )
                     def foo(self, func):
                         func(42)
                 """
