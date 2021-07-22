@@ -1,0 +1,2281 @@
+# Only ran on some of the directories.
+# $ python3 callable_annotations.py --show-callback-parameters ~/Programs/github-clones/tensorflow/tensorflow/python/autograph ~/Programs/github-clones/tensorflow/tensorflow/python/client ~/Programs/github-clones/tensorflow/tensorflow/python/compat ~/Programs/github-clones/tensorflow/tensorflow/python/compiler ~/Programs/github-clones/tensorflow/tensorflow/python/data ~/Programs/github-clones/tensorflow/tensorflow/python/debug ~/Programs/github-clones/tensorflow/tensorflow/python/distribute ~/Programs/github-clones/tensorflow/tensorflow/python/dlpack ~/Programs/github-clones/tensorflow/tensorflow/python/eager ~/Programs/github-clones/tensorflow/tensorflow/python/estimator ~/Programs/github-clones/tensorflow/tensorflow/python/feature_column ~/Programs/github-clones/tensorflow/tensorflow/python/framework ~/Programs/github-clones/tensorflow/tensorflow/python/grappler > data/tensorflow-callback-parameters.txt
+
+Callables with 0 parameters: 0
+Callables with 1 parameters: 4
+Callables with 2 parameters: 0
+Callables with 3 parameters: 0
+Callables with 4 parameters: 0
+Callables with 5 parameters: 0
+Callables with arbitrary parameters: 0
+Callback Protocols: 0
+Functions with callback parameters: 557
+    def Loop(cell, w, i): ...
+    	cell(x[i], m, c, w)
+
+    def _CheckTrtOps(self, concrete_func, check_fn=None): ...
+    	check_fn(node)
+    	check_fn(node)
+
+    def _CompareSavedModel(self, model_class): ...
+    	model_class()
+
+    def _GetModelPaths(model_class): ...
+    	model_class()
+
+    def __call__(self, f, args, kwargs, caller_fn_scope=None, options=None): ...
+    	f(*args, **kwargs)
+
+    def __init__(
+        self, name: str, model_config: ModelConfig,
+        default_trt_convert_params: trt.TrtConversionParams,
+        trt_convert_params_updater: Callable[[trt.TrtConversionParams],
+                                             Iterable[trt.TrtConversionParams]]): ...
+    	trt_convert_params_updater(
+        default_trt_convert_params)
+
+    def __init__(self,
+                 initial_value=None,
+                 trainable=None,
+                 caching_device=None,
+                 name=None,
+                 dtype=None,
+                 constraint=None,
+                 add_initializers_to=None,
+                 lifted_initializer_graph=None,
+                 synchronization=None,
+                 aggregation=None,
+                 shape=None,
+                 **unused_kwargs): ...
+    	initial_value()
+
+    def __init__(self, dataset_fn, distribution): ...
+    	dataset_fn()
+
+    def __init__(self, input_fn, input_workers, input_contexts, strategy): ...
+    	input_fn(ctx)
+
+    def __init__(self, resolver_type): ...
+    	resolver_type()
+
+    def __tf_dispatch__(cls, api_name, api_func, args): ...
+    	cls(api_name, *args)
+
+    def __tf_dispatch__(cls, api_name, api_func, args): ...
+    	cls(tensor_result, avg_weight)
+    	api_func(*tensors)
+
+    def _apply_unary_to_chunks(f, chunks_by_dev): ...
+    	f(t)
+
+    def _assertRaisesInvalidArgumentErrorAndGetMessage(self, func): ...
+    	func()
+
+    def _assert_close_to_non_parallel(self, computation): ...
+    	computation()
+    	computation()
+
+    def _assert_iterator_values(self,
+                                iterator,
+                                expected_values,
+                                evaluate_fn,
+                                devices,
+                                enable_get_next_as_optional=False): ...
+    	evaluate_fn([
+        distribute_utils.select_replica(r, next_element)
+        for r in range(len(devices))
+    ])
+
+    def _assert_one_unblock_the_other(self, first_fn, second_fn): ...
+    	first_fn()
+    	second_fn()
+
+    def _augment_with_special_arguments(test_method, test_combinations): ...
+    	test_method(**kwargs_to_pass)
+
+    def _back_over_back_hvp(model, images, labels, vector): ...
+    	model(images, training=True)
+
+    def _back_over_forward_hvp(model, images, labels, vector): ...
+    	model(images, training=True)
+
+    def _basic_cond(self, body_fn, else_fn): ...
+    	body_fn()
+    	else_fn()
+
+    def _basic_loop(self, init_value, body_fn): ...
+    	body_fn(i, s)
+
+    def _basic_loop(self, init_value, body_fn): ...
+    	body_fn(i, s)
+
+    def _benchmark_eager_train(self,
+                               label,
+                               make_iterator,
+                               device_and_format,
+                               defun=False,
+                               execution_mode=None): ...
+    	make_iterator((images, labels))
+
+    def _build_graph(self, ds_fn, sparse_tensors=False): ...
+    	ds_fn()
+
+    def _build_nccl_hybrid(input_tensors, red_op, upper_level_f): ...
+    	upper_level_f(up_values)
+
+    def _build_recursive_hd_gather(input_tensors, devices, red_op): ...
+    	red_op(left_split[0], right_split[0])
+    	red_op(left_split[1], right_split[1])
+
+    def _build_ring_gather(input_tensors, devices, num_subchunks,
+                           pred_by_s_d, rank_by_s_d, red_op): ...
+    	red_op(
+        chunks_by_dev[pred_dev][chunk_index],
+        chunks_by_dev[d][chunk_index])
+
+    def _build_shuffle_gather(input_tensors, gather_devices, red_op, un_op=None): ...
+    	red_op(values)
+    	un_op(red_shard)
+
+    def _build_shuffle_hybrid(input_tensors, gather_devices, red_op, upper_level_f): ...
+    	upper_level_f(up_values)
+
+    def _call_for_each_replica(self, fn, args, kwargs): ...
+    	fn(*args, **kwargs)
+
+    def _call_for_each_replica(self, fn, args, kwargs): ...
+    	fn(*args, **kwargs)
+
+    def _call_for_each_replica(self, fn, args, kwargs): ...
+    	fn(*args, **kwargs)
+
+    def _call_for_each_replica(self, fn, args, kwargs): ...
+    	fn(*args, **kwargs)
+
+    def _call_unconverted(f, args, kwargs, options, update_cache=True): ...
+    	f(*args, **kwargs)
+    	f(*args)
+
+    def _change_nested_mappings_to(value, new_type): ...
+    	new_type([(k, _change_nested_mappings_to(v, new_type))
+                     for (k, v) in value.items()])
+
+    def _compile_internal(computation, inputs=None): ...
+    	computation(*computation_inputs)
+
+    def _convert_to_numpy_obj(numpy_dtype, obj): ...
+    	numpy_dtype(obj)
+
+    def _create_dataset_or_input_fn(self, input_type, input_fn): ...
+    	input_fn(distribute_lib.InputContext())
+
+    def _create_dataset_reader(dataset_creator, filenames, num_parallel_reads=None): ...
+    	dataset_creator(filename)
+
+    def _create_datasets_from_function_with_input_context(input_contexts,
+                                                          input_workers,
+                                                          dataset_fn): ...
+    	dataset_fn(ctx)
+
+    def _create_var_creator(self, next_creator, **kwargs): ...
+    	next_creator(**kwargs)
+
+    def _create_var_creator(self, next_creator, **kwargs): ...
+    	next_creator(**kwargs)
+    	next_creator(**kwargs)
+
+    def _create_variable(self, next_creator, **kwargs): ...
+    	next_creator(**kwargs)
+
+    def _create_variable(self, next_creator, **kwargs): ...
+    	next_creator(**kwargs)
+    	next_creator(**kwargs)
+
+    def _create_variable(self, next_creator, **kwargs): ...
+    	next_creator(**kwargs)
+    	next_creator(**kwargs)
+    	next_creator(**kwargs)
+
+    def _create_variable(self, next_creator, **kwargs): ...
+    	next_creator(**kwargs)
+    	next_creator(**kwargs)
+    	next_creator(**kwargs)
+
+    def _create_variable_round_robin(self, next_creator, **kwargs): ...
+    	next_creator(**kwargs)
+
+    def _dataset_for_stmt_no_extra_test(ds, body, get_state, set_state, init_vars,
+                                        basic_symbol_names, composite_symbol_names,
+                                        opts): ...
+    	body(iterate)
+    	body(iterate, *loop_vars)
+    	get_state()
+    	get_state()
+    	get_state()
+    	set_state(state)
+    	set_state(final_state)
+
+    def _dataset_for_stmt_with_extra_test(ds, extra_test, body, get_state,
+                                          set_state, init_vars, basic_symbol_names,
+                                          composite_symbol_names, opts): ...
+    	extra_test(*loop_vars)
+    	body(iterate, *loop_vars)
+    	get_state()
+    	get_state()
+    	set_state(state)
+    	set_state(final_state)
+
+    def _decorate(self, decorator): ...
+    	decorator(self._python_function)
+
+    def _deserialize(cls, serialization): ...
+    	cls(*serialization)
+
+    def _deserialize(cls, spec): ...
+    	cls(spec)
+
+    def _dfs_from_node(self,
+                       lines,
+                       attr_segs,
+                       node_name,
+                       tracker,
+                       max_depth,
+                       depth,
+                       unfinished,
+                       include_control=False,
+                       show_op_type=False,
+                       command_template=None): ...
+    	tracker(node_name, is_control=False)
+    	tracker(node_name, is_control=True)
+
+    def _discard_return(f): ...
+    	f()
+
+    def _distribute_datasets_from_function(self, dataset_fn, options): ...
+    	dataset_fn(InputContext())
+
+    def _distribute_datasets_from_function(self, dataset_fn, options): ...
+    	dataset_fn(distribute_lib.InputContext())
+
+    def _do_call(self, fn, *args): ...
+    	fn(*args)
+
+    def _eval_tensor(self, tensor): ...
+    	tensor()
+
+    def _experimental_distribute_values_from_function(self, value_fn): ...
+    	value_fn(
+        distribute_lib.ValueContext(replica_id,
+                                    self._num_replicas_in_sync))
+
+    def _experimental_distribute_values_from_function(self, value_fn): ...
+    	value_fn(ValueContext())
+
+    def _experimental_distribute_values_from_function(self, value_fn): ...
+    	value_fn(distribute_lib.ValueContext())
+
+    def _experimental_distribute_values_from_function(self, value_fn): ...
+    	value_fn(distribute_lib.ValueContext(replica_id,
+                                             self._num_replicas_in_sync))
+
+    def _experimental_distribute_values_from_function(self, value_fn): ...
+    	value_fn(distribute_lib.ValueContext(replica_id,
+                                             self._num_replicas_in_sync))
+
+    def _experimental_distribute_values_from_function(self, value_fn): ...
+    	value_fn(value_context)
+
+    def _experimental_run_steps_on_iterator(
+        self, fn, multi_worker_iterator, iterations, initial_loop_values=None): ...
+    	fn(ctx, inputs)
+
+    def _experimental_run_steps_on_iterator(self, fn, iterator, iterations,
+                                            initial_loop_values=None): ...
+    	fn(ctx, iterator.get_next())
+
+    def _experimental_run_steps_on_iterator(self, fn, iterator, iterations,
+                                            initial_loop_values=None): ...
+    	fn(ctx, iterator.get_next())
+
+    def _experimental_run_steps_on_iterator(self, fn, iterator, iterations,
+                                            initial_loop_values=None): ...
+    	fn(ctx, iterator.get_next())
+
+    def _filter_ds(dataset, acceptance_dist_ds, initial_dist_ds, class_func, seed): ...
+    	class_func(*data)
+    	class_func(data)
+
+    def _filter_returned_ops(fn): ...
+    	fn(*args, **kwargs)
+
+    def _fixed_while_loop(self, cond_fn): ...
+    	cond_fn(s)
+
+    def _for_each_trt_node(self, graph_def, fn): ...
+    	fn(node)
+    	fn(node)
+
+    def _forward_over_back_hvp(model, images, labels, vector): ...
+    	model(images, training=True)
+
+    def _forwardgrad(f): ...
+    	f(primal)
+
+    def _from_local_devices(
+        cls,
+        devices,
+        communication=collective_util.CommunicationImplementation.AUTO): ...
+    	cls(communication)
+
+    def _from_local_devices(cls, devices, communication_options=None): ...
+    	cls(communication_options=communication_options)
+
+    def _from_num_gpus(cls, num_gpus): ...
+    	cls(device_util.local_devices_from_num_gpus(num_gpus))
+
+    def _from_tensor_list_helper(decode_fn, element_spec, tensor_list): ...
+    	decode_fn(component_spec, value)
+
+    def _gen_outputs(self, ds_fn, num_outputs, verify_exhausted=True): ...
+    	ds_fn()
+
+    def _get_output_classes(self, ds_fn): ...
+    	ds_fn()
+
+    def _get_output_shapes(self, ds_fn): ...
+    	ds_fn()
+
+    def _get_output_types(self, ds_fn): ...
+    	ds_fn()
+
+    def _grad(f): ...
+    	f()
+
+    def _grad(f): ...
+    	f(primal)
+
+    def _grad(f): ...
+    	f(primal)
+
+    def _grad(f, argnums=0): ...
+    	f(*params)
+
+    def _gradfwd(f, argnums=0, f_out_dtypes=dtypes.float32): ...
+    	f(*params)
+
+    def _hvp(f, primals, tangents): ...
+    	f(*primals)
+
+    def _hvp_benchmark(self, hvp_fn, label, batch_sizes,
+                       num_iters=30, num_burn=5): ...
+    	hvp_fn(model, images, labels, vector)
+    	hvp_fn(model, images, labels, vector)
+
+    def _infer_column_names(filenames, field_delim, use_quote_delim, file_io_fn): ...
+    	file_io_fn(filenames[0])
+    	file_io_fn(name)
+
+    def _input_fn_to_test_input_context(self, dataset_or_callable_fn,
+                                        expected_num_replicas_in_sync,
+                                        expected_num_input_pipelines,
+                                        expected_input_pipeline_id): ...
+    	dataset_or_callable_fn()
+
+    def _isolate_state(func, get_state, set_state): ...
+    	func()
+    	get_state()
+    	get_state()
+    	set_state(init_state)
+
+    def _jvp(f, primals, tangents): ...
+    	f(*primals)
+
+    def _known_len_tf_for_stmt(
+        iter_, extra_test, body, get_state, set_state, symbol_names, opts): ...
+    	body(iter_.read(iterate_index))
+    	get_state()
+    	set_state(loop_vars)
+
+    def _known_len_tf_for_stmt(iter_,
+                               extra_test,
+                               body,
+                               get_state,
+                               set_state,
+                               init_vars,
+                               basic_symbol_names,
+                               composite_symbol_names,
+                               opts): ...
+    	extra_test(*loop_vars)
+    	body(iterate, *loop_vars)
+
+    def _loop_vars_intertwined(x0, y0, functor_x, functor_y): ...
+    	functor_x(x)
+    	functor_y(y)
+
+    def _make_input_fn_iterator(self,
+                                input_fn,
+                                replication_mode=InputReplicationMode.PER_WORKER): ...
+    	input_fn(InputContext())
+
+    def _make_input_signature_hashable(elem): ...
+    	elem()
+
+    def _make_key_func(self, key_func, input_dataset): ...
+    	key_func(*args)
+
+    def _make_raw_assign_fn(raw_assign_fn): ...
+    	raw_assign_fn(
+        handle, ops.convert_to_tensor(value, dtype=var.dtype), name=name)
+
+    def _make_raw_scatter_xxx_fn(raw_scatter_xxx_fn): ...
+    	raw_scatter_xxx_fn(
+        handle,
+        sparse_delta.indices,
+        ops.convert_to_tensor(sparse_delta.values, var.dtype),
+        name=name)
+
+    def _make_window_size_func(self, window_size_func): ...
+    	window_size_func(key)
+
+    def _map_dataset_factory(self, components, apply_map, count): ...
+    	apply_map(dataset, _map_fn)
+
+    def _merge_call(self, merge_fn, args, kwargs): ...
+    	merge_fn(self._strategy, *args, **kwargs)
+
+    def _multi_worker_test(test_method): ...
+    	test_method(self, **kwargs)
+
+    def _next_csv_row(filenames, num_cols, field_delim, use_quote_delim, header,
+                      file_io_fn): ...
+    	file_io_fn(fn)
+
+    def _on_write_update_replica(var, update_fn, value, **kwargs): ...
+    	update_fn(var._get_on_device_or_primary(), value, **kwargs)
+
+    def _parallel_map_dataset_factory(self, components, apply_map, count,
+                                      num_parallel_calls, buffer_size): ...
+    	apply_map(dataset, _map_fn, num_parallel_calls=num_parallel_calls)
+
+    def _pool_runner_worker(task_type, task_id, initializer, conn): ...
+    	initializer()
+
+    def _py_assert_stmt(expression1, expression2): ...
+    	expression2()
+
+    def _py_for_stmt(iter_, extra_test, body, get_state, set_state): ...
+    	extra_test()
+    	extra_test()
+    	body(target)
+    	body(target)
+
+    def _py_for_stmt(iter_, extra_test, body, get_state, set_state, init_vars): ...
+    	extra_test(*state)
+    	extra_test(*state)
+    	body(target, *state)
+    	body(target, *state)
+
+    def _py_if_exp(cond, if_true, if_false): ...
+    	if_true()
+    	if_false()
+
+    def _py_if_stmt(cond, body, orelse): ...
+    	body()
+    	orelse()
+
+    def _py_if_stmt(cond, body, orelse): ...
+    	body()
+    	orelse()
+
+    def _py_lazy_and(cond, b): ...
+    	b()
+
+    def _py_lazy_or(cond, b): ...
+    	b()
+
+    def _py_while_stmt(test, body, get_state, set_state, init_vars, opts): ...
+    	test(*loop_vars)
+    	body(*loop_vars)
+
+    def _py_while_stmt(test, body, get_state, set_state, opts): ...
+    	test()
+    	body()
+
+    def _recursive_apply(tensors, apply_fn): ...
+    	apply_fn(tensors)
+    	apply_fn(tensors.value())
+
+    def _reduce_non_singleton(input_tensors, red_f, un_op): ...
+    	red_f(input_tensors)
+    	un_op(t)
+
+    def _replica_ctx_update(self, var, fn, args, kwargs, group): ...
+    	fn(var, *args, **kwargs)
+
+    def _run_actual_batch(self, outputs, label_key_provided=False): ...
+    	outputs()
+    	outputs()
+
+    def _run_as_tf_function(self, fn): ...
+    	fn()
+
+    def _run_benchmark(func, num_iters, execution_mode=None): ...
+    	func()
+    	func()
+
+    def _run_client(self, client_fn, task_type, task_id, num_gpus, eager_mode,
+                    *args, **kwargs): ...
+    	client_fn(task_type, task_id, num_gpus, *args, **kwargs)
+
+    def _run_contained(task_type, task_id, fn, args, kwargs): ...
+    	fn(*args, **kwargs)
+
+    def _run_in_and_out_of_scope(unbound_test_method): ...
+    	unbound_test_method(test_case, dist)
+    	unbound_test_method(test_case, dist)
+    	unbound_test_method(test_case, dist)
+
+    def _run_single_worker(worker_fn,
+                           strategy,
+                           cluster_spec,
+                           task_type,
+                           task_id,
+                           session_config,
+                           rpc_layer="",
+                           worker_barrier=None,
+                           coord=None): ...
+    	worker_fn(strategy)
+    	worker_fn(strategy)
+
+    def _run_with_debugging(self,
+                            run_start_resp,
+                            fetches,
+                            feed_dict,
+                            options,
+                            run_metadata,
+                            callable_runner,
+                            callable_runner_args,
+                            callable_options): ...
+    	callable_runner(*callable_runner_args,
+                              options=decorated_run_options,
+                              run_metadata=run_metadata)
+
+    def _run_with_profiling(self,
+                            run_start_resp,
+                            fetches,
+                            feed_dict,
+                            options,
+                            run_metadata,
+                            callable_runner,
+                            callable_runner_args,
+                            callable_options): ...
+    	callable_runner(*callable_runner_args,
+                              options=decorated_run_options,
+                              run_metadata=run_metadata)
+
+    def _simple_loop(x, functor): ...
+    	functor(j)
+
+    def _task_thread(self, task_fn, tf_config, executing_eagerly, *args,
+                     **kwargs): ...
+    	task_fn(*args, **kwargs)
+    	task_fn(*args, **kwargs)
+
+    def _testAllReduce(self, num_workers, num_gpus, shape, build_f): ...
+    	build_f(input_tensors, un_op)
+
+    def _testBinaryInputs(self, dataset_fn): ...
+    	dataset_fn(input1, input2)
+
+    def _testConvertedFunction(self, obj, func, converted_concrete_func,
+                               input_data): ...
+    	func(**input_data)
+    	converted_concrete_func(**input_data)
+
+    def _testConvertedFunction(self, sess, obj, func, converted_concrete_func,
+                               input_data): ...
+    	func(**input_data)
+    	converted_concrete_func(**input_data)
+
+    def _testDataset(self, dataset, function, predicate): ...
+    	function(x)
+    	predicate(*r)
+    	predicate(r)
+
+    def _testExportImportAcrossScopes(self, graph_fn, use_resource): ...
+    	graph_fn(use_resource=use_resource)
+    	graph_fn(use_resource=use_resource)
+
+    def _testTransformation(self, fn): ...
+    	fn(dataset, test_case['tensor'], test_case['shape'])
+
+    def _testUnaryInputs(self, dataset_fn): ...
+    	dataset_fn(input_dataset)
+
+    def _testVariableReadInFunctionalOp(self, build_functional_op, op_type): ...
+    	build_functional_op(v)
+
+    def _testVariableWriteInFunctionalOp(self, build_functional_op, op_type): ...
+    	build_functional_op(v)
+
+    def _testVariadicInputs(self, dataset_fn, input_datasets): ...
+    	dataset_fn(input_datasets)
+
+    def _test_collective_comms_gradient_tape(self, strategy, comm_fn, inputs,
+                                             expected_grads): ...
+    	comm_fn(x)
+
+    def _test_collective_comms_gradient_tape(self, strategy, comm_fn, inputs,
+                                             expected_grads,
+                                             run_in_function=False): ...
+    	comm_fn(x)
+
+    def _test_collective_comms_gradients(self, strategy, comm_fn, inputs,
+                                         expected_grads): ...
+    	comm_fn(x)
+
+    def _test_collective_comms_gradients(self, strategy, comm_fn, inputs,
+                                         expected_grads, run_in_function=False): ...
+    	comm_fn(x)
+
+    def _test_metric(self, distribution, dataset_fn, metric_fn, expected_fn): ...
+    	dataset_fn()
+    	expected_fn(batches_consumed)
+
+    def _test_parsed_sequence_example(
+        self, col_name, col_fn, col_arg, shape, values): ...
+    	col_fn(col_name, col_arg)
+
+    def _tf_assert_stmt(expression1, expression2): ...
+    	expression2()
+
+    def _tf_dataset_for_stmt(
+        ds, extra_test, body, get_state, set_state, symbol_names, opts): ...
+    	extra_test()
+    	body(iterate)
+    	get_state()
+    	get_state()
+    	set_state(loop_vars)
+    	set_state(final_loop_vars)
+
+    def _tf_distributed_dataset_for_stmt(iter_, extra_test, body, init_state): ...
+    	body(iterate, *state)
+
+    def _tf_distributed_iterable_for_stmt(
+        iter_, extra_test, body, get_state, set_state, symbol_names, opts): ...
+    	body(iterate)
+    	get_state()
+    	get_state()
+    	set_state(loop_vars)
+    	set_state(iter_.reduce(init_vars, reduce_body))
+
+    def _tf_gradients_forward_over_back_hvp(model, images, labels, vector): ...
+    	model(images, training=True)
+
+    def _tf_if_exp(cond, if_true, if_false, expr_repr): ...
+    	if_true()
+    	if_false()
+
+    def _tf_if_stmt(
+        cond, body, orelse, get_state, set_state, symbol_names, nouts): ...
+    	body()
+    	orelse()
+    	get_state()
+    	get_state()
+    	get_state()
+    	set_state(init_vars)
+    	set_state(init_vars)
+    	set_state(final_cond_vars)
+
+    def _tf_iterator_for_stmt(
+        iter_, extra_test, body, get_state, set_state, symbol_names, opts): ...
+    	body(opt_iterate.get_value())
+    	get_state()
+    	set_state(loop_vars)
+
+    def _tf_iterator_for_stmt(itr, extra_test, body, get_state, set_state,
+                              init_vars, basic_symbol_names,
+                              composite_symbol_names, opts): ...
+    	extra_test(*loop_vars)
+    	body(opt_iterate.get_value(), *loop_vars)
+
+    def _tf_ragged_for_stmt(
+        iter_, extra_test, body, get_state, set_state, symbol_names, opts): ...
+    	body(iter_[iterate_index])
+    	get_state()
+    	get_state()
+    	set_state(loop_vars)
+
+    def _tf_ragged_for_stmt(iter_,
+                            extra_test,
+                            body,
+                            get_state,
+                            set_state,
+                            init_vars,
+                            basic_symbol_names,
+                            composite_symbol_names,
+                            opts): ...
+    	extra_test(*loop_vars)
+    	body(iterate, *loop_vars)
+
+    def _tf_range_for_stmt(
+        iter_, extra_test, body, get_state, set_state, symbol_names, opts): ...
+    	body(iterate)
+    	get_state()
+    	set_state(loop_vars)
+
+    def _tf_range_for_stmt(iter_,
+                           extra_test,
+                           body,
+                           get_state,
+                           set_state,
+                           init_vars,
+                           basic_symbol_names,
+                           composite_symbol_names,
+                           opts): ...
+    	extra_test(*loop_vars)
+    	body(iterate, *loop_vars)
+
+    def _tf_while_stmt(test, body, get_state, set_state, init_vars,
+                       basic_symbol_names, composite_symbol_names, opts): ...
+    	test(*aug_loop_vars[loop_vars_slice])
+    	body(*aug_loop_vars[loop_vars_slice])
+    	get_state()
+    	get_state()
+    	set_state(state)
+    	set_state(state)
+    	set_state(final_state)
+
+    def _tf_while_stmt(test, body, get_state, set_state, symbol_names, opts): ...
+    	test()
+    	body()
+    	get_state()
+    	get_state()
+    	set_state(loop_vars)
+    	set_state(loop_vars)
+    	set_state(final_loop_vars)
+
+    def _to_tensor_list_helper(encode_fn, element_spec, element): ...
+    	encode_fn(state, spec, component)
+
+    def _tpu_function_creator(self, fn, options): ...
+    	fn(*replica_args, **replica_kwargs)
+
+    def _traverse(dataset, op_filter_fn): ...
+    	op_filter_fn(op)
+
+    def _try_handling_undefineds(
+        body, get_state, set_state, init_vars, nulls, symbol_names): ...
+    	body()
+    	get_state()
+    	set_state(init_vars)
+    	set_state(init_vars)
+
+    def _update(self, update_fn, value, **kwargs): ...
+    	update_fn(self._primary, value, **kwargs)
+    	update_fn(replica_value, value, **kwargs)
+
+    def _update(self, update_fn, value, **kwargs): ...
+    	update_fn(self.get_var_on_current_device(), value, **kwargs)
+    	update_fn(super(PackedDistributedVariable, self), value, **kwargs)
+
+    def _update(self, var, fn, args, kwargs, group): ...
+    	fn(v, *distribute_utils.select_replica(i, args),
+           **distribute_utils.select_replica(i, kwargs))
+
+    def _update(self, var, fn, args, kwargs, group): ...
+    	fn(var, *args, **kwargs)
+    	fn(var, *args, **kwargs)
+    	fn(value, *distribute_utils.select_replica(i, args),
+           **distribute_utils.select_replica(i, kwargs))
+
+    def _update(self, var, fn, args, kwargs, group): ...
+    	fn(var, *self._select_single_value(args),
+                **self._select_single_value(kwargs))
+
+    def _update_non_slot(self, colocate_with, fn, args, kwargs, group): ...
+    	fn(*args, **kwargs)
+
+    def _update_non_slot(self, colocate_with, fn, args, kwargs, group): ...
+    	fn(*args, **kwargs)
+
+    def _update_non_slot(self, colocate_with, fn, args, kwargs, group): ...
+    	fn(*args, **kwargs)
+
+    def _update_non_slot(self, colocate_with, fn, args, kwargs, group): ...
+    	fn(*args, **kwargs)
+
+    def _update_non_slot(self, colocate_with, fn, args, kwargs, group): ...
+    	fn(*distribute_utils.select_replica(i, args),
+           **distribute_utils.select_replica(i, kwargs))
+
+    def _update_non_slot(self, colocate_with, fn, args, kwargs, should_group): ...
+    	fn(*args, **kwargs)
+
+    def _update_replica(self, update_fn, value, **kwargs): ...
+    	update_fn(self._get_on_device_or_primary(), value, **kwargs)
+
+    def _update_replica(self, var, update_fn, value, **kwargs): ...
+    	update_fn(var._get_on_device_or_primary(), value, **kwargs)
+
+    def _update_replica(self, var, update_fn, value, **kwargs): ...
+    	update_fn(var._get_on_device_or_primary(), value, **kwargs)
+
+    def _variable_creator(next_creator, parallel_device, **kwargs): ...
+    	next_creator(**kwargs)
+
+    def _vectorize_parameters(f, params, use_pfor, dtype): ...
+    	f(tangents)
+
+    def _verifySimpleShardingOutput(self, dataset, record_fn): ...
+    	record_fn(r, f)
+
+    def _verify_records(self, outputs, batch_size, file_index, num_epochs,
+                        interleave_cycle_length, drop_final_batch, use_parser_fn): ...
+    	outputs()
+
+    def _version_chooser(tf1_cls, tf2_cls): ...
+    	tf1_cls(*args, **kwargs)
+    	tf2_cls(*args, **kwargs)
+
+    def _wrap_disallow_undefs_from_cond(func, branch_name): ...
+    	func()
+
+    def _wrapped_worker_fn(self, worker_fn): ...
+    	worker_fn(*args, **kwargs)
+
+    def actual_decorator(func): ...
+    	func(*args, **kwargs)
+
+    def aggregate_tensors_or_indexed_slices(values, accumulation_fn=math_ops.add_n): ...
+    	accumulation_fn(values)
+
+    def all_gather_indexed_slices(all_gather_fn): ...
+    	all_gather_fn(
+        input_slices.values, communication_hint, timeout=timeout)
+    	all_gather_fn(
+        input_slices.indices, communication_hint, timeout=timeout)
+
+    def also_run_as_tf_function(f): ...
+    	f(*args, **kwds)
+
+    def and_(a, b): ...
+    	a()
+
+    def apply(self, transformation_func): ...
+    	transformation_func(self)
+
+    def apply_to_single_assignments(self, targets, values, apply_fn): ...
+    	apply_fn(target, values)
+
+    def apply_to_single_assignments(targets, values, apply_fn): ...
+    	apply_fn(target, values)
+
+    def assertMemoryNotIncreasing(self, f, num_iters, max_increase_mb): ...
+    	f()
+    	f()
+
+    def assertNoMemoryLeak(self, dataset_fn): ...
+    	dataset_fn()
+
+    def assertNoMemoryLeaks(self, f): ...
+    	f()
+
+    def assertTransformedEquivalent(self, f, *inputs): ...
+    	f(*inputs)
+
+    def assertTransformedEquivalent(self, f, *inputs): ...
+    	f(*inputs)
+
+    def assertTransformedEquivalent(self, f, *inputs): ...
+    	f(*inputs)
+
+    def assertTransformedEquivalent(self, f, *inputs): ...
+    	f(*inputs)
+
+    def assertTransformedEquivalent(self, f, *inputs): ...
+    	f(*inputs)
+
+    def assertTransformedEquivalent(self, f, *inputs): ...
+    	f(*inputs)
+
+    def assert_no_garbage_created(f): ...
+    	f(self, **kwargs)
+
+    def assert_no_leak(f, num_iters=100000, increase_threshold_absolute_mb=10): ...
+    	f()
+    	f()
+
+    def assert_no_new_tensors(f): ...
+    	f(self, **kwargs)
+    	f(self, **kwargs)
+
+    def assign_on_each_device(var, assign_func, value, read_value): ...
+    	assign_func(d, var._packed_variable, value)
+    	assign_func(v.device, v, value)
+
+    def automatic_control_dependencies(f): ...
+    	f(*args, **kwargs)
+
+    def batchnorm_example(optimizer_fn,
+                          batch_per_epoch=1,
+                          momentum=0.9,
+                          renorm=False,
+                          update_ops_in_replica_mode=False): ...
+    	optimizer_fn()
+
+    def bucket_by_sequence_length(self,
+                                  element_length_func,
+                                  bucket_boundaries,
+                                  bucket_batch_sizes,
+                                  padded_shapes=None,
+                                  padding_values=None,
+                                  pad_to_bucket_boundary=False,
+                                  no_padding=False,
+                                  drop_remainder=False): ...
+    	element_length_func(*args)
+
+    def build(self, input_fn): ...
+    	input_fn()
+
+    def build_nccl_all_reduce(input_tensors, red_op, un_op=None): ...
+    	un_op(t)
+
+    def build_recursive_hd_all_reduce(input_tensors, red_op, un_op=None): ...
+    	un_op(t)
+
+    def calibrate(self,
+                  fetch_names,
+                  num_runs,
+                  feed_dict_fn=None,
+                  input_map_fn=None): ...
+    	feed_dict_fn()
+    	input_map_fn()
+    	input_map_fn()
+
+    def call(c, x): ...
+    	c(x)
+    	c(x)
+
+    def call_with_unspecified_conversion_status(func): ...
+    	func(*args, **kwargs)
+
+    def call_with_variable_creator_scope(self, fn): ...
+    	fn(*args, **kwargs)
+
+    def capture_call_time_value(self, closure, spec, key=None): ...
+    	closure()
+
+    def capture_creator(next_creator, **kwargs): ...
+    	next_creator(**kwargs)
+
+    def checkDeterminism(self, dataset_fn, expect_determinism, expected_elements): ...
+    	dataset_fn(100)
+    	dataset_fn(delay_ms)
+
+    def check_column(df: DataFrame, name: str, fn: Callable[[float], bool]) -> bool: ...
+    	df(r, "trt_model")
+    	df(r, name)
+    	df(r)
+    	fn(df(r, name))
+
+    def compute(self, use_jit, compute_fn): ...
+    	compute_fn()
+
+    def compute_gradients(model, images, labels, num_replicas=1): ...
+    	model(images, training=True)
+
+    def convert(self, calibration_input_fn=None): ...
+    	calibration_input_fn()
+
+    def copy_of(cls, other): ...
+    	cls(parent)
+
+    def create_colocated_variable(next_creator, **kwargs): ...
+    	next_creator(**kwargs)
+
+    def create_colocated_variable(next_creator, **kwargs): ...
+    	next_creator(**kwargs)
+
+    def create_mirrored_variable(strategy, real_mirrored_creator, class_mapping,
+                                 policy_mapping, **kwargs): ...
+    	real_mirrored_creator(**kwargs)
+
+    def create_new_variable(next_creator, **kwargs): ...
+    	next_creator(**kwargs)
+
+    def create_option(name, ty, docstring, default_factory=lambda: None): ...
+    	default_factory()
+
+    def creator(next_creator, **kwargs): ...
+    	next_creator(**kwargs)
+
+    def creator(next_creator, **kwargs): ...
+    	next_creator(**kwargs)
+
+    def decorator(f): ...
+    	f()
+
+    def decorator(f): ...
+    	f(*args, **kwargs)
+
+    def decorator(f): ...
+    	f(self, "GPU", *args, **kwargs)
+    	f(self, "TPU", *args, **kwargs)
+
+    def decorator(f): ...
+    	f(self, *args, **kwargs)
+
+    def decorator(f): ...
+    	f(self, *args, **kwargs)
+
+    def decorator(f): ...
+    	f(self, *args, **kwargs)
+
+    def decorator(f): ...
+    	f(self, *args, **kwargs)
+
+    def decorator(f): ...
+    	f(self, *args, **kwargs)
+
+    def decorator(f): ...
+    	f(self, *args, **kwargs)
+
+    def decorator(f): ...
+    	f(self, *args, **kwargs)
+
+    def decorator(f): ...
+    	f(self, *args, **kwargs)
+    	f(self, *args, **kwargs)
+
+    def decorator(f): ...
+    	f(self, *args, **kwargs)
+    	f(self, *args, **kwargs)
+
+    def decorator(f): ...
+    	f(self, *args, **kwargs)
+    	f(self, *args, **kwargs)
+
+    def decorator(f): ...
+    	f(self, *args, **kwargs)
+    	f(self, *args, **kwargs)
+    	f(self, *args, **kwargs)
+
+    def decorator(func): ...
+    	func(self, *args, **kwargs)
+
+    def decorator(func): ...
+    	func(self, *args, **kwargs)
+
+    def decorator(func): ...
+    	func(self, *args, **kwargs)
+    	func(self, *args, **kwargs)
+
+    def dense_layer(weights, input_tensor, act=tf.nn.relu): ...
+    	act(preactivate)
+
+    def deref(weak_v): ...
+    	weak_v()
+
+    def disable_optimizations(ds_fn): ...
+    	ds_fn()
+
+    def disable_test_impl(func): ...
+    	func(self, *args, **kwargs)
+
+    def distributed_getter(getter, *args, **kwargs): ...
+    	getter(*args, **kwargs)
+
+    def do_inference(device, inference_fn, i): ...
+    	inference_fn(x, i)
+
+    def do_not_convert(func=None): ...
+    	func(*args, **kwargs)
+
+    def dummy_tf_decorator(method): ...
+    	method(*args, **kwargs)
+
+    def enable_control_flow_v2(fn): ...
+    	fn(*args, **kwargs)
+
+    def enable_output_all_intermediates(fn): ...
+    	fn(*args, **kwargs)
+
+    def estimator_evaluate(estimator, evaluate_distributed_fn, hooks): ...
+    	evaluate_distributed_fn(local_estimator, strategy, chief_hooks)
+
+    def estimator_train(estimator, train_distributed_fn, hooks): ...
+    	train_distributed_fn(local_estimator, strategy, chief_hooks)
+
+    def eval_in_original_context(f, args, caller_fn_scope): ...
+    	f(*args)
+
+    def expected_result(a, c, some_computed, exception): ...
+    	some_computed(tmp_1002)
+
+    def expected_result(b, c, d, f): ...
+    	f(c)
+    	f(tmp_1001)
+
+    def expected_result(call_something, a, b, y, z, c, d, e, f, g, h, i): ...
+    	call_something(tmp_1002, tmp_1003, kwarg=tmp_1005, *tmp_1004, **tmp_1006)
+
+    def expected_result(compute, something, complicated, foo): ...
+    	compute(tmp_1001)
+
+    def expected_result(f): ...
+    	f(tmp_1001, tmp_1002, tmp_1003)
+
+    def expected_result(foo, bar, function, quux, quozzle, w, x, y, z): ...
+    	function(tmp_1002)
+    	function(tmp_1004)
+
+    def expected_result(x, foo, bar): ...
+    	foo(x, tmp_1001, tmp_1002)
+    	bar(y, y+1, 2)
+
+    def expected_result(x, frob): ...
+    	frob(x, x+1, tmp_1001)
+
+    def experimental_jit_scope(compile_ops=True, separate_compiled_gradients=False): ...
+    	compile_ops(node_def)
+
+    def f(f): ...
+    	f()
+
+    def f(f, a): ...
+    	f(a)
+
+    def f(f, a, *args, **kwargs): ...
+    	f(a, *args, **kwargs)
+
+    def f(f, a, b): ...
+    	f(a, b)
+
+    def f(f, a, b): ...
+    	f(a, c=b)
+
+    def f(f, a, b, **kwargs): ...
+    	f(a, b=b, **kwargs)
+
+    def f(f, a, b, c, kwargs1, kwargs2): ...
+    	f(a, b=b, **kwargs1, c=c, **kwargs2)
+
+    def f(f, g): ...
+    	f(g() + 20)
+    	g()
+
+    def f(f, g): ...
+    	f(g())
+    	g()
+
+    def f(g, x): ...
+    	g(x)
+
+    def f(h, g, a, *args): ...
+    	h(lambda x: g(x, *args), a)
+    	g(x, *args)
+
+    def f(l): ...
+    	l()
+
+    def f(x, dtype): ...
+    	dtype(x)
+
+    def find(self,
+             predicate,
+             first_n=0,
+             device_name=None,
+             exclude_node_names=None): ...
+    	predicate(datum, datum.get_tensor())
+
+    def fn1(mock_model): ...
+    	mock_model()
+
+    def fn1(mock_model): ...
+    	mock_model()
+
+    def fn1(mock_model, factor): ...
+    	mock_model(factor)
+
+    def for_all_test_methods(decorator, *args, **kwargs): ...
+    	decorator(*args, **kwargs)
+
+    def from_config(cls, config, custom_objects=None, columns_by_name=None): ...
+    	cls(**kwargs)
+
+    def from_config(cls, config, custom_objects=None, columns_by_name=None): ...
+    	cls(**kwargs)
+
+    def from_config(cls, config, custom_objects=None, columns_by_name=None): ...
+    	cls(**kwargs)
+
+    def from_config(cls, config, custom_objects=None, columns_by_name=None): ...
+    	cls(**kwargs)
+
+    def from_config(cls, config, custom_objects=None, columns_by_name=None): ...
+    	cls(**kwargs)
+
+    def from_config(cls, config, custom_objects=None, columns_by_name=None): ...
+    	cls(**kwargs)
+
+    def from_config(cls, config, custom_objects=None, columns_by_name=None): ...
+    	cls(**kwargs)
+
+    def from_config(cls, config, custom_objects=None, columns_by_name=None): ...
+    	cls(**kwargs)
+
+    def from_config(cls, config, custom_objects=None, columns_by_name=None): ...
+    	cls(**kwargs)
+
+    def from_config(cls, config, custom_objects=None, columns_by_name=None): ...
+    	cls(**kwargs)
+
+    def from_config(cls, config, custom_objects=None, columns_by_name=None): ...
+    	cls(**kwargs)
+
+    def from_config(cls, config, custom_objects=None, columns_by_name=None): ...
+    	cls(**kwargs)
+
+    def from_spec(cls, spec, name=None): ...
+    	cls(spec.shape, spec.dtype, name or spec.name)
+
+    def from_string(cls, spec): ...
+    	cls(*cls._string_to_components(spec))
+
+    def from_value(cls, value): ...
+    	cls(nest.map_structure(type_spec.type_spec_from_value, value.nest))
+
+    def from_value(cls, value): ...
+    	cls(type_spec.type_spec_from_value(value.x),
+               type_spec.type_spec_from_value(value.y),
+               value.color)
+
+    def from_value(cls, value): ...
+    	cls(value.shape, value.dtype)
+    	cls(value.dense_shape, value.values.dtype)
+
+    def from_value(cls, value): ...
+    	cls(value.x.shape, value.x.dtype, value.y.shape, value.y.dtype,
+               value.color)
+
+    def func_graph_from_py_func(func,
+                                arg_names,
+                                arg_types,
+                                name=None,
+                                capture_by_value=False,
+                                device=None,
+                                colocation_stack=None,
+                                container=None,
+                                collections_ref=None,
+                                arg_shapes=None,
+                                allowlisted_stateful_ops=None,
+                                capture_resource_var_by_value=True): ...
+    	func(*func_graph.inputs)
+
+    def func_graph_from_py_func(name,
+                                python_func,
+                                args,
+                                kwargs,
+                                signature=None,
+                                func_graph=None,
+                                autograph=False,
+                                autograph_options=None,
+                                add_control_dependencies=True,
+                                arg_names=None,
+                                op_return_value=None,
+                                collections=None,
+                                capture_by_value=None,
+                                override_flat_arg_shapes=None,
+                                acd_record_initial_resource_uses=False): ...
+    	python_func(*func_args, **func_kwargs)
+
+    def gen_outputs(self,
+                    ds_fn,
+                    break_points,
+                    num_outputs,
+                    ckpt_saved=False,
+                    sparse_tensors=False,
+                    verify_exhausted=True,
+                    save_checkpoint_at_end=True): ...
+    	ds_fn()
+
+    def getIteratorOutput(self, get_next): ...
+    	get_next()
+
+    def h(l, a): ...
+    	l(a)
+
+    def implicit_val_and_grad(f): ...
+    	f(*args, **kwds)
+
+    def import_scoped_meta_graph_with_return_elements(
+        meta_graph_or_file,
+        clear_devices=False,
+        graph=None,
+        import_scope=None,
+        input_map=None,
+        unbound_inputs_col_name="unbound_inputs",
+        restore_collections_predicate=(lambda key: True),
+        return_elements=None): ...
+    	restore_collections_predicate(key)
+
+    def ldu(load_v, name): ...
+    	load_v()
+
+    def listdir_and_filter(dirname, filter_fn): ...
+    	filter_fn(path)
+
+    def make_batched_features_dataset_v2(file_pattern,
+                                         batch_size,
+                                         features,
+                                         reader=None,
+                                         label_key=None,
+                                         reader_args=None,
+                                         num_epochs=None,
+                                         shuffle=True,
+                                         shuffle_buffer_size=10000,
+                                         shuffle_seed=None,
+                                         prefetch_buffer_size=None,
+                                         reader_num_threads=None,
+                                         parser_num_threads=None,
+                                         sloppy_ordering=False,
+                                         drop_final_batch=False): ...
+    	reader(filename, *reader_args)
+    	reader(filename, *reader_args)
+
+    def make_per_replica_value(value, devices): ...
+    	value(device_idx)
+
+    def make_vjp(f, params=None, persistent=True): ...
+    	f(*args)
+
+    def map_structure(func, *structure, **check_types_dict): ...
+    	func(*x)
+
+    def map_structure_up_to(shallow_tree, func, *inputs): ...
+    	func(*tensors)
+
+    def maybe_call_with_output_remote_value(self, method): ...
+    	method(output_remote_value)
+
+    def merge_any(x1, x2, empty_fn): ...
+    	empty_fn()
+
+    def merge_lists(repeated1, repeated2, empty_fn, key_fn, merge_fn): ...
+    	empty_fn()
+    	empty_fn()
+    	key_fn(x)
+    	key_fn(x)
+    	merge_fn(x1, x2)
+
+    def monitored_timer(metric_name, state_tracker=None): ...
+    	state_tracker()
+    	state_tracker()
+
+    def nn_layer(input_tensor, input_dim, output_dim, layer_name, act=tf.nn.relu): ...
+    	act(preactivate)
+
+    def or_(a, b): ...
+    	a()
+
+    def outer_function(inner=None): ...
+    	inner()
+
+    def py_func_if_in_function(f): ...
+    	f(*args, **kwds)
+    	f(*my_args, **kwds)
+
+    def read(self, get_next, results, count): ...
+    	get_next()
+
+    def real_skip_if(fn): ...
+    	fn(*args, **kwargs)
+
+    def reduce(self, initial_state, reduce_fn): ...
+    	reduce_fn(state, data)
+
+    def regroup(values, wrap_class=values_lib.PerReplica, always_wrap=False): ...
+    	wrap_class(values)
+
+    def rejection_resample(class_func, target_dist, initial_dist=None, seed=None): ...
+    	class_func(*x)
+    	class_func(*x)
+
+    def reset_eager(fn): ...
+    	fn(*args, **kwargs)
+
+    def run(self,
+            fetches,
+            feed_dict=None,
+            options=None,
+            run_metadata=None,
+            callable_runner=None,
+            callable_runner_args=None,
+            callable_options=None): ...
+    	callable_runner(*callable_runner_args)
+    	callable_runner(*callable_runner_args)
+
+    def run_and_check(test_func): ...
+    	test_func(x)
+
+    def run_benchmark(func, num_iters): ...
+    	func()
+
+    def run_benchmark(func, num_iters, execution_mode=None): ...
+    	func()
+    	func()
+
+    def run_benchmark(func, num_iters, execution_mode=None): ...
+    	func()
+    	func()
+
+    def run_benchmark(func, num_iters, unused_execution_mode): ...
+    	func()
+    	func()
+
+    def run_in_async_and_sync_mode(f): ...
+    	f(self, *args, **kwargs)
+    	f(self, *args, **kwargs)
+
+    def run_report(self, run_benchmark, func, num_iters, execution_mode=None): ...
+    	run_benchmark(func, num_iters, execution_mode)
+
+    def run_step_fn(self, step_fn): ...
+    	step_fn(
+        monitored_session.MonitoredSession.StepContext(self._sess, self.run))
+
+    def run_with_xprof(self, enable_python_trace, run_benchmark, func,
+                       num_iters_xprof, execution_mode, suid): ...
+    	run_benchmark(func, num_iters_xprof, execution_mode)
+
+    def sample_node_list(self, low, high, generator): ...
+    	generator()
+
+    def single_loss_example(optimizer_fn, distribution, use_bias=False,
+                            iterations_per_step=1): ...
+    	optimizer_fn()
+
+    def skip_if(condition): ...
+    	condition()
+
+    def smart_cond(pred, true_fn=None, false_fn=None, name=None): ...
+    	true_fn()
+    	false_fn()
+
+    def standalone_decorator(f): ...
+    	f(*args, **kwargs)
+
+    def sum_while_loop(iterator, reduce_fn): ...
+    	reduce_fn(sums, iterator)
+
+    def super_in_original_context(f, args, caller_fn_scope): ...
+    	f(*args)
+    	f(*args)
+    	f(type_arg, self_arg)
+
+    def ta_wrapper(gn): ...
+    	gn()
+
+    def test(self, verify_fn): ...
+    	verify_fn(
+        self,
+        lambda: self._build_dataset(components),
+        num_outputs=5)
+
+    def test(self, verify_fn): ...
+    	verify_fn(
+        self,
+        lambda: self._build_sparse_tensor_slice_dataset(slices),
+        num_outputs=9,
+        sparse_tensors=True)
+
+    def test(self, verify_fn): ...
+    	verify_fn(
+        self,
+        lambda: self._build_tensor_slices_dataset(components),
+        num_outputs=4)
+
+    def test(self, verify_fn): ...
+    	verify_fn(
+        self, lambda: self._build_dataset([0.5, 0.5], 100), num_outputs=100)
+
+    def test(self, verify_fn): ...
+    	verify_fn(
+        self, lambda: self._build_dataset(num_outputs), num_outputs=num_outputs)
+
+    def test(self, verify_fn): ...
+    	verify_fn(
+        self, lambda: self._parse_example_dataset(
+            num_repeat=num_repeat, batch_size=batch_size), num_outputs)
+
+    def test(self, verify_fn): ...
+    	verify_fn(self,
+              lambda: self.build_dataset(15.0, tensor_slice_len, batch_size),
+              num_outputs)
+
+    def test(self, verify_fn): ...
+    	verify_fn(self,
+              lambda: self.build_dataset(15.0, tensor_slice_len, batch_size),
+              num_outputs)
+
+    def test(self, verify_fn): ...
+    	verify_fn(self, build_dataset, num_outputs=20)
+
+    def test(self, verify_fn): ...
+    	verify_fn(self, lambda: build_dataset(200), num_outputs=200)
+
+    def test(self, verify_fn): ...
+    	verify_fn(self, lambda: build_dataset(200, 100), num_outputs=100)
+
+    def test(self, verify_fn): ...
+    	verify_fn(self, lambda: build_dataset(64, 8), num_outputs=8)
+
+    def test(self, verify_fn): ...
+    	verify_fn(self, lambda: build_dataset(64, 8), num_outputs=8)
+
+    def test(self, verify_fn): ...
+    	verify_fn(self, lambda: build_dataset(seq_lens), num_outputs=8)
+
+    def test(self, verify_fn): ...
+    	verify_fn(self, lambda: build_ds(0), num_outputs=25)
+
+    def test(self, verify_fn): ...
+    	verify_fn(self, lambda: self._build_concatenate_dataset(array), num_outputs)
+
+    def test(self, verify_fn): ...
+    	verify_fn(self, lambda: self._build_dataset(components), num_outputs)
+
+    def test(self, verify_fn): ...
+    	verify_fn(self, lambda: self._build_dataset(num_epochs), num_outputs)
+
+    def test(self, verify_fn): ...
+    	verify_fn(self, lambda: self._build_dataset(num_repeats), num_outputs)
+
+    def test(self, verify_fn): ...
+    	verify_fn(self, lambda: self._build_ds(10), num_outputs=100)
+
+    def test(self, verify_fn): ...
+    	verify_fn(self, lambda: self._build_filter_range_graph(div), num_outputs)
+
+    def test(self, verify_fn): ...
+    	verify_fn(self, lambda: self._build_iterator_graph(patterns), num_outputs)
+
+    def test(self, verify_fn): ...
+    	verify_fn(self, lambda: self._build_range_dataset(start, stop),
+              stop - start)
+
+    def test(self, verify_fn): ...
+    	verify_fn(self, lambda: self._build_tensor_dataset(arr), num_outputs=1)
+
+    def test(self, verify_fn): ...
+    	verify_fn(self, self._build_dataset, num_outputs=42)
+
+    def test(self, verify_fn): ...
+    	verify_fn(self, self._build_ds, num_outputs=4)
+
+    def test(self, verify_fn): ...
+    	verify_fn(self, self._build_ds, num_outputs=42)
+
+    def test(self, verify_fn): ...
+    	verify_fn(self, self._build_ds, num_outputs=42)
+
+    def test(self, verify_fn): ...
+    	verify_fn(self, self.build_dataset, num_outputs=100)
+
+    def test(self, verify_fn, compression_type): ...
+    	verify_fn(
+        self,
+        lambda: self._build_iterator_graph(test_filenames, compression_type),
+        num_outputs)
+
+    def test(self, verify_fn, count, num_outputs): ...
+    	verify_fn(self, lambda: self._build_skip_dataset(count), num_outputs)
+
+    def test(self, verify_fn, count, num_outputs): ...
+    	verify_fn(self, lambda: self._build_take_dataset(count), num_outputs)
+
+    def test(self, verify_fn, cycle_length, block_length): ...
+    	verify_fn(self, lambda: self._build_ds(cycle_length, block_length),
+              self.num_outputs)
+
+    def test(self, verify_fn, cycle_length, block_length, num_parallel_calls): ...
+    	verify_fn(self, _build_dataset, num_outputs)
+
+    def test(self, verify_fn, elements): ...
+    	verify_fn(self, lambda: self._build_dataset(elements), len(elements))
+
+    def test(self, verify_fn, elems, num_shards, index): ...
+    	verify_fn(
+        self,
+        lambda: self._build_dataset(elems, num_shards, index),
+        num_outputs=elems // num_shards)
+
+    def test(self, verify_fn, num_elements, upper_bound): ...
+    	verify_fn(self, lambda: self._build_dataset(num_elements, upper_bound),
+              min(num_elements, upper_bound))
+
+    def test(self, verify_fn, reshuffle_each_iteration, buffer_size): ...
+    	verify_fn(
+        self, lambda: self._build_shuffle_dataset(
+            range_limit=range_limit,
+            num_repeats=num_repeats,
+            buffer_size=buffer_size,
+            seed=seed,
+            reshuffle_each_iteration=reshuffle_each_iteration), num_outputs)
+
+    def testAnySparse(self, classes_fn, expected): ...
+    	classes_fn()
+
+    def testAsDenseShapes(self, types_fn, classes_fn, expected_fn): ...
+    	types_fn()
+    	classes_fn()
+    	expected_fn()
+
+    def testAsDenseTypes(self, types_fn, classes_fn, expected_fn): ...
+    	types_fn()
+    	classes_fn()
+    	expected_fn()
+
+    def testAssertSameStructureWithValueAndTypeSpec(self, value_func): ...
+    	value_func()
+
+    def testAttributeAccessors(self, fields): ...
+    	fields()
+
+    def testBasic(self, make_dataset, nrows, batch_size, drop_remainder): ...
+    	make_dataset(nrows)
+
+    def testBatchSize(self, verify_fn, batch_size): ...
+    	verify_fn(self,
+              lambda: self.make_dataset(num_epochs, batch_size=batch_size),
+              num_outputs)
+
+    def testBufferSize(self, verify_fn, buffer_size): ...
+    	verify_fn(self,
+              lambda: self.make_dataset(num_epochs, buffer_size=buffer_size),
+              num_outputs)
+
+    def testBuildDefunInMapFn(self, verify_fn, num_parallel_calls): ...
+    	verify_fn(self, _build_ds, num_outputs)
+
+    def testCaptureConstantInMapFn(self, verify_fn, num_parallel_calls): ...
+    	verify_fn(self, _build_ds, num_outputs)
+
+    def testCaptureConstantsWithConflictingDevices(self, apply_map): ...
+    	apply_map(dataset, func)
+
+    def testCaptureDefunInMapFn(self, verify_fn): ...
+    	verify_fn(self, build_ds, num_outputs=100)
+
+    def testCaptureDefunInMapFn(self, verify_fn, num_parallel_calls): ...
+    	verify_fn(self, _build_ds, num_outputs)
+
+    def testCaptureHashTable(self, apply_map): ...
+    	apply_map(input_sentences,
+                        lambda x: string_ops.string_split([x]).values)
+    	apply_map(dataset, table.lookup)
+
+    def testCaptureIterator(self, apply_map): ...
+    	apply_map(dataset_ops.Dataset.range(10), _map_fn)
+
+    def testCaptureQueue(self, apply_map): ...
+    	apply_map(dataset, lambda _: queue.dequeue())
+
+    def testCaptureSameResourceMultipleTimes(self, apply_map): ...
+    	apply_map(dataset, lambda _: (queue.dequeue(), queue_2.dequeue()))
+
+    def testCaptureUninitializedVariableError(self, apply_map): ...
+    	apply_map(dataset, lambda _: counter_var.assign_add(1))
+
+    def testCaptureVariable(self, apply_map): ...
+    	apply_map(dataset, lambda _: counter_var.assign_add(1))
+
+    def testCardinality(self, dataset_fn, expected_result): ...
+    	dataset_fn()
+
+    def testCaseAndCondInMap(self, apply_map): ...
+    	apply_map(dataset, lambda x: control_map_fn(x, num))
+
+    def testCaseAndCondInWhileInMap(self, apply_map): ...
+    	apply_map(
+        dataset,
+        lambda elems: map_fn.map_fn(lambda x: control_map_fn(x, num), elems))
+
+    def testCaseInWhileInMap(self, apply_map): ...
+    	apply_map(
+        dataset,
+        lambda elems: map_fn.map_fn(lambda x: control_map_fn(x, num), elems))
+
+    def testCastToPrimitiveTypesFrom(self, value_fn): ...
+    	value_fn()
+
+    def testCollectionCopy(self, apply_map): ...
+    	apply_map(dataset, func)
+
+    def testCompositeAsArgumentTensorWithDefun(self,
+                                               factory_fn,
+                                               factory_kwargs={},
+                                               input_signature=None): ...
+    	factory_fn(**factory_kwargs)
+
+    def testCompressionTypes(self, verify_fn, compression_type): ...
+    	verify_fn(
+        self, lambda: self.make_dataset(
+            num_epochs, compression_type=compression_type), num_outputs)
+
+    def testConcatenate(self, concatenate_fn): ...
+    	concatenate_fn(
+            tensor_shape.TensorShape([1, 2]),
+            tensor_shape.TensorShape([3, 4]))
+    	concatenate_fn(
+            tensor_shape.TensorShape([1, 2]),
+            tensor_shape.TensorShape(None))
+    	concatenate_fn(
+            tensor_shape.TensorShape(None),
+            tensor_shape.TensorShape([3, 4]))
+    	concatenate_fn(
+            tensor_shape.TensorShape(None),
+            tensor_shape.TensorShape(None))
+
+    def testConcatenateWithDimension(self, concatenate_fn): ...
+    	concatenate_fn(
+            tensor_shape.TensorShape([1, 2]),
+            tensor_shape.Dimension(3))
+
+    def testConcreteFunctionFlatSignatureError(self,
+                                               conc_args=(),
+                                               conc_kwargs=None,
+                                               call_args=(),
+                                               call_kwargs=None,
+                                               error='.*',
+                                               exception=TypeError): ...
+    	conc_args()
+    	conc_kwargs()
+    	call_args()
+    	call_kwargs()
+
+    def testConcreteFunctionStructuredSignatureError(self,
+                                                     conc_args=(),
+                                                     conc_kwargs=None,
+                                                     call_args=(),
+                                                     call_kwargs=None,
+                                                     error='.*',
+                                                     exception=TypeError): ...
+    	conc_args()
+    	conc_kwargs()
+    	call_args()
+    	call_kwargs()
+
+    def testConstantOutput(self, apply_map): ...
+    	apply_map(dataset, lambda x: [x, "hello", 10])
+
+    def testConstruction(
+        self,
+        name,
+        value_type,
+        default=extension_type_field.ExtensionTypeField.NO_DEFAULT,
+        converted_default=None): ...
+    	default()
+
+    def testConstruction(self, fields): ...
+    	fields()
+
+    def testConstructionError(self, name, value_type, default, error): ...
+    	default()
+
+    def testConvert(self, param_names, input_specs, attr_specs, inputs, outputs,
+                    inferred): ...
+    	inputs()
+    	outputs()
+
+    def testConvertError(self,
+                         param_names,
+                         input_specs,
+                         attr_specs,
+                         inputs,
+                         message,
+                         exception=TypeError): ...
+    	inputs()
+
+    def testConvertValue(self, value, value_type, expected=None): ...
+    	value()
+
+    def testConvertValueError(self, value, value_type, error): ...
+    	value()
+
+    def testConvertValueForSpec(self, value, value_type, expected=None): ...
+    	value()
+
+    def testCore(self, verify_fn): ...
+    	verify_fn(self, lambda: self.ds_func(record_defaults=defs, buffer_size=2),
+              self._num_outputs)
+
+    def testCore(self, verify_fn, num_parallel_calls): ...
+    	verify_fn(self, _build_ds, tensor_slice_len * num_epochs)
+
+    def testDeterminismConfiguration(self, apply_map, local_determinism,
+                                     global_determinism): ...
+    	apply_map(
+        dataset,
+        map_function,
+        num_parallel_calls=2,
+        deterministic=local_determinism)
+
+    def testDict(self, verify_fn): ...
+    	verify_fn(
+        self,
+        lambda: self._build_tensor_slices_dataset(dict_components),
+        num_outputs=3)
+
+    def testDict(self, verify_fn): ...
+    	verify_fn(self, self._build_filter_dict_graph, num_outputs)
+
+    def testEmptyRepeat(self, verify_fn): ...
+    	verify_fn(self, lambda: self._build_repeat_dataset(0), num_outputs=0)
+
+    def testFilterDataset(self, apply_filter): ...
+    	apply_filter(
+        dataset,
+        lambda x, _y, _z: math_ops.equal(math_ops.mod(x, modulus), 0))
+
+    def testFilterDict(self, apply_filter): ...
+    	apply_filter(dataset, lambda d: math_ops.equal(d["bar"] % 2, 0))
+
+    def testFilterFusion(self, function, predicates): ...
+    	function(x)
+
+    def testFilterRange(self, apply_filter): ...
+    	apply_filter(dataset,
+                           lambda x: math_ops.not_equal(math_ops.mod(x, 3), 2))
+
+    def testFiniteRepeat(self, verify_fn): ...
+    	verify_fn(
+        self,
+        lambda: self._build_repeat_dataset(count),
+        num_outputs=(3 * count))
+
+    def testFlatStructure(self, value_fn, expected_structure_fn,
+                          expected_types_fn, expected_shapes_fn): ...
+    	value_fn()
+    	expected_structure_fn()
+    	expected_types_fn()
+    	expected_shapes_fn()
+
+    def testGetClasses(self, classes_fn, expected_fn): ...
+    	classes_fn()
+    	expected_fn()
+
+    def testHash(self, value1_fn, value2_fn, value3_fn): ...
+    	value1_fn()
+    	value2_fn()
+    	value3_fn()
+
+    def testInfiniteEmptyRepeat(self, verify_fn): ...
+    	verify_fn(self, lambda: self._build_repeat_dataset(-1, 0), num_outputs=0)
+
+    def testIsCompatibleWithStructure(self, original_value_fn,
+                                      compatible_values_fn,
+                                      incompatible_values_fn): ...
+    	original_value_fn()
+    	compatible_values_fn()
+    	incompatible_values_fn()
+
+    def testIteratorGetNextAsOptional(self, np_value, tf_value_fn,
+                                      gpu_compatible): ...
+    	tf_value_fn()
+    	tf_value_fn()
+
+    def testMakeDistributedValueExplicitDevicePlacement(self, distribution,
+                                                        op_type): ...
+    	op_type(1.0)
+
+    def testMapAttrs(self, apply_map): ...
+    	apply_map(labels, lambda l: -l)
+    	apply_map(dataset, Example)
+    	apply_map(dataset, preprocess)
+
+    def testMapCancellation(self, apply_map, num_parallel_calls): ...
+    	apply_map(dataset, fn, num_parallel_calls=num_parallel_calls)
+
+    def testMapDict(self, apply_map): ...
+    	apply_map(dataset, lambda x: {"foo": x * 2, "bar": x**2})
+    	apply_map(dataset, lambda d: d["foo"] + d["bar"])
+
+    def testMapNamedtuple(self, apply_map): ...
+    	apply_map(labels, lambda l: -l)
+    	apply_map(dataset_tuple, example)
+    	apply_map(dataset_tuple, preprocess_tuple)
+    	apply_map(dataset_namedtuple, preprocess_namedtuple)
+
+    def testMapParallelization(self, function, should_optimize): ...
+    	function(x)
+
+    def testMapThenFlatMap(self, verify_fn): ...
+    	verify_fn(self, build_ds, num_outputs=500)
+
+    def testMethodSignature(self, function_decorator): ...
+    	function_decorator(
+        input_signature=(tensor_spec.TensorSpec(
+            shape=None, dtype=dtypes.float64, name='y'),))
+
+    def testMultiOutputPyFunc(self, apply_map): ...
+    	apply_map(dataset, _map_fn)
+
+    def testNested(self, verify_fn): ...
+    	verify_fn(self, build_ds, num_outputs=42)
+
+    def testNested(self, verify_fn, num_parallel_calls): ...
+    	verify_fn(self, build_ds, num_outputs=100)
+
+    def testNestedDatasetMap(self, apply_map): ...
+    	apply_map(dataset, dataset_ops.Dataset.from_tensor_slices)
+    	apply_map(dataset, lambda ds: ds.batch(3))
+
+    def testNestedListMapDataset(self, apply_map): ...
+    	apply_map(dataset, lambda a: ([a[1], a[0] + a[2]], a[1]))
+
+    def testNestedSparse(self, verify_fn): ...
+    	verify_fn(self, self._build_dataset_nested_sparse, num_outputs=1)
+
+    def testNoInterOpParallelism(self, apply_map, num_parallel_calls): ...
+    	apply_map(dataset, _map_fn)
+
+    def testNonDefaultPadding(self, verify_fn): ...
+    	verify_fn(self, lambda: build_dataset(seq_lens), num_outputs=8)
+
+    def testNoneComponent(self, apply_map): ...
+    	apply_map(dataset, map_function)
+
+    def testNoopElimination(self, init_dataset_fn, transformation, expected_name): ...
+    	init_dataset_fn()
+
+    def testNumParallelBatches(self, verify_fn, drop_remainder): ...
+    	verify_fn(self, lambda: build_ds(10, drop_remainder=drop_remainder),
+              num_outputs)
+
+    def testNumParallelCalls(self, verify_fn, drop_remainder): ...
+    	verify_fn(self, lambda: build_ds(10, drop_remainder=drop_remainder),
+              num_outputs)
+
+    def testOptimizationWithCapturedRefVar(self, dataset_fn): ...
+    	dataset_fn(variable)
+
+    def testOptionalSpec(self, tf_value_fn, expected_value_structure): ...
+    	tf_value_fn()
+
+    def testParallelFilters(self, apply_filter): ...
+    	apply_filter(dataset, lambda x: math_ops.equal(x % 2, 0))
+
+    def testParallelMapError(self, apply_map): ...
+    	apply_map(
+        dataset,
+        lambda x: array_ops.check_numerics(x, "message"),
+        num_parallel_calls=2)
+
+    def testParallelMapOutOfRangeError(self, apply_map): ...
+    	apply_map(
+        dataset,
+        lambda x: script_ops.py_func(raising_py_func, [x], dtypes.int64),
+        num_parallel_calls=2)
+
+    def testParallelMapUnspecifiedOutputSize(self, apply_map): ...
+    	apply_map(
+        dataset,
+        lambda x: array_ops.check_numerics(x, "message"),
+        num_parallel_calls=2)
+
+    def testPrefetch(self, apply_map, buffer_size): ...
+    	apply_map(dataset, _map_fn)
+
+    def testPrefetchError(self, apply_map): ...
+    	apply_map(
+        dataset, lambda x: array_ops.check_numerics(x, "message"))
+
+    def testRagged(self, apply_map): ...
+    	apply_map(dataset, _ragged)
+
+    def testRaggedChain(self, apply_map): ...
+    	apply_map(dataset, _ragged)
+    	apply_map(dataset, _concat)
+
+    def testRandomSeed(self, input_fn, output_fn): ...
+    	input_fn()
+    	output_fn()
+
+    def testReferenceVariablesWithMultipleDevices(self, apply_map): ...
+    	apply_map(dataset, func)
+
+    def testReinterpretErrors(self, value, new_type, error): ...
+    	value()
+
+    def testResourceVariablesWithMultipleDevices(self, apply_map): ...
+    	apply_map(dataset, func)
+
+    def testReturnCompositeTensorWithDefun(self,
+                                           factory_fn,
+                                           factory_kwargs={},
+                                           input_signature=None): ...
+    	factory_fn(**factory_kwargs)
+
+    def testReturnList(self, apply_map): ...
+    	apply_map(dataset, lambda x: [x, constant_op.constant(37.0)])
+
+    def testReturnValueError(self, apply_map): ...
+    	apply_map(dataset, lambda x: Foo)
+
+    def testRoundTripConversion(self, value_fn): ...
+    	value_fn()
+
+    def testSeededStatefulOperatorIsProperlyStateful(self, apply_map): ...
+    	apply_map(dataset, fn)
+
+    def testSerializeDeserialize(self, input_fn): ...
+    	input_fn()
+
+    def testSerializeManyDeserialize(self, input_fn): ...
+    	input_fn()
+
+    def testShortCircuit(self, apply_filter): ...
+    	apply_filter(dataset, lambda x, y: y)
+
+    def testShortCircuit(self, apply_map, structure, fn, num_parallel_calls): ...
+    	apply_map(dataset, fn, num_parallel_calls=num_parallel_calls)
+    	fn(*self.evaluate(self.structuredElement(structure)))
+    	fn(self.evaluate(self.structuredElement(structure)))
+
+    def testShortCircuitCapturedInput(self, apply_map, num_parallel_calls): ...
+    	apply_map(
+        dataset, lambda x: captured_t, num_parallel_calls=num_parallel_calls)
+
+    def testSparse(self, apply_filter): ...
+    	apply_filter(dataset, _filter_fn)
+
+    def testSparse(self, apply_map): ...
+    	apply_map(dataset, _sparse)
+
+    def testSparse(self, verify_fn): ...
+    	verify_fn(self, _build_dataset, num_outputs=20)
+
+    def testSparse(self, verify_fn): ...
+    	verify_fn(self, _build_dataset, num_outputs=20)
+
+    def testSparse(self, verify_fn): ...
+    	verify_fn(self, _build_ds, num_outputs=20)
+
+    def testSparse(self, verify_fn): ...
+    	verify_fn(self, build_dataset, num_outputs=2)
+
+    def testSparse(self, verify_fn): ...
+    	verify_fn(self, self._build_dataset_sparse, num_outputs=2)
+
+    def testSparse(self, verify_fn): ...
+    	verify_fn(self, self._build_sparse_filter, num_outputs=5)
+
+    def testSparse(self, verify_fn, num_parallel_calls): ...
+    	verify_fn(self, lambda: _build_ds(num_outputs), num_outputs=num_outputs)
+
+    def testSparseChain(self, apply_map): ...
+    	apply_map(dataset, _sparse)
+    	apply_map(dataset, _check)
+
+    def testSparseMapShapeInference(self, apply_map): ...
+    	apply_map(dataset, lambda x: x)
+
+    def testSparseMapShapeInferencePartial(self, apply_map): ...
+    	apply_map(dataset, lambda x: x)
+
+    def testStatefulMapKeepsStateAcrossIterators(self, apply_map): ...
+    	apply_map(dataset, fn)
+
+    def testStatefulOperationInShortCircuit(self, apply_map): ...
+    	apply_map(dataset, increment_fn)
+
+    def testStructureFromValueEquality(self, value1_fn, value2_fn,
+                                       not_equal_value_fns): ...
+    	value1_fn()
+    	value2_fn()
+
+    def testTensorArray(self, apply_map): ...
+    	apply_map(dataset, _tensor_array)
+
+    def testTensorArrayChain(self, apply_map): ...
+    	apply_map(dataset, _tensor_array)
+    	apply_map(dataset, _check)
+
+    def testToBatchedTensorList(self, value_fn, element_0_fn): ...
+    	value_fn()
+    	element_0_fn()
+
+    def testUseStepContainerInFilter(self, apply_filter): ...
+    	apply_filter(dataset, _predicate)
+
+    def testUseStepContainerInMap(self, apply_map): ...
+    	apply_map(dataset,
+                        lambda elems: map_fn.map_fn(lambda x: x * x, elems))
+
+    def testVariadicInputSignature(self, function_decorator): ...
+    	function_decorator(
+        input_signature=(
+            tensor_spec.TensorSpec(shape=None, dtype=dtypes.float32),
+            tensor_spec.TensorSpec(shape=None, dtype=dtypes.float32, name='y'),
+            tensor_spec.TensorSpec(shape=(), dtype=dtypes.float32),
+            tensor_spec.TensorSpec(shape=(), dtype=dtypes.float32, name='z'),
+        ))
+
+    def testWrapFuncDatasetDevice(self, device_type, dataset_reduce_fn): ...
+    	dataset_reduce_fn(dataset_ops.Dataset.range(10))
+
+    def test_combine(self, device_spec_type): ...
+    	device_spec_type()
+
+    def test_constructor(self, device_spec_type): ...
+    	device_spec_type(job="j", replica=0, task=1,
+                         device_type="CPU", device_index=2)
+    	device_spec_type(device_type="GPU", device_index=0)
+
+    def test_decorator(f): ...
+    	f(*args, **kwargs)
+
+    def test_empty(self, device_spec_type): ...
+    	device_spec_type()
+
+    def test_fn(a, b): ...
+    	a(b)
+
+    def test_fn(a, b): ...
+    	a(b)
+
+    def test_fn(a, b): ...
+    	a(b)
+
+    def test_fn(a, b, c): ...
+    	a(b)
+
+    def test_fn(a, b, c, d, e, f): ...
+    	d(lambda b=f: a + b + c)
+
+    def test_function(a, c, some_computed, exception): ...
+    	some_computed('complicated' + exception)
+
+    def test_function(b, c, d, f): ...
+    	f(c)
+    	f(c + d)
+
+    def test_function(call_something, a, b, y, z, c, d, e, f, g, h, i): ...
+    	call_something(a + b, y * z, kwarg=c + d, *(e + f), **(g + h + i))
+
+    def test_function(compute, something, complicated, foo): ...
+    	compute(something + complicated)
+
+    def test_function(f): ...
+    	f(True, False, None)
+
+    def test_function(foo, bar, function, quux, quozzle, w, x, y, z): ...
+    	function(x + y)
+    	function(z / w)
+
+    def test_function(x, foo, bar): ...
+    	foo(x, x+1, 2)
+    	bar(y, y+1, 2)
+
+    def test_function(x, frob): ...
+    	frob(x, x+1, 2)
+
+    def test_hvp_shapes(self, hvp_function): ...
+    	hvp_function(model, images, labels, vector)
+
+    def test_replace(self, device_spec_type): ...
+    	device_spec_type()
+
+    def testto_string(self, device_spec_type): ...
+    	device_spec_type(job="foo")
+    	device_spec_type(job="foo", task=3)
+    	device_spec_type(job="foo", task=3, device_type="cpu", device_index=0)
+    	device_spec_type(job="foo", replica=12, device_type="cpu",
+                         device_index=0)
+    	device_spec_type(job="foo", replica=12, device_type="gpu",
+                         device_index=2)
+    	device_spec_type(job="foo", replica=12)
+    	device_spec_type(job="foo", replica=12, task=3, device_type="GPU")
+
+    def tf_if_stmt(cond, body, orelse, get_state, set_state, basic_symbol_names,
+                   composite_symbol_names): ...
+    	body()
+    	orelse()
+    	set_state(final_state)
+
+    def thread_creator_fn(next_creator, **kwargs): ...
+    	next_creator(**kwargs)
+
+    def times_two(mock_model): ...
+    	mock_model()
+
+    def times_two(mock_model): ...
+    	mock_model()
+
+    def train_and_evaluate(estimator, train_spec, eval_spec, executor_cls): ...
+    	executor_cls(local_estimator, train_spec, eval_spec)
+
+    def var_creator(next_creator, **kwargs): ...
+    	next_creator(**kwargs)
+    	next_creator(**kwargs)
+
+    def variable_creator_scope(self, next_creator, **kwargs): ...
+    	next_creator(**kwargs)
+
+    def verify_error_on_save(self,
+                             ds_fn,
+                             num_outputs,
+                             error,
+                             break_point=None,
+                             sparse_tensors=False): ...
+    	ds_fn()
+
+    def visit_block(self, nodes, before_visit=None, after_visit=None): ...
+    	before_visit()
+    	after_visit(replacement)
+
+    def wait_on_failure(self,
+                        on_failure_fn=None,
+                        on_recovery_fn=None,
+                        worker_device_name="(unknown)"): ...
+    	on_failure_fn()
+    	on_failure_fn()
+    	on_failure_fn()
+    	on_recovery_fn()
+
+    def while_stmt(test,
+                   body,
+                   get_state,
+                   set_state,
+                   init_vars,
+                   basic_symbol_names,
+                   composite_symbol_names,
+                   opts): ...
+    	test(*init_vars)
+    	body(*init_vars)
+
+    def while_stmt(test, body, get_state, set_state, symbol_names, opts): ...
+    	test()
+    	body()
+
+    def with_function_scope(thunk, scope_name, options): ...
+    	thunk(scope)
+
+    def wrap_f(f): ...
+    	f(self, *args, **kwargs)
+    	f(self, *args, **kwargs)
+
+    def wrap_py_func(f, return_dtypes, args, kwargs=None, use_dummy_return=False): ...
+    	f(*f_args, **f_kwargs)
+
+    def wrapper_decorator(f): ...
+    	f(*args, **kwargs)
+
+    def wrapping_decorator(f): ...
+    	f(*args, **kwargs)
+
+    def xla_allow_fallback_impl(func): ...
+    	func(self, *args, **kwargs)
+    	func(self, *args, **kwargs)

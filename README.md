@@ -201,6 +201,8 @@ Let's look at how callbacks are called in untyped Python code. (Click to see the
 				serializer(o, attrs=attrs.get(o, {}), user=user, **kwargs)
 		```
 
++ [tensorflow](./data/tensorflow-callback-parameters.txt)
+
 # How does it work?
 
 This includes annotations from parameter types, return types, attribute types, etc.
