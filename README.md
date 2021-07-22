@@ -238,6 +238,30 @@ Let's look at how callbacks are called in untyped Python code. (Click to see the
 			op_func(data, indices, segment_ids, num_segments=num_segments)
 		```
 
+## Callback parameters in Typed Projects
+
++ [mypy](./data/mypy-callback-parameters.txt): 66 functions with callback parameters (excluding 4 calls to `cls` in `classmethod`s).
+
+  + Callback is called with positional arguments: 86.4% (57/66)
+  + Callback is called with `*args, **kwargs`: 6.1% (4/66)
+  + Callback is called with `*args`: 3.0% (2/66)
+  + Callback is called with `**kwargs`: 0.0% (0/66)
+  + Callback is called with a named argument: 4.5% (3/66)
+
+    These were basically the same `fail` callback:
+
+		```python
+		# Mypyc doesn't support callback protocols yet.
+		MsgCallback = Callable[[str, Context, DefaultNamedArg(Optional[ErrorCode], 'code')], None]
+
+		def get_omitted_any(disallow_any: bool, fail: MsgCallback, note: MsgCallback,
+							orig_type: Type, python_version: Tuple[int, int],
+							fullname: Optional[str] = None,
+							unexpanded_type: Optional[Type] = None) -> AnyType:
+			fail(message_registry.IMPLICIT_GENERIC_ANY_BUILTIN.format(alternative), typ,
+				 code=codes.TYPE_ARG)
+		```
+
 # How does it work?
 
 This includes annotations from parameter types, return types, attribute types, etc.
