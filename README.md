@@ -201,7 +201,42 @@ Let's look at how callbacks are called in untyped Python code. (Click to see the
 				serializer(o, attrs=attrs.get(o, {}), user=user, **kwargs)
 		```
 
-+ [tensorflow](./data/tensorflow-callback-parameters.txt)
++ [tensorflow](./data/tensorflow-callback-parameters.txt): 1311 functions with callback parameters (excluding 113 calls to `cls` in `classmethod`s). I sampled around 113 functions.
+
+  + Callback is called with positional arguments: 63.7% (72/113)
+  + Callback is called with `*args, **kwargs`: 14.2% (16/113)
+  + Callback is called with `*args`: 1.8% (2/113)
+  + Callback is called with `**kwargs`: 10.6% (12/113)
+  + Callback is called with a named argument: 8.0% (9/113)
+
+    - Most of these were just calls to classes, like in the previous projects.
+	- Tests did some dynamic things.
+	- There were a few legitimate uses of named arguments.
+
+		```python
+		def _tf_gradients_forward_over_back_hvp(model, images, labels, vector): ...
+			model(images, training=True)
+
+
+		./debug/cli/analyzer_cli.py:1365:
+		def _dfs_from_node(self,
+						   lines,
+						   attr_segs,
+						   node_name,
+						   tracker,
+						   max_depth,
+						   depth,
+						   unfinished,
+						   include_control=False,
+						   show_op_type=False,
+						   command_template=None): ...
+			tracker(node_name, is_control=False)
+			tracker(node_name, is_control=True)
+
+
+		def _convert_sparse_segment(pfor_input, _, op_func): ...
+			op_func(data, indices, segment_ids, num_segments=num_segments)
+		```
 
 # How does it work?
 
