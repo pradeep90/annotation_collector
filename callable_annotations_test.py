@@ -43,7 +43,7 @@ def get_callback_function_calls(source: str) -> List[str]:
 
 class CallableAnnotationsTest(unittest.TestCase):
     @staticmethod
-    def matches(source: str, matcher: m.BaseMatcherNode) -> None:
+    def matches(source: str, matcher: m.BaseMatcherNode) -> bool:
         module = cst.parse_module(f"f: {source}")
         return m.matches(module.body[0].body[0].annotation, matcher)
 

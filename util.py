@@ -26,3 +26,7 @@ def get_modules(roots: Iterable[Path]) -> List[cst.Module]:
             print(f"Could not parse path {path}: {exception}\n\n")
 
     return modules
+
+
+def expression_to_string(expression: cst.BaseExpression) -> str:
+    return cst.Module([cst.SimpleStatementLine([cst.Expr(expression)])]).code.strip()

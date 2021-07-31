@@ -13,10 +13,6 @@ import dataclasses
 from util import get_modules, expression_to_string
 
 
-def expression_to_string(expression: cst.BaseExpression) -> str:
-    return cst.Module([cst.SimpleStatementLine([cst.Expr(expression)])]).code.strip()
-
-
 def register_buffer_arguments(module: cst.Module) -> List[cst.BaseExpression]:
     register_buffer_matcher = m.Call(
         func=m.Attribute(

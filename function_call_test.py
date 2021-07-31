@@ -3,7 +3,8 @@ import libcst as cst
 import libcst.matchers as m
 from textwrap import dedent
 from typing import List, Optional
-from function_call import register_buffer_arguments, expression_to_string
+from function_call import register_buffer_arguments
+from util import expression_to_string
 
 
 def get_register_buffer_arguments(source: str) -> List[str]:

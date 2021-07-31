@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from typing import Iterable, List, Callable
+from typing import Iterable, List, Callable, Sequence
 
 import libcst as cst
 import libcst.codemod as codemod
@@ -10,7 +10,7 @@ import argparse
 import textwrap
 import dataclasses
 
-from util import get_modules
+from util import get_modules, expression_to_string
 
 
 def type_subscript_matcher(inner_matcher: m.BaseMatcherNode) -> m.BaseMatcherNode:
@@ -64,7 +64,7 @@ class FunctionWithCallbackParameters:
     function: cst.FunctionDef
 
     @property
-    def calls_to_callback_parameters(self) -> List[cst.Call]:
+    def calls_to_callback_parameters(self) -> List[cst.CSTNode]:
         parameter_names = [
             parameter.name.value for parameter in self.function.params.params
         ]
@@ -89,8 +89,7 @@ class FunctionWithCallbackParameters:
     def function_signature_to_string(function: cst.FunctionDef) -> str:
         return cst.Module(
             [
-                dataclasses.replace(
-                    function,
+                function.with_changes(
                     body=cst.SimpleStatementSuite([cst.Expr(cst.Ellipsis())]),
                     leading_lines=[],
                     decorators=[],
@@ -98,14 +97,10 @@ class FunctionWithCallbackParameters:
             ]
         ).code.strip()
 
-    @staticmethod
-    def call_to_string(call: cst.Call) -> str:
-        return cst.Module([cst.SimpleStatementLine([cst.Expr(call)])]).code.strip()
-
     def __str__(self) -> str:
         signature = self.function_signature_to_string(self.function)
         calls = "\n\t".join(
-            self.call_to_string(call) for call in self.calls_to_callback_parameters
+            expression_to_string(call) for call in self.calls_to_callback_parameters
         )
         return f"{signature}\n\t{calls}\n"
 
@@ -143,7 +138,7 @@ def callback_protocols(module: cst.Module) -> List[cst.ClassDef]:
 def class_definition_to_string(class_: cst.ClassDef) -> str:
     dunder_call_method = m.findall(class_, dunder_call_matcher)[0]
     dunder_call_signature = cst.Module(
-        [dataclasses.replace(dunder_call_method, body=cst.SimpleStatementSuite([]))]
+        [dunder_call_method.with_changes(body=cst.SimpleStatementSuite([]))]
     ).code.strip()
     return f"{class_.name.value} - {dunder_call_signature}"
 
@@ -175,7 +170,7 @@ def callables_of_arity(
 
 
 def print_callables(
-    message: str, callables: Iterable[cst.Annotation], show_callables: bool
+    message: str, callables: Sequence[cst.Annotation], show_callables: bool
 ) -> None:
     print(f"{message}: {len(callables)}")
     if show_callables:
