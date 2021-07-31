@@ -1,0 +1,85 @@
+$ python3 function_calls.py /Users/pradeepkumars/Programs/github-clones/pytorch/torch/ --verbose
+Function calls: 71
+                                  **{k: v for k, v in factory_kwargs.items() if k != 'dtype'})
+                                  **{k: v for k, v in factory_kwargs.items() if k != 'dtype'})
+    dense_module.weight.to_mkldnn(dtype),
+    dense_module.weight.to_mkldnn(dtype),
+    self.dilation,
+    self.dilation,
+    self.groups)
+    self.groups)
+    self.padding,
+    self.padding,
+    self.stride,
+    self.stride,
+F.normalize(u, dim=0, eps=self.eps)
+F.normalize(v, dim=0, eps=self.eps)
+None
+None
+None
+_random_samples
+_random_samples
+col_offsets_hh
+col_offsets_ih
+dense_module.bias.to_mkldnn()
+dense_module.bias.to_mkldnn()
+dense_module.bias.to_mkldnn()
+dense_module.running_mean.to_mkldnn()
+dense_module.running_var.to_mkldnn()
+dense_module.weight.to_mkldnn()
+dense_module.weight.to_mkldnn(dtype)
+dense_module.weight.to_mkldnn(dtype)
+mask
+packed_hh
+packed_ih
+pos_weight
+self.weight
+torch._C._nn.mkldnn_reorder_conv2d_weight(
+torch._C._nn.mkldnn_reorder_conv3d_weight(
+torch.fbgemm_pack_quantized_matrix(self.weight.clone(memory_format=torch.contiguous_format))
+torch.ones(num_features, **factory_kwargs)
+torch.tensor(0, dtype=torch.long,
+torch.tensor(0, dtype=torch.long, device=device)
+torch.tensor([0], dtype=torch.int)
+torch.tensor([0], dtype=torch.long)
+torch.tensor([0], dtype=torch.long)
+torch.tensor([0], dtype=torch.uint8)
+torch.tensor([1.0], dtype=torch.float)
+torch.tensor([1], dtype=torch.uint8)
+torch.tensor([1], dtype=torch.uint8)
+torch.tensor([1], dtype=torch.uint8)
+torch.tensor([1], dtype=torch.uint8)
+torch.tensor([], **factory_kwargs)
+torch.tensor([], **factory_kwargs)
+torch.tensor([scale], **factory_kwargs)
+torch.tensor([scale], dtype=torch.float)
+torch.tensor([torch.finfo(torch.float32).eps])
+torch.tensor([torch.finfo(torch.float32).eps], **factory_kwargs)
+torch.tensor([zero_point], dtype=torch.int)
+torch.tensor([zero_point], dtype=torch.long,
+torch.tensor(float("-inf"), **factory_kwargs)
+torch.tensor(float("-inf"), **factory_kwargs)
+torch.tensor(float("inf"), **factory_kwargs)
+torch.tensor(float("inf"), **factory_kwargs)
+torch.tensor(scale, **factory_kwargs)
+torch.tensor(scale, **factory_kwargs)
+torch.tensor(scale, **factory_kwargs)
+torch.tensor(scale, **factory_kwargs)
+torch.tensor(scale, **factory_kwargs)
+torch.tensor(scale, **factory_kwargs)
+torch.tensor(zero_point, **factory_kwargs)
+torch.tensor(zero_point, **factory_kwargs)
+torch.tensor(zero_point, **factory_kwargs)
+torch.tensor(zero_point, **factory_kwargs)
+torch.tensor(zero_point, **factory_kwargs)
+torch.tensor(zero_point, **factory_kwargs)
+torch.zeros([dense_module.weight.size(0)], dtype=torch.float).to_mkldnn()
+torch.zeros([dense_module.weight.size(0)], dtype=torch.float).to_mkldnn()
+torch.zeros(num_features, **factory_kwargs)
+torch.zeros(self.bins, **factory_kwargs)
+torch.zeros_like(self.running_mean)
+torch.zeros_like(self.running_var)
+weight
+weight
+weight_hh
+weight_ih
