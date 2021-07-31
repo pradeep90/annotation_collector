@@ -96,6 +96,42 @@ Functions with callback parameters: 3
     	func(request, *args, **kwargs)
 ```
 
+## Calls to PyTorch `register_buffer`
+
+To see the initial argument passed to the Pytorch method `self.register_buffer`:
+
+```
+$ python3 function_call.py /Users/pradeepkumars/Programs/github-clones/pytorch/torch/utils/ --verbose
+PROGRESS: Parsed 20/103 files...
+PROGRESS: Parsed 40/103 files...
+PROGRESS: Parsed 60/103 files...
+PROGRESS: Parsed 80/103 files...
+PROGRESS: Parsed 100/103 files...
+Register buffer calls: 12
+dense_module.weight.to_mkldnn(dtype)
+dense_module.bias.to_mkldnn()
+torch.zeros([dense_module.weight.size(0)], dtype=torch.float).to_mkldnn()
+dense_module.bias.to_mkldnn()
+torch.zeros([dense_module.weight.size(0)], dtype=torch.float).to_mkldnn()
+dense_module.weight.to_mkldnn(dtype)
+torch._C._nn.mkldnn_reorder_conv2d_weight(
+    dense_module.weight.to_mkldnn(dtype),
+    self.padding,
+    self.stride,
+    self.dilation,
+    self.groups)
+torch._C._nn.mkldnn_reorder_conv3d_weight(
+    dense_module.weight.to_mkldnn(dtype),
+    self.padding,
+    self.stride,
+    self.dilation,
+    self.groups)
+dense_module.weight.to_mkldnn()
+dense_module.bias.to_mkldnn()
+dense_module.running_mean.to_mkldnn()
+dense_module.running_var.to_mkldnn()
+```
+
 # Stats
 
 Computed for the following repositories. Click to see the raw stats and callables.
