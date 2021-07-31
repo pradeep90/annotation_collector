@@ -10,6 +10,8 @@ import argparse
 import textwrap
 import dataclasses
 
+from util import get_modules
+
 
 def type_subscript_matcher(inner_matcher: m.BaseMatcherNode) -> m.BaseMatcherNode:
     return (
@@ -225,7 +227,9 @@ def print_protocol_data(modules: List[cst.Module], show_protocols: bool) -> None
             print(textwrap.indent(string, " " * 4))
 
 
-def print_functions_with_callback_parameters(modules: List[cst.Module], show_progress: bool) -> None:
+def print_functions_with_callback_parameters(
+    modules: List[cst.Module], show_progress: bool
+) -> None:
     functions = []
     for i, module in enumerate(modules):
         functions_for_module = (
@@ -247,27 +251,11 @@ def print_functions_with_callback_parameters(modules: List[cst.Module], show_pro
         print(textwrap.indent(string, " " * 4))
 
 
-def get_modules(roots: Iterable[Path]) -> List[cst.Module]:
-    files = [path for path in roots if path.is_file()]
-    directories = [path for path in roots if not path.is_file()]
-    paths = files + [
-        path
-        for directory in directories
-        for path in (*directory.rglob("*.py"), *directory.rglob("*.pyi"))
-    ]
-
-    modules = []
-    for path in paths:
-        try:
-            modules.append(cst.parse_module(Path(path).read_text()))
-        except Exception as exception:
-            print(f"Could not parse path {path}: {exception}\n\n")
-
-    return modules
-
-
 def main(
-        roots: Iterable[Path], show_callables: bool, show_callback_parameters: bool, show_progress: bool
+    roots: Iterable[Path],
+    show_callables: bool,
+    show_callback_parameters: bool,
+    show_progress: bool,
 ) -> None:
     modules = get_modules(roots)
 
@@ -283,9 +271,12 @@ if __name__ == "__main__":
     parser.add_argument(
         "--show-callback-parameters", action="store_true", default=False
     )
-    parser.add_argument(
-        "--show-progress", action="store_true", default=False
-    )
+    parser.add_argument("--show-progress", action="store_true", default=False)
     parser.add_argument("root", type=Path, nargs="+")
     arguments = parser.parse_args()
-    main(arguments.root, arguments.show_callables, arguments.show_callback_parameters, arguments.show_progress)
+    main(
+        arguments.root,
+        arguments.show_callables,
+        arguments.show_callback_parameters,
+        arguments.show_progress,
+    )
