@@ -17,7 +17,9 @@ def get_modules(roots: Iterable[Path]) -> List[cst.Module]:
     ]
 
     modules = []
-    for path in paths:
+    for i, path in enumerate(paths):
+        if i > 0 and i % SHOW_PROGRESS_EVERY == 0:
+            print(f"PROGRESS: Parsed {i}/{len(paths)} files...")
         try:
             modules.append(cst.parse_module(Path(path).read_text()))
         except Exception as exception:
