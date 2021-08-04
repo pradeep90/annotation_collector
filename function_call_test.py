@@ -3,7 +3,7 @@ import libcst as cst
 import libcst.matchers as m
 from textwrap import dedent
 from typing import List, Optional
-from function_call import register_buffer_arguments
+from function_call import register_buffer_arguments, calls_with_literals
 from util import expression_to_string
 
 
@@ -11,6 +11,15 @@ def get_register_buffer_arguments(source: str) -> List[str]:
     return [
         expression_to_string(argument)
         for argument in register_buffer_arguments(
+            cst.parse_module(dedent(source)),
+        )
+    ]
+
+
+def get_calls_with_literals(source: str) -> List[str]:
+    return [
+        expression_to_string(call)
+        for call in calls_with_literals(
             cst.parse_module(dedent(source)),
         )
     ]
@@ -35,6 +44,28 @@ class FunctionCallTest(unittest.TestCase):
                 class Foo:
                     def __init__(self):
                         self.register_buffer("bar")
+                """
+            ),
+            [],
+        )
+
+    def test_calls_with_literals(self) -> None:
+        self.assertEqual(
+            get_calls_with_literals(
+                """
+                def foo():
+                    bar("hello")
+                    baz(x, y, "hello", z)
+                """
+            ),
+            ["""bar("hello")""", """baz(x, y, "hello", z)"""],
+        )
+        self.assertEqual(
+            get_calls_with_literals(
+                """
+                def foo():
+                    bar()
+                    baz(x, y)
                 """
             ),
             [],

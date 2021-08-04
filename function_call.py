@@ -39,6 +39,22 @@ def register_buffer_arguments(module: cst.Module) -> List[cst.BaseExpression]:
     ]
 
 
+def calls_with_literals(module: cst.Module) -> List[cst.BaseExpression]:
+    call_with_literal_matcher = m.Call(
+        args=[
+            m.ZeroOrMore(),
+            m.Arg(
+                value=m.SimpleString(),
+            ),
+            m.ZeroOrMore(),
+        ],
+    )
+    return m.findall(
+        module,
+        call_with_literal_matcher,
+    )
+
+
 def print_register_buffer_arguments(modules: List[cst.Module], verbose: bool) -> None:
     arguments = [
         argument for module in modules for argument in register_buffer_arguments(module)
