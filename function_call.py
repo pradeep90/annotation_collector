@@ -44,7 +44,7 @@ def calls_with_literals(module: cst.Module) -> List[cst.BaseExpression]:
         args=[
             m.ZeroOrMore(),
             m.Arg(
-                value=m.SimpleString(),
+                value=m.SimpleString() | m.Integer() | m.Name("True") | m.Name("False"),
             ),
             m.ZeroOrMore(),
         ],

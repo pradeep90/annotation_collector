@@ -70,3 +70,23 @@ class FunctionCallTest(unittest.TestCase):
             ),
             [],
         )
+        self.assertEqual(
+            get_calls_with_literals(
+                """
+                def foo():
+                    bar(42)
+                    baz(x, y, 42, z)
+                """
+            ),
+            ["""bar(42)""", """baz(x, y, 42, z)"""],
+        )
+        self.assertEqual(
+            get_calls_with_literals(
+                """
+                def foo():
+                    bar(True)
+                    baz(x, y, False, z)
+                """
+            ),
+            ["""bar(True)""", """baz(x, y, False, z)"""],
+        )
