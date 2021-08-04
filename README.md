@@ -138,10 +138,10 @@ Computed for the following repositories. Click to see the raw stats and callable
 
 ## Projects with well-typed callables
 
-+ [typeshed](./typeshed-callables.txt)
-+ [mypy](./mypy-non-typeshed-callables.txt) - well typed. **Note**: I'm excluding Mypy's internal copy of typeshed.
-+ [spark](./spark-callables.txt) - pretty well typed. Very few `Callable`s with untyped parameters.
-+ [tornado](./tornado-callables.txt) - 50-50 well-typed and loosely-typed Callables.
++ [typeshed](./data/typeshed-callables.txt)
++ [mypy](./data/mypy-non-typeshed-callables.txt) - well typed. **Note**: I'm excluding Mypy's internal copy of typeshed.
++ [spark](./data/spark-callables.txt) - pretty well typed. Very few `Callable`s with untyped parameters.
++ [tornado](./data/tornado-callables.txt) - 50-50 well-typed and loosely-typed Callables.
 
 Combined stats:
 
@@ -158,11 +158,11 @@ Callback Protocols: 41 (2.36%)
 
 ## Projects with loosely-typed callables (mostly `f: Callable`)
 
-+ [sphinx](./sphinx-callables.txt) - mostly `Callable`.
-+ [jax](./jax-callables.txt) - mostly `Callable`.
-+ [pytorch/ignite](./pytorch-ignite-callables.txt) - almost all just `Callable`.
-+ [pytorch/vision](./vision-callables.txt) - mostly `Callable` or `Callable[..., nn.Module]`.
-+ [pandas](./pandas-callables.txt)
++ [sphinx](./data/sphinx-callables.txt) - mostly `Callable`.
++ [jax](./data/jax-callables.txt) - mostly `Callable`.
++ [pytorch/ignite](./data/pytorch-ignite-callables.txt) - almost all just `Callable`.
++ [pytorch/vision](./data/vision-callables.txt) - mostly `Callable` or `Callable[..., nn.Module]`.
++ [pandas](./data/pandas-callables.txt)
 
 Combined stats:
 
