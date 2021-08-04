@@ -96,42 +96,6 @@ Functions with callback parameters: 3
     	func(request, *args, **kwargs)
 ```
 
-## Calls to PyTorch `register_buffer`
-
-To see the initial argument passed to the Pytorch method `self.register_buffer`:
-
-```
-$ python3 function_call.py /Users/pradeepkumars/Programs/github-clones/pytorch/torch/utils/ --verbose
-PROGRESS: Parsed 20/103 files...
-PROGRESS: Parsed 40/103 files...
-PROGRESS: Parsed 60/103 files...
-PROGRESS: Parsed 80/103 files...
-PROGRESS: Parsed 100/103 files...
-Register buffer calls: 12
-dense_module.weight.to_mkldnn(dtype)
-dense_module.bias.to_mkldnn()
-torch.zeros([dense_module.weight.size(0)], dtype=torch.float).to_mkldnn()
-dense_module.bias.to_mkldnn()
-torch.zeros([dense_module.weight.size(0)], dtype=torch.float).to_mkldnn()
-dense_module.weight.to_mkldnn(dtype)
-torch._C._nn.mkldnn_reorder_conv2d_weight(
-    dense_module.weight.to_mkldnn(dtype),
-    self.padding,
-    self.stride,
-    self.dilation,
-    self.groups)
-torch._C._nn.mkldnn_reorder_conv3d_weight(
-    dense_module.weight.to_mkldnn(dtype),
-    self.padding,
-    self.stride,
-    self.dilation,
-    self.groups)
-dense_module.weight.to_mkldnn()
-dense_module.bias.to_mkldnn()
-dense_module.running_mean.to_mkldnn()
-dense_module.running_var.to_mkldnn()
-```
-
 # Stats
 
 Computed for the following repositories. Click to see the raw stats and callables.
@@ -297,6 +261,79 @@ Let's look at how callbacks are called in untyped Python code. (Click to see the
 			fail(message_registry.IMPLICIT_GENERIC_ANY_BUILTIN.format(alternative), typ,
 				 code=codes.TYPE_ARG)
 		```
+
+# Function Calls
+
+## Calls to PyTorch `register_buffer`
+
+To see the initial argument passed to the Pytorch method `self.register_buffer`:
+
+```
+$ python3 function_call.py /Users/pradeepkumars/Programs/github-clones/pytorch/torch/utils/ --verbose
+PROGRESS: Parsed 20/103 files...
+PROGRESS: Parsed 40/103 files...
+PROGRESS: Parsed 60/103 files...
+PROGRESS: Parsed 80/103 files...
+PROGRESS: Parsed 100/103 files...
+Register buffer calls: 12
+dense_module.weight.to_mkldnn(dtype)
+dense_module.bias.to_mkldnn()
+torch.zeros([dense_module.weight.size(0)], dtype=torch.float).to_mkldnn()
+dense_module.bias.to_mkldnn()
+torch.zeros([dense_module.weight.size(0)], dtype=torch.float).to_mkldnn()
+dense_module.weight.to_mkldnn(dtype)
+torch._C._nn.mkldnn_reorder_conv2d_weight(
+    dense_module.weight.to_mkldnn(dtype),
+    self.padding,
+    self.stride,
+    self.dilation,
+    self.groups)
+torch._C._nn.mkldnn_reorder_conv3d_weight(
+    dense_module.weight.to_mkldnn(dtype),
+    self.padding,
+    self.stride,
+    self.dilation,
+    self.groups)
+dense_module.weight.to_mkldnn()
+dense_module.bias.to_mkldnn()
+dense_module.running_mean.to_mkldnn()
+dense_module.running_var.to_mkldnn()
+```
+
+## Calls that have a Literal Argument
+
+```
+./function_call.py /Users/pradeepkumars/Programs/github-clones/pytorch/torch/utils/mkldnn.py --verbose
+...
+
+Calls with literals: 12
+self.register_buffer('weight', dense_module.weight.to_mkldnn(dtype))
+self.register_buffer('bias', dense_module.bias.to_mkldnn())
+self.register_buffer(
+    'bias',
+    torch.zeros([dense_module.weight.size(0)], dtype=torch.float).to_mkldnn())
+self.register_buffer('bias', dense_module.bias.to_mkldnn())
+self.register_buffer(
+    'bias',
+    torch.zeros([dense_module.weight.size(0)], dtype=torch.float).to_mkldnn())
+self.register_buffer('weight', dense_module.weight.to_mkldnn(dtype))
+self.register_buffer('weight', torch._C._nn.mkldnn_reorder_conv2d_weight(
+    dense_module.weight.to_mkldnn(dtype),
+    self.padding,
+    self.stride,
+    self.dilation,
+    self.groups))
+self.register_buffer('weight', torch._C._nn.mkldnn_reorder_conv3d_weight(
+    dense_module.weight.to_mkldnn(dtype),
+    self.padding,
+    self.stride,
+    self.dilation,
+    self.groups))
+self.register_buffer('weight', dense_module.weight.to_mkldnn())
+self.register_buffer('bias', dense_module.bias.to_mkldnn())
+self.register_buffer('running_mean', dense_module.running_mean.to_mkldnn())
+self.register_buffer('running_var', dense_module.running_var.to_mkldnn())
+```
 
 # How does it work?
 

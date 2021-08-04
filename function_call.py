@@ -65,9 +65,19 @@ def print_register_buffer_arguments(modules: List[cst.Module], verbose: bool) ->
             print(expression_to_string(argument))
 
 
+def print_calls_with_literals(modules: List[cst.Module], verbose: bool) -> None:
+    calls = [call for module in modules for call in calls_with_literals(module)]
+    print(f"Calls with literals: {len(calls)}")
+    if verbose:
+        for call in calls:
+            print(expression_to_string(call))
+
+
 def main(roots: Iterable[Path], verbose: bool) -> None:
     modules = get_modules(roots)
     print_register_buffer_arguments(modules, verbose)
+    print("")
+    print_calls_with_literals(modules, verbose)
 
 
 if __name__ == "__main__":
