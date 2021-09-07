@@ -71,7 +71,7 @@ class FunctionWithCallbackParameters:
         return [
             call
             for name in parameter_names
-            for call in m.findall(self.function, m.Call(func=m.Name(value=name)))
+            for call in m.findall(self.function.body, m.Call(func=m.Name(value=name)))
         ]
 
     @staticmethod

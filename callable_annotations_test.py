@@ -205,3 +205,20 @@ class CallableAnnotationsTest(unittest.TestCase):
             ),
             ["def foo(self, func): ...\n\tfunc(42)\n"],
         )
+        # Decorator that happens to use a function with the same name as a
+        # parameter.
+        self.assertEqual(
+            get_callback_function_calls(
+                """
+                def predicate(x: int) -> Predicate:
+                    return Predicate(x)
+
+                @data_provider(
+                    predicate(x=1)
+                )
+                def foo(predicate: Predicate):
+                    print(predicate)
+                """
+            ),
+            [],
+        )
