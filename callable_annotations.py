@@ -79,7 +79,14 @@ class FunctionWithCallbackParameters:
         module: cst.Module,
     ) -> List["FunctionWithCallbackParameters"]:
         functions = []
-        for function_definition in m.findall(module, m.FunctionDef()):
+
+        try:
+            definitions = m.findall(module, m.FunctionDef())
+        except Exception as exception:
+            print(f"Could not get callback parameters for module due to: {exception}")
+            definitions = []
+
+        for function_definition in definitions:
             function = FunctionWithCallbackParameters(function_definition)
             if function.calls_to_callback_parameters:
                 functions.append(function)
@@ -127,12 +134,16 @@ def callable_annotations(module: cst.Module) -> List[cst.Annotation]:
 
 
 def callback_protocols(module: cst.Module) -> List[cst.ClassDef]:
-    return list(
-        m.findall(
-            module,
-            callback_protocol_matcher,
+    try:
+        return list(
+            m.findall(
+                module,
+                callback_protocol_matcher,
+            )
         )
-    )
+    except Exception as exception:
+        print(f"Could not get callback protocols for module due to: {exception}")
+        return []
 
 
 def class_definition_to_string(class_: cst.ClassDef) -> str:

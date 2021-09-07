@@ -12,6 +12,8 @@ from callable_annotations import (
     FunctionWithCallbackParameters,
     class_definition_to_string,
 )
+from unittest.mock import patch, MagicMock
+import libcst
 
 
 def get_callable_annotations(source: str) -> List[str]:
@@ -156,6 +158,17 @@ class CallableAnnotationsTest(unittest.TestCase):
             [],
         )
 
+    @patch.object(libcst.matchers, "findall", side_effect=Exception)
+    def test_callback_protocols__exception(self, findall: MagicMock) -> None:
+        self.assertEqual(
+            get_callback_protocols(
+                """
+                class SomeDeeplyNestedCode: ...
+                """
+            ),
+            [],
+        )
+
     def test_callback_parameter(self) -> None:
         self.assertEqual(
             get_callback_function_calls(
@@ -218,6 +231,18 @@ class CallableAnnotationsTest(unittest.TestCase):
                 )
                 def foo(predicate: Predicate):
                     print(predicate)
+                """
+            ),
+            [],
+        )
+
+    @patch.object(libcst.matchers, "findall", side_effect=Exception)
+    def test_callback_parameter__exception(self, findall: MagicMock) -> None:
+        self.assertEqual(
+            get_callback_function_calls(
+                """
+                def some_messed_up_code():
+                    pass
                 """
             ),
             [],
