@@ -106,10 +106,10 @@ class FunctionWithCallbackParameters:
 
     def __str__(self) -> str:
         signature = self.function_signature_to_string(self.function)
-        calls = "\n\t".join(
+        calls = "\n".join(
             expression_to_string(call) for call in self.calls_to_callback_parameters
         )
-        return f"{signature}\n\t{calls}\n"
+        return f"""{signature}\n{textwrap.indent(calls, " " * 4)}\n"""
 
 
 def annotation_to_string(annotation: cst.Annotation) -> str:
