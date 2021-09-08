@@ -1,0 +1,2878 @@
+Callables with 0 parameters: 10
+    Callable[[], Batch]
+    Callable[[], bool]
+    Callable[[], bool]
+    Callable[[], float]
+    Callable[[], float]
+    Callable[[], float]
+    Callable[[], float]
+    Callable[[], float]
+    Callable[[], float]
+    Callable[[], str]
+Callables with 1 parameters: 24
+    Callable[['Module'], None]
+    Callable[[Any], Any]
+    Callable[[Argument], Argument]
+    Callable[[Batch], None]
+    Callable[[List[float]], bool]
+    Callable[[Module], None]
+    Callable[[Node], 'Argument']
+    Callable[[Node], Argument]
+    Callable[[Node], Argument]
+    Callable[[Node], str]
+    Callable[[Tensor], Optional[Tensor]]
+    Callable[[Tensor], str]
+    Callable[[Tensor], str]
+    Callable[[Type[SkippableModule]], Type[Skippable]]
+    Callable[[float], float]
+    Callable[[int], ProfilerAction]
+    Callable[[int], float]
+    Callable[[int], int]
+    Callable[[str], Optional[Tensor]]
+    Callable[[str], bool]
+    Callable[[str], bool]
+    Callable[[str], str]
+    Callable[[str], str]
+    Callable[[torch.fx.node.Node], int]
+Callables with 2 parameters: 18
+    Callable[[Any, Any], Any]
+    Callable[[Any, dist.GradBucket], torch.futures.Future]
+    Callable[[Any, dist.GradBucket], torch.futures.Future]
+    Callable[[Any, dist.GradBucket], torch.futures.Future]
+    Callable[[Any, dist.GradBucket], torch.futures.Future]
+    Callable[[Tensor, Tensor], Tensor]
+    Callable[[Tensor, Tensor], Tensor]
+    Callable[[Tensor, Tensor], Tensor]
+    Callable[[Tensor, Tensor], Tensor]
+    Callable[[_RendezvousContext, float], _Action]
+    Callable[[_RendezvousContext, float], _Action]
+    Callable[[int, float], NoReturn]
+    Callable[[int, float], NoReturn]
+    Callable[[int, float], NoReturn]
+    Callable[[int, float], NoReturn]
+    Callable[[str, Optional[Tensor]], None]
+    Callable[[str, int], str]
+    Callable[[torch.Tensor, torch.Tensor], torch.Tensor]
+Callables with 3 parameters: 11
+    Callable[['Module', _grad_t, _grad_t], Union[None, Tensor]]
+    Callable[['Module', _grad_t, _grad_t], Union[None, Tensor]]
+    Callable[['Module', _grad_t, _grad_t], Union[None, Tensor]]
+    Callable[['Module', _grad_t, _grad_t], Union[None, Tensor]]
+    Callable[[Any, Any, Any], Tuple[float, bool]]
+    Callable[[Module, _grad_t, _grad_t], Union[None, Tensor]]
+    Callable[[Tensor, Tensor, Diagnostics], str]
+    Callable[[Tensor, Tensor, Diagnostics], str]
+    Callable[[Tensor, Tensor, Diagnostics], str]
+    Callable[[Tensor, Tensor, int], Tensor]
+    Callable[[TensorOrTensors, TensorOrTensors, Names], Tuple[float, bool]]
+Callables with 4 parameters: 0
+Callables with 5 parameters: 0
+Callables with arbitrary parameters: 257
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., Any]
+    Callable[..., None]
+    Callable[..., None]
+    Callable[..., None]
+    Callable[..., None]
+    Callable[..., None]
+    Callable[..., None]
+    Callable[..., None]
+    Callable[..., None]
+    Callable[..., Optional[_TestingErrorMeta]]
+    Callable[..., Optional[_TestingErrorMeta]]
+    Callable[..., Optional[_TestingErrorMeta]]
+    Callable[..., Optional[_TestingErrorMeta]]
+    Callable[..., Optional[_TestingErrorMeta]]
+    Callable[..., Optional[_TestingErrorMeta]]
+    Callable[..., Optional[_TestingErrorMeta]]
+    Callable[..., Optional[_TestingErrorMeta]]
+    Callable[..., T]
+    Callable[..., T]
+    Callable[..., Union[_TensorOrTensors]]
+    Callable[..., _TensorOrTensors]
+    Callable[..., bool]
+Callback Protocols: 1
+    Function - def __call__(self, input: TensorOrTensors) -> TensorOrTensors: pass
+
+Functions with callback parameters: 468
+    # type: ignore[override]
+    def forward(
+        ctx: Context,
+        phony: Tensor,
+        recomputed: Deque[Recomputed],
+        rng_states: Deque[RNGStates],
+        function: Function,
+        input_atomic: bool,
+        *inputs,
+    ): ...
+    	function(inputs[0])
+    	function(*inputs)
+
+    def Benchmark(model_gen, arg): ...
+    	model_gen(arg.order)
+
+    def Benchmark(model_gen, arg): ...
+    	model_gen(arg.order, arg.cudnn_ws)
+
+    def CallWithExceptionIntercept(func, op_id_fetcher, net_name, *args, **kwargs): ...
+    	func(*args, **kwargs)
+    	op_id_fetcher()
+
+    def GetGraphPngSafe(func, *args, **kwargs): ...
+    	func(*args, **kwargs)
+
+    def GetPydotGraph(
+        operators_or_net,
+        name=None,
+        rankdir='LR',
+        op_node_producer=None,
+        blob_node_producer=None
+    ): ...
+    	op_node_producer(op, op_id)
+    	blob_node_producer(
+        _escape_label(
+            input_name + str(pydot_node_counts[input_name])),
+        label=_escape_label(input_name),
+    )
+    	blob_node_producer(
+        _escape_label(
+            output_name + str(pydot_node_counts[output_name])),
+        label=_escape_label(output_name),
+    )
+
+    def GetPydotGraphMinimal(
+        operators_or_net,
+        name=None,
+        rankdir='LR',
+        minimal_dependency=False,
+        op_node_producer=None,
+    ): ...
+    	op_node_producer(op, op_id)
+
+    def Parallelize(
+        model_helper_obj,
+        input_builder_fun,
+        forward_pass_builder_fun,
+        param_update_builder_fun=None,
+        optimizer_builder_fun=None,
+        post_sync_builder_fun=None,
+        pre_grad_net_transformer_fun=None,
+        net_transformer_fun=None,
+        devices=None,
+        rendezvous=None,
+        net_type='dag',
+        broadcast_computed_params=True,
+        optimize_gradient_memory=False,
+        dynamic_memory_management=False,
+        blobs_to_keep=None,
+        use_nccl=False,
+        max_concurrent_distributed_ops=16,
+        cpu_device=False,
+        ideep=False,
+        num_threads_per_device=4,
+        shared_model=False,
+        combine_spatial_bn=False,
+        barrier_net_timeout_sec=_DEFAULT_BARRIER_NET_TIMEOUT_SEC,
+    ): ...
+    	input_builder_fun(model_helper_obj)
+    	forward_pass_builder_fun(model_helper_obj, loss_scale)
+    	param_update_builder_fun(model_helper_obj)
+    	optimizer_builder_fun(model_helper_obj)
+    	post_sync_builder_fun(model_helper_obj)
+    	pre_grad_net_transformer_fun(model_helper_obj)
+    	net_transformer_fun(
+        model_helper_obj,
+        len(devices),
+        model_helper_obj._device_prefix,
+        model_helper_obj._device_type)
+
+    def Parallelize_BMUF(
+        model_helper_obj,
+        input_builder_fun,
+        forward_pass_builder_fun,
+        param_update_builder_fun,
+        block_learning_rate=1.0,
+        block_momentum=None,
+        devices=None,
+        rendezvous=None,
+        net_type='dag',
+        master_device=None,
+        use_nccl=False,
+        nesterov=False,
+        optimize_gradient_memory=False,
+        reset_momentum_sgd=False,
+        warmup_iterations=None,
+        max_concurrent_distributed_ops=4,
+        add_blobs_to_sync=None,
+        num_threads_per_device=4,
+        cpu_device=False,
+        barrier_net_timeout_sec=_DEFAULT_BARRIER_NET_TIMEOUT_SEC,
+    ): ...
+    	input_builder_fun(model_helper_obj)
+    	forward_pass_builder_fun(model_helper_obj, loss_scale)
+    	param_update_builder_fun(model_helper_obj)
+
+    def RunningAllreduceWithGPUs(self, gpu_ids, allreduce_function): ...
+    	allreduce_function(
+        net, ["testblob_gpu_" + str(i)
+              for i in gpu_ids], "_reduced", gpu_ids
+    )
+
+    def ShowMultiple(self, patches, ncols=None, cmap=None, bg_func=np.mean): ...
+    	bg_func(patches)
+
+    def TryReadProtoWithClass(cls, s): ...
+    	cls()
+
+    def _ConvBase(
+        model,
+        is_nd,
+        blob_in,
+        blob_out,
+        dim_in,
+        dim_out,
+        kernel,
+        weight_init=None,
+        bias_init=None,
+        WeightInitializer=None,
+        BiasInitializer=None,
+        group=1,
+        transform_inputs=None,
+        use_cudnn=False,
+        order="NCHW",
+        cudnn_exhaustive_search=False,
+        ws_nbytes_limit=None,
+        float16_compute=False,
+        **kwargs
+    ): ...
+    	transform_inputs(model, blob_out, inputs)
+
+    def _FC_or_packed_FC(
+        model, op_call, blob_in, blob_out, dim_in, dim_out, weight_init=None,
+            bias_init=None, WeightInitializer=None, BiasInitializer=None,
+            enable_tensor_core=False, float16_compute=False, **kwargs
+    ): ...
+    	op_call([blob_in, weight, bias], blob_out, **kwargs)
+
+    def _ForEachDevice(devices, f, device_type, device_prefix, scoped=False,
+                       *args, **kwargs): ...
+    	f(device, *args, **kwargs)
+    	f(device, *args, **kwargs)
+
+    def _LSTM(
+        cell_class,
+        model,
+        input_blob,
+        seq_lengths,
+        initial_states,
+        dim_in,
+        dim_out,
+        scope=None,
+        outputs_with_grads=(0,),
+        return_params=False,
+        memory_optimization=False,
+        forget_bias=0.0,
+        forward_only=False,
+        drop_states=False,
+        return_last_layer_only=True,
+        static_rnn_unroll_size=None,
+        **cell_kwargs
+    ): ...
+    	cell_class(
+        input_size=(dim_in if i == 0 else dim_out[i - 1]),
+        hidden_size=dim_out[i],
+        forget_bias=forget_bias,
+        memory_optimization=memory_optimization,
+        name=scope if num_layers == 1 else None,
+        forward_only=forward_only,
+        drop_states=drop_states,
+        **cell_kwargs
+    )
+
+    def _RegisterPythonImpl(
+        f, grad_f=None, python_func_type=None, pass_workspace=False
+    ): ...
+    	python_func_type(f)
+
+    def __call__(self, fn): ...
+    	fn(slf, *args, **kwargs)
+
+    def __call__(self, fn): ...
+    	fn(slf, *args, **kwargs)
+
+    def __call__(self, fn): ...
+    	fn(slf, *args, **kwargs)
+    	fn(slf, *args, **kwargs)
+
+    def __call__(self, fn): ...
+    	fn(slf, device, *args, **kwargs)
+    	fn(slf, *args, **kwargs)
+    	fn(slf, device, *args, **kwargs)
+    	fn(slf, *args, **kwargs)
+
+    def __call__(self, fn): ...
+    	fn(slf, devices, *args, **kwargs)
+
+    def __call__(self, func): ...
+    	func(*args, **kwargs)
+
+    def __call__(self, func): ...
+    	func(*args, **kwargs)
+
+    def __call__(self, func): ...
+    	func(*args, **kwargs)
+
+    def __call__(self, func): ...
+    	func(*args, **kwargs)
+
+    def __call__(self, func): ...
+    	func(*args, **kwargs)
+
+    def __call__(self, func: F) -> F: ...
+    	func(*args, **kwargs)
+
+    def __init__(
+        self,
+        file_or_buffer: Union[str, torch._C.PyTorchFileReader, Path, BinaryIO],
+        module_allowed: Callable[[str], bool] = lambda module_name: True,
+    ): ...
+    	module_allowed(extern_module)
+
+    def __init__(
+        self, modules: Sequence[Module], original: Union[Tensor, Parameter], unsafe: bool = False
+    ) -> None: ...
+    	self()
+
+    def __init__(self,
+                 datapipe: IterDataPipe,
+                 sampler: Type[Sampler] = SequentialSampler,
+                 sampler_args: Optional[Tuple] = None,
+                 sampler_kwargs: Optional[Dict] = None
+                 ) -> None: ...
+    	sampler(data_source=self.datapipe, *self.sampler_args,
+                           **self.sampler_kwargs)
+
+    def __init__(self, constructor_input, forward_input=None, desc='', reference_fn=None): ...
+    	reference_fn(m, list(m.parameters()), *args, **kwargs)
+
+    def __init__(self, functional_optim_cls, *functional_optim_args, **functional_optim_kwargs): ...
+    	functional_optim_cls(
+        [],
+        *functional_optim_args,
+        **functional_optim_kwargs,
+        allow_empty_param_list=True
+    )
+
+    def __init__(self, model, input_record, output_names_or_num, function,
+                 name='functional', output_dtypes=None, tags=None, **kwargs): ...
+    	function(type_net, self.input_record, self.output_schema, **kwargs)
+
+    def __init__(self, n: int, generator_fn, start_epoch=0): ...
+    	generator_fn(self._epoch)
+
+    def __init__(self, observer, quant_min=0, quant_max=255, scale=1., zero_point=0., channel_len=-1,
+                 use_grad_scaling=False, **observer_kwargs): ...
+    	observer(**observer_kwargs)
+
+    def __init__(self, observer=MovingAverageMinMaxObserver, quant_min=0, quant_max=255, **observer_kwargs): ...
+    	observer(**observer_kwargs)
+
+    def __init__(self, optim_cls, local_params_rref, *args, **kwargs): ...
+    	optim_cls(
+        self._local_params,
+        *args,
+        **kwargs)
+
+    def __init__(self, optim_cls, local_params_rref, *args, **kwargs): ...
+    	optim_cls(
+        self._local_params,
+        *args,
+        **kwargs)
+
+    def __init__(self, q_module, float_module, logger_cls): ...
+    	logger_cls()
+
+    def __new__(cls, datapipe, instances, classifier_fn): ...
+    	classifier_fn(x)
+
+    def __test_binary_op(self, gc, dc, caffe2_op, op_function): ...
+    	op_function(X_out, Y_out)
+
+    def __torch_function__(cls, func, types, args=(), kwargs=None): ...
+    	func(*args, **kwargs)
+
+    def _accumulate(iterable, fn=lambda x, y: x + y): ...
+    	fn(total, element)
+
+    def _adaptive_pool(name, type, tuple_fn, fn=None): ...
+    	tuple_fn(k)
+    	tuple_fn(k)
+    	fn(g, input, k, k, (0,) * len(dim), (1,) * len(dim), False)
+
+    def _apply(self, fn): ...
+    	fn(param)
+    	fn(param.grad)
+    	fn(buf)
+
+    def _apply(self, fn): ...
+    	fn(param.data)
+    	fn(param._grad.data)
+    	fn(buf.data)
+
+    def _apply_on_tensors(self, fn, args): ...
+    	fn(grad_fns[0])
+
+    def _as_tuple(value: Any, num_elements: int, error_message_lambda: Callable[[], str]) -> Tuple: ...
+    	error_message_lambda()
+
+    def _assertGradReferenceChecks(
+        self,
+        op,
+        inputs,
+        ref_outputs,
+        output_to_grad,
+        grad_reference,
+        threshold=1e-4,
+    ): ...
+    	grad_reference(output_grad, ref_outputs, inputs)
+
+    def _avg_pool(name, tuple_fn): ...
+    	tuple_fn(kernel_size)
+    	tuple_fn(stride)
+
+    def _avg_pool(name, tuple_fn): ...
+    	tuple_fn(kernel_size)
+    	tuple_fn(stride)
+
+    def _avg_pool(name, tuple_fn): ...
+    	tuple_fn(kernel_size)
+    	tuple_fn(stride)
+
+    def _avgpool_helper(tuple_fn, padding, kernel_size, stride, divisor_override, name): ...
+    	tuple_fn(padding)
+
+    def _bad_tensor_splits(draw): ...
+    	draw(st.lists(st.integers(4, 6), min_size=4, max_size=4))
+    	draw(st.permutations(element_pairs))
+    	draw(
+        st.lists(
+            st.floats(min_value=-1.0, max_value=1.0), min_size=offset, max_size=offset
+        )
+    )
+    	draw(st.permutations(range(offset)))
+
+    def _build(
+        model,
+        optimizer,
+        weights_only=False,
+        use_param_info_optim=True,
+        max_gradient_norm=None,
+        allow_lr_injection=False,
+    ): ...
+    	optimizer(model.net, model.param_init_net, param_info)
+
+    def _call_method(method, obj_rref, *args, **kwargs): ...
+    	method(obj_rref.local_value(), *args, **kwargs)
+
+    def _call_method(method, rref, *args, **kwargs): ...
+    	method(rref.local_value(), *args, **kwargs)
+
+    def _call_method(method, rref, *args, **kwargs): ...
+    	method(rref.local_value(), *args, **kwargs)
+
+    def _call_method_on_rref(method, rref, *args, **kwargs): ...
+    	method(rref.local_value(), *args, **kwargs)
+
+    def _checkModuleCorrectnessAgainstOrig(self, orig_mod, test_mod, calib_data): ...
+    	orig_mod(*inp)
+    	test_mod(*inp)
+
+    def _check_complex_components_individually(
+        check_tensors: Callable[..., Optional[_TestingErrorMeta]]
+    ) -> Callable[..., Optional[_TestingErrorMeta]]: ...
+    	check_tensors(actual, expected, equal_nan=equal_nan, **kwargs)
+    	check_tensors(actual.real, expected.real, equal_nan=equal_nan, **kwargs)
+    	check_tensors(actual.imag, expected.imag, equal_nan=equal_nan, **kwargs)
+
+    def _check_quantized(
+        check_tensor_values: Callable[..., Optional[_TestingErrorMeta]]
+    ) -> Callable[..., Optional[_TestingErrorMeta]]: ...
+    	check_tensor_values(actual, expected, **kwargs)
+    	check_tensor_values(actual.dequantize(), expected.dequantize(), **kwargs)
+
+    def _check_sparse_coo_members_individually(
+        check_tensors: Callable[..., Optional[_TestingErrorMeta]]
+    ) -> Callable[..., Optional[_TestingErrorMeta]]: ...
+    	check_tensors(actual, expected, **kwargs)
+    	check_tensors(actual._indices(), expected._indices(), **kwargs_equal)
+    	check_tensors(actual._values(), expected._values(), **kwargs)
+
+    def _check_sparse_csr_members_individually(
+        check_tensors: Callable[..., Optional[_TestingErrorMeta]]
+    ) -> Callable[..., Optional[_TestingErrorMeta]]: ...
+    	check_tensors(actual, expected, **kwargs)
+    	check_tensors(actual.crow_indices(), expected.crow_indices(), **kwargs_equal)
+    	check_tensors(actual.col_indices(), expected.col_indices(), **kwargs_equal)
+    	check_tensors(actual.values(), expected.values(), **kwargs)
+
+    def _compute_analytical_jacobian_rows(vjp_fn, sample_output) -> List[List[Optional[torch.Tensor]]]: ...
+    	vjp_fn(grad_out_base)
+
+    def _compute_numerical_gradient(fn, entry, v, norm_v, nbhd_checks_fn): ...
+    	fn()
+    	fn()
+    	nbhd_checks_fn(a, b)
+
+    def _compute_numerical_jvps_wrt_specific_input(jvp_fn, delta, input_is_complex,
+                                                   is_forward_ad=False) -> List[torch.Tensor]: ...
+    	jvp_fn(delta[0] if isinstance(delta, tuple) else delta)
+    	jvp_fn(delta[1] * 1j)
+    	jvp_fn(delta * 1j)
+
+    def _construct(cpp_module, init_fn): ...
+    	init_fn(script_module)
+
+    def _create_module(module_cls, args, kwargs, device): ...
+    	module_cls(*args, **kwargs)
+
+    def _create_quantized_model(self, model_class: Type[torch.nn.Module], **kwargs): ...
+    	model_class(**kwargs)
+
+    def _create_wrapped_func(orig_fn): ...
+    	orig_fn(*args, **kwargs)
+
+    def _data(draw): ...
+    	draw(
+        hu.tensor(
+            dtype=np.int64,
+            elements=st.integers(
+                min_value=np.iinfo(np.int64).min, max_value=np.iinfo(np.int64).max
+            )
+        )
+    )
+
+    def _dataset(draw, min_elements=3, max_elements=10, **kwargs): ...
+    	draw(st.integers(min_value=min_elements, max_value=max_elements))
+    	draw(_dense_features_map(num_records))
+    	draw(_sparse_features_map(num_records))
+    	draw(
+            st.lists(
+                st.text(alphabet=string.ascii_lowercase),
+                min_size=num_records,
+                max_size=num_records,
+            )
+        )
+
+    def _dense_features_map(draw, num_records, **kwargs): ...
+    	draw(
+        st.lists(
+            st.integers(min_value=1, max_value=10),
+            min_size=num_records,
+            max_size=num_records,
+        )
+    )
+    	draw(
+        st.lists(
+            st.integers(min_value=1, max_value=100),
+            min_size=total_length,
+            max_size=total_length,
+            unique=True,
+        )
+    )
+    	draw(
+        st.lists(st.floats(), min_size=total_length, max_size=total_length)
+    )
+
+    def _dev_options(draw): ...
+    	draw(st.sampled_from(hu.device_options))
+    	draw(st.sampled_from(hu.device_options))
+
+    def _directional_evaluate(self, closure, x, t, d): ...
+    	closure()
+
+    def _do_test(self, test_case, module, input): ...
+    	module(input)
+    	module(*input_tuple)
+    	module(*input_tuple)
+    	module(*input_tuple)
+    	module(*input_tuple)
+    	module(*input_tuple)
+    	module(*input_tuple)
+    	module(*input_tuple)
+    	module(*input_tuple)
+    	module(*input_tuple)
+    	module(*input_tuple)
+    	module(*input_tuple)
+
+    def _elementwise_linear(
+        model, op_call, blob_in, blob_out, dim,
+        weight_init=None, bias_init=None, **kwargs
+    ): ...
+    	op_call([blob_in, weight, bias], blob_out, **kwargs)
+
+    def _exec_func_with_dst(self, dst, exec_mode, method, *args): ...
+    	method(*args[0])
+    	method(*args)
+
+    def _filter_ops(ops, filter_fn, perform_filter): ...
+    	filter_fn(i)
+    	filter_fn(o)
+
+    def _fuse_modules(model, modules_to_fuse, fuser_func=fuse_known_modules, fuse_custom_config_dict=None): ...
+    	fuser_func(mod_list, additional_fuser_method_mapping)
+
+    def _gather_scalar(self, net, record, lengths_blob, output_record): ...
+    	record()
+    	record()
+    	output_record()
+    	output_record()
+
+    def _get_analytical_jacobian_forward_ad(fn, inputs, outputs, *, check_grad_dtypes=False,
+                                            all_u=None) -> Tuple[Tuple[torch.Tensor, ...], ...]: ...
+    	fn(*dual_inputs)
+    	fn(*dual_inputs)
+
+    def _get_analytical_vjps_wrt_specific_output(vjp_fn, sample_output, v) -> List[List[Optional[torch.Tensor]]]: ...
+    	vjp_fn(v.reshape(sample_output.shape))
+
+    def _get_composite_method(cls, module, name, *args, **kwargs): ...
+    	cls(*args, **kwargs)
+
+    def _get_device_attr(get_member): ...
+    	get_member(torch.cuda)
+
+    def _get_global_constant_initializer_op(
+        blob_name, array=None, dtype=None, initializer=None
+    ): ...
+    	initializer(blob_name)
+
+    def _get_numerical_jacobian(fn, inputs, outputs=None, target=None, eps=1e-3,
+                                is_forward_ad=False) -> List[Tuple[torch.Tensor, ...]]: ...
+    	fn(*_as_tuple(inputs))
+
+    def _get_restore_location(map_location): ...
+    	map_location(storage, location)
+
+    def _get_submod_inputs(
+        self, main_module: torch.fx.GraphModule, submod_path: str
+    ) -> Tuple[Tensors, Tensors]: ...
+    	main_module(*self.sample_input)
+
+    def _glu_old_input(draw): ...
+    	draw(st.lists(st.integers(min_value=1, max_value=5), min_size=1, max_size=3))
+    	draw(st.integers(min_value=0, max_value=len(dims)))
+    	draw(st.integers(min_value=1, max_value=2))
+    	draw(hu.arrays(dims, np.float32, None))
+
+    def _gradcheck_helper(func, inputs, eps, atol, rtol, check_sparse_nnz, nondet_tol, check_undefined_grad,
+                          check_grad_dtypes, check_batched_grad, check_forward_ad, fast_mode): ...
+    	func(*tupled_inputs)
+
+    def _gradcheck_real_imag(gradcheck_fn, func, func_out, tupled_inputs, outputs, eps, rtol,
+                             atol, check_grad_dtypes, check_forward_ad, nondet_tol): ...
+    	gradcheck_fn(imag_fn, imag_func_out, tupled_inputs, imag_outputs, eps,
+                 rtol, atol, check_grad_dtypes, nondet_tol,
+                 complex_indices=complex_out_indices, test_imag=True)
+    	gradcheck_fn(real_fn, real_func_out, tupled_inputs, real_outputs, eps,
+                 rtol, atol, check_grad_dtypes, nondet_tol, complex_indices=complex_out_indices)
+    	gradcheck_fn(func, func_out, tupled_inputs, outputs, eps,
+                 rtol, atol, check_grad_dtypes, nondet_tol)
+    	gradcheck_fn(imag_fn, imag_func_out, imag_inputs, diff_imag_func_out, eps,
+                 rtol, atol, check_grad_dtypes, nondet_tol,
+                 complex_indices=complex_inp_indices, test_imag=True, use_forward_ad=True)
+    	gradcheck_fn(real_fn, real_func_out, real_inputs, diff_real_func_out, eps,
+                 rtol, atol, check_grad_dtypes, nondet_tol, complex_indices=complex_inp_indices,
+                 use_forward_ad=True)
+    	gradcheck_fn(func, func_out, tupled_inputs, outputs, eps,
+                 rtol, atol, check_grad_dtypes, nondet_tol, use_forward_ad=True)
+
+    def _graph_for(self, *args, **kwargs): ...
+    	self(*args, **kwargs)
+
+    def _helper(constructor, *shape, **kwargs): ...
+    	constructor(*shape, device=device, dtype=dtype)
+
+    def _inline_everything(fn): ...
+    	fn(*args, **kwargs)
+
+    def _inputs(draw): ...
+    	draw(st.integers(2, 10))
+    	draw(st.integers(1, 100))
+    	draw(st.integers(1, 2))
+    	draw(st.integers(1, 10))
+    	draw(hnp.arrays(
+            np.float32,
+            (batch_size, rows_num, block_size),
+            elements=hu.floats(-10.0, 10.0),
+        ))
+    	draw(hnp.arrays(
+            np.int32,
+            (index_num, 1),
+            elements=st.integers(0, rows_num - 1),
+        ))
+
+    def _inputs(draw): ...
+    	draw(st.integers(min_value=0, max_value=5))
+    	draw(st.integers(min_value=1, max_value=5))
+    	draw(st.lists(
+            min_size=N * D,
+            max_size=N * D,
+            elements=st.one_of(
+                st.floats(min_value=-10, max_value=1 - TOLERANCE),
+                st.floats(min_value=1 + TOLERANCE, max_value=10))
+        ))
+    	draw(st.lists(
+            elements=st.one_of(
+                st.floats(min_value=-2, max_value=-TOLERANCE),
+                st.floats(min_value=TOLERANCE, max_value=2)),
+            min_size=D,
+            max_size=D,
+        ))
+    	draw(st.lists(
+            elements=st.floats(min_value=-2, max_value=2),
+            min_size=D,
+            max_size=D,
+        ))
+
+    def _insert_logger_after_node(
+        node: Node,
+        gm: GraphModule,
+        logger_cls: Callable,
+        logger_node_name_suffix: str,
+        ref_node_name: str,
+        model_name: str,
+        ref_name: str,
+        results_type: str,
+        index_within_arg: int,
+        index_of_arg: int,
+        fqn: Optional[str],
+    ) -> Node: ...
+    	logger_cls(
+        ref_node_name, node.name, model_name, ref_name, target_type,
+        results_type, index_within_arg, index_of_arg, fqn)
+
+    def _invoke_rpc(rref, rpc_api, func_name, timeout, *args, **kwargs): ...
+    	rpc_api(
+        rref.owner(),
+        _invoke_func,
+        args=(rref, func_name, args, kwargs),
+        timeout=timeout
+    )
+
+    def _iter_filter(condition, allow_unknown=False, condition_msg=None,
+                     conversion=None): ...
+    	condition(obj)
+    	conversion(obj)
+
+    def _keep_alive_weak(weak_self) -> None: ...
+    	weak_self()
+
+    def _layered_LSTM(
+            model, input_blob, seq_lengths, initial_states,
+            dim_in, dim_out, scope, outputs_with_grads=(0,), return_params=False,
+            memory_optimization=False, forget_bias=0.0, forward_only=False,
+            drop_states=False, create_lstm=None): ...
+    	create_lstm(**params)
+    	create_lstm(**params)
+    	create_lstm(**params)
+
+    def _lazy_call(callable): ...
+    	callable()
+
+    def _log_and_throw(self, err_type, err_msg): ...
+    	err_type(err_msg)
+
+    def _make_deprecate(meth): ...
+    	meth(*args, **kwargs)
+
+    def _make_layer(self, block, planes, blocks, stride=1): ...
+    	block(self.inplanes, planes, stride, downsample)
+    	block(self.inplanes, planes)
+
+    def _make_rnn_direction(cls, input_blob, B, W, R, initial_states_and_names, sequence_lens,
+                            pred_mh, init_net,
+                            input_size, hidden_size, num_gates, direction_offset,
+                            Bi, Br, W_, R_,
+                            reform, make_cell, keep_outputs): ...
+    	reform(Bi, Br, W_, R_, name, hidden_size, init_net)
+    	make_cell(
+        pred_mh,
+        input,
+        sequence_lens,
+        initial_states_sliced,
+        input_size,
+        hidden_size,
+        name,
+        drop_states=False,
+        forward_only=True,
+    )
+    	keep_outputs(list(make_cell(
+        pred_mh,
+        input,
+        sequence_lens,
+        initial_states_sliced,
+        input_size,
+        hidden_size,
+        name,
+        drop_states=False,
+        forward_only=True,
+    )))
+
+    def _max_pool(name, tuple_fn, ndims, return_indices): ...
+    	tuple_fn(dilation)
+    	tuple_fn(padding)
+    	tuple_fn(kernel_size)
+    	tuple_fn(stride)
+    	tuple_fn(0)
+    	tuple_fn(1)
+
+    def _max_pool(name, tuple_fn, ndims, return_indices): ...
+    	tuple_fn(kernel_size)
+    	tuple_fn(padding)
+    	tuple_fn(stride)
+    	tuple_fn(dilation)
+    	tuple_fn(dilation)
+    	tuple_fn(0)
+    	tuple_fn(1)
+
+    def _merge(
+        self,
+        second,   # type: FunctionCounts
+        merge_fn: Callable[[int], int]
+    ) -> "FunctionCounts": ...
+    	merge_fn(c)
+
+    def _named_members(self, get_members_fn, prefix='', recurse=True): ...
+    	get_members_fn(module)
+
+    def _nested_map(condition, fn, condition_msg=None): ...
+    	condition(obj)
+    	fn(obj)
+
+    def _new_shared(cls, size): ...
+    	cls(size)
+
+    def _parametrize_test(self, test, generic_cls, device_cls): ...
+    	test(*args, **kwargs)
+
+    def _parametrize_test(self, test, generic_cls, device_cls): ...
+    	test(*args, **kwargs)
+
+    def _polynomial_value(poly, x, zero_power, transition): ...
+    	transition(res, x, poly[..., k])
+
+    def _prepare_rnn(
+        t, n, dim_in, create_rnn, outputs_with_grads,
+        forget_bias, memory_optim=False,
+        forward_only=False, drop_states=False, T=None,
+        two_d_initial_states=None, dim_out=None,
+        num_states=2,
+        **kwargs
+    ): ...
+    	create_rnn(
+        model, input_blob, seq_lengths, states,
+        dim_in=dim_in, dim_out=dim_out, scope="external/recurrent",
+        outputs_with_grads=outputs_with_grads,
+        memory_optimization=memory_optim,
+        forget_bias=forget_bias,
+        forward_only=forward_only,
+        drop_states=drop_states,
+        static_rnn_unroll_size=T,
+        **kwargs
+    )
+
+    def _quantize_jit(model, qconfig_dict, run_fn=None, run_args=None, inplace=False, debug=False, quant_type=QuantType.STATIC): ...
+    	run_fn(model, *run_args)
+
+    def _real_and_imag_input(fn, complex_inp_indices): ...
+    	fn(*new_inputs)
+
+    def _real_and_imag_output(fn): ...
+    	fn(*inputs)
+
+    def _rebuild_from_type(func, type, args, dict): ...
+    	func(*args)
+    	func(*args)
+
+    def _register(func): ...
+    	func()
+
+    def _remap_keys(m, f): ...
+    	f(key)
+
+    def _remap_keys(old_dict, rename_fn): ...
+    	rename_fn(key)
+
+    def _rename_all(shapes, blob_name_tracker, ops, rename_fn): ...
+    	rename_fn(name)
+
+    def _rename_all(shapes, track_blob_names, ops, f): ...
+    	f(name)
+
+    def _repr_helper(self, formatter): ...
+    	formatter(self.input)
+    	formatter(self.args)
+    	formatter(self.kwargs)
+
+    def _require_initialized(func): ...
+    	func(*args, **kwargs)
+
+    def _run(cls, rank, test_name, file_name, pipe): ...
+    	cls(test_name)
+
+    def _run(cls, rank: int, test_name: str, file_name: str, parent_pipe) -> None: ...
+    	cls(test_name)
+
+    def _run_reduction_test(
+        self, tensor, expected_tensor, op, reduction_fn=dist.all_reduce, dst=None
+    ): ...
+    	reduction_fn(tensor, dst, op)
+    	reduction_fn(tensor, op)
+
+    def _run_slow_mode_and_get_error(func, tupled_inputs, outputs, input_idx, output_idx, rtol, atol, is_forward_ad): ...
+    	func(*new_inputs)
+
+    def _run_symbolic_method(g, op_name, symbolic_fn, args): ...
+    	symbolic_fn(g, *args)
+
+    def _script_if_tracing(fn): ...
+    	fn(*args, **kwargs)
+
+    def _script_pdt(obj, optimize=None, _frames_up=0, _rcb=None,
+                    example_inputs: Union[List[Tuple], Dict[Callable, List[Tuple]], None] = None): ...
+    	obj(*examples)
+
+    def _set_user_hook(self, grad_fn, user_hook): ...
+    	user_hook(self.module, grad_input, self.grad_outputs)
+
+    def _sparse_features_map(draw, num_records, **kwargs): ...
+    	draw(
+        st.lists(
+            st.integers(min_value=1, max_value=10),
+            min_size=num_records,
+            max_size=num_records,
+        )
+    )
+    	draw(
+        st.lists(
+            st.integers(min_value=1, max_value=100),
+            min_size=sparse_maps_total_length,
+            max_size=sparse_maps_total_length,
+            unique=True,
+        )
+    )
+    	draw(
+        st.lists(
+            st.integers(min_value=1, max_value=10),
+            min_size=sparse_maps_total_length,
+            max_size=sparse_maps_total_length,
+        )
+    )
+    	draw(
+        # max_value is max int64
+        st.lists(
+            st.integers(min_value=1, max_value=9223372036854775807),
+            min_size=total_sparse_values_lengths,
+            max_size=total_sparse_values_lengths,
+        )
+    )
+
+    def _start_processes(self, proc) -> None: ...
+    	proc(
+        target=self.__class__._run,
+        name='process ' + str(rank),
+        args=(rank, self._current_test_name(), self.file_name, child_conn))
+
+    def _strong_wolfe(obj_func,
+                      x,
+                      t,
+                      d,
+                      f,
+                      g,
+                      gtd,
+                      c1=1e-4,
+                      c2=0.9,
+                      tolerance_change=1e-9,
+                      max_ls=25): ...
+    	obj_func(x, t, d)
+    	obj_func(x, t, d)
+    	obj_func(x, t, d)
+
+    def _task_group(self, func, *args, **kw): ...
+    	func(manager, *args, **kw)
+
+    def _tensor_and_prefix(draw, dtype, elements, min_dim=1, max_dim=4, **kwargs): ...
+    	draw(
+        st.lists(hu.dims(**kwargs), min_size=min_dim, max_size=max_dim))
+    	draw(
+        st.lists(hu.dims(**kwargs), min_size=min_dim, max_size=max_dim))
+    	draw(hu.arrays(dims_ + extra_, dtype, elements))
+    	draw(hu.arrays(extra_, dtype, elements))
+
+    def _tensor_splits(draw): ...
+    	draw(st.lists(st.integers(1, 5), min_size=1, max_size=10))
+    	draw(st.integers(1, 5))
+    	draw(st.permutations(element_pairs))
+    	draw(
+        st.lists(
+            st.floats(min_value=-1.0, max_value=1.0), min_size=offset, max_size=offset
+        )
+    )
+    	draw(st.permutations(range(offset)))
+
+    def _tensor_splits(draw, add_axis=False): ...
+    	draw(hu.tensor(min_dim=2, min_value=4))
+    	draw(st.integers(-len(tensor.shape), len(tensor.shape) - 1))
+    	draw(
+        st.lists(elements=st.integers(0, tensor.shape[axis]), max_size=4)
+    )
+
+    def _tensor_splits(draw, add_axis=False): ...
+    	draw(hu.tensor(min_value=4))
+    	draw(st.integers(-len(tensor.shape), len(tensor.shape) - 1))
+    	draw(
+        st.lists(elements=st.integers(0, tensor.shape[axis]), max_size=4)
+    )
+
+    def _tensor_splits(draw, add_axis=False): ...
+    	draw(hu.tensor(min_value=4))
+    	draw(st.integers(0, len(tensor.shape) - 1))
+    	draw(
+            st.
+            lists(elements=st.integers(0, tensor.shape[axis]), max_size=4)
+        )
+
+    def _test_DDP_helper(
+        self, model, input_var, target, loss, scale_factor=1.0, memory_format=None
+    ): ...
+    	model(input_var)
+    	loss(output, target)
+
+    def _test_binary(name, ref, filter_=None, gcs=hu.gcs,
+                     test_gradient=False, allow_inplace=False, dtypes=_dtypes): ...
+    	dtypes()
+
+    def _test_binary_broadcast(name, ref, filter_=None,
+                               gcs=hu.gcs, allow_inplace=False, dtypes=_dtypes): ...
+    	ref(x, y)
+    	dtypes()
+
+    def _test_binary_op(
+            self, op_name, np_ref, n, m, k, t, bias, test_grad, gc, dc): ...
+    	np_ref(A, B)
+
+    def _test_binary_op_in_place(
+            self, op_name, np_ref, n, m, bias, test_grad, in_place_2nd, gc, dc): ...
+    	np_ref(A, B)
+
+    def _test_bitwise_binary_op(self, op_name, np_ref, n, m, k, t, gc, dc): ...
+    	np_ref(A, B)
+
+    def _test_create_blobs_queue_db(self, add_blobs_fun): ...
+    	add_blobs_fun(queue, num_samples)
+
+    def _test_create_blobs_queue_db(self, add_blobs_fun): ...
+    	add_blobs_fun(queue, num_samples)
+
+    def _test_cuda_future_extraction(self, wrapper, unwrapper, sparse_tensor): ...
+    	wrapper(tensor)
+    	unwrapper(future.wait())
+
+    def _test_custom_stream(self, fn, device_map): ...
+    	fn(dst)
+
+    def _test_dist_optim_base(self, optim_cls, *args, **kwargs): ...
+    	optim_cls(params, *args, **kwargs)
+
+    def _test_function(fn, device): ...
+    	fn(self, device)
+
+    def _test_group_override_backend(self, initializer): ...
+    	initializer(backend=new_backend)
+
+    def _test_hyperbolic_op(self, op_name, np_ref, X, in_place, engine, gc, dc): ...
+    	np_ref(X)
+
+    def _test_lengths_op(self, inputs, ref_op_name, torch_op, device): ...
+    	torch_op(
+        torch.tensor(data), torch.tensor(lengths, dtype=torch.int32)
+    )
+
+    def _test_limit_reader_shared(self, reader_class, size, expected_read_len,
+                                  expected_read_len_threshold,
+                                  expected_finish, num_threads, read_delay,
+                                  **limiter_args): ...
+    	reader_class(ReaderWithDelay(src_ds.reader(),
+                                          read_delay),
+                          **limiter_args)
+    	reader_class(src_ds.reader(), **limiter_args)
+
+    def _test_multi_remote_call(self, fn, args_fn=lambda x: (), kwargs_fn=lambda x: {}): ...
+    	fn(*args_fn(n), **kwargs_fn(n))
+    	args_fn(n)
+    	args_fn(n)
+    	kwargs_fn(n)
+    	kwargs_fn(n)
+
+    def _test_set_get(cls, queue, create_store_handler_fn, index, num_procs): ...
+    	create_store_handler_fn()
+
+    def _test_sparse_all_reduce_sum(self, fn): ...
+    	fn(input)
+
+    def _test_undefined_grad(func, outputs, inputs) -> bool: ...
+    	func(*inputs)
+    	func(*inputs)
+
+    def _threaded_measurement_loop(
+        self,
+        number: int,
+        time_hook: Callable[[], float],
+        stop_hook: Callable[[List[float]], bool],
+        min_run_time: float,
+        max_run_time: Optional[float] = None,
+        callback: Optional[Callable[[int, float], NoReturn]] = None
+    ) -> List[float]: ...
+    	time_hook()
+    	stop_hook(times)
+    	callback(number, time_spent)
+
+    def _timed_task(self, cp_op_name, add_op): ...
+    	add_op()
+
+    def _tmp_donotuse_dont_inline_everything(fn): ...
+    	fn(*args, **kwargs)
+
+    def _type(self, dtype=None, non_blocking=False, **kwargs): ...
+    	dtype(new_indices, new_values, self.size())
+    	dtype(self.size())
+
+    def _vmap(func: Callable, in_dims: in_dims_t = 0, out_dims: out_dims_t = 0) -> Callable: ...
+    	func(*batched_inputs)
+
+    def _with_prepare_inputs(fn, inputs, input_idx, input_to_perturb, fast_mode=False): ...
+    	fn(*inp)
+
+    def _worker(i, module, input, kwargs, device=None): ...
+    	module(*input, **kwargs)
+
+    def _worker_loop(dataset_kind, dataset, index_queue, data_queue, done_event,
+                     auto_collation, collate_fn, drop_last, base_seed, init_fn, worker_id,
+                     num_workers, persistent_workers): ...
+    	init_fn(worker_id)
+
+    def _wrap(fn, i, args, error_queue): ...
+    	fn(i, *args)
+
+    def _wrap_generator(self, func): ...
+    	func(*args, **kwargs)
+
+    def _wrap_type_error_to_not_implemented(f): ...
+    	f(*args, **kwargs)
+
+    def analyze_job(analyzer, job): ...
+    	analyzer(job.init_group)
+    	analyzer(job.epoch_group)
+
+    def analyze_net(analyzer, net): ...
+    	analyzer(x)
+
+    def analyze_step(analyzer, step): ...
+    	analyzer(step.get_net(proto.report_net))
+    	analyzer(substep)
+
+    def analyze_task(analyzer, task): ...
+    	analyzer(step)
+
+    def analyze_task_group(analyzer, tg): ...
+    	analyzer(task)
+
+    def apply(cls, module, name, *args, importance_scores=None, **kwargs): ...
+    	cls(*args, **kwargs)
+
+    def apply(self: T, fn: Callable[['Module'], None]) -> T: ...
+    	fn(self)
+
+    def apply_recurrent_blob_assignments(op, blob_assignments, canonical_name): ...
+    	canonical_name(einp)
+
+    def apply_to_c_inps(fn, fn_to_apply): ...
+    	fn(*new_inputs)
+    	fn_to_apply(new_inputs[should_be_complex])
+
+    def apply_to_c_outs(fn, fn_to_apply): ...
+    	fn(*inputs)
+    	fn_to_apply(o)
+
+    def argument_validation(f): ...
+    	f(*args, **kwargs)
+
+    def array_shapes(draw, min_dims=1, max_dims=None, min_side=1, max_side=None, max_numel=None): ...
+    	draw(candidate.map(tuple))
+
+    def assertExpectedRaises(self, exc_type, callable, *args, **kwargs): ...
+    	callable(*args, **kwargs)
+
+    def assertNotWarn(self, callable, msg=''): ...
+    	callable()
+
+    def assertReferenceChecks(
+        self,
+        device_option,
+        op,
+        inputs,
+        reference,
+        input_device_options=None,
+        threshold=1e-4,
+        output_to_grad=None,
+        grad_reference=None,
+        atol=None,
+        outputs_to_check=None,
+        ensure_outputs_are_inferred=False,
+    ): ...
+    	reference(*inputs)
+
+    def assertValidationChecks(
+            self,
+            device_option,
+            op,
+            inputs,
+            validator,
+            input_device_options=None,
+            as_kwargs=True,
+            init_net=None,
+    ): ...
+    	validator(**dict(zip(
+        list(op.input) + list(op.output), inputs + outputs)))
+    	validator(inputs=inputs, outputs=outputs)
+
+    def async_execution(fn): ...
+    	fn(*args, **kwargs)
+
+    def benchmark(f): ...
+    	f()
+    	f()
+
+    def benchmark_pytorch_model(model, inputs, training=False, warmup_iters=3,
+                                main_iters=10, verbose=False): ...
+    	model(*inputs)
+    	model(*inputs)
+
+    def bias_correction(float_model, quantized_model, img_data, target_modules=_supported_modules_quantized, neval_batches=None): ...
+    	quantized_model(data[0])
+
+    def bind(optional, fn): ...
+    	fn(optional)
+
+    def boolean_dispatch(arg_name, arg_index, default, if_true, if_false, module_name, func_name): ...
+    	if_true(*args, **kwargs)
+    	if_false(*args, **kwargs)
+
+    def build(self, reader, process=None): ...
+    	process(net_prod, fields)
+
+    def caffe2(self, kmap=lambda k: k): ...
+    	kmap(k)
+    	kmap(k)
+
+    def call(self, function: Function) -> "Batch": ...
+    	function(self._values)
+    	function(*self._values)
+
+    def call_dist_op(
+        self,
+        profiling_title_postfix,
+        is_async,
+        op,
+        *args,
+        expect_event=True,
+        secondary_op_call=None,
+        profile_cuda=False,
+        tensor_shapes=None,
+        **kwargs,
+    ): ...
+    	op(*args, **kwargs)
+
+    def call_function(self, target : 'Target', args : Tuple[Argument, ...], kwargs : Dict[str, Any]) -> Any: ...
+    	target(*args, **kwargs)
+
+    def call_module(self, m: torch.nn.Module, forward: Callable[..., Any], args : Tuple[Any, ...], kwargs : Dict[str, Any]) -> Any: ...
+    	forward(*args, **kwargs)
+
+    def checkBailouts(self, model, inputs, expected): ...
+    	model(*inputs)
+
+    def checkModule(self, nn_module, args): ...
+    	nn_module(*args)
+
+    def checkScriptRaisesRegex(self, script, inputs, exception, regex,
+                               outputs=None, capture_output=False, profiling=ProfilingMode.PROFILING): ...
+    	script(*inputs)
+
+    def checkTrace(self, func, reference_tensors, input_tensors=None,
+                   drop=None, allow_unused=False, verbose=False,
+                   inputs_require_grads=True, check_tolerance=1e-5, export_import=True,
+                   _force_outplace=False): ...
+    	func(*nograd_inputs)
+    	func(*recording_inputs)
+    	func(*recording_inputs)
+
+    def check_against_reference(self, func, reference_func, output_func, args, kwargs=None,
+                                allow_unused=True, check_types=True, no_grad=False, no_gradgrad=False): ...
+    	output_func(self.runAndSaveRNG(reference_func, recording_inputs, kwargs))
+    	output_func(self.runAndSaveRNG(func, recording_inputs, kwargs))
+    	output_func(self.runAndSaveRNG(reference_func, recording_inputs, kwargs))
+    	output_func(self.runAndSaveRNG(func, recording_inputs, kwargs))
+
+    def check_eager_serialization(self, ref_model, loaded_model, x): ...
+    	ref_model(*x)
+    	loaded_model(*x)
+
+    def class_function(cls, source_dp, *args, **kwargs): ...
+    	cls(source_dp, *args, **kwargs)
+
+    def coalescedonoff(f): ...
+    	f(self, *args, **kwargs, coalesced=True)
+    	f(self, *args, **kwargs, coalesced=False)
+
+    def common_activation(network, mod, input_val, activation_type, activation_dyn_range_fn, layer_name): ...
+    	activation_dyn_range_fn(input_val.dynamic_range)
+
+    def compare_executors(self, model, ref_executor, test_executor, model_run_func): ...
+    	model_run_func()
+    	model_run_func()
+
+    def compare_model_outputs(
+        float_model: nn.Module,
+        q_model: nn.Module,
+        *data,
+        logger_cls=OutputLogger,
+        allow_list=None
+    ) -> Dict[str, Dict[str, torch.Tensor]]: ...
+    	float_model(*data)
+    	q_model(*data)
+
+    def compare_model_stub(
+        float_model: nn.Module, q_model: nn.Module, module_swap_list: Set[type],
+        *data, logger_cls=ShadowLogger
+    ) -> Dict[str, Dict]: ...
+    	q_model(*data)
+
+    def compare_with_numpy(self, torch_fn, np_fn, tensor_like,
+                           device=None, dtype=None, **kwargs): ...
+    	torch_fn(t)
+    	np_fn(a)
+
+    def compare_with_reference(self, torch_fn, ref_fn, sample_input, **kwargs): ...
+    	torch_fn(t_inp, *t_args, **t_kwargs)
+    	ref_fn(n_inp, *n_args, **n_kwargs)
+
+    def compare_yellowfin_models(self,
+                                 model0,
+                                 model1,
+                                 zero_debias,
+                                 grad_coef,
+                                 n_dim,
+                                 n_iter,
+                                 gpu): ...
+    	model0(zero_debias, grad_coef, n_dim, n_iter, gpu)
+    	model1(zero_debias, grad_coef, n_dim, n_iter, gpu)
+
+    def compute_sum(fn, world_size: int): ...
+    	fn(rank, world_size)
+
+    def convert(self,
+                node: Node,
+                qconfig: QConfigAny,
+                modules: Dict[str, torch.nn.Module],
+                quantized_graph: Graph,
+                node_name_to_scope: Dict[str, Tuple[str, type]],
+                load_arg: Callable,
+                is_reference: bool = False,
+                convert_custom_config_dict: Dict[str, Any] = None) -> Node: ...
+    	load_arg(quantized=None)
+
+    def convert(self,
+                node: Node,
+                qconfig: QConfigAny,
+                modules: Dict[str, torch.nn.Module],
+                quantized_graph: Graph,
+                node_name_to_scope: Dict[str, Tuple[str, type]],
+                load_arg: Callable,
+                is_reference: bool = False,
+                convert_custom_config_dict: Dict[str, Any] = None) -> Node: ...
+    	load_arg(quantized=None)
+
+    def convert(self,
+                node: Node,
+                qconfig: QConfigAny,
+                modules: Dict[str, torch.nn.Module],
+                quantized_graph: Graph,
+                node_name_to_scope: Dict[str, Tuple[str, type]],
+                load_arg: Callable,
+                is_reference: bool = False,
+                convert_custom_config_dict: Dict[str, Any] = None) -> Node: ...
+    	load_arg(quantized=None)
+    	load_arg(quantized=[torch.quint8, torch.qint8])
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=[quantized_index])
+    	load_arg(quantized=activation_dtype(qconfig))
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+
+    def convert(self,
+                node: Node,
+                qconfig: QConfigAny,
+                modules: Dict[str, torch.nn.Module],
+                quantized_graph: Graph,
+                node_name_to_scope: Dict[str, Tuple[str, type]],
+                load_arg: Callable,
+                is_reference: bool = False,
+                convert_custom_config_dict: Dict[str, Any] = None) -> Node: ...
+    	load_arg(quantized=None)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+
+    def convert(self,
+                node: Node,
+                qconfig: QConfigAny,
+                modules: Dict[str, torch.nn.Module],
+                quantized_graph: Graph,
+                node_name_to_scope: Dict[str, Tuple[str, type]],
+                load_arg: Callable,
+                is_reference: bool = False,
+                convert_custom_config_dict: Dict[str, Any] = None) -> Node: ...
+    	load_arg(quantized=None)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+
+    def convert(self,
+                node: Node,
+                qconfig: QConfigAny,
+                modules: Dict[str, torch.nn.Module],
+                quantized_graph: Graph,
+                node_name_to_scope: Dict[str, Tuple[str, type]],
+                load_arg: Callable,
+                is_reference: bool = False,
+                convert_custom_config_dict: Dict[str, Any] = None) -> Node: ...
+    	load_arg(quantized=[0])
+    	load_arg(quantized=torch.float)
+
+    def convert(self,
+                node: Node,
+                qconfig: QConfigAny,
+                modules: Dict[str, torch.nn.Module],
+                quantized_graph: Graph,
+                node_name_to_scope: Dict[str, Tuple[str, type]],
+                load_arg: Callable,
+                is_reference: bool = False,
+                convert_custom_config_dict: Dict[str, Any] = None) -> Node: ...
+    	load_arg(quantized=[0])
+    	load_arg(quantized=torch.float)
+
+    def convert(self,
+                node: Node,
+                qconfig: QConfigAny,
+                modules: Dict[str, torch.nn.Module],
+                quantized_graph: Graph,
+                node_name_to_scope: Dict[str, Tuple[str, type]],
+                load_arg: Callable,
+                is_reference: bool = False,
+                convert_custom_config_dict: Dict[str, Any] = None) -> Node: ...
+    	load_arg(quantized=input_quantized_idxs)
+
+    def convert(self,
+                node: Node,
+                qconfig: QConfigAny,
+                modules: Dict[str, torch.nn.Module],
+                quantized_graph: Graph,
+                node_name_to_scope: Dict[str, Tuple[str, type]],
+                load_arg: Callable,
+                is_reference: bool = False,
+                convert_custom_config_dict: Dict[str, Any] = None) -> Node: ...
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=None)
+
+    def convert(self,
+                node: Node,
+                qconfig: QConfigAny,
+                modules: Dict[str, torch.nn.Module],
+                quantized_graph: Graph,
+                node_name_to_scope: Dict[str, Tuple[str, type]],
+                load_arg: Callable,
+                is_reference: bool = False,
+                convert_custom_config_dict: Dict[str, Any] = None) -> Node: ...
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=[0])
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=[0])
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=[0])
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+
+    def convert(self,
+                node: Node,
+                qconfig: QConfigAny,
+                modules: Dict[str, torch.nn.Module],
+                quantized_graph: Graph,
+                node_name_to_scope: Dict[str, Tuple[str, type]],
+                load_arg: Callable,
+                is_reference: bool = False,
+                convert_custom_config_dict: Dict[str, Any] = None) -> Node: ...
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=[torch.quint8])
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=None)
+
+    def convert(self,
+                node: Node,
+                qconfig: QConfigAny,
+                modules: Dict[str, torch.nn.Module],
+                quantized_graph: Graph,
+                node_name_to_scope: Dict[str, Tuple[str, type]],
+                load_arg: Callable,
+                is_reference: bool = False,
+                convert_custom_config_dict: Dict[str, Any] = None) -> Node: ...
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=None)
+    	load_arg(quantized=dtype)
+    	load_arg(quantized=quantized_input_dtypes)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=dtype)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.quint8)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+
+    def convert(self,
+                node: Node,
+                qconfig: QConfigAny,
+                modules: Dict[str, torch.nn.Module],
+                quantized_graph: Graph,
+                node_name_to_scope: Dict[str, Tuple[str, type]],
+                load_arg: Callable,
+                is_reference: bool = False,
+                convert_custom_config_dict: Dict[str, Any] = None) -> Node: ...
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.quint8)
+    	load_arg(quantized=[torch.quint8, torch.qint8])
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized={0: torch.quint8, 1: torch.qint8})
+    	load_arg(quantized=torch.qint8)
+    	load_arg(quantized=torch.float)
+    	load_arg(quantized=torch.quint8)
+    	load_arg(quantized=torch.float)
+
+    def convert(self,
+                node: Node,
+                qconfig: QConfigAny,
+                modules: Dict[str, torch.nn.Module],
+                quantized_graph: Graph,
+                node_name_to_scope: Dict[str, Tuple[str, type]],
+                load_arg: Callable,
+                is_reference: bool = False,
+                convert_custom_config_dict: Dict[str, Any] = None) -> Node: ...
+    	load_arg(quantized=torch.quint8)
+
+    def create_args_for_root(self, root_fn, is_module, concrete_args=None): ...
+    	root_fn(*tree_args)
+
+    def create_script_module(self, nn_module, constructor_args, *args, **kwargs): ...
+    	nn_module(*constructor_args)
+
+    def create_script_module_impl(nn_module, concrete_type, stubs_fn): ...
+    	stubs_fn(nn_module)
+
+    def create_worker(queue, get_blob_data): ...
+    	get_blob_data(worker_id)
+
+    def custom_bwd(bwd): ...
+    	bwd(*args, **kwargs)
+
+    def custom_fwd(fwd=None, **kwargs): ...
+    	fwd(*args, **kwargs)
+    	fwd(*_cast(args, cast_inputs), **_cast(kwargs, cast_inputs))
+    	fwd(*args, **kwargs)
+
+    def data_parallel(module, inputs, device_ids=None, output_device=None, dim=0, module_kwargs=None): ...
+    	module(*inputs[0], **module_kwargs[0])
+
+    def debug(f): ...
+    	f(*args, **kwargs)
+
+    def dec_fn(fn): ...
+    	fn(self, *args, **kwargs)
+
+    def dec_fn(fn): ...
+    	fn(self, *args, **kwargs)
+    	fn(self, *args, **kwargs)
+
+    def deco_retry(f): ...
+    	f(*args, **kwargs)
+    	f(*args, **kwargs)
+
+    def decorator(fn): ...
+    	fn(g, *args, **kwargs)
+
+    def decorator(fn): ...
+    	fn(g, input, other)
+
+    def decorator(fn): ...
+    	fn(self, *args, **kwargs)
+
+    def decorator(func): ...
+    	func(*args, **kwargs)
+
+    def decorator(func): ...
+    	func(*args, **kwargs)
+
+    def decorator(func): ...
+    	func(*args, **kwargs)
+
+    def decorator(func): ...
+    	func(*args, **kwargs)
+
+    def decorator(func): ...
+    	func(*args, **kwargs)
+    	func(*args, **kwargs)
+
+    def default_eval_fn(model, calib_data): ...
+    	model(data)
+
+    def deserialize_protobuf_struct(serialized_protobuf, struct_type): ...
+    	struct_type()
+
+    def dispatch(
+        self,
+        input,
+        handle_stash: Callable[[str, Optional[Tensor]], None],
+        handle_pop: Callable[[str], Optional[Tensor]],
+    ): ...
+    	handle_stash(op.name, op.tensor)
+    	handle_pop(op.name)
+
+    def dist_init(
+        old_test_method=None,
+        setup_rpc: bool = True,
+        clean_shutdown: bool = True,
+        faulty_messages=None,
+        messages_to_delay=None,
+    ): ...
+    	old_test_method(self, *arg, **kwargs)
+
+    def do_set(operator): ...
+    	operator(
+        [],
+        blob_out or 1,
+        shape=array.shape,
+        values=array.flatten().tolist())
+
+    def dump(cls, in_stream, out_stream): ...
+    	cls(in_stream)
+
+    def enable_cpu_fuser(fn): ...
+    	fn(*args, **kwargs)
+
+    def extend_logger_results_with_comparison(
+        results: NSResultsType,
+        model_name_1: str,
+        model_name_2: str,
+        comparison_fn: Callable[[torch.Tensor, torch.Tensor], torch.Tensor],
+        comparison_name: str,
+    ) -> None: ...
+    	comparison_fn(value_1, value_2)
+
+    def filter(self, filter_fn: Callable[[str], bool]) -> "FunctionCounts": ...
+    	filter_fn(i.function)
+
+    def filter_fn(classifier_fn, i, x): ...
+    	classifier_fn(x)
+
+    def forward(ctx, run_function, preserve_rng_state, *args): ...
+    	run_function(*args)
+
+    def fp16_compress_wrapper(
+        hook: Callable[[Any, dist.GradBucket], torch.futures.Future]
+    ) -> Callable[[Any, dist.GradBucket], torch.futures.Future]: ...
+    	hook(hook_state, bucket)
+
+    def from_backend(
+        cls,
+        run_id: str,
+        store: Store,
+        backend: RendezvousBackend,
+        min_nodes: int,
+        max_nodes: int,
+        timeout: Optional[RendezvousTimeout] = None,
+    ): ...
+    	cls(node, settings, backend.name, store, state_holder)
+
+    def from_float(cls, mod): ...
+    	cls(
+        mod.in_channels,
+        mod.out_channels,
+        mod.kernel_size,
+        stride=mod.stride,
+        padding=mod.padding,
+        dilation=mod.dilation,
+        groups=mod.groups,
+        bias=mod.bias is not None,
+        padding_mode=mod.padding_mode,
+        qconfig=qconfig,
+    )
+
+    def from_float(cls, mod): ...
+    	cls(
+        mod.normalized_shape, mod.weight, mod.bias, float(scale),
+        int(zero_point), mod.eps, mod.elementwise_affine)
+
+    def from_float(cls, mod): ...
+    	cls(
+        mod.num_features, mod.weight, mod.bias, float(scale), int(zero_point),
+        mod.eps, mod.affine)
+
+    def from_float(cls, mod): ...
+    	cls(
+        mod.num_features, mod.weight, mod.bias, float(scale), int(zero_point),
+        mod.eps, mod.affine)
+
+    def from_float(cls, mod): ...
+    	cls(
+        mod.num_features, mod.weight, mod.bias, float(scale), int(zero_point),
+        mod.eps, mod.affine)
+
+    def from_float(cls, mod): ...
+    	cls(
+        mod.num_groups, mod.num_channels, mod.weight, mod.bias, float(scale), int(zero_point),
+        mod.eps, mod.affine)
+
+    def from_float(cls, mod): ...
+    	cls(conv.in_channels, conv.out_channels, conv.kernel_size,
+                     conv.stride, conv.padding, conv.dilation,
+                     conv.groups, conv.bias is not None,
+                     conv.padding_mode,
+                     bn.eps, bn.momentum,
+                     False,
+                     qconfig)
+
+    def from_float(cls, mod): ...
+    	cls(float(output_scale), int(output_zero_point))
+
+    def from_float(cls, mod): ...
+    	cls(float(scale), int(zero_point), mod.negative_slope, mod.inplace)
+
+    def from_float(cls, mod): ...
+    	cls(mod.in_channels, mod.out_channels, mod.kernel_size,
+                   stride=mod.stride, padding=mod.padding, dilation=mod.dilation,
+                   groups=mod.groups, bias=mod.bias is not None,
+                   padding_mode=mod.padding_mode, qconfig=qconfig)
+
+    def from_float(cls, mod): ...
+    	cls(mod.in_channels, mod.out_channels, mod.kernel_size,  # type: ignore[call-arg]
+                mod.stride, mod.padding, mod.output_padding, mod.groups,
+                mod.bias is not None, mod.dilation, mod.padding_mode)
+
+    def from_float(cls, mod): ...
+    	cls(mod.in_features,
+                  mod.out_features,
+                  dtype=dtype)
+
+    def from_float(cls, mod): ...
+    	cls(mod.in_features,
+                  mod.out_features,
+                  row_block_size,
+                  col_block_size,
+                  dtype=dtype)
+
+    def from_float(cls, mod): ...
+    	cls(mod.in_features,
+                  mod.out_features,
+                  row_block_size,
+                  col_block_size,
+                  dtype=dtype)
+
+    def from_float(cls, mod): ...
+    	cls(mod.in_features, mod.out_features, bias=mod.bias is not None, qconfig=qconfig)
+
+    def from_float(cls, mod): ...
+    	cls(mod.num_features, mod.eps)
+
+    def from_float(cls, mod): ...
+    	cls(mod.num_features, mod.eps)
+
+    def from_float(cls, other): ...
+    	cls(other.embed_dim, other.num_heads, other.dropout,
+                   (other.in_proj_bias is not None),
+                   (other.bias_k is not None),
+                   other.add_zero_attn, other.kdim, other.vdim)
+
+    def from_float(cls, other, layer_idx=0, qconfig=None, **kwargs): ...
+    	cls(input_size, hidden_size, bias, batch_first, bidirectional)
+
+    def from_float(cls, other, qconfig=None): ...
+    	cls(other.input_size, other.hidden_size, other.num_layers,
+                   other.bias, other.batch_first, other.dropout,
+                   other.bidirectional)
+
+    def from_params(cls, *args, **kwargs): ...
+    	cls(cell.input_size, cell.hidden_size, cell.bias)
+
+    def from_params(cls, wi, wh, bi=None, bh=None): ...
+    	cls(input_dim=input_size, hidden_dim=hidden_size,
+               bias=(bi is not None))
+
+    def from_pretrained(cls, embeddings, freeze=True, padding_idx=None,
+                        max_norm=None, norm_type=2., scale_grad_by_freq=False,
+                        sparse=False): ...
+    	cls(
+        num_embeddings=rows,
+        embedding_dim=cols,
+        _weight=embeddings,
+        padding_idx=padding_idx,
+        max_norm=max_norm,
+        norm_type=norm_type,
+        scale_grad_by_freq=scale_grad_by_freq,
+        sparse=sparse)
+
+    def from_pretrained(cls, embeddings: Tensor, freeze: bool = True, max_norm: Optional[float] = None,
+                        norm_type: float = 2., scale_grad_by_freq: bool = False,
+                        mode: str = 'mean', sparse: bool = False, include_last_offset: bool = False,
+                        padding_idx: Optional[int] = None) -> 'EmbeddingBag': ...
+    	cls(
+        num_embeddings=rows,
+        embedding_dim=cols,
+        _weight=embeddings,
+        max_norm=max_norm,
+        norm_type=norm_type,
+        scale_grad_by_freq=scale_grad_by_freq,
+        mode=mode,
+        sparse=sparse,
+        include_last_offset=include_last_offset,
+        padding_idx=padding_idx)
+
+    def from_tensor(cls, tensor: torch.Tensor): ...
+    	cls(tensor.shape, tensor.dtype, tensor.device)
+
+    def get_activation_post_process(qconfig, device, special_act_post_process=None): ...
+    	special_act_post_process()
+
+    def get_cached_parametrization(parametrization) -> Tensor: ...
+    	parametrization()
+
+    def get_cudnn_version(run_lambda): ...
+    	run_lambda(cudnn_cmd)
+
+    def get_gpu_info(run_lambda): ...
+    	run_lambda(smi + ' -L')
+
+    def get_numerical_jacobian(fn, inputs, target=None, eps=1e-3, grad_out=1.0): ...
+    	fn(inps)
+
+    def get_qconv(cls, mod, activation_post_process, weight_post_process=None): ...
+    	cls(mod.in_channels, mod.out_channels, mod.kernel_size,
+                mod.stride, mod.padding, mod.dilation, mod.groups,
+                mod.bias is not None, mod.padding_mode)
+    	weight_post_process(mod.weight)
+
+    def get_std_cm(std_rd: str, redirect_fn): ...
+    	redirect_fn(std_rd)
+
+    def get_submod_inputs(main_mod, submod, example_inputs): ...
+    	main_mod(*example_inputs)
+
+    def get_supported_dtypes(op, sample_inputs_fn, device_type): ...
+    	op(sample.input, *sample.args, **sample.kwargs)
+    	sample_inputs_fn(op, device_type, dtype, False)
+
+    def global_unstructured(parameters, pruning_method, importance_scores=None, **kwargs): ...
+    	pruning_method(**kwargs)
+
+    def grad_variant_input_test(self, grad_op_name, X, ref, num_reduce_dim): ...
+    	ref(X)
+
+    def gradcheck_wrapper_hermitian_input(op, input, *args, **kwargs): ...
+    	op(input + input.conj().transpose(-2, -1), *args, **kwargs)
+
+    def gradcheck_wrapper_triangular_input(op, input, *args, upper=False, **kwargs): ...
+    	op(input.triu() if upper else input.tril(), upper)
+
+    def gradgradcheck(
+        func: Callable[..., _TensorOrTensors],  # See Note [VarArg of Tensors]
+        inputs: _TensorOrTensors,
+        grad_outputs: Optional[_TensorOrTensors] = None,
+        eps: float = 1e-6,
+        atol: float = 1e-5,
+        rtol: float = 1e-3,
+        gen_non_contig_grad_outputs: bool = False,
+        raise_exception: bool = True,
+        nondet_tol: float = 0.0,
+        check_undefined_grad: bool = True,
+        check_grad_dtypes: bool = False,
+        check_batched_grad: bool = False,
+        fast_mode: bool = False,
+    ) -> bool: ...
+    	func(*tupled_inputs)
+    	func(*input_args)
+
+    def handle_extension(extensions, f): ...
+    	f(data)
+
+    def hessian(func, inputs, create_graph=False, strict=False, vectorize=False): ...
+    	func(*inp)
+
+    def hook_then_optimizer(
+        hook: Callable[[Any, dist.GradBucket], torch.futures.Future], optimizer_state: OptimizerHookState
+    ) -> Callable[[Any, dist.GradBucket], torch.futures.Future]: ...
+    	hook(hook_state, bucket)
+
+    def hvp(func, inputs, v=None, create_graph=False, strict=False): ...
+    	func(*inputs)
+
+    def id_list_batch(draw): ...
+    	draw(st.integers(1, 3))
+    	draw(st.integers(5, 10))
+    	draw(st.sampled_from([np.int32, np.int64]))
+    	draw(st.integers(5, 10))
+    	draw(hnp.arrays(values_dtype, size, st.integers(1, 10)))
+    	draw(hu.lengths(len(values),
+                              min_segments=batch_size,
+                              max_segments=batch_size))
+
+    def id_list_batch(draw): ...
+    	draw(st.integers(2, 2))
+    	draw(st.integers(5, 10))
+    	draw(hnp.arrays(values_dtype, sample_size, st.integers(0, 1)))
+
+    def indent_msg(fn): ...
+    	fn(*args, **kwargs)
+
+    def inner(fn): ...
+    	fn(self, *args, **kwargs)
+
+    def inner(func): ...
+    	func(*args, **kwargs)
+
+    def input_reduce(input, fn, acc): ...
+    	fn(input, acc)
+
+    def instantiate_test(cls, name, test, *, generic_cls=None): ...
+    	test(self, **param_kwargs)
+
+    def jacobian(func, inputs, create_graph=False, strict=False, vectorize=False): ...
+    	func(*inputs)
+
+    def join_or_run(self, fn): ...
+    	fn()
+
+    def jvp(func, inputs, v=None, create_graph=False, strict=False): ...
+    	func(*inputs)
+
+    def largeTensorTest(size, device=None): ...
+    	size(self, *args, **kwargs)
+
+    def load_tensor(data_type, size, key, location): ...
+    	data_type(0)
+
+    def load_tensor(data_type, size, key, location, restore_location): ...
+    	data_type(0)
+    	restore_location(storage, location)
+
+    def lstm_with_attention(
+        self,
+        create_lstm_with_attention,
+        encoder_output_length,
+        encoder_output_dim,
+        decoder_input_length,
+        decoder_state_dim,
+        batch_size,
+        ref,
+        gc,
+    ): ...
+    	create_lstm_with_attention(
+        model=model,
+        decoder_inputs=decoder_inputs,
+        decoder_input_lengths=decoder_input_lengths,
+        initial_decoder_hidden_state=initial_decoder_hidden_state,
+        initial_decoder_cell_state=initial_decoder_cell_state,
+        initial_attention_weighted_encoder_context=(
+            initial_attention_weighted_encoder_context
+        ),
+        encoder_output_dim=encoder_output_dim,
+        encoder_outputs=encoder_outputs,
+        encoder_lengths=None,
+        decoder_input_dim=decoder_state_dim,
+        decoder_state_dim=decoder_state_dim,
+        scope='external/LSTMWithAttention',
+    )
+
+    def lstm_with_attention_reference(
+        input,
+        initial_hidden_state,
+        initial_cell_state,
+        initial_attention_weighted_encoder_context,
+        gates_w,
+        gates_b,
+        decoder_input_lengths,
+        encoder_outputs_transposed,
+        weighted_prev_attention_context_w,
+        weighted_prev_attention_context_b,
+        weighted_decoder_hidden_state_t_w,
+        weighted_decoder_hidden_state_t_b,
+        weighted_encoder_outputs,
+        coverage_weights,
+        attention_v,
+        attention_zeros,
+        compute_attention_logits,
+    ): ...
+    	compute_attention_logits(
+        hidden_t,
+        weighted_decoder_hidden_state_t_w,
+        weighted_decoder_hidden_state_t_b,
+        attention_weighted_encoder_context_t_prev,
+        weighted_prev_attention_context_w,
+        weighted_prev_attention_context_b,
+        attention_v,
+        weighted_encoder_outputs,
+        encoder_outputs_for_dot_product,
+        coverage_prev,
+        coverage_weights,
+    )
+
+    def make_module(mod, _module_class, _compilation_unit): ...
+    	_module_class(mod, _compilation_unit=_compilation_unit)
+
+    def map_aggregate(a: Argument, fn: Callable[[Argument], Argument]) -> Argument: ...
+    	fn(a)
+
+    def map_arg(a: Argument, fn: Callable[[Node], Argument]) -> Argument: ...
+    	fn(x)
+
+    def map_arg(arg): ...
+    	arg(dtype=dtype, device=device)
+
+    def max_op_test(
+            self, op_name, num_reduce_dim, gc, dc, in_data, in_names, ref_max): ...
+    	ref_max(*in_data)
+
+    def maybe_build_assign(builder, entry): ...
+    	builder(ctx, entry)
+
+    def maybe_dequantize_first_two_tensor_args_and_handle_tuples(f): ...
+    	f(*new_args, **kwargs)
+
+    def noarchTest(fn): ...
+    	fn(*args, **kwargs)
+
+    def noop_fuser(fn): ...
+    	fn(*args, **kwargs)
+
+    def normalize(net, in_record, out_record): ...
+    	in_record()
+    	in_record()
+    	out_record()
+
+    def np_unary_ufunc_integer_promotion_wrapper(fn): ...
+    	fn(x.astype(np_dtype))
+    	fn(x)
+
+    def once_differentiable(fn): ...
+    	fn(ctx, *args)
+
+    def onlyOnCPUAndCUDA(fn): ...
+    	fn(self, *args, **kwargs)
+
+    def optimize_for_inference(
+        model: torch.nn.Module,
+        pass_config: Optional[Dict[str, Any]] = None,
+        tracer: Type[fx.Tracer] = fx.Tracer
+    ) -> torch.nn.Module: ...
+    	tracer()
+
+    def optimize_interference(net, static_blobs,
+                              ordering_function=topological_sort_traversal,
+                              blob_sizes=None,
+                              algo=AssignmentAlgorithm.GREEDY): ...
+    	ordering_function(g)
+
+    def outer_wrapper(fn: Callable) -> Callable: ...
+    	fn(*args, **kwargs)
+
+    def overload_by_arg_count(fn): ...
+    	fn(g, *args)
+
+    def override_qengines(qfunction): ...
+    	qfunction(*args, **kwargs)
+
+    def partial_apply_nontensors(fn, args, **kwargs): ...
+    	fn(*(args[i] if s == 's' else next(tensors) for i, s in enumerate(source)), **kwargs)
+
+    def per_channel_tensor(draw, shapes=None, elements=None, qparams=None): ...
+    	draw(shapes)
+    	draw(st.sampled_from(shapes))
+    	draw(stnp.arrays(dtype=np.float32, elements=elements, shape=_shape))
+    	draw(qparams)
+    	draw(stnp.arrays(dtype=np.float32, elements=elements, shape=_shape))
+
+    def print_job(text, job): ...
+    	text(job.init_group, 'Job.current().init_group')
+    	text(job.epoch_group, 'Job.current().epoch_group')
+    	text(job.download_group, 'Job.current().download_group')
+    	text(job.exit_group, 'Job.current().exit_group')
+
+    def print_net(text, net): ...
+    	text(net.Proto())
+
+    def print_net_def(text, net_def): ...
+    	text(op)
+
+    def print_op(text, op): ...
+    	text(arg.n)
+
+    def print_step(text, step): ...
+    	text(step.get_net(proto.report_net))
+    	text(substep)
+
+    def print_task(text, task): ...
+    	text(task.get_step())
+
+    def print_task_group(text, tg, header=None): ...
+    	text(task)
+
+    def prof_callable(callable, *args, **kwargs): ...
+    	callable(*args, **kwargs)
+    	callable(*args, **kwargs)
+    	callable(*args, **kwargs)
+
+    def profile_hook_step(func): ...
+    	func(*args, **kwargs)
+
+    def qparams(draw, dtypes=None, scale_min=None, scale_max=None,
+                zero_point_min=None, zero_point_max=None): ...
+    	draw(st.sampled_from(dtypes))
+    	draw(st.integers(min_value=_zp_min, max_value=_zp_max))
+    	draw(floats(min_value=scale_min, max_value=scale_max, width=32))
+
+    def quantize(model, run_fn, run_args, mapping=None, inplace=False): ...
+    	run_fn(model, *run_args)
+
+    def quantize_qat(model, run_fn, run_args, inplace=False): ...
+    	run_fn(model, *run_args)
+
+    def rebuild_cuda_tensor(tensor_cls, tensor_size, tensor_stride, tensor_offset,
+                            storage_cls, storage_device, storage_handle, storage_size_bytes, storage_offset_bytes,
+                            requires_grad, ref_counter_handle, ref_counter_offset, event_handle, event_sync_required): ...
+    	storage_cls(0)
+
+    def rebuild_storage_empty(cls): ...
+    	cls()
+
+    def register_datapipe_as_function(cls, function_name, cls_to_register): ...
+    	cls(source_dp, *args, **kwargs)
+
+    def register_parametrization(
+        module: Module, tensor_name: str, parametrization: Module, *, unsafe: bool = False,
+    ) -> Module: ...
+    	parametrization(Y)
+
+    def relax_fp16_check(check_func, *args, **kwargs): ...
+    	check_func(*args, threshold=threshold, **kwargs)
+
+    def release_blobs_when_used(netproto, dont_free_blobs, selector_fun=None): ...
+    	selector_fun(outp)
+
+    def repeat_helper(f): ...
+    	f(self, *args, dtype=dtype)
+
+    def residual_layer(
+        self, block_fn, blob_in, dim_in, dim_out, stride, num_blocks, prefix,
+        dim_inner=None, group=None
+    ): ...
+    	block_fn(
+        blob_in, dim_in, dim_out, block_stride, block_prefix, dim_inner,
+        group
+    )
+
+    def retry_on_connect_failures(func=None, connect_errors=(ADDRESS_IN_USE)): ...
+    	func(*args, **kwargs)
+
+    def run(
+        self,
+        state_handler: Callable[[_RendezvousContext, float], _Action],
+        deadline: float,
+    ) -> None: ...
+    	state_handler(ctx, deadline)
+
+    def run(cls, func): ...
+    	func()
+
+    def run(cls, src: str, package: str) -> List[Tuple[str, Optional[str]]]: ...
+    	cls(package)
+
+    def run(n, stmt, fuzzer_cls): ...
+    	fuzzer_cls(seed=0, dtype=torch.float32)
+    	fuzzer_cls(seed=0, dtype=torch.float64)
+
+    def run(n, stmt, fuzzer_cls): ...
+    	fuzzer_cls(seed=0, dtype=torch.float32)
+    	fuzzer_cls(seed=0, dtype=torch.int32)
+
+    def runAndSaveRNG(self, func, inputs, kwargs=None): ...
+    	func(*inputs, **kwargs)
+
+    def runShardedTrainLoop(opts, myTrainFun): ...
+    	myTrainFun(opts)
+
+    def run_a(self, mod, inputs): ...
+    	mod(*inputs)
+
+    def run_and_parse_first_match(run_lambda, command, regex): ...
+    	run_lambda(command)
+
+    def run_and_read_all(run_lambda, command): ...
+    	run_lambda(command)
+
+    def run_and_return_first_line(run_lambda, command): ...
+    	run_lambda(command)
+
+    def run_b(self, mod, inputs): ...
+    	mod(*inputs)
+
+    def run_mod_and_filter_tensor_outputs(mod, inputs, running_what): ...
+    	mod(*_clone_inputs(inputs))
+
+    def run_reduce_op_test_impl(
+            self, op_name, X, axes, keepdims, ref_func, gc, dc): ...
+    	ref_func(
+        X, axis=None if axes is None else tuple(axes),
+        keepdims=keepdims)
+
+    def run_test(
+            size_tuple, means, stds, label_type, num_labels, is_test, scale_jitter_type,
+            color_jitter, color_lighting, dc, validator, output1=None, output2_size=None): ...
+    	validator(expected_images, device_option, count_images)
+
+    def run_test_distributed(self, fn, device_option=None, **kwargs): ...
+    	fn(**kwargs)
+
+    def run_test_locally(self, fn, device_option=None, **kwargs): ...
+    	fn(*args, **kwargs)
+
+    def run_test_locally(self, fn, device_option=None, **kwargs): ...
+    	fn(*args, **kwargs)
+    	fn(*args, **kwargs)
+
+    def run_with(self, builder): ...
+    	builder()
+    	builder()
+
+    def runtime_validation(f): ...
+    	f(self)
+    	f(self)
+
+    def segment_reduce_grad_op(
+        self,
+        data,
+        segment_ids,
+        reducer_grad,
+        grad_out,
+        output,
+        indices=None
+    ): ...
+    	reducer_grad(grad_out[i], [output[i]], [segment])
+
+    def segment_reduce_op(self, data, segment_ids, reducer, indices=None): ...
+    	reducer(segment)
+
+    def segmented_tensor(
+        min_dim=1,
+        max_dim=4,
+        dtype=np.float32,
+        is_sorted=True,
+        elements=None,
+        segment_generator=segment_ids,
+        allow_empty=False,
+        **kwargs
+    ): ...
+    	segment_generator(data_dims[0], is_sorted=is_sorted)
+
+    def single_batch_reference_fn(input, parameters, module): ...
+    	module(single_batch_input)
+
+    def single_threaded_process_group_agent(f): ...
+    	f(self, *args, **kwargs)
+
+    def skipIfCompiledWithoutNumpy(fn): ...
+    	fn(*args, **kwargs)
+
+    def skipIfNoFBGEMM(fn): ...
+    	fn(*args, **kwargs)
+
+    def skipIfNoLapack(fn): ...
+    	fn(*args, **kwargs)
+
+    def skipIfNoQNNPACK(fn): ...
+    	fn(*args, **kwargs)
+
+    def skipIfNoSciPy(fn): ...
+    	fn(*args, **kwargs)
+
+    def skipIfOnGHA(fn): ...
+    	fn(*args, **kwargs)
+
+    def skipIfRocm(fn): ...
+    	fn(*args, **kwargs)
+
+    def skip_if_no_gpu(func): ...
+    	func(*args, **kwargs)
+
+    def skip_if_rocm(func): ...
+    	func(*args, **kwargs)
+
+    def skip_if_rocm_single_process(func): ...
+    	func(*args, **kwargs)
+
+    def skip_if_small_worldsize(func): ...
+    	func(*args, **kwargs)
+
+    def skip_init(module_cls, *args, **kwargs): ...
+    	module_cls(*args, **kwargs)
+
+    def slowTest(fn): ...
+    	fn(*args, **kwargs)
+
+    def sparse_segmented_tensor(min_dim=1, max_dim=4, dtype=np.float32,
+                                is_sorted=True, elements=None, allow_empty=False,
+                                segment_generator=segment_ids, itype=np.int64,
+                                **kwargs): ...
+    	segment_generator(dims[1], is_sorted=is_sorted)
+
+    def split_module(
+        m: GraphModule,
+        root_m: torch.nn.Module,
+        split_callback: Callable[[torch.fx.node.Node], int],
+    ): ...
+    	split_callback(node)
+
+    def step(self, closure): ...
+    	closure()
+    	closure()
+
+    def step(self, closure=None): ...
+    	closure()
+
+    def step(self, closure=None): ...
+    	closure()
+
+    def step(self, closure=None): ...
+    	closure()
+
+    def step(self, closure=None): ...
+    	closure()
+
+    def step(self, closure=None): ...
+    	closure()
+
+    def step(self, closure=None): ...
+    	closure()
+
+    def step(self, closure=None): ...
+    	closure()
+
+    def step(self, closure=None): ...
+    	closure()
+
+    def step(self, closure=None): ...
+    	closure()
+
+    def step(self, closure=None): ...
+    	closure()
+
+    def step(self, closure=None): ...
+    	closure()
+
+    def step(self, closure=None): ...
+    	closure()
+
+    def step(self, closure=None): ...
+    	closure()
+
+    def step(self, closure=None): ...
+    	closure()
+
+    def step(self, closure=None): ...
+    	closure()
+
+    def step(self, closure=None): ...
+    	closure()
+
+    def step(self, closure=None): ...
+    	closure()
+
+    def step(self, closure=None): ...
+    	closure()
+
+    def step(self, closure=None): ...
+    	closure()
+
+    def step(self, closure=None): ...
+    	closure()
+
+    def step(self, closure=None): ...
+    	closure()
+
+    def step(self, closure=None): ...
+    	closure()
+
+    def step(self, closure=None): ...
+    	closure()
+
+    def step_model(model, input, target): ...
+    	model(input)
+
+    def suppress_warnings(fn): ...
+    	fn(*args, **kwargs)
+
+    def tasks_by_node(self, node_remap=None): ...
+    	node_remap(task.node)
+
+    def tensor(draw, shapes=None, elements=None, qparams=None): ...
+    	draw(shapes)
+    	draw(st.sampled_from(shapes))
+    	draw(stnp.arrays(dtype=np.float32, elements=elements, shape=_shape))
+    	draw(qparams)
+    	draw(stnp.arrays(dtype=np.float32, elements=elements, shape=_shape))
+
+    def tensor_conv(
+        draw, spatial_dim=2, batch_size_range=(1, 4),
+        input_channels_per_group_range=(3, 7),
+        output_channels_per_group_range=(3, 7), feature_map_range=(6, 12),
+        kernel_range=(3, 7), max_groups=1, can_be_transposed=False,
+        elements=None, qparams=None
+    ): ...
+    	draw(st.integers(*batch_size_range))
+    	draw(
+        st.integers(*input_channels_per_group_range))
+    	draw(
+        st.integers(*output_channels_per_group_range))
+    	draw(st.integers(1, max_groups))
+    	draw(st.sampled_from(spatial_dim))
+    	draw(st.integers(*feature_map_range))
+    	draw(st.integers(*kernel_range))
+    	draw(st.booleans())
+    	draw(tensor(shapes=(
+        (batch_size, input_channels) + tuple(feature_map_shape),),
+        elements=elements, qparams=qparams[0]))
+    	draw(tensor(shapes=(weight_shape,), elements=elements,
+                    qparams=qparams[1]))
+    	draw(tensor(shapes=(bias_shape,), elements=elements,
+                    qparams=qparams[2]))
+
+    def test_forward_only(
+        create_model,
+        last_out_blob,
+        data_blob='gpu_0/data',
+        num_labels=1000,
+    ): ...
+    	create_model(
+        model,
+        data,
+        num_input_channels=3,
+        num_labels=num_labels,
+        is_test=True
+    )
+
+    def test_forward_only_fast_simplenet(
+        create_model,
+        last_out_blob,
+        data_blob="gpu_0/data",
+        num_labels=1000,
+    ): ...
+    	create_model(
+        model,
+        data,
+        num_input_channels=3,
+        num_labels=num_labels,
+        is_test=True
+    )
+
+    def test_get_timeout(cls, create_store_handler_fn): ...
+    	create_store_handler_fn()
+
+    def test_mkl_simple_rewrite(self, gen): ...
+    	gen()
+
+    def test_only_eval_fn(model, calib_data): ...
+    	model(*inp)
+
+    def test_only_train_fn(model, train_data, loss_fn=_default_loss_fn): ...
+    	model(data)
+    	loss_fn(output, target)
+
+    def test_shared_grads(
+        with_shapes,
+        create_model,
+        conv_blob,
+        last_out_blob,
+        data_blob='gpu_0/data',
+        label_blob='gpu_0/label',
+        num_labels=1000,
+    ): ...
+    	create_model(
+        model,
+        data,
+        num_input_channels=3,
+        num_labels=num_labels,
+        label=label,
+        is_test=False,
+    )
+
+    def trace_dependencies(
+        callable: Callable[[Any], Any], inputs: Iterable[Tuple[Any, ...]]
+    ) -> List[str]: ...
+    	callable(*inp)
+
+    def train_one_epoch(model, criterion, optimizer, data_loader, device, ntrain_batches): ...
+    	model(image)
+    	criterion(output, target)
+
+    def transform(self, map_fn: Callable[[str], str]) -> "FunctionCounts": ...
+    	map_fn(fn)
+
+    def tree_map(fn: Any, pytree: PyTree) -> PyTree: ...
+    	fn(i)
+
+    def update_bn(loader, model, device=None): ...
+    	model(input)
+
+    def update_initializer(initializer_class,
+                           operator_name_and_kwargs,
+                           default_operator_name_and_kwargs): ...
+    	initializer_class(get_initializer_args()[0],
+                             **get_initializer_args()[1])
+
+    def verify(model, args, loss_fn=torch.sum, devices=None): ...
+    	model(*args)
+    	loss_fn(*out)
+
+    def vhp(func, inputs, v=None, create_graph=False, strict=False): ...
+    	func(*inputs)
+
+    def visualize_graph_executor(state, name_prefix, pb_graph, inline_graph): ...
+    	inline_graph(state.graph, name_prefix + 'original/')
+
+    def vjp(func, inputs, v=None, create_graph=False, strict=False): ...
+    	func(*inputs)
+
+    def warn_imbalance(get_prop): ...
+    	get_prop(props)
+
+    def with_metaclass(meta: type, *bases) -> type: ...
+    	meta(name, bases, d)
+
+    def with_nccl_blocking_wait(func): ...
+    	func(*args, **kwargs)
+
+    def with_tf32_disabled(self, function_call): ...
+    	function_call()
+
+    def with_tf32_enabled(self, function_call): ...
+    	function_call()
+
+    def with_tf32_off(f): ...
+    	f(*args, **kwargs)
+
+    def wrap(f): ...
+    	f(*args, **kwargs)
+
+    def wrap(f): ...
+    	f(*args, **kwargs)
+
+    def wrap(func): ...
+    	func(*args, **kwargs)
+
+    def wrapDeterministicFlagAPITest(fn): ...
+    	fn(*args, **kwargs)
+
+    def wrap_functional(fn, **kwargs): ...
+    	fn(*args, **kwargs)
+
+    def wrap_logical_op_with_negation(func): ...
+    	func(g, input, other)
+
+    def wrap_method_with_policy(self, method, policy): ...
+    	method(*args, **kwargs)
+    	policy()
+
+    def wrap_torch_function(dispatcher: Callable): ...
+    	dispatcher(*args, **kwargs)
+
+    def wrapper(f): ...
+    	f(**kwargs)
+    	f(**kwargs)
+    	f(**kwargs)
