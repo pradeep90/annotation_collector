@@ -354,3 +354,7 @@ It doesn't:
 + Recognize ParamSpec. It treats `Callable[P, R]` as a callable with undefined parameters.
 
 + Get callback parameters that have been assigned to a local variable or a class attribute before being called.
+
+# Wish list of features
+
++ Save the state after analyzing all files. That will let us investigate the data some more and get other stats of interest without rerunning the whole analysis.
