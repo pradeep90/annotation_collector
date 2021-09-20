@@ -1,0 +1,1172 @@
+PROGRESS: Parsed 20/418 files...
+PROGRESS: Parsed 40/418 files...
+PROGRESS: Parsed 60/418 files...
+PROGRESS: Parsed 80/418 files...
+PROGRESS: Parsed 100/418 files...
+PROGRESS: Parsed 120/418 files...
+PROGRESS: Parsed 140/418 files...
+PROGRESS: Parsed 160/418 files...
+PROGRESS: Parsed 180/418 files...
+PROGRESS: Parsed 200/418 files...
+PROGRESS: Parsed 220/418 files...
+PROGRESS: Parsed 240/418 files...
+PROGRESS: Parsed 260/418 files...
+PROGRESS: Parsed 280/418 files...
+PROGRESS: Parsed 300/418 files...
+PROGRESS: Parsed 320/418 files...
+PROGRESS: Parsed 340/418 files...
+PROGRESS: Parsed 360/418 files...
+PROGRESS: Parsed 380/418 files...
+PROGRESS: Parsed 400/418 files...
+Callables with 0 parameters: 5
+    Callable[[], None]
+    Callable[[], None]
+    Callable[[], dict]
+    Callable[[], dict]
+    Callable[[], dict]
+Callables with 1 parameters: 15
+    Callable[[Dict[str, Any]], Dict[str, Any]]
+    Callable[[Sequence[float]], float]
+    Callable[[Sequence[float]], float]
+    Callable[[Sequence[float]], float]
+    Callable[[Sequence[float]], float]
+    Callable[[Sequence[float]], float]
+    Callable[[Sequence[float]], float]
+    Callable[[Sequence[float]], float]
+    Callable[[Sequence[float]], float]
+    Callable[[Tensor], Tensor]
+    Callable[[Tensor], Tensor]
+    Callable[[int], Union[int, float]]
+    Callable[[int], bool]
+    Callable[[int], bool]
+    Callable[[str], Union[bool, int, float, str]]
+Callables with 2 parameters: 1
+    Callable[[Any, Any], torch.Tensor]
+Callables with 3 parameters: 0
+Callables with 4 parameters: 0
+Callables with 5 parameters: 0
+Callables with arbitrary parameters: 136
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable[..., LightningDataModule]
+    Callable[..., LightningModule]
+    Callable[..., Trainer]
+    Callable[..., Union[Trainer, LightningModule, LightningDataModule, Callback]]
+Callback Protocols: 0
+Progress: 0/418. Current module had 0 callbacks. Total so far: 0
+Progress: 1/418. Current module had 0 callbacks. Total so far: 0
+Progress: 2/418. Current module had 0 callbacks. Total so far: 0
+Progress: 3/418. Current module had 0 callbacks. Total so far: 0
+Progress: 4/418. Current module had 2 callbacks. Total so far: 2
+Progress: 5/418. Current module had 0 callbacks. Total so far: 2
+Progress: 6/418. Current module had 1 callbacks. Total so far: 3
+Progress: 7/418. Current module had 0 callbacks. Total so far: 3
+Progress: 8/418. Current module had 0 callbacks. Total so far: 3
+Progress: 9/418. Current module had 0 callbacks. Total so far: 3
+Progress: 10/418. Current module had 0 callbacks. Total so far: 3
+Progress: 11/418. Current module had 3 callbacks. Total so far: 6
+Progress: 12/418. Current module had 0 callbacks. Total so far: 6
+Progress: 13/418. Current module had 0 callbacks. Total so far: 6
+Progress: 14/418. Current module had 1 callbacks. Total so far: 7
+Progress: 15/418. Current module had 0 callbacks. Total so far: 7
+Progress: 16/418. Current module had 0 callbacks. Total so far: 7
+Progress: 17/418. Current module had 0 callbacks. Total so far: 7
+Progress: 18/418. Current module had 0 callbacks. Total so far: 7
+Progress: 19/418. Current module had 0 callbacks. Total so far: 7
+Progress: 20/418. Current module had 0 callbacks. Total so far: 7
+Progress: 21/418. Current module had 0 callbacks. Total so far: 7
+Progress: 22/418. Current module had 2 callbacks. Total so far: 9
+Progress: 23/418. Current module had 0 callbacks. Total so far: 9
+Progress: 24/418. Current module had 0 callbacks. Total so far: 9
+Progress: 25/418. Current module had 0 callbacks. Total so far: 9
+Progress: 26/418. Current module had 0 callbacks. Total so far: 9
+Progress: 27/418. Current module had 0 callbacks. Total so far: 9
+Progress: 28/418. Current module had 0 callbacks. Total so far: 9
+Progress: 29/418. Current module had 0 callbacks. Total so far: 9
+Progress: 30/418. Current module had 0 callbacks. Total so far: 9
+Progress: 31/418. Current module had 0 callbacks. Total so far: 9
+Progress: 32/418. Current module had 0 callbacks. Total so far: 9
+Progress: 33/418. Current module had 6 callbacks. Total so far: 15
+Progress: 34/418. Current module had 0 callbacks. Total so far: 15
+Progress: 35/418. Current module had 1 callbacks. Total so far: 16
+Progress: 36/418. Current module had 1 callbacks. Total so far: 17
+Progress: 37/418. Current module had 0 callbacks. Total so far: 17
+Progress: 38/418. Current module had 0 callbacks. Total so far: 17
+Progress: 39/418. Current module had 0 callbacks. Total so far: 17
+Progress: 40/418. Current module had 0 callbacks. Total so far: 17
+Progress: 41/418. Current module had 0 callbacks. Total so far: 17
+Progress: 42/418. Current module had 0 callbacks. Total so far: 17
+Progress: 43/418. Current module had 0 callbacks. Total so far: 17
+Progress: 44/418. Current module had 0 callbacks. Total so far: 17
+Progress: 45/418. Current module had 0 callbacks. Total so far: 17
+Progress: 46/418. Current module had 0 callbacks. Total so far: 17
+Progress: 47/418. Current module had 0 callbacks. Total so far: 17
+Progress: 48/418. Current module had 2 callbacks. Total so far: 19
+Progress: 49/418. Current module had 0 callbacks. Total so far: 19
+Progress: 50/418. Current module had 0 callbacks. Total so far: 19
+Progress: 51/418. Current module had 0 callbacks. Total so far: 19
+Progress: 52/418. Current module had 0 callbacks. Total so far: 19
+Progress: 53/418. Current module had 0 callbacks. Total so far: 19
+Progress: 54/418. Current module had 0 callbacks. Total so far: 19
+Progress: 55/418. Current module had 0 callbacks. Total so far: 19
+Progress: 56/418. Current module had 1 callbacks. Total so far: 20
+Progress: 57/418. Current module had 0 callbacks. Total so far: 20
+Progress: 58/418. Current module had 0 callbacks. Total so far: 20
+Progress: 59/418. Current module had 1 callbacks. Total so far: 21
+Progress: 60/418. Current module had 0 callbacks. Total so far: 21
+Progress: 61/418. Current module had 0 callbacks. Total so far: 21
+Progress: 62/418. Current module had 1 callbacks. Total so far: 22
+Progress: 63/418. Current module had 3 callbacks. Total so far: 25
+Progress: 64/418. Current module had 0 callbacks. Total so far: 25
+Progress: 65/418. Current module had 5 callbacks. Total so far: 30
+Progress: 66/418. Current module had 0 callbacks. Total so far: 30
+Progress: 67/418. Current module had 2 callbacks. Total so far: 32
+Progress: 68/418. Current module had 0 callbacks. Total so far: 32
+Progress: 69/418. Current module had 0 callbacks. Total so far: 32
+Progress: 70/418. Current module had 0 callbacks. Total so far: 32
+Progress: 71/418. Current module had 0 callbacks. Total so far: 32
+Progress: 72/418. Current module had 0 callbacks. Total so far: 32
+Progress: 73/418. Current module had 0 callbacks. Total so far: 32
+Progress: 74/418. Current module had 0 callbacks. Total so far: 32
+Progress: 75/418. Current module had 0 callbacks. Total so far: 32
+Progress: 76/418. Current module had 0 callbacks. Total so far: 32
+Progress: 77/418. Current module had 9 callbacks. Total so far: 41
+Progress: 78/418. Current module had 1 callbacks. Total so far: 42
+Progress: 79/418. Current module had 2 callbacks. Total so far: 44
+Progress: 80/418. Current module had 0 callbacks. Total so far: 44
+Progress: 81/418. Current module had 1 callbacks. Total so far: 45
+Progress: 82/418. Current module had 0 callbacks. Total so far: 45
+Progress: 83/418. Current module had 5 callbacks. Total so far: 50
+Progress: 84/418. Current module had 3 callbacks. Total so far: 53
+Progress: 85/418. Current module had 1 callbacks. Total so far: 54
+Progress: 86/418. Current module had 2 callbacks. Total so far: 56
+Progress: 87/418. Current module had 0 callbacks. Total so far: 56
+Progress: 88/418. Current module had 2 callbacks. Total so far: 58
+Progress: 89/418. Current module had 1 callbacks. Total so far: 59
+Progress: 90/418. Current module had 0 callbacks. Total so far: 59
+Progress: 91/418. Current module had 0 callbacks. Total so far: 59
+Progress: 92/418. Current module had 0 callbacks. Total so far: 59
+Progress: 93/418. Current module had 0 callbacks. Total so far: 59
+Progress: 94/418. Current module had 0 callbacks. Total so far: 59
+Progress: 95/418. Current module had 0 callbacks. Total so far: 59
+Progress: 96/418. Current module had 0 callbacks. Total so far: 59
+Progress: 97/418. Current module had 0 callbacks. Total so far: 59
+Progress: 98/418. Current module had 0 callbacks. Total so far: 59
+Progress: 99/418. Current module had 1 callbacks. Total so far: 60
+Progress: 100/418. Current module had 1 callbacks. Total so far: 61
+Progress: 101/418. Current module had 0 callbacks. Total so far: 61
+Progress: 102/418. Current module had 1 callbacks. Total so far: 62
+Progress: 103/418. Current module had 0 callbacks. Total so far: 62
+Progress: 104/418. Current module had 0 callbacks. Total so far: 62
+Progress: 105/418. Current module had 0 callbacks. Total so far: 62
+Progress: 106/418. Current module had 0 callbacks. Total so far: 62
+Progress: 107/418. Current module had 0 callbacks. Total so far: 62
+Progress: 108/418. Current module had 0 callbacks. Total so far: 62
+Progress: 109/418. Current module had 0 callbacks. Total so far: 62
+Progress: 110/418. Current module had 0 callbacks. Total so far: 62
+Progress: 111/418. Current module had 0 callbacks. Total so far: 62
+Progress: 112/418. Current module had 0 callbacks. Total so far: 62
+Progress: 113/418. Current module had 0 callbacks. Total so far: 62
+Progress: 114/418. Current module had 0 callbacks. Total so far: 62
+Progress: 115/418. Current module had 0 callbacks. Total so far: 62
+Progress: 116/418. Current module had 0 callbacks. Total so far: 62
+Progress: 117/418. Current module had 0 callbacks. Total so far: 62
+Progress: 118/418. Current module had 0 callbacks. Total so far: 62
+Progress: 119/418. Current module had 0 callbacks. Total so far: 62
+Progress: 120/418. Current module had 0 callbacks. Total so far: 62
+Progress: 121/418. Current module had 0 callbacks. Total so far: 62
+Progress: 122/418. Current module had 0 callbacks. Total so far: 62
+Progress: 123/418. Current module had 0 callbacks. Total so far: 62
+Progress: 124/418. Current module had 0 callbacks. Total so far: 62
+Progress: 125/418. Current module had 0 callbacks. Total so far: 62
+Progress: 126/418. Current module had 0 callbacks. Total so far: 62
+Progress: 127/418. Current module had 0 callbacks. Total so far: 62
+Progress: 128/418. Current module had 1 callbacks. Total so far: 63
+Progress: 129/418. Current module had 0 callbacks. Total so far: 63
+Progress: 130/418. Current module had 0 callbacks. Total so far: 63
+Progress: 131/418. Current module had 0 callbacks. Total so far: 63
+Progress: 132/418. Current module had 0 callbacks. Total so far: 63
+Progress: 133/418. Current module had 0 callbacks. Total so far: 63
+Progress: 134/418. Current module had 0 callbacks. Total so far: 63
+Progress: 135/418. Current module had 3 callbacks. Total so far: 66
+Progress: 136/418. Current module had 1 callbacks. Total so far: 67
+Progress: 137/418. Current module had 0 callbacks. Total so far: 67
+Progress: 138/418. Current module had 0 callbacks. Total so far: 67
+Progress: 139/418. Current module had 4 callbacks. Total so far: 71
+Progress: 140/418. Current module had 0 callbacks. Total so far: 71
+Progress: 141/418. Current module had 0 callbacks. Total so far: 71
+Progress: 142/418. Current module had 0 callbacks. Total so far: 71
+Progress: 143/418. Current module had 0 callbacks. Total so far: 71
+Progress: 144/418. Current module had 1 callbacks. Total so far: 72
+Progress: 145/418. Current module had 1 callbacks. Total so far: 73
+Progress: 146/418. Current module had 0 callbacks. Total so far: 73
+Progress: 147/418. Current module had 1 callbacks. Total so far: 74
+Progress: 148/418. Current module had 0 callbacks. Total so far: 74
+Progress: 149/418. Current module had 0 callbacks. Total so far: 74
+Progress: 150/418. Current module had 2 callbacks. Total so far: 76
+Progress: 151/418. Current module had 0 callbacks. Total so far: 76
+Progress: 152/418. Current module had 0 callbacks. Total so far: 76
+Progress: 153/418. Current module had 0 callbacks. Total so far: 76
+Progress: 154/418. Current module had 0 callbacks. Total so far: 76
+Progress: 155/418. Current module had 0 callbacks. Total so far: 76
+Progress: 156/418. Current module had 0 callbacks. Total so far: 76
+Progress: 157/418. Current module had 0 callbacks. Total so far: 76
+Progress: 158/418. Current module had 2 callbacks. Total so far: 78
+Progress: 159/418. Current module had 3 callbacks. Total so far: 81
+Progress: 160/418. Current module had 0 callbacks. Total so far: 81
+Progress: 161/418. Current module had 0 callbacks. Total so far: 81
+Progress: 162/418. Current module had 0 callbacks. Total so far: 81
+Progress: 163/418. Current module had 0 callbacks. Total so far: 81
+Progress: 164/418. Current module had 0 callbacks. Total so far: 81
+Progress: 165/418. Current module had 0 callbacks. Total so far: 81
+Progress: 166/418. Current module had 0 callbacks. Total so far: 81
+Progress: 167/418. Current module had 0 callbacks. Total so far: 81
+Progress: 168/418. Current module had 1 callbacks. Total so far: 82
+Progress: 169/418. Current module had 0 callbacks. Total so far: 82
+Progress: 170/418. Current module had 0 callbacks. Total so far: 82
+Progress: 171/418. Current module had 0 callbacks. Total so far: 82
+Progress: 172/418. Current module had 0 callbacks. Total so far: 82
+Progress: 173/418. Current module had 0 callbacks. Total so far: 82
+Progress: 174/418. Current module had 0 callbacks. Total so far: 82
+Progress: 175/418. Current module had 0 callbacks. Total so far: 82
+Progress: 176/418. Current module had 0 callbacks. Total so far: 82
+Progress: 177/418. Current module had 0 callbacks. Total so far: 82
+Progress: 178/418. Current module had 0 callbacks. Total so far: 82
+Progress: 179/418. Current module had 0 callbacks. Total so far: 82
+Progress: 180/418. Current module had 0 callbacks. Total so far: 82
+Progress: 181/418. Current module had 0 callbacks. Total so far: 82
+Progress: 182/418. Current module had 9 callbacks. Total so far: 91
+Progress: 183/418. Current module had 0 callbacks. Total so far: 91
+Progress: 184/418. Current module had 0 callbacks. Total so far: 91
+Progress: 185/418. Current module had 0 callbacks. Total so far: 91
+Progress: 186/418. Current module had 0 callbacks. Total so far: 91
+Progress: 187/418. Current module had 0 callbacks. Total so far: 91
+Progress: 188/418. Current module had 2 callbacks. Total so far: 93
+Progress: 189/418. Current module had 0 callbacks. Total so far: 93
+Progress: 190/418. Current module had 0 callbacks. Total so far: 93
+Progress: 191/418. Current module had 0 callbacks. Total so far: 93
+Progress: 192/418. Current module had 0 callbacks. Total so far: 93
+Progress: 193/418. Current module had 0 callbacks. Total so far: 93
+Progress: 194/418. Current module had 0 callbacks. Total so far: 93
+Progress: 195/418. Current module had 0 callbacks. Total so far: 93
+Progress: 196/418. Current module had 0 callbacks. Total so far: 93
+Progress: 197/418. Current module had 0 callbacks. Total so far: 93
+Progress: 198/418. Current module had 0 callbacks. Total so far: 93
+Progress: 199/418. Current module had 0 callbacks. Total so far: 93
+Progress: 200/418. Current module had 1 callbacks. Total so far: 94
+Progress: 201/418. Current module had 0 callbacks. Total so far: 94
+Progress: 202/418. Current module had 0 callbacks. Total so far: 94
+Progress: 203/418. Current module had 0 callbacks. Total so far: 94
+Progress: 204/418. Current module had 0 callbacks. Total so far: 94
+Progress: 205/418. Current module had 0 callbacks. Total so far: 94
+Progress: 206/418. Current module had 0 callbacks. Total so far: 94
+Progress: 207/418. Current module had 3 callbacks. Total so far: 97
+Progress: 208/418. Current module had 3 callbacks. Total so far: 100
+Progress: 209/418. Current module had 3 callbacks. Total so far: 103
+Progress: 210/418. Current module had 0 callbacks. Total so far: 103
+Progress: 211/418. Current module had 0 callbacks. Total so far: 103
+Progress: 212/418. Current module had 4 callbacks. Total so far: 107
+Progress: 213/418. Current module had 0 callbacks. Total so far: 107
+Progress: 214/418. Current module had 0 callbacks. Total so far: 107
+Progress: 215/418. Current module had 0 callbacks. Total so far: 107
+Progress: 216/418. Current module had 3 callbacks. Total so far: 110
+Progress: 217/418. Current module had 0 callbacks. Total so far: 110
+Progress: 218/418. Current module had 0 callbacks. Total so far: 110
+Progress: 219/418. Current module had 2 callbacks. Total so far: 112
+Progress: 220/418. Current module had 0 callbacks. Total so far: 112
+Progress: 221/418. Current module had 1 callbacks. Total so far: 113
+Progress: 222/418. Current module had 2 callbacks. Total so far: 115
+Progress: 223/418. Current module had 1 callbacks. Total so far: 116
+Progress: 224/418. Current module had 2 callbacks. Total so far: 118
+Progress: 225/418. Current module had 0 callbacks. Total so far: 118
+Progress: 226/418. Current module had 0 callbacks. Total so far: 118
+Progress: 227/418. Current module had 0 callbacks. Total so far: 118
+Progress: 228/418. Current module had 0 callbacks. Total so far: 118
+Progress: 229/418. Current module had 0 callbacks. Total so far: 118
+Progress: 230/418. Current module had 0 callbacks. Total so far: 118
+Progress: 231/418. Current module had 0 callbacks. Total so far: 118
+Progress: 232/418. Current module had 0 callbacks. Total so far: 118
+Progress: 233/418. Current module had 0 callbacks. Total so far: 118
+Progress: 234/418. Current module had 0 callbacks. Total so far: 118
+Progress: 235/418. Current module had 0 callbacks. Total so far: 118
+Progress: 236/418. Current module had 0 callbacks. Total so far: 118
+Progress: 237/418. Current module had 0 callbacks. Total so far: 118
+Progress: 238/418. Current module had 0 callbacks. Total so far: 118
+Progress: 239/418. Current module had 1 callbacks. Total so far: 119
+Progress: 240/418. Current module had 0 callbacks. Total so far: 119
+Progress: 241/418. Current module had 0 callbacks. Total so far: 119
+Progress: 242/418. Current module had 0 callbacks. Total so far: 119
+Progress: 243/418. Current module had 0 callbacks. Total so far: 119
+Progress: 244/418. Current module had 0 callbacks. Total so far: 119
+Progress: 245/418. Current module had 0 callbacks. Total so far: 119
+Progress: 246/418. Current module had 0 callbacks. Total so far: 119
+Progress: 247/418. Current module had 0 callbacks. Total so far: 119
+Progress: 248/418. Current module had 0 callbacks. Total so far: 119
+Progress: 249/418. Current module had 2 callbacks. Total so far: 121
+Progress: 250/418. Current module had 0 callbacks. Total so far: 121
+Progress: 251/418. Current module had 0 callbacks. Total so far: 121
+Progress: 252/418. Current module had 0 callbacks. Total so far: 121
+Progress: 253/418. Current module had 0 callbacks. Total so far: 121
+Progress: 254/418. Current module had 2 callbacks. Total so far: 123
+Progress: 255/418. Current module had 0 callbacks. Total so far: 123
+Progress: 256/418. Current module had 2 callbacks. Total so far: 125
+Progress: 257/418. Current module had 2 callbacks. Total so far: 127
+Progress: 258/418. Current module had 1 callbacks. Total so far: 128
+Progress: 259/418. Current module had 2 callbacks. Total so far: 130
+Progress: 260/418. Current module had 0 callbacks. Total so far: 130
+Progress: 261/418. Current module had 0 callbacks. Total so far: 130
+Progress: 262/418. Current module had 0 callbacks. Total so far: 130
+Progress: 263/418. Current module had 1 callbacks. Total so far: 131
+Progress: 264/418. Current module had 0 callbacks. Total so far: 131
+Progress: 265/418. Current module had 0 callbacks. Total so far: 131
+Progress: 266/418. Current module had 0 callbacks. Total so far: 131
+Progress: 267/418. Current module had 0 callbacks. Total so far: 131
+Progress: 268/418. Current module had 0 callbacks. Total so far: 131
+Progress: 269/418. Current module had 0 callbacks. Total so far: 131
+Progress: 270/418. Current module had 0 callbacks. Total so far: 131
+Progress: 271/418. Current module had 0 callbacks. Total so far: 131
+Progress: 272/418. Current module had 0 callbacks. Total so far: 131
+Progress: 273/418. Current module had 2 callbacks. Total so far: 133
+Progress: 274/418. Current module had 0 callbacks. Total so far: 133
+Progress: 275/418. Current module had 0 callbacks. Total so far: 133
+Progress: 276/418. Current module had 0 callbacks. Total so far: 133
+Progress: 277/418. Current module had 0 callbacks. Total so far: 133
+Progress: 278/418. Current module had 0 callbacks. Total so far: 133
+Progress: 279/418. Current module had 1 callbacks. Total so far: 134
+Progress: 280/418. Current module had 0 callbacks. Total so far: 134
+Progress: 281/418. Current module had 0 callbacks. Total so far: 134
+Progress: 282/418. Current module had 0 callbacks. Total so far: 134
+Progress: 283/418. Current module had 0 callbacks. Total so far: 134
+Progress: 284/418. Current module had 0 callbacks. Total so far: 134
+Progress: 285/418. Current module had 0 callbacks. Total so far: 134
+Progress: 286/418. Current module had 0 callbacks. Total so far: 134
+Progress: 287/418. Current module had 0 callbacks. Total so far: 134
+Progress: 288/418. Current module had 0 callbacks. Total so far: 134
+Progress: 289/418. Current module had 0 callbacks. Total so far: 134
+Progress: 290/418. Current module had 0 callbacks. Total so far: 134
+Progress: 291/418. Current module had 0 callbacks. Total so far: 134
+Progress: 292/418. Current module had 0 callbacks. Total so far: 134
+Progress: 293/418. Current module had 0 callbacks. Total so far: 134
+Progress: 294/418. Current module had 0 callbacks. Total so far: 134
+Progress: 295/418. Current module had 0 callbacks. Total so far: 134
+Progress: 296/418. Current module had 0 callbacks. Total so far: 134
+Progress: 297/418. Current module had 0 callbacks. Total so far: 134
+Progress: 298/418. Current module had 0 callbacks. Total so far: 134
+Progress: 299/418. Current module had 0 callbacks. Total so far: 134
+Progress: 300/418. Current module had 0 callbacks. Total so far: 134
+Progress: 301/418. Current module had 0 callbacks. Total so far: 134
+Progress: 302/418. Current module had 0 callbacks. Total so far: 134
+Progress: 303/418. Current module had 0 callbacks. Total so far: 134
+Progress: 304/418. Current module had 0 callbacks. Total so far: 134
+Progress: 305/418. Current module had 0 callbacks. Total so far: 134
+Progress: 306/418. Current module had 0 callbacks. Total so far: 134
+Progress: 307/418. Current module had 0 callbacks. Total so far: 134
+Progress: 308/418. Current module had 0 callbacks. Total so far: 134
+Progress: 309/418. Current module had 0 callbacks. Total so far: 134
+Progress: 310/418. Current module had 0 callbacks. Total so far: 134
+Progress: 311/418. Current module had 0 callbacks. Total so far: 134
+Progress: 312/418. Current module had 0 callbacks. Total so far: 134
+Progress: 313/418. Current module had 0 callbacks. Total so far: 134
+Progress: 314/418. Current module had 0 callbacks. Total so far: 134
+Progress: 315/418. Current module had 0 callbacks. Total so far: 134
+Progress: 316/418. Current module had 0 callbacks. Total so far: 134
+Progress: 317/418. Current module had 0 callbacks. Total so far: 134
+Progress: 318/418. Current module had 0 callbacks. Total so far: 134
+Progress: 319/418. Current module had 1 callbacks. Total so far: 135
+Progress: 320/418. Current module had 1 callbacks. Total so far: 136
+Progress: 321/418. Current module had 1 callbacks. Total so far: 137
+Progress: 322/418. Current module had 0 callbacks. Total so far: 137
+Progress: 323/418. Current module had 0 callbacks. Total so far: 137
+Progress: 324/418. Current module had 0 callbacks. Total so far: 137
+Progress: 325/418. Current module had 0 callbacks. Total so far: 137
+Progress: 326/418. Current module had 0 callbacks. Total so far: 137
+Progress: 327/418. Current module had 0 callbacks. Total so far: 137
+Progress: 328/418. Current module had 0 callbacks. Total so far: 137
+Progress: 329/418. Current module had 0 callbacks. Total so far: 137
+Progress: 330/418. Current module had 0 callbacks. Total so far: 137
+Progress: 331/418. Current module had 0 callbacks. Total so far: 137
+Progress: 332/418. Current module had 0 callbacks. Total so far: 137
+Progress: 333/418. Current module had 0 callbacks. Total so far: 137
+Progress: 334/418. Current module had 0 callbacks. Total so far: 137
+Progress: 335/418. Current module had 0 callbacks. Total so far: 137
+Progress: 336/418. Current module had 0 callbacks. Total so far: 137
+Progress: 337/418. Current module had 0 callbacks. Total so far: 137
+Progress: 338/418. Current module had 1 callbacks. Total so far: 138
+Progress: 339/418. Current module had 0 callbacks. Total so far: 138
+Progress: 340/418. Current module had 0 callbacks. Total so far: 138
+Progress: 341/418. Current module had 0 callbacks. Total so far: 138
+Progress: 342/418. Current module had 0 callbacks. Total so far: 138
+Progress: 343/418. Current module had 0 callbacks. Total so far: 138
+Progress: 344/418. Current module had 0 callbacks. Total so far: 138
+Progress: 345/418. Current module had 0 callbacks. Total so far: 138
+Progress: 346/418. Current module had 1 callbacks. Total so far: 139
+Progress: 347/418. Current module had 0 callbacks. Total so far: 139
+Progress: 348/418. Current module had 1 callbacks. Total so far: 140
+Progress: 349/418. Current module had 0 callbacks. Total so far: 140
+Progress: 350/418. Current module had 2 callbacks. Total so far: 142
+Progress: 351/418. Current module had 0 callbacks. Total so far: 142
+Progress: 352/418. Current module had 0 callbacks. Total so far: 142
+Progress: 353/418. Current module had 1 callbacks. Total so far: 143
+Progress: 354/418. Current module had 0 callbacks. Total so far: 143
+Progress: 355/418. Current module had 0 callbacks. Total so far: 143
+Progress: 356/418. Current module had 4 callbacks. Total so far: 147
+Progress: 357/418. Current module had 0 callbacks. Total so far: 147
+Progress: 358/418. Current module had 0 callbacks. Total so far: 147
+Progress: 359/418. Current module had 2 callbacks. Total so far: 149
+Progress: 360/418. Current module had 0 callbacks. Total so far: 149
+Progress: 361/418. Current module had 0 callbacks. Total so far: 149
+Progress: 362/418. Current module had 0 callbacks. Total so far: 149
+Progress: 363/418. Current module had 0 callbacks. Total so far: 149
+Progress: 364/418. Current module had 0 callbacks. Total so far: 149
+Progress: 365/418. Current module had 0 callbacks. Total so far: 149
+Progress: 366/418. Current module had 0 callbacks. Total so far: 149
+Progress: 367/418. Current module had 0 callbacks. Total so far: 149
+Progress: 368/418. Current module had 0 callbacks. Total so far: 149
+Progress: 369/418. Current module had 0 callbacks. Total so far: 149
+Progress: 370/418. Current module had 0 callbacks. Total so far: 149
+Progress: 371/418. Current module had 0 callbacks. Total so far: 149
+Progress: 372/418. Current module had 0 callbacks. Total so far: 149
+Progress: 373/418. Current module had 0 callbacks. Total so far: 149
+Progress: 374/418. Current module had 0 callbacks. Total so far: 149
+Progress: 375/418. Current module had 0 callbacks. Total so far: 149
+Progress: 376/418. Current module had 0 callbacks. Total so far: 149
+Progress: 377/418. Current module had 0 callbacks. Total so far: 149
+Progress: 378/418. Current module had 0 callbacks. Total so far: 149
+Progress: 379/418. Current module had 1 callbacks. Total so far: 150
+Progress: 380/418. Current module had 0 callbacks. Total so far: 150
+Progress: 381/418. Current module had 0 callbacks. Total so far: 150
+Progress: 382/418. Current module had 0 callbacks. Total so far: 150
+Progress: 383/418. Current module had 0 callbacks. Total so far: 150
+Progress: 384/418. Current module had 1 callbacks. Total so far: 151
+Progress: 385/418. Current module had 0 callbacks. Total so far: 151
+Progress: 386/418. Current module had 0 callbacks. Total so far: 151
+Progress: 387/418. Current module had 0 callbacks. Total so far: 151
+Progress: 388/418. Current module had 0 callbacks. Total so far: 151
+Progress: 389/418. Current module had 0 callbacks. Total so far: 151
+Progress: 390/418. Current module had 1 callbacks. Total so far: 152
+Progress: 391/418. Current module had 1 callbacks. Total so far: 153
+Progress: 392/418. Current module had 2 callbacks. Total so far: 155
+Progress: 393/418. Current module had 0 callbacks. Total so far: 155
+Progress: 394/418. Current module had 0 callbacks. Total so far: 155
+Progress: 395/418. Current module had 0 callbacks. Total so far: 155
+Progress: 396/418. Current module had 0 callbacks. Total so far: 155
+Progress: 397/418. Current module had 0 callbacks. Total so far: 155
+Progress: 398/418. Current module had 0 callbacks. Total so far: 155
+Progress: 399/418. Current module had 1 callbacks. Total so far: 156
+Progress: 400/418. Current module had 0 callbacks. Total so far: 156
+Progress: 401/418. Current module had 0 callbacks. Total so far: 156
+Progress: 402/418. Current module had 0 callbacks. Total so far: 156
+Progress: 403/418. Current module had 0 callbacks. Total so far: 156
+Progress: 404/418. Current module had 0 callbacks. Total so far: 156
+Progress: 405/418. Current module had 0 callbacks. Total so far: 156
+Progress: 406/418. Current module had 0 callbacks. Total so far: 156
+Progress: 407/418. Current module had 0 callbacks. Total so far: 156
+Progress: 408/418. Current module had 4 callbacks. Total so far: 160
+Progress: 409/418. Current module had 0 callbacks. Total so far: 160
+Progress: 410/418. Current module had 0 callbacks. Total so far: 160
+Progress: 411/418. Current module had 0 callbacks. Total so far: 160
+Progress: 412/418. Current module had 1 callbacks. Total so far: 161
+Progress: 413/418. Current module had 2 callbacks. Total so far: 163
+Progress: 414/418. Current module had 0 callbacks. Total so far: 163
+Progress: 415/418. Current module had 0 callbacks. Total so far: 163
+Progress: 416/418. Current module had 0 callbacks. Total so far: 163
+Progress: 417/418. Current module had 0 callbacks. Total so far: 163
+Functions with callback parameters: 163
+    def _call_and_handle_interrupt(self, trainer_fn: Callable, *args: Any, **kwargs: Any) -> Any: ...
+        trainer_fn(*args, **kwargs)
+
+    def _capture_metadata_collate(samples: List, dataset: Dataset, default_collate: Callable) -> Dict: ...
+        default_collate(samples)
+        default_collate(samples)
+        default_collate(samples)
+
+    def _compare_version(package: str, op, version) -> bool: ...
+        op(pkg_version, Version(version))
+
+    def _convert_loaded_hparams(model_args: dict, hparams_type: Optional[Union[Callable, str]] = None) -> object: ...
+        hparams_type(model_args)
+
+    def _create_profiler(self, profiler: Type[_PROFILER]) -> _PROFILER: ...
+        profiler(**kwargs)
+
+    def _defaults_from_env_vars(fn: Callable) -> Callable: ...
+        fn(self, **kwargs)
+
+    def _exchange_scheduler(self, configure_optimizers: Callable): ...
+        configure_optimizers()
+
+    def _instantiate_logger(logger_class, save_dir, **override_kwargs): ...
+        logger_class(**args)
+
+    def _load_model_state(cls, checkpoint: Dict[str, Any], strict: bool = True, **cls_kwargs_new): ...
+        cls(**_cls_kwargs)
+
+    def _nested_calc_num_data(data: Union[Mapping, Sequence], compute_func: Callable): ...
+        compute_func(new_data)
+
+    def _next_data_wrapper(fn, it, dl, num_batches_fetched) -> Callable: ...
+        fn()
+
+    def _reconstruct(cls, state: dict, sync_fn: Optional[Callable] = None) -> "ResultMetric": ...
+        cls(meta, state["is_tensor"])
+
+    def _reconstruct(cls, state: dict, sync_fn: Optional[Callable] = None) -> "ResultMetricCollection": ...
+        cls()
+
+    def _reconstruct(cls, state: dict, sync_fn: Optional[Callable] = None) -> "_Metadata": ...
+        cls(state["fx"], state["name"])
+
+    def _sanitize_callable(val): ...
+        val()
+
+    def _step(self, batch): ...
+        self(batch)
+
+    def _step(self, batch, batch_idx): ...
+        self(batch)
+
+    def _step(self, batch, batch_idx): ...
+        self(x)
+
+    def _step(self, batch, batch_idx): ...
+        self(x)
+
+    def _test_accelerator_choice_ddp_cpu_and_plugin(tmpdir, ddp_plugin_class): ...
+        ddp_plugin_class(find_unused_parameters=True)
+
+    def _test_logger_created_on_rank_zero_only(tmpdir, logger_class): ...
+        logger_class(**logger_args)
+
+    def _test_loggers_pickle(tmpdir, monkeypatch, logger_class): ...
+        logger_class(**logger_args)
+
+    def _to_lightning_optimizer(cls, optimizer, trainer, opt_idx): ...
+        cls(optimizer)
+
+    def _track_data_hook_calls(obj: "LightningDataModule", fn: callable) -> callable: ...
+        fn(*args, **kwargs)
+
+    def _wrap_compute(self, compute: Any) -> Any: ...
+        compute(*args, **kwargs)
+
+    def apply_to_collection(
+        data: Any,
+        dtype: Union[type, Any, Tuple[Union[type, Any]]],
+        function: Callable,
+        *args: Any,
+        wrong_dtype: Optional[Union[type, Tuple[type]]] = None,
+        include_none: bool = True,
+        **kwargs: Any,
+    ) -> Any: ...
+        function(data, *args, **kwargs)
+
+    def apply_to_collections(
+        data1: Optional[Any],
+        data2: Optional[Any],
+        dtype: Union[type, Any, Tuple[Union[type, Any]]],
+        function: Callable,
+        *args: Any,
+        wrong_dtype: Optional[Union[type, Tuple[type]]] = None,
+        **kwargs: Any,
+    ) -> Any: ...
+        function(data1, data2, *args, **kwargs)
+
+    def auto_move_data(fn: Callable) -> Callable: ...
+        fn(self, *args, **kwargs)
+        fn(self, *args, **kwargs)
+
+    def call(hook, fn, *args, **kwargs): ...
+        fn(*args, **kwargs)
+
+    def call(hook, fn, *args, **kwargs): ...
+        fn(*args, **kwargs)
+
+    def call(hook, fn, *args, **kwargs): ...
+        fn(*args, **kwargs)
+
+    def call(hook, fn, *args, **kwargs): ...
+        fn(*args, **kwargs)
+
+    def decorate(func): ...
+        func(*args, **kwargs)
+
+    def enabled_only(fn: Callable) -> Optional[Callable]: ...
+        fn(self, *args, **kwargs)
+
+    def from_argparse_args(
+        cls: Type[ParseArgparserDataType], args: Union[Namespace, ArgumentParser], **kwargs: Any
+    ) -> ParseArgparserDataType: ...
+        cls(**trainer_kwargs)
+
+    def from_datasets(
+        cls,
+        train_dataset: Optional[Union[Dataset, Sequence[Dataset], Mapping[str, Dataset]]] = None,
+        val_dataset: Optional[Union[Dataset, Sequence[Dataset]]] = None,
+        test_dataset: Optional[Union[Dataset, Sequence[Dataset]]] = None,
+        batch_size: int = 1,
+        num_workers: int = 0,
+    ): ...
+        cls()
+
+    def from_defaults(cls, **kwargs: Optional[int]) -> "Progress": ...
+        cls(total=Tracker(**kwargs), current=Tracker(**kwargs))
+
+    def from_state_dict(cls, state_dict) -> "IteratorState": ...
+        cls(**state_dict)
+
+    def from_state_dict(cls, state_dict) -> "MergedIteratorState": ...
+        cls(**state_dict)
+
+    def from_state_dict(cls, state_dict: dict) -> "BaseProgress": ...
+        cls()
+
+    def generate_trajectory_samples(self) -> Tuple[List[torch.Tensor], List[torch.Tensor], List[torch.Tensor]]: ...
+        self(self.state)
+        self(self.state)
+
+    def get_action(self, net: nn.Module, epsilon: float, device: str) -> int: ...
+        net(state)
+
+    def inner_f(queue: Queue, func: Callable, *args: Any, **kwargs: Any) -> None: ...
+        func(*args, **kwargs)
+
+    def lightning_loop(cls_model, idx, device_type: str = "cuda", num_epochs=10): ...
+        cls_model()
+
+    def on_epoch_end(self): ...
+        self(z)
+
+    def on_train_epoch_start(self, trainer, model): ...
+        model(batch)
+
+    def optimizer_step(self, epoch, batch_idx, optimizer, optimizer_idx, optimizer_closure, **_): ...
+        optimizer_closure()
+        optimizer_closure()
+
+    def optimizer_step(self, optimizer: Optimizer, opt_idx: int, lambda_closure: Callable, **kwargs: Any) -> None: ...
+        lambda_closure()
+
+    def parameter_validation(fn: Callable) -> Callable: ...
+        fn(self, *args, **kwargs)
+
+    def pl_multi_process_test(func): ...
+        func(**kwargs)
+
+    def plugin_parity_test(
+        model_cls: Type[SeedTrainLoaderModel],
+        seed: int = 42,
+        gpus: int = 0,
+        precision: int = 32,
+        max_percent_speed_diff: float = 0.1,
+    ): ...
+        model_cls()
+        model_cls()
+
+    def pre_optimizer_step(
+        self,
+        model: "pl.LightningModule",
+        optimizer: Optimizer,
+        optimizer_idx: int,
+        lambda_closure: Callable,
+        **kwargs: Any,
+    ) -> bool: ...
+        lambda_closure()
+
+    def pre_optimizer_step(
+        self,
+        model: "pl.LightningModule",
+        optimizer: Optimizer,
+        optimizer_idx: int,
+        lambda_closure: Callable,
+        **kwargs: Any,
+    ) -> bool: ...
+        lambda_closure()
+
+    def pre_optimizer_step(
+        self,
+        model: "pl.LightningModule",
+        optimizer: Optimizer,
+        optimizer_idx: int,
+        lambda_closure: Callable,
+        **kwargs: Any,
+    ) -> bool: ...
+        lambda_closure()
+
+    def predict(self, batch, batch_idx, dataloader_idx=None): ...
+        self(batch)
+
+    def predict_step(self, batch, *_): ...
+        self(batch)
+
+    def predict_step(self, batch, batch_idx, dataloader_idx=None): ...
+        self(batch)
+
+    def predict_step(self, batch, batch_idx, dataloader_idx=None): ...
+        self(x)
+
+    def predict_step(self, batch: Any, batch_idx: int, dataloader_idx: Optional[int] = None) -> Any: ...
+        self(batch)
+
+    def rank_zero_experiment(fn: Callable) -> Callable: ...
+        fn(self)
+
+    def rank_zero_only(fn: Callable) -> Callable: ...
+        fn(*args, **kwargs)
+
+    def register_ddp_comm_hook(
+        model: DistributedDataParallel,
+        ddp_comm_state: Optional[object] = None,
+        ddp_comm_hook: Optional[Callable] = None,
+        ddp_comm_wrapper: Optional[Callable] = None,
+    ) -> None: ...
+        ddp_comm_wrapper(ddp_comm_hook)
+
+    def run_prediction_eval_model_template(trained_model, dataloader, min_acc=0.50): ...
+        trained_model(x)
+
+    def step(self, closure=None): ...
+        closure()
+
+    def step(self, closure=None): ...
+        closure()
+
+    def step(self, x): ...
+        self(x)
+
+    def test_amp_apex_ddp(
+        mocked_device_count, ddp_backend: str, gpus: int, amp: str, custom_plugin: bool, plugin_cls: MixedPrecisionPlugin
+    ): ...
+        plugin_cls()
+
+    def test_collect_init_arguments(tmpdir, cls): ...
+        cls(**extra_args)
+        cls(batch_size=179, **extra_args)
+
+    def test_collect_init_arguments_with_local_vars(cls): ...
+        cls(arg1=1, arg2=2)
+
+    def test_dataset_rng_states_restart(dataset_class, num_workers, batch_size): ...
+        dataset_class(16, 8)
+
+    def test_deepspeed_auto_batch_size_config_select(tmpdir, dataset_cls, value): ...
+        dataset_cls(32, 64)
+
+    def test_deepspeed_plugin_string(tmpdir, input): ...
+        input()
+
+    def test_dict_hparams(tmpdir, cls): ...
+        cls(hparams={"test_arg": 14})
+
+    def test_double_precision(tmpdir, boring_model): ...
+        boring_model()
+
+    def test_init_arg_with_runtime_change(tmpdir, cls): ...
+        cls(running_arg=123)
+
+    def test_lightning_parallel_module_device_access(nest, unnest): ...
+        nest(data)
+        unnest(batch)
+
+    def test_lightning_wrapper_module_methods(wrapper_class, stage): ...
+        wrapper_class(pl_module)
+
+    def test_load_model_from_checkpoint(tmpdir, model_template): ...
+        model_template()
+
+    def test_model_nohparams_train_test(tmpdir, cls): ...
+        cls()
+
+    def test_model_saves_with_example_input_array(tmpdir, modelclass, input_sample): ...
+        modelclass()
+
+    def test_models(tmpdir, data_class, model_class): ...
+        data_class()
+        model_class()
+
+    def test_namespace_hparams(tmpdir, cls): ...
+        cls(hparams=Namespace(test_arg=14))
+
+    def test_no_checkpoint_io_plugin_support(plugin_cls): ...
+        plugin_cls()
+
+    def test_omega_conf_hparams(tmpdir, cls): ...
+        cls(hparams=conf)
+
+    def test_pickling_dataset_mnist(tmpdir, dataset_cls, args): ...
+        dataset_cls(**args)
+
+    def test_profiler_teardown(tmpdir, cls): ...
+        cls(dirpath=tmpdir, filename="profiler")
+
+    def test_ranks_available_manual_plugin_selection(plugin_cls): ...
+        plugin_cls(
+            parallel_devices=[torch.device("cuda", 1), torch.device("cuda", 2)], cluster_environment=cluster
+        )
+
+    def test_single_config_models_fail(tmpdir, cls, config): ...
+        cls(**config)
+
+    def test_step(self, batch, batch_idx): ...
+        self(batch)
+
+    def test_step(self, batch, batch_idx): ...
+        self(batch)
+
+    def test_step(self, batch, batch_idx): ...
+        self(batch)
+
+    def test_step(self, batch, batch_idx): ...
+        self(batch)
+
+    def test_step(self, batch, batch_idx): ...
+        self(x)
+
+    def test_step(self, batch, batch_idx): ...
+        self(x)
+
+    def test_step(self, batch, batch_idx): ...
+        self(x)
+
+    def test_step(self, batch, batch_idx): ...
+        self(x)
+
+    def test_step(self, batch, batch_idx): ...
+        self(x)
+
+    def test_step(self, batch, batch_idx, *args, **kwargs): ...
+        self(x)
+
+    def test_step__multiple_dataloaders(self, batch, batch_idx, dataloader_idx, **kwargs): ...
+        self(x)
+
+    def test_tensorboard_finalize(summary_writer, tmpdir): ...
+        summary_writer()
+        summary_writer()
+
+    def test_torchscript_example_input_output_trace(modelclass): ...
+        modelclass()
+
+    def test_torchscript_input_output(modelclass): ...
+        modelclass()
+
+    def test_torchscript_properties(modelclass): ...
+        modelclass()
+
+    def test_torchscript_save_load(tmpdir, modelclass): ...
+        modelclass()
+
+    def test_torchscript_save_load_custom_filesystem(tmpdir, modelclass): ...
+        modelclass()
+
+    def test_wrapper_device_dtype(wrapper_class): ...
+        wrapper_class(model)
+
+    def to_onnx(self, file_path: Union[str, Path], input_sample: Optional[Any] = None, **kwargs): ...
+        self(*input_sample)
+        self(input_sample)
+
+    def train_manual_optimization(tmpdir, accelerator, model_cls=TesManualOptimizationDDPModel): ...
+        model_cls()
+
+    def training_step(self, batch, batch_idx): ...
+        self(batch)
+
+    def training_step(self, batch, batch_idx): ...
+        self(batch)
+
+    def training_step(self, batch, batch_idx): ...
+        self(batch)
+
+    def training_step(self, batch, batch_idx): ...
+        self(batch)
+
+    def training_step(self, batch, batch_idx): ...
+        self(batch)
+
+    def training_step(self, batch, batch_idx): ...
+        self(batch)
+
+    def training_step(self, batch, batch_idx): ...
+        self(batch)
+
+    def training_step(self, batch, batch_idx): ...
+        self(batch)
+
+    def training_step(self, batch, batch_idx): ...
+        self(batch)
+
+    def training_step(self, batch, batch_idx): ...
+        self(float_data)
+
+    def training_step(self, batch, batch_idx): ...
+        self(images)
+
+    def training_step(self, batch, batch_idx): ...
+        self(x)
+
+    def training_step(self, batch, batch_idx): ...
+        self(x)
+
+    def training_step(self, batch, batch_idx): ...
+        self(x)
+
+    def training_step(self, batch, batch_idx): ...
+        self(x)
+
+    def training_step(self, batch, batch_idx): ...
+        self(x)
+
+    def training_step(self, batch, batch_idx): ...
+        self(x)
+
+    def training_step(self, batch, batch_idx): ...
+        self(x)
+
+    def training_step(self, batch, batch_idx): ...
+        self(x)
+
+    def training_step(self, batch, batch_idx): ...
+        self(x)
+
+    def training_step(self, batch, batch_idx): ...
+        self(x)
+
+    def training_step(self, batch, batch_idx): ...
+        self(x)
+
+    def training_step(self, batch, batch_idx): ...
+        self(x)
+        self(x)
+
+    def training_step(self, batch, batch_idx): ...
+        self(x, batch_idx)
+
+    def training_step(self, batch, batch_idx, hiddens): ...
+        self(x)
+
+    def training_step(self, batch, batch_idx, hiddens): ...
+        self(x_tensor.view(batch_size, truncated_bptt_steps))
+
+    def training_step(self, batch, batch_idx, optimizer_idx): ...
+        self(batch)
+
+    def training_step(self, batch, batch_idx, optimizer_idx): ...
+        self(z)
+        self(z)
+
+    def training_step(self, batch, batch_idx, optimizer_idx=None): ...
+        self(batch)
+
+    def training_step(self, batch, batch_idx, optimizer_idx=None): ...
+        self(x)
+
+    def training_step(self, batch, batch_idx, optimizer_idx=None): ...
+        self(z)
+
+    def training_step(self, batch, batch_nb): ...
+        self(img)
+
+    def training_step(self, batch, batch_nb): ...
+        self(x)
+
+    def training_step(self, batch, batch_nb): ...
+        self(x)
+
+    def training_step(self, dataloader_iter, batch_idx): ...
+        self(batch)
+
+    def training_step__multiple_dataloaders(self, batch, batch_idx, optimizer_idx=None): ...
+        self(x)
+
+    def update_parameters(
+        average_model: "pl.LightningModule", model: "pl.LightningModule", n_averaged: torch.LongTensor, avg_fn: _AVG_FN
+    ): ...
+        avg_fn(p_swa_, p_model_, n_averaged.to(device))
+
+    def validation_step(self, batch, batch_idx): ...
+        self(batch)
+
+    def validation_step(self, batch, batch_idx): ...
+        self(batch)
+
+    def validation_step(self, batch, batch_idx): ...
+        self(batch)
+
+    def validation_step(self, batch, batch_idx): ...
+        self(batch)
+
+    def validation_step(self, batch, batch_idx): ...
+        self(images)
+
+    def validation_step(self, batch, batch_idx): ...
+        self(img)
+
+    def validation_step(self, batch, batch_idx): ...
+        self(x)
+
+    def validation_step(self, batch, batch_idx): ...
+        self(x)
+
+    def validation_step(self, batch, batch_idx): ...
+        self(x)
+
+    def validation_step(self, batch, batch_idx): ...
+        self(x)
+
+    def validation_step(self, batch, batch_idx): ...
+        self(x)
+
+    def validation_step(self, batch, batch_idx, *args, **kwargs): ...
+        self(x)
+
+    def validation_step__dp(self, batch, batch_idx, *args, **kwargs): ...
+        self(x.to(self.device))
+
+    def validation_step__multiple_dataloaders(self, batch, batch_idx, dataloader_idx, **kwargs): ...
+        self(x)
+
+    def vanilla_loop(cls_model, idx, device_type: str = "cuda", num_epochs=10): ...
+        cls_model()
+
+    def wrap(fn): ...
+        fn()
+
+    def wrap_qat_forward_context(
+        quant_cb, model: "pl.LightningModule", func: Callable, trigger_condition: Optional[Union[Callable, int]] = None
+    ) -> Callable: ...
+        func(data)
+        trigger_condition(model.trainer)
+
+    def wrap_quantize_forward_context(model: "pl.LightningModule", func: Callable) -> Callable: ...
+        func(data)
+

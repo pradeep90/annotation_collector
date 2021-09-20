@@ -1,17 +1,71 @@
-Could not parse path /Users/pradeepkumars/Programs/pandas/pandas/io/parsers/python_parser.py: Syntax Error @ 1162:36.
-Incomplete input. Encountered '}', but expected 'FSTRING_END', 'FSTRING_STRING', or '{'.
-
-        delimiters = "".join(fr"\{x}" for x in self.delimiter)
-                                   ^
-
-
-Could not parse path /Users/pradeepkumars/Programs/pandas/pandas/io/formats/format.py: Syntax Error @ 1903:59.
-Incomplete input. Encountered '}', but expected 'FSTRING_END', 'FSTRING_STRING', or '{'.
-
-    number_regex = re.compile(fr"^\s*[\+-]?[0-9]+\{decimal}[0-9]*$")
-                                                          ^
-
-
+PROGRESS: Parsed 20/1378 files...
+PROGRESS: Parsed 40/1378 files...
+PROGRESS: Parsed 60/1378 files...
+PROGRESS: Parsed 80/1378 files...
+PROGRESS: Parsed 100/1378 files...
+PROGRESS: Parsed 120/1378 files...
+PROGRESS: Parsed 140/1378 files...
+PROGRESS: Parsed 160/1378 files...
+PROGRESS: Parsed 180/1378 files...
+PROGRESS: Parsed 200/1378 files...
+PROGRESS: Parsed 220/1378 files...
+PROGRESS: Parsed 240/1378 files...
+PROGRESS: Parsed 260/1378 files...
+PROGRESS: Parsed 280/1378 files...
+PROGRESS: Parsed 300/1378 files...
+PROGRESS: Parsed 320/1378 files...
+PROGRESS: Parsed 340/1378 files...
+PROGRESS: Parsed 360/1378 files...
+PROGRESS: Parsed 380/1378 files...
+PROGRESS: Parsed 400/1378 files...
+PROGRESS: Parsed 420/1378 files...
+PROGRESS: Parsed 440/1378 files...
+PROGRESS: Parsed 460/1378 files...
+PROGRESS: Parsed 480/1378 files...
+PROGRESS: Parsed 500/1378 files...
+PROGRESS: Parsed 520/1378 files...
+PROGRESS: Parsed 540/1378 files...
+PROGRESS: Parsed 560/1378 files...
+PROGRESS: Parsed 580/1378 files...
+PROGRESS: Parsed 600/1378 files...
+PROGRESS: Parsed 620/1378 files...
+PROGRESS: Parsed 640/1378 files...
+PROGRESS: Parsed 660/1378 files...
+PROGRESS: Parsed 680/1378 files...
+PROGRESS: Parsed 700/1378 files...
+PROGRESS: Parsed 720/1378 files...
+PROGRESS: Parsed 740/1378 files...
+PROGRESS: Parsed 760/1378 files...
+PROGRESS: Parsed 780/1378 files...
+PROGRESS: Parsed 800/1378 files...
+PROGRESS: Parsed 820/1378 files...
+PROGRESS: Parsed 840/1378 files...
+PROGRESS: Parsed 860/1378 files...
+PROGRESS: Parsed 880/1378 files...
+PROGRESS: Parsed 900/1378 files...
+PROGRESS: Parsed 920/1378 files...
+PROGRESS: Parsed 940/1378 files...
+PROGRESS: Parsed 960/1378 files...
+PROGRESS: Parsed 980/1378 files...
+PROGRESS: Parsed 1000/1378 files...
+PROGRESS: Parsed 1020/1378 files...
+PROGRESS: Parsed 1040/1378 files...
+PROGRESS: Parsed 1060/1378 files...
+PROGRESS: Parsed 1080/1378 files...
+PROGRESS: Parsed 1100/1378 files...
+PROGRESS: Parsed 1120/1378 files...
+PROGRESS: Parsed 1140/1378 files...
+PROGRESS: Parsed 1160/1378 files...
+PROGRESS: Parsed 1180/1378 files...
+PROGRESS: Parsed 1200/1378 files...
+PROGRESS: Parsed 1220/1378 files...
+PROGRESS: Parsed 1240/1378 files...
+PROGRESS: Parsed 1260/1378 files...
+PROGRESS: Parsed 1280/1378 files...
+PROGRESS: Parsed 1300/1378 files...
+PROGRESS: Parsed 1320/1378 files...
+PROGRESS: Parsed 1340/1378 files...
+PROGRESS: Parsed 1360/1378 files...
 Callables with 0 parameters: 0
 Callables with 1 parameters: 23
     Callable[[Any], Any]
@@ -49,7 +103,14 @@ Callables with 3 parameters: 1
 Callables with 4 parameters: 1
     Callable[[np.ndarray, np.ndarray, np.ndarray, int], np.ndarray]
 Callables with 5 parameters: 0
-Callables with arbitrary parameters: 100
+Callables with arbitrary parameters: 107
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
     Callable
     Callable
     Callable
@@ -151,3 +212,4657 @@ Callables with arbitrary parameters: 100
     Callable[..., np.ndarray]
     Callable[..., np.ndarray]
 Callback Protocols: 0
+Functions with callback parameters: 1032
+    def __call__(self, alt: F) -> F: ...
+        alt(values, axis=axis, skipna=skipna, **kwds)
+        alt(values, axis=axis, skipna=skipna, **kwds)
+        alt(values, axis=axis, skipna=skipna, **kwds)
+
+    def __call__(self, f: F) -> F: ...
+        f(*args, **kwargs)
+
+    def __init__(
+        self,
+        obj: AggObjType,
+        func,
+        raw: bool,
+        result_type: str | None,
+        args,
+        kwargs,
+    ): ...
+        func(x, *args, **kwargs)
+
+    def __new__(
+        cls, data=None, dtype=None, copy=False, name=None, tupleize_cols=True, **kwargs
+    ) -> Index: ...
+        cls(arr, dtype, copy=copy, name=name, **kwargs)
+
+    def _addsub_object_array(self, other: np.ndarray, op): ...
+        op(self, other[0])
+        op(self.astype("O"), np.asarray(other))
+
+    def _aggregate_frame(self, func, *args, **kwargs) -> DataFrame: ...
+        func(data, *args, **kwargs)
+        func(grp_df, *args, **kwargs)
+
+    def _aggregate_named(self, func, *args, **kwargs): ...
+        func(group, *args, **kwargs)
+
+    def _aggregate_series_pure_python(self, obj: Series, func: F) -> np.ndarray: ...
+        func(group)
+
+    def _apply(
+        self,
+        func: Callable[..., Any],
+        name: str | None = None,
+        numba_cache_key: tuple[Callable, str] | None = None,
+        **kwargs,
+    ): ...
+        func(x, start, end, min_periods)
+
+    def _apply(
+        self,
+        func: Callable[..., Styler],
+        axis: Axis | None = 0,
+        subset: Subset | None = None,
+        **kwargs,
+    ) -> Styler: ...
+        func(data, **kwargs)
+
+    def _apply(
+        self,
+        func: Callable[[np.ndarray, int, int], np.ndarray],
+        name: str | None = None,
+        numba_cache_key: tuple[Callable, str] | None = None,
+        **kwargs,
+    ): ...
+        func(x, window, self.min_periods or len(window))
+
+    def _apply_blockwise(
+        self, homogeneous_func: Callable[..., ArrayLike], name: str | None = None
+    ) -> FrameOrSeriesUnion: ...
+        homogeneous_func(values)
+        homogeneous_func(values)
+
+    def _apply_series(
+        self, homogeneous_func: Callable[..., ArrayLike], name: str | None = None
+    ) -> Series: ...
+        homogeneous_func(values)
+
+    def _apply_tablewise(
+        self, homogeneous_func: Callable[..., ArrayLike], name: str | None = None
+    ) -> FrameOrSeriesUnion: ...
+        homogeneous_func(values)
+
+    def _apply_to_column_groupbys(self, func, obj: FrameOrSeries) -> DataFrame: ...
+        func(col_groupby)
+
+    def _argminmax_wrap(self, value, axis=None, func=None): ...
+        func(value, axis)
+
+    def _arith_method(self, other, op): ...
+        op(Series(self), other)
+
+    def _arith_method(self, other, op): ...
+        op(_get_fill(self), np.asarray(other))
+        op(self.sp_values, other)
+
+    def _arith_method(self, other, op): ...
+        op(self._data, other)
+
+    def _arith_method(self, other, op): ...
+        op(self._data, other)
+
+    def _arith_method(self, other, op): ...
+        op(self._int64index, other)
+        op(self._int64index, other)
+        op(self._int64index, other)
+        op(left.start, right)
+        op(left.stop, right)
+        op(self._int64index, other)
+
+    def _badobj_wrap(self, value, func, allow_complex=True, **kwargs): ...
+        func(value, **kwargs)
+
+    def _binop(self, other: Series, func, level=None, fill_value=None): ...
+        func(this_vals, other_vals)
+
+    def _cat_compare_op(op): ...
+        op(self._codes, other_codes)
+        op(self._codes, i)
+        op(other, self)
+
+    def _check(df, f): ...
+        f(np.array([], dtype="f8"))
+
+    def _check(self, values, func, expected): ...
+        func(idx)
+        func(s)
+
+    def _check(self, values, func, expected): ...
+        func(idx)
+        func(ser)
+
+    def _check_basic_constructor(self, empty): ...
+        empty((2, 3), dtype=float)
+        empty((3,))
+        empty((3, 3, 3))
+        empty((0, 3))
+        empty((3, 0))
+
+    def _check_bin_op(op): ...
+        op(df1, df2)
+        op(df1.values, df2.values)
+
+    def _check_cython_group_transform_cumulative(pd_op, np_op, dtype): ...
+        pd_op(answer, data, labels, ngroups, is_datetimelike)
+        np_op(data)
+
+    def _check_divmod_op(self, s, op, other, exc=Exception): ...
+        op(s, other)
+
+    def _check_double_roundtrip(self, obj, comparator, path, compression=False, **kwargs): ...
+        comparator(retrieved, obj, **kwargs)
+        comparator(again, obj, **kwargs)
+
+    def _check_f(base, f): ...
+        f(base)
+
+    def _check_fill(meth, op, a, b, fill_value=0): ...
+        meth(a, b, fill_value=fill_value)
+        op(fill_value, b[i])
+        op(a[i], fill_value)
+        op(a[i], b[i])
+
+    def _check_groupby(df, result, keys, field, f=lambda x: x.sum()): ...
+        f(df.groupby(tups)[field])
+
+    def _check_numeric_ops(self, a, b, a_dense, b_dense, mix, op): ...
+        op(a, b_dense)
+        op(a, b)
+        op(a_dense * 1.0, b_dense)
+        op(a_dense, b_dense)
+
+    def _check_op(op, first, second): ...
+        op(first, second)
+        op(first.to_dense(), second.to_dense())
+        op(first, second.to_dense())
+        op(first.to_dense(), second)
+        op(first, 4)
+        op(first.to_dense(), 4)
+        op(first.fill_value, 4)
+
+    def _check_op(self, obj, op, other, op_name, exc=NotImplementedError): ...
+        op(obj, other)
+        op(obj, other)
+        op(obj, other)
+
+    def _check_op(self, s, op, other, op_name, exc=NotImplementedError): ...
+        op(s, other)
+        op(s, other)
+
+    def _check_op(self, s, op, other, op_name, exc=NotImplementedError): ...
+        op(s, other)
+        op(s, other)
+
+    def _check_op(self, s, op, other, op_name, exc=NotImplementedError): ...
+        op(s, other)
+        op(s, other)
+
+    def _check_op(self, s, op, other, op_name, exc=NotImplementedError): ...
+        op(s, other)
+        op(s, other)
+
+    def _check_op(self, s, op, other, op_name, exc=NotImplementedError): ...
+        op(s, other)
+        op(s, other)
+
+    def _check_op(series, other, op, pos_only=False): ...
+        op(left, right)
+
+    def _check_plot_works(f, freq=None, series=None, *args, **kwargs): ...
+        f(*args, **kwargs)
+        f(*args, **kwargs)
+
+    def _check_roundtrip(obj, comparator, path, compression=False, **kwargs): ...
+        comparator(retrieved, obj, **kwargs)
+
+    def _check_roundtrip_table(obj, comparator, path, compression=False): ...
+        comparator(retrieved, obj)
+
+    def _check_stat_op(
+        self, name, alternate, string_series_, check_objects=False, check_allna=False
+    ): ...
+        alternate(nona.values)
+        alternate(nona.values)
+        alternate(s.values)
+        alternate(s)
+
+    def _check_unaligned_frame(meth, op, df, other): ...
+        meth(part_o)
+        op(df, part_o.reindex(index=df.index, columns=df.columns))
+
+    def _check_unary_op(op): ...
+        op(df1)
+        op(df1.values)
+
+    def _choose_path(self, fast_path: Callable, slow_path: Callable, group: DataFrame): ...
+        fast_path(group)
+        slow_path(group)
+
+    def _clip_with_one_bound(self, threshold, method, axis, inplace): ...
+        method(threshold_inf, axis=axis)
+
+    def _cmp_method(self, other, op) -> SparseArray: ...
+        op(self.fill_value, other)
+        op(self.sp_values, other)
+
+    def _cmp_method(self, other, op): ...
+        op(a, b)
+
+    def _cmp_method(self, other, op): ...
+        op(np.array(self)[valid], other)
+
+    def _cmp_method(self, other, op): ...
+        op(self._data, other)
+
+    def _cmp_method(self, other, op): ...
+        op(self._ndarray[valid], other)
+        op(self._ndarray[valid], other)
+
+    def _cmp_method(self, other, op): ...
+        op(self._values, other)
+
+    def _cmp_method(self, other, op): ...
+        op(self.ravel(), other.ravel())
+        op(self._ndarray.view("i8"), other_vals.view("i8"))
+
+    def _cmp_method(self, other, op): ...
+        op(self[i], obj)
+
+    def _coerce_method(converter): ...
+        converter(self.iloc[0])
+
+    def _combine_frame(self, other: DataFrame, func, fill_value=None): ...
+        func(left, right)
+
+    def _compose2(f, g): ...
+        f(g(*args, **kwargs))
+        g(*args, **kwargs)
+
+    def _compute_grand_margin(data, values, aggfunc, margins_name: str = "All"): ...
+        aggfunc(v)
+        aggfunc(data.index)
+
+    def _concat_same_type(
+        cls: type[BaseMaskedArrayT], to_concat: Sequence[BaseMaskedArrayT]
+    ) -> BaseMaskedArrayT: ...
+        cls(data, mask)
+
+    def _concat_same_type(
+        cls: type[SparseArrayT], to_concat: Sequence[SparseArrayT]
+    ) -> SparseArrayT: ...
+        cls(data, sparse_index=sp_index, fill_value=fill_value)
+
+    def _concat_same_type(cls, to_concat) -> ArrowStringArray: ...
+        cls(
+            pa.chunked_array(
+                [array for ea in to_concat for array in ea._data.iterchunks()]
+            )
+        )
+
+    def _concat_same_type(cls, to_concat): ...
+        cls(arr)
+
+    def _concat_same_type(cls, to_concat): ...
+        cls(data)
+
+    def _concat_same_type(cls, to_concat): ...
+        cls(data)
+
+    def _concat_same_type(cls, to_concat): ...
+        cls(np.concatenate([x._data for x in to_concat]))
+
+    def _convert_wrapper(f, conv_dtype): ...
+        f(arr, indexer, out, fill_value=fill_value)
+
+    def _create_method(cls, op, coerce_to_dtype=True, result_dtype=None): ...
+        op(a, b)
+
+    def _create_methods(cls, arith_method, comp_method): ...
+        arith_method(operator.add)
+        arith_method(roperator.radd)
+        arith_method(operator.sub)
+        arith_method(operator.mul)
+        arith_method(operator.truediv)
+        arith_method(operator.floordiv)
+        arith_method(operator.mod)
+        arith_method(operator.pow)
+        arith_method(roperator.rmul)
+        arith_method(roperator.rsub)
+        arith_method(roperator.rtruediv)
+        arith_method(roperator.rfloordiv)
+        arith_method(roperator.rpow)
+        arith_method(roperator.rmod)
+        arith_method(divmod)
+        arith_method(roperator.rdivmod)
+        comp_method(operator.eq)
+        comp_method(operator.ne)
+        comp_method(operator.lt)
+        comp_method(operator.gt)
+        comp_method(operator.le)
+        comp_method(operator.ge)
+
+    def _datetimelike_compat(func: F) -> F: ...
+        func(values, axis=axis, skipna=skipna, mask=mask, **kwargs)
+
+    def _datetimelike_compat(func: F) -> F: ...
+        func(values.view("i8"), limit=limit, mask=mask)
+        func(values, limit=limit, mask=mask)
+
+    def _define_paths(self, func, *args, **kwargs): ...
+        func(group, *args, **kwargs)
+        func(x, *args, **kwargs)
+
+    def _deprecate_kwarg(func: F) -> F: ...
+        func(*args, **kwargs)
+        func(*args, **kwargs)
+
+    def _empty(cls, shape, dtype) -> StringArray: ...
+        cls(values)
+
+    def _evaluate_standard(op, op_str, a, b): ...
+        op(a, b)
+
+    def _evaluate_usecols(self, usecols, names): ...
+        usecols(name)
+
+    def _filter_special_cases(f): ...
+        f(terms)
+
+    def _forbid_nonstring_types(func): ...
+        func(self, *args, **kwargs)
+
+    def _from_arrays(
+        cls,
+        arrays,
+        columns,
+        index,
+        dtype: Dtype | None = None,
+        verify_integrity: bool = True,
+    ) -> DataFrame: ...
+        cls(mgr)
+
+    def _from_categorical_dtype(
+        cls, dtype: CategoricalDtype, categories=None, ordered: Ordered = None
+    ) -> CategoricalDtype: ...
+        cls(categories, ordered)
+
+    def _from_datetime64(cls, data, freq, tz=None) -> PeriodArray: ...
+        cls(data, freq=freq)
+
+    def _from_factorized(
+        cls: type[DatetimeLikeArrayT], values, original: DatetimeLikeArrayT
+    ) -> DatetimeLikeArrayT: ...
+        cls(values, dtype=original.dtype)
+
+    def _from_factorized(
+        cls: type[IntervalArrayT], values: np.ndarray, original: IntervalArrayT
+    ) -> IntervalArrayT: ...
+        cls(values, closed=original.closed)
+
+    def _from_factorized(cls, values, original) -> PandasArray: ...
+        cls(values)
+
+    def _from_factorized(cls, values, original): ...
+        cls([UserDict(x) for x in values if x != ()])
+
+    def _from_factorized(cls, values, original): ...
+        cls(values)
+
+    def _from_factorized(cls, values, original): ...
+        cls(values, dtype=original.dtype)
+
+    def _from_inferred_categories(
+        cls, inferred_categories, inferred_codes, dtype, true_values=None
+    ): ...
+        cls(codes, dtype=dtype, fastpath=True)
+
+    def _from_sequence(
+        cls, scalars, *, dtype: Dtype | None = None, copy: bool = False
+    ) -> PandasArray: ...
+        cls(result)
+
+    def _from_sequence(
+        cls: type[IntervalArrayT],
+        scalars,
+        *,
+        dtype: Dtype | None = None,
+        copy: bool = False,
+    ) -> IntervalArrayT: ...
+        cls(scalars, dtype=dtype, copy=copy)
+
+    def _from_sequence(
+        cls: type[PeriodArray],
+        scalars: Sequence[Period | None] | AnyArrayLike,
+        *,
+        dtype: Dtype | None = None,
+        copy: bool = False,
+    ) -> PeriodArray: ...
+        cls(ordinals, freq=freq)
+
+    def _from_sequence(cls, scalars, *, dtype: Dtype | None = None, copy=False): ...
+        cls(scalars, dtype=dtype)
+
+    def _from_sequence(cls, scalars, dtype: Dtype | None = None, copy: bool = False): ...
+        cls(pa.array(result, mask=na_values, type=pa.string()))
+        cls(pa.array(result, type=pa.string(), from_pandas=True))
+
+    def _from_sequence(cls, scalars, dtype=None, copy=False): ...
+        cls(data)
+
+    def _from_sequence(cls, scalars, dtype=None, copy=False): ...
+        cls(scalars)
+
+    def _from_sequence(cls, scalars, dtype=None, copy=False): ...
+        cls(scalars)
+
+    def _gen_default_plot(f, fig, **kwargs): ...
+        f(**kwargs)
+
+    def _gen_two_subplots(f, fig, **kwargs): ...
+        f(**kwargs)
+        f(**kwargs)
+
+    def _generate_range(
+        cls,
+        start,
+        end,
+        periods,
+        freq,
+        tz=None,
+        normalize=False,
+        ambiguous="raise",
+        nonexistent="raise",
+        closed=None,
+    ): ...
+        cls(arr)
+
+    def _get_colors_from_colormap(
+        colormap: str | Colormap,
+        num_colors: int,
+    ) -> list[Color]: ...
+        colormap(num)
+
+    def _get_column_names_and_types(self, dtype_mapper): ...
+        dtype_mapper(self.frame.index._get_level_values(i))
+        dtype_mapper(self.frame.iloc[:, i])
+
+    def _get_cythonized_result(
+        self,
+        how: str,
+        cython_dtype: np.dtype,
+        aggregate: bool = False,
+        numeric_only: bool | lib.NoDefault = lib.no_default,
+        needs_counts: bool = False,
+        needs_values: bool = False,
+        needs_2d: bool = False,
+        needs_nullable: bool = False,
+        min_count: int | None = None,
+        needs_mask: bool = False,
+        needs_ngroups: bool = False,
+        result_is_index: bool = False,
+        pre_processing=None,
+        post_processing=None,
+        **kwargs,
+    ): ...
+        pre_processing(vals)
+        post_processing(result, inferences)
+
+    def _get_data_subset(self, predicate: Callable) -> SingleArrayManager: ...
+        predicate(self.array)
+
+    def _get_data_subset(self: T, predicate: Callable) -> T: ...
+        predicate(arr)
+
+    def _get_offset(self, klass, value=1, normalize=False): ...
+        klass(
+            n=value,
+            startingMonth=1,
+            weekday=1,
+            variation="last",
+            normalize=normalize,
+        )
+        klass(
+            n=value,
+            startingMonth=1,
+            weekday=1,
+            qtr_with_extra_week=1,
+            variation="last",
+            normalize=normalize,
+        )
+        klass(n=value, weekday=5, normalize=normalize)
+        klass(n=value, week=1, weekday=5, normalize=normalize)
+        klass(n=value, weekday=5, normalize=normalize)
+        klass(days=value, normalize=normalize)
+        klass(value, normalize=normalize)
+
+    def _groupby_and_merge(by, left: DataFrame, right: DataFrame, merge_pieces): ...
+        merge_pieces(lhs, rhs)
+
+    def _grouped_plot(
+        plotf,
+        data,
+        column=None,
+        by=None,
+        numeric_only=True,
+        figsize=None,
+        sharex=True,
+        sharey=True,
+        layout=None,
+        rot=0,
+        ax=None,
+        **kwargs,
+    ): ...
+        plotf(group, ax, **kwargs)
+
+    def _grouped_plot_by_column(
+        plotf,
+        data,
+        columns=None,
+        by=None,
+        numeric_only=True,
+        grid=False,
+        figsize=None,
+        ax=None,
+        layout=None,
+        return_type=None,
+        **kwargs,
+    ): ...
+        plotf(keys, values, ax, **kwargs)
+
+    def _helper_hypothesis_delimited_date(call, date_string, **kwargs): ...
+        call(date_string, **kwargs)
+
+    def _inplace_method(self, other, op): ...
+        op(self, other)
+
+    def _interpolate_scipy_wrapper(
+        x, y, new_x, method, fill_value=None, bounds_error=False, order=None, **kwargs
+    ): ...
+        method(x, y, new_x, **kwargs)
+
+    def _is_dtype(arr_or_dtype, condition) -> bool: ...
+        condition(dtype)
+
+    def _is_dtype_type(arr_or_dtype, condition) -> bool: ...
+        condition(type(None))
+        condition(arr_or_dtype.type)
+        condition(np.dtype(arr_or_dtype).type)
+        condition(type(None))
+        condition(type(None))
+        condition(tipo)
+
+    def _logical_method(self, other, op): ...
+        op(np.array(self._data), np.array(other._data))
+
+    def _make_date_converter(
+        date_parser=None, dayfirst=False, infer_datetime_format=False, cache_dates=True
+    ): ...
+        date_parser(*date_cols)
+
+    def _make_skipna_wrapper(alternative, skipna_alternative=None): ...
+        alternative(nona)
+        skipna_alternative(x.values)
+
+    def _masked_arith_op(x: np.ndarray, y, op): ...
+        op(xrav[mask], yrav[mask])
+        op(xrav[mask], y)
+
+    def _maybe_cache(
+        arg: ArrayConvertible,
+        format: str | None,
+        cache: bool,
+        convert_listlike: Callable,
+    ) -> Series: ...
+        convert_listlike(unique_dates, format)
+
+    def _maybe_evaluate_binop(
+        self,
+        op,
+        op_class,
+        lhs,
+        rhs,
+        eval_in_python=("in", "not in"),
+        maybe_eval_in_python=("==", "!=", "<", ">", "<=", ">="),
+    ): ...
+        op(lhs, rhs)
+
+    def _maybe_return_indexers(meth: F) -> F: ...
+        meth(self, other, how=how, level=level, sort=sort)
+
+    def _minmax(
+        func: Callable, values: np.ndarray, mask: np.ndarray, *, skipna: bool = True
+    ): ...
+        func(values)
+        func(subset)
+
+    def _mpl_version(version, op): ...
+        op(Version(mpl.__version__), Version(version))
+
+    def _nanargminmax(values, mask, func) -> int: ...
+        func(non_nans)
+
+    def _new_PeriodIndex(cls, **d): ...
+        cls(values, **d)
+
+    def _op_tests(self, sparse_op, python_op): ...
+        sparse_op(
+            x, xindex, xfill, y, yindex, yfill
+        )
+        sparse_op(
+            x, xdindex, xfill, y, ydindex, yfill
+        )
+        python_op(xseries, yseries)
+
+    def _preparse(
+        source: str,
+        f=_compose(
+            _replace_locals, _replace_booleans, _rewrite_assign, clean_backtick_quoted_toks
+        ),
+    ) -> str: ...
+        f(x)
+
+    def _process_converter(self, f, filt=None): ...
+        f(col, c)
+        filt(col, c)
+
+    def _process_date_conversion(
+        data_dict,
+        converter: Callable,
+        parse_spec,
+        index_col,
+        index_names,
+        columns,
+        keep_date_col: bool = False,
+    ): ...
+        converter(data_dict[colspec])
+
+    def _protect_consolidate(self, f): ...
+        f()
+        f()
+
+    def _python_agg_general(self, func, *args, **kwargs): ...
+        func(x, *args, **kwargs)
+
+    def _reduce(
+        self,
+        op,
+        name: str,
+        *,
+        axis: Axis = 0,
+        skipna: bool = True,
+        numeric_only: bool | None = None,
+        filter_type=None,
+        **kwds,
+    ): ...
+        op(values, axis=axis, skipna=skipna, **kwds)
+        op(values, axis=axis, skipna=skipna, **kwds)
+
+    def _reduce(
+        self,
+        op,
+        name: str,
+        *,
+        axis=0,
+        skipna=True,
+        numeric_only=None,
+        filter_type=None,
+        **kwds,
+    ): ...
+        op(delegate, skipna=skipna, **kwds)
+
+    def _simple_new(  # type: ignore[override]
+        cls,
+        values: np.ndarray,
+        freq: BaseOffset | None = None,
+        dtype: Dtype | None = None,
+    ) -> PeriodArray: ...
+        cls(values, freq=freq, dtype=dtype)
+
+    def _skew_kurt_wrap(self, values, axis=None, func=None): ...
+        func(values, axis=axis, bias=False)
+
+    def _sparse_array_op(
+        left: SparseArray, right: SparseArray, op: Callable, name: str
+    ) -> Any: ...
+        op(left.to_dense(), right.to_dense())
+        op(_get_fill(left), _get_fill(right))
+        op(left.sp_values, right.sp_values)
+        op(_get_fill(left), _get_fill(right))
+
+    def _str_map(
+        self, f, na_value=None, dtype: Dtype | None = None, convert: bool = True
+    ): ...
+        f(x)
+
+    def _sumprod(
+        func: Callable,
+        values: np.ndarray,
+        mask: np.ndarray,
+        *,
+        skipna: bool = True,
+        min_count: int = 0,
+    ): ...
+        func(values)
+        func(values, where=~mask)
+
+    def _test_op(df, op): ...
+        op(df, 1)
+        op(df[col], 1)
+
+    def _transform_general(self, func: Callable, *args, **kwargs) -> Series: ...
+        func(group, *args, **kwargs)
+
+    def _transform_index(self, func, level=None) -> Index: ...
+        func(y)
+        func(y)
+        func(x)
+
+    def _try_convert_dates(parser: Callable, colspec, data_dict, columns): ...
+        parser(*to_parse)
+
+    def _unary_method(self, op) -> SparseArray: ...
+        op(np.array(self.fill_value))
+        op(self.sp_values)
+
+    def _unary_method(self, op): ...
+        op(self._values)
+
+    def _unpack_zerodim_and_defer(method, name: str): ...
+        method(self, other)
+
+    def _value_formatter(
+        self,
+        float_format: FloatFormatType | None = None,
+        threshold: float | int | None = None,
+    ) -> Callable: ...
+        float_format(value=v)
+
+    def _view_wrapper(f, arr_dtype=None, out_dtype=None, fill_wrap=None): ...
+        f(arr, indexer, out, fill_value=fill_value)
+        fill_wrap(fill_value)
+
+    def _wrap_decimal_thousands(
+        formatter: Callable, decimal: str, thousands: str | None
+    ) -> Callable: ...
+        formatter(x)
+        formatter(x)
+        formatter(x)
+        formatter(x)
+
+    def agg_before(func, fix=False): ...
+        func(d)
+
+    def aggregate(self, func, *args, **kwargs): ...
+        func(self)
+
+    def apply(
+        self: T,
+        f,
+        align_keys: list[str] | None = None,
+        ignore_failures: bool = False,
+        **kwargs,
+    ) -> T: ...
+        f(arr, **kwargs)
+
+    def apply(self, f: F, data: FrameOrSeries, axis: int = 0): ...
+        f(group)
+
+    def apply(self, func, **kwargs) -> list[Block]: ...
+        func(self.values, **kwargs)
+
+    def apply(self, func, **kwargs): ...
+        func(self.array, **kwargs)
+
+    def apply(self, func, *args, **kwargs): ...
+        func(g, *args, **kwargs)
+
+    def apply_2d(
+        self: ArrayManager, f, ignore_failures: bool = False, **kwargs
+    ) -> ArrayManager: ...
+        f(values, **kwargs)
+
+    def apply_if_callable(maybe_callable, obj, **kwargs): ...
+        maybe_callable(obj, **kwargs)
+
+    def area(self, x=None, y=None, **kwargs): ...
+        self(kind="area", x=x, y=y, **kwargs)
+
+    def arithmetic_op(left: ArrayLike, right: Any, op): ...
+        op(left, right)
+
+    def assert_bool_op_calc(opname, alternative, frame, has_skipna=True): ...
+        alternative(nona)
+        alternative(x.values)
+
+    def assert_stat_op_calc(
+        opname,
+        alternative,
+        frame,
+        has_skipna=True,
+        check_dtype=True,
+        check_dates=False,
+        rtol=1e-5,
+        atol=1e-8,
+        skipna_alternative=None,
+    ): ...
+        alternative(x.values)
+
+    def bar(self, x=None, y=None, **kwargs): ...
+        self(kind="bar", x=x, y=y, **kwargs)
+
+    def barh(self, x=None, y=None, **kwargs): ...
+        self(kind="barh", x=x, y=y, **kwargs)
+
+    def blockwise_all(left: BlockManager, right: BlockManager, op) -> bool: ...
+        op(info.lvals, info.rvals)
+
+    def box(self, by=None, **kwargs): ...
+        self(kind="box", by=by, **kwargs)
+
+    def cd_and_set_engine(monkeypatch, datapath): ...
+        datapath("io", "data", "excel")
+
+    def cd_and_set_engine(self, engine, datapath, monkeypatch): ...
+        datapath("io", "data", "excel")
+
+    def cd_and_set_engine(self, engine, datapath, monkeypatch): ...
+        datapath("io", "data", "excel")
+
+    def check(format, index): ...
+        index(len(df))
+
+    def check(obj, comparator): ...
+        comparator(result, obj)
+
+    def check(self, target, indexers, value, compare_fn=assert_equal, expected=None): ...
+        compare_fn(result, expected)
+
+    def check_bool(self, func, value, correct): ...
+        func(value)
+
+    def check_called(func): ...
+        func()
+
+    def check_cases(_check_case): ...
+        _check_case(
+            case["xloc"],
+            case["xlen"],
+            case["yloc"],
+            case["ylen"],
+            case["intersect_loc"],
+            case["intersect_len"],
+        )
+        _check_case([0], [5], [], [], [], [])
+        _check_case([], [], [], [], [], [])
+
+    def check_fun_data(
+        self,
+        testfunc,
+        targfunc,
+        testarval,
+        targarval,
+        skipna,
+        check_dtype=True,
+        empty_targfunc=None,
+        **kwargs,
+    ): ...
+        testfunc(testarval, axis=axis, skipna=skipna, **kwargs)
+        testfunc(testarval, axis=axis, **kwargs)
+        testfunc(testarval, skipna=skipna, **kwargs)
+        testfunc(testarval, **kwargs)
+        targfunc(targartempval, axis=axis, **kwargs)
+        empty_targfunc(targartempval, axis=axis, **kwargs)
+
+    def check_funs(
+        self,
+        testfunc,
+        targfunc,
+        skipna,
+        allow_complex=True,
+        allow_all_nan=True,
+        allow_date=True,
+        allow_tdelta=True,
+        allow_obj=True,
+        **kwargs,
+    ): ...
+        targfunc(self.arr_date)
+        targfunc(self.arr_tdelta)
+
+    def check_indexer(self, obj, key, expected, val, indexer, is_inplace): ...
+        indexer(obj)
+
+    def check_nancomp(self, checkfun, targ0): ...
+        checkfun(arr_float, arr_float1)
+        checkfun(arr_float_nan, arr_float1_nan)
+        checkfun(arr_float_nan, arr_nan_float1)
+
+    def check_nancorr_nancov_1d(self, checkfun, targ0, targ1, **kwargs): ...
+        checkfun(self.arr_float_1d, self.arr_float1_1d, **kwargs)
+        checkfun(
+            self.arr_float_1d,
+            self.arr_float1_1d,
+            min_periods=len(self.arr_float_1d) - 1,
+            **kwargs,
+        )
+        checkfun(self.arr_float_nan_1d, self.arr_float1_nan_1d, **kwargs)
+        checkfun(
+            self.arr_float_nan_1d,
+            self.arr_float1_nan_1d,
+            min_periods=len(self.arr_float_1d) - 1,
+            **kwargs,
+        )
+        checkfun(self.arr_nan_1d, self.arr_float1_1d, **kwargs)
+        checkfun(self.arr_float_1d, self.arr_nan_1d, **kwargs)
+        checkfun(self.arr_nan_1d, self.arr_nan_1d, **kwargs)
+        checkfun(self.arr_float_nan_1d, self.arr_nan_float1_1d, **kwargs)
+        checkfun(
+            self.arr_float_nan_1d,
+            self.arr_nan_float1_1d,
+            min_periods=len(self.arr_float_1d) - 1,
+            **kwargs,
+        )
+        checkfun(
+            self.arr_float_1d,
+            self.arr_float1_1d,
+            min_periods=len(self.arr_float_1d) + 1,
+            **kwargs,
+        )
+
+    def check_nancorr_nancov_2d(self, checkfun, targ0, targ1, **kwargs): ...
+        checkfun(self.arr_float_2d, self.arr_float1_2d, **kwargs)
+        checkfun(
+            self.arr_float_2d,
+            self.arr_float1_2d,
+            min_periods=len(self.arr_float_2d) - 1,
+            **kwargs,
+        )
+        checkfun(self.arr_float_nan_2d, self.arr_float1_nan_2d, **kwargs)
+        checkfun(
+            self.arr_float_nan_2d,
+            self.arr_float1_nan_2d,
+            min_periods=len(self.arr_float_2d) - 1,
+            **kwargs,
+        )
+        checkfun(self.arr_nan_2d, self.arr_float1_2d, **kwargs)
+        checkfun(self.arr_float_2d, self.arr_nan_2d, **kwargs)
+        checkfun(self.arr_nan_2d, self.arr_nan_2d, **kwargs)
+        checkfun(self.arr_float_nan_2d, self.arr_nan_float1_2d, **kwargs)
+        checkfun(
+            self.arr_float_nan_2d,
+            self.arr_nan_float1_2d,
+            min_periods=len(self.arr_float_2d) - 1,
+            **kwargs,
+        )
+        checkfun(
+            self.arr_float_2d,
+            self.arr_float1_2d,
+            min_periods=len(self.arr_float_2d) + 1,
+            **kwargs,
+        )
+
+    def checksum(filename, hash_factory=hashlib.md5, chunk_num_blocks=128): ...
+        hash_factory()
+
+    def combine(
+        self, other: DataFrame, func, fill_value=None, overwrite: bool = True
+    ) -> DataFrame: ...
+        func(series, otherSeries)
+
+    def combine(self, other, func, fill_value=None) -> Series: ...
+        func(lv, rv)
+        func(lv, other)
+
+    def compare(self, formatter, input, output): ...
+        formatter(input)
+
+    def comparison_op(left: ArrayLike, right: Any, op) -> ArrayLike: ...
+        op(lvalues, rvalues)
+
+    def construct_from_string(cls, string): ...
+        cls()
+        cls(storage="python")
+        cls(storage="pyarrow")
+
+    def construct_from_string(cls, string: str) -> PandasDtype: ...
+        cls(dtype)
+
+    def construct_from_string(cls, string: str): ...
+        cls()
+
+    def construct_from_string(cls, string: str_type) -> CategoricalDtype: ...
+        cls(ordered=None)
+
+    def construct_from_string(cls, string: str_type) -> DatetimeTZDtype: ...
+        cls(unit=d["unit"], tz=d["tz"])
+
+    def construct_from_string(cls, string: str_type) -> IntervalDtype: ...
+        cls(string)
+
+    def construct_from_string(cls, string: str_type) -> PeriodDtype: ...
+        cls(freq=string)
+
+    def constructor(self, request, frame_or_series): ...
+        frame_or_series(
+            {0: x, 1: x}, **extra, **kwargs
+        )
+        frame_or_series({"A": x}, **extra, **kwargs)
+        frame_or_series([x, x], **extra, **kwargs)
+        frame_or_series(
+            {"A": [x, x]}, **extra, **kwargs
+        )
+
+    def convert_nested_indexer(indexer_type, keys): ...
+        indexer_type(keys)
+
+    def create_block(typestr, placement, item_shape=None, num_offset=0, maker=new_block): ...
+        maker(values, placement=placement, ndim=len(shape))
+
+    def create_data(constructor): ...
+        constructor(s)
+
+    def create_data(constructor): ...
+        constructor(s)
+
+    def create_data(constructor): ...
+        constructor(x)
+
+    def create_index(_index_factory): ...
+        _index_factory(*args, **kwargs)
+
+    def create_index(_index_factory): ...
+        _index_factory(*args, **kwargs)
+
+    def csv1(datapath): ...
+        datapath("io", "data", "csv")
+
+    def csv_dir_path(datapath): ...
+        datapath("io", "parser", "data")
+
+    def decorate(func): ...
+        func(*args, **kwargs)
+
+    def decorate(func: F) -> F: ...
+        func(*args, **kwargs)
+
+    def deprecate(
+        name: str,
+        alternative: Callable[..., Any],
+        version: str,
+        alt_name: str | None = None,
+        klass: type[Warning] | None = None,
+        stacklevel: int = 2,
+        msg: str | None = None,
+    ) -> Callable[[F], F]: ...
+        alternative(*args, **kwargs)
+
+    def deprecate_kwarg(
+        old_arg_name: str,
+        new_arg_name: str | None,
+        mapping: Mapping[Any, Any] | Callable[[Any], Any] | None = None,
+        stacklevel: int = 2,
+    ) -> Callable[[F], F]: ...
+        mapping(old_arg_value)
+
+    def df_ref(datapath): ...
+        datapath("io", "data", "csv", "test1.csv")
+
+    def dirpath(datapath): ...
+        datapath("io", "data", "orc")
+
+    def dirpath(datapath): ...
+        datapath("io", "data", "stata")
+
+    def elementwise_comparison(self, op, interval_array, other): ...
+        op(x, y)
+
+    def ensure_key_mapped(values, key: Callable | None, levels=None): ...
+        key(values.copy())
+
+    def evaluate(self, env, engine: str, parser, term_type, eval_in_python): ...
+        self(env)
+        term_type(name, env=env)
+
+    def expected_html(datapath, name): ...
+        datapath("io", "formats", "data", "html", filename)
+
+    def feather_file(datapath): ...
+        datapath("io", "data", "feather", "feather-0_3_1.feather")
+
+    def filter(self, func, dropna: bool = True, *args, **kwargs): ...
+        func(x, *args, **kwargs)
+
+    def filter(self, func, dropna=True, *args, **kwargs): ...
+        func(group, *args, **kwargs)
+
+    def flex_binary_moment(arg1, arg2, f, pairwise=False): ...
+        f(X, Y)
+        f(arg1.iloc[:, i], arg2.iloc[:, i])
+        f(X[col], Y[col])
+        f(
+            *prep_binary(arg1.iloc[:, i], arg2.iloc[:, j])
+        )
+        f(*prep_binary(arg1.iloc[:, i], arg2))
+
+    def flex_method_SERIES(op): ...
+        op(self, other)
+
+    def format_object_summary(
+        obj,
+        formatter: Callable,
+        is_justify: bool = True,
+        name: str | None = None,
+        indent_for_name: bool = True,
+        line_break_each_value: bool = False,
+    ) -> str: ...
+        formatter(obj[0])
+        formatter(obj[0])
+        formatter(obj[-1])
+        formatter(x)
+        formatter(x)
+        formatter(x)
+        formatter(x)
+
+    def format_with_na_rep(values: ArrayLike, formatter: Callable, na_rep: str): ...
+        formatter(val)
+
+    def frame_arith_method_with_reindex(left: DataFrame, right: DataFrame, op) -> DataFrame: ...
+        op(new_left, new_right)
+
+    def from_array(cls, arr): ...
+        cls(pa.chunked_array([arr]))
+
+    def from_array(cls, array, index): ...
+        cls([array], [index])
+
+    def from_array(cls, array: ArrayLike, index: Index) -> SingleBlockManager: ...
+        cls(block, index)
+
+    def from_arrays(cls, arrays, sortorder=None, names=lib.no_default) -> MultiIndex: ...
+        cls(
+            levels=levels,
+            codes=codes,
+            sortorder=sortorder,
+            names=names,
+            verify_integrity=False,
+        )
+
+    def from_blocks(cls, blocks: list[Block], axes: list[Index]) -> BlockManager: ...
+        cls(blocks, axes, verify_integrity=False)
+
+    def from_blocks(cls, blocks: list[Block], axes: list[Index]) -> SingleBlockManager: ...
+        cls(blocks[0], axes[0], verify_integrity=False)
+
+    def from_codes(
+        cls, codes, categories=None, ordered=None, dtype: Dtype | None = None
+    ): ...
+        cls(codes, dtype=dtype, fastpath=True)
+
+    def from_dict(
+        cls,
+        data,
+        orient: str = "columns",
+        dtype: Dtype | None = None,
+        columns=None,
+    ) -> DataFrame: ...
+        cls(data, index=index, columns=columns, dtype=dtype)
+
+    def from_product(
+        cls, iterables, sortorder=None, names=lib.no_default
+    ) -> MultiIndex: ...
+        cls(levels, codes, sortorder=sortorder, names=names)
+
+    def from_records(
+        cls,
+        data,
+        index=None,
+        exclude=None,
+        columns=None,
+        coerce_float: bool = False,
+        nrows: int | None = None,
+    ) -> DataFrame: ...
+        cls()
+        cls(index=index, columns=columns)
+        cls(mgr)
+
+    def from_scalars(cls, values): ...
+        cls(arr)
+
+    def generate_manual_numpy_nan_agg_with_axis(nan_func): ...
+        nan_func(partition)
+
+    def generic_parser(parse_func, *cols): ...
+        parse_func(*args)
+
+    def get_locales(prefix=None, normalize=True, locale_getter=_default_locale_getter): ...
+        locale_getter()
+
+    def git_pieces_from_vcs(tag_prefix, root, verbose, run_command=run_command): ...
+        run_command(GITS, ["rev-parse", "--git-dir"], cwd=root, hide_stderr=True)
+        run_command(
+            GITS,
+            [
+                "describe",
+                "--tags",
+                "--dirty",
+                "--always",
+                "--long",
+                "--match",
+                "%s*" % tag_prefix,
+            ],
+            cwd=root,
+        )
+        run_command(GITS, ["rev-parse", "HEAD"], cwd=root)
+        run_command(GITS, ["rev-list", "HEAD", "--count"], cwd=root)
+        run_command(GITS, ["show", "-s", "--format=%ci", "HEAD"], cwd=root)
+
+    def git_pieces_from_vcs(tag_prefix, root, verbose, run_command=run_command): ...
+        run_command(GITS, ["rev-parse", "--git-dir"], cwd=root, hide_stderr=True)
+        run_command(
+            GITS,
+            [
+                "describe",
+                "--tags",
+                "--dirty",
+                "--always",
+                "--long",
+                "--match",
+                "%s*" % tag_prefix,
+            ],
+            cwd=root,
+        )
+        run_command(GITS, ["rev-parse", "HEAD"], cwd=root)
+        run_command(GITS, ["rev-list", "HEAD", "--count"], cwd=root)
+        run_command(GITS, ["show", "-s", "--format=%ci", "HEAD"], cwd=root)
+
+    def grouped_reduce(self: T, func: Callable, ignore_failures: bool = False) -> T: ...
+        func(arr)
+
+    def hexbin(self, x, y, C=None, reduce_C_function=None, gridsize=None, **kwargs): ...
+        self(kind="hexbin", x=x, y=y, C=C, **kwargs)
+
+    def hist(self, by=None, bins=10, **kwargs): ...
+        self(kind="hist", by=by, bins=bins, **kwargs)
+
+    def html_encoding_file(request, datapath): ...
+        datapath("io", "data", "html_encoding", request.param)
+
+    def index(_index_factory, _index_start, _index_end, _index_freq, _index_name): ...
+        _index_factory(_index_start, _index_end, freq=_index_freq, name=_index_name)
+
+    def iris(datapath): ...
+        datapath("io", "data", "csv", "iris.csv")
+
+    def jsonl_file(datapath): ...
+        datapath("io", "parser", "data", "items.jsonl")
+
+    def kde(self, bw_method=None, ind=None, **kwargs): ...
+        self(kind="kde", bw_method=bw_method, ind=ind, **kwargs)
+
+    def legacy_pickle(request, datapath): ...
+        datapath(request.param)
+
+    def line(self, x=None, y=None, **kwargs): ...
+        self(kind="line", x=x, y=y, **kwargs)
+
+    def load_iris_data(self, datapath, request): ...
+        datapath(*request.param)
+
+    def logical_op(left: ArrayLike, right: Any, op) -> ArrayLike: ...
+        op(lvalues, rvalues)
+
+    def makeCustomDataframe(
+        nrows,
+        ncols,
+        c_idx_names=True,
+        r_idx_names=True,
+        c_idx_nlevels=1,
+        r_idx_nlevels=1,
+        data_gen_f=None,
+        c_ndupe_l=None,
+        r_ndupe_l=None,
+        dtype=None,
+        c_idx_type=None,
+        r_idx_type=None,
+    ): ...
+        data_gen_f(r, c)
+
+    def make_block(
+        values, placement, klass=None, ndim=None, dtype: Dtype | None = None
+    ) -> Block: ...
+        klass(values, ndim=ndim, placement=placement)
+
+    def make_nancomp(op): ...
+        op(x, y)
+
+    def map(self, mapper): ...
+        mapper(self.fill_value)
+        mapper(x)
+
+    def map(self, mapper, na_action=None): ...
+        mapper(self)
+
+    def maybe_split(meth: F) -> F: ...
+        meth(self, *args, **kwargs)
+
+    def mmap_file(datapath): ...
+        datapath("io", "data", "csv", "test_mmap.csv")
+
+    def na_accum_func(values: ArrayLike, accum_func, *, skipna: bool) -> ArrayLike: ...
+        accum_func(y.view("i8"), axis=0)
+        accum_func(vals, axis=0)
+        accum_func(values, axis=0)
+
+    def na_logical_op(x: np.ndarray, y, op): ...
+        op(x, y)
+
+    def names_compat(meth): ...
+        meth(self_or_cls, *args, **kwargs)
+
+    def network(
+        t,
+        url="https://www.google.com",
+        raise_on_error=_RAISE_NETWORK_ERROR_DEFAULT,
+        check_before_test=False,
+        error_classes=None,
+        skip_errnos=_network_errno_vals,
+        _skip_on_messages=_network_error_messages,
+    ): ...
+        t(*args, **kwargs)
+
+    def obj(self, index, frame_or_series): ...
+        frame_or_series(index)
+
+    def operate_blockwise(
+        left: BlockManager, right: BlockManager, array_op
+    ) -> BlockManager: ...
+        array_op(lvals, rvals)
+
+    def operate_blockwise(self, other: ArrayManager, array_op) -> ArrayManager: ...
+        array_op(left, right)
+
+    def optional_args(decorator): ...
+        decorator(f, *args, **kwargs)
+
+    def pie(self, **kwargs): ...
+        self(kind="pie", **kwargs)
+
+    def pipe(
+        obj, func: Callable[..., T] | tuple[Callable[..., T], str], *args, **kwargs
+    ) -> T: ...
+        func(*args, **kwargs)
+        func(obj, *args, **kwargs)
+
+    def ravel_compat(meth: F) -> F: ...
+        meth(self, *args, **kwargs)
+        meth(flat, *args, **kwargs)
+
+    def read_data(self, datapath, name, dedupe=False): ...
+        datapath("reshape", "merge", "data", name)
+
+    def reconstruct_object(typ, obj, axes, dtype): ...
+        typ(obj, dtype=res_t, **axes)
+        typ(obj)
+
+    def reduce(
+        self: T, func: Callable, ignore_failures: bool = False
+    ) -> tuple[T, np.ndarray]: ...
+        func(arr, axis=0)
+
+    def reduce(self, func, ignore_failures: bool = False) -> list[Block]: ...
+        func(self.values)
+
+    def reduce(self, func, ignore_failures: bool = False) -> list[Block]: ...
+        func(self.values)
+
+    def register_option(
+        key: str,
+        defval: object,
+        doc: str = "",
+        validator: Callable[[Any], Any] | None = None,
+        cb: Callable[[str], Any] | None = None,
+    ) -> None: ...
+        validator(defval)
+
+    def register_pandas_matplotlib_converters(func): ...
+        func(*args, **kwargs)
+
+    def rename_categories(self, new_categories, inplace=no_default): ...
+        new_categories(item)
+
+    def round_trip_localpath(writer, reader, path: str | None = None): ...
+        writer(LocalPath(path))
+        reader(LocalPath(path))
+
+    def round_trip_pathlib(writer, reader, path: str | None = None): ...
+        writer(Path(path))
+        reader(Path(path))
+
+    def run_ewm(self, weighted_avg, deltas, min_periods, ewm_func): ...
+        ewm_func(
+            weighted_avg,
+            deltas,
+            min_periods,
+            self.old_wt_factor,
+            self.new_wt,
+            self.old_wt,
+            self.adjust,
+            self.ignore_na,
+        )
+
+    def salaries_table(datapath): ...
+        datapath("io", "parser", "data", "salaries.csv")
+
+    def scatter(self, x, y, s=None, c=None, **kwargs): ...
+        self(kind="scatter", x=x, y=y, s=s, c=c, **kwargs)
+
+    def set_files(self, datapath): ...
+        datapath("io", "data", "html", "spam.html")
+        datapath("io", "data", "html", "banklist.html")
+
+    def setup(self, data_fmt, with_index, dtype): ...
+        data_fmt(arr)
+
+    def setup(self, index, N): ...
+        index(vals)
+
+    def setup(self, index, N): ...
+        index(vals)
+
+    def setup(self, index, index_structure): ...
+        index(range(N))
+        index(
+                list(range(55)) + [54] + list(range(55, N - 1))
+            )
+
+    def setup(self, method, constructor): ...
+        constructor("1/1/2000", periods=N, freq="1min")
+
+    def setup(self, param): ...
+        param(dtype=float)
+
+    def setup(self, time_index): ...
+        time_index(start=0, freq="T", periods=N)
+        time_index(start="20140101", freq="T", periods=N)
+
+    def setup_method(self, datapath): ...
+        datapath("io", "data", "stata")
+
+    def setup_method(self, datapath): ...
+        datapath("io", "parser", "data")
+        datapath("io", "data", "csv")
+
+    def setup_method(self, datapath): ...
+        datapath("io", "sas", "data")
+
+    def setup_method(self, datapath): ...
+        datapath("io", "sas", "data")
+
+    def split_and_operate(self, func, *args, **kwargs) -> list[Block]: ...
+        func(nb, *args, **kwargs)
+
+    def test_12659(datapath): ...
+        datapath("io", "sas", "data", "test_12659.sas7bdat")
+        datapath("io", "sas", "data", "test_12659.csv")
+
+    def test_add_extension_scalar(self, other, box_with_array, op): ...
+        op(x, other)
+        op(arr, other)
+
+    def test_add_timestamp_raises(self, rbox, lbox): ...
+        rbox(per)
+        rbox(ts)
+        rbox(per)
+        lbox(ts)
+        lbox(per)
+        lbox(per)
+
+    def test_addsub_arithmetic(self, dtype, delta): ...
+        dtype(delta)
+
+    def test_airline(datapath): ...
+        datapath("io", "sas", "data", "airline.sas7bdat")
+        datapath("io", "sas", "data", "airline.csv")
+
+    def test_annual_upsample(self, simple_period_range_series): ...
+        simple_period_range_series("1/1/1990", "12/31/1995", freq="A-DEC")
+
+    def test_annual_upsample_cases(
+        self, targ, conv, meth, month, simple_period_range_series
+    ): ...
+        simple_period_range_series("1/1/1990", "12/31/1991", freq=f"A-{month}")
+
+    def test_any_all_np_func(self, func, data, expected): ...
+        func(data)
+
+    def test_append_with_timezones(setup_path, gettz): ...
+        gettz("US/Eastern")
+        gettz("US/Eastern")
+        gettz("US/Eastern")
+        gettz("US/Eastern")
+        gettz("EET")
+        gettz("US/Eastern")
+        gettz("CET")
+
+    def test_append_with_timezones_as_index(setup_path, gettz): ...
+        gettz("US/Eastern")
+
+    def test_apply_index(cls, n): ...
+        cls(n=n)
+
+    def test_argument_types(transform): ...
+        transform(start_date)
+        transform(end_date)
+
+    def test_arithmetic_with_frame_or_series(self, op): ...
+        op(Series(index), other)
+        op(index, other)
+        op(pd.DataFrame([index, index]), other)
+        op(index, other)
+
+    def test_array_of_dt64_nat_with_td64dtype_raises(self, frame_or_series): ...
+        frame_or_series(arr, dtype="m8[ns]")
+
+    def test_ascii_encoding(datapath, parser): ...
+        datapath("io", "data", "xml", "baby_names.xml")
+
+    def test_asfreq(series_and_frame, freq, create_index): ...
+        create_index(obj.index[0], obj.index[-1], freq=freq)
+
+    def test_asfreq_fill_value(series, create_index): ...
+        create_index(s.index[0], s.index[-1], freq="1H")
+        create_index(frame.index[0], frame.index[-1], freq="1H")
+
+    def test_asfreq_with_date_object_index(self, frame_or_series): ...
+        frame_or_series(np.random.randn(20), index=rng)
+
+    def test_asfreq_with_unsorted_index(self, frame_or_series): ...
+        frame_or_series(range(4), index=index)
+
+    def test_asof_all_nans(self, frame_or_series): ...
+        frame_or_series([np.nan])
+        frame_or_series([np.nan])
+
+    def test_astype_datetime64_bad_dtype_raises(from_type, to_type): ...
+        from_type("2018")
+
+    def test_astype_dict_like(self, dtype_class): ...
+        dtype_class({"abc": str})
+        dtype_class({"abc": "float64"})
+        dtype_class({"abc": str, "def": str})
+        dtype_class({0: str})
+        dtype_class({}, dtype=object)
+        dtype_class({})
+
+    def test_astype_dict_like(self, dtype_class): ...
+        dtype_class({"b": "str", "d": "float32"})
+        dtype_class({"b": np.float32, "c": "float32", "d": np.float64})
+        dtype_class({"a": str, "b": str, "c": str, "d": str})
+        dtype_class({"b": str, 2: str})
+        dtype_class({"e": str})
+        dtype_class({col: df[col].dtype for col in df.columns})
+        dtype_class({})
+        dtype_class({}, dtype=object)
+
+    def test_astype_dt64_to_string(self, frame_or_series, tz_naive_fixture): ...
+        frame_or_series(dta)
+        frame_or_series(dta.astype("string"))
+
+    def test_astype_object_preserves_datetime_na(from_type): ...
+        from_type("NaT", "ns")
+
+    def test_astype_td64_to_string(self, frame_or_series): ...
+        frame_or_series(tdi)
+        frame_or_series(["1 days", "2 days", "3 days"], dtype="string")
+
+    def test_at_frame_raises_key_error(self, indexer_al): ...
+        indexer_al(df)
+        indexer_al(df)
+        indexer_al(df)
+
+    def test_at_frame_raises_key_error2(self, indexer_al): ...
+        indexer_al(df)
+        indexer_al(df)
+
+    def test_at_series_raises_key_error(self, indexer_al): ...
+        indexer_al(ser)
+        indexer_al(ser)
+
+    def test_at_series_raises_key_error2(self, indexer_al): ...
+        indexer_al(ser)
+        indexer_al(ser)
+
+    def test_backward_compat(version, datapath): ...
+        datapath("io", "data", "stata")
+
+    def test_bad_xpath_etree(datapath): ...
+        datapath("io", "data", "xml", "books.xml")
+
+    def test_bad_xpath_lxml(datapath): ...
+        datapath("io", "data", "xml", "books.xml")
+
+    def test_banklist_header(self, datapath): ...
+        datapath("io", "data", "csv", "banklist.csv")
+
+    def test_basic_downsample(self, simple_period_range_series): ...
+        simple_period_range_series("1/1/1990", "6/30/1995", freq="M")
+
+    def test_basic_upsample(self, freq, simple_period_range_series): ...
+        simple_period_range_series("1/1/1990", "6/30/1995", freq="M")
+
+    def test_binary_mode_file_buffers(
+        all_parsers, csv_dir_path, file_path, encoding, datapath
+    ): ...
+        datapath(*file_path)
+
+    def test_binary_operators(self, op): ...
+        op(first, second)
+        op(first.to_dense(), second.to_dense())
+        op(first, second.to_dense())
+        op(first.to_dense(), second)
+        op(first, 4)
+        op(first.to_dense(), 4)
+        op(first.fill_value, 4)
+
+    def test_binary_ufunc_drops_series_name(ufunc, sparse, arrays_for_binary_ufunc): ...
+        ufunc(s1, s2)
+
+    def test_binary_ufunc_other_types(type_): ...
+        type_([3, 4, 5])
+
+    def test_binary_ufunc_scalar(ufunc, sparse, flip, arrays_for_binary_ufunc): ...
+        ufunc(*array_args)
+        ufunc(*series_args)
+
+    def test_binary_ufunc_with_array(flip, sparse, ufunc, arrays_for_binary_ufunc): ...
+        ufunc(*array_args)
+        ufunc(*series_args)
+
+    def test_binary_ufunc_with_index(flip, sparse, ufunc, arrays_for_binary_ufunc): ...
+        ufunc(*array_args)
+        ufunc(*series_args)
+
+    def test_binary_ufunc_with_series(
+        flip, shuffle, sparse, ufunc, arrays_for_binary_ufunc
+    ): ...
+        ufunc(*array_args)
+        ufunc(*series_args)
+
+    def test_binary_ufuncs(ufunc, a, b): ...
+        ufunc(a, b)
+        ufunc(np.asarray(a), np.asarray(b))
+
+    def test_binop_other(self, op, value, dtype, switch_numexpr_min_elements): ...
+        op(s, e.value)
+        op(s, e.value)
+        op(s, e.value)
+        op(s, e.value)
+        op(s, value)
+
+    def test_binops(request, args, annotate, all_arithmetic_functions): ...
+        all_arithmetic_functions(left, right)
+
+    def test_binops(self, func, other, frame): ...
+        func(df)
+
+    def test_bool_agg_dtype(op): ...
+        op(df.groupby("a"))
+        op(s.groupby("a"))
+
+    def test_bool_operators_with_nas(self, bool_op): ...
+        bool_op(ser < ser[9], ser > ser[3])
+        bool_op(filled < filled[9], filled > filled[3])
+
+    def test_boolean_dtype(self, data, skipna, klass): ...
+        klass(data, dtype="boolean")
+
+    def test_broadcast(size, mask, item, box): ...
+        box(item)
+        box(item)
+        box(item)
+
+    def test_bs4_version_fails(monkeypatch, datapath): ...
+        datapath("io", "data", "html", "spam.html")
+
+    def test_calendar(transform): ...
+        transform(start_date)
+        transform(end_date)
+
+    def test_cast_nan_to_int(self, cls, values): ...
+        cls(values)
+
+    def test_cat_different_classes(klass): ...
+        klass(["x", "y", "z"])
+
+    def test_categorial_datetimelike(self, method): ...
+        method(i)
+
+    def test_categorical_accessor(method): ...
+        method(s.cat)
+
+    def test_checknull(self, func): ...
+        func(value)
+        func(value)
+        func(value)
+        func(value)
+
+    def test_combine_add(self, data_repeated): ...
+        data_repeated(2)
+
+    def test_combine_add(self, data_repeated): ...
+        data_repeated(2)
+
+    def test_combine_le(self, data_repeated): ...
+        data_repeated(2)
+
+    def test_combine_le(self, data_repeated): ...
+        data_repeated(2)
+
+    def test_combine_le(self, data_repeated): ...
+        data_repeated(2)
+
+    def test_comp(func): ...
+        func(df1, df2)
+        func(df1.values, df2.values)
+        func(df1, ndim_5)
+        func(simple_frame, row)
+        func(simple_frame.values, row.values)
+        func(float_frame, 0)
+        func(float_frame.values, 0)
+        func(simple_frame, simple_frame[:2])
+
+    def test_compact_numerical_values(datapath): ...
+        datapath("io", "sas", "data", "cars.sas7bdat")
+
+    def test_comparators(self, op): ...
+        op(arr, element)
+        op(index, element)
+
+    def test_compare_length_mismatch_errors(self, op, other_constructor, length): ...
+        op(interval_array, other)
+        other_constructor([Interval(0, 1)] * length)
+
+    def test_compare_list_like_interval(self, op, interval_array, interval_constructor): ...
+        op(interval_array, other)
+        op(interval_array, other)
+        op(interval_array, other)
+        interval_constructor(interval_array.left, interval_array.right)
+        interval_constructor(
+            interval_array.left[::-1], interval_array.right[::-1]
+        )
+        interval_constructor([np.nan] * 4, [np.nan] * 4)
+
+    def test_compare_list_like_interval_mixed_closed(
+        self, op, interval_constructor, closed, other_closed
+    ): ...
+        op(interval_array, other)
+        interval_constructor(range(2), range(1, 3), closed=other_closed)
+
+    def test_compare_list_like_nan(self, op, interval_array, nulls_fixture, request): ...
+        op(interval_array, other)
+
+    def test_compare_list_like_object(self, op, interval_array, other): ...
+        op(interval_array, other)
+
+    def test_compare_list_like_other(self, op, interval_array, other): ...
+        op(interval_array, other)
+
+    def test_compare_object_dtype(self, box_with_array, other_box): ...
+        other_box(pi)
+        other_box(pi[::-1])
+
+    def test_compare_scalar_interval(self, op, interval_array): ...
+        op(interval_array, other)
+        op(interval_array, other)
+
+    def test_compare_scalar_interval_mixed_closed(self, op, closed, other_closed): ...
+        op(interval_array, other)
+
+    def test_compare_scalar_na(self, op, interval_array, nulls_fixture, request): ...
+        op(interval_array, nulls_fixture)
+
+    def test_compare_scalar_other(self, op, interval_array, other): ...
+        op(interval_array, other)
+
+    def test_compare_ticks(cls): ...
+        cls(3)
+        cls(4)
+        cls(4)
+        cls(3)
+        cls(3)
+        cls(4)
+        cls(3)
+        cls(3)
+        cls(3)
+        cls(4)
+
+    def test_compare_ticks_to_strs(cls): ...
+        cls(19)
+
+    def test_compare_ticks_to_timedeltalike(cls): ...
+        cls(19)
+
+    def test_comparison_tzawareness_compat(self, op, box_with_array): ...
+        op(dr, dz)
+        op(dr, tolist(dz))
+        op(dr, np.array(tolist(dz), dtype=object))
+        op(dz, dr)
+        op(dz, tolist(dr))
+        op(dz, np.array(tolist(dr), dtype=object))
+
+    def test_comparison_tzawareness_compat_scalars(self, op, box_with_array): ...
+        op(dr, ts_tz)
+        op(dz, ts)
+        op(ts, dz)
+
+    def test_compatible_inconsistent_pairs(idx_fact1, idx_fact2): ...
+        idx_fact1(10)
+        idx_fact2(20)
+
+    def test_concat_date_col_fail(container, dim): ...
+        container([value])
+
+    def test_concat_no_unnecessary_upcast(dt, pdt): ...
+        pdt(dtype=object)
+        pdt(np.array([1], dtype=dt, ndmin=dims))
+        pdt(np.array([np.nan], dtype=dt, ndmin=dims))
+        pdt(np.array([5], dtype=dt, ndmin=dims))
+
+    def test_concat_series_length_one_reversed(self, frame_or_series): ...
+        frame_or_series([100])
+
+    def test_concat_will_upcast(dt, pdt): ...
+        pdt()
+        pdt(np.array([1], dtype=dt, ndmin=dims))
+        pdt(np.array([np.nan], ndmin=dims))
+        pdt(np.array([5], dtype=dt, ndmin=dims))
+
+    def test_consistency_for_boxed(box, int_frame_const_col): ...
+        box([1, 2])
+        box([1, 2])
+        box([1, 2])
+
+    def test_construct_from_memoryview(klass, extra_kwargs): ...
+        klass(memoryview(np.arange(2000, 2005)), **extra_kwargs)
+        klass(range(2000, 2005), **extra_kwargs)
+
+    def test_construction_from_set_raises(self, typ): ...
+        typ({1, 2, 3})
+
+    def test_construction_list_tuples_nan(self, na_value, vtype): ...
+        vtype(values)
+
+    def test_construction_ok(self, cls, data): ...
+        cls(data)
+        cls(data)
+
+    def test_construction_with_null(self, klass, nulls_fixture): ...
+        klass(["a", nulls_fixture, "b"])
+
+    def test_constructor(frame_or_series): ...
+        frame_or_series(range(5))
+
+    def test_constructor(frame_or_series): ...
+        frame_or_series(range(5))
+
+    def test_constructor(frame_or_series): ...
+        frame_or_series(range(5))
+
+    def test_constructor(frame_or_series): ...
+        frame_or_series(range(5))
+
+    def test_constructor(self, constructor, breaks, closed, name): ...
+        constructor(closed=closed, name=name, **result_kwargs)
+
+    def test_constructor_categorical_valid(self, constructor, cat_constructor): ...
+        constructor(**result_kwargs)
+        cat_constructor(breaks)
+
+    def test_constructor_datetime_nonns(self, constructor): ...
+        constructor(pd.to_datetime(["2020-01-01"]))
+        constructor(arr)
+        constructor(arr)
+
+    def test_constructor_datetime_outofbound(self, a, klass): ...
+        klass(a)
+        klass(a)
+        klass(a, dtype="datetime64[ns]")
+
+    def test_constructor_dtype(self, constructor, breaks, subtype): ...
+        constructor(**expected_kwargs)
+        constructor(dtype=dtype, **result_kwargs)
+
+    def test_constructor_dtype_nullable_extension_arrays(
+        self, data, input_dtype, expected_dtype
+    ): ...
+        expected_dtype()
+
+    def test_constructor_dtypes_datetime(self, tz_naive_fixture, attr, klass): ...
+        klass(arg, tz=tz_naive_fixture)
+        klass(arg, dtype=dtype)
+        klass(list(arg), tz=tz_naive_fixture)
+        klass(list(arg), dtype=dtype)
+
+    def test_constructor_dtypes_timedelta(self, attr, klass): ...
+        klass(values, dtype=dtype)
+        klass(list(values), dtype=dtype)
+
+    def test_constructor_empty(self, constructor, breaks, closed): ...
+        constructor(closed=closed, **result_kwargs)
+
+    def test_constructor_empty(self, input_class): ...
+        input_class()
+        input_class()
+        input_class()
+        input_class()
+        input_class()
+
+    def test_constructor_empty(self, value, klass): ...
+        klass(value)
+
+    def test_constructor_errors(self, constructor): ...
+        constructor(ivs)
+        constructor(5)
+        constructor([0, 1])
+
+    def test_constructor_from_series_dt64(self, klass): ...
+        klass(ser)
+
+    def test_constructor_infer_interval(self, data_constructor): ...
+        data_constructor(data)
+
+    def test_constructor_infer_nat_dt_like(
+        self, pos, klass, dtype, ctor, nulls_fixture, request
+    ): ...
+        klass([NaT, NaT])
+
+    def test_constructor_infer_period(self, data_constructor): ...
+        data_constructor(data)
+
+    def test_constructor_interval_mixed_closed(self, data_constructor): ...
+        data_constructor(data)
+
+    def test_constructor_invalid(frame_or_series, w): ...
+        frame_or_series(range(5))
+
+    def test_constructor_mapping(self, non_dict_mapping_subclass): ...
+        non_dict_mapping_subclass({3: "three"})
+
+    def test_constructor_mixed_int_and_timestamp(self, frame_or_series): ...
+        frame_or_series(objs, dtype="M8[ns]")
+        frame_or_series([Timestamp(9), Timestamp(10), NaT])
+
+    def test_constructor_nan(self, constructor, breaks, closed): ...
+        constructor(closed=closed, **result_kwargs)
+
+    def test_constructor_ordered_dict_conflicting_orders(self, dict_type): ...
+        dict_type()
+        dict_type()
+
+    def test_constructor_ordered_dict_preserve_order(self, dict_type): ...
+        dict_type()
+        dict_type()
+
+    def test_constructor_pass_closed(self, constructor, breaks): ...
+        constructor(dtype=dtype, closed="left", **result_kwargs)
+
+    def test_constructor_raises(cls): ...
+        cls(np.array(["a", "b"], dtype="S1"))
+        cls(np.array([]))
+        cls(np.array(["a", np.nan], dtype=object))
+        cls(np.array(["a", None], dtype=object))
+        cls(np.array(["a", pd.NaT], dtype=object))
+
+    def test_constructor_string(self, constructor, breaks): ...
+        constructor(**self.get_kwargs_from_breaks(breaks))
+
+    def test_constructor_subclass_dict(self, dict_subclass): ...
+        dict_subclass((x, 10.0 * x) for x in range(10))
+
+    def test_constructor_subclass_dict(self, dict_subclass): ...
+        dict_subclass((x, 10.0 * x) for x in range(10))
+        dict_subclass((x, 20.0 * x) for x in range(10))
+        dict_subclass(data.items())
+
+    def test_constructor_with_int_tz(self, klass, box, tz, dtype): ...
+        klass(box([ts.value]), dtype=dtype)
+        klass([ts])
+        box([ts.value])
+
+    def test_constructor_with_win_type(frame_or_series, win_types): ...
+        frame_or_series(range(5))
+
+    def test_constructor_with_win_type_invalid(frame_or_series): ...
+        frame_or_series(range(5))
+
+    def test_contains_none(self, klass): ...
+        klass([0, 1, 2, 3, 4])
+
+    def test_context_manager(all_parsers, datapath): ...
+        datapath("io", "data", "csv", "iris.csv")
+
+    def test_context_manageri_user_provided(all_parsers, datapath): ...
+        datapath("io", "data", "csv", "iris.csv")
+
+    def test_convert_pandas_type_to_json_field_categorical(self, kind, ordered): ...
+        kind(data, ordered=ordered)
+        kind(data, ordered=ordered, name="cats")
+
+    def test_copy_and_deepcopy(func): ...
+        func(idx)
+
+    def test_copy_and_deepcopy(self, shape, func): ...
+        func(obj)
+
+    def test_corner_cases(simple_period_range_series, simple_date_range_series): ...
+        simple_period_range_series("2007-01", "2010-05", freq="M")
+        simple_date_range_series("2000-04-28", "2000-04-30 11:00", freq="h")
+
+    def test_correct_encoding_file(datapath): ...
+        datapath("io", "data", "xml", "baby_names.xml")
+
+    def test_corrupt_read(datapath): ...
+        datapath("io", "sas", "data", "corrupt.sas7bdat")
+
+    def test_custom_dateparsing_error(self, read_sql, text, mode, error): ...
+        read_sql(
+            text,
+            con=self.conn,
+            parse_dates={
+                "DateCol": {"errors": error},
+            },
+        )
+
+    def test_cut_bool_coercion_to_int(bins, box, compare): ...
+        box([0, 1, 1, 0, 1] * 10)
+        box([False, True, True, False, True] * 10)
+        compare(result, expected)
+
+    def test_cut_not_1d_arg(arg, cut_func): ...
+        cut_func(arg, 2)
+
+    def test_cut_pass_labels(get_labels, get_expected): ...
+        get_labels(labels)
+        get_expected(labels)
+
+    def test_cython_agg_empty_buckets(op, targop, observed): ...
+        targop(x)
+
+    def test_cython_vs_numba(
+        self, grouper, nogil, parallel, nopython, ignore_na, adjust
+    ): ...
+        grouper(df)
+
+    def test_cython_vs_numba_times(self, grouper, nogil, parallel, nopython, ignore_na): ...
+        grouper(df)
+
+    def test_dataframe_compression_defaults_to_infer(
+        write_method, write_kwargs, read_method, compression_only
+    ): ...
+        read_method(path, compression=compression_only)
+
+    def test_datapath(datapath): ...
+        datapath(*args)
+
+    def test_datapath_missing(datapath): ...
+        datapath("not_a_file")
+
+    def test_date_index_and_values(self, date_format, as_object, date_typ): ...
+        date_typ(year=2020, month=1, day=1)
+
+    def test_date_time(datapath): ...
+        datapath("io", "sas", "data", "datetime.sas7bdat")
+        datapath("io", "sas", "data", "datetime.csv")
+
+    def test_datetime_bin(conv): ...
+        conv(v)
+
+    def test_datetime_likes_nan(klass): ...
+        klass("NaT")
+
+    def test_datetime_method(method): ...
+        method(s.dt)
+
+    def test_datetime_tz_cut(bins, box): ...
+        box(bins)
+
+    def test_datetimelike_values_with_object_dtype(self, kind, frame_or_series): ...
+        frame_or_series(arr, dtype=object)
+        frame_or_series(frame_or_series(arr), dtype=object)
+        frame_or_series(arr)
+        frame_or_series(frame_or_series(arr), dtype=PandasDtype(object))
+        frame_or_series(arr)
+        frame_or_series(sers, dtype=object)
+
+    def test_decompression_regex_sep(python_parser_only, csv1, compression, klass): ...
+        klass(path, mode="wb")
+
+    def test_default_parser_no_lxml(datapath): ...
+        datapath("io", "data", "xml", "books.xml")
+
+    def test_disallow_addsub_ops(self, func, op_name): ...
+        func(idx)
+
+    def test_div_negative_zero(self, zero, numeric_idx, op): ...
+        op(idx, zero)
+
+    def test_div_td64arr(self, left, box_cls): ...
+        box_cls(right)
+
+    def test_drop_tz_aware_timestamp_across_dst(self, box): ...
+        box(data=[1] * len(index), index=index)
+        box(data=[1] * len(expected_idx), index=expected_idx)
+
+    def test_dt64_mean(self, tz_naive_fixture, box): ...
+        box(dtarr)
+        box(dtarr)
+
+    def test_dt64arr_add_sub_offset_array(
+        self, tz_naive_fixture, box_with_array, box_other, op, other
+    ): ...
+        op(dti[n], other[n])
+        op(dtarr, other)
+
+    def test_dt_conversion_preserves_name(self, dt_conv): ...
+        dt_conv(index)
+
+    def test_dti_add_intarray_no_freq(self, int_holder): ...
+        int_holder([9, 4, -1])
+
+    def test_dti_add_intarray_non_tick(self, int_holder, freq): ...
+        int_holder([4, -1])
+
+    def test_dti_add_intarray_tick(self, int_holder, freq): ...
+        int_holder([4, -1])
+
+    def test_dti_addsub_object_arraylike(
+        self, tz_naive_fixture, box_with_array, other_box
+    ): ...
+        other_box([pd.offsets.MonthEnd(), Timedelta(days=4)])
+
+    def test_dti_addsub_offset_arraylike(
+        self, tz_naive_fixture, names, op, index_or_series
+    ): ...
+        op(dti, other)
+        op(dti[n], other[n])
+
+    def test_dtype_on_merged_different(self, change, join_type, left, right): ...
+        change(right.X.astype("object"))
+
+    def test_duplicate_int_indexing(self, indexer_sl): ...
+        indexer_sl(s)
+
+    def test_elem_and_attrs_only(datapath, parser): ...
+        datapath("io", "data", "xml", "cta_rail_lines.kml")
+
+    def test_empty_constructor(self, constructor): ...
+        constructor()
+
+    def test_empty_constructor(self, constructor, check_index_type): ...
+        constructor()
+
+    def test_empty_xpath_lxml(datapath): ...
+        datapath("io", "data", "xml", "books.xml")
+
+    def test_encoding_option_str(datapath, parser): ...
+        datapath("io", "data", "xml", "baby_names.xml")
+
+    def test_encoding_options(datapath): ...
+        datapath("io", "sas", "data", "test1.sas7bdat")
+
+    def test_equality(klass, value): ...
+        klass(value)
+
+    def test_excel_file_warning_with_xlsx_file(datapath): ...
+        datapath("io", "data", "excel", "test1.xlsx")
+
+    def test_expanding_apply(engine_and_raw, frame_or_series): ...
+        frame_or_series(np.array(list(range(10)) + [np.nan] * 10))
+
+    def test_expanding_count_default_min_periods_with_null_values(frame_or_series): ...
+        frame_or_series(values)
+        frame_or_series(expected_counts)
+
+    def test_expanding_count_with_min_periods(frame_or_series): ...
+        frame_or_series(range(5))
+        frame_or_series([np.nan, np.nan, 3.0, 4.0, 5.0])
+
+    def test_expanding_count_with_min_periods_exceeding_series_length(frame_or_series): ...
+        frame_or_series(range(5))
+        frame_or_series([np.nan, np.nan, np.nan, np.nan, np.nan])
+
+    def test_expanding_func(func, static_comp, frame_or_series): ...
+        static_comp(data[:11])
+        static_comp(data[:11])
+        frame_or_series(np.array(list(range(10)) + [np.nan] * 10))
+
+    def test_expanding_min_periods(func, static_comp): ...
+        static_comp(ser[:50])
+        static_comp(ser[:50])
+
+    def test_expanding_sem(frame_or_series): ...
+        frame_or_series([0, 1, 2])
+
+    def test_explicit_encoding(io_class, mode, msg): ...
+        io_class()
+
+    def test_extract_expand_True_single_capture_group(index_or_series, any_string_dtype): ...
+        index_or_series(["A1", "A2"], dtype=any_string_dtype)
+
+    def test_extract_expand_True_single_capture_group_raises(
+        index_or_series, any_string_dtype
+    ): ...
+        index_or_series(["A1", "B2", "C3"], dtype=any_string_dtype)
+
+    def test_extract_expand_no_capture_groups_raises(index_or_series, any_string_dtype): ...
+        index_or_series(["A1", "B2", "C3"], dtype=any_string_dtype)
+
+    def test_extract_expand_single_capture_group(index_or_series, any_string_dtype): ...
+        index_or_series(["A1", "A2"], dtype=any_string_dtype)
+        index_or_series(["A", "A"], name="uno", dtype=any_string_dtype)
+
+    def test_factorize_dst(self, index_or_series): ...
+        index_or_series(idx)
+        index_or_series(idx)
+
+    def test_factorize_tz(self, tz_naive_fixture, index_or_series): ...
+        index_or_series(idx)
+
+    def test_fails_on_no_datetime_index(name, func): ...
+        func(n)
+
+    def test_fallback_success(self, datapath): ...
+        datapath("io", "data", "html", "banklist.html")
+
+    def test_file_buffered_reader_no_xml_declaration(datapath, parser, mode): ...
+        datapath("io", "data", "xml", "books.xml")
+
+    def test_file_buffered_reader_string(datapath, parser, mode): ...
+        datapath("io", "data", "xml", "books.xml")
+
+    def test_file_elems_and_attrs(datapath, parser): ...
+        datapath("io", "data", "xml", "books.xml")
+
+    def test_file_handle_close(datapath, parser): ...
+        datapath("io", "data", "xml", "books.xml")
+
+    def test_file_io(datapath, parser, mode): ...
+        datapath("io", "data", "xml", "books.xml")
+
+    def test_file_like(datapath, parser, mode): ...
+        datapath("io", "data", "xml", "books.xml")
+
+    def test_file_only_attrs(datapath, parser): ...
+        datapath("io", "data", "xml", "books.xml")
+
+    def test_file_only_elems(datapath, parser): ...
+        datapath("io", "data", "xml", "books.xml")
+
+    def test_file_output_bytes_read(datapath, parser): ...
+        datapath("io", "data", "xml", "books.xml")
+
+    def test_file_output_str_read(datapath, parser): ...
+        datapath("io", "data", "xml", "books.xml")
+
+    def test_filepath_or_buffer_arg(
+        method,
+        filepath_or_buffer,
+        assert_filepath_or_buffer_equals,
+        encoding,
+        data,
+        filepath_or_buffer_id,
+    ): ...
+        assert_filepath_or_buffer_equals(expected)
+
+    def test_fillna_dt64_timestamp(self, frame_or_series): ...
+        frame_or_series(ser)
+        frame_or_series(expected)
+
+    def test_first_last_valid(self, index_func): ...
+        index_func(N)
+
+    def test_first_last_valid_all_nan(self, index_func): ...
+        index_func(30)
+
+    def test_first_valid_index_single_nan(self, frame_or_series): ...
+        frame_or_series([np.nan])
+
+    def test_first_with_first_day_end_of_frq_n_greater_one(self, frame_or_series): ...
+        frame_or_series([1] * 100, index=bdate_range("2010-03-31", periods=100))
+        frame_or_series(
+            [1] * 23, index=bdate_range("2010-03-31", "2010-04-30")
+        )
+
+    def test_first_with_first_day_last_of_month(self, frame_or_series, start, periods): ...
+        frame_or_series([1] * 100, index=bdate_range(start, periods=100))
+        frame_or_series(
+            [1] * periods, index=bdate_range(start, periods=periods)
+        )
+
+    def test_float_slice_getitem_with_integer_index_raises(self, idx, index_func): ...
+        index_func(5)
+
+    def test_floating_misc(self, indexer_sl): ...
+        indexer_sl(s)
+        indexer_sl(s)
+        indexer_sl(s)
+        indexer_sl(s)
+        indexer_sl(s)
+        indexer_sl(s)
+        indexer_sl(s)
+        indexer_sl(s)
+        indexer_sl(s)
+        indexer_sl(s)
+        indexer_sl(s)
+        indexer_sl(s)
+        indexer_sl(s)
+        indexer_sl(s)
+        indexer_sl(s)
+        indexer_sl(s)
+
+    def test_frame_equal_extension_dtype(frame_or_series, any_nullable_numeric_dtype): ...
+        frame_or_series([1, 2], dtype=any_nullable_numeric_dtype)
+
+    def test_frame_equal_mixed_dtypes(frame_or_series, any_nullable_numeric_dtype, indexer): ...
+        frame_or_series([1, 2], dtype=dtypes[indexer[0]])
+        frame_or_series([1, 2], dtype=dtypes[indexer[1]])
+
+    def test_frame_getitem_simple_key_error(
+        multiindex_dataframe_random_data, indexer, expected_error_msg
+    ): ...
+        indexer(df)
+
+    def test_frame_getitem_toplevel(
+        multiindex_dataframe_random_data, indexer, expected_slice
+    ): ...
+        indexer(df)
+
+    def test_frame_mi_access(dataframe_with_duplicate_index, indexer): ...
+        indexer(df)
+
+    def test_freq_validation_with_nat(self, dt_cls): ...
+        dt_cls([pd.NaT, Timestamp("2011-01-01")], freq="D")
+        dt_cls([pd.NaT, Timestamp("2011-01-01").value], freq="D")
+
+    def test_from_codes_with_categorical_categories(self, klass): ...
+        klass(["a", "b", "c"])
+
+    def test_from_codes_with_non_unique_categorical_categories(self, klass): ...
+        klass(["a", "b", "a"])
+
+    def test_from_nat_scalar(self, dtype, constructor): ...
+        constructor(pd.NaT, dtype=dtype)
+
+    def test_from_out_of_bounds_datetime(self, constructor, cls): ...
+        constructor(scalar)
+
+    def test_from_out_of_bounds_timedelta(self, constructor, cls): ...
+        constructor(scalar)
+
+    def test_from_product_index_series_categorical(ordered, f): ...
+        f(idx)
+
+    def test_from_scalar_datetimelike_mismatched(self, constructor, cls, request): ...
+        constructor(scalar, dtype=dtype)
+        constructor(scalar, dtype=dtype)
+        cls("NaT", "ns")
+        cls(4, "ns")
+
+    def test_from_sequence_no_mutate(copy, cls, request): ...
+        cls(pa.array(na_arr, type=pa.string(), from_pandas=True))
+        cls(na_arr)
+
+    def test_from_timedelta64_scalar_object(self, constructor): ...
+        constructor(td64, dtype=object)
+
+    def test_from_timedelta_scalar_preserves_nanos(self, constructor): ...
+        constructor(td, dtype="m8[ns]")
+
+    def test_from_timestamp_scalar_preserves_nanos(self, constructor): ...
+        constructor(ts, dtype="M8[ns]")
+
+    def test_generic_errors(self, constructor): ...
+        constructor(closed="invalid", **filler)
+        constructor(dtype="int64", **filler)
+        constructor(dtype="invalid", **filler)
+        constructor(**periods_kwargs)
+        constructor(**decreasing_kwargs)
+
+    def test_get_complex_nested(to_type): ...
+        to_type([to_type([1, 2])])
+        to_type([1, 2])
+        to_type([1, 2])
+
+    def test_get_dtype_error_catch(func): ...
+        func(None)
+
+    def test_get_handle_with_path(self, path_type): ...
+        path_type("~/" + Path(tmp).name + "/sometest")
+
+    def test_get_indexer_nearest_listlike_tolerance(
+        self, tolerance, expected, listtype
+    ): ...
+        listtype(tolerance)
+
+    def test_get_indexer_non_unique(self, idx_values, key_values, key_class, dtype): ...
+        key_class(key_values, categories=range(1, 5))
+
+    def test_get_indexer_numeric_index_boolean_target(self, method, idx_class): ...
+        idx_class(RangeIndex(4))
+
+    def test_get_set_contains_len(self, table_type, dtype): ...
+        table_type()
+
+    def test_get_set_contains_len(self, table_type, dtype): ...
+        table_type(55)
+
+    def test_get_slice_bounds_datetime_outside(
+        self, box, kind, side, year, expected, tz_aware_fixture
+    ): ...
+        box(year=year, month=1, day=7)
+
+    def test_get_slice_bounds_datetime_within(
+        self, box, kind, side, expected, tz_aware_fixture
+    ): ...
+        box(year=2000, month=1, day=7)
+
+    def test_get_state(self, table_type, dtype): ...
+        table_type(1000)
+
+    def test_getitem_ambiguous_keyerror(indexer_sl): ...
+        indexer_sl(ser)
+
+    def test_getitem_dups_with_missing(indexer_sl): ...
+        indexer_sl(ser)
+
+    def test_getitem_interval_with_nans(self, frame_or_series, indexer_sl): ...
+        frame_or_series(range(2), index=index)
+        indexer_sl(obj)
+
+    def test_getitem_intlist_intervalindex_non_int(self, box): ...
+        box([0])
+
+    def test_getitem_intlist_multiindex_numeric_level(self, dtype, box): ...
+        box([5])
+
+    def test_getitem_listlike(self, idx_type, levels, float_frame): ...
+        idx_type(keys)
+        idx_type(keys)
+        idx_type(keys + [missing])
+
+    def test_getitem_millisecond_resolution(self, frame_or_series): ...
+        frame_or_series(
+            [1, 2, 3, 4],
+            index=[Timestamp(x) for x in keys],
+        )
+        frame_or_series(
+            [2, 3],
+            index=[
+                Timestamp(keys[1]),
+                Timestamp(keys[2]),
+            ],
+        )
+
+    def test_getitem_ndarray_3d(
+        self, index, frame_or_series, indexer_sli, using_array_manager
+    ): ...
+        indexer_sli(obj)
+
+    def test_getitem_no_matches(self, box): ...
+        box(key)
+
+    def test_getitem_non_matching(self, series_with_interval_index, indexer_sl): ...
+        indexer_sl(ser)
+        indexer_sl(ser)
+
+    def test_getitem_nonoverlapping_monotonic(self, direction, closed, indexer_sl): ...
+        indexer_sl(ser)
+        indexer_sl(ser)
+        indexer_sl(ser)
+        indexer_sl(ser)
+        indexer_sl(ser)
+
+    def test_getitem_raises(self, getter, target): ...
+        getter(target)
+
+    def test_getitem_scalar_na(self, data_missing, na_cmp, na_value): ...
+        na_cmp(result, na_value)
+
+    def test_getitem_slice_float64(self, frame_or_series): ...
+        frame_or_series(data, index=index)
+
+    def test_getitem_str_slice(datapath): ...
+        datapath("reshape", "merge", "data", "quotes2.csv")
+
+    def test_getitem_with_scalar(self, series_with_interval_index, indexer_sl): ...
+        indexer_sl(ser)
+        indexer_sl(ser)
+        indexer_sl(ser)
+        indexer_sl(ser)
+        indexer_sl(ser)
+        indexer_sl(ser)
+        indexer_sl(ser)
+
+    def test_getname_categorical_accessor(self, method): ...
+        method(ser)
+
+    def test_groupby_extension_apply(
+        self, data_for_grouping, groupby_apply_op, request
+    ): ...
+        groupby_apply_op([None])
+
+    def test_groupby_finalize(obj, method): ...
+        method(obj.groupby([0, 0]))
+
+    def test_groupby_finalize_not_implemented(obj, method): ...
+        method(obj.groupby([0, 0]))
+
+    def test_groupby_multiple_columns(df, op): ...
+        op(grouped)
+        op(gp2.loc[:, ["C", "D"]])
+        op(grouped[col])
+
+    def test_groupby_resample_preserves_subclass(obj): ...
+        obj(
+            {
+                "Buyer": "Carl Carl Carl Carl Joe Carl".split(),
+                "Quantity": [18, 3, 5, 1, 9, 3],
+                "Date": [
+                    datetime(2013, 9, 1, 13, 0),
+                    datetime(2013, 9, 1, 13, 5),
+                    datetime(2013, 10, 1, 20, 0),
+                    datetime(2013, 10, 3, 10, 0),
+                    datetime(2013, 12, 2, 12, 0),
+                    datetime(2013, 9, 2, 14, 0),
+                ],
+            }
+        )
+
+    def test_hashtable_factorize(self, htable, tm_dtype, writable): ...
+        htable()
+
+    def test_hashtable_large_sizehint(self, hashtable): ...
+        hashtable(size_hint=size_hint)
+
+    def test_hashtable_unique(self, htable, tm_dtype, writable): ...
+        htable()
+        htable()
+
+    def test_head_tail_generic(index, frame_or_series): ...
+        frame_or_series(vals, index=index)
+
+    def test_how_lambda_functions(simple_date_range_series): ...
+        simple_date_range_series("1/1/2000", "4/1/2000")
+
+    def test_identity(klass, value): ...
+        klass(value)
+
+    def test_ignore_display_max_colwidth(method, expected, max_colwidth): ...
+        expected(max_colwidth)
+
+    def test_iloc_getitem_read_only_values(self, indexer): ...
+        indexer(rw_df)
+        indexer(ro_df)
+        indexer(rw_df)
+        indexer(ro_df)
+        indexer(rw_df)
+        indexer(ro_df)
+        indexer(rw_df)
+        indexer(ro_df)
+
+    def test_iloc_returns_series(indexer, expected, simple_multiindex_dataframe): ...
+        indexer(df)
+        expected(arr)
+
+    def test_iloc_setitem_bool_indexer(self, klass): ...
+        klass([True, False, False])
+
+    def test_iloc_setitem_ea_inplace(self, frame_or_series, box, using_array_manager): ...
+        frame_or_series(arr.to_numpy("i8"))
+        frame_or_series(np.array([3, 4, 3, 4], dtype="i8"))
+        box(arr[2:])
+        box(arr[2:])
+
+    def test_iloc_setitem_fullcol_categorical(self, indexer, key, using_array_manager): ...
+        indexer(df)
+        indexer(df)
+
+    def test_importcheck_thread_safety(self, datapath): ...
+        datapath("io", "data", "html", "valid_markup.html")
+
+    def test_inconsistent_number_of_rows(datapath): ...
+        datapath("io", "sas", "data", "load_log.sas7bdat")
+
+    def test_incorrect_xsl_apply(datapath): ...
+        datapath("io", "data", "xml", "cta_rail_lines.kml")
+
+    def test_incorrect_xsl_eval(datapath): ...
+        datapath("io", "data", "xml", "cta_rail_lines.kml")
+
+    def test_incorrect_xsl_syntax(datapath): ...
+        datapath("io", "data", "xml", "cta_rail_lines.kml")
+
+    def test_index(method, sub, start, end, index_or_series, any_string_dtype, expected): ...
+        index_or_series(
+            ["ABCDEFG", "BCDEFEF", "DEFGHIJEF", "EFGHEF"], dtype=any_string_dtype
+        )
+        index_or_series(expected, dtype=expected_dtype)
+
+    def test_index_ctor_infer_nan_nat(self, klass, dtype, na_val): ...
+        klass(na_list)
+
+    def test_index_false(datapath, parser): ...
+        datapath("io", "data", "xml", "books.xml")
+
+    def test_index_false_rename_row_root(datapath, parser): ...
+        datapath("io", "data", "xml", "books.xml")
+
+    def test_index_not_found_raises(index_or_series, any_string_dtype): ...
+        index_or_series(
+            ["ABCDEFG", "BCDEFEF", "DEFGHIJEF", "EFGHEF"], dtype=any_string_dtype
+        )
+
+    def test_index_object_dtype(self, values_constructor): ...
+        values_constructor(intervals)
+
+    def test_index_object_dtype(self, values_constructor): ...
+        values_constructor(periods)
+
+    def test_index_series_compat(self, op, constructor, expected_type, assert_func): ...
+        op(index, other)
+        op(index, other)
+        op(index, other)
+        op(index, other)
+        constructor(IntervalIndex.from_breaks(breaks))
+        expected_type(self.elementwise_comparison(op, index, other))
+        expected_type(self.elementwise_comparison(op, index, other))
+        expected_type(self.elementwise_comparison(op, index, other))
+        expected_type(self.elementwise_comparison(op, index, other))
+        assert_func(result, expected)
+        assert_func(result, expected)
+        assert_func(result, expected)
+        assert_func(result, expected)
+
+    def test_index_str_accessor_non_string_values_raises(
+        values, inferred_type, index_or_series
+    ): ...
+        index_or_series(values)
+
+    def test_index_str_accessor_visibility(values, inferred_type, index_or_series): ...
+        index_or_series(values)
+
+    def test_index_subclass_constructor_wrong_kwargs(index_maker): ...
+        index_maker(foo="bar")
+
+    def test_index_type_coercion(self, indexer): ...
+        indexer(s2)
+        indexer(s2)
+        indexer(s2)
+        indexer(s2)
+        indexer(s2)
+        indexer(s2)
+        indexer(s2)
+        indexer(s2)
+
+    def test_index_wrong_type_raises(index_or_series, any_string_dtype): ...
+        index_or_series([], dtype=any_string_dtype)
+
+    def test_indexing_with_datetimeindex_tz(self, indexer_sl): ...
+        indexer_sl(ser)
+        indexer_sl(result)
+        indexer_sl(ser)
+        indexer_sl(result)
+
+    def test_infer_compression_from_path(self, extension, expected, path_type): ...
+        path_type("foo/bar.csv" + extension)
+
+    def test_infer_dtype_from_float_scalar(float_dtype): ...
+        float_dtype(12)
+
+    def test_infer_dtype_from_scalar_zerodim_datetimelike(cls): ...
+        cls(1234, "ns")
+
+    def test_infer_dtype_period_array(self, klass, skipna): ...
+        klass(
+            [
+                Period("2011-01-01", freq="D"),
+                Period("2011-01-02", freq="D"),
+                pd.NaT,
+            ]
+        )
+        klass(
+            [
+                Period("2011-01-01", freq="D"),
+                Period("2011-01-02", freq="M"),
+                pd.NaT,
+            ]
+        )
+
+    def test_infer_freq_custom(base_delta_code_pair, constructor): ...
+        constructor(b, base_delta)
+
+    def test_inplace_raises(method, frame_only): ...
+        method(df)
+        method(s)
+
+    def test_int_name_format(self, klass): ...
+        klass(list(range(3)), index=index)
+
+    def test_integer_array_add_list_like(
+        box_pandas_1d_array, box_1d_array, data, expected_data
+    ): ...
+        box_pandas_1d_array(arr)
+        box_1d_array(data)
+        box_1d_array(data)
+
+    def test_intersection_base(idx, sort, klass): ...
+        klass(second.values)
+
+    def test_intersection_different_type_base(self, klass, sort): ...
+        klass(second.values)
+
+    def test_intersection_mismatched_dtype(self, klass): ...
+        klass(index)
+
+    def test_interval_can_hold_element(self, dtype, element): ...
+        element(ii)
+        element(ii2)
+        element(ii3)
+        element(ii4)
+
+    def test_invalid_constructor(frame_or_series, w): ...
+        frame_or_series(range(5))
+
+    def test_invalid_constructor(frame_or_series, w): ...
+        frame_or_series(range(5))
+
+    def test_invalid_constructor_wintype(frame_or_series, wt): ...
+        frame_or_series(range(5))
+
+    def test_invalid_engine(self, grouper): ...
+        grouper(df)
+
+    def test_invalid_engine_kwargs(self, grouper): ...
+        grouper(df)
+
+    def test_is_dtype_no_warning(check): ...
+        check(data)
+        check(data["A"])
+
+    def test_is_nested_list_like_passes(inner, outer): ...
+        outer([inner for _ in range(5)])
+
+    def test_is_scipy_sparse(spmatrix): ...
+        spmatrix([[0, 1]])
+
+    def test_isna_isnull(self, isna_f): ...
+        isna_f(1.0)
+        isna_f(None)
+        isna_f(np.NaN)
+        isna_f(np.inf)
+        isna_f(-np.inf)
+        isna_f(type(Series(dtype=object)))
+        isna_f(type(Series(dtype=np.float64)))
+        isna_f(type(pd.DataFrame()))
+        isna_f(s)
+        isna_f(df)
+
+    def test_iterable(self, index_or_series, method, dtype, rdtype): ...
+        method(s)
+
+    def test_iterable_object_and_category(
+        self, index_or_series, method, dtype, rdtype, obj
+    ): ...
+        method(s)
+
+    def test_legacy_datetimetz_object(datapath, setup_path): ...
+        datapath("io", "data", "legacy_hdf", "datetimetz_object.h5")
+
+    def test_legacy_offset_warnings(offset_func, freq): ...
+        offset_func(freq)
+
+    def test_legacy_sparse_warning(datapath): ...
+        datapath("io", "data", "pickle", "sparseseries-0.20.3.pickle.gz")
+        datapath("io", "data", "pickle", "sparseframe-0.20.3.pickle.gz")
+
+    def test_legacy_table_fixed_format_read_datetime_py2(datapath, setup_path): ...
+        datapath("io", "data", "legacy_hdf", "legacy_table_fixed_datetime_py2.h5")
+
+    def test_legacy_table_fixed_format_read_py2(datapath, setup_path): ...
+        datapath("io", "data", "legacy_hdf", "legacy_table_fixed_py2.h5")
+
+    def test_legacy_table_read_py2(datapath, setup_path): ...
+        datapath("io", "data", "legacy_hdf", "legacy_table_py2.h5")
+
+    def test_list_slice(self, box): ...
+        box(["A"])
+
+    def test_loc_bool_incompatible_index_raises(
+        self, index, frame_or_series, bool_value
+    ): ...
+        frame_or_series(index=index, dtype="object")
+
+    def test_loc_bool_should_not_raise(self, frame_or_series, bool_value): ...
+        frame_or_series(
+            index=Index([True, False], dtype="boolean"), dtype="object"
+        )
+
+    def test_loc_bool_slice_raises(self, index, frame_or_series): ...
+        frame_or_series(index=index, dtype="object")
+
+    def test_loc_getitem_iterable(self, float_frame, key_type): ...
+        key_type(["A", "B", "C"])
+
+    def test_loc_getitem_list_of_labels_categoricalindex_with_na(self, box): ...
+        box(ci)
+        box(ci)
+        box(ci)
+        box(ci2)
+        box(ci2)
+        box(ci2)
+
+    def test_loc_getitem_missing_key_error_message(
+        self, frame_or_series, series_with_interval_index
+    ): ...
+        frame_or_series(ser)
+
+    def test_loc_getitem_partial_slice_non_monotonicity(
+        self, tz_aware_fixture, indexer_end, frame_or_series
+    ): ...
+        frame_or_series(
+            [1] * 5,
+            index=DatetimeIndex(
+                [
+                    Timestamp("2019-12-30"),
+                    Timestamp("2020-01-01"),
+                    Timestamp("2019-12-25"),
+                    Timestamp("2020-01-02 23:59:59.999999999"),
+                    Timestamp("2019-12-19"),
+                ],
+                tz=tz_aware_fixture,
+            ),
+        )
+        frame_or_series(
+            [1] * 2,
+            index=DatetimeIndex(
+                [
+                    Timestamp("2020-01-01"),
+                    Timestamp("2020-01-02 23:59:59.999999999"),
+                ],
+                tz=tz_aware_fixture,
+            ),
+        )
+
+    def test_loc_getitem_range_from_spmatrix(self, spmatrix_t, dtype): ...
+        spmatrix_t(np.eye(rows, cols, dtype=dtype), dtype=dtype)
+
+    def test_loc_getitem_slice_labels_int_in_object_index(self, frame_or_series, value): ...
+        frame_or_series(range(4), index=[value, "first", 2, "third"])
+        frame_or_series(range(4), index=[value, "first", 2, "third"])
+
+    def test_loc_getitem_slice_unordered_dt_index(self, frame_or_series, start): ...
+        frame_or_series(
+            [1, 2, 3],
+            index=[Timestamp("2016"), Timestamp("2019"), Timestamp("2017")],
+        )
+
+    def test_loc_iloc_at_iat_setitem_single_value_in_categories(
+        self, orig, exp_single_cats_value, indexer
+    ): ...
+        indexer(df)
+        indexer(df)
+
+    def test_loc_iloc_setitem_full_row_non_categorical_rhs(
+        self, orig, exp_single_row, indexer
+    ): ...
+        indexer(df)
+        indexer(df)
+
+    def test_loc_iloc_setitem_list_of_lists(self, orig, exp_multi_row, indexer): ...
+        indexer(df)
+        indexer(df)
+
+    def test_loc_iloc_setitem_mask_single_value_in_categories(
+        self, orig, exp_single_cats_value, indexer
+    ): ...
+        indexer(df)
+
+    def test_loc_iloc_setitem_non_categorical_rhs(
+        self, orig, exp_parts_cats_col, indexer
+    ): ...
+        indexer(df)
+        indexer(df)
+
+    def test_loc_iloc_setitem_partial_col_categorical_rhs(
+        self, orig, exp_parts_cats_col, indexer
+    ): ...
+        indexer(df)
+        indexer(df)
+        indexer(df)
+
+    def test_loc_iloc_setitem_with_listlike(self, size, array_fn): ...
+        array_fn([0] * size)
+
+    def test_loc_setitem_boolean_list(self, rhs_func, indexing_func): ...
+        rhs_func([5, 10])
+        rhs_func([[5], [10]])
+        indexing_func([True, False, True])
+        indexing_func([True, False, True])
+
+    def test_loc_with_interval(self, series_with_interval_index, indexer_sl): ...
+        indexer_sl(ser)
+        indexer_sl(ser)
+        indexer_sl(ser)
+        indexer_sl(ser)
+        indexer_sl(ser)
+        indexer_sl(ser)
+
+    def test_loc_with_list_of_strings_representing_datetimes(
+        self, idx, labels, expected_idx, frame_or_series
+    ): ...
+        frame_or_series(range(20), index=idx)
+        frame_or_series(expected_value, expected_idx)
+
+    def test_loc_with_overlap(self, indexer_sl): ...
+        indexer_sl(ser)
+        indexer_sl(ser)
+        indexer_sl(ser)
+        indexer_sl(ser)
+        indexer_sl(ser)
+        indexer_sl(ser)
+        indexer_sl(ser)
+        indexer_sl(ser)
+
+    def test_loc_with_scalar(self, series_with_interval_index, indexer_sl): ...
+        indexer_sl(ser)
+        indexer_sl(ser)
+        indexer_sl(ser)
+        indexer_sl(ser)
+        indexer_sl(ser)
+        indexer_sl(ser)
+        indexer_sl(ser)
+        indexer_sl(ser)
+
+    def test_loc_with_slices(self, series_with_interval_index, indexer_sl): ...
+        indexer_sl(ser)
+        indexer_sl(ser)
+        indexer_sl(ser)
+        indexer_sl(ser)
+
+    def test_localized_at_time(self, tzstr, frame_or_series): ...
+        frame_or_series(np.random.randn(len(rng)), index=rng)
+
+    def test_logical_operators_nans(self, left, right, op, expected, frame_or_series): ...
+        op(frame_or_series(left), frame_or_series(right))
+        frame_or_series(left)
+        frame_or_series(right)
+        frame_or_series(expected)
+
+    def test_logical_ops_with_index(self, op): ...
+        op(ser[n], idx1[n])
+        op(ser, idx1)
+        op(ser[n], idx2[n])
+        op(ser, idx2)
+
+    def test_lookup(self, table_type, dtype, writable): ...
+        table_type()
+
+    def test_lookup_wrong(self, table_type, dtype): ...
+        table_type()
+
+    def test_make_block_no_pandas_array(block_maker): ...
+        block_maker(arr, slice(len(arr)), ndim=arr.ndim)
+        block_maker(arr, slice(len(arr)), dtype=arr.dtype, ndim=arr.ndim)
+        block_maker(
+            arr.to_numpy(), slice(len(arr)), dtype=arr.dtype, ndim=arr.ndim
+        )
+
+    def test_many_columns(datapath, using_array_manager): ...
+        datapath("io", "sas", "data", "many_columns.sas7bdat")
+        datapath("io", "sas", "data", "many_columns.csv")
+
+    def test_map(self, table_type, dtype): ...
+        table_type()
+
+    def test_map(self, table_type, dtype, writable): ...
+        table_type()
+
+    def test_map_abc_mapping(non_dict_mapping_subclass): ...
+        non_dict_mapping_subclass({3: "three"})
+
+    def test_map_dictlike(idx, mapper): ...
+        mapper(idx.values, idx)
+        mapper(expected, idx)
+
+    def test_map_dictlike(self, index, mapper): ...
+        mapper(expected, index)
+
+    def test_map_dictlike(self, mapper, simple_index): ...
+        mapper(expected, index)
+        mapper(expected, index)
+        mapper([], [])
+
+    def test_map_dictlike(self, mapper, simple_index): ...
+        mapper(idx.values, idx)
+        mapper(expected, idx)
+
+    def test_map_dictlike_simple(self, mapper): ...
+        mapper(expected.values, index)
+
+    def test_map_locations(self, table_type, dtype): ...
+        table_type()
+
+    def test_map_locations(self, table_type, dtype, writable): ...
+        table_type()
+
+    def test_mask_key(self, obj, key, expected, val, indexer_sli): ...
+        indexer_sli(obj)
+
+    def test_masked_bool_aggs_skipna(bool_agg_func, dtype, skipna, frame_or_series): ...
+        frame_or_series([pd.NA, 1], dtype=dtype)
+        frame_or_series([expected_res], index=[1], dtype="boolean")
+
+    def test_max_sas_date(datapath): ...
+        datapath("io", "sas", "data", "max_sas_date.sas7bdat")
+
+    def test_max_sas_date_iterator(datapath): ...
+        datapath("io", "sas", "data", "max_sas_date.sas7bdat")
+
+    def test_maybe_cast_slice_bound(self, make_range, frame_or_series): ...
+        make_range(start="2013/10/01", freq="D", periods=10)
+
+    def test_maybe_convert_i8_errors(self, breaks1, breaks2, make_key): ...
+        make_key(breaks2)
+
+    def test_maybe_convert_i8_numeric(self, breaks, make_key): ...
+        make_key(breaks)
+
+    def test_merge_datetime_index(self, box): ...
+        box(on_vector)
+
+    def test_merge_datetime_index(self, klass): ...
+        klass(on_vector)
+
+    def test_merge_on_nans(self, func, side): ...
+        func([1.0, 5.0, np.nan])
+        func([1.0, 5.0, 10.0])
+
+    def test_min_max_numpy(method, box, dtype, request): ...
+        box(["a", "b", "c", None], dtype=dtype)
+
+    def test_missing_prefix_definition_etree(datapath): ...
+        datapath("io", "data", "xml", "cta_rail_lines.kml")
+
+    def test_missing_prefix_definition_lxml(datapath): ...
+        datapath("io", "data", "xml", "cta_rail_lines.kml")
+
+    def test_missing_prefix_with_default_namespace(datapath, parser): ...
+        datapath("io", "data", "xml", "books.xml")
+
+    def test_mixing_naive_tzaware_raises(self, meth): ...
+        meth(obj)
+
+    def test_moment_functions_zero_length(f): ...
+        f(s)
+        f(df1)
+        f(df2)
+
+    def test_moment_functions_zero_length(f): ...
+        f(s)
+        f(df1)
+        f(df2)
+
+    def test_moment_functions_zero_length_pairwise(f): ...
+        f(df1)
+        f(df2)
+
+    def test_moment_functions_zero_length_pairwise(f): ...
+        f(df1)
+        f(df2)
+
+    def test_month_offset_name(month_classes): ...
+        month_classes(1)
+        month_classes(2)
+
+    def test_monthly_upsample(self, target, convention, simple_period_range_series): ...
+        simple_period_range_series("1/1/1990", "12/31/1995", freq="M")
+
+    def test_mul_int_identity(self, op, numeric_idx, box_with_array): ...
+        op(idx, 1)
+
+    def test_mul_td64arr(self, left, box_cls): ...
+        box_cls(right)
+
+    def test_multiindex_loc_one_dimensional_tuple(self, frame_or_series): ...
+        frame_or_series([1, 2], index=mi)
+        frame_or_series([0, 2], index=mi)
+
+    def test_multilevel_preserve_name(indexer_sl): ...
+        indexer_sl(ser)
+
+    def test_multiple_output_binary_ufuncs(ufunc, sparse, shuffle, arrays_for_binary_ufunc): ...
+        ufunc(a1, a2)
+        ufunc(s1, s2)
+
+    def test_na_to_datetime(nulls_fixture, klass): ...
+        klass([nulls_fixture])
+        klass([nulls_fixture])
+
+    def test_na_treated_as_false(frame_or_series, indexer_sli): ...
+        frame_or_series([1, 2, 3])
+        indexer_sli(obj)
+        indexer_sli(obj)
+
+    def test_names_option_output(datapath, parser): ...
+        datapath("io", "data", "xml", "books.xml")
+
+    def test_names_option_wrong_length(datapath, parser): ...
+        datapath("io", "data", "xml", "books.xml")
+
+    def test_names_option_wrong_type(datapath, parser): ...
+        datapath("io", "data", "xml", "books.xml")
+
+    def test_nan_comparison(self, op, nanop): ...
+        op(self.arr_float, self.arr_float1)
+
+    def test_nanops_independent_of_mask_param(operation): ...
+        operation(s)
+        operation(s, mask=mask)
+
+    def test_nans(compare_func, roll_func, kwargs): ...
+        compare_func(obj[10:-10])
+
+    def test_nat_arithmetic_ndarray(dtype, op, out_dtype): ...
+        op(NaT, other)
+
+    def test_nat_arithmetic_td64_vector(op_name, box): ...
+        box(["1 day", "2 day"], dtype="timedelta64[ns]")
+        box([NaT, NaT], dtype="timedelta64[ns]")
+
+    def test_nat_comparison_tzawareness(self, op): ...
+        op(dti, NaT)
+        op(dti.tz_localize("US/Pacific"), NaT)
+
+    def test_nat_comparisons(
+        self,
+        dtype,
+        index_or_series,
+        reverse,
+        pair,
+        op,
+        expected,
+    ): ...
+        op(left, right)
+
+    def test_nat_iso_format(get_nat): ...
+        get_nat("NaT")
+
+    def test_nested_renamer(box, method, func): ...
+        box({"A": [1]})
+
+    def test_no_flex(self, pairwise_frames, pairwise_target_frame, f): ...
+        f(pairwise_frames)
+        f(pairwise_target_frame)
+
+    def test_no_pairwise_with_other(self, pairwise_frames, pairwise_other_frame, f): ...
+        f(pairwise_frames, pairwise_other_frame)
+        f(pairwise_frames, pairwise_other_frame)
+        f(pairwise_other_frame, pairwise_frames)
+
+    def test_no_pairwise_with_self(self, pairwise_frames, pairwise_target_frame, f): ...
+        f(pairwise_frames)
+        f(pairwise_target_frame)
+
+    def test_no_reallocation(self, table_type, dtype): ...
+        table_type(N)
+        table_type()
+
+    def test_non_unique(self, indexer_sl): ...
+        indexer_sl(ser)
+        indexer_sl(ser)
+
+    def test_non_unique_moar(self, indexer_sl): ...
+        indexer_sl(ser)
+        indexer_sl(ser)
+        indexer_sl(ser)
+
+    def test_not_stylesheet(datapath): ...
+        datapath("io", "data", "xml", "cta_rail_lines.kml")
+        datapath("io", "data", "xml", "books.xml")
+
+    def test_not_subperiod(self, simple_period_range_series, rule, expected_error_msg): ...
+        simple_period_range_series("1/1/1990", "6/30/1995", freq="w-wed")
+
+    def test_notna_notnull(notna_f): ...
+        notna_f(1.0)
+        notna_f(None)
+        notna_f(np.NaN)
+        notna_f(np.inf)
+        notna_f(-np.inf)
+        notna_f(arr)
+        notna_f(np.inf)
+        notna_f(-np.inf)
+        notna_f(arr)
+        notna_f(s)
+
+    def test_null_date(datapath): ...
+        datapath("io", "sas", "data", "dates_null.sas7bdat")
+
+    def test_numpy_all_any(self, klass): ...
+        klass([0, 1, 2])
+
+    def test_numpy_min_max_axis_equals_none(self, method, expected): ...
+        method(cat, axis=None)
+
+    def test_numpy_min_max_raises(self, method): ...
+        method(cat)
+
+    def test_numpy_min_max_unsupported_kwargs_raises(self, method, kwarg): ...
+        method(cat, **kwargs)
+
+    def test_numpy_ops(numpy_op, expected): ...
+        numpy_op(Series([1, 2, 3, 4]))
+
+    def test_numpy_type_funcs(idx, func): ...
+        func(idx)
+
+    def test_numpy_ufuncs(idx, func): ...
+        func(idx)
+
+    def test_numpy_ufuncs_basic(index, func): ...
+        func(index)
+        func(index)
+        func(index.values)
+        func(index)
+
+    def test_numpy_ufuncs_other(index, func, request): ...
+        func(index)
+        func(index)
+        func(index)
+        func(index)
+        func(index)
+        func(index)
+
+    def test_objarr_add_invalid(self, op, box_with_array): ...
+        op(obj_ser, 1)
+        op(obj_ser, np.array(1, dtype=np.int64))
+
+    def test_object_empty(self, box, missing, dtype, skipna, expected): ...
+        box([missing, missing], dtype=dtype)
+
+    def test_operators_combine(self, op, equiv_op, fv): ...
+        op(fill_value, b[i])
+        op(a[i], fill_value)
+        op(a[i], b[i])
+        op(a, b)
+        op(a, b, axis=0)
+        equiv_op(a, b)
+
+    def test_operators_none_as_na(self, op): ...
+        op(df, 3)
+        op(filled, 3)
+        op(df, df)
+        op(filled, filled)
+        op(df, df.fillna(7))
+        op(df.fillna(7), df)
+
+    def test_operators_reverse_object(self, op): ...
+        op(1.0, arr)
+        op(1.0, arr.astype(float))
+
+    def test_other_dtypes_for_array(self, func): ...
+        func(arr)
+        func(arr)
+
+    def test_override_inferred_closed(self, constructor, data, closed): ...
+        constructor(data, closed=closed)
+
+    def test_pairwise_with_other(
+        self, pairwise_frames, pairwise_target_frame, pairwise_other_frame, f
+    ): ...
+        f(pairwise_frames, pairwise_other_frame)
+        f(pairwise_target_frame, pairwise_other_frame)
+
+    def test_pairwise_with_self(self, pairwise_frames, pairwise_target_frame, f): ...
+        f(pairwise_frames)
+        f(pairwise_target_frame)
+
+    def test_pairwise_with_series(self, pairwise_frames, pairwise_target_frame, f): ...
+        f(pairwise_frames, Series([1, 1, 3, 8]))
+        f(pairwise_target_frame, Series([1, 1, 3, 8]))
+        f(Series([1, 1, 3, 8]), pairwise_frames)
+        f(Series([1, 1, 3, 8]), pairwise_target_frame)
+
+    def test_parr_add_sub_float_raises(self, op, other, box_with_array): ...
+        op(pi, other)
+
+    def test_parr_ops_errors(self, ng, func, box_with_array): ...
+        func(obj, ng)
+
+    def test_parse_path_object(self, datapath): ...
+        datapath("io", "data", "html", "spam.html")
+
+    def test_parser_consistency_file(datapath): ...
+        datapath("io", "data", "xml", "books.xml")
+
+    def test_parser_consistency_with_encoding(datapath): ...
+        datapath("io", "data", "xml", "baby_names.xml")
+
+    def test_partition_cols_pathlib(self, pa, df_compat, path_type): ...
+        path_type(path_str)
+
+    def test_pct_change_with_nas(self, periods, fill_method, limit, exp, klass): ...
+        klass(vals)
+        klass(exp)
+
+    def test_period_can_hold_element(self, element): ...
+        element(pi)
+        element(pi2)
+        element(dti)
+
+    def test_period_index_construction_from_strings(klass): ...
+        klass(strings)
+
+    def test_period_mean(self, box): ...
+        box(parr)
+
+    def test_pi_add_intarray(self, int_holder, op): ...
+        int_holder([4, -1])
+        op(pi, other)
+
+    def test_pi_add_offset_array(self, box): ...
+        box(
+            [
+                pd.offsets.QuarterEnd(n=1, startingMonth=12),
+                pd.offsets.QuarterEnd(n=-2, startingMonth=12),
+            ]
+        )
+
+    def test_pi_sub_intarray(self, int_holder): ...
+        int_holder([4, -1])
+
+    def test_pi_sub_offset_array(self, box): ...
+        box(
+            [
+                pd.offsets.QuarterEnd(n=1, startingMonth=12),
+                pd.offsets.QuarterEnd(n=-2, startingMonth=12),
+            ]
+        )
+        box([pd.offsets.MonthEnd(), pd.offsets.Day(n=2)])
+
+    def test_pickle_compat_0_14_1(self, datapath): ...
+        datapath("tseries", "offsets", "data", "cday-0.14.1.pickle")
+
+    def test_pow_float(self, op, numeric_idx, box_with_array): ...
+        op(idx.values, 2.0)
+        op(idx, 2.0)
+
+    def test_preserved_series(self, func): ...
+        func(s)
+
+    def test_productsales(datapath): ...
+        datapath("io", "sas", "data", "productsales.sas7bdat")
+        datapath("io", "sas", "data", "productsales.csv")
+
+    def test_py2_created_with_datetimez(datapath, setup_path): ...
+        datapath("io", "data", "legacy_hdf", "gh26443.h5")
+
+    def test_pytables_native2_read(datapath, setup_path): ...
+        datapath("io", "data", "legacy_hdf", "pytables_native2.h5")
+
+    def test_pytables_native_read(datapath, setup_path): ...
+        datapath("io", "data", "legacy_hdf/pytables_native.h5")
+
+    def test_python_semantics_with_numexpr_installed(self, op, box, scalar): ...
+        box(data)
+
+    def test_qcut_binning_issues(datapath): ...
+        datapath(os.path.join("reshape", "data", "cut_data.csv"))
+
+    def test_qcut_bool_coercion_to_int(bins, box, compare): ...
+        box([0, 1, 1, 0, 1] * 10)
+        box([False, True, True, False, True] * 10)
+        compare(result, expected)
+
+    def test_quarterly_upsample(
+        self, month, target, convention, simple_period_range_series
+    ): ...
+        simple_period_range_series("1/1/1990", "12/31/1995", freq=freq)
+
+    def test_raise_tz_and_tzinfo_in_datetime_input(self, box): ...
+        box(**kwargs)
+        box(**kwargs)
+
+    def test_range_slice_day(self, make_range): ...
+        make_range(start="2013/01/01", freq="D", periods=400)
+
+    def test_range_slice_outofbounds(self, make_range): ...
+        make_range(start="2013/10/01", freq="D", periods=10)
+
+    def test_range_slice_seconds(self, make_range): ...
+        make_range(start="2013/01/01 09:00:00", freq="S", periods=4000)
+
+    def test_rank_inf_and_nan(self, contents, dtype, frame_or_series): ...
+        frame_or_series(values[random_order])
+        frame_or_series(exp_order[random_order], dtype="float64")
+
+    def test_read_csv_file_handle(all_parsers, io_class, encoding): ...
+        io_class(content.encode("utf-8") if io_class == BytesIO else content)
+
+    def test_read_empty_with_blank_row(datapath, ext, read_only): ...
+        datapath("io", "data", "excel", f"empty_with_blank_row{ext}")
+
+    def test_read_excel_warning_with_xlsx_file(datapath): ...
+        datapath("io", "data", "excel", "test1.xlsx")
+
+    def test_read_expands_user_home_dir(
+        self, reader, module, error_class, fn_ext, monkeypatch
+    ): ...
+        reader(path)
+
+    def test_read_from_file_url(self, read_ext, datapath): ...
+        datapath("io", "data", "excel")
+
+    def test_read_fspath_all(self, reader, module, path, datapath): ...
+        reader(mypath)
+        reader(path)
+        datapath(*path)
+
+    def test_read_non_existent(self, reader, module, error_class, fn_ext): ...
+        reader(path)
+
+    def test_read_py2_hdf_file_in_py3(datapath): ...
+        datapath(
+                "io", "data", "legacy_hdf", "periodindex_0.20.1_x86_64_darwin_2.7.13.h5"
+            )
+
+    def test_read_with_bad_dimension(
+        datapath, ext, header, expected_data, filename, read_only, request
+    ): ...
+        datapath("io", "data", "excel", f"{filename}{ext}")
+
+    def test_read_with_empty_trailing_rows(datapath, ext, read_only, request): ...
+        datapath("io", "data", "excel", f"empty_trailing_rows{ext}")
+
+    def test_read_workbook(datapath, ext, read_only): ...
+        datapath("io", "data", "excel", "test1" + ext)
+
+    def test_read_zipped_json(datapath): ...
+        datapath("io", "json", "data", "tsframe_v012.json")
+        datapath("io", "json", "data", "tsframe_v012.json.zip")
+
+    def test_readjson_lines_chunks_fileurl(datapath): ...
+        datapath("io", "json", "data", "line_delimited.json")
+
+    def test_really_large_in_arr(large_val, signed, transform, multiple_elts, errors): ...
+        transform(val)
+
+    def test_really_large_scalar(large_val, signed, transform, errors): ...
+        transform(val)
+
+    def test_reductions_deprecation_level_argument(self, frame_or_series, func): ...
+        frame_or_series(
+            [1, 2, 3], index=MultiIndex.from_arrays([[1, 2, 3], [4, 5, 6]])
+        )
+
+    def test_regex_replace_string_types(
+        self, data, to_replace, expected, frame_or_series, any_string_dtype
+    ): ...
+        frame_or_series(data, dtype=dtype)
+        frame_or_series(expected, dtype=dtype)
+
+    def test_register(obj, registrar): ...
+        obj([])
+        obj([], dtype=object)
+        registrar("mine")
+
+    def test_reindex_frame_tz_ffill_bfill(self, frame_or_series, method, exp_values): ...
+        frame_or_series(
+            [0, 1, 2, 3],
+            index=date_range("2020-01-01 00:00:00", periods=4, freq="H", tz="UTC"),
+        )
+        frame_or_series(exp_values, index=new_index)
+
+    def test_rename_mi(self, klass): ...
+        klass(
+            [11, 21, 31],
+            index=MultiIndex.from_tuples([("A", x) for x in ["a", "B", "c"]]),
+        )
+
+    def test_replace_across_dst(self, tz, normalize): ...
+        normalize(ts_aware)
+        normalize(ts2)
+
+    def test_replace_bytes(self, frame_or_series): ...
+        frame_or_series(["o"])
+
+    def test_replace_extension_other(self, frame_or_series): ...
+        frame_or_series(pd.array([1, 2, 3], dtype="Int64"))
+
+    def test_replace_list_with_mixed_type(
+        self, data, to_replace, value, expected, box, frame_or_series
+    ): ...
+        box(to_replace)
+        frame_or_series(data)
+        frame_or_series(expected)
+
+    def test_replace_wrong_repl_type_raises(any_string_dtype, index_or_series, repl, data): ...
+        index_or_series(data, dtype=any_string_dtype)
+
+    def test_repr_missing(self, constructor, expected): ...
+        constructor(list("abc"), index=index)
+
+    def test_repr_np_nat_with_object(self, arg, box, expected): ...
+        arg("NaT")
+        box([arg("NaT")], dtype=object)
+
+    def test_resample_anchored_intraday(simple_date_range_series): ...
+        simple_date_range_series("2012-04-29 23:00", "2012-04-30 5:00", freq="h")
+
+    def test_resample_anchored_monthstart(simple_date_range_series): ...
+        simple_date_range_series("1/1/2000", "12/31/2002")
+
+    def test_resample_basic(series, closed, expected): ...
+        expected(s)
+
+    def test_resample_loffset_arg_type(frame, create_index, arg): ...
+        create_index(df.index[0], periods=len(df.index) / 2, freq="2D")
+
+    def test_resample_timestamp_to_period(simple_date_range_series): ...
+        simple_date_range_series("1/1/1990", "1/1/2000")
+
+    def test_resample_to_quarterly(self, simple_period_range_series): ...
+        simple_period_range_series("1990", "1992", freq=f"A-{month}")
+        simple_period_range_series("1990", "1992", freq="A-JUN")
+
+    def test_resample_to_timestamps(self, simple_period_range_series): ...
+        simple_period_range_series("1/1/1990", "12/31/1995", freq="M")
+
+    def test_reverse_ops_with_index(self, op, expected): ...
+        op(ser, idx)
+
+    def test_reversed_logical_op_with_index_returns_series(self, op): ...
+        op(idx1.values, ser.values)
+        op(ser, idx1)
+        op(idx2.values, ser.values)
+        op(ser, idx2)
+
+    def test_rolling_count_default_min_periods_with_null_values(frame_or_series): ...
+        frame_or_series(values)
+        frame_or_series(expected_counts)
+
+    def test_rolling_count_with_min_periods(frame_or_series): ...
+        frame_or_series(range(5))
+        frame_or_series([np.nan, np.nan, 3.0, 3.0, 3.0])
+
+    def test_rolling_descending_date_order_with_offset(window, frame_or_series): ...
+        frame_or_series(range(1, 4), index=idx)
+        frame_or_series([np.nan, 1, 2], index=idx)
+        frame_or_series([np.nan, 3, 2], index=idx)
+
+    def test_rolling_forward_skewness(constructor): ...
+        constructor(values)
+        constructor(
+            [
+                0.0,
+                2.232396,
+                2.229508,
+                2.228340,
+                2.229091,
+                2.231989,
+                0.0,
+                0.0,
+                np.nan,
+                np.nan,
+            ]
+        )
+
+    def test_rolling_forward_window(constructor, func, np_func, expected, np_kwargs): ...
+        constructor(values)
+        constructor(values)
+        constructor(values)
+        constructor(expected)
+        constructor(rolling.apply(lambda x: np_func(x, **np_kwargs)))
+        constructor(values)
+        constructor(rolling3.apply(lambda x: np_func(x, **np_kwargs)))
+        np_func(x, **np_kwargs)
+        np_func(x, **np_kwargs)
+
+    def test_rolling_functions_window_non_shrinkage(f): ...
+        f(s)
+        f(df)
+
+    def test_rolling_functions_window_non_shrinkage_binary(f): ...
+        f(df)
+
+    def test_rolling_sem(frame_or_series): ...
+        frame_or_series([0, 1, 2])
+
+    def test_round_nat(klass, method, freq): ...
+        klass("nat")
+
+    def test_round_sanity(self, method, n): ...
+        method(ts, "ns")
+        method(ts, "us")
+        method(ts, "ms")
+        method(ts, "s")
+        method(ts, "min")
+        method(ts, "h")
+        method(ts, "D")
+
+    def test_round_sanity(self, method, n, request): ...
+        method(td, "ns")
+        method(td, "us")
+        method(td, "ms")
+        method(td, "s")
+        method(td, "min")
+        method(td, "h")
+        method(td, "D")
+
+    def test_round_trip_current(current_pickle_data, pickle_writer): ...
+        pickle_writer(expected, path)
+
+    def test_same_ordering(datapath): ...
+        datapath("io", "data", "html", "valid_markup.html")
+
+    def test_scalar(val, signed, transform): ...
+        transform(val)
+
+    def test_scalar_comparison_tzawareness(
+        self, op, other, tz_aware_fixture, box_with_array
+    ): ...
+        op(dtarr, other)
+        op(other, dtarr)
+        op(dtarr, other)
+        op(other, dtarr)
+
+    def test_scalar_fail(errors, checker): ...
+        checker(to_numeric(scalar, errors=errors))
+
+    def test_scalar_integer(self, index_func, frame_or_series, indexer_sl): ...
+        index_func(5)
+        indexer_sl(obj)
+        indexer_sl(s2)
+        indexer_sl(s2)
+        indexer_sl(s2)
+
+    def test_scalar_integer_contains_float(self, index_func, frame_or_series): ...
+        index_func(5)
+
+    def test_scalar_non_numeric(self, index_func, frame_or_series, indexer_sl): ...
+        index_func(5)
+        indexer_sl(s)
+        indexer_sl(s2)
+
+    def test_scalar_non_numeric_series_fallback(self, index_func): ...
+        index_func(5)
+
+    def test_scalar_ops_from_sequence_raises(class_): ...
+        class_([decimal.Decimal("1.0"), decimal.Decimal("2.0")])
+
+    def test_scalar_with_mixed(self, indexer_sl): ...
+        indexer_sl(s2)
+        indexer_sl(s2)
+        indexer_sl(s2)
+        indexer_sl(s3)
+        indexer_sl(s3)
+        indexer_sl(s3)
+
+    def test_searchsorted_datetimelike_with_listlike(values, klass, as_index): ...
+        klass(values)
+
+    def test_searchsorted_different_argument_classes(klass): ...
+        klass(values)
+        klass(values)
+
+    def test_searchsorted_different_argument_classes(self, klass): ...
+        klass(idx)
+        klass(idx)
+
+    def test_searchsorted_different_argument_classes(self, klass): ...
+        klass(pidx)
+        klass(pidx)
+
+    def test_selection_by_datetimelike(self, datetimelike, op, expected): ...
+        op(df.A, datetimelike)
+
+    def test_ser_cmp_result_names(self, names, op): ...
+        op(ser, dti)
+        op(ser, dti)
+        op(ser, tdi)
+        op(ser, ii)
+        op(ser, cidx)
+
+    def test_series(series, compare_func, roll_func, kwargs): ...
+        compare_func(series[-50:])
+
+    def test_series_compression_defaults_to_infer(
+        write_method, write_kwargs, read_method, read_kwargs, compression_only
+    ): ...
+        read_method(path, compression=compression_only, **read_kwargs)
+
+    def test_series_getitem(multiindex_year_month_day_dataframe_random_data, indexer_sl): ...
+        indexer_sl(s)
+
+    def test_series_getitem_indexing_errors(
+        multiindex_year_month_day_dataframe_random_data,
+        indexer,
+        expected_error,
+        expected_error_msg,
+    ): ...
+        indexer(s)
+
+    def test_series_getitem_multiindex(access_method, level1_value, expected): ...
+        access_method(s, level1_value)
+
+    def test_series_getitem_returns_scalar(
+        multiindex_year_month_day_dataframe_random_data, indexer_sl
+    ): ...
+        indexer_sl(s)
+
+    def test_series_mask_boolean(values, dtype, mask, indexer_class, frame): ...
+        indexer_class(mask)
+
+    def test_series_ops_name_retention(
+        self, request, flex, box, names, all_binary_operators
+    ): ...
+        box(right)
+
+    def test_series_raises(self, func): ...
+        func(s)
+
+    def test_server_and_all_custom_headers(responder, read_method): ...
+        read_method(
+            f"http://localhost:{port}",
+            storage_options=storage_options,
+        )
+
+    def test_server_and_custom_headers(responder, read_method, parquet_engine): ...
+        read_method(
+            f"http://localhost:{port}",
+            storage_options={"User-Agent": custom_user_agent},
+        )
+        read_method(
+            f"http://localhost:{port}",
+            storage_options={"User-Agent": custom_user_agent},
+            engine=parquet_engine,
+        )
+
+    def test_server_and_default_headers(responder, read_method, parquet_engine): ...
+        read_method(f"http://localhost:{port}")
+        read_method(f"http://localhost:{port}", engine=parquet_engine)
+
+    def test_set_flags_with_duplicates(self, cls, axes): ...
+        cls(**axes)
+        cls(**axes)
+
+    def test_set_index_pass_arrays(
+        self, frame_of_index_cols, drop, append, index_name, box
+    ): ...
+        box(df["B"])
+
+    def test_set_index_pass_arrays_duplicate(
+        self, frame_of_index_cols, drop, append, index_name, box1, box2
+    ): ...
+        box1(df["A"])
+        box1(df["A"])
+        box2(df["A"])
+        box2(df["A"])
+
+    def test_set_index_pass_single_array(
+        self, frame_of_index_cols, drop, append, index_name, box
+    ): ...
+        box(df["B"])
+
+    def test_set_index_raise_on_len(
+        self, frame_of_index_cols, box, length, drop, append
+    ): ...
+        box(values)
+        box(values)
+
+    def test_set_index_raise_on_type(self, frame_of_index_cols, box, drop, append): ...
+        box(df["A"])
+        box(df["A"])
+
+    def test_setitem_ambiguous_keyerror(indexer_sl): ...
+        indexer_sl(s2)
+
+    def test_setitem_boolean_mask(self, mask_type, float_frame): ...
+        mask_type(df)
+
+    def test_setitem_boolean_mask_aligning(self, indexer): ...
+        indexer(df)
+        indexer(df)
+
+    def test_setitem_boolean_python_list(self, func): ...
+        func([True, False, True])
+
+    def test_setitem_dt64_string_scalar(self, tz_naive_fixture, indexer_sli): ...
+        indexer_sli(ser)
+
+    def test_setitem_dt64_string_values(self, tz_naive_fixture, indexer_sli, key, box): ...
+        indexer_sli(ser)
+        box(["2019-01-01", "2010-01-02"])
+
+    def test_setitem_list_indexer_broadcasting_rhs(self, n, box): ...
+        box([10, 11, 12])
+
+    def test_setitem_multiindex_slice(self, indexer_sli): ...
+        indexer_sli(result)
+
+    def test_setitem_ndarray_3d(self, index, frame_or_series, indexer_sli): ...
+        indexer_sli(obj)
+
+    def test_setitem_new_key_tz(self, indexer_sl): ...
+        indexer_sl(ser)
+        indexer_sl(ser)
+
+    def test_setitem_non_bool_into_bool(self, val, indexer_sli, unique): ...
+        indexer_sli(ser)
+
+    def test_setitem_numeric_raises(self, arr1d, box): ...
+        box([0, 1])
+        box([0.0, 1.0])
+
+    def test_setitem_object_dtype(self, box, arr1d): ...
+        box(np.asarray(vals, dtype=object))
+        box(vals)
+
+    def test_setitem_series(self, data, full_indexer): ...
+        full_indexer(ser)
+
+    def test_setitem_series_object_dtype(self, indexer, ser_index): ...
+        indexer(ser)
+
+    def test_setitem_slice_broadcasting_rhs_mixed_dtypes(self, n, box, indexer): ...
+        box([10, 11, 12])
+        indexer(df)
+
+    def test_setitem_slice_indexer_broadcasting_rhs(self, n, box, indexer): ...
+        box([10, 11, 12])
+        indexer(df)
+
+    def test_setitem_td64_scalar(self, indexer_sli, scalar): ...
+        indexer_sli(ser)
+
+    def test_setitem_td64_string_values(self, indexer_sli, key, box): ...
+        indexer_sli(ser)
+        box(["10 Days", "44 hours"])
+
+    def test_setitem_with_expansion_dataframe_column(self, data, full_indexer): ...
+        full_indexer(df)
+
+    def test_setitem_with_expansion_dataframe_column(self, data, full_indexer): ...
+        full_indexer(df)
+
+    def test_setitem_with_tz(self, tz, indexer_sli): ...
+        indexer_sli(ser)
+        indexer_sli(ser)
+
+    def test_setitem_with_tz_dst(self, indexer_sli): ...
+        indexer_sli(ser)
+        indexer_sli(ser)
+
+    def test_slice_datetime_locs(self, box, kind, tz_aware_fixture): ...
+        box(2010, 1, 1)
+        box(2010, 1, 2)
+
+    def test_slice_float(self, idx, frame_or_series, indexer_sl): ...
+        indexer_sl(s)
+        indexer_sl(s2)
+        indexer_sl(s2)
+
+    def test_slice_integer_frame_getitem(self, index_func): ...
+        index_func(5)
+
+    def test_slice_invalid_str_with_timedeltaindex(
+        self, tdi, frame_or_series, indexer_sl
+    ): ...
+        frame_or_series(range(10), index=tdi)
+        indexer_sl(obj)
+        indexer_sl(obj)
+        indexer_sl(obj)
+        indexer_sl(obj)
+
+    def test_slice_non_numeric(self, index_func, idx, frame_or_series, indexer_sli): ...
+        index_func(5)
+        indexer_sli(s)
+        indexer_sli(s)
+
+    def test_slice_with_zero_step_raises(index, frame_or_series, indexer_sli): ...
+        frame_or_series(np.arange(len(index)), index=index)
+        indexer_sli(ts)
+
+    def test_slice_with_zero_step_raises(self, indexer_sl): ...
+        indexer_sl(ser)
+
+    def test_spss_labelled_num(path_klass, datapath): ...
+        path_klass(datapath("io", "data", "spss", "labelled-num.sav"))
+        datapath("io", "data", "spss", "labelled-num.sav")
+
+    def test_spss_labelled_num_na(datapath): ...
+        datapath("io", "data", "spss", "labelled-num-na.sav")
+
+    def test_spss_labelled_str(datapath): ...
+        datapath("io", "data", "spss", "labelled-str.sav")
+
+    def test_spss_umlauts(datapath): ...
+        datapath("io", "data", "spss", "umlauts.sav")
+
+    def test_spss_usecols(datapath): ...
+        datapath("io", "data", "spss", "labelled-num.sav")
+
+    def test_str_cat_name(index_or_series, other): ...
+        other(values)
+
+    def test_str_cat_wrong_dtype_raises(box, data): ...
+        box(data)
+
+    def test_str_output(datapath, parser): ...
+        datapath("io", "data", "xml", "books.xml")
+
+    def test_string_dtype(self, data, skipna, klass, nullable_string_dtype): ...
+        klass(data, dtype=nullable_string_dtype)
+
+    def test_string_method(method): ...
+        method(s.str)
+
+    def test_string_repr_encoding(self, datapath): ...
+        datapath("io", "parser", "data", "unicode_series.csv")
+
+    def test_string_with_unit(constructor, value, unit, expectation): ...
+        constructor(value, unit=unit)
+
+    def test_stylesheet_buffered_reader(datapath, mode): ...
+        datapath("io", "data", "xml", "cta_rail_lines.kml")
+        datapath("io", "data", "xml", "flatten_doc.xsl")
+
+    def test_stylesheet_buffered_reader(datapath, mode): ...
+        datapath("io", "data", "xml", "row_field_output.xsl")
+
+    def test_stylesheet_file(datapath): ...
+        datapath("io", "data", "xml", "cta_rail_lines.kml")
+        datapath("io", "data", "xml", "flatten_doc.xsl")
+
+    def test_stylesheet_file_close(datapath, mode): ...
+        datapath("io", "data", "xml", "cta_rail_lines.kml")
+        datapath("io", "data", "xml", "flatten_doc.xsl")
+
+    def test_stylesheet_file_like(datapath, mode): ...
+        datapath("io", "data", "xml", "cta_rail_lines.kml")
+        datapath("io", "data", "xml", "flatten_doc.xsl")
+
+    def test_stylesheet_file_like(datapath, mode): ...
+        datapath("io", "data", "xml", "row_field_output.xsl")
+
+    def test_stylesheet_io(datapath, mode): ...
+        datapath("io", "data", "xml", "cta_rail_lines.kml")
+        datapath("io", "data", "xml", "flatten_doc.xsl")
+
+    def test_stylesheet_io(datapath, mode): ...
+        datapath("io", "data", "xml", "row_field_output.xsl")
+
+    def test_sub_n_gt_1_offsets(self, offset, kwd_name, n): ...
+        offset(n, normalize=False, **kwds)
+
+    def test_sub_n_gt_1_offsets(self, offset, kwd_name, n, normalize): ...
+        offset(n, normalize, **kwds)
+        offset(n, normalize, **kwds)
+
+    def test_sub_n_gt_1_ticks(self, tick_classes, n): ...
+        tick_classes(n)
+        tick_classes(n)
+
+    def test_sub_n_gt_1_ticks(self, tick_classes, n): ...
+        tick_classes(n)
+        tick_classes(n)
+
+    def test_take(self, data, na_value, na_cmp): ...
+        na_cmp(result[1], na_value)
+
+    def test_take_empty(self, data, na_value, na_cmp): ...
+        na_cmp(result[0], na_value)
+
+    def test_take_fill_value_ints(self, klass): ...
+        klass([1, 2, 3], name="xxx")
+        klass([2, 1, 3], name="xxx")
+        klass([2, 1, 3], name="xxx")
+
+    def test_take_preserve_name(self, klass): ...
+        klass([1, 2, 3, 4], name="foo")
+
+    def test_td64_mean(self, box): ...
+        box(tdarr)
+
+    def test_td64arr_addsub_anchored_offset_arraylike(self, obox, box_with_array): ...
+        obox([offsets.MonthEnd(), offsets.Day(n=2)])
+
+    def test_td_add_datetimelike_scalar(self, op): ...
+        op(td, datetime(2016, 1, 1))
+        op(td, Timestamp("2018-01-12 18:09"))
+        op(td, np.datetime64("2018-01-12"))
+        op(td, NaT)
+
+    def test_td_add_mixed_timedeltalike_object_dtype_array(self, op): ...
+        op(arr, Timedelta("1D"))
+
+    def test_td_add_offset(self, op): ...
+        op(td, offsets.Hour(6))
+
+    def test_td_add_pytimedelta(self, op): ...
+        op(td, timedelta(days=9))
+
+    def test_td_add_td(self, op): ...
+        op(td, Timedelta(days=10))
+
+    def test_td_add_timedelta64(self, op): ...
+        op(td, np.timedelta64(-4, "D"))
+
+    def test_td_add_timedeltalike_object_dtype_array(self, op): ...
+        op(arr, Timedelta("1D"))
+
+    def test_td_construction_with_np_dtypes(npdtype, item): ...
+        npdtype(1)
+
+    def test_td_mul_nan(self, op, nan): ...
+        op(td, nan)
+
+    def test_td_mul_nat(self, op, td_nat): ...
+        op(td, td_nat)
+
+    def test_td_mul_scalar(self, op): ...
+        op(td, 2)
+        op(td, 1.5)
+        op(td, np.nan)
+        op(-1, td)
+        op(-1.0, td)
+        op(td, Timestamp(2016, 1, 2))
+        op(td, td)
+
+    def test_td_op_timedelta_timedeltalike_array(self, op, arr): ...
+        op(arr, Timedelta("1D"))
+
+    def test_tick_add_sub(cls, n, m): ...
+        cls(n)
+        cls(m)
+        cls(n + m)
+        cls(n - m)
+
+    def test_tick_addition(kls, expected): ...
+        kls(3)
+
+    def test_tick_division(cls): ...
+        cls(10)
+        cls(5)
+        cls(5)
+        cls(5)
+
+    def test_tick_equalities(cls): ...
+        cls()
+        cls(1)
+
+    def test_tick_equality(cls, n, m): ...
+        cls(n)
+        cls(m)
+        cls(n)
+        cls(n)
+        cls(-n)
+
+    def test_tick_offset(cls): ...
+        cls()
+
+    def test_tick_rdiv(cls): ...
+        cls(10)
+
+    def test_tick_zero(cls1, cls2): ...
+        cls1(0)
+        cls1(0)
+        cls1(0)
+        cls1(2)
+        cls1(2)
+        cls1(2)
+        cls1(2)
+        cls2(0)
+        cls2(0)
+        cls2(0)
+
+    def test_timdelta_add_timestamp_interval(klass): ...
+        klass(0)
+
+    def test_time_rule_series(series, compare_func, roll_func, kwargs, minp): ...
+        compare_func(trunc_series)
+
+    def test_timedelta64_equal_timedelta_supported_ops(self, op): ...
+        op(ser, nptd)
+        op(ser, pytd)
+
+    def test_timedelta_fillna(self, frame_or_series): ...
+        frame_or_series(td)
+        frame_or_series(expected)
+        frame_or_series(expected)
+        frame_or_series(expected)
+        frame_or_series(expected)
+        frame_or_series(expected)
+        frame_or_series(td)
+        frame_or_series(expected)
+        frame_or_series(td)
+        frame_or_series(expected)
+
+    def test_timedelta_methods(method): ...
+        method(s.dt)
+
+    def test_timedelta_to_json(self, as_object, date_format, timedelta_typ): ...
+        timedelta_typ(days=1)
+        timedelta_typ(days=2)
+
+    def test_to_csv_single_level_multi_index(self, ind, expected, klass): ...
+        klass(pd.Series([1], ind, name="data"))
+
+    def test_to_datetime_cache(self, utc, format, constructor): ...
+        constructor(test_dates)
+
+    def test_to_datetime_dta_tz(self, klass): ...
+        klass(dti)
+        klass(expected)
+
+    def test_to_datetime_utc_true(
+        self, cache, init_constructor, end_constructor, test_method
+    ): ...
+        init_constructor(data)
+        end_constructor(expected_data)
+        test_method(result, expected)
+
+    def test_to_dict_box_scalars(self, orient, item_getter): ...
+        item_getter(result, "a", 0)
+        item_getter(result, "b", 0)
+
+    def test_to_html_border(option, result, expected): ...
+        result(df)
+        result(df)
+
+    def test_to_integer_array(values, to_dtype, result_dtype): ...
+        result_dtype()
+        result_dtype()
+
+    def test_to_integer_array_bool(
+        constructor, bool_values, int_values, target_dtype, expected_dtype
+    ): ...
+        constructor(bool_values, dtype=target_dtype)
+
+    def test_to_integer_array_dtype_keyword(constructor): ...
+        constructor([1, 2], dtype="Int8")
+        constructor(np.array([1, 2], dtype="int8"), dtype="Int32")
+
+    def test_to_integer_array_inferred_dtype(constructor): ...
+        constructor(np.array([1, 2], dtype="int8"))
+        constructor(np.array([1, 2], dtype="int32"))
+        constructor([1, 2])
+
+    def test_to_numpy_na_value_numpy_dtype(
+        index_or_series, values, dtype, na_value, expected
+    ): ...
+        index_or_series(values)
+
+    def test_to_timedelta_precision_over_nanos(self, input, expected, func): ...
+        func(input)
+
+    def test_to_timestamp_raises(self, index, frame_or_series): ...
+        frame_or_series(index=index, dtype=object)
+
+    def test_tracemalloc_for_empty(self, table_type, dtype): ...
+        table_type()
+
+    def test_tracemalloc_works(self, table_type, dtype): ...
+        table_type()
+
+    def test_transform_dictlike(axis, float_frame, box): ...
+        box({e: np.abs})
+
+    def test_transform_dictlike(string_series, box): ...
+        box({"foo": np.sqrt, "bar": np.abs})
+
+    def test_transform_numeric_ret(cols, exp, comp_func, agg_func, request): ...
+        comp_func(result, exp)
+
+    def test_transform_passes_args(use_apply, frame_or_series): ...
+        frame_or_series([1])
+
+    def test_transform_reducer_raises(all_reductions, frame_or_series, op_wrapper): ...
+        op_wrapper(all_reductions)
+
+    def test_translate(index_or_series, any_string_dtype): ...
+        index_or_series(
+            ["abcdefg", "abcc", "cdddfg", "cdefggg"], dtype=any_string_dtype
+        )
+        index_or_series(
+            ["cdedefg", "cdee", "edddfg", "edefggg"], dtype=any_string_dtype
+        )
+
+    def test_truncate_decreasing_index(
+        self, before, after, indices, klass, frame_or_series
+    ): ...
+        klass([3, 2, 1, 0])
+        frame_or_series(range(len(idx)), index=idx)
+
+    def test_tz_convert_copy_inplace_mutate(self, copy, frame_or_series): ...
+        frame_or_series(
+            np.arange(0, 5),
+            index=date_range("20131027", periods=5, freq="1H", tz="Europe/Berlin"),
+        )
+        frame_or_series(np.arange(0, 5), index=obj.index.tz_convert("UTC"))
+
+    def test_tz_convert_naive(self, frame_or_series): ...
+        frame_or_series(ts)
+
+    def test_tz_localize_copy_inplace_mutate(self, copy, frame_or_series): ...
+        frame_or_series(
+            np.arange(0, 5), index=date_range("20131027", periods=5, freq="1H", tz=None)
+        )
+        frame_or_series(
+            np.arange(0, 5),
+            index=date_range("20131027", periods=5, freq="1H", tz="UTC"),
+        )
+
+    def test_tz_localize_naive(self, frame_or_series): ...
+        frame_or_series(ts)
+
+    def test_tzaware_data_tznaive_dtype(self, constructor): ...
+        constructor(ts, dtype="M8[ns]")
+
+    def test_ufunc_coercions(self, holder): ...
+        holder([1, 2, 3, 4, 5], name="x")
+
+    def test_ufunc_compat(self, holder): ...
+        holder(np.arange(5, dtype="int64"))
+
+    def test_ufunc_multiple_return_values(self, holder): ...
+        holder([1, 2, 3], name="x")
+
+    def test_ufunc_passes_args(func, arg, expected, request): ...
+        func(df, out=result_inplace)
+        func(df, arg, out=result_inplace)
+
+    def test_ufuncs(ufunc, arr): ...
+        ufunc(arr)
+        ufunc(arr.fill_value)
+        ufunc(np.asarray(arr))
+
+    def test_ufuncs_binary(ufunc): ...
+        ufunc(a, a)
+        ufunc(a._data, a._data)
+        ufunc(s, a)
+        ufunc(a._data, a._data)
+        ufunc(a, arr)
+        ufunc(a._data, arr)
+        ufunc(arr, a)
+        ufunc(arr, a._data)
+        ufunc(a, True)
+        ufunc(a._data, True)
+        ufunc(True, a)
+        ufunc(True, a._data)
+        ufunc(a, "test")
+
+    def test_ufuncs_binary_float(ufunc): ...
+        ufunc(a, a)
+        ufunc(a.astype(float), a.astype(float))
+        ufunc(a, arr)
+        ufunc(a.astype(float), arr)
+        ufunc(arr, a)
+        ufunc(arr, a.astype(float))
+        ufunc(a, 1)
+        ufunc(a.astype(float), 1)
+        ufunc(1, a)
+        ufunc(1, a.astype(float))
+
+    def test_ufuncs_binary_int(ufunc): ...
+        ufunc(a, a)
+        ufunc(a.astype(float), a.astype(float))
+        ufunc(a, arr)
+        ufunc(a.astype(float), arr)
+        ufunc(arr, a)
+        ufunc(arr, a.astype(float))
+        ufunc(a, 1)
+        ufunc(a.astype(float), 1)
+        ufunc(1, a)
+        ufunc(1, a.astype(float))
+
+    def test_ufuncs_single(ufunc): ...
+        ufunc(a)
+        ufunc(a.astype(float))
+        ufunc(s)
+
+    def test_ufuncs_single_float(ufunc): ...
+        ufunc(a)
+        ufunc(a.astype(float))
+        ufunc(s)
+
+    def test_ufuncs_single_float(ufunc): ...
+        ufunc(a)
+        ufunc(a.astype(float))
+        ufunc(s)
+        ufunc(s.astype(float))
+
+    def test_ufuncs_single_int(ufunc): ...
+        ufunc(a)
+        ufunc(a.astype(float))
+        ufunc(s)
+        ufunc(a.astype(float))
+
+    def test_ufuncs_unary(ufunc): ...
+        ufunc(a)
+        ufunc(a._data)
+        ufunc(s)
+        ufunc(a._data)
+
+    def test_uint_index_does_not_convert_to_float64(box): ...
+        box([7606741985629028552, 17876870360202815256])
+
+    def test_unary_op(op, fill_value): ...
+        op(sparray)
+        op(arr)
+        op(fill_value)
+
+    def test_unary_ufunc(ufunc, sparse): ...
+        ufunc(series)
+        ufunc(arr)
+
+    def test_unicode_decode_error(datapath, pickle_file, excols): ...
+        datapath("io", "data", "pickle", pickle_file)
+
+    def test_union3(self, sort, box): ...
+        box(second.values)
+
+    def test_union_base(idx, sort, klass): ...
+        klass(second.values)
+
+    def test_union_different_type_base(self, klass): ...
+        klass(second.values)
+
+    def test_union_duplicate_index_subsets_of_each_other(cls): ...
+        cls([1, 2, 2, 3])
+        cls([3, 3, 4])
+        cls([1, 2, 2, 3, 3, 4])
+
+    def test_union_from_iterables(self, index, klass, sort): ...
+        klass(second.values)
+
+    def test_union_with_duplicate_index_and_non_monotonic(cls): ...
+        cls([1, 0, 0])
+        cls([0, 1])
+        cls([0, 0, 1])
+
+    def test_union_with_duplicate_index_not_subset_and_non_monotonic(cls): ...
+        cls([1, 0, 2])
+        cls([0, 0, 1])
+        cls([0, 0, 1, 2])
+
+    def test_union_with_duplicates(op): ...
+        op([3, 1, 3, 4])
+        op([2, 3, 1, 1])
+        op([3, 3, 1, 1, 4, 2])
+
+    def test_unique(self, data, box, method): ...
+        box(data._from_sequence([data[0], data[0]]))
+        method(duplicated)
+
+    def test_unique(self, table_type, dtype): ...
+        table_type()
+
+    def test_unique(self, table_type, dtype, writable): ...
+        table_type()
+
+    def test_unit_parser(self, unit, np_unit, wrapper): ...
+        wrapper(range(5))
+        wrapper(range(5))
+        wrapper(str_repr)
+        wrapper(str_repr)
+
+    def test_unknown_encoding(datapath, parser): ...
+        datapath("io", "data", "xml", "baby_names.xml")
+
+    def test_unordered_different_order_equal(self, ctor): ...
+        ctor(["a", "b"], categories=["a", "b"], ordered=False)
+        ctor(["a", "b"], categories=["b", "a"], ordered=False)
+        ctor(["a", "b"], categories=["a", "b"], ordered=False)
+        ctor(["b", "a"], categories=["b", "a"], ordered=False)
+        ctor(["a", "a"], categories=["a", "b"], ordered=False)
+        ctor(["b", "b"], categories=["b", "a"], ordered=False)
+        ctor(["a", "a"], categories=["a", "b"], ordered=False)
+        ctor(["a", "b"], categories=["b", "a"], ordered=False)
+
+    def test_unsuppored_hdf_file_error(datapath): ...
+        datapath("io", "data", "legacy_hdf/incompatible_dataset.h5")
+
+    def test_upsample_daily_business_daily(self, simple_period_range_series): ...
+        simple_period_range_series("1/1/2000", "2/1/2000", freq="B")
+        simple_period_range_series("1/1/2000", "2/1/2000")
+
+    def test_utf16_encoding(datapath, parser): ...
+        datapath("io", "data", "xml", "baby_names.xml")
+
+    def test_v12_compat(self, datapath): ...
+        datapath("io", "json", "data")
+
+    def test_validate_any_all_out_keepdims_raises(kwargs, func): ...
+        func(ser, **kwargs)
+
+    def test_validate_ndim(block_maker): ...
+        block_maker(values, placement, ndim=2)
+
+    def test_values_casts_datetimelike_to_object(self, constructor): ...
+        constructor("2000-01-01", periods=10, freq="D")
+
+    def test_vector_resize(
+        self, writable, htable, uniques, dtype, safely_resizes, nvals
+    ): ...
+        htable()
+        uniques()
+
+    def test_vectorized_offset_addition(self, klass): ...
+        klass(
+            [
+                Timestamp("2000-01-15 00:15:00", tz="US/Central"),
+                Timestamp("2000-02-15", tz="US/Central"),
+            ],
+            name="a",
+        )
+        klass(
+            [
+                Timestamp("2000-01-31 00:15:00", tz="US/Central"),
+                Timestamp("2000-02-29", tz="US/Central"),
+            ],
+            name="a",
+        )
+        klass(
+            [
+                Timestamp("2000-01-01 00:15:00", tz="US/Central"),
+                Timestamp("2000-02-01", tz="US/Central"),
+            ],
+            name="a",
+        )
+        klass(
+            [
+                Timestamp("2000-01-15 00:15:00", tz="US/Central"),
+                Timestamp("2000-02-15", tz="US/Central"),
+            ],
+            name="a",
+        )
+
+    def test_vectorized_offset_addition(self, klass): ...
+        klass(
+            [
+                Timestamp("2000-01-15 00:15:00", tz="US/Central"),
+                Timestamp("2000-02-15", tz="US/Central"),
+            ],
+            name="a",
+        )
+        klass(
+            [
+                Timestamp("2000-02-01 00:15:00", tz="US/Central"),
+                Timestamp("2000-03-01", tz="US/Central"),
+            ],
+            name="a",
+        )
+        klass(
+            [
+                Timestamp("2000-01-01 00:15:00", tz="US/Central"),
+                Timestamp("2000-02-01", tz="US/Central"),
+            ],
+            name="a",
+        )
+        klass(
+            [
+                Timestamp("2000-01-15 00:15:00", tz="US/Central"),
+                Timestamp("2000-02-15", tz="US/Central"),
+            ],
+            name="a",
+        )
+
+    def test_view_between_datetimelike(self, first, second, box): ...
+        box(dti)
+
+    def test_weekly_upsample(self, day, target, convention, simple_period_range_series): ...
+        simple_period_range_series("1/1/1990", "12/31/1995", freq=freq)
+
+    def test_where(self, klass): ...
+        klass(cond)
+        klass(cond)
+
+    def test_where(self, klass): ...
+        klass(cond)
+        klass(cond)
+
+    def test_where(self, klass, index): ...
+        klass(cond)
+        klass(cond)
+
+    def test_where(self, klass, simple_index): ...
+        klass(cond)
+        klass(cond)
+
+    def test_where(self, simple_index, klass): ...
+        klass(cond)
+        klass(cond)
+
+    def test_where_array_like(klass): ...
+        klass(cond)
+
+    def test_where_array_like(self, klass): ...
+        klass(cond)
+
+    def test_where_array_like(self, klass): ...
+        klass(cond)
+        klass(cond)
+
+    def test_where_categorical(klass): ...
+        klass(
+            pd.Categorical(["A", "A", "B", "B", np.nan], categories=["A", "B", "C"]),
+            dtype="category",
+        )
+        klass(["A", "A", "B", "B", "C"], dtype="category")
+
+    def test_where_copies_with_noop(frame_or_series): ...
+        frame_or_series([1, 2, 3, 4])
+
+    def test_where_string_dtype(frame_or_series): ...
+        frame_or_series(
+            ["a", "b", "c", "d"], index=["id1", "id2", "id3", "id4"], dtype=StringDtype()
+        )
+        frame_or_series(
+            ["b", "c"], index=["id2", "id3"], dtype=StringDtype()
+        )
+        frame_or_series(
+            [pd.NA, "b", "c", pd.NA],
+            index=["id1", "id2", "id3", "id4"],
+            dtype=StringDtype(),
+        )
+
+    def test_wikipedia_states_multiindex(self, datapath): ...
+        datapath("io", "data", "html", "wikipedia_states.html")
+
+    def test_wikipedia_states_table(self, datapath): ...
+        datapath("io", "data", "html", "wikipedia_states.html")
+
+    def test_with_list(op): ...
+        op(arr, [0, 1])
+        op(arr, SparseArray([0, 1]))
+
+    def test_works_on_valid_markup(self, datapath): ...
+        datapath("io", "data", "html", "valid_markup.html")
+
+    def test_wrong_encoding(datapath, parser): ...
+        datapath("io", "data", "xml", "baby_names.xml")
+
+    def test_wrong_encoding_option_lxml(datapath, parser, encoding): ...
+        datapath("io", "data", "xml", "baby_names.xml")
+
+    def test_wrong_parser(datapath): ...
+        datapath("io", "data", "xml", "books.xml")
+
+    def test_xs_level0(self, indexer, four_level_index_dataframe): ...
+        indexer(df)
+
+    def test_xs_level_multiple(self, indexer, four_level_index_dataframe): ...
+        indexer(df)
+
+    def test_xs_named_levels_axis_eq_1(self, key, level, exp_arr, exp_index): ...
+        exp_arr(arr)
+
+    def test_zero_variables(datapath): ...
+        datapath("io", "sas", "data", "zero_variables.sas7bdat")
+
+    def time_frame_op_with_scalar(self, dtype, scalar, op): ...
+        op(self.df, scalar)
+
+    def time_op_different_blocks(self, op, shape): ...
+        op(self.left, self.right)
+
+    def time_op_same_blocks(self, op, shape): ...
+        op(self.left, self.left)
+
+    def tips_df(datapath): ...
+        datapath("io", "data", "csv", "tips.csv")
+
+    def tips_file(datapath): ...
+        datapath("io", "data", "csv", "tips.csv")
+
+    def transform_str_or_callable(self, func) -> FrameOrSeriesUnion: ...
+        func(obj, *args, **kwargs)
+
+    def update(
+        self,
+        other,
+        join: str = "left",
+        overwrite: bool = True,
+        filter_func=None,
+        errors: str = "ignore",
+    ) -> None: ...
+        filter_func(this)
+
+    def where(
+        self,
+        cond: Callable,
+        value: str,
+        other: str | None = None,
+        subset: Subset | None = None,
+        **kwargs,
+    ) -> Styler: ...
+        cond(val, **kwargs)
+
+    def wrap(func: F) -> F: ...
+        func(pkey, *args, **kwds)
+
+    def wrap_function(func): ...
+        func(*args, **kwargs)
+

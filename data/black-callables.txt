@@ -1,0 +1,147 @@
+Could not parse path /Users/pradeepkumars/Programs/black/tests/data/python2.py: Syntax Error @ 7:40.
+Incomplete input. Encountered '`', but expected ';', or 'NEWLINE'.
+
+print >> sys.stderr , "Look, a repr:", `sys`
+                                       ^
+
+
+PROGRESS: Parsed 20/139 files...
+Could not parse path /Users/pradeepkumars/Programs/black/tests/data/pep_572_do_not_remove_parens.py: Syntax Error @ 5:8.
+Incomplete input. Encountered ':', but expected ')'.
+
+del (a := [1])
+       ^
+
+
+Could not parse path /Users/pradeepkumars/Programs/black/tests/data/async_as_identifier.py: Syntax Error @ 27:5.
+Incomplete input. Encountered 'async', but expected 'NAME'.
+
+def async():
+    ^
+
+
+Could not parse path /Users/pradeepkumars/Programs/black/tests/data/pep_572.py: Syntax Error @ 1:4.
+Incomplete input. Encountered ':', but expected ')'.
+
+(a := 1)
+   ^
+
+
+PROGRESS: Parsed 40/139 files...
+Could not parse path /Users/pradeepkumars/Programs/black/tests/data/python39.py: Syntax Error @ 3:19.
+Incomplete input. Encountered '[', but expected '(', or 'NEWLINE'.
+
+@relaxed_decorator[0]
+                  ^
+
+
+Could not parse path /Users/pradeepkumars/Programs/black/tests/data/pep_572_remove_parens.py: Syntax Error @ 1:9.
+Incomplete input. Encountered ':', but expected ')'.
+
+if (foo := 0):
+        ^
+
+
+Could not parse path /Users/pradeepkumars/Programs/black/tests/data/numeric_literals_py2.py: Syntax Error @ 3:14.
+Incomplete input. Encountered 'L', but expected ';', or 'NEWLINE'.
+
+x = 123456789L
+             ^
+
+
+Could not parse path /Users/pradeepkumars/Programs/black/tests/data/pep_570.py: Syntax Error @ 1:28.
+Incomplete input. Encountered '/', but expected ')'.
+
+def positional_only_arg(a, /):
+                           ^
+
+
+PROGRESS: Parsed 60/139 files...
+Could not parse path /Users/pradeepkumars/Programs/black/tests/data/python38.py: Syntax Error @ 6:22.
+Incomplete input. Encountered '*', but expected ';', or 'NEWLINE'.
+
+    return "value1", *my_list
+                     ^
+
+
+Could not parse path /Users/pradeepkumars/Programs/black/tests/data/python37.py: Syntax Error @ 5:19.
+Incomplete input. Encountered 'async', but expected ')'.
+
+    return (i * 2 async for i in arange(42))
+                  ^
+
+
+Could not parse path /Users/pradeepkumars/Programs/black/tests/data/python2_unicode_literals.py: Syntax Error @ 8:3.
+Incomplete input. Encountered '"hello"', but expected ';', or 'NEWLINE'.
+
+Ur"hello"
+  ^
+
+
+PROGRESS: Parsed 80/139 files...
+Could not parse path /Users/pradeepkumars/Programs/black/tests/data/decorators.py: Syntax Error @ 156:13.
+Incomplete input. Encountered '(', but expected 'NEWLINE'.
+
+@decorator()()
+            ^
+
+
+PROGRESS: Parsed 100/139 files...
+PROGRESS: Parsed 120/139 files...
+Callables with 0 parameters: 3
+    Callable[[], Text]
+    Callable[[], Text]
+    Callable[[], bytes]
+Callables with 1 parameters: 2
+    Callable[[LN], None]
+    Callable[[int], bool]
+Callables with 2 parameters: 0
+Callables with 3 parameters: 0
+Callables with 4 parameters: 0
+Callables with 5 parameters: 0
+Callables with arbitrary parameters: 9
+    Callable
+    Callable
+    Callable
+    Callable[
+        ..., List[SomeClass]
+    ]
+    Callable[..., List[SomeClass]]
+    Callable[..., List[SomeClass]]
+    Callable[..., List[SomeClass]]
+    Callable[..., List[SomeClass]]
+    Callable[..., List[SomeClass]]
+Callback Protocols: 0
+Functions with callback parameters: 7
+    def capture_stdout(command: Callable, *args: Any, **kwargs: Any) -> Generator: ...
+        command(*args, **kwargs)
+
+    def detect_encoding(readline: Callable[[], bytes]) -> Tuple[str, List[bytes]]: ...
+        readline()
+
+    def dont_increase_indentation(split_func: Transformer) -> Transformer: ...
+        split_func(line, features)
+
+    def generate_tokens(
+        readline: Callable[[], Text], grammar: Optional[Grammar] = None
+    ) -> Iterator[GoodTokenInfo]: ...
+        readline()
+
+    def handle_PermissionError(
+        func: Callable, path: Path, exc: Tuple[Any, Any, Any]
+    ) -> None: ...
+        func(path)
+
+    def run_transformer(
+        line: Line,
+        transform: Transformer,
+        mode: Mode,
+        features: Collection[Feature],
+        *,
+        line_str: str = "",
+    ) -> List[Line]: ...
+        transform(line, features)
+
+    def tokenize_loop(readline, tokeneater): ...
+        tokeneater(*token_info)
+

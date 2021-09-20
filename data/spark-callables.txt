@@ -208,3 +208,531 @@ Callback Protocols: 4
     PandasVariadicScalarToScalarFunction - def __call__(self, *_: DataFrameOrSeriesLike) -> SeriesLike: pass
     PandasVariadicScalarToStructFunction - def __call__(self, *_: DataFrameOrSeriesLike) -> DataFrameLike: pass
     UserDefinedFunctionLike - def __call__(self, *_: ColumnOrName) -> Column: pass
+Functions with callback parameters: 133
+    def __array_ufunc__(self, ufunc: Callable, method: str, *inputs: Any, **kwargs: Any): ...
+        ufunc(
+                psdf._psser_for(this_label), psdf._psser_for(that_label), **kwargs
+            )
+        ufunc(*arguments, **kwargs)
+
+    def __init__(self, prev, func): ...
+        func(t, prev_func(t, rdd))
+
+    def __init__(self, prev, func, preservesPartitioning=False, isFromBarrier=False): ...
+        func(split, prev_func(split, iterator))
+
+    def __init__(self, target, *args, **kwargs): ...
+        target(*a, **k)
+
+    def _apply_as_series_or_frame(
+        self, func: Callable[[Column], Column]
+    ) -> Union["Series", "DataFrame"]: ...
+        func(agg_column.spark.column)
+
+    def _apply_as_series_or_frame(
+        self, func: Callable[[Column], Column]
+    ) -> Union["Series", "DataFrame"]: ...
+        func(psser.spark.column)
+
+    def _apply_series_op(self, op, should_resolve: bool = False): ...
+        op(self)
+
+    def _apply_series_op(self, op, should_resolve: bool = False): ...
+        op(self._psser_for(label))
+
+    def _apply_series_op(self, op, should_resolve: bool = False, numeric_only: bool = False): ...
+        op(column.groupby(self._groupkeys))
+
+    def _apply_series_op(self, op, should_resolve: bool = False, numeric_only: bool = False): ...
+        op(self)
+
+    def _createForTesting(cls, sparkContext): ...
+        cls(sparkContext, jtestHive)
+
+    def _create_from_java_class(cls, java_class, *args): ...
+        cls(java_obj)
+
+    def _create_lambda(f): ...
+        f(*args)
+
+    def _cum(self, func, skipna, part_cols=(), ascending=True): ...
+        func(self.spark.column)
+        func(self.spark.column)
+
+    def _disallow_nanoseconds(self, f): ...
+        f(freq="ns")
+        f(freq="N")
+
+    def _do_python_join(rdd, other, numPartitions, dispatch): ...
+        dispatch(x.__iter__())
+
+    def _from_java(cls, java_stage): ...
+        cls()
+
+    def _from_java(cls, java_stage): ...
+        cls(bestModel=bestModel,
+                       validationMetrics=validationMetrics)
+
+    def _from_java(cls, java_stage): ...
+        cls(bestModel=bestModel, avgMetrics=avgMetrics)
+
+    def _from_java(cls, java_stage): ...
+        cls(estimator=estimator, estimatorParamMaps=epms, evaluator=evaluator,
+                       numFolds=numFolds, seed=seed, parallelism=parallelism,
+                       collectSubModels=collectSubModels, foldCol=foldCol)
+
+    def _from_java(cls, java_stage): ...
+        cls(estimator=estimator, estimatorParamMaps=epms, evaluator=evaluator,
+                       trainRatio=trainRatio, seed=seed, parallelism=parallelism,
+                       collectSubModels=collectSubModels)
+
+    def _from_java(cls, java_stage): ...
+        cls(featuresCol=featuresCol, labelCol=labelCol, predictionCol=predictionCol,
+                       rawPredictionCol=rawPredictionCol, classifier=classifier,
+                       parallelism=parallelism)
+
+    def _from_java(cls, java_stage): ...
+        cls(models=models)
+
+    def _from_java(cls, java_stage): ...
+        cls(py_stages)
+
+    def _make_pandas_df_builder_func(
+        psdf: DataFrame,
+        func: Callable[[pd.DataFrame], pd.DataFrame],
+        return_schema: StructType,
+        retain_index: bool,
+    ) -> Callable[[pd.DataFrame], pd.DataFrame]: ...
+        func(pdf)
+
+    def _reduce_for_stat_function(self, sfun, only_numeric): ...
+        sfun(F.nanvl(scol, F.lit(None)))
+        sfun(scol)
+
+    def _regression_train_wrapper(train_func, modelClass, data, initial_weights): ...
+        train_func(
+            data, _convert_to_vector(initial_weights))
+        train_func(data, _convert_to_vector(initial_weights))
+        modelClass(weights, intercept, numFeatures, numClasses)
+        modelClass(weights, intercept)
+
+    def _run_test_onevsrest(self, LogisticRegressionCls): ...
+        LogisticRegressionCls(maxIter=5, regParam=0.01)
+
+    def _run_test_save_load_nested_estimator(self, LogisticRegressionCls): ...
+        LogisticRegressionCls()
+        LogisticRegressionCls()
+        LogisticRegressionCls()
+
+    def _run_test_save_load_nested_estimator(self, LogisticRegressionCls): ...
+        LogisticRegressionCls()
+        LogisticRegressionCls()
+        LogisticRegressionCls()
+
+    def _run_test_save_load_pipeline_estimator(self, LogisticRegressionCls): ...
+        LogisticRegressionCls()
+        LogisticRegressionCls()
+        LogisticRegressionCls()
+
+    def _run_test_save_load_pipeline_estimator(self, LogisticRegressionCls): ...
+        LogisticRegressionCls()
+        LogisticRegressionCls()
+        LogisticRegressionCls()
+
+    def _run_test_save_load_simple_estimator(self, LogisticRegressionCls, evaluatorCls): ...
+        LogisticRegressionCls()
+        evaluatorCls()
+
+    def _run_test_save_load_simple_estimator(self, LogisticRegressionCls, evaluatorCls): ...
+        LogisticRegressionCls()
+        evaluatorCls()
+
+    def _run_test_save_load_trained_model(self, LogisticRegressionCls, LogisticRegressionModelCls): ...
+        LogisticRegressionCls()
+
+    def _run_test_save_load_trained_model(self, LogisticRegressionCls, LogisticRegressionModelCls): ...
+        LogisticRegressionCls()
+
+    def _serialize_to_jvm(self, data, serializer, reader_func, createRDDServer): ...
+        reader_func(tempFile.name)
+        createRDDServer()
+
+    def _test_func(self, input, func, expected, sort=False, input2=None): ...
+        func(input_stream, input_stream2)
+        func(input_stream)
+
+    def _to_list(sc, cols, converter=None): ...
+        converter(c)
+
+    def _to_seq(sc, cols, converter=None): ...
+        converter(c)
+
+    def _transform_batch(
+        self, func: Callable[..., pd.Series], return_type: Optional[Union[SeriesType, ScalarType]]
+    ) -> "Series": ...
+        func(first_series(pdf))
+
+    def _wrap_function(class_name, function_name, func, logger): ...
+        func(*args, **kwargs)
+        func(*args, **kwargs)
+
+    def _wrap_missing_function(class_name, function_name, func, original, logger): ...
+        func(*args, **kwargs)
+
+    def _wrapped(self): ...
+        self(*args)
+
+    def aggregate(self, zeroValue, seqOp, combOp): ...
+        seqOp(acc, obj)
+
+    def aggregateByKey(self, zeroValue, seqFunc, combFunc, numPartitions=None,
+                       partitionFunc=portable_hash): ...
+        seqFunc(createZero(), v)
+
+    def align_diff_frames(
+        resolve_func: Callable[["DataFrame", List[Tuple], List[Tuple]], Tuple["Series", Tuple]],
+        this: "DataFrame",
+        that: "DataFrame",
+        fillna: bool = True,
+        how: str = "full",
+        preserve_order_column: bool = False,
+    ) -> "DataFrame": ...
+        resolve_func(combined, this_columns_to_apply, that_columns_to_apply)
+
+    def apply(
+        self,
+        func: Callable[[SparkDataFrame], SparkDataFrame],
+        index_col: Optional[Union[str, List[str]]] = None,
+    ) -> "ps.DataFrame": ...
+        func(self.frame(index_col))
+
+    def apply(self, func: Callable[[Column], Column]) -> "ps.Series": ...
+        func(self._data.spark.column)
+
+    def apply_batch(
+        self, func: Callable[..., pd.DataFrame], args: Tuple = (), **kwds: Any
+    ) -> "DataFrame": ...
+        func(pdf)
+
+    def area(self, x=None, y=None, **kwds): ...
+        self(kind="area", **kwds)
+        self(kind="area", x=x, y=y, **kwds)
+
+    def assert_runs_only_one_job_stage_and_task(job_group_name, f): ...
+        f()
+
+    def bar(self, x=None, y=None, **kwds): ...
+        self(kind="bar", **kwds)
+        self(kind="bar", x=x, y=y, **kwds)
+
+    def barh(self, x=None, y=None, **kwargs): ...
+        self(kind="barh", **kwargs)
+        self(kind="barh", x=x, y=y, **kwargs)
+
+    def box(self, **kwds): ...
+        self(kind="box", **kwds)
+
+    def callJavaFunc(sc, func, *args): ...
+        func(*args)
+
+    def callJavaFunc(sc, func, *args): ...
+        func(*args)
+
+    def call_in_background(f, *args): ...
+        f(*args)
+
+    def capture_sql_exception(f): ...
+        f(*a, **kw)
+
+    def chain(f, g): ...
+        f(*a)
+        g(f(*a))
+
+    def check(op, right_psdf=right_psdf, right_pdf=right_pdf): ...
+        op(left_psdf, right_psdf)
+        op(left_pdf, right_pdf)
+
+    def check(op, right_psdf=right_psdf, right_pdf=right_pdf): ...
+        op(left_psdf, right_psdf)
+        op(left_pdf, right_pdf)
+
+    def check_even_distribution(self, vs, bin_function): ...
+        bin_function(x)
+
+    def check_func(self, func): ...
+        func(self.ks_start_date)
+        func(self.pd_start_date)
+
+    def check_func_on_series(self, func, pser, almost=False): ...
+        func(ps.from_pandas(pser))
+        func(pser)
+
+    def column_op(f): ...
+        f(self.spark.column, *args)
+
+    def compare_allow_null(
+        left: spark.Column,
+        right: spark.Column,
+        comp: Callable[[spark.Column, spark.Column], spark.Column],
+    ) -> spark.Column: ...
+        comp(left, right)
+
+    def compare_both(f=None, almost=True): ...
+        f(self, self.pdf)
+        f(self, self.psdf)
+
+    def compare_disallow_null(
+        left: spark.Column,
+        right: spark.Column,
+        comp: Callable[[spark.Column, spark.Column], spark.Column],
+    ) -> spark.Column: ...
+        comp(left, right)
+
+    def compare_null_first(
+        left: spark.Column,
+        right: spark.Column,
+        comp: Callable[[spark.Column, spark.Column], spark.Column],
+    ) -> spark.Column: ...
+        comp(left, right)
+
+    def compare_null_last(
+        left: spark.Column,
+        right: spark.Column,
+        comp: Callable[[spark.Column, spark.Column], spark.Column],
+    ) -> spark.Column: ...
+        comp(left, right)
+
+    def createStream(ssc, kinesisAppName, streamName, endpointUrl, regionName,
+                     initialPositionInStream, checkpointInterval,
+                     storageLevel=StorageLevel.MEMORY_AND_DISK_2,
+                     awsAccessKeyId=None, awsSecretKey=None, decoder=utf8_decoder,
+                     stsAssumeRoleArn=None, stsSessionName=None, stsExternalId=None): ...
+        decoder(v)
+
+    def do_termination_test(self, terminator): ...
+        terminator(daemon)
+
+    def eventually(condition, timeout=30.0, catch_assertions=False): ...
+        condition()
+        condition()
+
+    def fail_on_stopiteration(f): ...
+        f(*args, **kwargs)
+
+    def flatMapValues(self, f): ...
+        f(kv[1])
+
+    def flatMapValues(self, f): ...
+        f(kv[1])
+
+    def fold(self, zeroValue, op): ...
+        op(acc, obj)
+
+    def foldByKey(self, zeroValue, func, numPartitions=None, partitionFunc=portable_hash): ...
+        func(createZero(), v)
+
+    def foreach(self, f): ...
+        f(x)
+
+    def foreach(self, f): ...
+        f(x)
+
+    def foreachPartition(self, f): ...
+        f(it)
+
+    def gen_mapper_fn(mapper): ...
+        mapper(x)
+
+    def gen_names(v, curnames): ...
+        v(name)
+
+    def getActiveOrCreate(cls, checkpointPath, setupFunc): ...
+        setupFunc()
+
+    def getOrCreate(cls, checkpointPath, setupFunc): ...
+        setupFunc()
+
+    def getOrCreate(cls, sc): ...
+        cls(sc, sparkSession, jsqlContext)
+
+    def groupBy(self, f, numPartitions=None, partitionFunc=portable_hash): ...
+        f(x)
+
+    def hist(self, bins=10, **kwds): ...
+        self(kind="hist", bins=bins, **kwds)
+
+    def inheritable_thread_target(f): ...
+        f(*args, **kwargs)
+
+    def instance(cls): ...
+        cls()
+
+    def kde(self, bw_method=None, ind=None, **kwargs): ...
+        self(kind="kde", bw_method=bw_method, ind=ind, **kwargs)
+
+    def keyBy(self, f): ...
+        f(x)
+
+    def keyword_only(func): ...
+        func(self, **kwargs)
+
+    def lazy_property(fn: Callable[[Any], Any]) -> property: ...
+        fn(self)
+
+    def line(self, x=None, y=None, **kwargs): ...
+        self(kind="line", x=x, y=y, **kwargs)
+
+    def load(cls, sc, path): ...
+        cls(java_model)
+
+    def load(cls, sc, path): ...
+        cls(wrapper)
+
+    def mapPartitions(self, f, preservesPartitioning=False): ...
+        f(iterator)
+
+    def mapPartitions(self, f, preservesPartitioning=False): ...
+        f(iterator)
+
+    def mapPartitions(self, f, preservesPartitioning=False): ...
+        f(iterator)
+
+    def mapValues(self, f): ...
+        f(kv[1])
+
+    def mapValues(self, f): ...
+        f(kv[1])
+
+    def partitionBy(self, numPartitions, partitionFunc=portable_hash): ...
+        partitionFunc(k)
+
+    def pie(self, **kwds): ...
+        self(kind="pie", **kwds)
+        self(kind="pie", **kwds)
+
+    def pipe(self, func: Callable[..., Any], *args: Any, **kwargs: Any) -> Any: ...
+        func(*args, **kwargs)
+        func(self, *args, **kwargs)
+
+    def poll(func): ...
+        func()
+
+    def read_csv(
+        path: str,
+        sep: str = ",",
+        header: Union[str, int, None] = "infer",
+        names: Optional[Union[str, List[str]]] = None,
+        index_col: Optional[Union[str, List[str]]] = None,
+        usecols: Optional[Union[List[int], List[str], Callable[[str], bool]]] = None,
+        squeeze: bool = False,
+        mangle_dupe_cols: bool = True,
+        dtype: Optional[Union[str, Dtype, Dict[str, Union[str, Dtype]]]] = None,
+        nrows: Optional[int] = None,
+        parse_dates: bool = False,
+        quotechar: Optional[str] = None,
+        escapechar: Optional[str] = None,
+        comment: Optional[str] = None,
+        **options: Any
+    ) -> Union[DataFrame, Series]: ...
+        usecols(label)
+
+    def reduceByKeyAndWindow(self, func, invFunc, windowDuration, slideDuration=None,
+                             numPartitions=None, filterFunc=None): ...
+        invFunc(kv[0], kv[1])
+
+    def reduceByKeyLocally(self, func): ...
+        func(m[k], v)
+        func(m1[k], v)
+
+    def rename(
+        self,
+        mapper=None,
+        index=None,
+        columns=None,
+        axis="index",
+        inplace=False,
+        level=None,
+        errors="ignore",
+    ) -> Optional["DataFrame"]: ...
+        mapper(x)
+
+    def repartitionAndSortWithinPartitions(self, numPartitions=None, partitionFunc=portable_hash,
+                                           ascending=True, keyfunc=lambda x: x): ...
+        keyfunc(k_v[0])
+
+    def scatter(self, x, y, **kwds): ...
+        self(kind="scatter", x=x, y=y, **kwds)
+
+    def sortByKey(self, ascending=True, numPartitions=None, keyfunc=lambda x: x): ...
+        keyfunc(kv[0])
+        keyfunc(k)
+
+    def toArray(f): ...
+        f(sc, *a, **kw)
+
+    def transform(self, dstreams, transformFunc): ...
+        transformFunc(rdds)
+
+    def transform(self, func): ...
+        func(self)
+
+    def transform(self, func, axis=0, *args, **kwargs) -> "DataFrame": ...
+        func(c, *args, **kwargs)
+
+    def transform(self, func: Callable[[Column], Column]) -> Union["ps.Series", "ps.Index"]: ...
+        func(self._data.spark.column)
+
+    def transform_batch(
+        self, func: Callable[..., Union[pd.DataFrame, pd.Series]], *args: Any, **kwargs: Any
+    ) -> Union["DataFrame", "Series"]: ...
+        func(pdf)
+        func(pdf)
+
+    def transform_batch(
+        self, func: Callable[..., pd.Series], *args: Any, **kwargs: Any
+    ) -> "Series": ...
+        func(c, *args, **kwargs)
+
+    def treeAggregate(self, zeroValue, seqOp, combOp, depth=2): ...
+        seqOp(acc, obj)
+
+    def treeReduce(self, f, depth=2): ...
+        f(x[0], y[0])
+
+    def updateStateByKey(self, updateFunc, numPartitions=None, initialRDD=None): ...
+        updateFunc(vs_s[0], vs_s[1])
+
+    def validate_arguments_and_invoke_function(
+        pobj: Union[pd.DataFrame, pd.Series],
+        pandas_on_spark_func: Callable,
+        pandas_func: Callable,
+        input_args: Dict,
+    ) -> Any: ...
+        pandas_func(**args)
+
+    def wrap_bounded_window_agg_pandas_udf(f, return_type): ...
+        f(*series_slices)
+
+    def wrap_cogrouped_map_pandas_udf(f, return_type, argspec): ...
+        f(left_df, right_df)
+        f(key, left_df, right_df)
+
+    def wrap_grouped_agg_pandas_udf(f, return_type): ...
+        f(*series)
+
+    def wrap_grouped_map_pandas_udf(f, return_type, argspec): ...
+        f(pd.concat(value_series, axis=1))
+        f(key, pd.concat(value_series, axis=1))
+
+    def wrap_pandas_iter_udf(f, return_type): ...
+        f(*iterator)
+
+    def wrap_scalar_pandas_udf(f, return_type): ...
+        f(*a)
+
+    def wrap_udf(f, return_type): ...
+        f(*a)
+        f(*a)
+
+    def wrap_unbounded_window_agg_pandas_udf(f, return_type): ...
+        f(*series)

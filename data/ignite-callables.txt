@@ -1,0 +1,1073 @@
+PROGRESS: Parsed 20/259 files...
+PROGRESS: Parsed 40/259 files...
+PROGRESS: Parsed 60/259 files...
+PROGRESS: Parsed 80/259 files...
+PROGRESS: Parsed 100/259 files...
+PROGRESS: Parsed 120/259 files...
+PROGRESS: Parsed 140/259 files...
+PROGRESS: Parsed 160/259 files...
+PROGRESS: Parsed 180/259 files...
+PROGRESS: Parsed 200/259 files...
+PROGRESS: Parsed 220/259 files...
+PROGRESS: Parsed 240/259 files...
+Callables with 0 parameters: 0
+Callables with 1 parameters: 0
+Callables with 2 parameters: 1
+    Callable[[torch.Tensor, torch.Tensor], float]
+Callables with 3 parameters: 0
+Callables with 4 parameters: 0
+Callables with 5 parameters: 0
+Callables with arbitrary parameters: 172
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+    Callable
+Callback Protocols: 0
+Functions with callback parameters: 203
+    def __init__(
+        self,
+        block,
+        layers,
+        num_classes=1000,
+        zero_init_residual=False,
+        groups=1,
+        width_per_group=64,
+        replace_stride_with_dilation=None,
+        norm_layer=None,
+        bit_width=8,
+    ): ...
+        norm_layer(self.inplanes)
+
+    def __init__(
+        self,
+        inplanes,
+        planes,
+        stride=1,
+        downsample=None,
+        groups=1,
+        base_width=64,
+        dilation=1,
+        norm_layer=None,
+        bit_width=8,
+    ): ...
+        norm_layer(planes)
+        norm_layer(planes)
+
+    def __init__(
+        self,
+        inplanes,
+        planes,
+        stride=1,
+        downsample=None,
+        groups=1,
+        base_width=64,
+        dilation=1,
+        norm_layer=None,
+        bit_width=8,
+    ): ...
+        norm_layer(width)
+        norm_layer(width)
+        norm_layer(planes * self.expansion)
+
+    def __init__(self, model: nn.Module, reduction: Callable = torch.norm, tag: Optional[str] = None): ...
+        reduction(torch.ones(4, 2))
+
+    def __init__(self, num_iters=100, prepare_batch=None): ...
+        prepare_batch(batch, device=device, non_blocking=False)
+
+    def _apply_op(
+        self, tensor: torch.Tensor, device: torch.device, fn: Callable, *args: Any, **kwargs: Any
+    ) -> torch.Tensor: ...
+        fn(tensor, *args, **kwargs)
+
+    def _create_wrapped_handler(self, handler: Callable, event: EventEnum) -> Callable: ...
+        handler(*args, **kwargs)
+
+    def _dist_worker_task_fn(
+        local_rank: int,
+        backend: str,
+        fn: Callable,
+        args: Tuple,
+        kw_dict: Mapping,
+        world_size: int,
+        nprocs_per_node: int,
+        node_rank: int,
+        master_addr: Optional[str],
+        master_port: Optional[str],
+        init_method: str,
+        kw: Any,
+    ) -> None: ...
+        fn(local_rank, *args, **kw_dict)
+
+    def _dist_worker_task_fn(
+        local_rank: int, backend: str, fn: Callable, args: Tuple, kwargs_dict: Mapping
+    ) -> None: ...
+        fn(local_rank, *args, **kwargs_dict)
+
+    def _dist_worker_task_fn(backend: str, fn: Callable, args: Tuple, kwargs_dict: Mapping) -> None: ...
+        fn(model.get_local_rank(), *args, **kwargs_dict)
+
+    def _do_manual_all_reduce(self, tensor: torch.Tensor, op: Any) -> torch.Tensor: ...
+        op(res, dim=0)
+
+    def _get_fake_optimizer(
+        optimizer_cls: Optional[Union[Type[Optimizer], Type[torch.optim.SGD]]] = None, **kwargs: Any
+    ) -> Union[Optimizer, torch.optim.SGD]: ...
+        optimizer_cls([t], **kwargs)
+
+    def _handler_wrapper(self, handler: Callable, event_name: Any, event_filter: Callable) -> Callable: ...
+        handler(*args, **kwargs)
+        event_filter(self, event)
+
+    def _hvd_task_with_init(func, args): ...
+        func(*args)
+
+    def _log_lr_and_loss(self, trainer: Engine, output_transform: Callable, smooth_f: float, diverge_th: float) -> None: ...
+        output_transform(output)
+
+    def _make_layer(self, block, planes, blocks, stride=1, dilate=False, bit_width=8): ...
+        block(
+                self.inplanes,
+                planes,
+                stride,
+                downsample,
+                self.groups,
+                self.base_width,
+                previous_dilation,
+                norm_layer,
+                bit_width=bit_width,
+            )
+        block(
+                self.inplanes,
+                planes,
+                groups=self.groups,
+                base_width=self.base_width,
+                dilation=self.dilation,
+                norm_layer=norm_layer,
+                bit_width=bit_width,
+            )
+
+    def _one_rank_only(func: Callable) -> Callable: ...
+        func(*args, **kwargs)
+
+    def _save_func(self, checkpoint: Mapping, path: str, func: Callable, rank: int = 0) -> None: ...
+        func(checkpoint, path, **self.kwargs)
+        func(checkpoint, tmp_file, **self.kwargs)
+
+    def _test(composed_metric, metric_name, compute_true_value_fn): ...
+        compute_true_value_fn(np_y_pred, np_y)
+
+    def _test(composed_metric, metric_name, compute_true_value_fn): ...
+        compute_true_value_fn(np_y_pred, np_y)
+
+    def _test(event_name, event_attr): ...
+        event_name(once=once)
+
+    def _test(event_name, event_attr, every, true_num_calls): ...
+        event_name(every=every)
+        event_name(every=every)
+
+    def _test(event_name, event_attr, true_num_calls): ...
+        event_name(event_filter=custom_event_filter)
+
+    def _test(event_name, event_attr, true_num_calls): ...
+        event_name(event_filter=custom_event_filter)
+
+    def _test(ignite_metric, sklearn_metic, sklearn_args, index, num_classes=5): ...
+        sklearn_metic(
+            y.view(-1).numpy(), y_pred.view(-1, num_classes).argmax(dim=1).numpy(), **sklearn_args
+        )
+
+    def _test(metric_cls, shape, true_result_fn, metric_device, tol=1e-5): ...
+        metric_cls(output_transform=lambda output: output[1], device=metric_device)
+        metric_cls(output_transform=lambda output: output[1], device=metric_device)
+        true_result_fn(custom_variable)
+        true_result_fn(custom_variable)
+
+    def _test(metric_cls, true_result_fn): ...
+        metric_cls(output_transform=lambda output: output[1])
+        metric_cls(output_transform=lambda output: output[1])
+        true_result_fn(custom_variable)
+        true_result_fn(custom_variable)
+
+    def _test(scheduler_cls, **scheduler_kwargs): ...
+        scheduler_cls(**scheduler_kwargs)
+
+    def _test(torch_lr_scheduler_cls, **kwargs): ...
+        torch_lr_scheduler_cls(optimizer=optimizer1, **kwargs)
+        torch_lr_scheduler_cls(optimizer=optimizer2, **kwargs)
+        torch_lr_scheduler_cls(optimizer=optimizer3, **kwargs)
+
+    def _test_resume_random_dataloader_from_epoch(device, _setup_sampler, sampler_type=None): ...
+        _setup_sampler(sampler_type, num_iters, total_batch_size)
+        _setup_sampler(sampler_type, num_iters, total_batch_size)
+
+    def _test_resume_random_dataloader_from_iter(device, _setup_sampler, sampler_type=None): ...
+        _setup_sampler(sampler_type, num_iters, total_batch_size)
+        _setup_sampler(sampler_type, num_iters, total_batch_size)
+
+    def _test_setup_common_training_handlers(
+        dirname,
+        device,
+        rank=0,
+        local_rank=0,
+        distributed=False,
+        lr_scheduler=None,
+        save_handler=None,
+        output_transform=lambda loss: loss,
+    ): ...
+        output_transform(loss)
+
+    def _test_setup_logging(
+        setup_logging_fn,
+        kwargs_dict,
+        output_handler_cls,
+        opt_params_handler_cls,
+        with_eval=True,
+        with_optim=True,
+        as_class=False,
+        log_every_iters=1,
+    ): ...
+        setup_logging_fn(**kwargs_dict)
+
+    def _xla_template_worker_task(index, fn, args): ...
+        fn(index, *args)
+
+    def apply_to_type(
+        x: Union[Any, collections.Sequence, collections.Mapping, str, bytes],
+        input_type: Union[Type, Tuple[Type[Any], Any]],
+        func: Callable,
+    ) -> Union[Any, collections.Sequence, collections.Mapping, str, bytes]: ...
+        func(x)
+
+    def create_evaluator(model, metrics, config, tag="val"): ...
+        model(input_ids, attention_mask, token_type_ids)
+
+    def create_evaluator(model, metrics, config, tag="val"): ...
+        model(x)
+
+    def create_evaluator(model, metrics, config, with_clearml, tag="val"): ...
+        model(x)
+
+    def create_supervised_tbptt_trainer(
+        model: nn.Module,
+        optimizer: Optimizer,
+        loss_fn: nn.Module,
+        tbtt_step: int,
+        dim: int = 0,
+        device: Optional[str] = None,
+        non_blocking: bool = False,
+        prepare_batch: Callable = _prepare_batch,
+    ) -> Engine: ...
+        model(x_t)
+        model(x_t, hidden)
+        loss_fn(y_pred_t, y_t)
+        prepare_batch(batch_t, device=device, non_blocking=non_blocking)
+
+    def create_trainer(model, optimizer, criterion, lr_scheduler, config): ...
+        model(x)
+        criterion(y_pred, y)
+
+    def create_trainer(model, optimizer, criterion, lr_scheduler, train_sampler, config, logger): ...
+        model(input_ids, attention_mask, token_type_ids)
+        criterion(y_pred, labels)
+
+    def create_trainer(model, optimizer, criterion, lr_scheduler, train_sampler, config, logger): ...
+        model(x)
+        criterion(y_pred, y)
+
+    def create_trainer(model, optimizer, criterion, lr_scheduler, train_sampler, config, logger): ...
+        model(x)
+        criterion(y_pred, y)
+
+    def create_trainer(model, optimizer, criterion, train_sampler, config, logger): ...
+        model(x)
+        criterion(y_pred, y)
+
+    def create_trainer(model, optimizer, criterion, train_sampler, config, logger, with_clearml): ...
+        model(x)
+        criterion(y_pred, y)
+
+    def decorated(fun): ...
+        fun(*args, **kwargs)
+
+    def decorator(func: F) -> F: ...
+        func(*args, **kwargs)
+
+    def get_train_val_loaders(
+        root_path: str,
+        train_transforms: Callable,
+        val_transforms: Callable,
+        batch_size: int = 16,
+        num_workers: int = 8,
+        val_batch_size: Optional[int] = None,
+        limit_train_num_samples: Optional[int] = None,
+        limit_val_num_samples: Optional[int] = None,
+    ) -> Tuple[DataLoader, DataLoader, DataLoader]: ...
+        train_transforms(image=sample)
+        val_transforms(image=sample)
+
+    def keep_random_state(func: Callable) -> Callable: ...
+        func(*args, **kwargs)
+
+    def make_grid(
+        batch_img: torch.Tensor,
+        batch_preds: torch.Tensor,
+        img_denormalize_fn: Callable,
+        batch_gt: Optional[torch.Tensor] = None,
+    ): ...
+        img_denormalize_fn(img)
+
+    def make_grid(batch_img, batch_mask, img_denormalize_fn, batch_gt_mask=None): ...
+        img_denormalize_fn(img)
+
+    def reinit__is_reduced(func: Callable) -> Callable: ...
+        func(self, *args, **kwargs)
+
+    def run(self, func: Callable, *args: Any, **kwargs: Any) -> None: ...
+        func(local_rank, *args, **kwargs)
+
+    def select_action(model, observation): ...
+        model(observation)
+
+    def select_action(model, observation): ...
+        model(state)
+
+    def simulate_values(  # type: ignore[override]
+        cls,
+        num_events: int,
+        schedulers: List[ParamScheduler],
+        durations: List[int],
+        param_names: Optional[Union[List[str], Tuple[str]]] = None,
+    ) -> List[List[int]]: ...
+        cls(schedulers=schedulers, save_history=False, durations=durations)
+
+    def simulate_values(  # type: ignore[override]
+        cls, num_events: int, lr_scheduler: _LRScheduler, **kwargs: Any
+    ) -> List[List[int]]: ...
+        cls(save_history=False, lr_scheduler=lr_scheduler, **kwargs)
+
+    def simulate_values(cls, num_events: int, **scheduler_kwargs: Any) -> List[List[int]]: ...
+        cls(optimizer=_get_fake_optimizer(), save_history=False, **scheduler_kwargs)
+
+    def simulate_values(cls, num_events: int, schedulers: List[_LRScheduler], **kwargs: Any) -> List[List[int]]: ...
+        cls(schedulers=schedulers, **kwargs)
+
+    def submit(self, fn: Callable, **kwargs: Any) -> "_DummyFuture": ...
+        fn(**kwargs)
+
+    def supervised_evaluation_step(
+        model: torch.nn.Module,
+        device: Optional[Union[str, torch.device]] = None,
+        non_blocking: bool = False,
+        prepare_batch: Callable = _prepare_batch,
+        output_transform: Callable = lambda x, y, y_pred: (y_pred, y),
+    ) -> Callable: ...
+        model(x)
+        prepare_batch(batch, device=device, non_blocking=non_blocking)
+        output_transform(x, y, y_pred)
+
+    def supervised_evaluation_step_amp(
+        model: torch.nn.Module,
+        device: Optional[Union[str, torch.device]] = None,
+        non_blocking: bool = False,
+        prepare_batch: Callable = _prepare_batch,
+        output_transform: Callable = lambda x, y, y_pred: (y_pred, y),
+    ) -> Callable: ...
+        model(x)
+        prepare_batch(batch, device=device, non_blocking=non_blocking)
+        output_transform(x, y, y_pred)
+
+    def supervised_training_step(
+        model: torch.nn.Module,
+        optimizer: torch.optim.Optimizer,
+        loss_fn: Union[Callable, torch.nn.Module],
+        device: Optional[Union[str, torch.device]] = None,
+        non_blocking: bool = False,
+        prepare_batch: Callable = _prepare_batch,
+        output_transform: Callable = lambda x, y, y_pred, loss: loss.item(),
+    ) -> Callable: ...
+        model(x)
+        loss_fn(y_pred, y)
+        prepare_batch(batch, device=device, non_blocking=non_blocking)
+        output_transform(x, y, y_pred, loss)
+
+    def supervised_training_step_amp(
+        model: torch.nn.Module,
+        optimizer: torch.optim.Optimizer,
+        loss_fn: Union[Callable, torch.nn.Module],
+        device: Optional[Union[str, torch.device]] = None,
+        non_blocking: bool = False,
+        prepare_batch: Callable = _prepare_batch,
+        output_transform: Callable = lambda x, y, y_pred, loss: loss.item(),
+        scaler: Optional["torch.cuda.amp.GradScaler"] = None,
+    ) -> Callable: ...
+        model(x)
+        loss_fn(y_pred, y)
+        prepare_batch(batch, device=device, non_blocking=non_blocking)
+        output_transform(x, y, y_pred, loss)
+
+    def supervised_training_step_apex(
+        model: torch.nn.Module,
+        optimizer: torch.optim.Optimizer,
+        loss_fn: Union[Callable, torch.nn.Module],
+        device: Optional[Union[str, torch.device]] = None,
+        non_blocking: bool = False,
+        prepare_batch: Callable = _prepare_batch,
+        output_transform: Callable = lambda x, y, y_pred, loss: loss.item(),
+    ) -> Callable: ...
+        model(x)
+        loss_fn(y_pred, y)
+        prepare_batch(batch, device=device, non_blocking=non_blocking)
+        output_transform(x, y, y_pred, loss)
+
+    def supervised_training_step_tpu(
+        model: torch.nn.Module,
+        optimizer: torch.optim.Optimizer,
+        loss_fn: Union[Callable, torch.nn.Module],
+        device: Optional[Union[str, torch.device]] = None,
+        non_blocking: bool = False,
+        prepare_batch: Callable = _prepare_batch,
+        output_transform: Callable = lambda x, y, y_pred, loss: loss.item(),
+    ) -> Callable: ...
+        model(x)
+        loss_fn(y_pred, y)
+        prepare_batch(batch, device=device, non_blocking=non_blocking)
+        output_transform(x, y, y_pred, loss)
+
+    def test__hvd_dist_model_create_dist_1(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test__hvd_dist_model_create_from_backend_dist, ("horovod", "cpu"), np=4)
+
+    def test__hvd_dist_model_create_dist_2(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test__hvd_dist_model_create_from_context_dist, ("horovod", "cpu"), np=4)
+
+    def test__hvd_dist_model_create_dist_cuda_1(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test__hvd_dist_model_create_from_backend_dist, ("horovod", "cuda"), np=torch.cuda.device_count())
+
+    def test__hvd_dist_model_create_dist_cuda_2(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test__hvd_dist_model_create_from_context_dist, ("horovod", "cuda"), np=torch.cuda.device_count())
+
+    def test__hvd_dist_model_create_no_dist(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test__hvd_dist_model_create_from_backend_no_dist, ("horovod", "cpu"), np=1)
+        gloo_hvd_executor(_test__hvd_dist_model_create_from_context_no_dist, ("horovod", "cpu"), np=1)
+
+    def test__hvd_dist_model_create_no_dist_cuda(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test__hvd_dist_model_create_from_backend_no_dist, ("horovod", "cuda"), np=1)
+        gloo_hvd_executor(_test__hvd_dist_model_create_from_context_no_dist, ("horovod", "cuda"), np=1)
+
+    def test__hvd_dist_model_warning_index_less_localrank(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test__hvd_dist_model_warning_index_less_localrank, (), np=torch.cuda.device_count())
+
+    def test__native_dist_model_create_dist_gloo_1(init_method, get_fixed_dirname, local_rank, world_size): ...
+        get_fixed_dirname('native_dist_model_create_dist_gloo_1')
+
+    def test__native_dist_model_create_dist_nccl_1(init_method, get_fixed_dirname, local_rank, world_size): ...
+        get_fixed_dirname('native_dist_model_create_dist_nccl_1')
+
+    def test__native_dist_model_init_method_is_not_none(world_size, local_rank, get_fixed_dirname): ...
+        get_fixed_dirname('native_dist_model_init_method_is_not_none')
+
+    def test__xla_dist_model_create_from_context_in_child_proc(xmp_executor): ...
+        xmp_executor(_test__xla_dist_model_create_from_context_in_child_proc, args=(), nprocs=n)
+
+    def test_auto_methods_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_auto_dataloader, args=(np, np, 1), np=np, do_init=True)
+        gloo_hvd_executor(_test_auto_dataloader, args=(np, np, 10, 10), np=np, do_init=True)
+        gloo_hvd_executor(_test_auto_dataloader, args=(np, np, 1, 1, "WeightedRandomSampler"), np=np, do_init=True)
+        gloo_hvd_executor(_test_auto_model_optimizer, args=(np, device), np=np, do_init=True)
+
+    def test_auto_methods_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_auto_methods_xla, args=(n,), nprocs=n)
+
+    def test_create_lr_scheduler_with_warmup_with_real_model(dummy_model_factory): ...
+        dummy_model_factory(with_grads=False, with_frozen_layer=False)
+
+    def test_distrib_gloo_cpu_or_gpu(distributed_context_single_node_gloo, get_rank_zero_dirname): ...
+        get_rank_zero_dirname()
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(
+            _test_distrib_binary_input, (device,), np=nproc, do_init=True,
+        )
+        gloo_hvd_executor(
+            _test_distrib_integration_binary_input, (device,), np=nproc, do_init=True,
+        )
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_binary_and_multilabel_inputs, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_integration_binary_input, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_binary_and_multilabel_inputs, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_integration_binary_input, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_compute, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_integration, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_compute, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_integration, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_compute, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_integration, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_compute, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_integration, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_compute, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_integration, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_compute, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_integration, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_compute, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_integration, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_compute, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_integration, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_compute, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_integration, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_compute, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_integration, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_compute, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_integration, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_compute, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_integration, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_compute, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_integration, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_compute_on_criterion, (device, y_test_1(), y_test_2()), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_accumulator_device, (device, y_test_1()), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_integration, (None,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_integration, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_integration, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_integration, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_integration, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_integration, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_integration, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_accumulator_device, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_integration, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_accumulator_device, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_integration, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_accumulator_device, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_integration, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_accumulator_device, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_integration, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_accumulator_device, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_integration, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_accumulator_device, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_integration, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_metrics_on_diff_devices, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_integration_multiclass, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_integration_multilabel, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_accumulator_device, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_integration_multilabel, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_integration_multiclass, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_integration_multilabel, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_accumulator_device, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_multilabel_accumulator_device, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_multiclass_images, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_accumulator_device, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_multilabel_input_NHW, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_integration_multiclass, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_integration_multilabel, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_accumulator_device, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_integration_list_of_tensors_or_numbers, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_on_output, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_on_metric, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_accumulator_device, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_sync_all_reduce_decorator, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_invalid_sync_all_reduce, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_variable_accumulation, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_average, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_geom_average, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_integration, (device,), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_distrib_accumulator_device, (device,), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_frequency_with_engine, (None, 0.8, 1), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_frequency_with_engine, (None, 0.8, 10), np=nproc, do_init=True)
+
+    def test_distrib_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_integration_multiclass, (device, True), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_integration_multiclass, (device, False), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_integration_multilabel, (device, True), np=nproc, do_init=True)
+        gloo_hvd_executor(_test_integration_multilabel, (device, False), np=nproc, do_init=True)
+
+    def test_distrib_nccl_gpu(distributed_context_single_node_nccl, get_rank_zero_dirname): ...
+        get_rank_zero_dirname()
+
+    def test_distrib_single_device_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_log_lr_and_loss_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_single_device_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_save_model_optimizer_lr_scheduler_with_state_dict_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_single_device_xla_nprocs(xmp_executor, dirname): ...
+        xmp_executor(_test_tpu_saves_to_cpu_nprocs, args=(dirname,), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_distrib_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_distrib_xla_nprocs, args=(), nprocs=n)
+
+    def test_grads_hist_frozen_layers(dummy_model_factory): ...
+        dummy_model_factory(with_grads=True, with_frozen_layer=True)
+
+    def test_grads_hist_frozen_layers(dummy_model_factory): ...
+        dummy_model_factory(with_grads=True, with_frozen_layer=True)
+
+    def test_grads_hist_handler(dummy_model_factory): ...
+        dummy_model_factory(with_grads=True, with_frozen_layer=False)
+
+    def test_grads_hist_handler(dummy_model_factory): ...
+        dummy_model_factory(with_grads=True, with_frozen_layer=False)
+
+    def test_grads_scalar_handler(dummy_model_factory, norm_mock): ...
+        dummy_model_factory(with_grads=True, with_frozen_layer=False)
+
+    def test_grads_scalar_handler(dummy_model_factory, norm_mock): ...
+        dummy_model_factory(with_grads=True, with_frozen_layer=False)
+
+    def test_grads_scalar_handler(dummy_model_factory, norm_mock): ...
+        dummy_model_factory(with_grads=True, with_frozen_layer=False)
+
+    def test_grads_scalar_handler_frozen_layers(dummy_model_factory, norm_mock): ...
+        dummy_model_factory(with_grads=True, with_frozen_layer=True)
+
+    def test_grads_scalar_handler_frozen_layers(dummy_model_factory, norm_mock): ...
+        dummy_model_factory(with_grads=True, with_frozen_layer=True)
+
+    def test_grads_scalar_handler_frozen_layers(dummy_model_factory, norm_mock): ...
+        dummy_model_factory(with_grads=True, with_frozen_layer=True)
+
+    def test_idist__model_methods_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib__get_max_length, (device,), np=np, do_init=True)
+
+    def test_idist_all_gather_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_all_gather, (device,), np=np, do_init=True)
+
+    def test_idist_all_gather_xla_in_child_proc(xmp_executor): ...
+        xmp_executor(_test_idist_all_gather_xla_in_child_proc, args=(), nprocs=n)
+
+    def test_idist_all_reduce_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_all_reduce, (device,), np=np, do_init=True)
+
+    def test_idist_all_reduce_xla_in_child_proc(xmp_executor): ...
+        xmp_executor(_test_idist_all_reduce_xla_in_child_proc, args=(), nprocs=n)
+
+    def test_idist_barrier_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_barrier, (device,), np=np, do_init=True)
+
+    def test_idist_barrier_xla_in_child_proc(xmp_executor): ...
+        xmp_executor(_test_idist_barrier_xla_in_child_proc, args=(), nprocs=n)
+
+    def test_idist_broadcast_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_broadcast, (device,), np=np, do_init=True)
+
+    def test_idist_broadcast_xla_in_child_proc(xmp_executor): ...
+        xmp_executor(_test_idist_broadcast_xla_in_child_proc, args=(), nprocs=n)
+
+    def test_idist_methods_in_hvd_context(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_idist_methods_in_hvd_context, ("horovod", device), np=np)
+
+    def test_idist_methods_in_xla_context_in_child_proc(xmp_executor): ...
+        xmp_executor(_test_idist_methods_in_xla_context_in_child_proc, args=(), nprocs=n)
+
+    def test_idist_methods_overhead_hvd(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_idist_methods_overhead, (ok_factor, sync_model), np=np, do_init=True)
+        gloo_hvd_executor(_test_idist_methods_overhead, (ok_factor, sync_model), np=np, do_init=True)
+
+    def test_idist_one_rank_only(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_distrib_one_rank_only, (device,), np=np, do_init=True)
+        gloo_hvd_executor(_test_distrib_one_rank_only_with_engine, (device,), np=np, do_init=True)
+
+    def test_idist_one_rank_only_xla_nprocs(xmp_executor): ...
+        xmp_executor(_test_idist_one_rank_only_xla_nprocs, args=(), nprocs=n)
+
+    def test_idist_parallel_n_procs_native(init_method, backend, get_fixed_dirname, local_rank, world_size): ...
+        get_fixed_dirname('idist_parallel_n_procs_native')
+
+    def test_native_distrib_single_node_launch_tool_gloo(init_method, get_fixed_dirname, local_rank, world_size): ...
+        get_fixed_dirname('native_distrib_single_node_launch_tool_gloo')
+
+    def test_native_distrib_single_node_launch_tool_nccl(init_method, get_fixed_dirname, local_rank, world_size): ...
+        get_fixed_dirname('native_distrib_single_node_launch_tool_nccl')
+
+    def test_sync_as_hvd_inside_gloo_executor(gloo_hvd_executor): ...
+        gloo_hvd_executor(_test_sync_as_hvd, (), np=np)
+
+    def test_sync_as_xla_in_child_proc(xmp_executor): ...
+        xmp_executor(_test_sync_as_xla_in_child_proc, args=(), nprocs=n)
+
+    def test_weights_hist_handler(dummy_model_factory): ...
+        dummy_model_factory(with_grads=True, with_frozen_layer=False)
+
+    def test_weights_hist_handler(dummy_model_factory): ...
+        dummy_model_factory(with_grads=True, with_frozen_layer=False)
+
+    def test_weights_hist_handler_frozen_layers(dummy_model_factory): ...
+        dummy_model_factory(with_grads=True, with_frozen_layer=True)
+
+    def test_weights_hist_handler_frozen_layers(dummy_model_factory): ...
+        dummy_model_factory(with_grads=True, with_frozen_layer=True)
+
+    def test_weights_scalar_handler(dummy_model_factory): ...
+        dummy_model_factory(with_grads=True, with_frozen_layer=False)
+
+    def test_weights_scalar_handler(dummy_model_factory): ...
+        dummy_model_factory(with_grads=True, with_frozen_layer=False)
+
+    def test_weights_scalar_handler(dummy_model_factory): ...
+        dummy_model_factory(with_grads=True, with_frozen_layer=False)
+
+    def test_weights_scalar_handler_frozen_layers(dummy_model_factory): ...
+        dummy_model_factory(with_grads=True, with_frozen_layer=True)
+
+    def test_weights_scalar_handler_frozen_layers(dummy_model_factory): ...
+        dummy_model_factory(with_grads=True, with_frozen_layer=True)
+
+    def test_weights_scalar_handler_frozen_layers(dummy_model_factory): ...
+        dummy_model_factory(with_grads=True, with_frozen_layer=True)
+
+    def wrapper(func: Callable) -> Callable: ...
+        func(self, *args, **kwargs)
+

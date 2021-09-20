@@ -1,4 +1,34 @@
-Callables with 0 parameters: 17
+PROGRESS: Parsed 20/464 files...
+PROGRESS: Parsed 40/464 files...
+PROGRESS: Parsed 60/464 files...
+PROGRESS: Parsed 80/464 files...
+PROGRESS: Parsed 100/464 files...
+PROGRESS: Parsed 120/464 files...
+PROGRESS: Parsed 140/464 files...
+PROGRESS: Parsed 160/464 files...
+PROGRESS: Parsed 180/464 files...
+PROGRESS: Parsed 200/464 files...
+PROGRESS: Parsed 220/464 files...
+PROGRESS: Parsed 240/464 files...
+PROGRESS: Parsed 260/464 files...
+PROGRESS: Parsed 280/464 files...
+PROGRESS: Parsed 300/464 files...
+PROGRESS: Parsed 320/464 files...
+PROGRESS: Parsed 340/464 files...
+PROGRESS: Parsed 360/464 files...
+PROGRESS: Parsed 380/464 files...
+PROGRESS: Parsed 400/464 files...
+PROGRESS: Parsed 420/464 files...
+Could not parse path /Users/pradeepkumars/Programs/mypy/test-data/unit/lib-stub/blocker.pyi: Syntax Error @ 2:3.
+Incomplete input. Encountered 'y', but expected ';', or 'NEWLINE'.
+
+x y
+  ^
+
+
+PROGRESS: Parsed 440/464 files...
+PROGRESS: Parsed 460/464 files...
+Callables with 0 parameters: 29
     Callable[[], Any]
     Callable[[], Instance]
     Callable[[], Instance]
@@ -11,19 +41,36 @@ Callables with 0 parameters: 17
     Callable[[], None]
     Callable[[], None]
     Callable[[], None]
+    Callable[[], None]
+    Callable[[], None]
+    Callable[[], VT]
     Callable[[], Value]
     Callable[[], Value]
     Callable[[], Value]
     Callable[[], Value]
     Callable[[], Value]
-Callables with 1 parameters: 56
+    Callable[[], _T]
+    Callable[[], _T]
+    Callable[[], _T]
+    Callable[[], _T]
+    Callable[[], _T]
+    Callable[[], _T]
+    Callable[[], _T]
+    Callable[[], _T]
+    Callable[[], float]
+Callables with 1 parameters: 78
     Callable[[ActionFunction], ActionFunction]
     Callable[[AnalyzeTypeContext], Type]
     Callable[[AnalyzeTypeContext], Type]
+    Callable[[AnalyzeTypeContext], Type]
+    Callable[[AnyStr],
+                                                             Match[AnyStr]]
     Callable[[Any], Any]
     Callable[[Any], Any]
     Callable[[Any], None]
     Callable[[Any], None]
+    Callable[[AttributeContext], Type]
+    Callable[[AttributeContext], Type]
     Callable[[AttributeContext], Type]
     Callable[[AttributeContext], Type]
     Callable[[AttributeContext], Type]
@@ -41,6 +88,9 @@ Callables with 1 parameters: 56
     Callable[[DataDrivenTestCase], None]
     Callable[[DynamicClassDefContext], None]
     Callable[[DynamicClassDefContext], None]
+    Callable[[FunctionContext], Type]
+    Callable[[FunctionContext], Type]
+    Callable[[FunctionContext], Type]
     Callable[[FunctionContext], Type]
     Callable[[FunctionContext], Type]
     Callable[[FunctionContext], Type]
@@ -53,6 +103,8 @@ Callables with 1 parameters: 56
     Callable[[MethodContext], Type]
     Callable[[MethodContext], Type]
     Callable[[MethodContext], Type]
+    Callable[[MethodContext], Type]
+    Callable[[MethodContext], Type]
     Callable[[MethodSigContext], CallableType]
     Callable[[MethodSigContext], CallableType]
     Callable[[MethodSigContext], CallableType]
@@ -61,21 +113,35 @@ Callables with 1 parameters: 56
     Callable[[ProperType], bool]
     Callable[[RType], str]
     Callable[[Specializer], Specializer]
+    Callable[[SupportsInt],
+                                               int]
+    Callable[[T], None]
+    Callable[[T], None]
     Callable[[TypeVarId], bool]
+    Callable[[Type[_T]], Type[_T]]
     Callable[[Value], None]
     Callable[[Value], Value]
     Callable[[Value], Value]
+    Callable[[_C], _C]
+    Callable[[_C], _C]
+    Callable[[float], int]
+    Callable[[float], int]
+    Callable[[float], int]
+    Callable[[float], int]
     Callable[[int],
                                                          Type]
     Callable[[int],
                                                          Type]
+    Callable[[object], type]
+    Callable[[str], Any]
     Callable[[str], Instance]
     Callable[[str], Instance]
     Callable[[str], Instance]
     Callable[[str], Instance]
     Callable[[str], Optional[List[str]]]
     Callable[[str], bytes]
-Callables with 2 parameters: 20
+    Callable[[type], type]
+Callables with 2 parameters: 26
     Callable[
                 [List[List[Expression]], CallableType],
                 CallableType,
@@ -95,16 +161,476 @@ Callables with 2 parameters: 20
     Callable[[Type, Type], bool]
     Callable[[Type, Type], bool]
     Callable[[Value, int], Value]
+    Callable[[float, float], float]
+    Callable[[int, float], float]
     Callable[[str, Context], Optional[SymbolTableNode]]
+    Callable[[str, List[str]],
+                                                    Iterable[str]]
+    Callable[[str, List[str]], Iterable[str]]
     Callable[[str, T], None]
     Callable[[str, T], None]
     Callable[[str, str], List[str]]
-Callables with 3 parameters: 0
+    Callable[[str, str], None]
+    Callable[[str, str], None]
+Callables with 3 parameters: 1
+    Callable[[Any, str, Tuple[type, BaseException, TracebackType]],
+                                  None]
 Callables with 4 parameters: 2
     Callable[[CallableType, Type, str, Context], None]
     Callable[[CallableType, Type, str, Context], None]
 Callables with 5 parameters: 0
-Callables with arbitrary parameters: 2
+Callables with arbitrary parameters: 8
+    Callable[..., AsyncContextManager[_T]]
+    Callable[..., AsyncIterator[_T]]
+    Callable[..., GeneratorContextManager[_T]]
     Callable[..., Iterator[Case]]
+    Callable[..., Iterator[_T]]
     Callable[..., None]
+    Callable[..., _T]
+    Callable[..., _T]
 Callback Protocols: 0
+Functions with callback parameters: 70
+    async def decorated_host_coroutine(func) -> None: ...
+        func()
+
+    async def plain_host_coroutine(func) -> None: ...
+        func()
+
+    def __init__(self, builtin_type: Callable[[str], Instance]) -> None: ...
+        builtin_type('builtins.unicode')
+
+    def _copy_file(self,
+                   method: Callable[[str, str], None]) -> Tuple[str, str]: ...
+        method(file1, tmpdir2)
+
+    def _daemonize_cb(func: Callable[[], None], log_file: Optional[str] = None) -> int: ...
+        func()
+
+    def _filter_suite(suite, pred): ...
+        pred(test)
+
+    def _find_hook(self, lookup: Callable[[Plugin], T]) -> Optional[T]: ...
+        lookup(plugin)
+
+    def _randbelow(self, n: int, int: Callable[[float], int] = int,
+                   maxsize: int = 1<<BPF,
+                   type: Callable[[object], type] = type,
+                   Method: type = _MethodType,
+                   BuiltinMethod: type = _BuiltinMethodType) -> int: ...
+        int(random() * n)
+        int(s*maxsize)
+        type(self.random)
+        type(getrandbits)
+
+    def _run(main_wrapper: Callable[[TextIO, TextIO], None]) -> Tuple[str, str, int]: ...
+        main_wrapper(stdout, stderr)
+
+    def _test_generator(n: int, func: Any, args: tuple) -> None: ...
+        func(*args)
+
+    def _visit_display(builder: IRBuilder,
+                       items: List[Expression],
+                       constructor_op: Callable[[List[Value], int], Value],
+                       append_op: CFunctionDescription,
+                       extend_op: CFunctionDescription,
+                       line: int,
+                       is_list: bool
+                       ) -> Value: ...
+        constructor_op(initial_items, line)
+        constructor_op(initial_items, line)
+
+    def analyze_descriptor_access(instance_type: Type,
+                                  descriptor_type: Type,
+                                  builtin_type: Callable[[str], Instance],
+                                  msg: MessageBuilder,
+                                  context: Context, *,
+                                  chk: 'mypy.checker.TypeChecker') -> Type: ...
+        builtin_type('builtins.function')
+
+    def any_all_helper(builder: IRBuilder,
+                       gen: GeneratorExpr,
+                       initial_value: Callable[[], Value],
+                       modify: Callable[[Value], Value],
+                       new_value: Callable[[], Value]) -> Value: ...
+        initial_value()
+        modify(builder.accept(gen.left_expr))
+        new_value()
+
+    def apply_all(func: Any, directory: str, extension: str,
+                to_extension: str='', exclude: Tuple[str]=('',),
+                recursive: bool=True, debug: bool=False) -> None: ...
+        func(inner_path,new_path)
+        func(inner_path)
+
+    def apply_function_signature_hook(
+            self, callee: FunctionLike, args: List[Expression],
+            arg_kinds: List[int], context: Context,
+            arg_names: Optional[Sequence[Optional[str]]],
+            signature_hook: Callable[[FunctionSigContext], CallableType]) -> FunctionLike: ...
+        signature_hook(FunctionSigContext(args, sig, context, self.chk))
+
+    def apply_method_signature_hook(
+            self, callee: FunctionLike, args: List[Expression],
+            arg_kinds: List[int], context: Context,
+            arg_names: Optional[Sequence[Optional[str]]], object_type: Type,
+            signature_hook: Callable[[MethodSigContext], CallableType]) -> FunctionLike: ...
+        signature_hook(MethodSigContext(pobject_type, args, sig, context, self.chk))
+
+    def apply_signature_hook(
+            self, callee: FunctionLike, args: List[Expression],
+            arg_kinds: List[int],
+            arg_names: Optional[Sequence[Optional[str]]],
+            hook: Callable[
+                [List[List[Expression]], CallableType],
+                CallableType,
+            ]) -> FunctionLike: ...
+        hook(formal_arg_exprs, callee)
+
+    def are_args_compatible(
+            left: FormalArgument,
+            right: FormalArgument,
+            ignore_pos_arg_names: bool,
+            allow_partial_overlap: bool,
+            is_compat: Callable[[Type, Type], bool]) -> bool: ...
+        is_compat(right.typ, left.typ)
+
+    def assign_if_null(self, target: Register,
+                       get_val: Callable[[], Value], line: int) -> None: ...
+        get_val()
+
+    def bigaddrspacetest(f): ...
+        f(self)
+
+    def build(sources: List[BuildSource],
+              options: Options,
+              alt_lib_path: Optional[str] = None,
+              flush_errors: Optional[Callable[[List[str], bool], None]] = None,
+              fscache: Optional[FileSystemCache] = None,
+              stdout: Optional[TextIO] = None,
+              stderr: Optional[TextIO] = None,
+              extra_plugins: Optional[Sequence[Plugin]] = None,
+              ) -> BuildResult: ...
+        flush_errors(e.messages, serious)
+
+    def check_arg_kinds(arg_kinds: List[int], nodes: List[T], fail: Callable[[str, T], None]) -> None: ...
+        fail("Required positional args may not appear "
+             "after default, named or var args",
+             node)
+        fail("Positional default args may not appear after named or var args", node)
+        fail("Var args may not appear after named or var args", node)
+        fail("A **kwargs argument must be the last argument", node)
+        fail("You may only have one **kwargs argument", node)
+
+    def check_arg_names(names: Sequence[Optional[str]], nodes: List[T], fail: Callable[[str, T], None],
+                        description: str = 'function definition') -> None: ...
+        fail('Duplicate argument "{}" in {}'.format(name, description), node)
+
+    def check_argument_types(self,
+                             arg_types: List[Type],
+                             arg_kinds: List[int],
+                             args: List[Expression],
+                             callee: CallableType,
+                             formal_to_actual: List[List[int]],
+                             context: Context,
+                             messages: Optional[MessageBuilder] = None,
+                             check_arg: Optional[ArgChecker] = None,
+                             object_type: Optional[Type] = None) -> None: ...
+        check_arg(expanded_actual, actual_type, arg_kinds[actual],
+                  callee.arg_types[i],
+                  actual + 1, i + 1, callee, object_type, args[actual], context, messages)
+
+    def check_match(self, filename: AnyStr, pattern: AnyStr,
+                    should_match: int = 1,
+                    fn: Any = fnmatch) -> None: ...
+        fn(filename, pattern)
+        fn(filename, pattern)
+
+    def collect_cases(fn: Callable[..., Iterator[Case]]) -> Callable[..., None]: ...
+        fn(*args, **kwargs)
+
+    def comprehension_helper(builder: IRBuilder,
+                             loop_params: List[Tuple[Lvalue, Expression, List[Expression]]],
+                             gen_inner_stmts: Callable[[], None],
+                             line: int) -> None: ...
+        gen_inner_stmts()
+
+    def copytree(src: str, dst: str, symlinks: bool = False,
+                 ignore: Callable[[str, List[str]], Iterable[str]] = None,
+                 copy_function: Callable[[str, str], None] = copy2,
+                 ignore_dangling_symlinks: bool = False) -> None: ...
+        ignore(src, names)
+        copy_function(srcname, dstname)
+        copy_function(srcname, dstname)
+
+    def decompose_union_helper(self,
+                               obj: Value,
+                               rtype: RUnion,
+                               result_type: RType,
+                               process_item: Callable[[Value], Value],
+                               line: int) -> Value: ...
+        process_item(coerced)
+        process_item(coerced)
+
+    def decorated_host_generator(func) -> Generator[str, None, None]: ...
+        func()
+
+    def decorator(f): ...
+        f(self, maxsize)
+
+    def decorator(func): ...
+        func(*args, **kw)
+
+    def decorator(func): ...
+        func(*args, **kwds)
+
+    def deserialize(
+        cls, info: TypeInfo, data: JsonDict, api: SemanticAnalyzerPluginInterface
+    ) -> 'DataclassAttribute': ...
+        cls(type=typ, info=info, **data)
+
+    def deserialize(cls, data: JsonDict) -> 'TypeAlias': ...
+        cls(target, fullname, line, column, alias_tvars=alias_tvars,
+                   no_args=no_args, normalized=normalized)
+
+    def expand_type_alias(node: TypeAlias, args: List[Type],
+                          fail: MsgCallback, no_args: bool, ctx: Context, *,
+                          unexpanded_type: Optional[Type] = None,
+                          disallow_any: bool = False) -> Type: ...
+        fail('Bad number of arguments for type alias, expected: %s, given: %s'
+             % (exp_len, act_len), ctx)
+
+    def fix_instance(t: Instance, fail: MsgCallback, note: MsgCallback,
+                     disallow_any: bool, python_version: Tuple[int, int],
+                     use_generic_error: bool = False,
+                     unexpanded_type: Optional[Type] = None,) -> None: ...
+        fail('"{}" expects {}, but {} given'.format(
+            t.type.name, s, act), t, code=codes.TYPE_ARG)
+
+    def flip_compat_check(is_compat: Callable[[Type, Type], bool]) -> Callable[[Type, Type], bool]: ...
+        is_compat(right, left)
+
+    def for_loop_helper(builder: IRBuilder, index: Lvalue, expr: Expression,
+                        body_insts: GenFunc, else_insts: Optional[GenFunc],
+                        line: int) -> None: ...
+        body_insts()
+        else_insts()
+
+    def for_loop_helper_with_index(builder: IRBuilder,
+                                   index: Lvalue,
+                                   expr: Expression,
+                                   expr_reg: Value,
+                                   body_insts: Callable[[Value], None], line: int) -> None: ...
+        body_insts(builder.read(for_gen.index_target))
+
+    def from_match(cls, match_obj: Match[str],
+                   non_standard_spec: bool = False) -> 'ConversionSpecifier': ...
+        cls(match.group('key'),
+                   flags='', width='', precision='', type='',
+                   format_spec=match.group('format_spec'),
+                   conversion=match.group('conversion'),
+                   field=match.group('field'))
+        cls(match.group('key'),
+                   flags=match.group('flags') or '', width=match.group('width') or '',
+                   precision=match.group('precision') or '', type=match.group('type') or '',
+                   format_spec=match.group('format_spec'),
+                   conversion=match.group('conversion'),
+                   field=match.group('field'))
+
+    def get_omitted_any(disallow_any: bool, fail: MsgCallback, note: MsgCallback,
+                        orig_type: Type, python_version: Tuple[int, int],
+                        fullname: Optional[str] = None,
+                        unexpanded_type: Optional[Type] = None) -> AnyType: ...
+        fail(message_registry.IMPLICIT_GENERIC_ANY_BUILTIN.format(alternative), typ,
+             code=codes.TYPE_ARG)
+        fail(
+            message_registry.BARE_GENERIC.format(quote_type_string(type_str)),
+            typ,
+            code=codes.TYPE_ARG)
+        note(
+            "Subscripting classes that are not generic at runtime may require "
+            "escaping, see https://mypy.readthedocs.io/en/stable/runtime_troubles.html"
+            "#not-generic-runtime",
+            typ,
+            code=codes.TYPE_ARG)
+
+    def get_target_type(
+        tvar: TypeVarLikeDef,
+        type: ProperType,
+        callable: CallableType,
+        report_incompatible_typevar_value: Callable[[CallableType, Type, str, Context], None],
+        context: Context,
+        skip_unsatisfied: bool
+    ) -> Optional[Type]: ...
+        report_incompatible_typevar_value(callable, type, tvar.name, context)
+        report_incompatible_typevar_value(callable, type, tvar.name, context)
+
+    def linearize_hierarchy(info: TypeInfo,
+                            obj_type: Optional[Callable[[], Instance]] = None) -> List[TypeInfo]: ...
+        obj_type()
+
+    def map_actuals_to_formals(actual_kinds: List[int],
+                               actual_names: Optional[Sequence[Optional[str]]],
+                               formal_kinds: List[int],
+                               formal_names: Sequence[Optional[str]],
+                               actual_arg_type: Callable[[int],
+                                                         Type]) -> List[List[int]]: ...
+        actual_arg_type(ai)
+        actual_arg_type(ai)
+
+    def mock_rename(func: Any) -> Any: ...
+        func(*args, **kwargs)
+
+    def parse_section(prefix: str, template: Options,
+                      set_strict_flags: Callable[[], None],
+                      section: Mapping[str, Any],
+                      config_types: Dict[str, Any],
+                      stderr: TextIO = sys.stderr
+                      ) -> Tuple[Dict[str, object], Dict[str, str]]: ...
+        set_strict_flags()
+
+    def perform_test(func: Callable[[DataDrivenTestCase], None],
+                     builtins_path: str, testcase: DataDrivenTestCase) -> None: ...
+        func(testcase)
+
+    def plain_host_generator(func) -> Generator[str, None, None]: ...
+        func()
+
+    def randrange(self, start: SupportsInt, stop: SupportsInt = None,
+                  step: int = 1, int: Callable[[SupportsInt],
+                                               int] = int) -> int: ...
+        int(start)
+        int(stop)
+        int(step)
+
+    def read_py_file(path: str, read: Callable[[str], bytes],
+                     pyversion: Tuple[int, int]) -> Optional[List[str]]: ...
+        read(path)
+
+    def reap_threads(func): ...
+        func(*args)
+
+    def refine_identity_comparison_expression(self,
+                                              operands: List[Expression],
+                                              operand_types: List[Type],
+                                              chain_indices: List[int],
+                                              narrowable_operand_indices: AbstractSet[int],
+                                              is_valid_target: Callable[[ProperType], bool],
+                                              coerce_only_in_literal_context: bool,
+                                              ) -> Tuple[TypeMap, TypeMap]: ...
+        is_valid_target(get_proper_type(expr_type))
+
+    def refresh_suppressed_submodules(
+            module: str,
+            path: Optional[str],
+            deps: Dict[str, Set[str]],
+            graph: Graph,
+            fscache: FileSystemCache,
+            refresh_file: Callable[[str, str], List[str]]) -> Optional[List[str]]: ...
+        refresh_file(state.id, state.path)
+
+    def retry_on_error(func: Callable[[], Any], max_wait: float = 1.0) -> None: ...
+        func()
+
+    def rmtree(path: str, ignore_errors: bool = False,
+               onerror: Callable[[Any, str, Tuple[type, BaseException, TracebackType]],
+                                  None] = None) -> None: ...
+        onerror(os.path.islink, path, sys.exc_info())
+        onerror(os.listdir, path, sys.exc_info())
+        onerror(os.remove, fullname, sys.exc_info())
+        onerror(os.rmdir, path, sys.exc_info())
+
+    def run(self, test): ...
+        test(result)
+
+    def sequence_from_generator_preallocate_helper(
+            builder: IRBuilder,
+            gen: GeneratorExpr,
+            empty_op_llbuilder: Callable[[Value, int], Value],
+            set_item_op: CFunctionDescription) -> Optional[Value]: ...
+        empty_op_llbuilder(length, gen.line)
+
+    def shortcircuit_helper(self, op: str,
+                            expr_type: RType,
+                            left: Callable[[], Value],
+                            right: Callable[[], Value], line: int) -> Value: ...
+        left()
+        right()
+
+    def shuffle(self, x: List[T],
+                random: Callable[[], float] = None,
+                int: Callable[[float], int] = int) -> None: ...
+        random()
+        int(random() * (i+1))
+
+    def test(setup: Command, command: Command, teardown: Command) -> float: ...
+        setup()
+        command()
+        teardown()
+
+    def test_randbelow_logic(self,
+                             _log: Callable[[int, float], float] = log,
+                             int: Callable[[float], int] = int) -> None: ...
+        _log(n, 2)
+        _log(n, 2)
+        _log(n, 2)
+        int(1.00001 + _log(n, 2))
+        int(1.00001 + _log(n, 2))
+        int(1.00001 + _log(n, 2))
+
+    def test_randbelow_logic(self, _log: Callable[[float, float], float] = log,
+                             int: Callable[[float], int] = int) -> None: ...
+        _log(n, 2)
+        _log(n, 2)
+        _log(n, 2)
+        int(1.00001 + _log(n, 2))
+        int(1.00001 + _log(n, 2))
+        int(1.00001 + _log(n, 2))
+
+    def transform_try_except(builder: IRBuilder,
+                             body: GenFunc,
+                             handlers: Sequence[
+                                 Tuple[Optional[Expression], Optional[Expression], GenFunc]],
+                             else_body: Optional[GenFunc],
+                             line: int) -> None: ...
+        body()
+        else_body()
+
+    def transform_with(builder: IRBuilder,
+                       expr: Expression,
+                       target: Optional[Lvalue],
+                       body: GenFunc,
+                       line: int) -> None: ...
+        body()
+
+    def try_finally_body(
+            builder: IRBuilder,
+            finally_block: BasicBlock,
+            finally_body: GenFunc,
+            ret_reg: Optional[Value],
+            old_exc: Value) -> Tuple[BasicBlock, FinallyNonlocalControl]: ...
+        finally_body()
+
+    def try_finally_try(builder: IRBuilder,
+                        err_handler: BasicBlock,
+                        return_entry: BasicBlock,
+                        main_entry: BasicBlock,
+                        try_body: GenFunc) -> Optional[Register]: ...
+        try_body()
+
+    def tuple_undefined_check_cond(
+            self, rtuple: RTuple, tuple_expr_in_c: str,
+            c_type_compare_val: Callable[[RType], str], compare: str) -> str: ...
+        c_type_compare_val(int_rprimitive)
+        c_type_compare_val(item_type)
+
+    def type_object_type(info: TypeInfo, builtin_type: Callable[[str], Instance]) -> ProperType: ...
+        builtin_type('builtins.type')
+        builtin_type('builtins.function')
+
+    def typed_dict_mapping_overlap(left: Type, right: Type,
+                                   overlapping: Callable[[Type, Type], bool]) -> bool: ...
+        overlapping(key_type, str_type)
+        overlapping(typed.items[k], value_type)
+        overlapping(key_type, str_type)
+        overlapping(typed.items[k], value_type)
+

@@ -1,0 +1,9 @@
+Callables with 0 parameters: 0
+Callables with 1 parameters: 0
+Callables with 2 parameters: 0
+Callables with 3 parameters: 0
+Callables with 4 parameters: 0
+Callables with 5 parameters: 0
+Callables with arbitrary parameters: 0
+Callback Protocols: 0
+Functions with callback parameters: 0

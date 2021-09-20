@@ -1,3 +1,12 @@
+PROGRESS: Parsed 20/184 files...
+PROGRESS: Parsed 40/184 files...
+PROGRESS: Parsed 60/184 files...
+PROGRESS: Parsed 80/184 files...
+PROGRESS: Parsed 100/184 files...
+PROGRESS: Parsed 120/184 files...
+PROGRESS: Parsed 140/184 files...
+PROGRESS: Parsed 160/184 files...
+PROGRESS: Parsed 180/184 files...
 Callables with 0 parameters: 0
 Callables with 1 parameters: 11
     Callable[[int], Union[Sequence[int], int]]
@@ -113,3 +122,426 @@ Callables with arbitrary parameters: 94
     Callable[..., nn.Module]
     Callable[..., nn.Module]
 Callback Protocols: 0
+Functions with callback parameters: 70
+    def __call__(self, object): ...
+        self(key)
+        self(value)
+        self(iter)
+
+    def __init__(
+            self,
+            inverted_residual_setting: List[InvertedResidualConfig],
+            last_channel: int,
+            num_classes: int = 1000,
+            block: Optional[Callable[..., nn.Module]] = None,
+            norm_layer: Optional[Callable[..., nn.Module]] = None,
+            **kwargs: Any
+    ) -> None: ...
+        block(cnf, norm_layer)
+
+    def __init__(
+        self,
+        block: Type[Union[BasicBlock, Bottleneck]],
+        layers: List[int],
+        num_classes: int = 1000,
+        zero_init_residual: bool = False,
+        groups: int = 1,
+        width_per_group: int = 64,
+        replace_stride_with_dilation: Optional[List[bool]] = None,
+        norm_layer: Optional[Callable[..., nn.Module]] = None
+    ) -> None: ...
+        norm_layer(self.inplanes)
+
+    def __init__(
+        self,
+        in_channels: int,
+        ch1x1: int,
+        ch3x3red: int,
+        ch3x3: int,
+        ch5x5red: int,
+        ch5x5: int,
+        pool_proj: int,
+        conv_block: Optional[Callable[..., nn.Module]] = None
+    ) -> None: ...
+        conv_block(in_channels, ch1x1, kernel_size=1)
+        conv_block(in_channels, ch3x3red, kernel_size=1)
+        conv_block(ch3x3red, ch3x3, kernel_size=3, padding=1)
+        conv_block(in_channels, ch5x5red, kernel_size=1)
+        conv_block(ch5x5red, ch5x5, kernel_size=3, padding=1)
+        conv_block(in_channels, pool_proj, kernel_size=1)
+
+    def __init__(
+        self,
+        in_channels: int,
+        channels_7x7: int,
+        conv_block: Optional[Callable[..., nn.Module]] = None
+    ) -> None: ...
+        conv_block(in_channels, 192, kernel_size=1)
+        conv_block(in_channels, c7, kernel_size=1)
+        conv_block(c7, c7, kernel_size=(1, 7), padding=(0, 3))
+        conv_block(c7, 192, kernel_size=(7, 1), padding=(3, 0))
+        conv_block(in_channels, c7, kernel_size=1)
+        conv_block(c7, c7, kernel_size=(7, 1), padding=(3, 0))
+        conv_block(c7, c7, kernel_size=(1, 7), padding=(0, 3))
+        conv_block(c7, c7, kernel_size=(7, 1), padding=(3, 0))
+        conv_block(c7, 192, kernel_size=(1, 7), padding=(0, 3))
+        conv_block(in_channels, 192, kernel_size=1)
+
+    def __init__(
+        self,
+        in_channels: int,
+        conv_block: Optional[Callable[..., nn.Module]] = None
+    ) -> None: ...
+        conv_block(in_channels, 192, kernel_size=1)
+        conv_block(192, 320, kernel_size=3, stride=2)
+        conv_block(in_channels, 192, kernel_size=1)
+        conv_block(192, 192, kernel_size=(1, 7), padding=(0, 3))
+        conv_block(192, 192, kernel_size=(7, 1), padding=(3, 0))
+        conv_block(192, 192, kernel_size=3, stride=2)
+
+    def __init__(
+        self,
+        in_channels: int,
+        conv_block: Optional[Callable[..., nn.Module]] = None
+    ) -> None: ...
+        conv_block(in_channels, 320, kernel_size=1)
+        conv_block(in_channels, 384, kernel_size=1)
+        conv_block(384, 384, kernel_size=(1, 3), padding=(0, 1))
+        conv_block(384, 384, kernel_size=(3, 1), padding=(1, 0))
+        conv_block(in_channels, 448, kernel_size=1)
+        conv_block(448, 384, kernel_size=3, padding=1)
+        conv_block(384, 384, kernel_size=(1, 3), padding=(0, 1))
+        conv_block(384, 384, kernel_size=(3, 1), padding=(1, 0))
+        conv_block(in_channels, 192, kernel_size=1)
+
+    def __init__(
+        self,
+        in_channels: int,
+        conv_block: Optional[Callable[..., nn.Module]] = None
+    ) -> None: ...
+        conv_block(in_channels, 384, kernel_size=3, stride=2)
+        conv_block(in_channels, 64, kernel_size=1)
+        conv_block(64, 96, kernel_size=3, padding=1)
+        conv_block(96, 96, kernel_size=3, stride=2)
+
+    def __init__(
+        self,
+        in_channels: int,
+        num_classes: int,
+        conv_block: Optional[Callable[..., nn.Module]] = None
+    ) -> None: ...
+        conv_block(in_channels, 128, kernel_size=1)
+
+    def __init__(
+        self,
+        in_channels: int,
+        num_classes: int,
+        conv_block: Optional[Callable[..., nn.Module]] = None
+    ) -> None: ...
+        conv_block(in_channels, 128, kernel_size=1)
+        conv_block(128, 768, kernel_size=5)
+
+    def __init__(
+        self,
+        in_channels: int,
+        pool_features: int,
+        conv_block: Optional[Callable[..., nn.Module]] = None
+    ) -> None: ...
+        conv_block(in_channels, 64, kernel_size=1)
+        conv_block(in_channels, 48, kernel_size=1)
+        conv_block(48, 64, kernel_size=5, padding=2)
+        conv_block(in_channels, 64, kernel_size=1)
+        conv_block(64, 96, kernel_size=3, padding=1)
+        conv_block(96, 96, kernel_size=3, padding=1)
+        conv_block(in_channels, pool_features, kernel_size=1)
+
+    def __init__(
+        self,
+        in_planes: int,
+        out_planes: int,
+        kernel_size: int = 3,
+        stride: int = 1,
+        groups: int = 1,
+        norm_layer: Optional[Callable[..., nn.Module]] = None,
+        activation_layer: Optional[Callable[..., nn.Module]] = None,
+        dilation: int = 1,
+    ) -> None: ...
+        norm_layer(out_planes)
+        activation_layer(inplace=True)
+
+    def __init__(
+        self,
+        inp: int,
+        oup: int,
+        stride: int,
+        expand_ratio: int,
+        norm_layer: Optional[Callable[..., nn.Module]] = None
+    ) -> None: ...
+        norm_layer(oup)
+
+    def __init__(
+        self,
+        inplanes: int,
+        planes: int,
+        stride: int = 1,
+        downsample: Optional[nn.Module] = None,
+        groups: int = 1,
+        base_width: int = 64,
+        dilation: int = 1,
+        norm_layer: Optional[Callable[..., nn.Module]] = None
+    ) -> None: ...
+        norm_layer(planes)
+        norm_layer(planes)
+
+    def __init__(
+        self,
+        inplanes: int,
+        planes: int,
+        stride: int = 1,
+        downsample: Optional[nn.Module] = None,
+        groups: int = 1,
+        base_width: int = 64,
+        dilation: int = 1,
+        norm_layer: Optional[Callable[..., nn.Module]] = None
+    ) -> None: ...
+        norm_layer(width)
+        norm_layer(width)
+        norm_layer(planes * self.expansion)
+
+    def __init__(
+        self,
+        num_classes: int = 1000,
+        width_mult: float = 1.0,
+        inverted_residual_setting: Optional[List[List[int]]] = None,
+        round_nearest: int = 8,
+        block: Optional[Callable[..., nn.Module]] = None,
+        norm_layer: Optional[Callable[..., nn.Module]] = None
+    ) -> None: ...
+        block(input_channel, output_channel, stride, expand_ratio=t, norm_layer=norm_layer)
+
+    def __init__(
+        self,
+        stages_repeats: List[int],
+        stages_out_channels: List[int],
+        num_classes: int = 1000,
+        inverted_residual: Callable[..., nn.Module] = InvertedResidual
+    ) -> None: ...
+        inverted_residual(input_channels, output_channels, 2)
+        inverted_residual(output_channels, output_channels, 1)
+
+    def __init__(self, block, conv_makers, layers,
+                 stem, num_classes=400,
+                 zero_init_residual=False): ...
+        stem()
+
+    def __init__(self, cnf: InvertedResidualConfig, norm_layer: Callable[..., nn.Module],
+                 se_layer: Callable[..., nn.Module] = SqueezeExcitation): ...
+        se_layer(cnf.expanded_channels)
+
+    def __init__(self, inplanes, planes, conv_builder, stride=1, downsample=None): ...
+        conv_builder(inplanes, planes, midplanes, stride)
+        conv_builder(planes, planes, midplanes)
+
+    def __init__(self, inplanes, planes, conv_builder, stride=1, downsample=None): ...
+        conv_builder(planes, planes, midplanes, stride)
+
+    def _check_jit_scriptable(nn_module, args, unwrapper=None, skip=False): ...
+        nn_module(*args)
+        unwrapper(script_out)
+
+    def _create_annotation_folder(self, root, name, file_name_fn, num_examples): ...
+        file_name_fn(idx)
+
+    def _helper_boxes_shape(self, func): ...
+        func(a, boxes, output_size=(2, 2))
+
+    def _is_valid_file_to_extensions(self, is_valid_file): ...
+        is_valid_file(f"foo.{ext}")
+
+    def _make_layer(self, block, conv_builder, planes, blocks, stride=1): ...
+        block(self.inplanes, planes, conv_builder, stride, downsample)
+        block(self.inplanes, planes, conv_builder)
+
+    def _make_layer(self, block: Type[Union[BasicBlock, Bottleneck]], planes: int, blocks: int,
+                    stride: int = 1, dilate: bool = False) -> nn.Sequential: ...
+        block(self.inplanes, planes, stride, downsample, self.groups,
+                            self.base_width, previous_dilation, norm_layer)
+        block(self.inplanes, planes, groups=self.groups,
+                            base_width=self.base_width, dilation=self.dilation,
+                            norm_layer=norm_layer)
+
+    def _pts_convert(pts, timebase_from, timebase_to, round_func=math.floor): ...
+        round_func(new_pts)
+
+    def _set_default_frames_per_clip(self, inject_fake_data): ...
+        inject_fake_data(tmpdir, config)
+
+    def _test_class_op(method, device, meth_kwargs=None, test_exact_match=True, **match_kwargs): ...
+        method(**meth_kwargs)
+
+    def _test_fn_on_batch(batch_tensors, fn, scripted_fn_atol=1e-8, **fn_kwargs): ...
+        fn(batch_tensors, **fn_kwargs)
+        fn(img_tensor, **fn_kwargs)
+
+    def _test_functional_op(f, device, fn_kwargs=None, test_exact_match=True, **match_kwargs): ...
+        f(tensor, **fn_kwargs)
+        f(pil_img, **fn_kwargs)
+
+    def _test_transform_vs_scripted(transform, s_transform, tensor, msg=None): ...
+        transform(tensor)
+        s_transform(tensor)
+
+    def _test_transform_vs_scripted_on_batch(transform, s_transform, batch_tensors, msg=None): ...
+        transform(batch_tensors)
+        transform(img_tensor)
+        s_transform(batch_tensors)
+
+    def assert_export_import_module(m, args): ...
+        m(*args)
+
+    def check_functional_vs_PIL_vs_scripted(fn, fn_pil, fn_t, config, device, dtype, tol=2.0 + 1e-10, agg_method="max"): ...
+        fn_pil(pil_img, **config)
+        fn_t(tensor, **config)
+
+    def collect_download_configs(dataset_loader, name=None, **kwargs): ...
+        dataset_loader()
+
+    def create_image_folder(
+        root: Union[pathlib.Path, str],
+        name: Union[pathlib.Path, str],
+        file_name_fn: Callable[[int], str],
+        num_examples: int,
+        size: Optional[Union[Sequence[int], int, Callable[[int], Union[Sequence[int], int]]]] = None,
+        **kwargs: Any,
+    ) -> List[pathlib.Path]: ...
+        file_name_fn(idx)
+        size(idx)
+
+    def create_video_folder(
+        root: Union[str, pathlib.Path],
+        name: Union[str, pathlib.Path],
+        file_name_fn: Callable[[int], str],
+        num_examples: int,
+        size: Optional[Union[Sequence[int], int, Callable[[int], Union[Sequence[int], int]]]] = None,
+        fps=25,
+        **kwargs,
+    ) -> List[pathlib.Path]: ...
+        file_name_fn(idx)
+        size(idx)
+
+    def evaluate(model, criterion, data_loader, device): ...
+        model(video)
+        criterion(output, target)
+
+    def evaluate(model, criterion, data_loader, device, print_freq=100): ...
+        model(image)
+        criterion(output, target)
+
+    def evaluate(model, data_loader, device): ...
+        model(images)
+
+    def evaluate(model, data_loader, device, num_classes): ...
+        model(image)
+
+    def evaluate(model, loader, device): ...
+        model(samples)
+
+    def make_dataset(
+        directory: str,
+        class_to_idx: Optional[Dict[str, int]] = None,
+        extensions: Optional[Tuple[str, ...]] = None,
+        is_valid_file: Optional[Callable[[str], bool]] = None,
+    ) -> List[Tuple[str, int]]: ...
+        is_valid_file(fname)
+
+    def outer_wrapper(fn): ...
+        fn(*args, **kwargs)
+
+    def outer_wrapper(fn): ...
+        fn(request, *args, **kwargs)
+
+    def outer_wrapper(fn): ...
+        fn(request, *args, **kwargs)
+        fn(url, *args, **kwargs)
+        fn(Request(url, **request_attrs), *args, **kwargs)
+
+    def process_model(model, tensor, func, name): ...
+        func("model.pt", tensor)
+
+    def pts_convert(pts, timebase_from, timebase_to, round_func=math.floor): ...
+        round_func(new_pts)
+
+    def quantize_model(model, backend): ...
+        model(_dummy_input_data)
+
+    def retrieve_out_channels(model, size): ...
+        model(tmp_img)
+
+    def retry(fn, times=1, wait=5.0): ...
+        fn()
+
+    def run_model(self, model, inputs_list, tolerate_small_mismatch=False, do_constant_folding=True, dynamic_axes=None,
+                  output_names=None, input_names=None): ...
+        model(*test_inputs)
+
+    def test_all_configs(test): ...
+        test(self, config)
+
+    def test_all_ops(self, device, height, width, dt, a, t, s, sh, f, fn): ...
+        fn(tensor, angle=a, translate=t, scale=s, shear=sh, interpolation=NEAREST, fill=f)
+
+    def test_assert_image_tensor(device, func, args): ...
+        func(tensor, *args)
+
+    def test_gaussian_blur(device, image_size, dt, ksize, sigma, fn): ...
+        fn(tensor, kernel_size=ksize, sigma=sigma)
+
+    def test_perspective_pil_vs_tensor(device, dims_and_points, dt, fill, fn): ...
+        fn(tensor, startpoints=spoints, endpoints=epoints, interpolation=interpolation, fill=fill)
+
+    def test_randomness(fn, trans, config, p): ...
+        fn(img, **config)
+        trans(p=p, **config)
+
+    def test_rect_rotations(self, device, height, width, dt, angle, fn): ...
+        fn(
+            tensor, angle=angle, translate=[0, 0], scale=1.0, shear=[0.0, 0.0], interpolation=NEAREST
+        )
+
+    def test_rotate(self, device, height, width, center, dt, angle, expand, fill, fn): ...
+        fn(tensor, angle=angle, interpolation=NEAREST, expand=expand, center=center, fill=fill)
+
+    def test_square_rotations(self, device, height, width, dt, angle, config, fn): ...
+        fn(
+            tensor, angle=angle, translate=[0, 0], scale=1.0, shear=[0.0, 0.0], interpolation=NEAREST
+        )
+
+    def test_translations(self, device, height, width, dt, t, fn): ...
+        fn(tensor, angle=0, translate=t, scale=1.0, shear=[0.0, 0.0], interpolation=NEAREST)
+
+    def test_x_crop(fn, method, out_length, size, device): ...
+        fn(tensor, **fn_kwargs)
+        fn(pil_img, **fn_kwargs)
+        fn(batch_tensors)
+        fn(img_tensor)
+        method(**meth_kwargs)
+
+    def train_epoch(model, optimizer, criterion, data_loader, device, epoch, print_freq): ...
+        model(samples)
+        criterion(embeddings, targets)
+
+    def train_one_epoch(model, criterion, optimizer, data_loader, device, epoch, print_freq, apex=False): ...
+        model(image)
+        criterion(output, target)
+
+    def train_one_epoch(model, criterion, optimizer, data_loader, lr_scheduler, device, epoch, print_freq): ...
+        model(image)
+        criterion(output, target)
+
+    def train_one_epoch(model, criterion, optimizer, lr_scheduler, data_loader, device, epoch, print_freq, apex=False): ...
+        model(video)
+        criterion(output, target)
+
+    def train_one_epoch(model, optimizer, data_loader, device, epoch, print_freq): ...
+        model(images, targets)
+

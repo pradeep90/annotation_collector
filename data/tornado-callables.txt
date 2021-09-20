@@ -1,3 +1,8 @@
+PROGRESS: Parsed 20/108 files...
+PROGRESS: Parsed 40/108 files...
+PROGRESS: Parsed 60/108 files...
+PROGRESS: Parsed 80/108 files...
+PROGRESS: Parsed 100/108 files...
 Callables with 0 parameters: 17
     Callable[[], Any]
     Callable[[], None]
@@ -108,3 +113,172 @@ Callables with arbitrary parameters: 51
     Callable[..., str]
     Callable[..., str]
 Callback Protocols: 0
+Functions with callback parameters: 37
+    async def body_producer(write): ...
+        write(b"1234")
+        write(b"5678")
+
+    async def body_producer(write): ...
+        write(b"1234")
+        write(b"5678")
+
+    def __init__(
+        self,
+        async_client_class: "Optional[Type[AsyncHTTPClient]]" = None,
+        **kwargs: Any
+    ) -> None: ...
+        async_client_class(**kwargs)
+
+    def _decode_signed_value_v1(
+        secret: Union[str, bytes],
+        name: str,
+        value: bytes,
+        max_age_days: float,
+        clock: Callable[[], float],
+    ) -> Optional[bytes]: ...
+        clock()
+        clock()
+
+    def _decode_signed_value_v2(
+        secret: _CookieSecretTypes,
+        name: str,
+        value: bytes,
+        max_age_days: float,
+        clock: Callable[[], float],
+    ) -> Optional[bytes]: ...
+        clock()
+
+    def _fake_ctx_run(f: Callable[..., _T], *args: Any, **kw: Any) -> _T: ...
+        f(*args, **kw)
+
+    def _run_callback(
+        self, callback: Callable, *args: Any, **kwargs: Any
+    ) -> "Optional[Future[Any]]": ...
+        callback(*args, **kwargs)
+
+    def _run_callback(self, callback: Callable[[], Any]) -> None: ...
+        callback()
+
+    def _ui_method(self, method: Callable[..., str]) -> Callable[..., str]: ...
+        method(self, *args, **kwargs)
+
+    def _ui_module(self, name: str, module: Type["UIModule"]) -> Callable[..., str]: ...
+        module(self)
+
+    def add_accept_handler(
+        sock: socket.socket, callback: Callable[[socket.socket, Any], None]
+    ) -> Callable[[], None]: ...
+        callback(connection, address)
+
+    def addslash(
+        method: Callable[..., Optional[Awaitable[None]]]
+    ) -> Callable[..., Optional[Awaitable[None]]]: ...
+        method(self, *args, **kwargs)
+
+    def async_body_producer(self, write): ...
+        write(b"1234")
+        write(b"5678")
+
+    def authenticated(
+        method: Callable[..., Optional[Awaitable[None]]]
+    ) -> Callable[..., Optional[Awaitable[None]]]: ...
+        method(self, *args, **kwargs)
+
+    def body_producer(write): ...
+        write(compressed[:20])
+        write(compressed[20:])
+
+    def body_producer(write): ...
+        write(i)
+
+    def body_producer(write): ...
+        write(self.BODY[:20])
+        write(self.BODY[20:])
+
+    def check_append_all_then_skip_all(self, buf, objs, input_type): ...
+        input_type(o)
+
+    def connect_to_server(self, server_cls): ...
+        server_cls(ssl_options=_server_ssl_options())
+
+    def create_signed_value(
+        secret: _CookieSecretTypes,
+        name: str,
+        value: Union[str, bytes],
+        version: Optional[int] = None,
+        clock: Optional[Callable[[], float]] = None,
+        key_version: Optional[int] = None,
+    ) -> bytes: ...
+        clock()
+
+    def e2(callback): ...
+        callback()
+
+    def future_add_done_callback(  # noqa: F811
+        future: "Union[futures.Future[_T], Future[_T]]", callback: Callable[..., None]
+    ) -> None: ...
+        callback(future)
+
+    def linkify(
+        text: Union[str, bytes],
+        shorten: bool = False,
+        extra_params: Union[str, Callable[[str], str]] = "",
+        require_protocol: bool = False,
+        permitted_protocols: List[str] = ["http", "https"],
+    ) -> str: ...
+        extra_params(href)
+
+    def multipart_producer(boundary, filenames, write): ...
+        write(buf)
+        write(chunk)
+        write(b"\r\n")
+        write(b"--%s--\r\n" % (boundary_bytes,))
+
+    def parse(cls, headers: str) -> "HTTPHeaders": ...
+        cls()
+
+    def raw_producer(filename, write): ...
+        write(chunk)
+
+    def removeslash(
+        method: Callable[..., Optional[Awaitable[None]]]
+    ) -> Callable[..., Optional[Awaitable[None]]]: ...
+        method(self, *args, **kwargs)
+
+    def run_sync(self, func: Callable, timeout: Optional[float] = None) -> Any: ...
+        func()
+
+    def submit(
+        self, fn: Callable[..., _T], *args: Any, **kwargs: Any
+    ) -> "futures.Future[_T]": ...
+        fn(*args, **kwargs)
+
+    def sync_body_producer(self, write): ...
+        write(b"1234")
+        write(b"5678")
+
+    def tornado_fetch(self, url, runner): ...
+        runner()
+
+    def twisted_coroutine_fetch(self, url, runner): ...
+        runner()
+
+    def twisted_fetch(self, url, runner): ...
+        runner()
+
+    def wait(
+        self,
+        condition: Optional[Callable[..., bool]] = None,
+        timeout: Optional[float] = None,
+    ) -> Any: ...
+        condition()
+
+    def wrap(f: Callable[..., Union[Generator, "Coroutine"]]) -> Callable[..., None]: ...
+        f(self, *args, **kwargs)
+
+    def wsgi_app(self, environ, start_response): ...
+        start_response("200 OK", [])
+
+    def wsgi_app(self, environ, start_response): ...
+        start_response(status, response_headers)
+

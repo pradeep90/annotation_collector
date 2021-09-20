@@ -1,3 +1,15 @@
+PROGRESS: Parsed 20/814 files...
+PROGRESS: Parsed 40/814 files...
+PROGRESS: Parsed 60/814 files...
+PROGRESS: Parsed 80/814 files...
+PROGRESS: Parsed 100/814 files...
+PROGRESS: Parsed 120/814 files...
+PROGRESS: Parsed 140/814 files...
+PROGRESS: Parsed 160/814 files...
+PROGRESS: Parsed 180/814 files...
+PROGRESS: Parsed 200/814 files...
+PROGRESS: Parsed 220/814 files...
+PROGRESS: Parsed 240/814 files...
 Could not parse path /Users/pradeepkumars/Programs/scipy/scipy/optimize/_linprog_highs.py: Syntax Error @ 37:27.
 Internal error: There must be at least one space before 'as'.
 
@@ -5,6 +17,34 @@ Internal error: There must be at least one space before 'as'.
                           ^
 
 
+PROGRESS: Parsed 260/814 files...
+PROGRESS: Parsed 280/814 files...
+PROGRESS: Parsed 300/814 files...
+PROGRESS: Parsed 320/814 files...
+PROGRESS: Parsed 340/814 files...
+PROGRESS: Parsed 360/814 files...
+PROGRESS: Parsed 380/814 files...
+PROGRESS: Parsed 400/814 files...
+PROGRESS: Parsed 420/814 files...
+PROGRESS: Parsed 440/814 files...
+PROGRESS: Parsed 460/814 files...
+PROGRESS: Parsed 480/814 files...
+PROGRESS: Parsed 500/814 files...
+PROGRESS: Parsed 520/814 files...
+PROGRESS: Parsed 540/814 files...
+PROGRESS: Parsed 560/814 files...
+PROGRESS: Parsed 580/814 files...
+PROGRESS: Parsed 600/814 files...
+PROGRESS: Parsed 620/814 files...
+PROGRESS: Parsed 640/814 files...
+PROGRESS: Parsed 660/814 files...
+PROGRESS: Parsed 680/814 files...
+PROGRESS: Parsed 700/814 files...
+PROGRESS: Parsed 720/814 files...
+PROGRESS: Parsed 740/814 files...
+PROGRESS: Parsed 760/814 files...
+PROGRESS: Parsed 780/814 files...
+PROGRESS: Parsed 800/814 files...
 Callables with 0 parameters: 0
 Callables with 1 parameters: 0
 Callables with 2 parameters: 0
@@ -27,3 +67,1881 @@ Callback Protocols: 2
     _MetricCallback2 - def __call__(
         self, __XA: np.ndarray, __XB: np.ndarray, **kwargs: Any
     ) -> _FloatValue: pass
+Functions with callback parameters: 405
+    def __init__(self, fun, x0, args, grad, hess, finite_diff_rel_step,
+                 finite_diff_bounds, epsilon=None): ...
+        fun(np.copy(x), *args)
+        grad(np.copy(x), *args)
+        hess(np.copy(x0), *args)
+        hess(np.copy(x), *args)
+        hess(np.copy(x), *args)
+        hess(np.copy(x), *args)
+
+    def __init__(self, fun, x0, jac, hess,
+                 finite_diff_rel_step, finite_diff_jac_sparsity,
+                 finite_diff_bounds, sparse_jacobian): ...
+        fun(x)
+        jac(self.x)
+        jac(x)
+        jac(x)
+        jac(x)
+        hess(self.x, self.v)
+        hess(x, v)
+        hess(x, v)
+        hess(x, v)
+
+    def __init__(self, g, *a, **k): ...
+        g(*a, **k)
+
+    def __init__(self, n, k, tp, matvec, mode=1, M_matvec=None,
+                 Minv_matvec=None, sigma=None,
+                 ncv=None, v0=None, maxiter=None, which="LM", tol=0): ...
+        matvec(x)
+        M_matvec(x)
+        Minv_matvec(matvec(x))
+        Minv_matvec(x)
+        Minv_matvec(x)
+
+    def __init__(self, n, k, tp, matvec, mode=1, M_matvec=None,
+                 Minv_matvec=None, sigma=None,
+                 ncv=None, v0=None, maxiter=None, which="LM", tol=0): ...
+        matvec(x)
+        matvec(x)
+        matvec(x)
+        matvec(x)
+        M_matvec(x)
+        M_matvec(x)
+        Minv_matvec(matvec(x))
+        Minv_matvec(M_matvec(x))
+        Minv_matvec(matvec(x) + sigma * x)
+        Minv_matvec(matvec(x)
+                                        + sigma * M_matvec(x))
+
+    def __init__(self, roots, weights=None, hn=1.0, kn=1.0, wfunc=None,
+                 limits=None, monic=False, eval_func=None): ...
+        wfunc(roots[k])
+
+    def __init__(self, x, bounds=None, func=None, func_args=(), g_cons=None,
+                 g_cons_args=(), nn=None, index=None): ...
+        func(x_a, *func_args)
+
+    def __init__(self, x0, minimizer, step_taking, accept_tests, disp=False): ...
+        minimizer(self.x)
+
+    def _aberth(f, fp, x0, tol=1e-15, maxiter=50): ...
+        f(x)
+        fp(x)
+
+    def _append_nonsingleton_leaf_node(Z, p, n, level, lvs, ivl, leaf_label_func,
+                                       i, labels, show_leaf_counts): ...
+        leaf_label_func(int(i))
+
+    def _append_singleton_leaf_node(Z, p, n, level, lvs, ivl, leaf_label_func,
+                                    i, labels): ...
+        leaf_label_func(int(i))
+
+    def _apply_func(x, g, func): ...
+        func(x[g[k]:g[k+1]])
+
+    def _arg_min_or_max(self, axis, out, op, compare): ...
+        op(mat.data)
+        compare(m, zero)
+
+    def _arg_min_or_max_axis(self, axis, op, compare): ...
+        op(data)
+        compare(m, zero)
+
+    def _array_newton(func, x0, fprime, args, tol, maxiter, fprime2, full_output): ...
+        func(p, *args)
+        func(p, *args)
+        func(p1, *args)
+        func(p1, *args)
+        fprime(p, *args)
+        fprime2(p, *args)
+
+    def _assert_less_or_close_loglike(dist, data, func, **kwds): ...
+        func(mle_analytical, data)
+        func(numerical_opt, data)
+
+    def _b_orthonormalize(B, blockVectorV, blockVectorBV=None, retInvR=False): ...
+        B(blockVectorV)
+
+    def _bca_interval(data, statistic, axis, alpha, theta_hat_b, batch): ...
+        statistic(sample, axis=axis)
+        statistic(jackknife_sample, axis=-1)
+
+    def _bessel_diff_formula(v, z, n, L, phase): ...
+        L(v-n, z)
+        L(v-n + i*2, z)
+
+    def _binary_search_for_binom_tst(a, d, lo, hi): ...
+        a(mid)
+        a(lo)
+
+    def _blocked_elementwise(func): ...
+        func(x)
+        func(x[:block_size])
+        func(x[j:j+block_size])
+
+    def _boolrelextrema(data, comparator, axis=0, order=1, mode='clip'): ...
+        comparator(main, plus)
+        comparator(main, minus)
+
+    def _calc_binned_statistic(Vdim, bin_numbers, result, values, stat_func,
+                               is_callable=False): ...
+        stat_func(np.array(bin_map[i]))
+
+    def _call_super_mom(fun): ...
+        fun(self, *args, **kwds)
+
+    def _check(self, x, routine, *args, **kwargs): ...
+        routine(x2, *args, **kwargs)
+
+    def _check(self, x, routine, fftsize, axis, overwrite_x): ...
+        routine(fake(x2), fftsize, axis, overwrite_x=overwrite_x)
+
+    def _check(self, x, routine, fftsize, axis, overwrite_x, should_overwrite): ...
+        routine(fake(x2), fftsize, axis, overwrite_x=overwrite_x)
+
+    def _check(self, x, routine, type, fftsize, axis, norm, overwrite_x, **kw): ...
+        routine(x2, type, fftsize, axis, norm, overwrite_x=overwrite_x)
+
+    def _check_accuracy(self, func, x=None, tol=1e-6, alternate=False, rescale=False, **kw): ...
+        func(x[:,0], x[:,1])
+        func(x[:,0], x[:,1])
+        func(p[:,0], p[:,1])
+
+    def _check_action(fun, args, action): ...
+        fun(*args)
+        fun(*args)
+        fun(*args)
+
+    def _check_bsr_diagonal(self, m): ...
+        m()
+
+    def _check_bsr_matmat(self, m): ...
+        m()
+
+    def _check_bsr_matvec(self, m): ...
+        m()
+
+    def _check_bsr_matvecs(self, m): ...
+        m()
+
+    def _check_bsr_sort_indices(self, m): ...
+        m()
+
+    def _check_bsr_transpose(self, m): ...
+        m()
+
+    def _check_dot(self, jac_cls, complex=False, tol=1e-6, **kw): ...
+        jac_cls(**kw)
+
+    def _check_func(checker, argname, thefunc, x0, args, numinputs,
+                    output_shape=None): ...
+        thefunc(*((x0[:numinputs],) + args))
+
+    def _check_nonlin_func(self, f, func, f_tol=1e-2): ...
+        f(x)
+        func(f, f.xin, f_tol=f_tol, maxiter=200, verbose=0)
+
+    def _check_reentrancy(solver, is_reentrant): ...
+        solver(A, x)
+        solver(op, b)
+
+    def _check_resiliency(self, cls, method_name, **kw): ...
+        cls()
+
+    def _check_secant(self, jac_cls, npoints=1, **kw): ...
+        jac_cls(**kw)
+
+    def _check_variant_func(self, func, other_func, rtol, atol=0): ...
+        other_func(z)
+        other_func(x)
+
+    def _clip_x_for_func(func, bounds): ...
+        func(x)
+
+    def _compare(self, other, method): ...
+        method(self._key, other._key)
+
+    def _complex_via_real_components(func, input, weights, output, cval, **kwargs): ...
+        func(input.real, weights.real, output=output.real,
+             cval=numpy.real(cval), **kwargs)
+        func(input.imag, weights.imag, output=None,
+                            cval=numpy.imag(cval), **kwargs)
+        func(input.real, weights.imag, output=output.imag,
+             cval=numpy.real(cval), **kwargs)
+        func(input.imag, weights.real, output=None,
+                            cval=numpy.imag(cval), **kwargs)
+        func(input.real, weights, output=output.real, cval=numpy.real(cval),
+             **kwargs)
+        func(input.imag, weights, output=output.imag, cval=numpy.imag(cval),
+             **kwargs)
+        func(input, weights.real, output=output.real, cval=cval, **kwargs)
+        func(input, weights.imag, output=output.imag, cval=cval, **kwargs)
+
+    def _compute_lwork(routine, *args, **kwargs): ...
+        routine(*args, **kwargs)
+
+    def _create_method(op): ...
+        op(self._deduped_data())
+
+    def _create_some_matrix(self, mat_cls, m, n): ...
+        mat_cls(np.random.rand(m, n))
+
+    def _dendrogram_calculate_info(Z, p, truncate_mode,
+                                   color_threshold=np.inf, get_leaves=True,
+                                   orientation='top', labels=None,
+                                   count_sort=False, distance_sort=False,
+                                   show_leaf_counts=False, i=-1, iv=0.0,
+                                   ivl=[], n=0, icoord_list=[], dcoord_list=[],
+                                   lvs=None, mhr=False,
+                                   current_color=[], color_list=[],
+                                   currently_below_threshold=[],
+                                   leaf_label_func=None, level=0,
+                                   contraction_marks=None,
+                                   link_color_func=None,
+                                   above_threshold_color='C0'): ...
+        link_color_func(int(i))
+
+    def _dense_difference(fun, x0, f0, h, use_one_sided, method): ...
+        fun(x)
+        fun(x1)
+        fun(x2)
+        fun(x1)
+        fun(x2)
+        fun(x0 + h_vecs[i]*1.j)
+
+    def _dense_num_jac(fun, t, y, f, h, factor, y_scale): ...
+        fun(t, y[:, None] + h_vecs)
+        fun(t, y[:, None] + h_vecs[:, ind])
+
+    def _difftrap(function, interval, numtraps): ...
+        function(interval[0])
+        function(interval[1])
+        function(points)
+
+    def _display_and_callback(phase_one_n, x, postsolve_args, status,
+                              iteration, disp, callback): ...
+        callback(res)
+
+    def _equal_to_canonical(cls, cfun, value): ...
+        cls(n_eq, n_ineq, fun, jac, hess, keep_feasible)
+
+    def _expect(fun, lb, ub, x0, inc, maxcount=1000, tolerance=1e-10,
+                chunksize=32): ...
+        fun(supp)
+        fun(x)
+        fun(x)
+
+    def _expect(self, fun, lb, ub, *args, **kwds): ...
+        fun(supp)
+
+    def _fft_helper(x, win, detrend_func, nperseg, noverlap, nfft, sides): ...
+        detrend_func(result)
+
+    def _fgmres(matvec, v0, m, atol, lpsolve=None, rpsolve=None, cs=(), outer_v=(),
+                prepend_outer_v=False): ...
+        matvec(z)
+        lpsolve(matvec(z))
+        rpsolve(v0)
+        rpsolve(vs[-1])
+
+    def _fixed_point_helper(func, x0, args, xtol, maxiter, use_accel): ...
+        func(p0, *args)
+        func(p1, *args)
+
+    def _gen_roots_and_weights(n, mu0, an_func, bn_func, f, df, symmetrize, mu): ...
+        an_func(k)
+        bn_func(k[1:])
+        f(n, x)
+        f(n-1, x)
+        df(n, x)
+
+    def _generic_patch_sources(filenames, patch_source_func, source_fnpart, root_dir=None): ...
+        patch_source_func(src, fsrc.read())
+
+    def _get_atol(tol, atol, bnrm2, get_residual, routine_name): ...
+        get_residual()
+
+    def _get_delta(A, b, c, x, y, z, tau, kappa, gamma, eta, sparse=False,
+                   lstsq=False, sym_pos=True, cholesky=True, pc=True, ip=False,
+                   permc_spec='MMD_AT_PLUS_A'): ...
+        eta(gamma)
+        eta(gamma)
+        eta(gamma)
+
+    def _greater_to_canonical(cls, cfun, lb, keep_feasible): ...
+        cls(n_eq, n_ineq, fun, jac, hess, keep_feasible)
+
+    def _held_figure(func, obj, ax=None, **kw): ...
+        func(obj, ax=ax, **kw)
+        func(obj, ax=ax, **kw)
+        func(obj, ax=ax, **kw)
+
+    def _inequality(self, other, op, op_name, bad_scalar_msg): ...
+        op(0, other)
+        op(self.todense(), other)
+
+    def _interval_to_canonical(cls, cfun, lb, ub, keep_feasible): ...
+        cls(n_eq, n_ineq, fun, jac, hess, keep_feasible)
+
+    def _ip_hsd(A, b, c, c0, alpha0, beta, maxiter, disp, tol, sparse, lstsq,
+                sym_pos, cholesky, pc, ip, permc_spec, callback, postsolve_args): ...
+        callback(res)
+        callback(res)
+
+    def _lazywhere(cond, arrays, f, fillvalue=None, f2=None): ...
+        f(*temp)
+        f2(*temp)
+
+    def _less_to_canonical(cls, cfun, ub, keep_feasible): ...
+        cls(n_eq, n_ineq, fun, jac, hess, keep_feasible)
+
+    def _linear_operator_difference(fun, x0, f0, h, method): ...
+        fun(x)
+        fun(x1)
+        fun(x2)
+        fun(x)
+
+    def _linesearch_powell(func, p, xi, tol=1e-3,
+                           lower_bound=None, upper_bound=None, fval=None): ...
+        func(p + alpha*xi)
+        func(p)
+
+    def _mad_1d(x, center, nan_policy): ...
+        center(x)
+
+    def _maximum_minimum(self, other, npop, op_name, dense_check): ...
+        npop(self.data, np.asarray(other))
+        npop(self.todense(), other)
+        dense_check(other)
+
+    def _memoize_get_funcs(func): ...
+        func(names, arrays, dtype, ilp64)
+
+    def _min_or_max(self, axis, out, min_or_max): ...
+        min_or_max(zero, m)
+
+    def _min_or_max_axis(self, axis, min_or_max): ...
+        min_or_max(value[not_full], 0)
+
+    def _minimize_bfgs(fun, x0, args=(), jac=None, callback=None,
+                       gtol=1e-5, norm=Inf, eps=_epsilon, maxiter=None,
+                       disp=False, return_all=False, finite_diff_rel_step=None,
+                       **unknown_options): ...
+        callback(xk)
+
+    def _minimize_cg(fun, x0, args=(), jac=None, callback=None,
+                     gtol=1e-5, norm=Inf, eps=_epsilon, maxiter=None,
+                     disp=False, return_all=False, finite_diff_rel_step=None,
+                     **unknown_options): ...
+        callback(xk)
+
+    def _minimize_cobyla(fun, x0, args=(), constraints=(),
+                         rhobeg=1.0, tol=1e-4, maxiter=1000,
+                         disp=False, catol=2e-4, **unknown_options): ...
+        fun(np.copy(x), *args)
+
+    def _minimize_lbfgsb(fun, x0, args=(), jac=None, bounds=None,
+                         disp=None, maxcor=10, ftol=2.2204460492503131e-09,
+                         gtol=1e-5, eps=1e-8, maxfun=15000, maxiter=15000,
+                         iprint=-1, callback=None, maxls=20,
+                         finite_diff_rel_step=None, **unknown_options): ...
+        callback(np.copy(x))
+
+    def _minimize_neldermead(func, x0, args=(), callback=None,
+                             maxiter=None, maxfev=None, disp=False,
+                             return_all=False, initial_simplex=None,
+                             xatol=1e-4, fatol=1e-4, adaptive=False, bounds=None,
+                             **unknown_options): ...
+        func(sim[k])
+        func(xr)
+        func(xe)
+        func(xc)
+        func(xcc)
+        func(sim[j])
+        callback(sim[0])
+
+    def _minimize_newtoncg(fun, x0, args=(), jac=None, hess=None, hessp=None,
+                           callback=None, xtol=1e-5, eps=_epsilon, maxiter=None,
+                           disp=False, return_all=False,
+                           **unknown_options): ...
+        callback(xk)
+
+    def _minimize_powell(func, x0, args=(), callback=None, bounds=None,
+                         xtol=1e-4, ftol=1e-4, maxiter=None, maxfev=None,
+                         disp=False, direc=None, return_all=False,
+                         **unknown_options): ...
+        func(x)
+        func(x2)
+        callback(x)
+
+    def _minimize_scalar_bounded(func, bounds, args=(),
+                                 xatol=1e-5, maxiter=500, disp=0,
+                                 **unknown_options): ...
+        func(x, *args)
+        func(x, *args)
+
+    def _minimize_scalar_golden(func, brack=None, args=(),
+                                xtol=_epsilon, maxiter=5000, **unknown_options): ...
+        func(*((xa,) + args))
+        func(*((xb,) + args))
+        func(*((xc,) + args))
+        func(*((x1,) + args))
+        func(*((x2,) + args))
+        func(*((x2,) + args))
+        func(*((x1,) + args))
+
+    def _minimize_slsqp(func, x0, args=(), jac=None, bounds=None,
+                        constraints=(),
+                        maxiter=100, ftol=1.0E-6, iprint=1, disp=False,
+                        eps=_epsilon, callback=None, finite_diff_rel_step=None,
+                        **unknown_options): ...
+        callback(np.copy(x))
+
+    def _minimize_trust_region(fun, x0, args=(), jac=None, hess=None, hessp=None,
+                               subproblem=None, initial_trust_radius=1.0,
+                               max_trust_radius=1000.0, eta=0.15, gtol=1e-4,
+                               maxiter=None, disp=False, return_all=False,
+                               callback=None, inexact=True, **unknown_options): ...
+        subproblem(x, fun, jac, hess, hessp)
+        subproblem(x_proposed, fun, jac, hess, hessp)
+        callback(np.copy(x))
+
+    def _minimize_trustregion_constr(fun, x0, args, grad,
+                                     hess, hessp, bounds, constraints,
+                                     xtol=1e-8, gtol=1e-8,
+                                     barrier_tol=1e-8,
+                                     sparse_jacobian=None,
+                                     callback=None, maxiter=1000,
+                                     verbose=0, finite_diff_rel_step=None,
+                                     initial_constr_penalty=1.0, initial_tr_radius=1.0,
+                                     initial_barrier_parameter=0.1,
+                                     initial_barrier_tolerance=0.1,
+                                     factorization_method=None,
+                                     disp=False): ...
+        callback(np.copy(state.x), state)
+        callback(np.copy(state.x), state)
+
+    def _moment_from_stats(n, mu, mu2, g1, g2, moment_func, args): ...
+        moment_func(1, *args)
+        moment_func(2, *args)
+        moment_func(3, *args)
+        moment_func(4, *args)
+        moment_func(n, *args)
+
+    def _nonlin_line_search(func, x, Fx, dx, search_type='armijo', rdiff=1e-8,
+                            smin=1e-2): ...
+        func(xt)
+        func(x)
+
+    def _nonmonotone_line_search_cheng(f, x_k, d, f_k, C, Q, eta,
+                                       gamma=1e-4, tau_min=0.1, tau_max=0.5,
+                                       nu=0.85): ...
+        f(xp)
+        f(xp)
+
+    def _nonmonotone_line_search_cruz(f, x_k, d, prev_fs, eta,
+                                      gamma=1e-4, tau_min=0.1, tau_max=0.5): ...
+        f(xp)
+        f(xp)
+
+    def _numdiff_2d(func, x, y, dx=0, dy=0, eps=1e-8): ...
+        func(x, y)
+        func(x + eps, y)
+        func(x - eps, y)
+        func(x, y + eps)
+        func(x, y - eps)
+        func(x + eps, y + eps)
+        func(x - eps, y + eps)
+        func(x + eps, y - eps)
+        func(x - eps, y - eps)
+
+    def _optimizer(func, args): ...
+        func(x, *args)
+
+    def _pdf_from_cf_with_fft(cf, h=0.01, q=9): ...
+        cf(2*np.pi*(n-1-N/2)/h/N)
+
+    def _power(self, fun, x): ...
+        fun(res)
+
+    def _quad_weight(func,a,b,args,full_output,epsabs,epsrel,limlst,limit,maxp1,weight,wvar,wopts): ...
+        func(*myargs)
+        func(*myargs)
+
+    def _quadrature_gk(a, b, f, norm_func, x, w, v): ...
+        f(c + h*x[i])
+        norm_func((s_k - s_g) * h)
+        norm_func(s_k_dabs * h)
+        norm_func(50 * eps * h * s_k_abs)
+
+    def _quadrature_trapezoid(x1, x2, f, norm_func): ...
+        f(x1)
+        f(x2)
+        f(x3)
+        norm_func(f1)
+        norm_func(f3)
+        norm_func(f2)
+        norm_func(s1 - s2)
+
+    def _r2r(forward, transform, x, type=2, n=None, axis=-1, norm=None,
+             overwrite_x=False, workers=None): ...
+        transform(tmp.real, type, (axis,), norm, out.real, workers)
+        transform(tmp.imag, type, (axis,), norm, out.imag, workers)
+        transform(tmp, type, (axis,), norm, out, workers)
+
+    def _r2rn(forward, transform, x, type=2, s=None, axes=None, norm=None,
+              overwrite_x=False, workers=None): ...
+        transform(tmp.real, type, axes, norm, out.real, workers)
+        transform(tmp.imag, type, axes, norm, out.imag, workers)
+        transform(tmp, type, axes, norm, out, workers)
+
+    def _relative_error(f, A, perturbation): ...
+        f(A)
+        f(A + perturbation)
+
+    def _report_item_name(self, out, new_line=False): ...
+        out("\n")
+
+    def _root_df_sane(func, x0, args=(), ftol=1e-8, fatol=1e-300, maxfev=1000,
+                      fnorm=None, callback=None, disp=False, M=10, eta_strategy=None,
+                      sigma_eps=1e-10, sigma_0=1.0, line_search='cruz', **unknown_options): ...
+        fnorm(F_k)
+        fnorm(F_k)
+        callback(x_k, F_k)
+        eta_strategy(k, x_k, F_k)
+
+    def _root_nonlin_solve(fun, x0, args=(), jac=None,
+                           _callback=None, _method=None,
+                           nit=None, disp=False, maxiter=None,
+                           ftol=None, fatol=None, xtol=None, xatol=None,
+                           tol_norm=None, line_search='armijo', jac_options=None,
+                           **unknown_options): ...
+        fun(x, *args)
+        fun(x, *args)
+
+    def _rough_check(a, b, compare_assert=partial(assert_allclose, atol=1e-5),
+                      key=lambda x: x, w=None): ...
+        compare_assert(check_a, check_b)
+        compare_assert(check_a, check_b)
+        key(a)
+        key(b)
+
+    def _run_one_test(self, tc, method, sig_args_keys=None,
+                      sig_kwargs_keys=None, **kwargs): ...
+        method(*method_args, args=func_args, **method_kwargs)
+
+    def _scalar_binopt(self, other, op): ...
+        op(self.data, other)
+
+    def _smoketest(self, spxlu, check, dtype): ...
+        spxlu(A)
+        check(A, b, x, msg)
+        check(A.T, b, x, msg)
+        check(A.T.conj(), b, x, msg)
+
+    def _solve_check(n, info, lamch=None, rcond=None): ...
+        lamch('E')
+
+    def _solve_simplex(T, n, basis, callback, postsolve_args,
+                       maxiter=1000, tol=1e-9, phase=2, bland=False, nit0=0,
+                       ): ...
+        callback(res)
+
+    def _sparse_difference(fun, x0, f0, h, use_one_sided,
+                           structure, groups, method): ...
+        fun(x)
+        fun(x1)
+        fun(x2)
+        fun(x0 + h_vec*1.j)
+
+    def _sparse_num_jac(fun, t, y, f, h, factor, y_scale, structure, groups): ...
+        fun(t, y[:, None] + h_vecs)
+        fun(t, y[:, None] + h_vecs)
+
+    def _spectral_helper(x, y, fs=1.0, window='hann', nperseg=None, noverlap=None,
+                         nfft=None, detrend='constant', return_onesided=True,
+                         scaling='density', axis=-1, mode='psd', boundary=None,
+                         padded=False): ...
+        detrend(d)
+
+    def _sym_solve(Dinv, A, r1, r2, solve): ...
+        solve(r)
+
+    def _test_mtsame(self, func, *args): ...
+        func(*args)
+        func(*args)
+
+    def _timeit(self, kernel, recopy): ...
+        kernel(self.m, self.i, self.j, self.v)
+        kernel(m, self.i, self.j, self.v)
+
+    def _ttest_nans(a, b, axis, namedtuple_type): ...
+        namedtuple_type(t, p)
+
+    def _validate_jac(self, jac, sparsity): ...
+        jac(t0, y0)
+        jac(t, y)
+        jac(t, y)
+
+    def _validate_jac(self, jac, sparsity): ...
+        jac(t0, y0)
+        jac(t, y)
+        jac(t, y)
+
+    def _vectorize_rvs_over_shapes(_rvs1): ...
+        _rvs1(*args, size, random_state)
+        _rvs1(*[np.squeeze(arg)[i] for arg in args],
+                       _rvs1_size, random_state)
+
+    def _vectorize_statistic(statistic): ...
+        statistic(*data)
+
+    def _vode_banded_jac_wrapper(jacfunc, ml, jac_params): ...
+        jacfunc(t, y, *jac_params)
+
+    def _weight_checked(fn, n_args=2, default_axis=None, key=lambda x: x, weight_arg='w',
+                        squeeze=True, silent=False,
+                        ones_test=True, const_test=True, dup_test=True,
+                        split_test=True, dud_test=True, ma_safe=False, ma_very_safe=False, nan_safe=False,
+                        split_per=1.0, seed=0, compare_assert=partial(assert_allclose, atol=1e-5)): ...
+        fn(*args, **kwargs)
+        fn(*args, **kwargs)
+        fn(*args, **kwargs)
+        fn(*args, **kwargs)
+        fn(*dud_args, **kwargs)
+        fn(*dud_args, **kwargs)
+        fn(*dud_args, **kwargs)
+        fn(*dud_args, **kwargs)
+        fn(*dud_args, **kwargs)
+        fn(*dup_args, **kwargs)
+        fn(*split_args, **kwargs)
+
+    def _wrap_func(func, x0, fmerit, nfev_list, maxfev, args=()): ...
+        func(x0, *args)
+        func(z, *args)
+        func(x, *args)
+        fmerit(F)
+        fmerit(F)
+        fmerit(F)
+
+    def _wrap_func(func, xdata, ydata, transform): ...
+        func(xdata, *params)
+        func(xdata, *params)
+        func(xdata, *params)
+
+    def _wrap_function(function, args): ...
+        function(np.copy(x), *(wrapper_args + args))
+
+    def _wrap_jac(jac, xdata, transform): ...
+        jac(xdata, *params)
+        jac(xdata, *params)
+        jac(xdata, *params)
+
+    def _zoom(a_lo, a_hi, phi_lo, phi_hi, derphi_lo,
+              phi, derphi, phi0, derphi0, c1, c2, extra_condition): ...
+        phi(a_j)
+        derphi(a_j)
+        extra_condition(a_j, phi_aj)
+
+    def aligned_array(shape, align, dtype, order='C'): ...
+        dtype()
+
+    def approx_derivative(fun, x0, method='3-point', rel_step=None, abs_step=None,
+                          f0=None, bounds=(-np.inf, np.inf), sparsity=None,
+                          as_linear_operator=False, args=(), kwargs={}): ...
+        fun(x, *args, **kwargs)
+
+    def approx_fhess_p(x0, p, fprime, epsilon, *args): ...
+        fprime(*((x0,) + args))
+        fprime(*((x0 + epsilon*p,) + args))
+
+    def approx_fprime(xk, f, epsilon, *args): ...
+        f(xk, *args)
+
+    def approximate_taylor_polynomial(f,x,degree,scale,order=None): ...
+        f(xs)
+
+    def asjacobian(J): ...
+        J()
+        J(self.x)
+        J(self.x)
+        J(self.x)
+        J(self.x)
+
+    def assert_armijo(s, phi, c1=1e-4, err_msg=""): ...
+        phi(s)
+        phi(0)
+
+    def assert_deallocated(func, *args, **kwargs): ...
+        func(*args, **kwargs)
+
+    def assert_line_armijo(x, p, s, f, **kw): ...
+        f(x + p*sp)
+
+    def assert_line_wolfe(x, p, s, f, fprime, **kw): ...
+        f(x + p*sp)
+        fprime(x + p*sp)
+
+    def assert_no_overwrite(call, shapes, dtypes=None): ...
+        call(*inputs)
+
+    def assert_wolfe(s, phi, derphi, c1=1e-4, c2=0.9, err_msg=""): ...
+        phi(s)
+        phi(0)
+        derphi(0)
+        derphi(s)
+
+    def base_non_simple_strides(self, adjust_strides, k, p, which): ...
+        adjust_strides((q0, r0, u0))
+        adjust_strides((q, r, u))
+
+    def base_non_simple_strides(self, adjust_strides, ks, p, which,
+                                overwriteable): ...
+        adjust_strides((q0, r0))
+        adjust_strides((q, r))
+
+    def base_non_simple_strides(self, adjust_strides, mode, p, overwriteable): ...
+        adjust_strides((q0, r0, u0, v0))
+        adjust_strides((q, r, u, v))
+
+    def basinhopping(func, x0, niter=100, T=1.0, stepsize=0.5,
+                     minimizer_kwargs=None, take_step=None, accept_test=None,
+                     callback=None, interval=50, disp=False, niter_success=None,
+                     seed=None): ...
+        callback(bh.storage.minres.x, bh.storage.minres.fun, True)
+        callback(bh.xtrial, bh.energy_trial, bh.accept)
+
+    def bicg(A, b, x0=None, tol=1e-5, maxiter=None, M=None, callback=None, atol=None): ...
+        callback(x)
+        callback(x)
+
+    def bicgstab(A, b, x0=None, tol=1e-5, maxiter=None, M=None, callback=None, atol=None): ...
+        callback(x)
+        callback(x)
+
+    def bind_index(func, idx): ...
+        func(*a, **kw)
+
+    def binned_statistic_dd(sample, values, statistic='mean',
+                            bins=10, range=None, expand_binnumbers=False,
+                            binned_statistic_result=None): ...
+        statistic([])
+
+    def bootstrap(data, statistic, *, vectorized=True, paired=False, axis=0,
+                  confidence_level=0.95, n_resamples=9999, batch=None,
+                  method='BCa', random_state=None): ...
+        statistic(*resampled_data, axis=-1)
+        statistic(*data, axis=-1)
+
+    def boxcox_normmax(x, brack=None, method='pearsonr', optimizer=None): ...
+        optimizer(func_wrapped)
+
+    def bracket(func, xa=0.0, xb=1.0, args=(), grow_limit=110.0, maxiter=1000): ...
+        func(*(xa,) + args)
+        func(*(xb,) + args)
+        func(*((xc,) + args))
+        func(*((w,) + args))
+        func(*((w,) + args))
+        func(*((w,) + args))
+        func(*((w,) + args))
+        func(*((w,) + args))
+        func(*((w,) + args))
+
+    def brute(func, ranges, args=(), Ns=20, full_output=0, finish=fmin,
+              disp=False, workers=1): ...
+        finish(func, xmin, args=args, **finish_kwargs)
+
+    def calc_atol(h, x0, f, hess, EPS): ...
+        f(x0)
+        f(x0 + h)
+        hess(x0)
+        hess(x0 + h)
+
+    def call_minpack(fun, x0, jac, ftol, xtol, gtol, max_nfev, x_scale, diff_step): ...
+        jac(x)
+
+    def callback(a, caller): ...
+        caller(lambda x: callback(x, caller), a - 1)
+
+    def caller(func, *a, **kw): ...
+        func(*a, **kw)
+
+    def cg(A, b, x0=None, tol=1e-5, maxiter=None, M=None, callback=None, atol=None): ...
+        callback(x)
+        callback(x)
+
+    def cgs(A, b, x0=None, tol=1e-5, maxiter=None, M=None, callback=None, atol=None): ...
+        callback(x)
+        callback(x)
+
+    def check(arguments, wrong=operator.ne, msg=''): ...
+        wrong(len(arguments), len(dispatch_args))
+
+    def check(caller): ...
+        caller(lambda x: callback(x, caller), count)
+
+    def check(caller, func, user_data): ...
+        caller(func, 1.0)
+        caller(func2, 1.0)
+        func(x, 2.0)
+
+    def check(caller, func, user_data): ...
+        caller(llfunc, 1.0)
+        func(x, 2.0)
+
+    def check(cls, method_name): ...
+        cls()
+
+    def check(func, indshape): ...
+        func(directed_G, directed=False,
+                  indices=indices.reshape(indshape))
+
+    def check(mat_cls): ...
+        mat_cls(np.random.rand(10, 1))
+        mat_cls(np.random.rand(11, 1))
+
+    def check_1(self,f=f1,per=0,s=0,a=0,b=2*pi,N=20,at=0,xb=None,xe=None): ...
+        f(x)
+        f(t,d)
+        f(t,d)
+        f(None)
+
+    def check_2(self,f=f1,per=0,s=0,a=0,b=2*pi,N=20,xb=None,xe=None,
+              ia=0,ib=2*pi,dx=0.2*pi): ...
+        f(x)
+        f(None)
+        f(ib,-1)
+        f(ia,-1)
+        f(dx,d)
+
+    def check_3(self,f=f1,per=0,s=0,a=0,b=2*pi,N=20,xb=None,xe=None,
+              ia=0,ib=2*pi,dx=0.2*pi): ...
+        f(x)
+        f(None)
+
+    def check_4(self,f=f1,per=0,s=0,a=0,b=2*pi,N=20,xb=None,xe=None,
+              ia=0,ib=2*pi,dx=0.2*pi): ...
+        f(x)
+        f(x1)
+        (f(0,None))
+        f(uv[0])
+        f(uv[0])
+
+    def check_5(self,f=f2,kx=3,ky=3,xb=0,xe=2*pi,yb=0,ye=2*pi,Nx=20,Ny=20,s=0): ...
+        f(xy[0],xy[1])
+
+    def check_arguments(fun, y0, support_complex): ...
+        fun(t, y)
+
+    def check_cephes_vs_amos(self, f1, f2, rtol=1e-11, atol=0, skip=None): ...
+        f1(v, z)
+        f1(v,z+0j)
+        f2(int(v), z)
+        skip(v, z)
+
+    def check_convergence(solver, case): ...
+        solver(A, b, x0=x0, tol=tol)
+
+    def check_correctness(S, bc_start='not-a-knot', bc_end='not-a-knot',
+                          tol=1e-14): ...
+        S(x[0], 0)
+        S(x[-1], 0)
+        S(x[0], 1)
+        S(x[-1], 1)
+        S(x[0], 2)
+        S(x[-1], 2)
+        S(x[1])
+        S(x[0])
+        S(x[0], 1)
+        S(x[0], 1)
+        S(x[0], 2)
+        S(x[0], order)
+        S(x[1])
+        S(x[0])
+        S(x[1], 1)
+        S(x[-1], 1)
+        S(x[-1], 2)
+        S(x[-1], order)
+
+    def check_derivative(fun, jac, x0, bounds=(-np.inf, np.inf), args=(),
+                         kwargs={}): ...
+        jac(x0, *args, **kwargs)
+
+    def check_freezing(distfn, args): ...
+        distfn(*args, **locscale)
+        distfn(*args)
+        distfn(*args)
+
+    def check_func_serial(self, n, fun, args, out): ...
+        fun(*args, output=out[i])
+
+    def check_grad(func, grad, x0, *args, **kwargs): ...
+        grad(x0, *args)
+
+    def check_gradient(fcn, Dfcn, x0, args=(), col_deriv=0): ...
+        fcn(x, *args)
+        fcn(xp, *args)
+        Dfcn(x, *args)
+
+    def check_lapack_misaligned(func, args, kwargs): ...
+        func(*a, **kwargs)
+        func(*a, **kwargs)
+
+    def check_maxiter(solver, case): ...
+        solver(A, b, x0=x0, tol=tol, maxiter=1, callback=callback)
+
+    def check_moment_frozen(distfn, arg, m, k): ...
+        distfn(*arg)
+
+    def check_pickling(distfn, args): ...
+        distfn(*args)
+
+    def check_poly(self, func, cls, param_ranges=[], x_range=[], nn=10,
+                   nparam=10, nx=10, rtol=1e-8): ...
+        func(*p)
+        cls(*p)
+
+    def check_poly(self, func, param_ranges=[], x_range=[], nn=10,
+                   nparam=10, nx=10, rtol=1e-8): ...
+        func(*(p + (x,)), **kw)
+        func(*p, **kw)
+
+    def check_precond_dummy(solver, case): ...
+        solver(A, b, M1=precond, M2=precond, x0=x0, tol=tol)
+        solver(A, b, M=precond, x0=x0, tol=tol)
+        solver(A, b, x0=x0, tol=tol)
+
+    def check_precond_inverse(solver, case): ...
+        solver(A, b, M=precond, x0=x0, tol=tol)
+
+    def check_shape(interpolator_cls, x_shape, y_shape, deriv_shape=None, axis=0,
+                    extra_args={}): ...
+        interpolator_cls(x, y, dydx, axis=axis, **extra_args)
+        interpolator_cls(x, y, axis=axis, **extra_args)
+        interpolator_cls(list(x), list(y), list(dydx), axis=axis,
+                         **extra_args)
+        interpolator_cls(list(x), list(y), axis=axis,
+                         **extra_args)
+
+    def check_splev(b, j, der=0, atol=1e-14, rtol=1e-14): ...
+        b(x, der)
+
+    def collocation_fun(fun, y, p, x, h): ...
+        fun(x, y, p)
+        fun(x[:-1] + 0.5 * h, y_middle, p)
+
+    def concatenate(cls, canonical_constraints, sparse_jacobian): ...
+        cls(n_eq, n_ineq, fun, jac, hess, keep_feasible)
+
+    def construct_loss_function(m, loss, f_scale): ...
+        loss(z, rho, cost_only=cost_only)
+        loss(z)
+
+    def conv_method(sampler, func, n_samples, n_conv, ref): ...
+        sampler(n_samples)
+        func(sample)
+
+    def conv_method(sampler, func, n_samples, n_conv, ref): ...
+        sampler(n_samples)
+        func(sample)
+
+    def cramervonmises(rvs, cdf, args=()): ...
+        cdf(vals, *args)
+
+    def create(cls, obj, body, evaldict, defaults=None,
+               doc=None, module=None, addsource=True, **attrs): ...
+        cls(func, name, signature, defaults, doc, module)
+
+    def custmin(fun, bracket, args=(), maxfev=None, stepsize=0.1,
+                maxiter=100, callback=None, **options): ...
+        fun(bestx)
+        fun(testx, *args)
+        callback(bestx)
+
+    def custmin(fun, x0, args=(), maxfev=None, stepsize=0.1,
+                maxiter=100, callback=None, **options): ...
+        fun(x0)
+        fun(testx, *args)
+        callback(bestx)
+
+    def cwt(data, wavelet, widths, dtype=None, **kwargs): ...
+        wavelet(1, widths[0], **kwargs)
+        wavelet(N, width, **kwargs)
+
+    def dblquad(func, a, b, gfun, hfun, args=(), epsabs=1.49e-8, epsrel=1.49e-8): ...
+        gfun(args[0])
+        hfun(args[0])
+
+    def deco(func): ...
+        func(*a, **kw)
+
+    def deco(func): ...
+        func(*a, **kw)
+
+    def deco(func, *a, **kw): ...
+        func(*a, **kw)
+
+    def decorate(self, func): ...
+        func(*a, **kw)
+
+    def deriv(f, x, *arg): ...
+        f(x + h*1j, *arg)
+
+    def derivative(func, x0, dx=1.0, n=1, args=(), order=3): ...
+        func(x0+(k-ho)*dx,*args)
+
+    def dogbox(fun, jac, x0, f0, J0, lb, ub, ftol, xtol, gtol, max_nfev, x_scale,
+               loss_function, tr_solver, tr_options, verbose): ...
+        fun(x_new)
+        jac(x, f)
+        loss_function(f)
+        loss_function(f_new, cost_only=True)
+        loss_function(f)
+
+    def empty(cls, n): ...
+        cls(0, 0, fun, jac, hess, np.empty(0, dtype=np.bool_))
+
+    def equality_constrained_sqp(fun_and_constr, grad_and_jac, lagr_hess,
+                                 x0, fun0, grad0, constr0,
+                                 jac0, stop_criteria,
+                                 state,
+                                 initial_penalty,
+                                 initial_trust_radius,
+                                 factorization_method,
+                                 trust_lb=None,
+                                 trust_ub=None,
+                                 scaling=default_scaling): ...
+        fun_and_constr(x_next)
+        fun_and_constr(x_soc)
+        grad_and_jac(x)
+        lagr_hess(x, v)
+        lagr_hess(x, v)
+        stop_criteria(state, x, last_iteration_failed,
+                                optimality, constr_violation,
+                                trust_radius, penalty, cg_info)
+        scaling(x)
+        scaling(x)
+
+    def estimate_bc_jac(bc, ya, yb, p, bc0=None): ...
+        bc(ya, yb, p)
+        bc(ya_new, yb, p)
+        bc(ya, yb_new, p)
+        bc(ya, yb, p_new)
+
+    def estimate_fun_jac(fun, x, y, p, f0=None): ...
+        fun(x, y, p)
+        fun(x, y_new, p)
+        fun(x, y, p_new)
+
+    def estimate_rms_residuals(fun, sol, x, h, p, r_middle, f_middle): ...
+        fun(x1, y1, p)
+        fun(x2, y2, p)
+        sol(x1)
+        sol(x2)
+        sol(x1, 1)
+        sol(x2, 1)
+
+    def eval_evec(symmetric, d, typ, k, which, v0=None, sigma=None,
+                  mattype=np.asarray, OPpart=None, mode='normal'): ...
+        mattype(a)
+        mattype(b)
+
+    def eval_func_at_params(func, skip_mask=None): ...
+        func(*params)
+        func(*tuple([params[i][j] for i in range(len(params))]))
+
+    def exception_to_nan(func): ...
+        func(*a, **kw)
+
+    def expect(self, func=None, args=(), loc=0, lb=None, ub=None,
+               conditional=False, maxcount=1000, tolerance=1e-10, chunksize=32): ...
+        func(x+loc)
+
+    def expect(self, func=None, args=(), loc=0, scale=1, lb=None, ub=None,
+               conditional=False, **kwds): ...
+        func(x)
+
+    def fixed_quad(func, a, b, args=(), n=5): ...
+        func(y, *args)
+
+    def fprime(self, x, *args): ...
+        self(x, *args)
+
+    def fprime(x, t, sys, ufunc): ...
+        ufunc([t])
+
+    def fprime2(self, x, *args): ...
+        self(x, *args)
+
+    def freqs(b, a, worN=200, plot=None): ...
+        plot(w, h)
+
+    def freqz(b, a=1, worN=512, whole=False, plot=None, fs=2*pi, include_nyquist=False): ...
+        plot(w, h)
+
+    def from_cython(cls, module, name, user_data=None, signature=None): ...
+        cls(function, user_data, signature)
+
+    def from_data(cls, m, title="Default title", key="0", mxtype=None, fmt=None): ...
+        cls(title, key,
+            total_nlines, pointer_nlines, indices_nlines, values_nlines,
+            mxtype, nrows, ncols, nnon_zeros,
+            pointer_fmt.fortran_format, indices_fmt.fortran_format,
+            values_fmt.fortran_format)
+
+    def from_derivatives(cls, xi, yi, orders=None, extrapolate=None): ...
+        cls(c.swapaxes(0, 1), xi, extrapolate)
+
+    def from_file(cls, fid): ...
+        cls(title, key,
+                   total_nlines, pointer_nlines, indices_nlines, values_nlines,
+                   mxtype, nrows, ncols, nnon_zeros,
+                   ct[0], ct[1], ct[2],
+                   rhs_nlines, nelementals)
+
+    def from_fortran(cls, fmt): ...
+        cls(value_type, structure, storage)
+
+    def from_number(cls, n, min=None): ...
+        cls(width, min, repeat=repeat)
+
+    def from_number(cls, n, min=None): ...
+        cls(width, n_prec, min, repeat=repeat)
+
+    def fromspline(cls, xk, cvals, order, fill=0.0): ...
+        cls(sivals, xk, fill=fill)
+
+    def funm(A, func, disp=True): ...
+        func(diag(T))
+
+    def gcrotmk(A, b, x0=None, tol=1e-5, maxiter=1000, M=None, callback=None,
+                m=20, k=None, CU=None, discard_C=False, truncate='oldest',
+                atol=None): ...
+        callback(x)
+
+    def gen_func_dec(func): ...
+        func(*args, **kw)
+
+    def generate_test_statistics(rvs, N=1000, eps=1e-10): ...
+        rvs(dim=dim)
+        rvs(dim=dim)
+
+    def generic_gradient_magnitude(input, derivative, output=None,
+                                   mode="reflect", cval=0.0,
+                                   extra_arguments=(), extra_keywords=None): ...
+        derivative(input, axes[0], output, modes[0], cval,
+                   *extra_arguments, **extra_keywords)
+        derivative(input, axes[ii], output.dtype, modes[ii], cval,
+                         *extra_arguments, **extra_keywords)
+
+    def generic_laplace(input, derivative2, output=None, mode="reflect",
+                        cval=0.0,
+                        extra_arguments=(),
+                        extra_keywords=None): ...
+        derivative2(input, axes[0], output, modes[0], cval,
+                    *extra_arguments, **extra_keywords)
+        derivative2(input, axes[ii], output.dtype, modes[ii], cval,
+                          *extra_arguments, **extra_keywords)
+
+    def gmres(A, b, x0=None, tol=1e-5, restart=None, maxiter=None, M=None, callback=None,
+              restrt=None, atol=None, callback_type=None): ...
+        callback(x)
+        callback(presid / bnrm2)
+        callback(x)
+        callback(presid / bnrm2)
+
+    def inf_to_nan(func): ...
+        func(*a, **kw)
+
+    def is_deprecated(f): ...
+        f(**{"not a kwarg":None})
+
+    def kernel_matrix(x, kernel_func, out): ...
+        kernel_func(np.linalg.norm(x[i] - x[j]))
+
+    def kernel_vector(x, y, kernel_func, out): ...
+        kernel_func(np.linalg.norm(x - y[i]))
+
+    def ks_1samp(x, cdf, args=(), alternative='two-sided', mode='auto'): ...
+        cdf(x, *args)
+
+    def labeled_comprehension(input, labels, index, func, out_dtype, default, pass_positions=False): ...
+        func(input.ravel())
+        func(input.ravel(), positions.ravel())
+        func(input[labels > 0])
+        func(input[labels > 0], positions[labels > 0])
+        func(*[inp[l:h] for inp in inputs])
+
+    def least_squares(
+            fun, x0, jac='2-point', bounds=(-np.inf, np.inf), method='trf',
+            ftol=1e-8, xtol=1e-8, gtol=1e-8, x_scale=1.0, loss='linear',
+            f_scale=1.0, diff_step=None, tr_solver=None, tr_options={},
+            jac_sparsity=None, max_nfev=None, verbose=0, args=(), kwargs={}): ...
+        fun(x, *args, **kwargs)
+        jac(x0, *args, **kwargs)
+        jac(x, *args, **kwargs)
+        jac(x, *args, **kwargs)
+        jac(x, *args, **kwargs)
+
+    def lgmres(A, b, x0=None, tol=1e-5, maxiter=1000, M=None, callback=None,
+               inner_m=30, outer_k=3, outer_v=None, store_outer_Av=True,
+               prepend_outer_v=False, atol=None): ...
+        callback(x)
+
+    def line_search_armijo(f, xk, pk, gfk, old_fval, args=(), c1=1e-4, alpha0=1): ...
+        f(xk + alpha1*pk, *args)
+
+    def line_search_wolfe1(f, fprime, xk, pk, gfk=None,
+                           old_fval=None, old_old_fval=None,
+                           args=(), c1=1e-4, c2=0.9, amax=50, amin=1e-8,
+                           xtol=1e-14): ...
+        f(xk + s*pk, *args)
+        fprime(xk)
+        fprime(xk + s*pk, *newargs)
+
+    def line_search_wolfe2(f, myfprime, xk, pk, gfk=None, old_fval=None,
+                           old_old_fval=None, args=(), c1=1e-4, c2=0.9, amax=None,
+                           extra_condition=None, maxiter=10): ...
+        f(xk + alpha * pk, *args)
+        extra_condition(alpha, x, phi, gval[0])
+
+    def linear_sum_assignment_assertions(
+        solver, array_type, sign, test_case
+    ): ...
+        solver(cost_matrix, maximize=maximize)
+        solver(cost_matrix, maximize=maximize)
+        array_type(cost_matrix)
+
+    def lobpcg(A, X,
+               B=None, M=None, Y=None,
+               tol=None, maxiter=None,
+               largest=True, verbosityLevel=0,
+               retLambdaHistory=False, retResidualNormsHistory=False): ...
+        A(np.eye(n, dtype=A.dtype))
+        A(blockVectorX)
+        A(activeBlockVectorR)
+        B(np.eye(n, dtype=B.dtype))
+        B(blockVectorY)
+        M(activeBlockVectorR)
+
+    def make_worker_thread(self, target, args): ...
+        target(*args)
+
+    def matrices(sparse_cls): ...
+        sparse_cls(A_dense)
+
+    def median_abs_deviation(x, axis=0, center=np.median, scale=1.0,
+                             nan_policy='propagate'): ...
+        center(x, axis=None)
+        center(x, axis=axis)
+
+    def minimize(fun, x0, args=(), method=None, jac=None, hess=None,
+                 hessp=None, bounds=None, constraints=(), tol=None,
+                 callback=None, options=None): ...
+        method(fun, x0, args=args, jac=jac, hess=hess, hessp=hessp,
+                      bounds=bounds, constraints=constraints,
+                      callback=callback, **options)
+
+    def minimize_scalar(fun, bracket=None, bounds=None, args=(),
+                        method='brent', tol=None, options=None): ...
+        method(fun, args=args, bracket=bracket, bounds=bounds, **options)
+
+    def minres(A, b, x0=None, shift=0.0, tol=1e-5, maxiter=None,
+               M=None, callback=None, show=False, check=False): ...
+        callback(x)
+
+    def multiscale_graphcorr(x, y, compute_distance=_euclidean_dist, reps=1000,
+                             workers=1, is_twosamp=False, random_state=None): ...
+        compute_distance(x)
+        compute_distance(y)
+
+    def newton(func, x0, fprime=None, args=(), tol=1.48e-8, maxiter=50,
+               fprime2=None, x1=None, rtol=0.0,
+               full_output=False, disp=True): ...
+        func(p0, *args)
+        func(p0, *args)
+        func(p1, *args)
+        func(p1, *args)
+        fprime(p0, *args)
+        fprime2(p0, *args)
+
+    def nonlin_solve(F, x0, jacobian='krylov', iter=None, verbose=False,
+                     maxiter=None, f_tol=None, f_rtol=None, x_tol=None, x_rtol=None,
+                     tol_norm=None, line_search='armijo', callback=None,
+                     full_output=False, raise_exception=True): ...
+        F(_array_like(z, x0))
+        tol_norm(Fx)
+        callback(x, Fx)
+
+    def optimizer(fun): ...
+        fun(lmbda)
+
+    def outer(func): ...
+        func(*args, **kwargs)
+
+    def parse_attribute(cls, name, attr_string): ...
+        cls(name)
+
+    def parse_attribute(cls, name, attr_string): ...
+        cls(name)
+
+    def parse_attribute(cls, name, attr_string): ...
+        cls(name)
+
+    def parse_attribute(cls, name, attr_string): ...
+        cls(name, date_format, datetime_unit)
+
+    def parse_attribute(cls, name, attr_string): ...
+        cls(name, values)
+
+    def pre_order(self, func=(lambda x: x.id)): ...
+        func(nd)
+
+    def prepare_sys(n, m, k, fun, bc, fun_jac, bc_jac, x, h): ...
+        fun_jac(x, y, p)
+        fun_jac(x_middle, y_middle, p)
+        bc_jac(y[:, 0], y[:, -1], p)
+
+    def print_out(self): ...
+        self()
+
+    def process(path, fromfile, tofile, processor_function, hash_db,
+                dep_hashes, lock): ...
+        processor_function(fromfile, tofile, cwd=path)
+
+    def qmr(A, b, x0=None, tol=1e-5, maxiter=None, M1=None, M2=None, callback=None,
+            atol=None): ...
+        callback(x)
+        callback(x)
+
+    def random(m, n, density=0.01, format='coo', dtype=None,
+               random_state=None, data_rvs=None): ...
+        data_rvs(k)
+
+    def ref_2d(func, x, **kwargs): ...
+        func(x[row, :], **kwargs)
+        func(x[:, col], **kwargs)
+
+    def resample(x, num, t=None, axis=0, window=None, domain='time'): ...
+        window(sp_fft.fftfreq(Nx))
+
+    def rk_step(fun, t, y, f, h, A, B, C, K): ...
+        fun(t + c * h, y + dy)
+        fun(t + h, y_new)
+
+    def run(case, run_lambda, set_key, index=0, total_cases=0): ...
+        run_lambda(case)
+
+    def run_check(self, method, name): ...
+        method(function, a, b, xtol=xtol, rtol=rtol,
+                         full_output=True)
+
+    def run_check_lru_cached(self, method, name): ...
+        method(f_lrucached, a, b, full_output=True)
+
+    def rvs_ratio_uniforms(pdf, umax, vmin, vmax, size=1, c=0, random_state=None): ...
+        pdf(rvs)
+
+    def safecall(f, name, *args, **kwargs): ...
+        f(*args, **kwargs)
+        f(*args, **kwargs)
+
+    def same_matrix(sparse_cls, sp_sparse_cls): ...
+        sparse_cls(A_dense)
+        sp_sparse_cls(A_dense)
+
+    def scalar_search_armijo(phi, phi0, derphi0, c1=1e-4, alpha0=1, amin=0): ...
+        phi(alpha0)
+        phi(alpha1)
+        phi(alpha2)
+
+    def scalar_search_wolfe1(phi, derphi, phi0=None, old_phi0=None, derphi0=None,
+                             c1=1e-4, c2=0.9,
+                             amax=50, amin=1e-8, xtol=1e-14): ...
+        phi(0.)
+        phi(stp)
+        derphi(0.)
+        derphi(stp)
+
+    def scalar_search_wolfe2(phi, derphi, phi0=None,
+                             old_phi0=None, derphi0=None,
+                             c1=1e-4, c2=0.9, amax=None,
+                             extra_condition=None, maxiter=10): ...
+        phi(0.)
+        phi(alpha1)
+        phi(alpha1)
+        derphi(0.)
+        derphi(alpha1)
+        extra_condition(alpha1, phi_a1)
+
+    def select_initial_step(fun, t0, y0, f0, direction, order, rtol, atol): ...
+        fun(t0 + h0 * direction, y1)
+
+    def solve(self, trust_radius): ...
+        self(pa)
+        self(pb)
+
+    def solve_bdf_system(fun, t_new, y_predict, c, psi, LU, solve_lu, scale, tol): ...
+        fun(t_new, y)
+        solve_lu(LU, c * f - psi - d)
+
+    def solve_collocation_system(fun, t, y, h, Z0, scale, tol,
+                                 LU_real, LU_complex, solve_lu): ...
+        fun(t + ch[i], y + Z[i])
+        solve_lu(LU_real, f_real)
+        solve_lu(LU_complex, f_complex)
+
+    def solve_event_equation(event, sol, t_old, t): ...
+        event(t, sol(t))
+        sol(t)
+
+    def solve_ivp(fun, t_span, y0, method='RK45', t_eval=None, dense_output=False,
+                  events=None, vectorized=False, args=None, **options): ...
+        fun(t, x, *args)
+        method(fun, t0, y0, tf, vectorized=vectorized, **options)
+
+    def solve_newton(n, m, h, col_fun, bc, jac, y, p, B, bvp_tol, bc_tol): ...
+        col_fun(y, p)
+        col_fun(y_new, p_new)
+        bc(y[:, 0], y[:, -1], p)
+        bc(y_new[:, 0], y_new[:, -1], p_new)
+        jac(y, p, y_middle, f, f_middle, bc_res)
+
+    def splev(x, tck, der=0, ext=0): ...
+        tck(x, der, extrapolate=extrapolate)
+
+    def split_simplex_symmetry(self, S, gen): ...
+        S()
+
+    def statistic(i, axis=-1, data=data_iv, unpaired_statistic=statistic): ...
+        unpaired_statistic(*data, axis=axis)
+
+    def sub_generate_cell(self, C_i, gen): ...
+        C_i()
+        C_i()
+        C_i()
+        C_i()
+
+    def synchronized(func): ...
+        func(*args, **kwargs)
+
+    def tempfunc(shape, mi, yvals, func): ...
+        func(mi, shape)
+
+    def test_atol(solver): ...
+        solver(A, b, M1=M, M2=M2, tol=tol, atol=atol)
+        solver(A, b, M=M, tol=tol, atol=atol)
+
+    def test_auto_rcond(scale, pinv_): ...
+        pinv_(x)
+
+    def test_axes(self, op): ...
+        op(np.transpose(x, a))
+        op(x, axes=a)
+
+    def test_axes_and_shape(self, fforward, finverse): ...
+        fforward(self.data, s=self.data.shape[0], axes=(0, 1))
+        fforward(self.data, s=self.data.shape, axes=0)
+
+    def test_axes_and_shape(self, fforward, finverse): ...
+        fforward(self.data, shape=self.data.shape[0], axes=(0, 1))
+        fforward(self.data, shape=self.data.shape[0], axes=None)
+        fforward(self.data, shape=self.data.shape, axes=0)
+
+    def test_axes_round_trip(self, fforward, finverse, axes, dct_type, norm): ...
+        fforward(self.data, type=dct_type, axes=axes, norm=norm)
+        finverse(tmp, type=dct_type, axes=axes, norm=norm)
+
+    def test_axes_round_trip(self, fforward, finverse, axes, dct_type, norm): ...
+        fforward(self.data, type=dct_type, axes=axes, norm=norm)
+        finverse(tmp, type=dct_type, axes=axes, norm=norm)
+
+    def test_axes_subset_with_shape(self, op): ...
+        op(np.transpose(x, a), s=shape[:2], axes=(0, 1))
+        op(x, s=shape[:2], axes=a[:2])
+
+    def test_backend_call(func, np_func, mock): ...
+        func(x)
+        func(x)
+        func(x)
+        np_func(x)
+
+    def test_backend_plan(func, mock): ...
+        func(x, plan='foo')
+        func(x, plan='foo')
+
+    def test_ball_point_ints(kdtree_type): ...
+        kdtree_type(points)
+        kdtree_type(points)
+
+    def test_circfuncs(self, test_func, expected): ...
+        test_func(x, high=360)
+
+    def test_circfuncs_array_like(self, test_func, expected): ...
+        test_func(x, high=360)
+
+    def test_circfuncs_close(self, test_func, numpy_func): ...
+        test_func(x)
+        numpy_func(x)
+
+    def test_ckdtree_parallel(kdtree_type, monkeypatch): ...
+        kdtree_type(points)
+
+    def test_complex(transform, dtype): ...
+        transform(1j*np.arange(5, dtype=dtype))
+        transform(np.arange(5))
+
+    def test_dctn_vs_2d_reference(self, fforward, fforward_ref,
+                                  dct_type, norm): ...
+        fforward(self.data, type=dct_type, axes=None, norm=norm)
+        fforward_ref(self.data, type=dct_type, norm=norm)
+
+    def test_dctn_vs_2d_reference(self, funcn, func, dct_type, norm): ...
+        funcn(self.data, type=dct_type, axes=None, norm=norm)
+
+    def test_discontiguous(kdtree_type): ...
+        kdtree_type(data)
+
+    def test_domain_bounds(self, f, x, y): ...
+        f(x)
+
+    def test_empty(self, test_func): ...
+        test_func([])
+
+    def test_error_estimation(solver_class): ...
+        solver_class(lambda t, y: y, 0, [1], 1, first_step=step)
+
+    def test_error_estimation_complex(solver_class): ...
+        solver_class(lambda t, y: 1j * y, 0, [1j], 1, first_step=h)
+
+    def test_fft_with_order(dtype, order, fft): ...
+        fft(X, axis=axis)
+        fft(Y, axis=axis)
+        fft(X, axes=ax)
+        fft(Y, axes=ax)
+
+    def test_fourier_zero_length_dims(self, shape, dtype, test_func): ...
+        test_func(a, 3)
+
+    def test_idctn_vs_2d_reference(self, finverse, finverse_ref,
+                                   dct_type, norm): ...
+        finverse(fdata, type=dct_type, norm=norm)
+        finverse_ref(fdata, type=dct_type, norm=norm)
+
+    def test_idctn_vs_2d_reference(self, funcn, func, dct_type, norm): ...
+        funcn(fdata, type=dct_type, norm=norm)
+
+    def test_identity_1d(forward, backward, type, n, axis, norm): ...
+        forward(x, type, axis=axis, norm=norm)
+        backward(y, type, axis=axis, norm=norm)
+        backward(y2, type, n, axis, norm)
+
+    def test_identity_1d_overwrite(forward, backward, type, dtype, axis, norm,
+                                   overwrite_x): ...
+        forward(x, type, axis=axis, norm=norm, overwrite_x=overwrite_x)
+        backward(y, type, axis=axis, norm=norm, overwrite_x=overwrite_x)
+
+    def test_identity_nd(forward, backward, type, shape, axes, norm): ...
+        forward(x, type, axes=axes, norm=norm)
+        backward(y, type, axes=axes, norm=norm)
+        backward(y2, type, shape, axes, norm)
+
+    def test_identity_nd_overwrite(forward, backward, type, shape, axes, dtype,
+                                   norm, overwrite_x): ...
+        forward(x, type, axes=axes, norm=norm)
+        backward(y, type, axes=axes, norm=norm)
+
+    def test_invalid_flags(self, convapproach): ...
+        convapproach([1], [2], mode='chips')
+        convapproach([1], [2], axes=[])
+        convapproach([1], [2], axes=[[1, 2], [3, 4]])
+        convapproach([1], [2], axes=[1., 2., 3., 4.])
+        convapproach([1], [2], axes=[1])
+        convapproach([1], [2], axes=[-2])
+        convapproach([1], [2], axes=[0, 0])
+
+    def test_invalid_norm(func): ...
+        func(x, norm='o')
+
+    def test_invalid_shapes(self, convapproach): ...
+        convapproach(a, b, mode='valid')
+
+    def test_invalid_shapes_axes(self, convapproach): ...
+        convapproach(a, b, axes=[0, 1])
+
+    def test_invalid_sizes(self, func): ...
+        func([[]])
+        func([[1, 1], [2, 2]], (4, -3))
+
+    def test_kde_output_dtype(point_type, dataset_type, weights_type, bw_type): ...
+        bw_type(3)
+
+    def test_kdtree_box(kdtree_type): ...
+        kdtree_type(data, leafsize=1, boxsize=1.0)
+        kdtree_type(data, leafsize=1)
+
+    def test_kdtree_box_0boxsize(kdtree_type): ...
+        kdtree_type(data, leafsize=1, boxsize=0.0)
+        kdtree_type(data, leafsize=1)
+
+    def test_kdtree_box_upper_bounds(kdtree_type): ...
+        kdtree_type(data, leafsize=1, boxsize=1.0)
+        kdtree_type(data, leafsize=1, boxsize=(0.0, 2.0))
+        kdtree_type(data, leafsize=1, boxsize=(2.0, 0.0))
+
+    def test_kdtree_build_modes(kdtree_type): ...
+        kdtree_type(points)
+        kdtree_type(points, compact_nodes=False)
+        kdtree_type(points, balanced_tree=False)
+        kdtree_type(points, compact_nodes=False,
+                         balanced_tree=False)
+
+    def test_kdtree_copy_data(kdtree_type): ...
+        kdtree_type(points, copy_data=True)
+
+    def test_kdtree_count_neighbors_weighted(kdtree_class): ...
+        kdtree_class(A)
+        kdtree_class(B)
+
+    def test_kdtree_count_neighbous_multiple_r(kdtree_type): ...
+        kdtree_type(data, leafsize=1)
+
+    def test_kdtree_duplicated_inputs(kdtree_type): ...
+        kdtree_type(data, leafsize=1)
+        kdtree_type(data)
+        kdtree_type(data, compact_nodes=False, leafsize=1)
+
+    def test_kdtree_empty_input(kdtree_type, balanced_tree, compact_nodes): ...
+        kdtree_type(empty_v3, balanced_tree=balanced_tree,
+                           compact_nodes=compact_nodes)
+
+    def test_kdtree_list_k(kdtree_type): ...
+        kdtree_type(data, leafsize=1)
+
+    def test_kdtree_noncumulative_nondecreasing(kdtree_type): ...
+        kdtree_type([[0]], leafsize=1)
+
+    def test_kdtree_pickle(kdtree_type): ...
+        kdtree_type(points)
+
+    def test_kdtree_pickle_boxsize(kdtree_type): ...
+        kdtree_type(points, boxsize=1.0)
+
+    def test_kdtree_query_pairs(kdtree_type): ...
+        kdtree_type(points)
+
+    def test_kdtree_weights(kdtree_type): ...
+        kdtree_type(data, leafsize=1)
+        kdtree_type(data2)
+
+    def test_len0_arrays(kdtree_type): ...
+        kdtree_type(X)
+        kdtree_type(Y)
+
+    def test_longdtype_input(self, dtype): ...
+        dtype()
+
+    def test_maxiter_worsening(solver): ...
+        solver(A, v, maxiter=maxiter, tol=1e-8, atol=0)
+
+    def test_mismatched_dims(self, a, b, convapproach): ...
+        convapproach(a, b)
+
+    def test_multiprocess(func): ...
+        func(np.ones(100))
+
+    def test_nan_inputs(func): ...
+        func(*args)
+
+    def test_nan_omit(self, test_func, expected): ...
+        test_func(x, high=360, nan_policy='omit')
+
+    def test_nan_omit_all(self, test_func): ...
+        test_func(x, nan_policy='omit')
+
+    def test_nan_omit_all_axis(self, test_func): ...
+        test_func(x, nan_policy='omit', axis=1)
+
+    def test_nan_omit_array(self, test_func, expected): ...
+        test_func(x, high=360, nan_policy='omit', axis=axis)
+
+    def test_nan_propagate(self, test_func): ...
+        test_func(x, high=360)
+
+    def test_nan_propagate_array(self, test_func, expected): ...
+        test_func(x, high=360, axis=axis)
+
+    def test_natural_permc(self, splu_fun, rtol): ...
+        splu_fun(A_)
+        splu_fun(A_, permc_spec="NATURAL")
+
+    def test_no_axes(self, func): ...
+        func([], axes=[])
+
+    def test_nonnumeric_dtypes(func): ...
+        func(*args, x=1.)
+
+    def test_onetree_query(kdtree_type): ...
+        kdtree_type(points)
+        kdtree_type(points)
+
+    def test_orcsd_uncsd(dtype_): ...
+        dtype_(1.)
+
+    def test_order_handling(self, start, end, t_func): ...
+        t_func(0, 10, num_t_vals)
+
+    def test_overwrite(routine, dtype, shape, axis, type, norm, overwrite_x): ...
+        routine(x2, type, None, axis, norm, overwrite_x=overwrite_x)
+
+    def test_pptrs_pptri_pptrf_ppsv_ppcon(dtype, lower): ...
+        dtype(5.)
+
+    def test_ptsvx(dtype, realtype, fact, df_de_lambda): ...
+        df_de_lambda(d, e)
+
+    def test_ptsvx_error_raise_errors(dtype, realtype, fact, df_de_lambda): ...
+        df_de_lambda(d, e)
+
+    def test_ptsvx_non_SPD_singular(dtype, realtype, fact, df_de_lambda): ...
+        df_de_lambda(d, e)
+        df_de_lambda(d, e)
+        df_de_lambda(d, e)
+
+    def test_query_ball_point_length(kdtree_type): ...
+        kdtree_type(data)
+
+    def test_query_ball_point_multithreading(kdtree_type): ...
+        kdtree_type(points)
+
+    def test_query_ball_point_vector_r(kdtree_type): ...
+        kdtree_type(data)
+
+    def test_query_pairs_single_node(kdtree_type): ...
+        kdtree_type([[0, 1]])
+
+    def test_random_ball_vectorized(kdtree_type): ...
+        kdtree_type(np.random.randn(n, m))
+
+    def test_shape(self, fforward): ...
+        fforward(self.data, s=(128, 128), axes=None)
+
+    def test_shape(self, fforward): ...
+        fforward(self.data, shape=(128, 128), axes=None)
+
+    def test_shape_axes_ndarray(func): ...
+        func(a, shape=(5, 5))
+        func(a, shape=np.array([5, 5]))
+        func(a, axes=(-1,))
+        func(a, axes=np.array([-1,]))
+        func(a, shape=(4, 7), axes=(1, 0))
+        func(a, shape=np.array([4, 7]), axes=np.array([1, 0]))
+
+    def test_shape_is_none_with_axes(self, fforward, finverse, axes): ...
+        fforward(self.data, s=None, axes=axes, norm='ortho')
+        finverse(tmp, s=None, axes=axes, norm='ortho')
+
+    def test_shape_is_none_with_axes(self, fforward, finverse, axes): ...
+        fforward(self.data, shape=None, axes=axes, norm='ortho')
+        finverse(tmp, shape=None, axes=axes, norm='ortho')
+
+    def test_short_knn(kdtree_type): ...
+        kdtree_type(xyz)
+
+    def test_swapped_byte_order(func): ...
+        func(x.astype(swapped_dt))
+        func(x)
+
+    def test_swapped_byte_order_complex(func): ...
+        func(swap_byteorder(x))
+        func(x)
+
+    def test_swapped_byte_order_real(func): ...
+        func(swap_byteorder(x))
+        func(x)
+
+    def test_threaded_same(x, func, workers): ...
+        func(x, workers=1)
+        func(x, workers=workers)
+
+    def test_x0_working(solver): ...
+        solver(A, b, **kw)
+        solver(A, b, x0=x0, **kw)
+
+    def test_zero_rhs(solver): ...
+        solver(A, b, tol=tol)
+        solver(A, b, tol=tol, x0=ones(10))
+        solver(A, b, tol=tol, atol=0, x0=ones(10))
+        solver(A, b, tol=tol, atol=tol)
+        solver(A, b, tol=tol, atol=0)
+
+    def tplquad(func, a, b, gfun, hfun, qfun, rfun, args=(), epsabs=1.49e-8,
+                epsrel=1.49e-8): ...
+        gfun(args[0])
+        hfun(args[0])
+        qfun(args[1], args[0])
+        rfun(args[1], args[0])
+
+    def trace_args(func): ...
+        func(*a, **kw)
+
+    def trf_bounds(fun, jac, x0, f0, J0, lb, ub, ftol, xtol, gtol, max_nfev,
+                   x_scale, loss_function, tr_solver, tr_options, verbose): ...
+        fun(x_new)
+        jac(x, f)
+        loss_function(f)
+        loss_function(f_new, cost_only=True)
+        loss_function(f)
+
+    def trf_no_bounds(fun, jac, x0, f0, J0, ftol, xtol, gtol, max_nfev,
+                      x_scale, loss_function, tr_solver, tr_options, verbose): ...
+        fun(x_new)
+        jac(x, f)
+        loss_function(f)
+        loss_function(f_new, cost_only=True)
+        loss_function(f)
+
+    def vectorize1(func, args=(), vec_func=False): ...
+        func(x, *args)
+        func(x, *args)
+        func(x[0], *args)
+        func(x[i], *args)
+
+    def verify_gauss_quad(root_func, eval_func, weight_func, a, b, N,
+                          rtol=1e-15, atol=1e-14): ...
+        root_func(N, True)
+        eval_func(n[:,np.newaxis], x)
+        weight_func(x)
+
+    def with_special_errors(func): ...
+        func(*a, **kw)
+
+    def wkq(x, y, rank, weigher, add): ...
+        weigher(rank[i])
+        weigher(rank[j])
+        weigher(rank[i])
+        weigher(rank[j])
+
+    def wrap(fc): ...
+        fc(*a, **kw)
+
+    def wrap(fun): ...
+        fun(*args, **kwargs)
+
+    def wrap_functions(fun, bc, fun_jac, bc_jac, k, a, S, D, dtype): ...
+        fun(x, y)
+        fun(x, y, p)
+        bc(ya, yb)
+        bc(x, y, p)
+        fun_jac(x, y)
+        fun_jac(x, y, p)
+        bc_jac(ya, yb)
+        bc_jac(ya, yb, p)
+
+    def wrap_single_convertor(convert_single): ...
+        convert_single(d.value, d.type, coerce and d.coercible)
+

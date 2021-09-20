@@ -1,9 +1,40 @@
+PROGRESS: Parsed 20/543 files...
+PROGRESS: Parsed 40/543 files...
+PROGRESS: Parsed 60/543 files...
+PROGRESS: Parsed 80/543 files...
+PROGRESS: Parsed 100/543 files...
+PROGRESS: Parsed 120/543 files...
+PROGRESS: Parsed 140/543 files...
+PROGRESS: Parsed 160/543 files...
+PROGRESS: Parsed 180/543 files...
+PROGRESS: Parsed 200/543 files...
+PROGRESS: Parsed 220/543 files...
 Could not parse path /Users/pradeepkumars/Programs/sphinx/tests/roots/test-ext-autodoc/target/pep570.py: Syntax Error @ 4:15.
 Incomplete input. Encountered '/', but expected ')'.
 
 def bar(a, b, /, c, d):
               ^
+
+
+PROGRESS: Parsed 240/543 files...
+PROGRESS: Parsed 260/543 files...
 Could not parse path /Users/pradeepkumars/Programs/sphinx/tests/roots/test-pycode/cp_1251_coded.py: 'utf-8' codec can't decode byte 0xd5 in position 47: invalid continuation byte
+
+
+PROGRESS: Parsed 280/543 files...
+PROGRESS: Parsed 300/543 files...
+PROGRESS: Parsed 320/543 files...
+PROGRESS: Parsed 340/543 files...
+PROGRESS: Parsed 360/543 files...
+PROGRESS: Parsed 380/543 files...
+PROGRESS: Parsed 400/543 files...
+PROGRESS: Parsed 420/543 files...
+PROGRESS: Parsed 440/543 files...
+PROGRESS: Parsed 460/543 files...
+PROGRESS: Parsed 480/543 files...
+PROGRESS: Parsed 500/543 files...
+PROGRESS: Parsed 520/543 files...
+PROGRESS: Parsed 540/543 files...
 Callables with 0 parameters: 3
     Callable[[], ASTExpression]
     Callable[[], ASTExpression]
@@ -98,3 +129,712 @@ Callables with arbitrary parameters: 66
     Callable
     Callable
 Callback Protocols: 0
+Functions with callback parameters: 195
+    def __call__(self, f: Callable) -> Callable: ...
+        f(*args, **kwargs)
+
+    def _parse_expression_fallback(
+            self, end: List[str],
+            parser: Callable[[], ASTExpression],
+            allow: bool = True) -> ASTExpression: ...
+        parser()
+
+    def _parse_expression_fallback(self, end: List[str],
+                                   parser: Callable[[], ASTExpression],
+                                   allow: bool = True) -> ASTExpression: ...
+        parser()
+
+    def _process(self, pipe: Any, func: Callable, arg: Any) -> None: ...
+        func()
+        func(arg)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(a)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(a)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(a)
+        transform(self.next)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(a)
+        transform(self.next)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(a)
+        transform(self.next)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(attr)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(attr)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(attr)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(attr)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(e)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(e)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(e)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(e)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(e)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(n)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(n)
+        transform(n)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.arg)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.arg)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.arg)
+        transform(self.arg)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.args)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.className)
+        transform(self.next)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.concept)
+        transform(param)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.data)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.declId)
+        transform(op)
+        transform(self.param)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.declId)
+        transform(op)
+        transform(self.paramQual)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.declId)
+        transform(self.size)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.declId)
+        transform(self.size)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.declSpecs)
+        transform(self.decl)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.declSpecs)
+        transform(self.decl)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.declaration)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.exceptionSpec)
+        transform(self.trailingReturn)
+        transform(attr)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.expr)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.expr)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.expr)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.expr)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.expr)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.expr)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.expr)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.expr)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.expr)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.expr)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.expr)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.expr)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.expr)
+        transform(self.expr)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.expr)
+        transform(self.expr)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.exprs[0])
+        transform(self.exprs[i])
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.exprs[0])
+        transform(self.exprs[i])
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.exprs[0])
+        transform(self.exprs[i])
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.exprs[0])
+        transform(self.exprs[i])
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.ident)
+        transform(arg)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.identOrOp)
+        transform(self.templateArgs)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.identifier)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.identifier)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.identifier)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.identifier)
+        transform(self.default)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.inner)
+        transform(self.next)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.inner)
+        transform(self.next)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.leftExpr)
+        transform(self.rightExpr)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.leftSpecs)
+        transform(self.trailingTypeSpec)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.leftSpecs)
+        transform(self.trailingTypeSpec)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.literal)
+        transform(self.ident)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.lst)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.lst)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.name)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.name)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.name)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.name)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.name)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.name)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.name)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.name)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.name)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.name)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.name)
+        transform(b)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.name)
+        transform(self.init)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.name)
+        transform(self.init)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.name)
+        transform(self.type)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.name)
+        transform(self.underlyingType)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.nestedName)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.nestedName)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.nestedName)
+        transform(self.initializer)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.nestedParams)
+        transform(self.data)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.next)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.param)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.prefix)
+        transform(p)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.prefix)
+        transform(p)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.size)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.size)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.templatePrefix)
+        transform(self.nestedName)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.templatePrefix)
+        transform(self.requiresClause)
+        transform(self.declaration)
+        transform(self.trailingRequiresClause)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.typ)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.typ)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.typ)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.typ)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.typ)
+        transform(self.expr)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.typ)
+        transform(self.expr)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.typ)
+        transform(self.expr)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.typ)
+        transform(self.initList)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.type)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.type)
+        transform(self.init)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.type)
+        transform(self.init)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.type)
+        transform(self.init)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.typeOrExpr)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.value)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.value)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(self.value)
+
+    def _stringify(self, transform: StringifyTransform) -> str: ...
+        transform(t)
+
+    def _symbol_lookup(self, nestedName: ASTNestedName,
+                       onMissingQualifiedSymbol: Callable[["Symbol", ASTIdentifier], "Symbol"],  # NOQA
+                       ancestorLookupType: str, matchSelf: bool,
+                       recurseInAnon: bool, searchInSiblings: bool) -> SymbolLookupResult: ...
+        onMissingQualifiedSymbol(parentSymbol, ident)
+
+    def _symbol_lookup(self, nestedName: ASTNestedName, templateDecls: List[Any],
+                       onMissingQualifiedSymbol: Callable[["Symbol", Union[ASTIdentifier, ASTOperator], Any, ASTTemplateArgs], "Symbol"],  # NOQA
+                       strictTemplateParamArgLists: bool, ancestorLookupType: str,
+                       templateShorthand: bool, matchSelf: bool,
+                       recurseInAnon: bool, correctPrimaryTemplateArgs: bool,
+                       searchInSiblings: bool) -> SymbolLookupResult: ...
+        onMissingQualifiedSymbol(parentSymbol, identOrOp,
+                                          templateParams, templateArgs)
+
+    def add_env_collector(self, collector: Type[EnvironmentCollector]) -> None: ...
+        collector()
+
+    def add_task(self, task_func: Callable, arg: Any = None, result_func: Callable = None) -> None: ...
+        task_func(arg)
+        task_func()
+        result_func(res)
+
+    def app(test_params: Dict, app_params: Tuple[Dict, Dict], make_app: Callable,
+            shared_result: SharedResult) -> Generator[SphinxTestApp, None, None]: ...
+        make_app(*args, **kwargs)
+
+    def assertEqualTwice(self, expected, func, *args): ...
+        func(*args)
+        func(*args)
+
+    def assertFalseTwice(self, func, *args): ...
+        func(*args)
+        func(*args)
+
+    def assertTrueTwice(self, func, *args): ...
+        func(*args)
+        func(*args)
+
+    def babel_format_date(date: datetime, format: str, locale: Optional[str],
+                          formatter: Callable = babel.dates.format_date) -> str: ...
+        formatter(date, format, locale=locale)
+        formatter(date, format, locale='en')
+
+    def check_xpath(etree, fname, path, check, be_found=True): ...
+        check(nodes)
+
+    def copy_asset(source: str, destination: str, excluded: PathMatcher = lambda path: False,
+                   context: Dict = None, renderer: "BaseRenderer" = None,
+                   onerror: Callable[[str, Exception], None] = None) -> None: ...
+        excluded(posixpath.join(reldir, dir))
+        excluded(posixpath.join(reldir, filename))
+        onerror(posixpath.join(root, filename), exc)
+
+    def create_server(thread_class): ...
+        thread_class(handler, daemon=True)
+
+    def deco1(func): ...
+        func()
+
+    def decorator(func): ...
+        func()
+
+    def do_prompt(text: str, default: str = None, validator: Callable[[str], Any] = nonempty) -> Union[str, bool]: ...
+        validator(x)
+
+    def execfile_(filepath: str, _globals: Any, open: Callable = open) -> None: ...
+        open(filepath, 'rb')
+
+    def for_file(cls, filename: str, modname: str) -> "ModuleAnalyzer": ...
+        cls(f, modname, filename)
+
+    def for_string(cls, string: str, modname: str, srcname: str = '<string>'
+                   ) -> "ModuleAnalyzer": ...
+        cls(StringIO(string), modname, srcname)
+
+    def from_reporter(cls, reporter: Reporter) -> "LoggingReporter": ...
+        cls(reporter.source, reporter.report_level, reporter.halt_level,
+                   reporter.debug_flag, reporter.error_handler)
+
+    def fromstring(cls, string): ...
+        cls(ElementTree.fromstring(string))
+
+    def get_class_members(subject: Any, objpath: List[str], attrgetter: Callable
+                          ) -> Dict[str, "ObjectMember"]: ...
+        attrgetter(subject, '__dict__', {})
+        attrgetter(subject, name)
+
+    def get_object_members(subject: Any, objpath: List[str], attrgetter: Callable,
+                           analyzer: ModuleAnalyzer = None) -> Dict[str, Attribute]: ...
+        attrgetter(subject, '__dict__', {})
+        attrgetter(subject, name)
+
+    def getdoc(obj: Any, attrgetter: Callable = safe_getattr,
+               allow_inherited: bool = False, cls: Any = None, name: str = None) -> str: ...
+        attrgetter(obj, '__doc__', None)
+        attrgetter(meth, '__doc__', None)
+
+    def import_object(modname: str, objpath: List[str], objtype: str = '',
+                      attrgetter: Callable[[Any, str], Any] = safe_getattr,
+                      warningiserror: bool = False) -> Any: ...
+        attrgetter(obj, mangled_name)
+
+    def inline_all_toctrees(builder: "Builder", docnameset: Set[str], docname: str,
+                            tree: nodes.document, colorfunc: Callable, traversed: List[str]
+                            ) -> nodes.document: ...
+        colorfunc(includefile)
+
+    def inliner(new_document): ...
+        new_document()
+
+    def load_v1(cls, stream: InventoryFileReader, uri: str, join: Callable) -> Inventory: ...
+        join(uri, location)
+
+    def load_v2(cls, stream: InventoryFileReader, uri: str, join: Callable) -> Inventory: ...
+        join(uri, location)
+
+    def make_app_with_empty_project(make_app, tempdir): ...
+        make_app(*args, **kw)
+
+    def make_xref(self, rolename: str, domain: str, target: str,
+                  innernode: Type[TextlikeNode] = addnodes.literal_emphasis,
+                  contnode: Node = None, env: BuildEnvironment = None,
+                  inliner: Inliner = None, location: Node = None) -> Node: ...
+        innernode(target, target)
+        innernode(target, target)
+
+    def make_xref(self, rolename: str, domain: str, target: str,
+                  innernode: Type[TextlikeNode] = nodes.emphasis,
+                  contnode: Node = None, env: BuildEnvironment = None,
+                  inliner: Inliner = None, location: Node = None) -> Node: ...
+        innernode('', shortname)
+
+    def make_xrefs(self, rolename: str, domain: str, target: str,
+                   innernode: Type[TextlikeNode] = nodes.emphasis,
+                   contnode: Node = None, env: BuildEnvironment = None,
+                   inliner: Inliner = None, location: Node = None) -> List[Node]: ...
+        innernode(sub_target, sub_target)
+
+    def myawait(f): ...
+        f(*args, **kwargs)
+
+    def old_status_iterator(iterable: Iterable, summary: str, color: str = "darkgreen",
+                            stringify_func: Callable[[Any], str] = display_chunk) -> Iterator: ...
+        stringify_func(item)
+
+    def parse(new_document): ...
+        new_document()
+
+    def read(cls, confdir: str, overrides: Dict = None, tags: Tags = None) -> "Config": ...
+        cls(namespace, overrides or {})
+
+    def render_from_file(cls, filename: str, context: Dict) -> str: ...
+        cls(dirname)
+
+    def simple_decorator(f): ...
+        f(*args, **kwargs)
+
+    def status_iterator(iterable: Iterable, summary: str, color: str = "darkgreen",
+                        length: int = 0, verbosity: int = 0,
+                        stringify_func: Callable[[Any], str] = display_chunk) -> Iterable: ...
+        stringify_func(item)
+
+    def summarize(self, out: Callable, verbose: bool = None  # type: ignore
+                  ) -> Tuple[int, int]: ...
+        out(string_io.getvalue())
+
+    def test_RSTParser_prolog_epilog(RSTStateMachine, app): ...
+        RSTStateMachine()
+        RSTStateMachine()
+        RSTStateMachine()
+        RSTStateMachine()
+
+    def test_alternate_stylesheets(app, cached_etree_parse, fname, expect): ...
+        cached_etree_parse(app.outdir / fname)
+
+    def test_autosummary_class_template_overloading(make_app, app_params): ...
+        make_app(*args, **kwargs)
+
+    def test_autosummary_context(make_app, app_params): ...
+        make_app(*args, **kwargs)
+
+    def test_autosummary_generate_overwrite1(app_params, make_app): ...
+        make_app(*args, **kwargs)
+
+    def test_autosummary_generate_overwrite2(app_params, make_app): ...
+        make_app(*args, **kwargs)
+
+    def test_build_all(requests_head, make_app, nonascii_srcdir, buildername): ...
+        make_app(buildername, srcdir=nonascii_srcdir)
+
+    def test_config_status(make_app, app_params): ...
+        make_app(*args, freshenv=True, **kwargs)
+        make_app(*args, **kwargs)
+        make_app(*args, confoverrides={'root_doc': 'indexx'}, **kwargs)
+        make_app(*args, confoverrides={'extensions': ['sphinx.ext.autodoc']}, **kwargs)
+
+    def test_customize_system_message(make_app, app_params, sphinx_test_tempdir): ...
+        make_app(*args, **kwargs)
+
+    def test_download_role(parse): ...
+        parse(text)
+        parse(text)
+
+    def test_enumerable_node(app, cached_etree_parse, fname, expect): ...
+        cached_etree_parse(app.outdir / fname)
+
+    def test_errors_if_setup_is_not_callable(tempdir, make_app): ...
+        make_app(srcdir=tempdir)
+
+    def test_fetch_inventory_redirection(_read_from_url, InventoryFile, app, status, warning): ...
+        _read_from_url()
+        _read_from_url()
+        _read_from_url()
+        _read_from_url()
+        _read_from_url()
+
+    def test_get_items_summary(make_app, app_params): ...
+        make_app(*args, **kwargs)
+
+    def test_gettext_dont_rebuild_mo(make_app, app_params): ...
+        make_app('dummy', *args, **kwargs)
+        make_app('gettext', *args, **kwargs)
+
+    def test_html5_output(app, cached_etree_parse, fname, expect): ...
+        cached_etree_parse(app.outdir / fname)
+
+    def test_html_manpage(app, cached_etree_parse, fname, expect): ...
+        cached_etree_parse(app.outdir / fname)
+
+    def test_html_math_renderer_is_duplicated(make_app, app_params): ...
+        make_app(*args, **kwargs)
+
+    def test_html_math_renderer_is_mismatched(make_app, app_params): ...
+        make_app(*args, **kwargs)
+
+    def test_inline(get_verifier, type, rst, html_expected, latex_expected): ...
+        get_verifier(type)
+
+    def test_inline_docutils16(get_verifier, type, rst, html_expected, latex_expected): ...
+        get_verifier(type)
+
+    def test_inline_for_unicode_latex_engine(get_verifier, type, rst,
+                                             html_expected, latex_expected): ...
+        get_verifier(type)
+
+    def test_layout_overloading(make_app, app_params): ...
+        make_app(*args, **kwargs)
+
+    def test_multibyte_parameters(make_app, apidoc): ...
+        make_app('text', srcdir=outdir)
+
+    def test_numfig_disabled(app, cached_etree_parse, fname, expect): ...
+        cached_etree_parse(app.outdir / fname)
+
+    def test_numfig_with_numbered_toctree(app, cached_etree_parse, fname, expect): ...
+        cached_etree_parse(app.outdir / fname)
+
+    def test_numfig_with_prefix(app, cached_etree_parse, fname, expect): ...
+        cached_etree_parse(app.outdir / fname)
+
+    def test_numfig_with_secnum_depth(app, cached_etree_parse, fname, expect): ...
+        cached_etree_parse(app.outdir / fname)
+
+    def test_numfig_with_singlehtml(app, cached_etree_parse, fname, expect): ...
+        cached_etree_parse(app.outdir / fname)
+
+    def test_numfig_without_numbered_toctree(app, cached_etree_parse, fname, expect): ...
+        cached_etree_parse(app.outdir / fname)
+
+    def test_pep_0420_disabled(make_app, apidoc): ...
+        make_app('text', srcdir=outdir)
+
+    def test_pep_0420_disabled_top_level_verify(make_app, apidoc): ...
+        make_app('text', srcdir=outdir)
+
+    def test_pep_0420_enabled(make_app, apidoc): ...
+        make_app('text', srcdir=outdir)
+
+    def test_pep_0420_enabled_separate(make_app, apidoc): ...
+        make_app('text', srcdir=outdir)
+
+    def test_root_doc_not_found(tempdir, make_app): ...
+        make_app('dummy', srcdir=tempdir)
+
+    def test_samp_role(parse): ...
+        parse(text)
+        parse(text)
+        parse(text)
+        parse(text)
+        parse(text)
+
+    def test_simple(make_app, apidoc): ...
+        make_app('text', srcdir=outdir)
+
+    def test_tocdepth(app, cached_etree_parse, fname, expect): ...
+        cached_etree_parse(app.outdir / fname)
+
+    def test_tocdepth_singlehtml(app, cached_etree_parse, fname, expect): ...
+        cached_etree_parse(app.outdir / fname)
+
+    def test_trailing_underscore(make_app, apidoc): ...
+        make_app('text', srcdir=outdir)
+
+    def verify(verify_re_html, verify_re_latex): ...
+        verify_re_html(rst, re.escape(html_expected) + '$')
+        verify_re_latex(rst, re.escape(latex_expected) + '$')
+
+    def verify_re(verify_re_html, verify_re_latex): ...
+        verify_re_html(rst, html_expected)
+        verify_re_latex(rst, latex_expected)
+
+    def verify_re_html(app, parse): ...
+        parse(rst)
+
+    def verify_re_latex(app, parse): ...
+        parse(rst)

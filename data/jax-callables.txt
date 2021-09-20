@@ -1,3 +1,17 @@
+PROGRESS: Parsed 20/283 files...
+PROGRESS: Parsed 40/283 files...
+PROGRESS: Parsed 60/283 files...
+PROGRESS: Parsed 80/283 files...
+PROGRESS: Parsed 100/283 files...
+PROGRESS: Parsed 120/283 files...
+PROGRESS: Parsed 140/283 files...
+PROGRESS: Parsed 160/283 files...
+PROGRESS: Parsed 180/283 files...
+PROGRESS: Parsed 200/283 files...
+PROGRESS: Parsed 220/283 files...
+PROGRESS: Parsed 240/283 files...
+PROGRESS: Parsed 260/283 files...
+PROGRESS: Parsed 280/283 files...
 Callables with 0 parameters: 10
     Callable[[], Any]
     Callable[[], Optional[Tuple[pxla.PartitionsOrReplicated, ...]]]
@@ -245,3 +259,1495 @@ Callables with arbitrary parameters: 194
     Callable[..., Tuple[T, U]]
     Callable[..., core.ClosedJaxpr]
 Callback Protocols: 0
+Functions with callback parameters: 365
+    def BatchNorm(axis=(0, 1, 2), epsilon=1e-5, center=True, scale=True,
+                  beta_init=zeros, gamma_init=ones): ...
+        beta_init(rng, shape)
+        gamma_init(rng, shape)
+
+    def ConvertAndCompare(self,
+                          func_jax: Callable,
+                          *args,
+                          enable_xla: bool = True,
+                          limitations: Sequence = ()): ...
+        func_jax(*args)
+
+    def Dense(out_dim, W_init=glorot_normal(), b_init=normal()): ...
+        W_init(k1, (input_shape[-1], out_dim))
+        b_init(k2, (out_dim,))
+
+    def GeneralConv(dimension_numbers, out_chan, filter_shape,
+                    strides=None, padding='VALID', W_init=None,
+                    b_init=normal(1e-6)): ...
+        W_init(k1, kernel_shape)
+        b_init(k2, bias_shape)
+
+    def GeneralConvTranspose(dimension_numbers, out_chan, filter_shape,
+                             strides=None, padding='VALID', W_init=None,
+                             b_init=normal(1e-6)): ...
+        W_init(k1, kernel_shape)
+        b_init(k2, bias_shape)
+
+    def VmapOfXmapCases(s): ...
+        s(product(xmap_in_axes, repeat=2))
+        s(xmap_out_axes)
+        s([*range(2 + len(xmap_dim_x)), None])
+        s([*range(2 + len(xmap_dim_y)), None])
+        s(range(3))
+        s(range(2 + len(xmap_axes)))
+        s([False, True])
+
+    def _Check(self, make_const, expected): ...
+        make_const()
+        make_const()
+        make_const()
+        make_const()
+
+    def _CheckAgainstNumpy(self, numpy_reference_op, lax_op, args_maker,
+                           check_dtypes=True, tol=None,
+                           canonicalize_dtypes=True): ...
+        numpy_reference_op(*args)
+        lax_op(*args)
+        args_maker()
+
+    def _CheckBatching(self, op, bdim_size, bdims, shapes, dtypes, rng,
+                       rtol=None, atol=None): ...
+        op(*args)
+        op(*args_slice(i))
+        rng(shape, dtype)
+        rng(shape, dtype)
+
+    def _CheckChiSquared(self, samples, pmf): ...
+        pmf(values)
+
+    def _CheckFuns(self, optimizer, loss, x0, *args): ...
+        optimizer(*args)
+
+    def _CheckRun(self, optimizer, loss, x0, num_steps, *args, **kwargs): ...
+        optimizer(*args)
+        loss(xstar)
+        loss(xstar)
+
+    def _CheckShapeAgreement(test_case, init_fun, apply_fun, input_shape): ...
+        init_fun(init_key, input_shape)
+        apply_fun(params, inputs, rng=rng_key)
+
+    def _CheckShapeAgreement(test_case, init_fun, apply_fun, input_shape): ...
+        init_fun(jax_rng, input_shape)
+        apply_fun(params, rng.randn(*input_shape).astype(dtype="float32"))
+
+    def _CompileAndCheck(self, fun, args_maker, *, check_dtypes=True,
+                         rtol=None, atol=None, check_cache_misses=True): ...
+        fun(*args)
+        fun(*args)
+        fun(*args)
+        fun(*args)
+        args_maker()
+        args_maker()
+
+    def _GetArgsMaker(self, rng, shapes, dtypes): ...
+        rng(shape, dtype)
+
+    def _GetArgsMaker(self, rng, shapes, dtypes, np_arrays=True): ...
+        rng(shape, dtype or jnp.float_)
+
+    def _add_hooks(self, update_global_hook, update_thread_local_hook): ...
+        update_global_hook(config._read(self._name))
+
+    def _allreduce_impl(pos_reducer, *args, axes, axis_index_groups): ...
+        pos_reducer(arg, axes)
+
+    def _apply_excluded(func, excluded, args): ...
+        func(*args)
+
+    def _argminmax(fn, operand, axes, index_dtype): ...
+        fn(operand, axis=axis, output_type=output_type)
+
+    def _argminmax_gpu_translation_rule(op, a, *, axes, index_dtype): ...
+        op(a, (axis,))
+
+    def _argminmax_translation_rule(value_comparator, identity,
+                                    c, operand, *, axes, index_dtype): ...
+        value_comparator(x_value, y_value)
+        identity(dtype)
+
+    def _batch_trace_process_xmap(self, is_spmd, primitive, f: lu.WrappedFun, tracers, params): ...
+        f(axis)
+
+    def _batch_trace_update_spmd_axes(
+        spmd_in_axes, spmd_out_axes_thunk,
+        axis_name, dims, dims_out_thunk): ...
+        spmd_out_axes_thunk()
+        dims_out_thunk()
+
+    def _batched_reduction_collective(
+        prim, if_unmapped, frame, vals_in, dims_in, axes,
+        axis_index_groups): ...
+        if_unmapped(v, frame.size)
+
+    def _bicgstab_solve(A, b, x0=None, *, maxiter, tol=1e-5, atol=0.0, M=_identity): ...
+        A(phat)
+        A(shat)
+        A(x0)
+
+    def _broadcast_translate(translate: Callable): ...
+        translate(c, *args, **kwargs)
+
+    def _call(callback_func: Callable, arg, *,
+              result_shape=None,
+              call_with_device=False,
+              identity=False): ...
+        callback_func(arg, transforms, device=device)
+        callback_func(arg, transforms)
+        callback_func(arg, device=device)
+        callback_func(arg)
+
+    def _call(f): ...
+        f(x, *args, **kw)
+
+    def _cg_solve(A, b, x0=None, *, maxiter, tol=1e-5, atol=0.0, M=_identity): ...
+        A(p)
+        A(x0)
+
+    def _check_aval(aval, what_thunk): ...
+        what_thunk()
+
+    def _check_output_dims(
+        func: Callable,
+        dim_sizes: Dict[str, int],
+        expected_output_core_dims: List[CoreDims],
+        error_context: str = "",
+    ) -> Callable: ...
+        func(*args)
+
+    def _cholesky_cpu_gpu_translation_rule(potrf_impl, c, operand): ...
+        potrf_impl(c, operand, lower=True)
+
+    def _comparison_op(numpy_fn, lax_fn): ...
+        lax_fn(lax.imag(x1), lax.imag(x2))
+        lax_fn(rx, ry)
+        lax_fn(x1, x2)
+
+    def _cond(pred, true_fun: Callable, false_fun: Callable, operand): ...
+        true_fun(operand)
+        false_fun(operand)
+
+    def _cond_with_per_branch_args(pred,
+                                   true_operand, true_fun: Callable,
+                                   false_operand, false_fun: Callable): ...
+        true_fun(op[0])
+        false_fun(op[1])
+
+    def _convert_jax_impl(jax_impl: Callable, *,
+                          multiple_results=True,
+                          extra_name_stack: Optional[str] = None) -> Callable: ...
+        jax_impl(*jax_args, **kwargs)
+
+    def _cumred_tpu_translation_rule(window_reduce: Callable, x, *,
+                                     axis: int, reverse: bool): ...
+        window_reduce(x, window_dims, strides, padding)
+
+    def _defer_to_unrecognized_arg(binary_op): ...
+        binary_op(self, other)
+
+    def _eigh_cpu_gpu_translation_rule(syevd_impl, c, operand, lower): ...
+        syevd_impl(c, operand, lower=lower)
+
+    def _execute_compiled_primitive(prim, compiled, result_handler, *args): ...
+        result_handler(*out_bufs)
+
+    def _execute_replicated_primitive(prim, compiled, result_handler, *args): ...
+        result_handler(*out_bufs)
+
+    def _execute_spatially_partitioned(compiled, in_handler, out_handler, *args): ...
+        in_handler(args)
+        out_handler(out_bufs)
+
+    def _flatten_bwd(in_tree, in_avals, out_trees, *args): ...
+        out_trees()
+
+    def _flatten_ivjp(in_tree, out_tree, *args): ...
+        out_tree()
+
+    def _fori_body_fun(body_fun): ...
+        body_fun(i, x)
+
+    def _fori_scan_body_fun(body_fun): ...
+        body_fun(i, x)
+
+    def _forward_method(attrname, self, fun, *args): ...
+        fun(getattr(self, attrname), *args)
+
+    def _forward_to_value(self, fun, ignored_tracer, *args): ...
+        fun(self.val, *args)
+
+    def _gen_reduce_choose_taylor_rule(chooser_fun): ...
+        chooser_fun(operand, **params)
+
+    def _get_ind(f, ind): ...
+        f(*args)
+
+    def _gmres_batched(A, b, x0, unit_residual, residual_norm, ptol, restart, M): ...
+        A(x)
+        M(_sub(b, A(x)))
+
+    def _gmres_incremental(A, b, x0, unit_residual, residual_norm, ptol, restart, M): ...
+        A(x)
+        M(_sub(b, A(x)))
+
+    def _gmres_solve(A, b, x0, atol, ptol, restart, maxiter, M, gmres_func): ...
+        A(x0)
+        M(_sub(b, A(x0)))
+        gmres_func(
+            A, b, x, unit_residual, residual_norm, ptol, restart, M)
+
+    def _irfft_with_zeroed_inputs(irfft_fun): ...
+        irfft_fun(_zero_for_irfft(z, axes), axes=axes, s=s)
+
+    def _kth_arnoldi_iteration(k, A, M, V, H): ...
+        A(v)
+        M(A(v))
+
+    def _logical_op(np_op, bitwise_op): ...
+        bitwise_op(*_promote_args(np_op.__name__, *args))
+
+    def _lu_cpu_gpu_translation_rule(getrf_impl, c, operand, backend): ...
+        getrf_impl(c, operand)
+
+    def _make_binary_elementwise_harnesses(prim,
+                                           dtypes,
+                                           default_dtype=np.float32,
+                                           broadcasting_dtypes=None,
+                                           jax_unimplemented=lambda **kwargs: []): ...
+        jax_unimplemented(
+                dtype=dtype, prim=prim, shapes=shapes)
+
+    def _make_cumulative_reduction(np_reduction, reduction, fill_nan=False, fill_value=0): ...
+        reduction(a, axis)
+
+    def _match_axes(axis_size, axis_name, in_dims, out_dims_thunk, out_dim_dests,
+                    *in_vals): ...
+        out_dims_thunk()
+        out_dim_dests()
+
+    def _match_axes_and_sum(axis_size, out_dims_thunk, out_dim_dests, *in_vals): ...
+        out_dims_thunk()
+
+    def _maybe_bool_binop(numpy_fn, lax_fn, bool_lax_fn, lax_doc=False): ...
+        lax_fn(x1, x2)
+        bool_lax_fn(x1, x2)
+
+    def _memoize(thunk): ...
+        thunk()
+
+    def _minimize(objective_fn, x0, *args): ...
+        objective_fn(x0, *args)
+
+    def _nan_reduction(a, name, jnp_reduction, init_val, nan_if_all_nan,
+                       axis=None, keepdims=None, **kwargs): ...
+        jnp_reduction(a, axis=axis, keepdims=keepdims, **kwargs)
+        jnp_reduction(where(isnan(a), _reduction_init_val(a, init_val), a),
+                            axis=axis, keepdims=keepdims, **kwargs)
+
+    def _odeint(func, rtol, atol, mxstep, y0, ts, *args): ...
+        func(y, t, *args)
+
+    def _odeint_rev(func, rtol, atol, mxstep, res, g): ...
+        func(ys[i], ts[i], *args)
+
+    def _one_to_one_binop(numpy_fn, lax_fn, promote_to_inexact=False, lax_doc=False): ...
+        lax_fn(*_promote_args_inexact(numpy_fn.__name__, x1, x2))
+        lax_fn(*_promote_args(numpy_fn.__name__, x1, x2))
+
+    def _one_to_one_unop(numpy_fn, lax_fn, promote_to_inexact=False, lax_doc=False): ...
+        lax_fn(*_promote_args_inexact(numpy_fn.__name__, x))
+        lax_fn(*_promote_args(numpy_fn.__name__, x))
+
+    def _pad_stats(array, pad_width, stat_length, stat_func): ...
+        stat_func(array, axis=i, keepdims=True)
+        stat_func(slice_before, axis=i, keepdims=True)
+        stat_func(slice_after, axis=i, keepdims=True)
+
+    def _pjit_jaxpr(fun, mesh, local_in_avals,
+                    in_tree, in_axis_resources_thunk,
+                    out_tree, out_axis_resources_thunk): ...
+        in_axis_resources_thunk()
+        out_tree()
+        out_axis_resources_thunk()
+
+    def _pooling_layer(reducer, init_val, rescaler=None): ...
+        rescaler(window_shape, strides, padding)
+
+    def _promote_like_jnp(fun, inexact=False): ...
+        fun(*args, **kw)
+
+    def _python_jit(
+        fun: F,
+        static_argnums: Union[int, Iterable[int], None] = None,
+        static_argnames: Union[str, Iterable[str], None] = None,
+        device: Optional[xc.Device] = None,
+        backend: Optional[str] = None,
+        donate_argnums: Union[int, Iterable[int]] = (),
+        inline: bool = False,
+    ) -> F: ...
+        fun(*args, **kwargs)
+
+    def _qr_cpu_gpu_translation_rule(geqrf_impl, orgqr_impl, c, operand,
+                                     full_matrices): ...
+        geqrf_impl(c, operand)
+        orgqr_impl(c, q, tau)
+        orgqr_impl(c, r, tau)
+        orgqr_impl(c, q, tau)
+
+    def _rand_dtype(rand, shape, dtype, scale=1., post=lambda x: x): ...
+        rand(*_dims_of_shape(shape))
+        post(vals)
+
+    def _reduce_chooser_translation_rule(prim, identity, c, operand, *, axes): ...
+        identity(dtype)
+
+    def _reduce_jvp(reducer, init_values, primals, tangents, axes): ...
+        reducer(*(xs1 + xs2))
+
+    def _reduce_logical_translation_rule(prim, identity, c, operand, *, axes): ...
+        identity(np.bool_)
+
+    def _reduce_window_batch_rule(reduce_window, batched_args, bdims, *,
+                                  window_dimensions, window_strides, padding,
+                                  base_dilation, window_dilation): ...
+        reduce_window(operand, window_dimensions, window_strides, padding,
+                                base_dilation, window_dilation)
+
+    def _reduce_window_chooser_translation_rule(
+        prim, identity, c, operand, *, window_dimensions, window_strides, padding,
+        base_dilation, window_dilation): ...
+        identity(dtype)
+
+    def _reducer_from_pyfunc(py_binop, init_val): ...
+        py_binop(result[out_idx], operand[idx])
+
+    def _reducer_masking_rule(prim, identity, padded_vals, logical_shapes,
+                              axes, input_shape=None, **reduce_kwargs): ...
+        identity(padded_shape, padded_val.dtype)
+
+    def _reduction(a, name, np_fun, op, init_val, has_identity=True,
+                   preproc=None, bool_op=None, upcast_f16_for_computation=False,
+                   axis=None, dtype=None, out=None, keepdims=False, initial=None,
+                   where_=None, parallel_reduce=None): ...
+        np_fun(np.ones((), dtype=_dtype(a)))
+        op(_reduction_init_val(a, initial), result)
+        preproc(a)
+        parallel_reduce(a, dims)
+
+    def _reduction_jaxpr(computation, aval): ...
+        computation(x, y)
+
+    def _reduction_with_positional_batcher(prim, vals_in, dims_in, axis_index_groups,
+        transform_unmapped, transform_mapped): ...
+        transform_unmapped(0, unmapped_vals_in)
+        transform_mapped(0, mapped_vals_in)
+
+    def _result_dtype(op, *args): ...
+        op(*args)
+
+    def _rewrite_while_outfeed_cond(eqn: core.JaxprEqn, eqns: List[core.JaxprEqn],
+                                    input_token_var: core.Var, output_token_var: core.Var,
+                                    input_itoken_var: core.Var, output_itoken_var: core.Var,
+                                    mk_new_var: Callable): ...
+        mk_new_var(ov.aval)
+        mk_new_var(cond_jaxpr.out_avals[0])
+        mk_new_var(cv.aval)
+        mk_new_var(core.abstract_token)
+        mk_new_var(core.abstract_token)
+        mk_new_var(v.aval)
+        mk_new_var(v.aval)
+        mk_new_var(cond_jaxpr.out_avals[0])
+        mk_new_var(cv.aval)
+        mk_new_var(core.abstract_token)
+        mk_new_var(core.abstract_token)
+        mk_new_var(cv.aval)
+        mk_new_var(core.abstract_token)
+        mk_new_var(core.abstract_token)
+        mk_new_var(cond_jaxpr.out_avals[0])
+        mk_new_var(core.abstract_token)
+        mk_new_var(core.abstract_token)
+        mk_new_var(cond_jaxpr.out_avals[0])
+
+    def _run_tf_function(func_tf: Callable, *tf_args, mode: str): ...
+        func_tf(*tf_args)
+
+    def _scatter_batching_rule(scatter_op, batched_args, batch_dims, *,
+                               update_jaxpr, update_consts, dimension_numbers,
+                               indices_are_sorted, unique_indices): ...
+        scatter_op(
+          operand, scatter_indices, updates, dnums,
+          indices_are_sorted=indices_are_sorted, unique_indices=unique_indices)
+        scatter_op(
+            operand, scatter_indices, updates, dnums,
+            indices_are_sorted=indices_are_sorted, unique_indices=unique_indices)
+
+    def _scatter_impl(x, y, scatter_op, treedef, static_idx, dynamic_idx,
+                      indices_are_sorted, unique_indices, normalize_indices): ...
+        scatter_op(x, indexer.gather_indices, y, dnums,
+                         indices_are_sorted=indices_are_sorted,
+                         unique_indices=indexer.unique_indices or unique_indices)
+
+    def _segment_update(name: str,
+                        data: Array,
+                        segment_ids: Array,
+                        scatter_op: Callable,
+                        num_segments: Optional[int] = None,
+                        indices_are_sorted: bool = False,
+                        unique_indices: bool = False,
+                        bucket_size: Optional[int] = None,
+                        reducer: Optional[Callable] = None) -> Array: ...
+        reducer(jnp.stack(outs), axis=0)
+
+    def _shape_checked(fun, name, has_aux): ...
+        fun(x)
+        fun(x)
+
+    def _sharded_call(f: lu.WrappedFun, vals: Sequence[TfVal],
+                      in_parts: Sequence[pxla.PartitionsOrReplicated],
+                      out_parts_thunk,
+                      **_) -> Sequence[Tuple[TfVal, core.AbstractValue]]: ...
+        out_parts_thunk()
+
+    def _sharded_callable(
+        fun: lu.WrappedFun, nparts: Optional[int],
+        in_parts: Tuple[pxla.PartitionsOrReplicated, ...],
+        out_parts_thunk: Callable[[], Tuple[pxla.PartitionsOrReplicated, ...]],
+        local_in_parts: Optional[Tuple[pxla.PartitionsOrReplicated, ...]],
+        local_out_parts_thunk: Callable[[], Optional[Tuple[pxla.PartitionsOrReplicated, ...]]],
+        local_nparts: Optional[int], name: str, *abstract_args): ...
+        out_parts_thunk()
+        local_out_parts_thunk()
+
+    def _sharded_jit_translation_rule(c, axis_env, in_nodes, name_stack,
+                                      in_parts, out_parts_thunk, nparts, backend,
+                                      name, call_jaxpr, local_in_parts,
+                                      local_out_parts_thunk, local_nparts): ...
+        out_parts_thunk()
+
+    def _specialized_reduce_window(reducer,
+                                   identity,
+                                   operand,
+                                   *,
+                                   window_dimensions,
+                                   window_strides,
+                                   padding,
+                                   base_dilation,
+                                   window_dilation,
+                                   _in_avals,
+                                   _out_aval,
+                                   name=None): ...
+        identity(operand.dtype)
+
+    def _stop_gradient_fun(f): ...
+        f(*a, **b)
+
+    def _subst_all_names_in_param(
+        pname: str, params: core.ParamDict, subst: core.AxisSubst, traverse: bool) -> core.ParamDict: ...
+        subst(name)
+
+    def _svd_cpu_gpu_translation_rule(gesvd_impl, c, operand, full_matrices, compute_uv): ...
+        gesvd_impl(c, operand,
+                                    full_matrices=full_matrices,
+                                    compute_uv=compute_uv)
+
+    def _swap_args(f): ...
+        f(y, x)
+
+    def _triangular_solve_gpu_translation_rule(trsm_impl,
+        c, a, b, left_side, lower, transpose_a, conjugate_a, unit_diagonal): ...
+        trsm_impl(
+          c, a, b, left_side, lower, transpose_a,
+          conjugate_a, unit_diagonal)
+
+    def _unpack_tuple(f, n): ...
+        f(c, *args, **kwargs)
+
+    def _upcast_fp16_for_computation(f): ...
+        f(convert_element_type(x, np.float32))
+        f(x)
+
+    def _vjp_pullback_wrapper(cotangent_dtypes, io_tree, fun, py_args): ...
+        fun(*args)
+
+    def _while_loop(cond_fun, body_fun, init_val, max_iter): ...
+        cond_fun(init_val)
+        body_fun(val)
+
+    def _wrap_indices_function(f): ...
+        f(*args, **kwargs)
+
+    def _wrap_numpy_nullary_function(f): ...
+        f(*args, **kwargs)
+
+    def _xmap_axis_subst(params, subst, traverse): ...
+        subst(name)
+
+    def _zoom(restricted_func_and_grad, wolfe_one, wolfe_two, a_lo, phi_lo,
+              dphi_lo, a_hi, phi_hi, dphi_hi, g_0, pass_through): ...
+        restricted_func_and_grad(a_j)
+        wolfe_one(a_j, phi_j)
+        wolfe_two(dphi_j)
+
+    def accuracy(predict: Callable, params, dataset): ...
+        predict(params, inputs)
+
+    def accuracy(predict: Callable, params, dataset): ...
+        predict(params, inputs)
+
+    def adagrad(step_size, momentum=0.9): ...
+        step_size(i)
+
+    def adam(step_size, b1=0.9, b2=0.999, eps=1e-8): ...
+        step_size(i)
+
+    def adamax(step_size, b1=0.9, b2=0.999, eps=1e-8): ...
+        step_size(i)
+
+    def add_option(self, name, default, opt_type, meta_args, meta_kwargs,
+                   update_hook=None): ...
+        update_hook(default)
+
+    def annotate_function(func: Callable, name: Optional[str] = None, **kwargs): ...
+        func(*args, **kwargs)
+
+    def api_boundary(fun): ...
+        fun(*args, **kwargs)
+
+    def app(f, x): ...
+        f(x)
+
+    def app(f, x): ...
+        f(x)
+
+    def apply_along_axis(func1d, axis: int, arr, *args, **kwargs): ...
+        func1d(arr, *args, **kwargs)
+
+    def apply_flat_fun(fun, io_tree, *py_args): ...
+        fun(*args)
+
+    def apply_flat_fun_nokwargs(fun, io_tree, py_args): ...
+        fun(*args)
+
+    def apply_over_axes(func, a, axes): ...
+        func(a, axis=axis)
+
+    def assert_line_wolfe(self, x, p, s, f, fprime, **kw): ...
+        f(x + p * sp)
+        fprime(x + p * sp)
+
+    def assert_wolfe(self, s, phi, derphi, c1=1e-4, c2=0.9, err_msg=""): ...
+        phi(s)
+        phi(0)
+        derphi(0)
+        derphi(s)
+
+    def associative_scan(fn: Callable, elems, reverse: bool = False, axis: int = 0): ...
+        fn(a, b)
+
+    def batchfun(axis_name, axis_size, in_dims, main_type, *in_vals): ...
+        in_dims()
+
+    def benchmark(f: Callable[[], Any], iters: Optional[int] = None,
+                  warmup: Optional[int] = None, name: Optional[str] = None,
+                  target_total_secs: Optional[Union[int, float]] = None): ...
+        f()
+        f()
+
+    def benchmark_suite(prepare: Callable[..., Callable], params_list: List[Dict],
+                        name: str, target_total_secs: int = None): ...
+        prepare(**params)
+
+    def bilinear_transpose(lhs_rule, rhs_rule, cotangent, x, y, **kwargs): ...
+        lhs_rule(cotangent, y, **kwargs)
+        rhs_rule(cotangent, x, **kwargs)
+
+    def binary_search(func, x0, low=0.0, high=100.0): ...
+        func(midpoint)
+
+    def bind_index(func, idx): ...
+        func(*a, **kw)
+
+    def bind_index(func, idx): ...
+        func(*a, **kw)
+
+    def binop_batching_rule(op, axis_size, vals_in, dims_in): ...
+        op(x, y)
+
+    def bool_to_int8(f, argnums: Sequence[int]): ...
+        f(*args, **kwargs)
+        f(*args_cast, **kwargs)
+
+    def cache(call: Callable): ...
+        call(fun, *args)
+
+    def call(f, *args): ...
+        f(*args)
+
+    def call(f, *args): ...
+        f(*primals)
+        f(*args)
+
+    def call_log_testing_stream(self, func, arg, *, result_shape, name=""): ...
+        func(arg)
+
+    def call_tf(func_tf: Callable) -> Callable: ...
+        func_tf(*args_tf)
+
+    def call_tf_full_ad(tf_fun: Callable, arg, *, result_shape): ...
+        tf_fun(arg_var)
+
+    def call_tf_no_ad(tf_fun: Callable, arg, *, result_shape): ...
+        tf_fun(arg)
+
+    def call_tf_simple_ad(tf_fun: Callable, arg, *, result_shape): ...
+        tf_fun(arg_var)
+
+    def check(self, fun, in_shapes, out_shape, logical_env, padded_in_shapes,
+              dtypes, rng, rtol=None, atol=None): ...
+        fun(*logical_args)
+        rng(shape, dtype)
+
+    def check_grads_bilinear(f, args, order,
+                             modes=["fwd", "rev"], atol=None, rtol=None): ...
+        f(lhs, rhs)
+        f(lhs, rhs)
+
+    def check_jvp(f, f_jvp, args, atol=None, rtol=None, eps=EPS, err_msg=''): ...
+        f(*args)
+        f_jvp(args, tangent)
+
+    def check_raises(thunk, err_type, msg): ...
+        thunk()
+
+    def check_raises_regexp(thunk, err_type, pattern): ...
+        thunk()
+
+    def check_toposort(nodes: List[Any], parents: Callable[[Any], List[Any]]): ...
+        parents(node)
+
+    def check_vjp(f, f_vjp, args, atol=None, rtol=None, eps=EPS, err_msg=''): ...
+        f(*args)
+        f_vjp(*args)
+
+    def check_warning(warn, nowarn): ...
+        warn()
+        nowarn()
+        nowarn()
+        nowarn()
+
+    def collect_eqns(jaxpr: core.Jaxpr, key: Callable): ...
+        key(eqn)
+
+    def compute_weight_mat(input_size: int, output_size: int, scale,
+                           translation,
+                           kernel: Callable,
+                           antialias: bool): ...
+        kernel(x)
+
+    def concrete_or_error(force: Any, val: Any, context=""): ...
+        force(val.aval.val)
+        force(val)
+
+    def cov_map(cov_func, xs, xs2=None): ...
+        cov_func(x, y)
+        cov_func(x, y)
+
+    def custom_gradient(fun): ...
+        fun(*args, **kwargs)
+        fun(*args, **kwargs)
+
+    def custom_root(f, initial_guess, solve, tangent_solve, has_aux=False): ...
+        tangent_solve(f_jvp, b)
+
+    def define_enum_state(
+        self, name: str, enum_values: List[str], default: Optional[str],
+        help: str, update_global_hook: Optional[Callable[[str], None]] = None,
+        update_thread_local_hook: Optional[Callable[[Optional[str]], None]] \
+            = None): ...
+        update_thread_local_hook(new_val)
+        update_thread_local_hook(None)
+        update_thread_local_hook(prev_val)
+
+    def defjvps(self, *jvps: Optional[Callable[..., ReturnValue]]): ...
+        self(*primals)
+
+    def deriv(f): ...
+        f(x, *args)
+
+    def direct_translation(op, c, in_avals, in_vals): ...
+        op(*in_vals)
+
+    def elbo(logprob, rng, mean, log_std): ...
+        logprob(sample)
+
+    def elementwise(fun, **fun_kwargs): ...
+        fun(inputs, **fun_kwargs)
+
+    def enlarge(f, n): ...
+        f(x)
+
+    def execute_compiled(compiled, partitioner, handlers, dim_vals, args): ...
+        partitioner(out_bufs)
+
+    def execute_replicated(compiled, backend, in_handler, out_handler, *args): ...
+        in_handler(args)
+        out_handler(out_bufs)
+
+    def f(x, y): ...
+        y()
+
+    def f(x, y): ...
+        y()
+
+    def flatten_fun(f, in_tree): ...
+        f(*pytree_args)
+
+    def fmap_dims(axes, f): ...
+        f(axis)
+
+    def from_axis_resources(cls,
+                            axis_resources: Dict[AxisName, Tuple[ResourceAxisName, ...]],
+                            resource_env: ResourceEnv,
+                            global_axis_sizes: Dict[AxisName, int]): ...
+        cls(resource_env,
+                   physical_axis_resources, loop_axis_resources,
+                   axis_subst_dict, axis_vmap_size)
+
+    def from_user_input(cls, entry, arg_name): ...
+        cls(entry, ())
+        cls(entry, axis_specs)
+
+    def fromdense(cls, mat, *, nnz=None, index_dtype=np.int32): ...
+        cls(coo_fromdense(mat, nnz=nnz, index_dtype=index_dtype), shape=mat.shape)
+
+    def fromdense(cls, mat, *, nnz=None, index_dtype=np.int32): ...
+        cls(csr_fromdense(mat, nnz=nnz, index_dtype=index_dtype), shape=mat.shape)
+
+    def fromdense(cls, mat, *, nnz=None, index_dtype=np.int32): ...
+        cls(csr_fromdense(mat.T, nnz=nnz, index_dtype=index_dtype), shape=mat.shape)
+
+    def fromdense(cls, mat, *, nnz=None, index_dtype=np.int32, n_dense=0, n_batch=0): ...
+        cls(bcoo_fromdense(mat, nse=nnz, index_dtype=index_dtype, n_dense=n_dense, n_batch=n_batch), shape=mat.shape)
+
+    def g(f, x): ...
+        f(x)
+
+    def g(h, x): ...
+        h(x)
+
+    def g_bwd(f_vjp, y_bar): ...
+        f_vjp(y_bar)
+
+    def gen(shape, dtype, post=lambda x: x): ...
+        post(vals)
+
+    def get_benchmark_fn(indices_fn): ...
+        indices_fn()
+
+    def get_exception(etype, f): ...
+        f()
+
+    def gram(kernel, xs): ...
+        kernel(x, y)
+
+    def helper1(f): ...
+        f(state)
+
+    def helper_check_callback_errors(self, thunk: Callable,
+                                     expected_exc_txt: str): ...
+        thunk()
+
+    def helper_get_trig_custom_limitation(cls, np_inverse): ...
+        np_inverse(result_tf)
+
+    def histogram(jaxpr: core.Jaxpr, key: Callable,
+                  key_fmt: Callable = lambda x: x): ...
+        key_fmt(k)
+
+    def initial_step_size(fun, t0, y0, order, rtol, atol, f0): ...
+        fun(y1, t0 + h0)
+
+    def jvp_fd(fun, args, tangents): ...
+        fun(*[x if t is None else x + eps * t
+                     for x, t in zip(args, tangents)])
+
+    def jvp_flat(f, primals, tangents): ...
+        f(*tracers_in)
+
+    def jvp_taylor(fun, primals, series): ...
+        fun(*nudged_args)
+        fun(*primals)
+
+    def jvp_v1(f, primals, tangents): ...
+        f(*tracers_in)
+
+    def linear_transpose(transpose_rule, cotangent, *args, **kwargs): ...
+        transpose_rule(cotangent, **kwargs)
+
+    def linear_transpose2(transpose_rule, cotangent, *args, **kwargs): ...
+        transpose_rule(cotangent, *args, **kwargs)
+
+    def loop(loop_impl, x): ...
+        loop_impl(cond, body, (0, x, y, z))
+
+    def loss(functional, x_dict): ...
+        functional(x_dict)
+
+    def make_jaxpr(f, *avals_in): ...
+        f(*tracers_in)
+
+    def make_jaxpr_v1(f, *avals_in): ...
+        f(*tracers_in)
+
+    def make_sparse_array(rng, shape, dtype, nnz=0.2): ...
+        rng(shape, dtype)
+
+    def make_xmap_callable(fun: lu.WrappedFun,
+                           name,
+                           in_axes, out_axes_thunk, donated_invars,
+                           global_axis_sizes, axis_resources, resource_env, backend,
+                           spmd_in_axes, spmd_out_axes_thunk,
+                           *in_avals): ...
+        out_axes_thunk()
+
+    def map(f, xs): ...
+        f(x)
+
+    def map_jaxpr(self, f): ...
+        f(self.jaxpr)
+
+    def maybe_jit(f, num_args): ...
+        f(*full_args)
+
+    def maybe_named_axis(axis, if_pos, if_named): ...
+        if_pos(pos)
+        if_named(axis)
+
+    def memoize(f): ...
+        f(*args, **kwargs)
+
+    def merge_linear_aux(aux1, aux2): ...
+        aux1()
+        aux2()
+        aux2()
+
+    def mesh_callable(fun: lu.WrappedFun,
+                      transformed_name: str,
+                      backend_name: Optional[str],
+                      mesh: Mesh,
+                      in_axes: Sequence[ArrayMapping],
+                      out_axes: Union[Sequence[ArrayMapping], Callable[[], Sequence[ArrayMapping]]],
+                      donated_invars: Sequence[bool],
+                      spmd_lowering: bool,
+                      *local_in_untiled_avals,
+                      tile_by_mesh_axes: bool,
+                      do_resource_typecheck: Optional[str]): ...
+        out_axes()
+
+    def minimize(
+        fun: Callable,
+        x0: jnp.ndarray,
+        args: Tuple = (),
+        *,
+        method: str,
+        tol: Optional[float] = None,
+        options: Optional[Mapping[str, Any]] = None,
+    ) -> OptimizeResults: ...
+        fun(x, *args)
+
+    def mk_reversible_block(f, g): ...
+        f(x2)
+        g(y1)
+
+    def momentum(step_size: Schedule, mass: float): ...
+        step_size(i)
+
+    def mpc_predict(solver, p, x0, U): ...
+        solver(p_, xt, U_rem)
+
+    def named_call(
+        fun: Callable[..., Any],
+        *,
+        name: Optional[str] = None,
+    ) -> Callable[..., Any]: ...
+        fun(*args, **kwargs)
+
+    def named_call(f): ...
+        f(*args)
+
+    def named_cases_from_sampler(gen): ...
+        gen(choose_one)
+
+    def naryop_dtype_rule(result_dtype, accepted_dtypes, name, *avals, **kwargs): ...
+        result_dtype(*avals)
+
+    def nesterov(step_size: Schedule, mass: float): ...
+        step_size(i)
+
+    def numerical_jvp(f, primals, tangents, eps=EPS): ...
+        f(*add(primals, delta))
+        f(*sub(primals, delta))
+
+    def optimizer(opt_maker: Callable[...,
+      Tuple[Callable[[Params], State],
+            Callable[[Step, Updates, Params], Params],
+            Callable[[State], Params]]]) -> Callable[..., Optimizer]: ...
+        opt_maker(*args, **kwargs)
+
+    def parallel_callable(fun: lu.WrappedFun,
+                          backend_name: Optional[str],
+                          axis_name,
+                          axis_size: int,
+                          global_axis_size: Optional[int],
+                          devices: Optional[Sequence[Any]],
+                          name: str,
+                          in_axes: Iterable[Optional[int]],
+                          out_axes_thunk: Callable[[], Sequence[Optional[int]]],
+                          donated_invars: Iterable[bool],
+                          global_arg_shapes,
+                          *avals): ...
+        out_axes_thunk()
+
+    def partial_argnums(f, args, dyn_argnums): ...
+        f(*args)
+
+    def partial_eval(self, f: lu.WrappedFun, pvals: Sequence[PartialVal],
+                     app: Callable[[lu.WrappedFun, Tuple[core.Value, ...]], Tuple[core.Value]],
+                     instantiate: bool): ...
+        app(f, *in_consts)
+
+    def partial_eval_flat(f, pvals_in: List[PartialVal]): ...
+        f(*tracers_in)
+
+    def partition_list(choice, lst): ...
+        choice(elt)
+        choice(elt)
+
+    def plot_images(ds,
+                    nr_rows: int,
+                    nr_cols: int,
+                    title: str,
+                    inference_fn: Optional[Callable] = None): ...
+        inference_fn(images)
+
+    def rand_sparse(rng, nnz=0.5, post=lambda x: x): ...
+        post(M)
+
+    def rand_sym_pos_def(rng, shape, dtype): ...
+        rng(shape, dtype)
+
+    def ravel_first_arg_(unravel, y_flat, *args): ...
+        unravel(y_flat)
+
+    def recipe_to_eqn(getvar: Callable[[JaxprTracer], core.Atom],
+                      recipe: JaxprEqnRecipe) -> core.JaxprEqn: ...
+        getvar(t)
+        getvar(t)
+
+    def reduce(f, x1, x2): ...
+        f(x1, x2)
+
+    def repeated(f, n): ...
+        f(x)
+
+    def resource_typecheck(jaxpr, axis_resources, what_jaxpr_thunk): ...
+        what_jaxpr_thunk()
+
+    def richardson_iteration(matvec, b, omega=0.1, tolerance=1e-6): ...
+        matvec(x)
+        matvec(x)
+
+    def rmsprop(step_size, gamma=0.9, eps=1e-8): ...
+        step_size(i)
+
+    def rmsprop_momentum(step_size, gamma=0.9, eps=1e-8, momentum=0.9): ...
+        step_size(i)
+
+    def runge_kutta_step(func, y0, f0, t0, dt): ...
+        func(yi, ti)
+
+    def scalar_solve(f, y): ...
+        f(1.0)
+
+    def scan(f: Callable[[Carry, X], Tuple[Carry, Y]],
+             init: Carry,
+             xs: X,
+             length: Optional[int] = None,
+             reverse: bool = False,
+             unroll: int = 1) -> Tuple[Carry, Y]: ...
+        f(carry, tree_unflatten(xs_tree, xs_slice))
+
+    def scan_fori_loop(lo, hi, loop, init): ...
+        loop(t, x)
+
+    def scan_reference(f, init, xs): ...
+        f(carry, x)
+
+    def sgd(step_size): ...
+        step_size(i)
+
+    def shape_dependent(make_layer): ...
+        make_layer(input_shape)
+        make_layer(inputs.shape)
+
+    def skip(test_method): ...
+        test_method(self, *args, **kwargs)
+
+    def skip(test_method): ...
+        test_method(self, *args, **kwargs)
+
+    def sm3(step_size, momentum=0.9): ...
+        step_size(i)
+
+    def solver(func, A, b, M=None, atol=0.0, **kwargs): ...
+        func(A, b, atol=atol, M=M, **kwargs)
+
+    def standard_abstract_eval(prim, shape_rule, dtype_rule, weak_type_rule,
+                               named_shape_rule, *avals, **kwargs): ...
+        shape_rule(*avals, **kwargs)
+        dtype_rule(*avals, **kwargs)
+        dtype_rule(*avals, **kwargs)
+        weak_type_rule(*avals, **kwargs)
+        named_shape_rule(*avals, **kwargs)
+
+    def standard_multi_result_abstract_eval(
+        prim, shape_rule, dtype_rule, weak_type_rule,
+        named_shape_rule, *avals, **kwargs): ...
+        shape_rule(*avals, **kwargs)
+        dtype_rule(*avals, **kwargs)
+        dtype_rule(*avals, **kwargs)
+        weak_type_rule(*avals, **kwargs)
+        named_shape_rule(*avals, **kwargs)
+
+    def subst_axis_names(primitive: Primitive, params: ParamDict, subst: AxisSubst, traverse: bool = True) -> ParamDict: ...
+        subst(name)
+
+    def subst_axis_names_var(v: Var, subst: AxisSubst, var_map: Dict[Var, Var]) -> Var: ...
+        subst(name)
+
+    def swap(f): ...
+        f(y, x)
+
+    def testArgAllReduce(self, shape, dtype, axis, collective, bulk_op): ...
+        collective(x, 'i')
+        bulk_op(x, axis=axis)
+
+    def testArgAllReduce(self, shape, dtype, axis, collective, bulk_op): ...
+        collective(x, 'i')
+        bulk_op(x, axis=axis)
+
+    def testArgMinMax(self, np_op, jnp_op, rng_factory, shape, dtype, axis): ...
+        np_op(array_to_reduce, axis)
+        jnp_op(array_to_reduce, axis)
+        rng_factory(self.rng())
+
+    def testArgMinMaxEmpty(self, name, np_op, jnp_op): ...
+        jnp_op(np.array([]))
+        jnp_op(np.zeros((2, 0)), axis=1)
+
+    def testArgMinMaxIndexDtypeError(self, jax_fn, index_dtype): ...
+        jax_fn(np.ones((2, 2)), axis=0, index_dtype=index_dtype)
+
+    def testArgMinMaxWeakType(self, jax_fn, weak_type): ...
+        jax_fn(x, axis=0, index_dtype=np.int32)
+
+    def testArgminmax(self, op, shape, dtype, dim, bdims): ...
+        op(operand, dim, np.int32)
+
+    def testArrayWeakType(self, funcname, input_type, val, dtype): ...
+        input_type(val)
+
+    def testAtLeastNdLiterals(self, pytype, dtype, op): ...
+        pytype(2)
+
+    def testBinaryOperatorDefers(self, op_name, rng_factory, dtype): ...
+        rng_factory(self.rng())
+
+    def testBinaryPromotionJitInvariance(self, xtype, ytype, xfun, yfun): ...
+        xtype(1)
+        ytype(1)
+        xfun(x)
+        yfun(y)
+
+    def testBitwiseOp(self, np_op, jnp_op, rng_factory, shapes, dtypes): ...
+        rng_factory(self.rng())
+
+    def testClampGrad(self, shape, dtype): ...
+        dtype(10)
+        dtype(10)
+
+    def testCollectivesWithVmap(self, collective): ...
+        collective(x.dot(y), ('i', 'j'))
+
+    def testCommAssocCollective(self, collective, bulk_op, vmap_names, collective_names): ...
+        collective(x, collective_names)
+        bulk_op(x, axis=pos_axis, keepdims=True)
+
+    def testCondGrad2(self, cond): ...
+        cond(
+            x[0] < 2,
+            lambda x: jnp.array([1., 2.]) * x,
+            lambda x: jnp.sin(x),
+            x)
+
+    def testCondGrad3(self, cond): ...
+        cond(x < 3, (), lambda _: 2., x, lambda x: 2. * x)
+
+    def testCondGrad4(self, cond): ...
+        cond(
+            x < 3,
+            (), lambda _: 2. * jnp.sin(y),
+            x,  lambda x: 2. * x)
+
+    def testCondJVP2(self, cond): ...
+        cond(x < 3, (), lambda _: 2., x, lambda x: 2. * x)
+
+    def testCondJitDisabled(self, cond): ...
+        cond(x < 2, lambda x: 3. * x, lambda x: jnp.sin(x), x)
+
+    def testCondJitWithConsts(self, cond): ...
+        cond(x < 2,
+                    lambda x: np.array([1., 2.]) * x,
+                    lambda x: np.array([3., 4.]) * jnp.sin(x),
+                    x)
+
+    def testCondLinearize2(self, cond): ...
+        cond(
+            x[0] < 2,
+            lambda x: jnp.array([1., 2.]) * x,
+            lambda x: jnp.cos(jnp.sin(x)),
+            x)
+
+    def testCondVmapGrad(self, cond): ...
+        cond(x > 0, f_1, f_2, x)
+
+    def testCondWithConsts(self, cond): ...
+        cond(x < 2,
+                    lambda x: np.array([1., 2.]) * x,
+                    lambda x: np.array([3., 4.]) * jnp.sin(x),
+                    x)
+
+    def testConvertElementReturnType(self, input_type, dtype, value, jit): ...
+        input_type(value)
+
+    def testCov(self, shape, dtype, y_shape, y_dtype, rowvar, ddof, bias, fweights, aweights): ...
+        dtype(0)
+
+    def testCumSumProd(self, axis, shape, dtype, out_dtype, np_op, jnp_op): ...
+        np_op(arg, axis=axis, dtype=out_dtype)
+        jnp_op(arg, axis=axis, dtype=out_dtype)
+
+    def testCumulativeReduce(self, op, np_op, shape, dtype, axis, reverse): ...
+        np_op(np.flip(x, axis), axis=axis, dtype=dtype)
+        np_op(x, axis=axis, dtype=dtype)
+
+    def testDefaultTypes(self, type, dtype): ...
+        type(0)
+
+    def testDtypeMatchesInput(self, dtype, fn): ...
+        fn(x)
+
+    def testFrexp(self, shape, dtype, rng_factory): ...
+        rng_factory(self.rng())
+
+    def testGatherGrad(self, shape, dtype, idxs, dnums, slice_sizes, rng_idx_factory): ...
+        rng_idx_factory(self.rng())
+
+    def testInitializer(self, initializer, shape, dtype): ...
+        initializer(rng, shape, dtype)
+
+    def testInitializerProvider(self, initializer_provider, shape, dtype): ...
+        initializer_provider(dtype=dtype)
+
+    def testJaxTypeFromVal(self, jaxtype): ...
+        jaxtype(0)
+
+    def testJitIsIdentity(self, fun): ...
+        fun(*vals)
+
+    def testLdexp(self, x1_shape, x1_dtype, x2_shape, x1_rng_factory, x2_rng_factory): ...
+        x1_rng_factory(self.rng())
+        x2_rng_factory(self.rng())
+
+    def testLexsort(self, dtype, shape, input_type, axis): ...
+        input_type(rng(shape, dtype))
+
+    def testMapCoordinates(self, shape, dtype, coords_shape, coords_dtype, order,
+                           mode, cval, impl, round_, rng_factory): ...
+        rng_factory(self.rng())
+
+    def testMathSpecialFloatValues(self, op, dtype): ...
+        dtype(x)
+
+    def testNanToNum(self, shape, dtype): ...
+        dtype(0)
+
+    def testNestedCond(self, cond): ...
+        cond(
+            lax.lt(x, 2),
+            lambda x: lax.mul(2, x),
+            lambda x: cond(lax.lt(x, 5),
+                           x, lambda x: lax.mul(3, x),
+                           4, lambda y: lax.mul(y, x)),
+            x)
+        cond(lax.lt(x, 5),
+                           x, lambda x: lax.mul(3, x),
+                           4, lambda y: lax.mul(y, x))
+
+    def testOp(self, np_op, jnp_op, rng_factory, shapes, dtypes, check_dtypes,
+               tolerance, inexact): ...
+        rng_factory(self.rng())
+
+    def testOp(self, op_name, rng_factory, shapes, dtype): ...
+        rng_factory(self.rng())
+
+    def testOp(self, op_name, rng_factory, shapes, dtype, bdims, tol): ...
+        rng_factory(self.rng())
+
+    def testOpAgainstNumpy(self, op_name, rng_factory, shapes, dtype, tol): ...
+        rng_factory(self.rng())
+
+    def testOpGrad(self, op, rng_factory, shapes, dtype, order, tol): ...
+        rng_factory(self.rng())
+
+    def testOpGrad(self, op, rng_factory, shapes, dtype, order, tol): ...
+        rng_factory(self.rng())
+
+    def testOperatorOverload(self, name, rng_factory, shapes, dtypes, tol): ...
+        rng_factory(self.rng())
+
+    def testPmapDtype(self, dtype): ...
+        dtype(0)
+
+    def testQuantile(self, op, a_rng, q_rng, a_shape, a_dtype, q_shape, q_dtype,
+                     axis, keepdims, interpolation): ...
+        a_rng(self.rng())
+        a_rng(a_shape, a_dtype)
+        a_rng(a_shape, a_dtype)
+        q_rng(self.rng())
+        q_rng(q_shape, q_dtype)
+
+    def testReduceGrad(self, op, init_val, shape, dtype, dims, rng_factory): ...
+        rng_factory(self.rng())
+
+    def testReduceWindowGrad(
+        self, op, init_val, dtype, shape, dims, strides,
+        padding, base_dilation, window_dilation, rng_factory): ...
+        rng_factory(self.rng())
+
+    def testReducer(self, np_op, jnp_op, rng_factory, shape, dtype, out_dtype,
+                    axis, keepdims, inexact): ...
+        np_op(x_cast, axis, dtype=t, keepdims=keepdims)
+        jnp_op(x, axis, dtype=out_dtype, keepdims=keepdims)
+        rng_factory(self.rng())
+
+    def testReducerInitial(self, np_op, jnp_op, rng_factory, shape, dtype, axis,
+                           keepdims, initial, inexact): ...
+        np_op(x_cast, axis, keepdims=keepdims, initial=initial)
+        jnp_op(x, axis, keepdims=keepdims, initial=initial)
+        rng_factory(self.rng())
+
+    def testReducerNoDtype(self, np_op, jnp_op, rng_factory, shape, dtype, axis,
+                           keepdims, inexact): ...
+        np_op(x_cast, axis, keepdims=keepdims)
+        jnp_op(x, axis, keepdims=keepdims)
+        rng_factory(self.rng())
+
+    def testReducerWhere(self, np_op, jnp_op, rng_factory, shape, dtype, axis,
+                         keepdims, initial, inexact, whereshape): ...
+        np_op(x_cast, axis, keepdims=keepdims, initial=initial, where=where)
+        jnp_op(x, axis, keepdims=keepdims, initial=initial, where=where)
+        rng_factory(self.rng())
+
+    def testReducerWhereNoInitial(self, np_op, jnp_op, rng_factory, shape, dtype, axis,
+                                  keepdims, inexact, whereshape): ...
+        np_op(x_cast, axis, keepdims=keepdims, where=where)
+        jnp_op(x, axis, keepdims=keepdims, where=where)
+        rng_factory(self.rng())
+
+    def testReductions(self, reduction, axes, mapped_axis): ...
+        reduction(x, axes)
+
+    def testRightOperatorOverload(self, name, rng_factory, shapes, dtypes,
+                                  op_tolerance): ...
+        rng_factory(self.rng())
+
+    def testSamplerResourceIndependence(self, distr_sample, axis_resources, mesh): ...
+        distr_sample(jax.random.PRNGKey(0), shape=NamedShape(3, i=4, j=6))
+
+    def testSamplerSharding(self, distr_sample): ...
+        distr_sample(jax.random.PRNGKey(0), shape=shape)
+
+    def testScalarInstantiation(self, scalar_type): ...
+        scalar_type(1)
+
+    def testScanGrad(self, jit_scan, jit_f, scan): ...
+        scan(f, c, as_)
+
+    def testScanHigherOrderDifferentiation(self, scan): ...
+        scan(f, c, as_)
+
+    def testScanImpl(self, jit_scan, jit_f, scan): ...
+        scan(f, c, as_)
+
+    def testScanJVP(self, jit_scan, jit_f, scan): ...
+        scan(f, c, as_)
+
+    def testScanLinearize(self, jit_scan, jit_f, scan): ...
+        scan(f, c, as_)
+
+    def testScanVmap(self, jit_scan, jit_f, in_axes, scan): ...
+        scan(f, c, as_)
+
+    def testScatterAddGrad(self, arg_shape, dtype, idxs, update_shape, dnums,
+                           rng_idx_factory): ...
+        rng_idx_factory(self.rng())
+
+    def testScatterGrad(self, arg_shape, dtype, idxs, update_shape, dnums,
+                        rng_idx_factory): ...
+        rng_idx_factory(self.rng())
+
+    def testScipySpecialFun(self, scipy_op, lax_op, rng_factory, shapes, dtypes,
+                            test_autodiff, nondiff_argnums): ...
+        scipy_op(*args)
+        lax_op(*args)
+        lax_op(*list_args)
+        rng_factory(self.rng())
+
+    def testSegmentReduce(self, shape, dtype, reducer, op, identity, num_segments, bucket_size): ...
+        reducer(
+          data, segment_ids, num_segments=num_segments, bucket_size=bucket_size)
+        op(out[i], val)
+
+    def testShardArgs(self, shape, spec, make_arg): ...
+        make_arg(x)
+
+    def testSoftplusZero(self, dtype): ...
+        dtype(2)
+        dtype(0)
+
+    def testTopK(self, shape, dtype, k, bdims, rng_factory): ...
+        rng_factory(self.rng())
+
+    def test_abstractify(benchmark, arg): ...
+        benchmark(xla.abstractify, arg)
+
+    def test_const(self, dtype, weak_type): ...
+        dtype(0)
+
+    def test_correctly_capture_default(self, jit, enable_or_disable): ...
+        enable_or_disable()
+
+    def test_device_put_on_buffers(self, device_put_function): ...
+        device_put_function(buffer, device=device)
+
+    def test_device_put_on_numpy_arrays(self, device_put_function): ...
+        device_put_function(value, device=device)
+
+    def test_device_put_on_numpy_scalars(self, device_put_function): ...
+        device_put_function(value, device=device)
+
+    def test_device_put_on_sharded_device_array(self, device_put_function): ...
+        device_put_function(sda, device=device)
+
+    def test_dtypes(self, dtype=np.int32, with_jit=True): ...
+        dtype(2 * x + 3)
+
+    def test_jax_transforms(self, transform): ...
+        transform(f)
+        transform(api.named_call(f, name="test"))
+
+    def test_jit(self, f, args): ...
+        f(*args)
+
+    def test_prng_jit_invariance(self, seed, type): ...
+        type(seed)
+
+    def test_prng_seeds_and_keys(self, seed, type, jit, key): ...
+        type(seed)
+
+    def test_scan_reverse(self, scan): ...
+        scan(lambda c, x: (c + x, c + x), 0, x, reverse=reverse)
+
+    def test_scatter_static(self, op): ...
+        op(v, jax.ops.index[::2, 3:], u)
+
+    def tf_fn(x_str, compute_tf_fn=lambda x: x): ...
+        compute_tf_fn(numbers_f16)
+
+    def toposort(out_nodes: List[Any], parents: Callable[[Any], List[Any]]): ...
+        parents(node)
+        parents(node)
+
+    def traceable_to_padded_translation(traceable): ...
+        traceable(logical_shapes, *args, **params)
+
+    def train(kernel, xs, ys, regularization=0.01): ...
+        kernel(x, x_)
+
+    def trajectory(dynamics, U, x0): ...
+        dynamics(t, X[t], U[t])
+
+    def traverse_jaxpr_params(f, params): ...
+        f(param if type(param) is Jaxpr else param.jaxpr)
+
+    def tree_map(f: Callable[..., Any], tree: Any, *rest: Any,
+                 is_leaf: Optional[Callable[[Any], bool]] = None) -> Any: ...
+        f(*xs)
+
+    def tree_unflatten(cls, aux, consts): ...
+        cls(jaxpr, in_tree, out_tree, consts)
+
+    def tree_unflatten(cls, aux_data, children): ...
+        cls(*children)
+
+    def tree_unflatten(cls, aux_data, children): ...
+        cls(*children)
+
+    def tree_unflatten(cls, aux_data, children): ...
+        cls(children, **aux_data)
+
+    def unop_dtype_rule(result_dtype, accepted_dtypes, name, aval, **kwargs): ...
+        result_dtype(aval.dtype)
+
+    def unrolled_substitution_solve(matvec, b, lower_tri): ...
+        matvec(x)
+        matvec([one if i == j else zero for j in range(len(b))])
+
+    def vectorized_unop_batching_rule(op, axis_size, vals_in, dims_in): ...
+        op(x)
+
+    def vmap_flat(f, in_axes, *args): ...
+        f(*tracers_in)
+
+    def while_loop(cond_fun: Callable[[T], bool],
+                   body_fun: Callable[[T], T],
+                   init_val: T) -> T: ...
+        cond_fun(val)
+        body_fun(val)
+
+    def while_loop_reference(cond, body, carry): ...
+        cond(carry)
+        body(carry)
+
+    def with_sharding_proto(builder, sharding_proto, op_fn, *args, **kwargs): ...
+        op_fn(*args, **kwargs)
+
+    def wrap(f): ...
+        f(*args, **kwargs)
+        f(*args, **kwargs)
+
+    def wrap_singleton(f): ...
+        f(*xs)
+
+    def wrapper(functional, x, y): ...
+        functional(3 * x, 4. * y)
+
+    def zip_with(fun, *args): ...
+        fun(*p)
+
