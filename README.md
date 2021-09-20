@@ -103,8 +103,32 @@ Computed for the following repositories. Click to see the raw stats and callable
 ## Projects with well-typed callables
 
 + [typeshed](./data/typeshed-callables.txt)
+
+	```
+	Callables with 0 parameters: 223 (16.56%)
+	Callables with 1 parameters: 521 (38.68%)
+	Callables with 2 parameters: 137 (10.17%)
+	Callables with 3 parameters: 43 (3.19%)
+	Callables with 4 parameters: 13 (0.97%)
+	Callables with 5 parameters: 9 (0.67%)
+	Callables with arbitrary parameters: 364 (27.02%)
+	Callback Protocols: 37 (2.75%)
+	```
+
 + [mypy](./data/mypy-non-typeshed-callables.txt) - well typed. **Note**: I'm excluding Mypy's internal copy of typeshed.
 + [spark](./data/spark-callables.txt) - pretty well typed. Very few `Callable`s with untyped parameters.
+
+	```
+	Callables with 0 parameters: 4 (2.04%)
+	Callables with 1 parameters: 107 (54.59%)
+	Callables with 2 parameters: 49 (25.00%)
+	Callables with 3 parameters: 6 (3.06%)
+	Callables with 4 parameters: 0 (0.00%)
+	Callables with 5 parameters: 0 (0.00%)
+	Callables with arbitrary parameters: 26 (13.27%)
+	Callback Protocols: 4 (2.04%)
+	```
+
 + [tornado](./data/tornado-callables.txt) - 50-50 well-typed and loosely-typed Callables.
 
 Combined stats:
@@ -163,13 +187,14 @@ Skipped:
 
 Let's look at how callbacks are called in untyped Python code. (Click to see the individual functions.)
 
-+ [django](./data/django-callback-parameters.txt): 75 functions with callback parameters (excluding calls to `cls` in `classmethod`s).
-  + Callback is called with positional arguments: 44.0% (33/75)
-  + Callback is called with `*args, **kwargs`: 37.3% (28/75)
-  + Callback is called with `*args`: 2.7% (2/75)
-  + Callback is called with `**kwargs`: 6.7% (5/75)
-  + Callback is called with a named argument: 4.0% (3/75)
-  + Miscellaneous: 1.3% (1/75)
++ [django](./data/django-callback-parameters.txt): 88 functions with callback parameters.
+
+  + Callback is called with positional arguments: 36.4% (32/88)
+  + Callback is called with `*args, **kwargs`: 35.2% (31/88)
+  + Callback is called with `*args`: 2.3% (2/88)
+  + Callback is called with `**kwargs`: 5.7% (5/88)
+  + Callback is called with a named argument or default value: 1.1% (1/88)
+  + Class type: 19.3% (17/88)
 
     - `_generate_altered_foo_together` - this is called with a class. Not a real "callback" as such. The type would just be `operation: Type[AlterUniqueTogether] | Type[AlterIndexTogether]`.
 
@@ -194,31 +219,22 @@ Let's look at how callbacks are called in untyped Python code. (Click to see the
 		```
 
 + [sentry](./data/sentry-callback-parameters.txt): 108 functions with callback parameters (excluding calls to `cls` in `classmethod`s).
-  + Callback is called with positional arguments: 53.7% (58/108)
-  + Callback is called with `*args, **kwargs`: 37.0% (40/108)
-  + Callback is called with `*args`: 1.9% (2/108)
-  + Callback is called with `**kwargs`: 2.8% (3/108)
-  + Callback is called with a named argument: 0.9% (1/108)
 
-    - `serialize` takes a class, not a real callback. The type would be `Type[Serializer]`, not a `Callable`.
+  + Callback is called with positional arguments: 39.6% (57/144)
+  + Callback is called with `*args, **kwargs`: 29.9% (43/144)
+  + Callback is called with `*args`: 4.2% (6/144)
+  + Callback is called with `**kwargs`: 5.6% (8/144)
+  + Callback is called with a named argument or default value: 0.7% (1/144)
+  + Class type: 20.1% (29/144)
 
-		```
-		def serialize(
-				objects: Union[Any, Sequence[Any]],
-				user: Optional[Any] = None,
-				serializer: Optional[Any] = None,
-				**kwargs: Any,
-			) -> Any: ...
-				serializer(o, attrs=attrs.get(o, {}), user=user, **kwargs)
-		```
++ [tensorflow](./data/tensorflow-callback-parameters.txt): 1011 functions with callback parameters. I filtered out test functions.
 
-+ [tensorflow](./data/tensorflow-callback-parameters.txt): 1311 functions with callback parameters (excluding 113 calls to `cls` in `classmethod`s). I sampled around 113 functions.
-
-  + Callback is called with positional arguments: 63.7% (72/113)
-  + Callback is called with `*args, **kwargs`: 14.2% (16/113)
-  + Callback is called with `*args`: 1.8% (2/113)
-  + Callback is called with `**kwargs`: 10.6% (12/113)
-  + Callback is called with a named argument: 8.0% (9/113)
+  + Callback is called with positional arguments: 55.7% (519/932)
+  + Callback is called with `*args, **kwargs`: 15.2% (142/932)
+  + Callback is called with `*args`: 7.7% (72/932)
+  + Callback is called with `**kwargs`: 13.7% (128/932)
+  + Callback is called with a named argument or default value: 5.5% (51/932)
+  + Class type: 5.9% (55/932)
 
     - Most of these were just calls to classes, like in the previous projects.
 	- Tests did some dynamic things.
@@ -248,6 +264,26 @@ Let's look at how callbacks are called in untyped Python code. (Click to see the
 		def _convert_sparse_segment(pfor_input, _, op_func): ...
 			op_func(data, indices, segment_ids, num_segments=num_segments)
 		```
+
++ Summary for django, sentry, and tensorflow:
+
+Weighted by function counts (biased towards tensorflow, which is very large):
+
+  + Callback is called with positional arguments: 50.7% (608/1199)
+  + Callback is called with `*args, **kwargs`: 18.0% (216/1199)
+  + Callback is called with `*args`: 6.7% (80/1199)
+  + Callback is called with `**kwargs`: 11.8% (141/1199)
+  + Callback is called with a named argument or default value: 4.4% (53/1199)
+  + Class type: 8.4% (101/1199)
+
+Average of percentages:
+
+  + Callback is called with positional arguments: 43.9%
+  + Callback is called with `*args, **kwargs`: 26.6%
+  + Callback is called with `*args`: 4.7%
+  + Callback is called with `**kwargs`: 8.3%
+  + Callback is called with a named argument or default value: 2.4%
+  + Class type: 15.1%
 
 ## Callback parameters in Typed Projects
 
