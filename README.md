@@ -131,13 +131,13 @@ Callback Protocols: 41 (2.36%)
 Combined stats:
 
 ```
-Callables with 0 parameters: 13 (1.73%)
-Callables with 1 parameters: 62 (8.24%)
-Callables with 2 parameters: 19 (2.53%)
-Callables with 3 parameters: 9 (1.20%)
-Callables with 4 parameters: 3 (0.40%)
+Callables with 0 parameters: 13 (1.76%)
+Callables with 1 parameters: 62 (8.39%)
+Callables with 2 parameters: 19 (2.57%)
+Callables with 3 parameters: 9 (1.22%)
+Callables with 4 parameters: 3 (0.41%)
 Callables with 5 parameters: 0 (0.00%)
-Callables with arbitrary parameters: 626 (83.24%)
+Callables with arbitrary parameters: 633 (85.66%)
 Callback Protocols: 0 (0.00%)
 ```
 
@@ -147,6 +147,17 @@ Skipped:
 + pip - it has old-style comment hints, so my script doesn't work.
 + scipy - barely any callables.
 + black - same.
+
+## Typed Projects - overall stats
+
++ Callables with 0 parameters: 286 (11.32%)
++ Callables with 1 parameters: 796 (31.51%)
++ Callables with 2 parameters: 235 (9.30%)
++ Callables with 3 parameters: 59 (2.34%)
++ Callables with 4 parameters: 18 (0.71%)
++ Callables with 5 parameters: 9 (0.36%)
++ Callables with arbitrary parameters: 1082 (42.83%)
++ Callback Protocols: 41 (1.62%)
 
 ## Projects with No Types
 
@@ -240,15 +251,16 @@ Let's look at how callbacks are called in untyped Python code. (Click to see the
 
 ## Callback parameters in Typed Projects
 
-+ [mypy](./data/mypy-callback-parameters.txt): 66 functions with callback parameters (excluding 4 calls to `cls` in `classmethod`s).
++ [mypy](./data/mypy-non-typeshed-callables.txt): 77 functions with callback parameters.
 
-  + Callback is called with positional arguments: 86.4% (57/66)
-  + Callback is called with `*args, **kwargs`: 6.1% (4/66)
-  + Callback is called with `*args`: 3.0% (2/66)
-  + Callback is called with `**kwargs`: 0.0% (0/66)
-  + Callback is called with a named argument: 4.5% (3/66)
+  + Callback is called with positional arguments: 80.5% (62/77)
+  + Callback is called with `*args, **kwargs`: 5.2% (4/77)
+  + Callback is called with `*args`: 1.3% (1/77)
+  + Callback is called with `**kwargs`: 0.0% (0/77)
+  + Callback is called with a named argument or default value: 5.2% (4/77)
+  + Class type: 3.9% (3/77)
 
-    These were basically the same `fail` callback:
+    The named arguments were basically for the same `fail` callback:
 
 		```python
 		# Mypyc doesn't support callback protocols yet.
@@ -261,6 +273,44 @@ Let's look at how callbacks are called in untyped Python code. (Click to see the
 			fail(message_registry.IMPLICIT_GENERIC_ANY_BUILTIN.format(alternative), typ,
 				 code=codes.TYPE_ARG)
 		```
+
++ [spark](./data/spark-callables.txt): 115 functions with callback parameters.
+
+  + Callback is called with positional arguments: 56.5% (65/115)
+  + Callback is called with `*args, **kwargs`: 7.8% (9/115)
+  + Callback is called with `*args`: 11.3% (13/115)
+  + Callback is called with `**kwargs`: 7.0% (8/115)
+  + Callback is called with a named argument or default value: 2.6% (3/115)
+  + Class type: 13.9% (16/115)
+  + Too dynamic: 0.9% (1/115)
+
++ [sphinx](./data/sphinx-callables.txt): 169 functions with callback parameters. (This may be a bit unrepresentative because one file - sphinx/domains/cpp.py - has a lot of similar-looking positional callables.)
+
+  + Callback is called with positional arguments: 83.4% (141/169)
+  + Callback is called with `*args, **kwargs`: 8.9% (15/169)
+  + Callback is called with `*args`: 1.8% (3/169)
+  + Callback is called with `**kwargs`: 0.0% (0/169)
+  + Callback is called with a named argument or default value: 2.4% (4/169)
+  + Class type: 3.6% (6/169)
+  + Too dynamic: 0.0% (0/169)
+
++ [jax](./data/jax-callables.txt): 275 functions with callback parameters. I'm ignoring test functions.
+
+  + Callback is called with positional arguments: 63.3% (174/275)
+  + Callback is called with `*args, **kwargs`: 10.5% (29/275)
+  + Callback is called with `*args`: 18.2% (50/275)
+  + Callback is called with `**kwargs`: 1.8% (5/275)
+  + Callback is called with a named argument or default value: 2.5% (7/275)
+  + Class type: 3.6% (10/275)
+
++ Summary for mypy, spark, sphinx, and jax:
+
+  + Callback is called with positional arguments: 69.9% (442/632)
+  + Callback is called with `*args, **kwargs`: 9.0% (57/632)
+  + Callback is called with `*args`: 10.6% (67/632)
+  + Callback is called with `**kwargs`: 2.1% (13/632)
+  + Callback is called with a named argument or default value: 2.8% (18/632)
+  + Class type: 5.5% (35/632)
 
 # Function Calls
 
