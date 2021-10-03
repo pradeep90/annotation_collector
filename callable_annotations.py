@@ -10,7 +10,7 @@ import argparse
 import textwrap
 import dataclasses
 
-from util import get_modules, expression_to_string, type_matcher
+from util import get_modules, annotation_to_string, expression_to_string, type_matcher
 
 
 top_level_callable_annotation_matcher = m.SaveMatchedNode(
@@ -89,16 +89,6 @@ class FunctionWithCallbackParameters:
             expression_to_string(call) for call in self.calls_to_callback_parameters
         )
         return f"""{signature}\n{textwrap.indent(calls, " " * 4)}\n"""
-
-
-def annotation_to_string(annotation: cst.Annotation) -> str:
-    return (
-        cst.Module(
-            [cst.SimpleStatementLine([cst.AnnAssign(cst.Name("x"), annotation)])]
-        )
-        .code.strip()
-        .split(": ")[1]
-    )
 
 
 def callable_annotations(module: cst.Module) -> List[cst.Annotation]:

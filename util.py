@@ -29,6 +29,16 @@ def get_modules(roots: Iterable[Path], show_progress: bool) -> List[cst.Module]:
     return modules
 
 
+def annotation_to_string(annotation: cst.Annotation) -> str:
+    return (
+        cst.Module(
+            [cst.SimpleStatementLine([cst.AnnAssign(cst.Name("x"), annotation)])]
+        )
+        .code.strip()
+        .split(": ")[1]
+    )
+
+
 def expression_to_string(expression: cst.BaseExpression) -> str:
     return cst.Module([cst.SimpleStatementLine([cst.Expr(expression)])]).code.strip()
 
