@@ -102,9 +102,27 @@ def print_methods_with_self_annotations(
             print(f"{indented}\n")
 
 
+def print_methods_returning_self(
+    modules: List[cst.Module], verbose: bool
+) -> None:
+    methods = [
+        method for module in modules for method in methods_returning_self(module)
+    ]
+    print(f"Methods returning `self` or `cls(...)`: {len(methods)}")
+    if verbose:
+        for method in methods:
+            indented = textwrap.indent(statement_to_string(method), " " * 4)
+            print(f"{indented}\n")
+
+
 def main(roots: Iterable[Path], verbose: bool, show_progress: bool) -> None:
+    modules = get_modules(roots, show_progress=show_progress)
     print_methods_with_self_annotations(
-        get_modules(roots, show_progress=show_progress), verbose
+        modules, verbose
+    )
+    print("")
+    print_methods_returning_self(
+        modules, verbose
     )
 
 
