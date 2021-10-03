@@ -14,6 +14,24 @@ function_with_self_annotation_matcher = m.FunctionDef(
 )
 
 
+def function_returning_self_matcher(self_parameter_name: str) -> m.BaseMatcherNode:
+    return m.FunctionDef(
+        body=m.IndentedBlock(
+            body=[
+                m.ZeroOrMore(),
+                m.SimpleStatementLine(
+                    body=[
+                        m.Return(
+                            m.Name(self_parameter_name)
+                            | m.Call(m.Name(self_parameter_name))
+                        )
+                    ]
+                ),
+            ]
+        )
+    )
+
+
 def is_method(
     function: cst.FunctionDef,
     scope_mapping: Mapping[cst.CSTNode, Optional[cst.metadata.Scope]],
@@ -39,6 +57,36 @@ def methods_with_self_annotation(module: cst.Module) -> List[cst.CSTNode]:
         if is_method(cast(cst.FunctionDef, function), scope_mapping)
         and not is_staticmethod(cast(cst.FunctionDef, function))
     ]
+
+
+def methods_returning_self(module: cst.Module) -> List[cst.CSTNode]:
+    wrapper = cst.metadata.MetadataWrapper(module)
+    scope_mapping = wrapper.resolve(cst.metadata.ScopeProvider)
+
+    try:
+        definitions = m.findall(wrapper.module, m.FunctionDef())
+    except Exception as exception:
+        print(
+            f"Could not get methods returning self or cls for module due to: {exception}"
+        )
+        definitions = []
+
+    functions = []
+
+    for function in definitions:
+        parameters = cast(cst.FunctionDef, function).params.params
+        if len(parameters) == 0:
+            continue
+
+        first_parameter = parameters[0].name.value
+        returns_self = (
+            len(m.findall(function, function_returning_self_matcher(first_parameter)))
+            > 0
+        )
+        if is_method(cast(cst.FunctionDef, function), scope_mapping) and returns_self:
+            functions.append(function)
+
+    return functions
 
 
 def print_methods_with_self_annotations(
