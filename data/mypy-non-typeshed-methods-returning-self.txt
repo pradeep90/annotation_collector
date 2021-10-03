@@ -1,0 +1,98 @@
+Methods with `self` or `cls` annotations: 2
+    def copy(self: T) -> T: ...
+
+    def update(self: T, __m: T) -> None: ...
+
+
+Methods returning `self` or `cls(...)`: 8
+    @classmethod
+    def from_match(cls, match_obj: Match[str],
+                   non_standard_spec: bool = False) -> 'ConversionSpecifier':
+        """Construct specifier from match object resulted from parsing str.format() call."""
+        match = cast(Any, match_obj)  # TODO: remove this once typeshed is fixed.
+        if non_standard_spec:
+            spec = cls(match.group('key'),
+                       flags='', width='', precision='', type='',
+                       format_spec=match.group('format_spec'),
+                       conversion=match.group('conversion'),
+                       field=match.group('field'))
+            spec.non_standard_format_spec = True
+            return spec
+        # Replace unmatched optional groups with empty matches (for convenience).
+        return cls(match.group('key'),
+                   flags=match.group('flags') or '', width=match.group('width') or '',
+                   precision=match.group('precision') or '', type=match.group('type') or '',
+                   format_spec=match.group('format_spec'),
+                   conversion=match.group('conversion'),
+                   field=match.group('field'))
+
+    def __enter__(self) -> 'GcLogger':
+        self.gc_start_time = None  # type: Optional[float]
+        self.gc_time = 0.0
+        self.gc_calls = 0
+        self.gc_collected = 0
+        self.gc_uncollectable = 0
+        gc.callbacks.append(self.gc_callback)
+        self.start_time = time.time()
+        return self
+
+    def __enter__(self) -> 'IPCClient':
+        return self
+
+    def __enter__(self) -> 'IPCServer':
+        if sys.platform == 'win32':
+            # NOTE: It is theoretically possible that this will hang forever if the
+            # client never connects, though this can be "solved" by killing the server
+            try:
+                ov = _winapi.ConnectNamedPipe(self.connection, overlapped=True)
+                # TODO: remove once typeshed supports Literal types
+                assert isinstance(ov, _winapi.Overlapped)
+            except WindowsError as e:
+                # Don't raise if the client already exists, or the client already connected
+                if e.winerror not in (_winapi.ERROR_PIPE_CONNECTED, _winapi.ERROR_NO_DATA):
+                    raise
+            else:
+                try:
+                    timeout = int(self.timeout * 1000) if self.timeout else _winapi.INFINITE
+                    res = _winapi.WaitForSingleObject(ov.event, timeout)
+                    assert res == _winapi.WAIT_OBJECT_0
+                except BaseException:
+                    ov.cancel()
+                    _winapi.CloseHandle(self.connection)
+                    raise
+                _, err = ov.GetOverlappedResult(True)
+                assert err == 0
+        else:
+            try:
+                self.connection, _ = self.sock.accept()
+            except socket.timeout as e:
+                raise IPCException('The socket timed out') from e
+        return self
+
+    def __enter__(self) -> 'ModuleInspect':
+        return self
+
+    @classmethod
+    def deserialize(cls, data: JsonDict) -> 'TypeAlias':
+        assert data['.class'] == 'TypeAlias'
+        fullname = data['fullname']
+        alias_tvars = data['alias_tvars']
+        target = mypy.types.deserialize_type(data['target'])
+        no_args = data['no_args']
+        normalized = data['normalized']
+        line = data['line']
+        column = data['column']
+        return cls(target, fullname, line, column, alias_tvars=alias_tvars,
+                   no_args=no_args, normalized=normalized)
+
+    def __iter__(self) -> 'It':
+        return self
+
+    @classmethod
+    def deserialize(
+        cls, info: TypeInfo, data: JsonDict, api: SemanticAnalyzerPluginInterface
+    ) -> 'DataclassAttribute':
+        data = data.copy()
+        typ = deserialize_and_fixup_type(data.pop('type'), api)
+        return cls(type=typ, info=info, **data)
+
