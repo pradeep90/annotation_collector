@@ -52,7 +52,7 @@ def methods_with_self_annotation(module: cst.Module) -> List[cst.CSTNode]:
         wrapper.module, function_with_self_annotation_matcher
     )
     return [
-        function
+        function.with_changes(body=cst.SimpleStatementSuite([cst.Expr(cst.Ellipsis())]))
         for function in functions_with_self_annotation
         if is_method(cast(cst.FunctionDef, function), scope_mapping)
         and not is_staticmethod(cast(cst.FunctionDef, function))
@@ -102,9 +102,7 @@ def print_methods_with_self_annotations(
             print(f"{indented}\n")
 
 
-def print_methods_returning_self(
-    modules: List[cst.Module], verbose: bool
-) -> None:
+def print_methods_returning_self(modules: List[cst.Module], verbose: bool) -> None:
     methods = [
         method for module in modules for method in methods_returning_self(module)
     ]
@@ -117,13 +115,9 @@ def print_methods_returning_self(
 
 def main(roots: Iterable[Path], verbose: bool, show_progress: bool) -> None:
     modules = get_modules(roots, show_progress=show_progress)
-    print_methods_with_self_annotations(
-        modules, verbose
-    )
+    print_methods_with_self_annotations(modules, verbose)
     print("")
-    print_methods_returning_self(
-        modules, verbose
-    )
+    print_methods_returning_self(modules, verbose)
 
 
 if __name__ == "__main__":

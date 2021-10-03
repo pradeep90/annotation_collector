@@ -30,7 +30,8 @@ class SelfAnnotationTest(unittest.TestCase):
             get_self_annotations(
                 """
                 class Foo:
-                    def some_method(self: _T, other: Union[_T, str]) -> bool: ...
+                    def some_method(self: _T, other: Union[_T, str]) -> bool:
+                        print("hello")
                     def some_classmethod(cls: Type[_T], other: int) -> List[_T]: ...
                     def self_not_annotated(self, other: Union[_T, str]) -> bool: ...
                 """
