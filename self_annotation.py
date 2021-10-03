@@ -21,6 +21,12 @@ def is_method(
     return isinstance(scope_mapping.get(function), cst.metadata.ClassScope)
 
 
+def is_staticmethod(
+    function: cst.FunctionDef,
+) -> bool:
+    return len(m.findall(function, m.Decorator(decorator=m.Name("staticmethod")))) > 0
+
+
 def methods_with_self_annotation(module: cst.Module) -> List[cst.CSTNode]:
     wrapper = cst.metadata.MetadataWrapper(module)
     scope_mapping = wrapper.resolve(cst.metadata.ScopeProvider)
@@ -31,6 +37,7 @@ def methods_with_self_annotation(module: cst.Module) -> List[cst.CSTNode]:
         function
         for function in functions_with_self_annotation
         if is_method(cast(cst.FunctionDef, function), scope_mapping)
+        and not is_staticmethod(cast(cst.FunctionDef, function))
     ]
 
 
