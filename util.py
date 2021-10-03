@@ -7,7 +7,7 @@ from pathlib import Path
 SHOW_PROGRESS_EVERY = 20
 
 
-def get_modules(roots: Iterable[Path]) -> List[cst.Module]:
+def get_modules(roots: Iterable[Path], show_progress: bool) -> List[cst.Module]:
     files = [path for path in roots if path.is_file()]
     directories = [path for path in roots if not path.is_file()]
     paths = files + [
@@ -18,7 +18,7 @@ def get_modules(roots: Iterable[Path]) -> List[cst.Module]:
 
     modules = []
     for i, path in enumerate(paths):
-        if i > 0 and i % SHOW_PROGRESS_EVERY == 0:
+        if show_progress and i > 0 and i % SHOW_PROGRESS_EVERY == 0:
             print(f"PROGRESS: Parsed {i}/{len(paths)} files...")
         try:
             modules.append(cst.parse_module(Path(path).read_text()))

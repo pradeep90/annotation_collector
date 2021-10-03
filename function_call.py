@@ -73,8 +73,8 @@ def print_calls_with_literals(modules: List[cst.Module], verbose: bool) -> None:
             print(expression_to_string(call))
 
 
-def main(roots: Iterable[Path], verbose: bool) -> None:
-    modules = get_modules(roots)
+def main(roots: Iterable[Path], verbose: bool, show_progress: bool) -> None:
+    modules = get_modules(roots, show_progress)
     print_register_buffer_arguments(modules, verbose)
     print("")
     print_calls_with_literals(modules, verbose)
@@ -83,6 +83,7 @@ def main(roots: Iterable[Path], verbose: bool) -> None:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--verbose", action="store_true", default=False)
+    parser.add_argument("--show-progress", action="store_true", default=False)
     parser.add_argument("root", type=Path, nargs="+")
     arguments = parser.parse_args()
-    main(arguments.root, arguments.verbose)
+    main(arguments.root, arguments.verbose, arguments.show_progress)

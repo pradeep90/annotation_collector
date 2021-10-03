@@ -263,7 +263,7 @@ def main(
     show_callback_parameters: bool,
     show_progress: bool,
 ) -> None:
-    modules = get_modules(roots)
+    modules = get_modules(roots, show_progress)
 
     print_callable_data(modules, show_callables)
     print_protocol_data(modules, show_callables)

@@ -47,13 +47,16 @@ def print_methods_with_self_annotations(
             print(f"{indented}\n")
 
 
-def main(roots: Iterable[Path], verbose: bool) -> None:
-    print_methods_with_self_annotations(get_modules(roots), verbose)
+def main(roots: Iterable[Path], verbose: bool, show_progress: bool) -> None:
+    print_methods_with_self_annotations(
+        get_modules(roots, show_progress=show_progress), verbose
+    )
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--verbose", action="store_true", default=False)
+    parser.add_argument("--show-progress", action="store_true", default=False)
     parser.add_argument("root", type=Path, nargs="+")
     arguments = parser.parse_args()
-    main(arguments.root, arguments.verbose)
+    main(arguments.root, arguments.verbose, arguments.show_progress)
