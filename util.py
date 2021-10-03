@@ -30,3 +30,6 @@ def get_modules(roots: Iterable[Path]) -> List[cst.Module]:
 
 def expression_to_string(expression: cst.BaseExpression) -> str:
     return cst.Module([cst.SimpleStatementLine([cst.Expr(expression)])]).code.strip()
+
+def statement_to_string(statement: cst.CSTNode) -> str:
+    return cst.Module([statement]).code.strip()
