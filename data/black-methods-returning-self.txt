@@ -1,0 +1,129 @@
+Could not parse path /Users/pradeepkumars/Programs/black/tests/data/python2.py: Syntax Error @ 7:40.
+Incomplete input. Encountered '`', but expected ';', or 'NEWLINE'.
+
+print >> sys.stderr , "Look, a repr:", `sys`
+                                       ^
+
+
+Could not parse path /Users/pradeepkumars/Programs/black/tests/data/pep_572_do_not_remove_parens.py: Syntax Error @ 5:8.
+Incomplete input. Encountered ':', but expected ')'.
+
+del (a := [1])
+       ^
+
+
+Could not parse path /Users/pradeepkumars/Programs/black/tests/data/async_as_identifier.py: Syntax Error @ 27:5.
+Incomplete input. Encountered 'async', but expected 'NAME'.
+
+def async():
+    ^
+
+
+Could not parse path /Users/pradeepkumars/Programs/black/tests/data/pep_572.py: Syntax Error @ 1:4.
+Incomplete input. Encountered ':', but expected ')'.
+
+(a := 1)
+   ^
+
+
+Could not parse path /Users/pradeepkumars/Programs/black/tests/data/python39.py: Syntax Error @ 3:19.
+Incomplete input. Encountered '[', but expected '(', or 'NEWLINE'.
+
+@relaxed_decorator[0]
+                  ^
+
+
+Could not parse path /Users/pradeepkumars/Programs/black/tests/data/pep_572_remove_parens.py: Syntax Error @ 1:9.
+Incomplete input. Encountered ':', but expected ')'.
+
+if (foo := 0):
+        ^
+
+
+Could not parse path /Users/pradeepkumars/Programs/black/tests/data/numeric_literals_py2.py: Syntax Error @ 3:14.
+Incomplete input. Encountered 'L', but expected ';', or 'NEWLINE'.
+
+x = 123456789L
+             ^
+
+
+Could not parse path /Users/pradeepkumars/Programs/black/tests/data/pep_570.py: Syntax Error @ 1:28.
+Incomplete input. Encountered '/', but expected ')'.
+
+def positional_only_arg(a, /):
+                           ^
+
+
+Could not parse path /Users/pradeepkumars/Programs/black/tests/data/python38.py: Syntax Error @ 6:22.
+Incomplete input. Encountered '*', but expected ';', or 'NEWLINE'.
+
+    return "value1", *my_list
+                     ^
+
+
+Could not parse path /Users/pradeepkumars/Programs/black/tests/data/python37.py: Syntax Error @ 5:19.
+Incomplete input. Encountered 'async', but expected ')'.
+
+    return (i * 2 async for i in arange(42))
+                  ^
+
+
+Could not parse path /Users/pradeepkumars/Programs/black/tests/data/python2_unicode_literals.py: Syntax Error @ 8:3.
+Incomplete input. Encountered '"hello"', but expected ';', or 'NEWLINE'.
+
+Ur"hello"
+  ^
+
+
+Could not parse path /Users/pradeepkumars/Programs/black/tests/data/decorators.py: Syntax Error @ 156:13.
+Incomplete input. Encountered '(', but expected 'NEWLINE'.
+
+@decorator()()
+            ^
+
+
+Methods with `self` or `cls` annotations: 3
+    def _eq(self: _P, other: _P) -> bool: ...
+
+    def clone(self: _P) -> _P: ...
+
+    def copy(self: _P) -> _P: ...
+
+
+Methods returning `self` or `cls(...)`: 2
+    def optimize(self) -> "BasePattern":
+        """
+            A subclass can define this as a hook for optimizations.
+
+            Returns either self or another node with the same effect.
+            """
+        return self
+
+    def optimize(self) -> Any:
+        """Optimize certain stacked wildcard patterns."""
+        subpattern = None
+        if (
+            self.content is not None
+            and len(self.content) == 1
+            and len(self.content[0]) == 1
+        ):
+            subpattern = self.content[0][0]
+        if self.min == 1 and self.max == 1:
+            if self.content is None:
+                return NodePattern(name=self.name)
+            if subpattern is not None and self.name == subpattern.name:
+                return subpattern.optimize()
+        if (
+            self.min <= 1
+            and isinstance(subpattern, WildcardPattern)
+            and subpattern.min <= 1
+            and self.name == subpattern.name
+        ):
+            return WildcardPattern(
+                subpattern.content,
+                self.min * subpattern.min,
+                self.max * subpattern.max,
+                subpattern.name,
+            )
+        return self
+

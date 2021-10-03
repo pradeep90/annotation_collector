@@ -1,0 +1,21 @@
+Methods with `self` or `cls` annotations: 0
+
+Methods returning `self` or `cls(...)`: 2
+    def __iter__(self):
+        return self
+
+    def seek(self, time_s: float):
+        """Seek within current stream.
+
+            Args:
+                time_s (float): seek time in seconds
+
+            .. note::
+                Current implementation is the so-called precise seek. This
+                means following seek, call to :mod:`next()` will return the
+                frame with the exact timestamp if it exists or
+                the first frame with timestamp larger than ``time_s``.
+            """
+        self._c.seek(time_s)
+        return self
+

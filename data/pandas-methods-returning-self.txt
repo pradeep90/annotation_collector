@@ -1,0 +1,5098 @@
+Could not parse path /Users/pradeepkumars/Programs/pandas/pandas/io/parsers/python_parser.py: Syntax Error @ 1162:36.
+Incomplete input. Encountered '}', but expected 'FSTRING_END', 'FSTRING_STRING', or '{'.
+
+        delimiters = "".join(fr"\{x}" for x in self.delimiter)
+                                   ^
+
+
+Could not parse path /Users/pradeepkumars/Programs/pandas/pandas/io/formats/format.py: Syntax Error @ 1903:59.
+Incomplete input. Encountered '}', but expected 'FSTRING_END', 'FSTRING_STRING', or '{'.
+
+    number_regex = re.compile(fr"^\s*[\+-]?[0-9]+\{decimal}[0-9]*$")
+                                                          ^
+
+
+Methods with `self` or `cls` annotations: 228
+    def _as_manager(
+        self: FrameOrSeries, typ: str, copy: bool_t = True
+    ) -> FrameOrSeries: ...
+
+    @final
+    def set_flags(
+        self: FrameOrSeries,
+        *,
+        copy: bool_t = False,
+        allows_duplicate_labels: bool_t | None = None,
+    ) -> FrameOrSeries: ...
+
+    # ----------------------------------------------------------------------
+    # Construction
+
+    @property
+    def _constructor(self: FrameOrSeries) -> type[FrameOrSeries]: ...
+
+    @overload
+    def set_axis(
+        self: FrameOrSeries, labels, axis: Axis = ..., inplace: Literal[False] = ...
+    ) -> FrameOrSeries: ...
+
+    @overload
+    def set_axis(
+        self: FrameOrSeries, labels, axis: Axis, inplace: Literal[True]
+    ) -> None: ...
+
+    @overload
+    def set_axis(self: FrameOrSeries, labels, *, inplace: Literal[True]) -> None: ...
+
+    @overload
+    def set_axis(
+        self: FrameOrSeries, labels, axis: Axis = ..., inplace: bool_t = ...
+    ) -> FrameOrSeries | None: ...
+
+    @final
+    def swapaxes(self: FrameOrSeries, axis1, axis2, copy=True) -> FrameOrSeries: ...
+
+    @final
+    @doc(klass=_shared_doc_kwargs["klass"])
+    def droplevel(self: FrameOrSeries, level, axis=0) -> FrameOrSeries: ...
+
+    # ----------------------------------------------------------------------
+    # Rename
+
+    def rename(
+        self: FrameOrSeries,
+        mapper: Renamer | None = None,
+        *,
+        index: Renamer | None = None,
+        columns: Renamer | None = None,
+        axis: Axis | None = None,
+        copy: bool_t = True,
+        inplace: bool_t = False,
+        level: Level | None = None,
+        errors: str = "ignore",
+    ) -> FrameOrSeries | None: ...
+
+    @final
+    def __abs__(self: FrameOrSeries) -> FrameOrSeries: ...
+
+    @final
+    def __round__(self: FrameOrSeries, decimals: int = 0) -> FrameOrSeries: ...
+
+    # ----------------------------------------------------------------------
+    # Indexing Methods
+
+    def take(
+        self: FrameOrSeries, indices, axis=0, is_copy: bool_t | None = None, **kwargs
+    ) -> FrameOrSeries: ...
+
+    def _take_with_is_copy(self: FrameOrSeries, indices, axis=0) -> FrameOrSeries: ...
+
+    def _slice(self: FrameOrSeries, slobj: slice, axis=0) -> FrameOrSeries: ...
+
+    @final
+    def reindex_like(
+        self: FrameOrSeries,
+        other,
+        method: str | None = None,
+        copy: bool_t = True,
+        limit=None,
+        tolerance=None,
+    ) -> FrameOrSeries: ...
+
+    @final
+    def _drop_axis(
+        self: FrameOrSeries, labels, axis, level=None, errors: str = "raise"
+    ) -> FrameOrSeries: ...
+
+    @final
+    def add_prefix(self: FrameOrSeries, prefix: str) -> FrameOrSeries: ...
+
+    @final
+    def add_suffix(self: FrameOrSeries, suffix: str) -> FrameOrSeries: ...
+
+    @doc(
+        klass=_shared_doc_kwargs["klass"],
+        axes=_shared_doc_kwargs["axes"],
+        optional_labels="",
+        optional_axis="",
+    )
+    def reindex(self: FrameOrSeries, *args, **kwargs) -> FrameOrSeries: ...
+
+    @final
+    def _reindex_axes(
+        self: FrameOrSeries, axes, level, limit, tolerance, method, fill_value, copy
+    ) -> FrameOrSeries: ...
+
+    @final
+    def _reindex_with_indexers(
+        self: FrameOrSeries,
+        reindexers,
+        fill_value=None,
+        copy: bool_t = False,
+        allow_dups: bool_t = False,
+    ) -> FrameOrSeries: ...
+
+    def filter(
+        self: FrameOrSeries,
+        items=None,
+        like: str | None = None,
+        regex: str | None = None,
+        axis=None,
+    ) -> FrameOrSeries: ...
+
+    @final
+    def head(self: FrameOrSeries, n: int = 5) -> FrameOrSeries: ...
+
+    @final
+    def tail(self: FrameOrSeries, n: int = 5) -> FrameOrSeries: ...
+
+    @final
+    def sample(
+        self: FrameOrSeries,
+        n=None,
+        frac=None,
+        replace=False,
+        weights=None,
+        random_state=None,
+        axis=None,
+    ) -> FrameOrSeries: ...
+
+    # ----------------------------------------------------------------------
+    # Attribute access
+
+    @final
+    def __finalize__(
+        self: FrameOrSeries, other, method: str | None = None, **kwargs
+    ) -> FrameOrSeries: ...
+
+    def astype(
+        self: FrameOrSeries, dtype, copy: bool_t = True, errors: str = "raise"
+    ) -> FrameOrSeries: ...
+
+    @final
+    def copy(self: FrameOrSeries, deep: bool_t = True) -> FrameOrSeries: ...
+
+    @final
+    def __copy__(self: FrameOrSeries, deep: bool_t = True) -> FrameOrSeries: ...
+
+    @final
+    def __deepcopy__(self: FrameOrSeries, memo=None) -> FrameOrSeries: ...
+
+    @final
+    def _convert(
+        self: FrameOrSeries,
+        datetime: bool_t = False,
+        numeric: bool_t = False,
+        timedelta: bool_t = False,
+    ) -> FrameOrSeries: ...
+
+    @final
+    def infer_objects(self: FrameOrSeries) -> FrameOrSeries: ...
+
+    @final
+    def convert_dtypes(
+        self: FrameOrSeries,
+        infer_objects: bool_t = True,
+        convert_string: bool_t = True,
+        convert_integer: bool_t = True,
+        convert_boolean: bool_t = True,
+        convert_floating: bool_t = True,
+    ) -> FrameOrSeries: ...
+
+    # ----------------------------------------------------------------------
+        # Filling NA's
+
+    @doc(**_shared_doc_kwargs)
+    def fillna(
+        self: FrameOrSeries,
+        value=None,
+        method=None,
+        axis=None,
+        inplace: bool_t = False,
+        limit=None,
+        downcast=None,
+    ) -> FrameOrSeries | None: ...
+
+    @doc(klass=_shared_doc_kwargs["klass"])
+    def ffill(
+        self: FrameOrSeries,
+        axis: None | Axis = None,
+        inplace: bool_t = False,
+        limit: None | int = None,
+        downcast=None,
+    ) -> FrameOrSeries | None: ...
+
+    @doc(klass=_shared_doc_kwargs["klass"])
+    def bfill(
+        self: FrameOrSeries,
+        axis: None | Axis = None,
+        inplace: bool_t = False,
+        limit: None | int = None,
+        downcast=None,
+    ) -> FrameOrSeries | None: ...
+
+    def interpolate(
+        self: FrameOrSeries,
+        method: str = "linear",
+        axis: Axis = 0,
+        limit: int | None = None,
+        inplace: bool_t = False,
+        limit_direction: str | None = None,
+        limit_area: str | None = None,
+        downcast: str | None = None,
+        **kwargs,
+    ) -> FrameOrSeries | None: ...
+
+    # ----------------------------------------------------------------------
+    # Action Methods
+
+    @doc(klass=_shared_doc_kwargs["klass"])
+    def isna(self: FrameOrSeries) -> FrameOrSeries: ...
+
+    @doc(isna, klass=_shared_doc_kwargs["klass"])
+    def isnull(self: FrameOrSeries) -> FrameOrSeries: ...
+
+    @doc(klass=_shared_doc_kwargs["klass"])
+    def notna(self: FrameOrSeries) -> FrameOrSeries: ...
+
+    @doc(notna, klass=_shared_doc_kwargs["klass"])
+    def notnull(self: FrameOrSeries) -> FrameOrSeries: ...
+
+    def clip(
+        self: FrameOrSeries,
+        lower=None,
+        upper=None,
+        axis: Axis | None = None,
+        inplace: bool_t = False,
+        *args,
+        **kwargs,
+    ) -> FrameOrSeries | None: ...
+
+    @doc(**_shared_doc_kwargs)
+    def asfreq(
+        self: FrameOrSeries,
+        freq,
+        method=None,
+        how: str | None = None,
+        normalize: bool_t = False,
+        fill_value=None,
+    ) -> FrameOrSeries: ...
+
+    @final
+    def at_time(
+        self: FrameOrSeries, time, asof: bool_t = False, axis=None
+    ) -> FrameOrSeries: ...
+
+    @final
+    def between_time(
+        self: FrameOrSeries,
+        start_time,
+        end_time,
+        include_start: bool_t = True,
+        include_end: bool_t = True,
+        axis=None,
+    ) -> FrameOrSeries: ...
+
+    @final
+    def first(self: FrameOrSeries, offset) -> FrameOrSeries: ...
+
+    @final
+    def last(self: FrameOrSeries, offset) -> FrameOrSeries: ...
+
+    @final
+    def rank(
+        self: FrameOrSeries,
+        axis=0,
+        method: str = "average",
+        numeric_only: bool_t | None = None,
+        na_option: str = "keep",
+        ascending: bool_t = True,
+        pct: bool_t = False,
+    ) -> FrameOrSeries: ...
+
+    @doc(klass=_shared_doc_kwargs["klass"])
+    def shift(
+        self: FrameOrSeries, periods=1, freq=None, axis=0, fill_value=None
+    ) -> FrameOrSeries: ...
+
+    @final
+    def slice_shift(self: FrameOrSeries, periods: int = 1, axis=0) -> FrameOrSeries: ...
+
+    @final
+    def tshift(
+        self: FrameOrSeries, periods: int = 1, freq=None, axis: Axis = 0
+    ) -> FrameOrSeries: ...
+
+    def truncate(
+        self: FrameOrSeries, before=None, after=None, axis=None, copy: bool_t = True
+    ) -> FrameOrSeries: ...
+
+    @final
+    def tz_convert(
+        self: FrameOrSeries, tz, axis=0, level=None, copy: bool_t = True
+    ) -> FrameOrSeries: ...
+
+    @final
+    def tz_localize(
+        self: FrameOrSeries,
+        tz,
+        axis=0,
+        level=None,
+        copy: bool_t = True,
+        ambiguous="raise",
+        nonexistent: str = "raise",
+    ) -> FrameOrSeries: ...
+
+    # ----------------------------------------------------------------------
+    # Numeric Methods
+
+    @final
+    def abs(self: FrameOrSeries) -> FrameOrSeries: ...
+
+    @final
+    def describe(
+        self: FrameOrSeries,
+        percentiles=None,
+        include=None,
+        exclude=None,
+        datetime_is_numeric=False,
+    ) -> FrameOrSeries: ...
+
+    @final
+    def pct_change(
+        self: FrameOrSeries,
+        periods=1,
+        fill_method="pad",
+        limit=None,
+        freq=None,
+        **kwargs,
+    ) -> FrameOrSeries: ...
+
+    @deprecate_nonkeyword_arguments(version=None, allowed_args=["self"])
+    def ffill(
+        self: Series,
+        axis: None | Axis = None,
+        inplace: bool = False,
+        limit: None | int = None,
+        downcast=None,
+    ) -> Series | None: ...
+
+    @deprecate_nonkeyword_arguments(version=None, allowed_args=["self"])
+    def bfill(
+        self: Series,
+        axis: None | Axis = None,
+        inplace: bool = False,
+        limit: None | int = None,
+        downcast=None,
+    ) -> Series | None: ...
+
+    @deprecate_nonkeyword_arguments(
+        version=None, allowed_args=["self", "lower", "upper"]
+    )
+    def clip(
+        self: Series,
+        lower=None,
+        upper=None,
+        axis: Axis | None = None,
+        inplace: bool = False,
+        *args,
+        **kwargs,
+    ) -> Series | None: ...
+
+    @deprecate_nonkeyword_arguments(version=None, allowed_args=["self", "method"])
+    def interpolate(
+        self: Series,
+        method: str = "linear",
+        axis: Axis = 0,
+        limit: int | None = None,
+        inplace: bool = False,
+        limit_direction: str | None = None,
+        limit_area: str | None = None,
+        downcast: str | None = None,
+        **kwargs,
+    ) -> Series | None: ...
+
+    @deprecate_nonkeyword_arguments(version=None, allowed_args=["self"])
+    def ffill(
+        self: DataFrame,
+        axis: None | Axis = None,
+        inplace: bool = False,
+        limit: None | int = None,
+        downcast=None,
+    ) -> DataFrame | None: ...
+
+    @deprecate_nonkeyword_arguments(version=None, allowed_args=["self"])
+    def bfill(
+        self: DataFrame,
+        axis: None | Axis = None,
+        inplace: bool = False,
+        limit: None | int = None,
+        downcast=None,
+    ) -> DataFrame | None: ...
+
+    @deprecate_nonkeyword_arguments(
+        version=None, allowed_args=["self", "lower", "upper"]
+    )
+    def clip(
+        self: DataFrame,
+        lower=None,
+        upper=None,
+        axis: Axis | None = None,
+        inplace: bool = False,
+        *args,
+        **kwargs,
+    ) -> DataFrame | None: ...
+
+    @deprecate_nonkeyword_arguments(version=None, allowed_args=["self", "method"])
+    def interpolate(
+        self: DataFrame,
+        method: str = "linear",
+        axis: Axis = 0,
+        limit: int | None = None,
+        inplace: bool = False,
+        limit_direction: str | None = None,
+        limit_area: str | None = None,
+        downcast: str | None = None,
+        **kwargs,
+    ) -> DataFrame | None: ...
+
+    def transpose(self: _T, *args, **kwargs) -> _T: ...
+
+    def make_empty(self: T, axes=None) -> T: ...
+
+    def consolidate(self: T) -> T: ...
+
+    def apply(
+        self: T,
+        f,
+        align_keys: list[str] | None = None,
+        ignore_failures: bool = False,
+        **kwargs,
+    ) -> T: ...
+
+    def apply_with_block(self: T, f, align_keys=None, swap_axis=True, **kwargs) -> T: ...
+
+    def where(self: T, other, cond, align: bool, errors: str) -> T: ...
+
+    def diff(self: T, n: int, axis: int) -> T: ...
+
+    def interpolate(self: T, **kwargs) -> T: ...
+
+    def shift(self: T, periods: int, axis: int, fill_value) -> T: ...
+
+    def fillna(self: T, value, limit, inplace: bool, downcast) -> T: ...
+
+    def downcast(self: T) -> T: ...
+
+    def astype(self: T, dtype, copy: bool = False, errors: str = "raise") -> T: ...
+
+    def convert(
+        self: T,
+        copy: bool = True,
+        datetime: bool = True,
+        numeric: bool = True,
+        timedelta: bool = True,
+    ) -> T: ...
+
+    def replace(self: T, value, **kwargs) -> T: ...
+
+    def replace_list(
+        self: T,
+        src_list: list[Any],
+        dest_list: list[Any],
+        inplace: bool = False,
+        regex: bool = False,
+    ) -> T: ...
+
+    def _get_data_subset(self: T, predicate: Callable) -> T: ...
+
+    def get_bool_data(self: T, copy: bool = False) -> T: ...
+
+    def get_numeric_data(self: T, copy: bool = False) -> T: ...
+
+    def copy(self: T, deep=True) -> T: ...
+
+    def reindex_indexer(
+        self: T,
+        new_axis,
+        indexer,
+        axis: int,
+        fill_value=None,
+        allow_dups: bool = False,
+        copy: bool = True,
+        # ignored keywords
+        consolidate: bool = True,
+        only_slice: bool = False,
+        # ArrayManager specific keywords
+        use_na_proxy: bool = False,
+    ) -> T: ...
+
+    def _reindex_indexer(
+        self: T,
+        new_axis,
+        indexer,
+        axis: int,
+        fill_value=None,
+        allow_dups: bool = False,
+        copy: bool = True,
+        use_na_proxy: bool = False,
+    ) -> T: ...
+
+    def take(self: T, indexer, axis: int = 1, verify: bool = True) -> T: ...
+
+    # --------------------------------------------------------------------
+    # Array-wise Operation
+
+    def grouped_reduce(self: T, func: Callable, ignore_failures: bool = False) -> T: ...
+
+    def reduce(
+        self: T, func: Callable, ignore_failures: bool = False
+    ) -> tuple[T, np.ndarray]: ...
+
+    def apply_2d(
+        self: ArrayManager, f, ignore_failures: bool = False, **kwargs
+    ) -> ArrayManager: ...
+
+    def reindex_indexer(
+        self: T,
+        new_axis,
+        indexer,
+        axis: int,
+        fill_value=None,
+        allow_dups: bool = False,
+        copy: bool = True,
+        consolidate: bool = True,
+        only_slice: bool = False,
+    ) -> T: ...
+
+    @final
+    def reindex_axis(
+        self: T,
+        new_index: Index,
+        axis: int,
+        fill_value=None,
+        consolidate: bool = True,
+        only_slice: bool = False,
+    ) -> T: ...
+
+    def _equal_values(self: T, other: T) -> bool: ...
+
+    def apply(
+        self: T,
+        f,
+        align_keys: list[str] | None = None,
+        ignore_failures: bool = False,
+        **kwargs,
+    ) -> T: ...
+
+    def isna(self: T, func) -> T: ...
+
+    @classmethod
+    def from_blocks(cls: type_t[T], blocks: list[Block], axes: list[Index]) -> T: ...
+
+    def make_empty(self: T, axes=None) -> T: ...
+
+    def apply(
+        self: T,
+        f,
+        align_keys: list[str] | None = None,
+        ignore_failures: bool = False,
+        **kwargs,
+    ) -> T: ...
+
+    def where(self: T, other, cond, align: bool, errors: str) -> T: ...
+
+    def setitem(self: T, indexer, value) -> T: ...
+
+    def diff(self: T, n: int, axis: int) -> T: ...
+
+    def interpolate(self: T, **kwargs) -> T: ...
+
+    def shift(self: T, periods: int, axis: int, fill_value) -> T: ...
+
+    def fillna(self: T, value, limit, inplace: bool, downcast) -> T: ...
+
+    def downcast(self: T) -> T: ...
+
+    def astype(self: T, dtype, copy: bool = False, errors: str = "raise") -> T: ...
+
+    def convert(
+        self: T,
+        copy: bool = True,
+        datetime: bool = True,
+        numeric: bool = True,
+        timedelta: bool = True,
+    ) -> T: ...
+
+    def replace(self: T, to_replace, value, inplace: bool, regex: bool) -> T: ...
+
+    def replace_list(
+        self: T,
+        src_list: list[Any],
+        dest_list: list[Any],
+        inplace: bool = False,
+        regex: bool = False,
+    ) -> T: ...
+
+    def to_native_types(self: T, **kwargs) -> T: ...
+
+    def get_bool_data(self: T, copy: bool = False) -> T: ...
+
+    def get_numeric_data(self: T, copy: bool = False) -> T: ...
+
+    def _combine(
+        self: T, blocks: list[Block], copy: bool = True, index: Index | None = None
+    ) -> T: ...
+
+    def copy(self: T, deep=True) -> T: ...
+
+    def consolidate(self: T) -> T: ...
+
+    def reindex_indexer(
+        self: T,
+        new_axis: Index,
+        indexer,
+        axis: int,
+        fill_value=None,
+        allow_dups: bool = False,
+        copy: bool = True,
+        consolidate: bool = True,
+        only_slice: bool = False,
+    ) -> T: ...
+
+    def take(self: T, indexer, axis: int = 1, verify: bool = True) -> T: ...
+
+    # ----------------------------------------------------------------
+    # Block-wise Operation
+
+    def grouped_reduce(self: T, func: Callable, ignore_failures: bool = False) -> T: ...
+
+    def reduce(
+        self: T, func: Callable, ignore_failures: bool = False
+    ) -> tuple[T, np.ndarray]: ...
+
+    def _equal_values(self: BlockManager, other: BlockManager) -> bool: ...
+
+    def quantile(
+        self: T,
+        *,
+        qs: Float64Index,
+        axis: int = 0,
+        interpolation="linear",
+    ) -> T: ...
+
+    def _equal_values(self: T, other: T) -> bool: ...
+
+    # error: Argument 2 of "_empty" is incompatible with supertype
+    # "NDArrayBackedExtensionArray"; supertype defines the argument type as
+    # "ExtensionDtype"
+    @classmethod
+    def _empty(  # type: ignore[override]
+        cls: type_t[Categorical], shape: Shape, dtype: CategoricalDtype
+    ) -> Categorical: ...
+
+    @classmethod
+    def _concat_same_type(
+        cls: type[CategoricalT], to_concat: Sequence[CategoricalT], axis: int = 0
+    ) -> CategoricalT: ...
+
+    # ---------------------------------------------------------------------
+    # Constructors
+
+    def __new__(
+        cls: type[IntervalArrayT],
+        data,
+        closed=None,
+        dtype: Dtype | None = None,
+        copy: bool = False,
+        verify_integrity: bool = True,
+    ): ...
+
+    @classmethod
+    def _simple_new(
+        cls: type[IntervalArrayT],
+        left,
+        right,
+        closed=None,
+        copy: bool = False,
+        dtype: Dtype | None = None,
+        verify_integrity: bool = True,
+    ) -> IntervalArrayT: ...
+
+    @classmethod
+    def _from_sequence(
+        cls: type[IntervalArrayT],
+        scalars,
+        *,
+        dtype: Dtype | None = None,
+        copy: bool = False,
+    ) -> IntervalArrayT: ...
+
+    @classmethod
+    def _from_factorized(
+        cls: type[IntervalArrayT], values: np.ndarray, original: IntervalArrayT
+    ) -> IntervalArrayT: ...
+
+    @classmethod
+    @Appender(
+        _interval_shared_docs["from_breaks"]
+        % {
+            "klass": "IntervalArray",
+            "examples": textwrap.dedent(
+                """\
+            Examples
+            --------
+            >>> pd.arrays.IntervalArray.from_breaks([0, 1, 2, 3])
+            <IntervalArray>
+            [(0, 1], (1, 2], (2, 3]]
+            Length: 3, dtype: interval[int64, right]
+            """
+            ),
+        }
+    )
+    def from_breaks(
+        cls: type[IntervalArrayT],
+        breaks,
+        closed="right",
+        copy: bool = False,
+        dtype: Dtype | None = None,
+    ) -> IntervalArrayT: ...
+
+    @classmethod
+    @Appender(
+        _interval_shared_docs["from_arrays"]
+        % {
+            "klass": "IntervalArray",
+            "examples": textwrap.dedent(
+                """\
+            >>> pd.arrays.IntervalArray.from_arrays([0, 1, 2], [1, 2, 3])
+            <IntervalArray>
+            [(0, 1], (1, 2], (2, 3]]
+            Length: 3, dtype: interval[int64, right]
+            """
+            ),
+        }
+    )
+    def from_arrays(
+        cls: type[IntervalArrayT],
+        left,
+        right,
+        closed="right",
+        copy: bool = False,
+        dtype: Dtype | None = None,
+    ) -> IntervalArrayT: ...
+
+    @classmethod
+    @Appender(
+        _interval_shared_docs["from_tuples"]
+        % {
+            "klass": "IntervalArray",
+            "examples": textwrap.dedent(
+                """\
+            Examples
+            --------
+            >>> pd.arrays.IntervalArray.from_tuples([(0, 1), (1, 2)])
+            <IntervalArray>
+            [(0, 1], (1, 2]]
+            Length: 2, dtype: interval[int64, right]
+            """
+            ),
+        }
+    )
+    def from_tuples(
+        cls: type[IntervalArrayT],
+        data,
+        closed="right",
+        copy: bool = False,
+        dtype: Dtype | None = None,
+    ) -> IntervalArrayT: ...
+
+    def _shallow_copy(self: IntervalArrayT, left, right) -> IntervalArrayT: ...
+
+    def fillna(
+        self: IntervalArrayT, value=None, method=None, limit=None
+    ) -> IntervalArrayT: ...
+
+    @classmethod
+    def _concat_same_type(
+        cls: type[IntervalArrayT], to_concat: Sequence[IntervalArrayT]
+    ) -> IntervalArrayT: ...
+
+    def copy(self: IntervalArrayT) -> IntervalArrayT: ...
+
+    def shift(
+        self: IntervalArrayT, periods: int = 1, fill_value: object = None
+    ) -> IntervalArray: ...
+
+    def take(
+        self: IntervalArrayT,
+        indices,
+        *,
+        allow_fill: bool = False,
+        fill_value=None,
+        axis=None,
+        **kwargs,
+    ) -> IntervalArrayT: ...
+
+    @Appender(
+        _interval_shared_docs["set_closed"]
+        % {
+            "klass": "IntervalArray",
+            "examples": textwrap.dedent(
+                """\
+            Examples
+            --------
+            >>> index = pd.arrays.IntervalArray.from_breaks(range(4))
+            >>> index
+            <IntervalArray>
+            [(0, 1], (1, 2], (2, 3]]
+            Length: 3, dtype: interval[int64, right]
+            >>> index.set_closed('both')
+            <IntervalArray>
+            [[0, 1], [1, 2], [2, 3]]
+            Length: 3, dtype: interval[int64, both]
+            """
+            ),
+        }
+    )
+    def set_closed(self: IntervalArrayT, closed) -> IntervalArrayT: ...
+
+    def insert(self: IntervalArrayT, loc: int, item: Interval) -> IntervalArrayT: ...
+
+    def delete(self: IntervalArrayT, loc) -> IntervalArrayT: ...
+
+    @Appender(_extension_array_shared_docs["repeat"] % _shared_docs_kwargs)
+    def repeat(
+        self: IntervalArrayT,
+        repeats: int | Sequence[int],
+        axis: int | None = None,
+    ) -> IntervalArrayT: ...
+
+    @doc(ExtensionArray.fillna)
+    def fillna(
+        self: BaseMaskedArrayT, value=None, method=None, limit=None
+    ) -> BaseMaskedArrayT: ...
+
+    def __invert__(self: BaseMaskedArrayT) -> BaseMaskedArrayT: ...
+
+    @classmethod
+    def _concat_same_type(
+        cls: type[BaseMaskedArrayT], to_concat: Sequence[BaseMaskedArrayT]
+    ) -> BaseMaskedArrayT: ...
+
+    def take(
+        self: BaseMaskedArrayT,
+        indexer,
+        *,
+        allow_fill: bool = False,
+        fill_value: Scalar | None = None,
+    ) -> BaseMaskedArrayT: ...
+
+    def copy(self: BaseMaskedArrayT) -> BaseMaskedArrayT: ...
+
+    @classmethod
+    def _from_sequence(
+        cls: type[PeriodArray],
+        scalars: Sequence[Period | None] | AnyArrayLike,
+        *,
+        dtype: Dtype | None = None,
+        copy: bool = False,
+    ) -> PeriodArray: ...
+
+    def round(self: T, decimals: int = 0, *args, **kwargs) -> T: ...
+
+    @overload
+    def view(self: DatetimeLikeArrayT) -> DatetimeLikeArrayT: ...
+
+    # ------------------------------------------------------------------
+    # ExtensionArray Interface
+
+    @classmethod
+    def _concat_same_type(
+        cls: type[DatetimeLikeArrayT],
+        to_concat: Sequence[DatetimeLikeArrayT],
+        axis: int = 0,
+    ) -> DatetimeLikeArrayT: ...
+
+    def copy(self: DatetimeLikeArrayT) -> DatetimeLikeArrayT: ...
+
+    @classmethod
+    def _from_factorized(
+        cls: type[DatetimeLikeArrayT], values, original: DatetimeLikeArrayT
+    ) -> DatetimeLikeArrayT: ...
+
+    @classmethod
+    def _generate_range(
+        cls: type[DatetimeLikeArrayT], start, end, periods, freq, *args, **kwargs
+    ) -> DatetimeLikeArrayT: ...
+
+    def unique(self: ExtensionArrayT) -> ExtensionArrayT: ...
+
+    # ------------------------------------------------------------------------
+    # Indexing methods
+    # ------------------------------------------------------------------------
+
+    def take(
+        self: ExtensionArrayT,
+        indices: Sequence[int],
+        *,
+        allow_fill: bool = False,
+        fill_value: Any = None,
+    ) -> ExtensionArrayT: ...
+
+    def copy(self: ExtensionArrayT) -> ExtensionArrayT: ...
+
+    @classmethod
+    def _concat_same_type(
+        cls: type[ExtensionArrayT], to_concat: Sequence[ExtensionArrayT]
+    ) -> ExtensionArrayT: ...
+
+    # ------------------------------------------------------------------------
+    # Non-Optimized Default Methods
+
+    def delete(self: ExtensionArrayT, loc) -> ExtensionArrayT: ...
+
+    # ------------------------------------------------------------------------
+
+    def take(
+        self: NDArrayBackedExtensionArrayT,
+        indices: Sequence[int],
+        *,
+        allow_fill: bool = False,
+        fill_value: Any = None,
+        axis: int = 0,
+    ) -> NDArrayBackedExtensionArrayT: ...
+
+    def unique(self: NDArrayBackedExtensionArrayT) -> NDArrayBackedExtensionArrayT: ...
+
+    @classmethod
+    @doc(ExtensionArray._concat_same_type)
+    def _concat_same_type(
+        cls: type[NDArrayBackedExtensionArrayT],
+        to_concat: Sequence[NDArrayBackedExtensionArrayT],
+        axis: int = 0,
+    ) -> NDArrayBackedExtensionArrayT: ...
+
+    def __getitem__(
+        self: NDArrayBackedExtensionArrayT,
+        key: PositionalIndexer2D,
+    ) -> NDArrayBackedExtensionArrayT | Any: ...
+
+    @doc(ExtensionArray.fillna)
+    def fillna(
+        self: NDArrayBackedExtensionArrayT, value=None, method=None, limit=None
+    ) -> NDArrayBackedExtensionArrayT: ...
+
+    # ------------------------------------------------------------------------
+    # __array_function__ methods
+
+    def putmask(self: NDArrayBackedExtensionArrayT, mask: np.ndarray, value) -> None: ...
+
+    def where(
+        self: NDArrayBackedExtensionArrayT, mask: np.ndarray, value
+    ) -> NDArrayBackedExtensionArrayT: ...
+
+    # ------------------------------------------------------------------------
+    # Index compat methods
+
+    def insert(
+        self: NDArrayBackedExtensionArrayT, loc: int, item
+    ) -> NDArrayBackedExtensionArrayT: ...
+
+    # ------------------------------------------------------------------------
+    # numpy-like methods
+
+    @classmethod
+    def _empty(
+        cls: type_t[NDArrayBackedExtensionArrayT], shape: Shape, dtype: ExtensionDtype
+    ) -> NDArrayBackedExtensionArrayT: ...
+
+    @classmethod
+    def _simple_new(
+        cls: type[SparseArrayT],
+        sparse_array: np.ndarray,
+        sparse_index: SparseIndex,
+        dtype: SparseDtype,
+    ) -> SparseArrayT: ...
+
+    def copy(self: SparseArrayT) -> SparseArrayT: ...
+
+    @classmethod
+    def _concat_same_type(
+        cls: type[SparseArrayT], to_concat: Sequence[SparseArrayT]
+    ) -> SparseArrayT: ...
+
+    def _view(self: RangeIndex) -> RangeIndex: ...
+
+    def _getitem_slice(self: RangeIndex, slobj: slice) -> RangeIndex: ...
+
+    def _getitem_slice(self: MultiIndex, slobj: slice) -> MultiIndex: ...
+
+    @Appender(_index_shared_docs["take"] % _index_doc_kwargs)
+    def take(
+        self: MultiIndex,
+        indices,
+        axis: int = 0,
+        allow_fill: bool = True,
+        fill_value=None,
+        **kwargs,
+    ) -> MultiIndex: ...
+
+    def shift(self: _T, periods: int = 1, freq=None) -> _T: ...
+
+    @doc(NDArrayBackedExtensionIndex.delete)
+    def delete(self: _T, loc) -> _T: ...
+
+    def _can_fast_intersect(self: _T, other: _T) -> bool: ...
+
+    def _can_fast_union(self: _T, other: _T) -> bool: ...
+
+    def _fast_union(self: _T, other: _T, sort=None) -> _T: ...
+
+    def _maybe_utc_convert(self: _T, other: Index) -> tuple[_T, Index]: ...
+
+    # Cython methods; see github.com/cython/cython/issues/2647
+    #  for why we need to wrap these instead of making them class attributes
+    # Moreover, cython will choose the appropriate-dtyped sub-function
+    #  given the dtypes of the passed arguments
+
+    @final
+    def _left_indexer_unique(self: _IndexT, other: _IndexT) -> np.ndarray: ...
+
+    @final
+    def _left_indexer(
+        self: _IndexT, other: _IndexT
+    ) -> tuple[ArrayLike, np.ndarray, np.ndarray]: ...
+
+    @final
+    def _inner_indexer(
+        self: _IndexT, other: _IndexT
+    ) -> tuple[ArrayLike, np.ndarray, np.ndarray]: ...
+
+    @final
+    def _outer_indexer(
+        self: _IndexT, other: _IndexT
+    ) -> tuple[ArrayLike, np.ndarray, np.ndarray]: ...
+
+    @classmethod
+    def _simple_new(cls: type[_IndexT], values, name: Hashable = None) -> _IndexT: ...
+
+    @cache_readonly
+    def _constructor(self: _IndexT) -> type[_IndexT]: ...
+
+    def _shallow_copy(self: _IndexT, values, name: Hashable = no_default) -> _IndexT: ...
+
+    def _view(self: _IndexT) -> _IndexT: ...
+
+    @final
+    def _rename(self: _IndexT, name: Hashable) -> _IndexT: ...
+
+    # --------------------------------------------------------------------
+    # Copying Methods
+
+    def copy(
+        self: _IndexT,
+        name: Hashable | None = None,
+        deep: bool = False,
+        dtype: Dtype | None = None,
+        names: Sequence[Hashable] | None = None,
+    ) -> _IndexT: ...
+
+    @final
+    def __copy__(self: _IndexT, **kwargs) -> _IndexT: ...
+
+    @final
+    def __deepcopy__(self: _IndexT, memo=None) -> _IndexT: ...
+
+    def _sort_levels_monotonic(self: _IndexT) -> _IndexT: ...
+
+    def dropna(self: _IndexT, how: str_t = "any") -> _IndexT: ...
+
+    # --------------------------------------------------------------------
+    # Uniqueness Methods
+
+    def unique(self: _IndexT, level: Hashable | None = None) -> _IndexT: ...
+
+    @deprecate_nonkeyword_arguments(version=None, allowed_args=["self"])
+    def drop_duplicates(self: _IndexT, keep: str_t | bool = "first") -> _IndexT: ...
+
+    def _get_unique_index(self: _IndexT) -> _IndexT: ...
+
+    def _wrap_joined_index(self: _IndexT, joined: ArrayLike, other: _IndexT) -> _IndexT: ...
+
+    def _getitem_slice(self: _IndexT, slobj: slice) -> _IndexT: ...
+
+    def delete(self: _IndexT, loc) -> _IndexT: ...
+
+    def __neg__(self: object) -> NegativeInfinityType: ...
+
+    def __neg__(self: object) -> InfinityType: ...
+
+    def getitem_block_index(self: T, slicer: slice) -> T: ...
+
+    def getitem_block_index(self: T, slicer: slice) -> T: ...
+
+    def get_slice(self: T, slobj: slice, axis: int = ...) -> T: ...
+
+    # error: "__new__" must return a class instance (got "Union[Timedelta, NaTType]")
+    def __new__(  # type: ignore[misc]
+        cls: Type[_S], value=..., unit=..., **kwargs
+    ) -> _S | NaTType: ...
+
+    # TODO: round/floor/ceil could return NaT?
+    def round(self: _S, freq) -> _S: ...
+
+    def floor(self: _S, freq) -> _S: ...
+
+    def ceil(self: _S, freq) -> _S: ...
+
+    # error: "__new__" must return a class instance (got "Union[Timestamp, NaTType]")
+    def __new__(  # type: ignore[misc]
+        cls: Type[_S],
+        ts_input: int
+        | np.integer
+        | float
+        | str
+        | _date
+        | datetime
+        | np.datetime64 = ...,
+        freq=...,
+        tz: str | _tzinfo | None | int = ...,
+        unit=...,
+        year: int | None = ...,
+        month: int | None = ...,
+        day: int | None = ...,
+        hour: int | None = ...,
+        minute: int | None = ...,
+        second: int | None = ...,
+        microsecond: int | None = ...,
+        nanosecond: int | None = ...,
+        tzinfo: _tzinfo | None = ...,
+        *,
+        fold: int | None = ...,
+    ) -> _S | NaTType: ...
+
+    @classmethod
+    def fromtimestamp(cls: Type[_S], t: float, tz: _tzinfo | None = ...) -> _S: ...
+
+    @classmethod
+    def utcfromtimestamp(cls: Type[_S], t: float) -> _S: ...
+
+    @classmethod
+    def today(cls: Type[_S]) -> _S: ...
+
+    @classmethod
+    def fromordinal(cls: Type[_S], n: int) -> _S: ...
+
+    @classmethod
+    def now(cls: Type[_S], tz: _tzinfo | str | None = ...) -> _S: ...
+
+    @overload
+    @classmethod
+    def now(cls: Type[_S], tz: None = ...) -> _S: ...
+
+    @classmethod
+    def utcnow(cls: Type[_S]) -> _S: ...
+
+    @classmethod
+    def fromisoformat(cls: Type[_S], date_string: str) -> _S: ...
+
+    def astimezone(self: _S, tz: _tzinfo | None = ...) -> _S: ...
+
+    def __add__(self: _S, other: timedelta) -> _S: ...
+
+    def __radd__(self: _S, other: timedelta) -> _S: ...
+
+    def tz_convert(self: _S, tz) -> _S: ...
+
+    # TODO: could return NaT?
+    def tz_localize(
+        self: _S, tz, ambiguous: str = ..., nonexistent: str = ...
+    ) -> _S: ...
+
+    def normalize(self: _S) -> _S: ...
+
+    # TODO: round/floor/ceil could return NaT?
+    def round(
+        self: _S, freq, ambiguous: bool | str = ..., nonexistent: str = ...
+    ) -> _S: ...
+
+    def floor(
+        self: _S, freq, ambiguous: bool | str = ..., nonexistent: str = ...
+    ) -> _S: ...
+
+    def ceil(
+        self: _S, freq, ambiguous: bool | str = ..., nonexistent: str = ...
+    ) -> _S: ...
+
+
+Methods returning `self` or `cls(...)`: 126
+    @staticmethod
+    def navbar_add_info(context):
+        """
+            Items in the main navigation bar can be direct links, or dropdowns with
+            subitems. This context preprocessor adds a boolean field
+            ``has_subitems`` that tells which one of them every element is. It
+            also adds a ``slug`` field to be used as a CSS id.
+            """
+        for i, item in enumerate(context["navbar"]):
+            context["navbar"][i] = dict(
+                item,
+                has_subitems=isinstance(item["target"], list),
+                slug=(item["name"].replace(" ", "-").lower()),
+            )
+        return context
+
+    @staticmethod
+    def blog_add_posts(context):
+        """
+            Given the blog feed defined in the configuration yaml, this context
+            preprocessor fetches the posts in the feeds, and returns the relevant
+            information for them (sorted from newest to oldest).
+            """
+        tag_expr = re.compile("<.*?>")
+        posts = []
+        # posts from the file system
+        if context["blog"]["posts_path"]:
+            posts_path = os.path.join(
+                context["source_path"], *context["blog"]["posts_path"].split("/")
+            )
+            for fname in os.listdir(posts_path):
+                if fname.startswith("index."):
+                    continue
+                link = (
+                    f"/{context['blog']['posts_path']}"
+                    f"/{os.path.splitext(fname)[0]}.html"
+                )
+                md = markdown.Markdown(
+                    extensions=context["main"]["markdown_extensions"]
+                )
+                with open(os.path.join(posts_path, fname)) as f:
+                    html = md.convert(f.read())
+                title = md.Meta["title"][0]
+                summary = re.sub(tag_expr, "", html)
+                try:
+                    body_position = summary.index(title) + len(title)
+                except ValueError:
+                    raise ValueError(
+                        f'Blog post "{fname}" should have a markdown header '
+                        f'corresponding to its "Title" element "{title}"'
+                    )
+                summary = " ".join(summary[body_position:].split(" ")[:30])
+                posts.append(
+                    {
+                        "title": title,
+                        "author": context["blog"]["author"],
+                        "published": datetime.datetime.strptime(
+                            md.Meta["date"][0], "%Y-%m-%d"
+                        ),
+                        "feed": context["blog"]["feed_name"],
+                        "link": link,
+                        "description": summary,
+                        "summary": summary,
+                    }
+                )
+            # posts from rss feeds
+        for feed_url in context["blog"]["feed"]:
+            feed_data = feedparser.parse(feed_url)
+            for entry in feed_data.entries:
+                published = datetime.datetime.fromtimestamp(
+                    time.mktime(entry.published_parsed)
+                )
+                summary = re.sub(tag_expr, "", entry.summary)
+                posts.append(
+                    {
+                        "title": entry.title,
+                        "author": entry.author,
+                        "published": published,
+                        "feed": feed_data["feed"]["title"],
+                        "link": entry.link,
+                        "description": entry.description,
+                        "summary": summary,
+                    }
+                )
+        posts.sort(key=operator.itemgetter("published"), reverse=True)
+        context["blog"]["posts"] = posts[: context["blog"]["num_posts"]]
+        return context
+
+    @staticmethod
+    def maintainers_add_info(context):
+        """
+            Given the active maintainers defined in the yaml file, it fetches
+            the GitHub user information for them.
+            """
+        context["maintainers"]["people"] = []
+        for user in context["maintainers"]["active"]:
+            resp = requests.get(f"https://api.github.com/users/{user}")
+            if context["ignore_io_errors"] and resp.status_code == 403:
+                return context
+            resp.raise_for_status()
+            context["maintainers"]["people"].append(resp.json())
+        return context
+
+    @staticmethod
+    def home_add_releases(context):
+        context["releases"] = []
+
+        github_repo_url = context["main"]["github_repo_url"]
+        resp = requests.get(f"https://api.github.com/repos/{github_repo_url}/releases")
+        if context["ignore_io_errors"] and resp.status_code == 403:
+            return context
+        resp.raise_for_status()
+
+        for release in resp.json():
+            if release["prerelease"]:
+                continue
+            published = datetime.datetime.strptime(
+                release["published_at"], "%Y-%m-%dT%H:%M:%SZ"
+            )
+            context["releases"].append(
+                {
+                    "name": release["tag_name"].lstrip("v"),
+                    "tag": release["tag_name"],
+                    "published": published,
+                    "url": (
+                        release["assets"][0]["browser_download_url"]
+                        if release["assets"]
+                        else ""
+                    ),
+                }
+            )
+        return context
+
+    # ----------------------------------------------------------------------
+    # Attribute access
+
+    @final
+    def __finalize__(
+        self: FrameOrSeries, other, method: str | None = None, **kwargs
+    ) -> FrameOrSeries:
+        """
+            Propagate metadata from other to self.
+
+            Parameters
+            ----------
+            other : the object from which to get the attributes that we are going
+                to propagate
+            method : str, optional
+                A passed method name providing context on where ``__finalize__``
+                was called.
+
+                .. warning::
+
+                   The value passed as `method` are not currently considered
+                   stable across pandas releases.
+            """
+        if isinstance(other, NDFrame):
+            for name in other.attrs:
+                self.attrs[name] = other.attrs[name]
+
+            self.flags.allows_duplicate_labels = other.flags.allows_duplicate_labels
+            # For subclasses using _metadata.
+            for name in set(self._metadata) & set(other._metadata):
+                assert isinstance(name, str)
+                object.__setattr__(self, name, getattr(other, name, None))
+
+        if method == "concat":
+            allows_duplicate_labels = all(
+                x.flags.allows_duplicate_labels for x in other.objs
+            )
+            self.flags.allows_duplicate_labels = allows_duplicate_labels
+
+        return self
+
+    # ----------------------------------------------------------------------
+    # Arithmetic Methods
+
+    @final
+    def _inplace_method(self, other, op):
+        """
+            Wrap arithmetic method to operate inplace.
+            """
+        result = op(self, other)
+
+        if (
+            self.ndim == 1
+            and result._indexed_same(self)
+            and is_dtype_equal(result.dtype, self.dtype)
+        ):
+            # GH#36498 this inplace op can _actually_ be inplace.
+            self._values[:] = result._values
+            return self
+
+        # Delete cacher
+        self._reset_cacher()
+
+        # this makes sure that we are aligned like the input
+        # we are updating inplace so we want to ignore is_copy
+        self._update_inplace(
+            result.reindex_like(self, copy=False), verify_is_copy=False
+        )
+        return self
+
+    def _gotitem(self, key, ndim, subset=None) -> Series:
+        """
+            Sub-classes to define. Return a sliced object.
+
+            Parameters
+            ----------
+            key : string / list of selections
+            ndim : {1, 2}
+                Requested ndim of result.
+            subset : object, default None
+                Subset to act on.
+            """
+        return self
+
+    # ----------------------------------------------------------------------
+        # IO methods (to / from other formats)
+
+    @classmethod
+    def from_dict(
+        cls,
+        data,
+        orient: str = "columns",
+        dtype: Dtype | None = None,
+        columns=None,
+    ) -> DataFrame:
+        """
+            Construct DataFrame from dict of array-like or dicts.
+
+            Creates DataFrame object from dictionary by columns or by index
+            allowing dtype specification.
+
+            Parameters
+            ----------
+            data : dict
+                Of the form {field : array-like} or {field : dict}.
+            orient : {'columns', 'index'}, default 'columns'
+                The "orientation" of the data. If the keys of the passed dict
+                should be the columns of the resulting DataFrame, pass 'columns'
+                (default). Otherwise if the keys should be rows, pass 'index'.
+            dtype : dtype, default None
+                Data type to force, otherwise infer.
+            columns : list, default None
+                Column labels to use when ``orient='index'``. Raises a ValueError
+                if used with ``orient='columns'``.
+
+            Returns
+            -------
+            DataFrame
+
+            See Also
+            --------
+            DataFrame.from_records : DataFrame from structured ndarray, sequence
+                of tuples or dicts, or DataFrame.
+            DataFrame : DataFrame object creation using constructor.
+
+            Examples
+            --------
+            By default the keys of the dict become the DataFrame columns:
+
+            >>> data = {'col_1': [3, 2, 1, 0], 'col_2': ['a', 'b', 'c', 'd']}
+            >>> pd.DataFrame.from_dict(data)
+               col_1 col_2
+            0      3     a
+            1      2     b
+            2      1     c
+            3      0     d
+
+            Specify ``orient='index'`` to create the DataFrame using dictionary
+            keys as rows:
+
+            >>> data = {'row_1': [3, 2, 1, 0], 'row_2': ['a', 'b', 'c', 'd']}
+            >>> pd.DataFrame.from_dict(data, orient='index')
+                   0  1  2  3
+            row_1  3  2  1  0
+            row_2  a  b  c  d
+
+            When using the 'index' orientation, the column names can be
+            specified manually:
+
+            >>> pd.DataFrame.from_dict(data, orient='index',
+            ...                        columns=['A', 'B', 'C', 'D'])
+                   A  B  C  D
+            row_1  3  2  1  0
+            row_2  a  b  c  d
+            """
+        index = None
+        orient = orient.lower()
+        if orient == "index":
+            if len(data) > 0:
+                # TODO speed up Series case
+                if isinstance(list(data.values())[0], (Series, dict)):
+                    data = _from_nested_dict(data)
+                else:
+                    data, index = list(data.values()), list(data.keys())
+        elif orient == "columns":
+            if columns is not None:
+                raise ValueError("cannot use columns parameter with orient='columns'")
+        else:  # pragma: no cover
+            raise ValueError("only recognize index or columns for orient")
+
+        return cls(data, index=index, columns=columns, dtype=dtype)
+
+    @classmethod
+    def from_records(
+        cls,
+        data,
+        index=None,
+        exclude=None,
+        columns=None,
+        coerce_float: bool = False,
+        nrows: int | None = None,
+    ) -> DataFrame:
+        """
+            Convert structured or record ndarray to DataFrame.
+
+            Creates a DataFrame object from a structured ndarray, sequence of
+            tuples or dicts, or DataFrame.
+
+            Parameters
+            ----------
+            data : structured ndarray, sequence of tuples or dicts, or DataFrame
+                Structured input data.
+            index : str, list of fields, array-like
+                Field of array to use as the index, alternately a specific set of
+                input labels to use.
+            exclude : sequence, default None
+                Columns or fields to exclude.
+            columns : sequence, default None
+                Column names to use. If the passed data do not have names
+                associated with them, this argument provides names for the
+                columns. Otherwise this argument indicates the order of the columns
+                in the result (any names not found in the data will become all-NA
+                columns).
+            coerce_float : bool, default False
+                Attempt to convert values of non-string, non-numeric objects (like
+                decimal.Decimal) to floating point, useful for SQL result sets.
+            nrows : int, default None
+                Number of rows to read if data is an iterator.
+
+            Returns
+            -------
+            DataFrame
+
+            See Also
+            --------
+            DataFrame.from_dict : DataFrame from dict of array-like or dicts.
+            DataFrame : DataFrame object creation using constructor.
+
+            Examples
+            --------
+            Data can be provided as a structured ndarray:
+
+            >>> data = np.array([(3, 'a'), (2, 'b'), (1, 'c'), (0, 'd')],
+            ...                 dtype=[('col_1', 'i4'), ('col_2', 'U1')])
+            >>> pd.DataFrame.from_records(data)
+               col_1 col_2
+            0      3     a
+            1      2     b
+            2      1     c
+            3      0     d
+
+            Data can be provided as a list of dicts:
+
+            >>> data = [{'col_1': 3, 'col_2': 'a'},
+            ...         {'col_1': 2, 'col_2': 'b'},
+            ...         {'col_1': 1, 'col_2': 'c'},
+            ...         {'col_1': 0, 'col_2': 'd'}]
+            >>> pd.DataFrame.from_records(data)
+               col_1 col_2
+            0      3     a
+            1      2     b
+            2      1     c
+            3      0     d
+
+            Data can be provided as a list of tuples with corresponding columns:
+
+            >>> data = [(3, 'a'), (2, 'b'), (1, 'c'), (0, 'd')]
+            >>> pd.DataFrame.from_records(data, columns=['col_1', 'col_2'])
+               col_1 col_2
+            0      3     a
+            1      2     b
+            2      1     c
+            3      0     d
+            """
+        # Make a copy of the input columns so we can modify it
+        if columns is not None:
+            columns = ensure_index(columns)
+
+        if is_iterator(data):
+            if nrows == 0:
+                return cls()
+
+            try:
+                first_row = next(data)
+            except StopIteration:
+                return cls(index=index, columns=columns)
+
+            dtype = None
+            if hasattr(first_row, "dtype") and first_row.dtype.names:
+                dtype = first_row.dtype
+
+            values = [first_row]
+
+            if nrows is None:
+                values += data
+            else:
+                values.extend(itertools.islice(data, nrows - 1))
+
+            if dtype is not None:
+                data = np.array(values, dtype=dtype)
+            else:
+                data = values
+
+        if isinstance(data, dict):
+            if columns is None:
+                columns = arr_columns = ensure_index(sorted(data))
+                arrays = [data[k] for k in columns]
+            else:
+                arrays = []
+                arr_columns_list = []
+                for k, v in data.items():
+                    if k in columns:
+                        arr_columns_list.append(k)
+                        arrays.append(v)
+
+                arr_columns = Index(arr_columns_list)
+                arrays, arr_columns = reorder_arrays(arrays, arr_columns, columns)
+
+        elif isinstance(data, (np.ndarray, DataFrame)):
+            arrays, columns = to_arrays(data, columns)
+            arr_columns = columns
+        else:
+            arrays, arr_columns = to_arrays(data, columns)
+            if coerce_float:
+                for i, arr in enumerate(arrays):
+                    if arr.dtype == object:
+                        # error: Argument 1 to "maybe_convert_objects" has
+                        # incompatible type "Union[ExtensionArray, ndarray]";
+                        # expected "ndarray"
+                        arrays[i] = lib.maybe_convert_objects(
+                            arr,  # type: ignore[arg-type]
+                            try_float=True,
+                        )
+
+            arr_columns = ensure_index(arr_columns)
+            if columns is None:
+                columns = arr_columns
+
+        if exclude is None:
+            exclude = set()
+        else:
+            exclude = set(exclude)
+
+        result_index = None
+        if index is not None:
+            if isinstance(index, str) or not hasattr(index, "__iter__"):
+                i = columns.get_loc(index)
+                exclude.add(index)
+                if len(arrays) > 0:
+                    result_index = Index(arrays[i], name=index)
+                else:
+                    result_index = Index([], name=index)
+            else:
+                try:
+                    index_data = [arrays[arr_columns.get_loc(field)] for field in index]
+                except (KeyError, TypeError):
+                    # raised by get_loc, see GH#29258
+                    result_index = index
+                else:
+                    result_index = ensure_index_from_sequences(index_data, names=index)
+                    exclude.update(index)
+
+        if any(exclude):
+            arr_exclude = [x for x in exclude if x in arr_columns]
+            to_remove = [arr_columns.get_loc(col) for col in arr_exclude]
+            arrays = [v for i, v in enumerate(arrays) if i not in to_remove]
+
+            arr_columns = arr_columns.drop(arr_exclude)
+            columns = columns.drop(exclude)
+
+        manager = get_option("mode.data_manager")
+        mgr = arrays_to_mgr(arrays, arr_columns, result_index, columns, typ=manager)
+
+        return cls(mgr)
+
+    @classmethod
+    def _from_arrays(
+        cls,
+        arrays,
+        columns,
+        index,
+        dtype: Dtype | None = None,
+        verify_integrity: bool = True,
+    ) -> DataFrame:
+        """
+            Create DataFrame from a list of arrays corresponding to the columns.
+
+            Parameters
+            ----------
+            arrays : list-like of arrays
+                Each array in the list corresponds to one column, in order.
+            columns : list-like, Index
+                The column names for the resulting DataFrame.
+            index : list-like, Index
+                The rows labels for the resulting DataFrame.
+            dtype : dtype, optional
+                Optional dtype to enforce for all arrays.
+            verify_integrity : bool, default True
+                Validate and homogenize all input. If set to False, it is assumed
+                that all elements of `arrays` are actual arrays how they will be
+                stored in a block (numpy ndarray or ExtensionArray), have the same
+                length as and are aligned with the index, and that `columns` and
+                `index` are ensured to be an Index object.
+
+            Returns
+            -------
+            DataFrame
+            """
+        if dtype is not None:
+            dtype = pandas_dtype(dtype)
+
+        manager = get_option("mode.data_manager")
+        columns = ensure_index(columns)
+        mgr = arrays_to_mgr(
+            arrays,
+            columns,
+            index,
+            columns,
+            dtype=dtype,
+            verify_integrity=verify_integrity,
+            typ=manager,
+        )
+        return cls(mgr)
+
+    def transpose(self: _T, *args, **kwargs) -> _T:
+        """
+            Return the transpose, which is by definition self.
+
+            Returns
+            -------
+            %(klass)s
+            """
+        nv.validate_transpose(args, kwargs)
+        return self
+
+    @classmethod
+    def _from_categorical_dtype(
+        cls, dtype: CategoricalDtype, categories=None, ordered: Ordered = None
+    ) -> CategoricalDtype:
+        if categories is ordered is None:
+            return dtype
+        if categories is None:
+            categories = dtype.categories
+        if ordered is None:
+            ordered = dtype.ordered
+        return cls(categories, ordered)
+
+    @classmethod
+    def construct_from_string(cls, string: str_type) -> CategoricalDtype:
+        """
+            Construct a CategoricalDtype from a string.
+
+            Parameters
+            ----------
+            string : str
+                Must be the string "category" in order to be successfully constructed.
+
+            Returns
+            -------
+            CategoricalDtype
+                Instance of the dtype.
+
+            Raises
+            ------
+            TypeError
+                If a CategoricalDtype cannot be constructed from the input.
+            """
+        if not isinstance(string, str):
+            raise TypeError(
+                f"'construct_from_string' expects a string, got {type(string)}"
+            )
+        if string != cls.name:
+            raise TypeError(f"Cannot construct a 'CategoricalDtype' from '{string}'")
+
+        # need ordered=None to ensure that operations specifying dtype="category" don't
+        # override the ordered value for existing categoricals
+        return cls(ordered=None)
+
+    @staticmethod
+    def validate_categories(categories, fastpath: bool = False) -> Index:
+        """
+            Validates that we have good categories
+
+            Parameters
+            ----------
+            categories : array-like
+            fastpath : bool
+                Whether to skip nan and uniqueness checks
+
+            Returns
+            -------
+            categories : Index
+            """
+        from pandas.core.indexes.base import Index
+
+        if not fastpath and not is_list_like(categories):
+            raise TypeError(
+                f"Parameter 'categories' must be list-like, was {repr(categories)}"
+            )
+        elif not isinstance(categories, ABCIndex):
+            categories = Index(categories, tupleize_cols=False)
+
+        if not fastpath:
+
+            if categories.hasnans:
+                raise ValueError("Categorical categories cannot be null")
+
+            if not categories.is_unique:
+                raise ValueError("Categorical categories must be unique")
+
+        if isinstance(categories, ABCCategoricalIndex):
+            categories = categories.categories
+
+        return categories
+
+    @classmethod
+    def construct_from_string(cls, string: str) -> PandasDtype:
+        try:
+            dtype = np.dtype(string)
+        except TypeError as err:
+            if not isinstance(string, str):
+                msg = f"'construct_from_string' expects a string, got {type(string)}"
+            else:
+                msg = f"Cannot construct a 'PandasDtype' from '{string}'"
+            raise TypeError(msg) from err
+        return cls(dtype)
+
+    @classmethod
+    def construct_from_string(cls, string: str):
+        r"""
+            Construct this type from a string.
+
+            This is useful mainly for data types that accept parameters.
+            For example, a period dtype accepts a frequency parameter that
+            can be set as ``period[H]`` (where H means hourly frequency).
+
+            By default, in the abstract class, just the name of the type is
+            expected. But subclasses can overwrite this method to accept
+            parameters.
+
+            Parameters
+            ----------
+            string : str
+                The name of the type, for example ``category``.
+
+            Returns
+            -------
+            ExtensionDtype
+                Instance of the dtype.
+
+            Raises
+            ------
+            TypeError
+                If a class cannot be constructed from this 'string'.
+
+            Examples
+            --------
+            For extension dtypes with arguments the following may be an
+            adequate implementation.
+
+            >>> @classmethod
+            ... def construct_from_string(cls, string):
+            ...     pattern = re.compile(r"^my_type\[(?P<arg_name>.+)\]$")
+            ...     match = pattern.match(string)
+            ...     if match:
+            ...         return cls(**match.groupdict())
+            ...     else:
+            ...         raise TypeError(
+            ...             f"Cannot construct a '{cls.__name__}' from '{string}'"
+            ...         )
+            """
+        if not isinstance(string, str):
+            raise TypeError(
+                f"'construct_from_string' expects a string, got {type(string)}"
+            )
+        # error: Non-overlapping equality check (left operand type: "str", right
+        #  operand type: "Callable[[ExtensionDtype], str]")  [comparison-overlap]
+        assert isinstance(cls.name, str), (cls, type(cls.name))
+        if string != cls.name:
+            raise TypeError(f"Cannot construct a '{cls.__name__}' from '{string}'")
+        return cls()
+
+    def _get_grouper(self):
+        """
+            We are a grouper as part of another's groupings.
+
+            We have a specific method of grouping, so cannot
+            convert to a Index for our grouper.
+            """
+        return self
+
+    @staticmethod
+    def _normalize_axis(axis: int) -> int:
+        # switch axis
+        axis = 1 if axis == 0 else 0
+        return axis
+
+    def consolidate(self: T) -> T:
+        return self
+
+    def idelete(self, indexer):
+        """
+            Delete selected locations in-place (new block and array, same BlockManager)
+            """
+        to_keep = np.ones(self.shape[0], dtype=np.bool_)
+        to_keep[indexer] = False
+
+        self.arrays = [self.arrays[i] for i in np.nonzero(to_keep)[0]]
+        self._axes = [self._axes[0], self._axes[1][to_keep]]
+        return self
+
+    @staticmethod
+    def _normalize_axis(axis):
+        return axis
+
+    @classmethod
+    def from_array(cls, array, index):
+        return cls([array], [index])
+
+    def idelete(self, indexer) -> SingleArrayManager:
+        """
+            Delete selected locations in-place (new array, same ArrayManager)
+            """
+        to_keep = np.ones(self.shape[0], dtype=np.bool_)
+        to_keep[indexer] = False
+
+        self.arrays = [self.arrays[0][to_keep]]
+        self._axes = [self._axes[0][to_keep]]
+        return self
+
+    def setitem(self, indexer, value):
+        """
+            Attempt self.values[indexer] = value, possibly creating a new array.
+
+            This differs from Block.setitem by not allowing setitem to change
+            the dtype of the Block.
+
+            Parameters
+            ----------
+            indexer : tuple, list-like, array-like, slice
+                The subset of self.values to set
+            value : object
+                The value being set
+
+            Returns
+            -------
+            Block
+
+            Notes
+            -----
+            `indexer` is a direct slice/positional indexer. `value` must
+            be a compatible shape.
+            """
+        if not self._can_hold_element(value):
+            # This is only relevant for DatetimeTZBlock, PeriodDtype, IntervalDtype,
+            #  which has a non-trivial `_can_hold_element`.
+            # https://github.com/pandas-dev/pandas/issues/24020
+            # Need a dedicated setitem until GH#24020 (type promotion in setitem
+            #  for extension arrays) is designed and implemented.
+            return self.astype(object).setitem(indexer, value)
+
+        if isinstance(indexer, tuple):
+            # TODO(EA2D): not needed with 2D EAs
+            # we are always 1-D
+            indexer = indexer[0]
+
+        check_setitem_lengths(indexer, value, self.values)
+        self.values[indexer] = value
+        return self
+
+    def setitem(self, indexer, value):
+        if not self._can_hold_element(value):
+            # TODO: general case needs casting logic.
+            return self.astype(object).setitem(indexer, value)
+
+        values = self.values
+        if self.ndim > 1:
+            # Dont transpose with ndim=1 bc we would fail to invalidate
+            #  arr.freq
+            values = values.T
+        values[indexer] = value
+        return self
+
+    @classmethod
+    def from_blocks(cls, blocks: list[Block], axes: list[Index]) -> BlockManager:
+        """
+            Constructor for BlockManager and SingleBlockManager with same signature.
+            """
+        return cls(blocks, axes, verify_integrity=False)
+
+    @classmethod
+    def from_blocks(cls, blocks: list[Block], axes: list[Index]) -> SingleBlockManager:
+        """
+            Constructor for BlockManager and SingleBlockManager with same signature.
+            """
+        assert len(blocks) == 1
+        assert len(axes) == 1
+        return cls(blocks[0], axes[0], verify_integrity=False)
+
+    @classmethod
+    def from_array(cls, array: ArrayLike, index: Index) -> SingleBlockManager:
+        """
+            Constructor for if we have an array that is not yet a Block.
+            """
+        block = new_block(array, placement=slice(0, len(index)), ndim=1)
+        return cls(block, index)
+
+    def idelete(self, indexer) -> SingleBlockManager:
+        """
+            Delete single location from SingleBlockManager.
+
+            Ensures that self.blocks doesn't become empty.
+            """
+        self._block.delete(indexer)
+        self.axes[0] = self.axes[0].delete(indexer)
+        return self
+
+    def invert(self):
+        """invert the filter"""
+        if self.filter is not None:
+            self.filter = (
+                self.filter[0],
+                self.generate_filter_op(invert=True),
+                self.filter[2],
+            )
+        return self
+
+    def evaluate(self):
+
+        if not self.is_valid:
+            raise ValueError(f"query term is not valid [{self}]")
+
+        rhs = self.conform(self.rhs)
+        values = list(rhs)
+
+        if self.is_in_table:
+
+            # if too many values to create the expression, use a filter instead
+            if self.op in ["==", "!="] and len(values) > self._max_selectors:
+
+                filter_op = self.generate_filter_op()
+                self.filter = (self.lhs, filter_op, Index(values))
+
+                return self
+            return None
+
+        # equality conditions
+        if self.op in ["==", "!="]:
+
+            filter_op = self.generate_filter_op()
+            self.filter = (self.lhs, filter_op, Index(values))
+
+        else:
+            raise TypeError(
+                f"passing a filterable condition to a non-table indexer [{self}]"
+            )
+
+        return self
+
+    def evaluate(self):
+        return self
+
+    def evaluate(self):
+
+        if not self.is_valid:
+            raise ValueError(f"query term is not valid [{self}]")
+
+        # convert values if we are in the table
+        if not self.is_in_table:
+            return None
+
+        rhs = self.conform(self.rhs)
+        values = [self.convert_value(v) for v in rhs]
+
+        # equality conditions
+        if self.op in ["==", "!="]:
+
+            # too many values to create the expression?
+            if len(values) <= self._max_selectors:
+                vs = [self.generate(v) for v in values]
+                self.condition = f"({' | '.join(vs)})"
+
+            # use a filter after reading
+            else:
+                return None
+        else:
+            self.condition = self.generate(values[0])
+
+        return self
+
+    def evaluate(self):
+        self.condition = f"({self.lhs.condition} {self.op} {self.rhs.condition})"
+        return self
+
+    def evaluate(self, *args, **kwargs):
+        return self
+
+    @classmethod
+    def _from_inferred_categories(
+        cls, inferred_categories, inferred_codes, dtype, true_values=None
+    ):
+        """
+            Construct a Categorical from inferred values.
+
+            For inferred categories (`dtype` is None) the categories are sorted.
+            For explicit `dtype`, the `inferred_categories` are cast to the
+            appropriate type.
+
+            Parameters
+            ----------
+            inferred_categories : Index
+            inferred_codes : Index
+            dtype : CategoricalDtype or 'category'
+            true_values : list, optional
+                If none are provided, the default ones are
+                "True", "TRUE", and "true."
+
+            Returns
+            -------
+            Categorical
+            """
+        from pandas import (
+            Index,
+            to_datetime,
+            to_numeric,
+            to_timedelta,
+        )
+
+        cats = Index(inferred_categories)
+        known_categories = (
+            isinstance(dtype, CategoricalDtype) and dtype.categories is not None
+        )
+
+        if known_categories:
+            # Convert to a specialized type with `dtype` if specified.
+            if dtype.categories.is_numeric():
+                cats = to_numeric(inferred_categories, errors="coerce")
+            elif is_datetime64_dtype(dtype.categories):
+                cats = to_datetime(inferred_categories, errors="coerce")
+            elif is_timedelta64_dtype(dtype.categories):
+                cats = to_timedelta(inferred_categories, errors="coerce")
+            elif dtype.categories.is_boolean():
+                if true_values is None:
+                    true_values = ["True", "TRUE", "true"]
+
+                # error: Incompatible types in assignment (expression has type
+                # "ndarray", variable has type "Index")
+                cats = cats.isin(true_values)  # type: ignore[assignment]
+
+        if known_categories:
+            # Recode from observation order to dtype.categories order.
+            categories = dtype.categories
+            codes = recode_for_categories(inferred_codes, cats, categories)
+        elif not cats.is_monotonic_increasing:
+            # Sort categories and recode for unknown categories.
+            unsorted = cats.copy()
+            categories = cats.sort_values()
+
+            codes = recode_for_categories(inferred_codes, unsorted, categories)
+            dtype = CategoricalDtype(categories, ordered=False)
+        else:
+            dtype = CategoricalDtype(cats, ordered=False)
+            codes = inferred_codes
+
+        return cls(codes, dtype=dtype, fastpath=True)
+
+    @classmethod
+    def from_codes(
+        cls, codes, categories=None, ordered=None, dtype: Dtype | None = None
+    ):
+        """
+            Make a Categorical type from codes and categories or dtype.
+
+            This constructor is useful if you already have codes and
+            categories/dtype and so do not need the (computation intensive)
+            factorization step, which is usually done on the constructor.
+
+            If your data does not follow this convention, please use the normal
+            constructor.
+
+            Parameters
+            ----------
+            codes : array-like of int
+                An integer array, where each integer points to a category in
+                categories or dtype.categories, or else is -1 for NaN.
+            categories : index-like, optional
+                The categories for the categorical. Items need to be unique.
+                If the categories are not given here, then they must be provided
+                in `dtype`.
+            ordered : bool, optional
+                Whether or not this categorical is treated as an ordered
+                categorical. If not given here or in `dtype`, the resulting
+                categorical will be unordered.
+            dtype : CategoricalDtype or "category", optional
+                If :class:`CategoricalDtype`, cannot be used together with
+                `categories` or `ordered`.
+
+            Returns
+            -------
+            Categorical
+
+            Examples
+            --------
+            >>> dtype = pd.CategoricalDtype(['a', 'b'], ordered=True)
+            >>> pd.Categorical.from_codes(codes=[0, 1, 0, 1], dtype=dtype)
+            ['a', 'b', 'a', 'b']
+            Categories (2, object): ['a' < 'b']
+            """
+        dtype = CategoricalDtype._from_values_or_dtype(
+            categories=categories, ordered=ordered, dtype=dtype
+        )
+        if dtype.categories is None:
+            msg = (
+                "The categories must be provided in 'categories' or "
+                "'dtype'. Both were None."
+            )
+            raise ValueError(msg)
+
+        if is_extension_array_dtype(codes) and is_integer_dtype(codes):
+            # Avoid the implicit conversion of Int to object
+            if isna(codes).any():
+                raise ValueError("codes cannot contain NA values")
+            codes = codes.to_numpy(dtype=np.int64)
+        else:
+            codes = np.asarray(codes)
+        if len(codes) and not is_integer_dtype(codes):
+            raise ValueError("codes need to be array-like integers")
+
+        if len(codes) and (codes.max() >= len(dtype.categories) or codes.min() < -1):
+            raise ValueError("codes need to be between -1 and len(categories)-1")
+
+        return cls(codes, dtype=dtype, fastpath=True)
+
+    @classmethod
+    def _from_sequence(
+        cls: type[IntervalArrayT],
+        scalars,
+        *,
+        dtype: Dtype | None = None,
+        copy: bool = False,
+    ) -> IntervalArrayT:
+        return cls(scalars, dtype=dtype, copy=copy)
+
+    @classmethod
+    def _from_factorized(
+        cls: type[IntervalArrayT], values: np.ndarray, original: IntervalArrayT
+    ) -> IntervalArrayT:
+        if len(values) == 0:
+            # An empty array returns object-dtype here. We can't create
+            # a new IA from an (empty) object-dtype array, so turn it into the
+            # correct dtype.
+            values = values.astype(original.dtype.subtype)
+        return cls(values, closed=original.closed)
+
+    @classmethod
+    def _from_sequence(
+        cls, scalars, *, dtype: Dtype | None = None, copy: bool = False
+    ) -> PandasArray:
+        if isinstance(dtype, PandasDtype):
+            dtype = dtype._dtype
+
+        # error: Argument "dtype" to "asarray" has incompatible type
+        # "Union[ExtensionDtype, str, dtype[Any], dtype[floating[_64Bit]], Type[object],
+        # None]"; expected "Union[dtype[Any], None, type, _SupportsDType, str,
+        # Union[Tuple[Any, int], Tuple[Any, Union[int, Sequence[int]]], List[Any],
+        # _DTypeDict, Tuple[Any, Any]]]"
+        result = np.asarray(scalars, dtype=dtype)  # type: ignore[arg-type]
+        if (
+            result.ndim > 1
+            and not hasattr(scalars, "dtype")
+            and (dtype is None or dtype == object)
+        ):
+            # e.g. list-of-tuples
+            result = construct_1d_object_array_from_listlike(scalars)
+
+        if copy and result is scalars:
+            result = result.copy()
+        return cls(result)
+
+    @classmethod
+    def _from_factorized(cls, values, original) -> PandasArray:
+        return cls(values)
+
+    @classmethod
+    def _from_sequence(cls, scalars, dtype: Dtype | None = None, copy: bool = False):
+        from pandas.core.arrays.masked import BaseMaskedArray
+
+        _chk_pyarrow_available()
+
+        if dtype and not (isinstance(dtype, str) and dtype == "string"):
+            dtype = pandas_dtype(dtype)
+            assert isinstance(dtype, StringDtype) and dtype.storage == "pyarrow"
+
+        if isinstance(scalars, BaseMaskedArray):
+            # avoid costly conversion to object dtype in ensure_string_array and
+            # numerical issues with Float32Dtype
+            na_values = scalars._mask
+            result = scalars._data
+            result = lib.ensure_string_array(result, copy=copy, convert_na_value=False)
+            return cls(pa.array(result, mask=na_values, type=pa.string()))
+
+        # convert non-na-likes to str
+        result = lib.ensure_string_array(scalars, copy=copy)
+        return cls(pa.array(result, type=pa.string(), from_pandas=True))
+
+    @classmethod
+    def _concat_same_type(cls, to_concat) -> ArrowStringArray:
+        """
+            Concatenate multiple ArrowStringArray.
+
+            Parameters
+            ----------
+            to_concat : sequence of ArrowStringArray
+
+            Returns
+            -------
+            ArrowStringArray
+            """
+        return cls(
+            pa.chunked_array(
+                [array for ea in to_concat for array in ea._data.iterchunks()]
+            )
+        )
+
+    @classmethod
+    def _concat_same_type(
+        cls: type[BaseMaskedArrayT], to_concat: Sequence[BaseMaskedArrayT]
+    ) -> BaseMaskedArrayT:
+        data = np.concatenate([x._data for x in to_concat])
+        mask = np.concatenate([x._mask for x in to_concat])
+        return cls(data, mask)
+
+    # error: Signature of "_simple_new" incompatible with supertype "NDArrayBacked"
+    @classmethod
+    def _simple_new(  # type: ignore[override]
+        cls,
+        values: np.ndarray,
+        freq: BaseOffset | None = None,
+        dtype: Dtype | None = None,
+    ) -> PeriodArray:
+        # alias for PeriodArray.__init__
+        assertion_msg = "Should be numpy array of type i8"
+        assert isinstance(values, np.ndarray) and values.dtype == "i8", assertion_msg
+        return cls(values, freq=freq, dtype=dtype)
+
+    @classmethod
+    def _from_sequence(
+        cls: type[PeriodArray],
+        scalars: Sequence[Period | None] | AnyArrayLike,
+        *,
+        dtype: Dtype | None = None,
+        copy: bool = False,
+    ) -> PeriodArray:
+        if dtype and isinstance(dtype, PeriodDtype):
+            freq = dtype.freq
+        else:
+            freq = None
+
+        if isinstance(scalars, cls):
+            validate_dtype_freq(scalars.dtype, freq)
+            if copy:
+                scalars = scalars.copy()
+            return scalars
+
+        periods = np.asarray(scalars, dtype=object)
+
+        freq = freq or libperiod.extract_freq(periods)
+        ordinals = libperiod.extract_ordinals(periods, freq)
+        return cls(ordinals, freq=freq)
+
+    @classmethod
+    def _from_datetime64(cls, data, freq, tz=None) -> PeriodArray:
+        """
+            Construct a PeriodArray from a datetime64 array
+
+            Parameters
+            ----------
+            data : ndarray[datetime64[ns], datetime64[ns, tz]]
+            freq : str or Tick
+            tz : tzinfo, optional
+
+            Returns
+            -------
+            PeriodArray[freq]
+            """
+        data, freq = dt64arr_to_periodarr(data, freq, tz)
+        return cls(data, freq=freq)
+
+    def __pos__(self):
+        return self
+
+    @classmethod
+    def _from_factorized(
+        cls: type[DatetimeLikeArrayT], values, original: DatetimeLikeArrayT
+    ) -> DatetimeLikeArrayT:
+        return cls(values, dtype=original.dtype)
+
+    def __iadd__(self, other):
+        result = self + other
+        self[:] = result[:]
+
+        if not is_period_dtype(self.dtype):
+            # restore freq, which is invalidated by setitem
+            self._freq = result._freq
+        return self
+
+    def __isub__(self, other):
+        result = self - other
+        self[:] = result[:]
+
+        if not is_period_dtype(self.dtype):
+            # restore freq, which is invalidated by setitem
+            self._freq = result._freq
+        return self
+
+    def ravel(self, order: Literal["C", "F", "A", "K"] | None = "C") -> ExtensionArray:
+        """
+            Return a flattened view on this array.
+
+            Parameters
+            ----------
+            order : {None, 'C', 'F', 'A', 'K'}, default 'C'
+
+            Returns
+            -------
+            ExtensionArray
+
+            Notes
+            -----
+            - Because ExtensionArrays are 1D-only, this is a no-op.
+            - The "order" argument is ignored, is for compatibility with NumPy.
+            """
+        return self
+
+    @classmethod
+    def _from_sequence(cls, scalars, *, dtype: Dtype | None = None, copy=False):
+        return cls(scalars, dtype=dtype)
+
+    @classmethod
+    def _from_factorized(cls, values, original):
+        return cls(values, dtype=original.dtype)
+
+    @classmethod
+    def _concat_same_type(
+        cls: type[SparseArrayT], to_concat: Sequence[SparseArrayT]
+    ) -> SparseArrayT:
+        fill_value = to_concat[0].fill_value
+
+        values = []
+        length = 0
+
+        if to_concat:
+            sp_kind = to_concat[0].kind
+        else:
+            sp_kind = "integer"
+
+        if sp_kind == "integer":
+            indices = []
+
+            for arr in to_concat:
+                idx = arr.sp_index.to_int_index().indices.copy()
+                idx += length  # TODO: wraparound
+                length += arr.sp_index.length
+
+                values.append(arr.sp_values)
+                indices.append(idx)
+
+            data = np.concatenate(values)
+            indices = np.concatenate(indices)
+            sp_index = IntIndex(length, indices)
+
+        else:
+            # when concatenating block indices, we don't claim that you'll
+            # get an identical index as concatenating the values and then
+            # creating a new index. We don't want to spend the time trying
+            # to merge blocks across arrays in `to_concat`, so the resulting
+            # BlockIndex may have more blocks.
+            blengths = []
+            blocs = []
+
+            for arr in to_concat:
+                idx = arr.sp_index.to_block_index()
+
+                values.append(arr.sp_values)
+                blocs.append(idx.blocs.copy() + length)
+                blengths.append(idx.blengths)
+                length += arr.sp_index.length
+
+            data = np.concatenate(values)
+            blocs = np.concatenate(blocs)
+            blengths = np.concatenate(blengths)
+
+            sp_index = BlockIndex(length, blocs, blengths)
+
+        return cls(data, sparse_index=sp_index, fill_value=fill_value)
+
+    @classmethod
+    def from_arrays(cls, arrays, sortorder=None, names=lib.no_default) -> MultiIndex:
+        """
+            Convert arrays to MultiIndex.
+
+            Parameters
+            ----------
+            arrays : list / sequence of array-likes
+                Each array-like gives one level's value for each data point.
+                len(arrays) is the number of levels.
+            sortorder : int or None
+                Level of sortedness (must be lexicographically sorted by that
+                level).
+            names : list / sequence of str, optional
+                Names for the levels in the index.
+
+            Returns
+            -------
+            MultiIndex
+
+            See Also
+            --------
+            MultiIndex.from_tuples : Convert list of tuples to MultiIndex.
+            MultiIndex.from_product : Make a MultiIndex from cartesian product
+                                      of iterables.
+            MultiIndex.from_frame : Make a MultiIndex from a DataFrame.
+
+            Examples
+            --------
+            >>> arrays = [[1, 1, 2, 2], ['red', 'blue', 'red', 'blue']]
+            >>> pd.MultiIndex.from_arrays(arrays, names=('number', 'color'))
+            MultiIndex([(1,  'red'),
+                        (1, 'blue'),
+                        (2,  'red'),
+                        (2, 'blue')],
+                       names=['number', 'color'])
+            """
+        error_msg = "Input must be a list / sequence of array-likes."
+        if not is_list_like(arrays):
+            raise TypeError(error_msg)
+        elif is_iterator(arrays):
+            arrays = list(arrays)
+
+        # Check if elements of array are list-like
+        for array in arrays:
+            if not is_list_like(array):
+                raise TypeError(error_msg)
+
+            # Check if lengths of all arrays are equal or not,
+            # raise ValueError, if not
+        for i in range(1, len(arrays)):
+            if len(arrays[i]) != len(arrays[i - 1]):
+                raise ValueError("all arrays must be same length")
+
+        codes, levels = factorize_from_iterables(arrays)
+        if names is lib.no_default:
+            names = [getattr(arr, "name", None) for arr in arrays]
+
+        return cls(
+            levels=levels,
+            codes=codes,
+            sortorder=sortorder,
+            names=names,
+            verify_integrity=False,
+        )
+
+    @classmethod
+    def from_product(
+        cls, iterables, sortorder=None, names=lib.no_default
+    ) -> MultiIndex:
+        """
+            Make a MultiIndex from the cartesian product of multiple iterables.
+
+            Parameters
+            ----------
+            iterables : list / sequence of iterables
+                Each iterable has unique labels for each level of the index.
+            sortorder : int or None
+                Level of sortedness (must be lexicographically sorted by that
+                level).
+            names : list / sequence of str, optional
+                Names for the levels in the index.
+
+                .. versionchanged:: 1.0.0
+
+                   If not explicitly provided, names will be inferred from the
+                   elements of iterables if an element has a name attribute
+
+            Returns
+            -------
+            MultiIndex
+
+            See Also
+            --------
+            MultiIndex.from_arrays : Convert list of arrays to MultiIndex.
+            MultiIndex.from_tuples : Convert list of tuples to MultiIndex.
+            MultiIndex.from_frame : Make a MultiIndex from a DataFrame.
+
+            Examples
+            --------
+            >>> numbers = [0, 1, 2]
+            >>> colors = ['green', 'purple']
+            >>> pd.MultiIndex.from_product([numbers, colors],
+            ...                            names=['number', 'color'])
+            MultiIndex([(0,  'green'),
+                        (0, 'purple'),
+                        (1,  'green'),
+                        (1, 'purple'),
+                        (2,  'green'),
+                        (2, 'purple')],
+                       names=['number', 'color'])
+            """
+        from pandas.core.reshape.util import cartesian_product
+
+        if not is_list_like(iterables):
+            raise TypeError("Input must be a list / sequence of iterables.")
+        elif is_iterator(iterables):
+            iterables = list(iterables)
+
+        codes, levels = factorize_from_iterables(iterables)
+        if names is lib.no_default:
+            names = [getattr(it, "name", None) for it in iterables]
+
+        # codes are all ndarrays, so cartesian_product is lossless
+        codes = cartesian_product(codes)
+        return cls(levels, codes, sortorder=sortorder, names=names)
+
+    def _get_reconciled_name_object(self, other) -> MultiIndex:
+        """
+            If the result of a set operation will be self,
+            return self, unless the names change, in which
+            case make a shallow copy of self.
+            """
+        names = self._maybe_match_names(other)
+        if self.names != names:
+            # Incompatible return value type (got "Optional[MultiIndex]", expected
+            # "MultiIndex")
+            return self.rename(names)  # type: ignore[return-value]
+        return self
+
+    # --------------------------------------------------------------------
+
+    @doc(Index.astype)
+    def astype(self, dtype, copy: bool = True):
+        dtype = pandas_dtype(dtype)
+        if is_categorical_dtype(dtype):
+            msg = "> 1 ndim Categorical are not supported at this time"
+            raise NotImplementedError(msg)
+        elif not is_object_dtype(dtype):
+            raise TypeError(
+                "Setting a MultiIndex dtype to anything other than object "
+                "is not supported"
+            )
+        elif copy is True:
+            return self._view()
+        return self
+
+    # --------------------------------------------------------------------
+    # Conversion Methods
+
+    def to_flat_index(self):
+        """
+            Identity method.
+
+            This is implemented for compatibility with subclass implementations
+            when chaining.
+
+            Returns
+            -------
+            pd.Index
+                Caller.
+
+            See Also
+            --------
+            MultiIndex.to_flat_index : Subclass implementation.
+            """
+        return self
+
+    def _sort_levels_monotonic(self: _IndexT) -> _IndexT:
+        """
+            Compat with MultiIndex.
+            """
+        return self
+
+    def _get_level_values(self, level) -> Index:
+        """
+            Return an Index of values for requested level.
+
+            This is primarily useful to get an individual level of values from a
+            MultiIndex, but is provided on Index as well for compatibility.
+
+            Parameters
+            ----------
+            level : int or str
+                It is either the integer position or the name of the level.
+
+            Returns
+            -------
+            Index
+                Calling object, as there is only one level in the Index.
+
+            See Also
+            --------
+            MultiIndex.get_level_values : Get values for a level of a MultiIndex.
+
+            Notes
+            -----
+            For Index, level should be 0, since there are no multiple levels.
+
+            Examples
+            --------
+            >>> idx = pd.Index(list('abc'))
+            >>> idx
+            Index(['a', 'b', 'c'], dtype='object')
+
+            Get level values by supplying `level` as integer:
+
+            >>> idx.get_level_values(0)
+            Index(['a', 'b', 'c'], dtype='object')
+            """
+        self._validate_index_level(level)
+        return self
+
+    # --------------------------------------------------------------------
+    # Set Operation Methods
+
+    def _get_reconciled_name_object(self, other):
+        """
+            If the result of a set operation will be self,
+            return self, unless the name changes, in which
+            case make a shallow copy of self.
+            """
+        name = get_op_result_name(self, other)
+        if self.name != name:
+            return self.rename(name)
+        return self
+
+    def __enter__(self):
+        return self
+
+    def __enter__(self) -> IOHandles:
+        return self
+
+    def __iter__(self) -> _MMapWrapper:
+        return self
+
+    def __enter__(self) -> StataReader:
+        """enter context manager"""
+        return self
+
+    @staticmethod
+    def _null_terminate_str(s: str) -> str:
+        s += "\x00"
+        return s
+
+    def __enter__(self):
+        return self
+
+    def set_tooltips(
+        self,
+        ttips: DataFrame,
+        props: CSSProperties | None = None,
+        css_class: str | None = None,
+    ) -> Styler:
+        """
+            Set the DataFrame of strings on ``Styler`` generating ``:hover`` tooltips.
+
+            These string based tooltips are only applicable to ``<td>`` HTML elements,
+            and cannot be used for column or index headers.
+
+            .. versionadded:: 1.3.0
+
+            Parameters
+            ----------
+            ttips : DataFrame
+                DataFrame containing strings that will be translated to tooltips, mapped
+                by identical column and index values that must exist on the underlying
+                Styler data. None, NaN values, and empty strings will be ignored and
+                not affect the rendered HTML.
+            props : list-like or str, optional
+                List of (attr, value) tuples or a valid CSS string. If ``None`` adopts
+                the internal default values described in notes.
+            css_class : str, optional
+                Name of the tooltip class used in CSS, should conform to HTML standards.
+                Only useful if integrating tooltips with external CSS. If ``None`` uses the
+                internal default value 'pd-t'.
+
+            Returns
+            -------
+            self : Styler
+
+            Notes
+            -----
+            Tooltips are created by adding `<span class="pd-t"></span>` to each data cell
+            and then manipulating the table level CSS to attach pseudo hover and pseudo
+            after selectors to produce the required the results.
+
+            The default properties for the tooltip CSS class are:
+
+            - visibility: hidden
+            - position: absolute
+            - z-index: 1
+            - background-color: black
+            - color: white
+            - transform: translate(-20px, -20px)
+
+            The property 'visibility: hidden;' is a key prerequisite to the hover
+            functionality, and should always be included in any manual properties
+            specification, using the ``props`` argument.
+
+            Tooltips are not designed to be efficient, and can add large amounts of
+            additional HTML for larger tables, since they also require that ``cell_ids``
+            is forced to `True`.
+
+            Examples
+            --------
+            Basic application
+
+            >>> df = pd.DataFrame(data=[[0, 1], [2, 3]])
+            >>> ttips = pd.DataFrame(
+            ...    data=[["Min", ""], [np.nan, "Max"]], columns=df.columns, index=df.index
+            ... )
+            >>> s = df.style.set_tooltips(ttips).render()
+
+            Optionally controlling the tooltip visual display
+
+            >>> df.style.set_tooltips(ttips, css_class='tt-add', props=[
+            ...     ('visibility', 'hidden'),
+            ...     ('position', 'absolute'),
+            ...     ('z-index', 1)])
+            >>> df.style.set_tooltips(ttips, css_class='tt-add',
+            ...     props='visibility:hidden; position:absolute; z-index:1;')
+            """
+        if not self.cell_ids:
+            # tooltips not optimised for individual cell check. requires reasonable
+            # redesign and more extensive code for a feature that might be rarely used.
+            raise NotImplementedError(
+                "Tooltips can only render with 'cell_ids' is True."
+            )
+        if not ttips.index.is_unique or not ttips.columns.is_unique:
+            raise KeyError(
+                "Tooltips render only if `ttips` has unique index and columns."
+            )
+        if self.tooltips is None:  # create a default instance if necessary
+            self.tooltips = Tooltips()
+        self.tooltips.tt_data = ttips
+        if props:
+            self.tooltips.class_properties = props
+        if css_class:
+            self.tooltips.class_name = css_class
+
+        return self
+
+    def set_td_classes(self, classes: DataFrame) -> Styler:
+        """
+            Set the DataFrame of strings added to the ``class`` attribute of ``<td>``
+            HTML elements.
+
+            Parameters
+            ----------
+            classes : DataFrame
+                DataFrame containing strings that will be translated to CSS classes,
+                mapped by identical column and index key values that must exist on the
+                underlying Styler data. None, NaN values, and empty strings will
+                be ignored and not affect the rendered HTML.
+
+            Returns
+            -------
+            self : Styler
+
+            See Also
+            --------
+            Styler.set_table_styles: Set the table styles included within the ``<style>``
+                HTML element.
+            Styler.set_table_attributes: Set the table attributes added to the ``<table>``
+                HTML element.
+
+            Notes
+            -----
+            Can be used in combination with ``Styler.set_table_styles`` to define an
+            internal CSS solution without reference to external CSS files.
+
+            Examples
+            --------
+            >>> df = pd.DataFrame(data=[[1, 2, 3], [4, 5, 6]], columns=["A", "B", "C"])
+            >>> classes = pd.DataFrame([
+            ...     ["min-val red", "", "blue"],
+            ...     ["red", None, "blue max-val"]
+            ... ], index=df.index, columns=df.columns)
+            >>> df.style.set_td_classes(classes)
+
+            Using `MultiIndex` columns and a `classes` `DataFrame` as a subset of the
+            underlying,
+
+            >>> df = pd.DataFrame([[1,2],[3,4]], index=["a", "b"],
+            ...     columns=[["level0", "level0"], ["level1a", "level1b"]])
+            >>> classes = pd.DataFrame(["min-val"], index=["a"],
+            ...     columns=[["level0"],["level1a"]])
+            >>> df.style.set_td_classes(classes)
+
+            Form of the output with new additional css classes,
+
+            >>> df = pd.DataFrame([[1]])
+            >>> css = pd.DataFrame([["other-class"]])
+            >>> s = Styler(df, uuid="_", cell_ids=False).set_td_classes(css)
+            >>> s.hide_index().render()
+            '<style type="text/css"></style>'
+            '<table id="T__">'
+            '  <thead>'
+            '    <tr><th class="col_heading level0 col0" >0</th></tr>'
+            '  </thead>'
+            '  <tbody>'
+            '    <tr><td class="data row0 col0 other-class" >1</td></tr>'
+            '  </tbody>'
+            '</table>'
+            """
+        if not classes.index.is_unique or not classes.columns.is_unique:
+            raise KeyError(
+                "Classes render only if `classes` has unique index and columns."
+            )
+        classes = classes.reindex_like(self.data)
+
+        for r, row_tup in enumerate(classes.itertuples()):
+            for c, value in enumerate(row_tup[1:]):
+                if not (pd.isna(value) or value == ""):
+                    self.cell_context[(r, c)] = str(value)
+
+        return self
+
+    def _apply(
+        self,
+        func: Callable[..., Styler],
+        axis: Axis | None = 0,
+        subset: Subset | None = None,
+        **kwargs,
+    ) -> Styler:
+        subset = slice(None) if subset is None else subset
+        subset = non_reducing_slice(subset)
+        data = self.data.loc[subset]
+        if axis is not None:
+            result = data.apply(func, axis=axis, result_type="expand", **kwargs)
+            result.columns = data.columns
+        else:
+            result = func(data, **kwargs)
+            if not isinstance(result, DataFrame):
+                if not isinstance(result, np.ndarray):
+                    raise TypeError(
+                        f"Function {repr(func)} must return a DataFrame or ndarray "
+                        f"when passed to `Styler.apply` with axis=None"
+                    )
+                if not (data.shape == result.shape):
+                    raise ValueError(
+                        f"Function {repr(func)} returned ndarray with wrong shape.\n"
+                        f"Result has shape: {result.shape}\n"
+                        f"Expected shape: {data.shape}"
+                    )
+                result = DataFrame(result, index=data.index, columns=data.columns)
+            elif not (
+                result.index.equals(data.index) and result.columns.equals(data.columns)
+            ):
+                raise ValueError(
+                    f"Result of {repr(func)} must have identical "
+                    f"index and columns as the input"
+                )
+
+        if result.shape != data.shape:
+            raise ValueError(
+                f"Function {repr(func)} returned the wrong shape.\n"
+                f"Result has shape: {result.shape}\n"
+                f"Expected shape:   {data.shape}"
+            )
+        self._update_ctx(result)
+        return self
+
+    def apply(
+        self,
+        func: Callable[..., Styler],
+        axis: Axis | None = 0,
+        subset: Subset | None = None,
+        **kwargs,
+    ) -> Styler:
+        """
+            Apply a CSS-styling function column-wise, row-wise, or table-wise.
+
+            Updates the HTML representation with the result.
+
+            Parameters
+            ----------
+            func : function
+                ``func`` should take a Series if ``axis`` in [0,1] and return an object
+                of same length, also with identical index if the object is a Series.
+                ``func`` should take a DataFrame if ``axis`` is ``None`` and return either
+                an ndarray with the same shape or a DataFrame with identical columns and
+                index.
+
+                .. versionchanged:: 1.3.0
+
+            axis : {0 or 'index', 1 or 'columns', None}, default 0
+                Apply to each column (``axis=0`` or ``'index'``), to each row
+                (``axis=1`` or ``'columns'``), or to the entire DataFrame at once
+                with ``axis=None``.
+            subset : label, array-like, IndexSlice, optional
+                A valid 2d input to `DataFrame.loc[<subset>]`, or, in the case of a 1d input
+                or single key, to `DataFrame.loc[:, <subset>]` where the columns are
+                prioritised, to limit ``data`` to *before* applying the function.
+            **kwargs : dict
+                Pass along to ``func``.
+
+            Returns
+            -------
+            self : Styler
+
+            See Also
+            --------
+            Styler.applymap: Apply a CSS-styling function elementwise.
+
+            Notes
+            -----
+            The elements of the output of ``func`` should be CSS styles as strings, in the
+            format 'attribute: value; attribute2: value2; ...' or,
+            if nothing is to be applied to that element, an empty string or ``None``.
+
+            This is similar to ``DataFrame.apply``, except that ``axis=None``
+            applies the function to the entire DataFrame at once,
+            rather than column-wise or row-wise.
+
+            Examples
+            --------
+            >>> def highlight_max(x, color):
+            ...     return np.where(x == np.nanmax(x.to_numpy()), f"color: {color};", None)
+            >>> df = pd.DataFrame(np.random.randn(5, 2), columns=["A", "B"])
+            >>> df.style.apply(highlight_max, color='red')
+            >>> df.style.apply(highlight_max, color='blue', axis=1)
+            >>> df.style.apply(highlight_max, color='green', axis=None)
+
+            Using ``subset`` to restrict application to a single column or multiple columns
+
+            >>> df.style.apply(highlight_max, color='red', subset="A")
+            >>> df.style.apply(highlight_max, color='red', subset=["A", "B"])
+
+            Using a 2d input to ``subset`` to select rows in addition to columns
+
+            >>> df.style.apply(highlight_max, color='red', subset=([0,1,2], slice(None))
+            >>> df.style.apply(highlight_max, color='red', subset=(slice(0,5,2), "A")
+            """
+        self._todo.append(
+            (lambda instance: getattr(instance, "_apply"), (func, axis, subset), kwargs)
+        )
+        return self
+
+    def _applymap(
+        self, func: Callable, subset: Subset | None = None, **kwargs
+    ) -> Styler:
+        func = partial(func, **kwargs)  # applymap doesn't take kwargs?
+        if subset is None:
+            subset = IndexSlice[:]
+        subset = non_reducing_slice(subset)
+        result = self.data.loc[subset].applymap(func)
+        self._update_ctx(result)
+        return self
+
+    def applymap(
+        self, func: Callable, subset: Subset | None = None, **kwargs
+    ) -> Styler:
+        """
+            Apply a CSS-styling function elementwise.
+
+            Updates the HTML representation with the result.
+
+            Parameters
+            ----------
+            func : function
+                ``func`` should take a scalar and return a scalar.
+            subset : label, array-like, IndexSlice, optional
+                A valid 2d input to `DataFrame.loc[<subset>]`, or, in the case of a 1d input
+                or single key, to `DataFrame.loc[:, <subset>]` where the columns are
+                prioritised, to limit ``data`` to *before* applying the function.
+            **kwargs : dict
+                Pass along to ``func``.
+
+            Returns
+            -------
+            self : Styler
+
+            See Also
+            --------
+            Styler.apply: Apply a CSS-styling function column-wise, row-wise, or table-wise.
+
+            Notes
+            -----
+            The elements of the output of ``func`` should be CSS styles as strings, in the
+            format 'attribute: value; attribute2: value2; ...' or,
+            if nothing is to be applied to that element, an empty string or ``None``.
+
+            Examples
+            --------
+            >>> def color_negative(v, color):
+            ...     return f"color: {color};" if v < 0 else None
+            >>> df = pd.DataFrame(np.random.randn(5, 2), columns=["A", "B"])
+            >>> df.style.applymap(color_negative, color='red')
+
+            Using ``subset`` to restrict application to a single column or multiple columns
+
+            >>> df.style.applymap(color_negative, color='red', subset="A")
+            >>> df.style.applymap(color_negative, color='red', subset=["A", "B"])
+
+            Using a 2d input to ``subset`` to select rows in addition to columns
+
+            >>> df.style.applymap(color_negative, color='red', subset=([0,1,2], slice(None))
+            >>> df.style.applymap(color_negative, color='red', subset=(slice(0,5,2), "A")
+            """
+        self._todo.append(
+            (lambda instance: getattr(instance, "_applymap"), (func, subset), kwargs)
+        )
+        return self
+
+    def set_table_attributes(self, attributes: str) -> Styler:
+        """
+            Set the table attributes added to the ``<table>`` HTML element.
+
+            These are items in addition to automatic (by default) ``id`` attribute.
+
+            Parameters
+            ----------
+            attributes : str
+
+            Returns
+            -------
+            self : Styler
+
+            See Also
+            --------
+            Styler.set_table_styles: Set the table styles included within the ``<style>``
+                HTML element.
+            Styler.set_td_classes: Set the DataFrame of strings added to the ``class``
+                attribute of ``<td>`` HTML elements.
+
+            Examples
+            --------
+            >>> df = pd.DataFrame(np.random.randn(10, 4))
+            >>> df.style.set_table_attributes('class="pure-table"')
+            # ... <table class="pure-table"> ...
+            """
+        self.table_attributes = attributes
+        return self
+
+    def use(self, styles: list[tuple[Callable, tuple, dict]]) -> Styler:
+        """
+            Set the styles on the current ``Styler``.
+
+            Possibly uses styles from ``Styler.export``.
+
+            Parameters
+            ----------
+            styles : list
+                List of style functions.
+
+            Returns
+            -------
+            self : Styler
+
+            See Also
+            --------
+            Styler.export : Export the styles to applied to the current ``Styler``.
+            """
+        self._todo.extend(styles)
+        return self
+
+    def set_uuid(self, uuid: str) -> Styler:
+        """
+            Set the uuid applied to ``id`` attributes of HTML elements.
+
+            Parameters
+            ----------
+            uuid : str
+
+            Returns
+            -------
+            self : Styler
+
+            Notes
+            -----
+            Almost all HTML elements within the table, and including the ``<table>`` element
+            are assigned ``id`` attributes. The format is ``T_uuid_<extra>`` where
+            ``<extra>`` is typically a more specific identifier, such as ``row1_col2``.
+            """
+        self.uuid = uuid
+        return self
+
+    def set_caption(self, caption: str | tuple) -> Styler:
+        """
+            Set the text added to a ``<caption>`` HTML element.
+
+            Parameters
+            ----------
+            caption : str, tuple
+                For HTML output either the string input is used or the first element of the
+                tuple. For LaTeX the string input provides a caption and the additional
+                tuple input allows for full captions and short captions, in that order.
+
+            Returns
+            -------
+            self : Styler
+            """
+        self.caption = caption
+        return self
+
+    def set_sticky(
+        self,
+        axis: Axis = 0,
+        pixel_size: int | None = None,
+        levels: list[int] | None = None,
+    ) -> Styler:
+        """
+            Add CSS to permanently display the index or column headers in a scrolling frame.
+
+            Parameters
+            ----------
+            axis : {0 or 'index', 1 or 'columns', None}, default 0
+                Whether to make the index or column headers sticky.
+            pixel_size : int, optional
+                Required to configure the width of index cells or the height of column
+                header cells when sticking a MultiIndex. Defaults to 75 and 25 respectively.
+            levels : list of int
+                If ``axis`` is a MultiIndex the specific levels to stick. If ``None`` will
+                stick all levels.
+
+            Returns
+            -------
+            self : Styler
+            """
+        if axis in [0, "index"]:
+            axis, obj, tag, pos = 0, self.data.index, "tbody", "left"
+            pixel_size = 75 if not pixel_size else pixel_size
+        elif axis in [1, "columns"]:
+            axis, obj, tag, pos = 1, self.data.columns, "thead", "top"
+            pixel_size = 25 if not pixel_size else pixel_size
+        else:
+            raise ValueError("`axis` must be one of {0, 1, 'index', 'columns'}")
+
+        if not isinstance(obj, pd.MultiIndex):
+            return self.set_table_styles(
+                [
+                    {
+                        "selector": f"{tag} th",
+                        "props": f"position:sticky; {pos}:0px; background-color:white;",
+                    }
+                ],
+                overwrite=False,
+            )
+        else:
+            range_idx = list(range(obj.nlevels))
+
+        levels = sorted(levels) if levels else range_idx
+        for i, level in enumerate(levels):
+            self.set_table_styles(
+                [
+                    {
+                        "selector": f"{tag} th.level{level}",
+                        "props": f"position: sticky; "
+                        f"{pos}: {i * pixel_size}px; "
+                        f"{f'height: {pixel_size}px; ' if axis == 1 else ''}"
+                        f"{f'min-width: {pixel_size}px; ' if axis == 0 else ''}"
+                        f"{f'max-width: {pixel_size}px; ' if axis == 0 else ''}"
+                        f"background-color: white;",
+                    }
+                ],
+                overwrite=False,
+            )
+
+        return self
+
+    def set_table_styles(
+        self,
+        table_styles: dict[Any, CSSStyles] | CSSStyles,
+        axis: int = 0,
+        overwrite: bool = True,
+    ) -> Styler:
+        """
+            Set the table styles included within the ``<style>`` HTML element.
+
+            This function can be used to style the entire table, columns, rows or
+            specific HTML selectors.
+
+            Parameters
+            ----------
+            table_styles : list or dict
+                If supplying a list, each individual table_style should be a
+                dictionary with ``selector`` and ``props`` keys. ``selector``
+                should be a CSS selector that the style will be applied to
+                (automatically prefixed by the table's UUID) and ``props``
+                should be a list of tuples with ``(attribute, value)``.
+                If supplying a dict, the dict keys should correspond to
+                column names or index values, depending upon the specified
+                `axis` argument. These will be mapped to row or col CSS
+                selectors. MultiIndex values as dict keys should be
+                in their respective tuple form. The dict values should be
+                a list as specified in the form with CSS selectors and
+                props that will be applied to the specified row or column.
+
+                .. versionchanged:: 1.2.0
+
+            axis : {0 or 'index', 1 or 'columns', None}, default 0
+                Apply to each column (``axis=0`` or ``'index'``), to each row
+                (``axis=1`` or ``'columns'``). Only used if `table_styles` is
+                dict.
+
+                .. versionadded:: 1.2.0
+
+            overwrite : bool, default True
+                Styles are replaced if `True`, or extended if `False`. CSS
+                rules are preserved so most recent styles set will dominate
+                if selectors intersect.
+
+                .. versionadded:: 1.2.0
+
+            Returns
+            -------
+            self : Styler
+
+            See Also
+            --------
+            Styler.set_td_classes: Set the DataFrame of strings added to the ``class``
+                attribute of ``<td>`` HTML elements.
+            Styler.set_table_attributes: Set the table attributes added to the ``<table>``
+                HTML element.
+
+            Examples
+            --------
+            >>> df = pd.DataFrame(np.random.randn(10, 4),
+            ...                   columns=['A', 'B', 'C', 'D'])
+            >>> df.style.set_table_styles(
+            ...     [{'selector': 'tr:hover',
+            ...       'props': [('background-color', 'yellow')]}]
+            ... )
+
+            Or with CSS strings
+
+            >>> df.style.set_table_styles(
+            ...     [{'selector': 'tr:hover',
+            ...       'props': 'background-color: yellow; font-size: 1em;']}]
+            ... )
+
+            Adding column styling by name
+
+            >>> df.style.set_table_styles({
+            ...     'A': [{'selector': '',
+            ...            'props': [('color', 'red')]}],
+            ...     'B': [{'selector': 'td',
+            ...            'props': 'color: blue;']}]
+            ... }, overwrite=False)
+
+            Adding row styling
+
+            >>> df.style.set_table_styles({
+            ...     0: [{'selector': 'td:hover',
+            ...          'props': [('font-size', '25px')]}]
+            ... }, axis=1, overwrite=False)
+            """
+        if isinstance(table_styles, dict):
+            if axis in [0, "index"]:
+                obj, idf = self.data.columns, ".col"
+            else:
+                obj, idf = self.data.index, ".row"
+
+            table_styles = [
+                {
+                    "selector": str(s["selector"]) + idf + str(idx),
+                    "props": maybe_convert_css_to_tuples(s["props"]),
+                }
+                for key, styles in table_styles.items()
+                for idx in obj.get_indexer_for([key])
+                for s in styles
+            ]
+        else:
+            table_styles = [
+                {
+                    "selector": s["selector"],
+                    "props": maybe_convert_css_to_tuples(s["props"]),
+                }
+                for s in table_styles
+            ]
+
+        if not overwrite and self.table_styles is not None:
+            self.table_styles.extend(table_styles)
+        else:
+            self.table_styles = table_styles
+        return self
+
+    def hide_index(self, subset: Subset | None = None) -> Styler:
+        """
+            Hide the entire index, or specific keys in the index from rendering.
+
+            This method has dual functionality:
+
+              - if ``subset`` is ``None`` then the entire index will be hidden whilst
+                displaying all data-rows.
+              - if a ``subset`` is given then those specific rows will be hidden whilst the
+                index itself remains visible.
+
+            .. versionchanged:: 1.3.0
+
+            Parameters
+            ----------
+            subset : label, array-like, IndexSlice, optional
+                A valid 1d input or single key along the index axis within
+                `DataFrame.loc[<subset>, :]`, to limit ``data`` to *before* applying
+                the function.
+
+            Returns
+            -------
+            self : Styler
+
+            See Also
+            --------
+            Styler.hide_columns: Hide the entire column headers row, or specific columns.
+
+            Examples
+            --------
+            Simple application hiding specific rows:
+
+            >>> df = pd.DataFrame([[1,2], [3,4], [5,6]], index=["a", "b", "c"])
+            >>> df.style.hide_index(["a", "b"])
+                 0    1
+            c    5    6
+
+            Hide the index and retain the data values:
+
+            >>> midx = pd.MultiIndex.from_product([["x", "y"], ["a", "b", "c"]])
+            >>> df = pd.DataFrame(np.random.randn(6,6), index=midx, columns=midx)
+            >>> df.style.format("{:.1f}").hide_index()
+                             x                    y
+               a      b      c      a      b      c
+             0.1    0.0    0.4    1.3    0.6   -1.4
+             0.7    1.0    1.3    1.5   -0.0   -0.2
+             1.4   -0.8    1.6   -0.2   -0.4   -0.3
+             0.4    1.0   -0.2   -0.8   -1.2    1.1
+            -0.6    1.2    1.8    1.9    0.3    0.3
+             0.8    0.5   -0.3    1.2    2.2   -0.8
+
+            Hide specific rows but retain the index:
+
+            >>> df.style.format("{:.1f}").hide_index(subset=(slice(None), ["a", "c"]))
+                                     x                    y
+                       a      b      c      a      b      c
+            x   b    0.7    1.0    1.3    1.5   -0.0   -0.2
+            y   b   -0.6    1.2    1.8    1.9    0.3    0.3
+
+            Hide specific rows and the index:
+
+            >>> df.style.format("{:.1f}").hide_index(subset=(slice(None), ["a", "c"]))
+            ...     .hide_index()
+                             x                    y
+               a      b      c      a      b      c
+             0.7    1.0    1.3    1.5   -0.0   -0.2
+            -0.6    1.2    1.8    1.9    0.3    0.3
+            """
+        if subset is None:
+            self.hide_index_ = True
+        else:
+            subset_ = IndexSlice[subset, :]  # new var so mypy reads not Optional
+            subset = non_reducing_slice(subset_)
+            hide = self.data.loc[subset]
+            hrows = self.index.get_indexer_for(hide.index)
+            # error: Incompatible types in assignment (expression has type
+            # "ndarray", variable has type "Sequence[int]")
+            self.hidden_rows = hrows  # type: ignore[assignment]
+        return self
+
+    def hide_columns(self, subset: Subset | None = None) -> Styler:
+        """
+            Hide the column headers or specific keys in the columns from rendering.
+
+            This method has dual functionality:
+
+              - if ``subset`` is ``None`` then the entire column headers row will be hidden
+                whilst the data-values remain visible.
+              - if a ``subset`` is given then those specific columns, including the
+                data-values will be hidden, whilst the column headers row remains visible.
+
+            .. versionchanged:: 1.3.0
+
+            Parameters
+            ----------
+            subset : label, array-like, IndexSlice, optional
+                A valid 1d input or single key along the columns axis within
+                `DataFrame.loc[:, <subset>]`, to limit ``data`` to *before* applying
+                the function.
+
+            Returns
+            -------
+            self : Styler
+
+            See Also
+            --------
+            Styler.hide_index: Hide the entire index, or specific keys in the index.
+
+            Examples
+            --------
+            Simple application hiding specific columns:
+
+            >>> df = pd.DataFrame([[1, 2, 3], [4, 5, 6]], columns=["a", "b", "c"])
+            >>> df.style.hide_columns(["a", "b"])
+                 c
+            0    3
+            1    6
+
+            Hide column headers and retain the data values:
+
+            >>> midx = pd.MultiIndex.from_product([["x", "y"], ["a", "b", "c"]])
+            >>> df = pd.DataFrame(np.random.randn(6,6), index=midx, columns=midx)
+            >>> df.style.format("{:.1f}").hide_columns()
+            x   d    0.1    0.0    0.4    1.3    0.6   -1.4
+                e    0.7    1.0    1.3    1.5   -0.0   -0.2
+                f    1.4   -0.8    1.6   -0.2   -0.4   -0.3
+            y   d    0.4    1.0   -0.2   -0.8   -1.2    1.1
+                e   -0.6    1.2    1.8    1.9    0.3    0.3
+                f    0.8    0.5   -0.3    1.2    2.2   -0.8
+
+            Hide specific columns but retain the column headers:
+
+            >>> df.style.format("{:.1f}").hide_columns(subset=(slice(None), ["a", "c"]))
+                       x      y
+                       b      b
+            x   a    0.0    0.6
+                b    1.0   -0.0
+                c   -0.8   -0.4
+            y   a    1.0   -1.2
+                b    1.2    0.3
+                c    0.5    2.2
+
+            Hide specific columns and the column headers:
+
+            >>> df.style.format("{:.1f}").hide_columns(subset=(slice(None), ["a", "c"]))
+            ...     .hide_columns()
+            x   a    0.0    0.6
+                b    1.0   -0.0
+                c   -0.8   -0.4
+            y   a    1.0   -1.2
+                b    1.2    0.3
+                c    0.5    2.2
+            """
+        if subset is None:
+            self.hide_columns_ = True
+        else:
+            subset_ = IndexSlice[:, subset]  # new var so mypy reads not Optional
+            subset = non_reducing_slice(subset_)
+            hide = self.data.loc[subset]
+            hcols = self.columns.get_indexer_for(hide.columns)
+            # error: Incompatible types in assignment (expression has type
+            # "ndarray", variable has type "Sequence[int]")
+            self.hidden_columns = hcols  # type: ignore[assignment]
+        return self
+
+    # -----------------------------------------------------------------------
+    # A collection of "builtin" styles
+    # -----------------------------------------------------------------------
+
+    @doc(
+        name="background",
+        alt="text",
+        image_prefix="bg",
+        axis="{0 or 'index', 1 or 'columns', None}",
+        text_threshold="",
+    )
+    def background_gradient(
+        self,
+        cmap="PuBu",
+        low: float = 0,
+        high: float = 0,
+        axis: Axis | None = 0,
+        subset: Subset | None = None,
+        text_color_threshold: float = 0.408,
+        vmin: float | None = None,
+        vmax: float | None = None,
+        gmap: Sequence | None = None,
+    ) -> Styler:
+        """
+            Color the {name} in a gradient style.
+
+            The {name} color is determined according
+            to the data in each column, row or frame, or by a given
+            gradient map. Requires matplotlib.
+
+            Parameters
+            ----------
+            cmap : str or colormap
+                Matplotlib colormap.
+            low : float
+                Compress the color range at the low end. This is a multiple of the data
+                range to extend below the minimum; good values usually in [0, 1],
+                defaults to 0.
+            high : float
+                Compress the color range at the high end. This is a multiple of the data
+                range to extend above the maximum; good values usually in [0, 1],
+                defaults to 0.
+            axis : {axis}, default 0
+                Apply to each column (``axis=0`` or ``'index'``), to each row
+                (``axis=1`` or ``'columns'``), or to the entire DataFrame at once
+                with ``axis=None``.
+            subset : label, array-like, IndexSlice, optional
+                A valid 2d input to `DataFrame.loc[<subset>]`, or, in the case of a 1d input
+                or single key, to `DataFrame.loc[:, <subset>]` where the columns are
+                prioritised, to limit ``data`` to *before* applying the function.
+            text_color_threshold : float or int
+                {text_threshold}
+                Luminance threshold for determining text color in [0, 1]. Facilitates text
+                visibility across varying background colors. All text is dark if 0, and
+                light if 1, defaults to 0.408.
+            vmin : float, optional
+                Minimum data value that corresponds to colormap minimum value.
+                If not specified the minimum value of the data (or gmap) will be used.
+
+                .. versionadded:: 1.0.0
+
+            vmax : float, optional
+                Maximum data value that corresponds to colormap maximum value.
+                If not specified the maximum value of the data (or gmap) will be used.
+
+                .. versionadded:: 1.0.0
+
+            gmap : array-like, optional
+                Gradient map for determining the {name} colors. If not supplied
+                will use the underlying data from rows, columns or frame. If given as an
+                ndarray or list-like must be an identical shape to the underlying data
+                considering ``axis`` and ``subset``. If given as DataFrame or Series must
+                have same index and column labels considering ``axis`` and ``subset``.
+                If supplied, ``vmin`` and ``vmax`` should be given relative to this
+                gradient map.
+
+                .. versionadded:: 1.3.0
+
+            Returns
+            -------
+            self : Styler
+
+            See Also
+            --------
+            Styler.{alt}_gradient: Color the {alt} in a gradient style.
+
+            Notes
+            -----
+            When using ``low`` and ``high`` the range
+            of the gradient, given by the data if ``gmap`` is not given or by ``gmap``,
+            is extended at the low end effectively by
+            `map.min - low * map.range` and at the high end by
+            `map.max + high * map.range` before the colors are normalized and determined.
+
+            If combining with ``vmin`` and ``vmax`` the `map.min`, `map.max` and
+            `map.range` are replaced by values according to the values derived from
+            ``vmin`` and ``vmax``.
+
+            This method will preselect numeric columns and ignore non-numeric columns
+            unless a ``gmap`` is supplied in which case no preselection occurs.
+
+            Examples
+            --------
+            >>> df = pd.DataFrame(columns=["City", "Temp (c)", "Rain (mm)", "Wind (m/s)"],
+            ...                   data=[["Stockholm", 21.6, 5.0, 3.2],
+            ...                         ["Oslo", 22.4, 13.3, 3.1],
+            ...                         ["Copenhagen", 24.5, 0.0, 6.7]])
+
+            Shading the values column-wise, with ``axis=0``, preselecting numeric columns
+
+            >>> df.style.{name}_gradient(axis=0)
+
+            .. figure:: ../../_static/style/{image_prefix}_ax0.png
+
+            Shading all values collectively using ``axis=None``
+
+            >>> df.style.{name}_gradient(axis=None)
+
+            .. figure:: ../../_static/style/{image_prefix}_axNone.png
+
+            Compress the color map from the both ``low`` and ``high`` ends
+
+            >>> df.style.{name}_gradient(axis=None, low=0.75, high=1.0)
+
+            .. figure:: ../../_static/style/{image_prefix}_axNone_lowhigh.png
+
+            Manually setting ``vmin`` and ``vmax`` gradient thresholds
+
+            >>> df.style.{name}_gradient(axis=None, vmin=6.7, vmax=21.6)
+
+            .. figure:: ../../_static/style/{image_prefix}_axNone_vminvmax.png
+
+            Setting a ``gmap`` and applying to all columns with another ``cmap``
+
+            >>> df.style.{name}_gradient(axis=0, gmap=df['Temp (c)'], cmap='YlOrRd')
+
+            .. figure:: ../../_static/style/{image_prefix}_gmap.png
+
+            Setting the gradient map for a dataframe (i.e. ``axis=None``), we need to
+            explicitly state ``subset`` to match the ``gmap`` shape
+
+            >>> gmap = np.array([[1,2,3], [2,3,4], [3,4,5]])
+            >>> df.style.{name}_gradient(axis=None, gmap=gmap,
+            ...     cmap='YlOrRd', subset=['Temp (c)', 'Rain (mm)', 'Wind (m/s)']
+            ... )
+
+            .. figure:: ../../_static/style/{image_prefix}_axNone_gmap.png
+            """
+        if subset is None and gmap is None:
+            subset = self.data.select_dtypes(include=np.number).columns
+
+        self.apply(
+            _background_gradient,
+            cmap=cmap,
+            subset=subset,
+            axis=axis,
+            low=low,
+            high=high,
+            text_color_threshold=text_color_threshold,
+            vmin=vmin,
+            vmax=vmax,
+            gmap=gmap,
+        )
+        return self
+
+    def bar(
+        self,
+        subset: Subset | None = None,
+        axis: Axis | None = 0,
+        color="#d65f5f",
+        width: float = 100,
+        align: str = "left",
+        vmin: float | None = None,
+        vmax: float | None = None,
+    ) -> Styler:
+        """
+            Draw bar chart in the cell backgrounds.
+
+            Parameters
+            ----------
+            subset : label, array-like, IndexSlice, optional
+                A valid 2d input to `DataFrame.loc[<subset>]`, or, in the case of a 1d input
+                or single key, to `DataFrame.loc[:, <subset>]` where the columns are
+                prioritised, to limit ``data`` to *before* applying the function.
+            axis : {0 or 'index', 1 or 'columns', None}, default 0
+                Apply to each column (``axis=0`` or ``'index'``), to each row
+                (``axis=1`` or ``'columns'``), or to the entire DataFrame at once
+                with ``axis=None``.
+            color : str or 2-tuple/list
+                If a str is passed, the color is the same for both
+                negative and positive numbers. If 2-tuple/list is used, the
+                first element is the color_negative and the second is the
+                color_positive (eg: ['#d65f5f', '#5fba7d']).
+            width : float, default 100
+                A number between 0 or 100. The largest value will cover `width`
+                percent of the cell's width.
+            align : {'left', 'zero',' mid'}, default 'left'
+                How to align the bars with the cells.
+
+                - 'left' : the min value starts at the left of the cell.
+                - 'zero' : a value of zero is located at the center of the cell.
+                - 'mid' : the center of the cell is at (max-min)/2, or
+                  if values are all negative (positive) the zero is aligned
+                  at the right (left) of the cell.
+            vmin : float, optional
+                Minimum bar value, defining the left hand limit
+                of the bar drawing range, lower values are clipped to `vmin`.
+                When None (default): the minimum value of the data will be used.
+            vmax : float, optional
+                Maximum bar value, defining the right hand limit
+                of the bar drawing range, higher values are clipped to `vmax`.
+                When None (default): the maximum value of the data will be used.
+
+            Returns
+            -------
+            self : Styler
+            """
+        if align not in ("left", "zero", "mid"):
+            raise ValueError("`align` must be one of {'left', 'zero',' mid'}")
+
+        if not (is_list_like(color)):
+            color = [color, color]
+        elif len(color) == 1:
+            color = [color[0], color[0]]
+        elif len(color) > 2:
+            raise ValueError(
+                "`color` must be string or a list-like "
+                "of length 2: [`color_neg`, `color_pos`] "
+                "(eg: color=['#d65f5f', '#5fba7d'])"
+            )
+
+        if subset is None:
+            subset = self.data.select_dtypes(include=np.number).columns
+
+        self.apply(
+            self._bar,
+            subset=subset,
+            axis=axis,
+            align=align,
+            colors=color,
+            width=width,
+            vmin=vmin,
+            vmax=vmax,
+        )
+
+        return self
+
+    def format(
+        self,
+        formatter: ExtFormatter | None = None,
+        subset: Subset | None = None,
+        na_rep: str | None = None,
+        precision: int | None = None,
+        decimal: str = ".",
+        thousands: str | None = None,
+        escape: str | None = None,
+    ) -> StylerRenderer:
+        r"""
+            Format the text display value of cells.
+
+            Parameters
+            ----------
+            formatter : str, callable, dict or None
+                Object to define how values are displayed. See notes.
+            subset : label, array-like, IndexSlice, optional
+                A valid 2d input to `DataFrame.loc[<subset>]`, or, in the case of a 1d input
+                or single key, to `DataFrame.loc[:, <subset>]` where the columns are
+                prioritised, to limit ``data`` to *before* applying the function.
+            na_rep : str, optional
+                Representation for missing values.
+                If ``na_rep`` is None, no special formatting is applied.
+
+                .. versionadded:: 1.0.0
+
+            precision : int, optional
+                Floating point precision to use for display purposes, if not determined by
+                the specified ``formatter``.
+
+                .. versionadded:: 1.3.0
+
+            decimal : str, default "."
+                Character used as decimal separator for floats, complex and integers
+
+                .. versionadded:: 1.3.0
+
+            thousands : str, optional, default None
+                Character used as thousands separator for floats, complex and integers
+
+                .. versionadded:: 1.3.0
+
+            escape : str, optional
+                Use 'html' to replace the characters ``&``, ``<``, ``>``, ``'``, and ``"``
+                in cell display string with HTML-safe sequences.
+                Use 'latex' to replace the characters ``&``, ``%``, ``$``, ``#``, ``_``,
+                ``{``, ``}``, ``~``, ``^``, and ``\`` in the cell display string with
+                LaTeX-safe sequences.
+                Escaping is done before ``formatter``.
+
+                .. versionadded:: 1.3.0
+
+            Returns
+            -------
+            self : Styler
+
+            Notes
+            -----
+            This method assigns a formatting function, ``formatter``, to each cell in the
+            DataFrame. If ``formatter`` is ``None``, then the default formatter is used.
+            If a callable then that function should take a data value as input and return
+            a displayable representation, such as a string. If ``formatter`` is
+            given as a string this is assumed to be a valid Python format specification
+            and is wrapped to a callable as ``string.format(x)``. If a ``dict`` is given,
+            keys should correspond to column names, and values should be string or
+            callable, as above.
+
+            The default formatter currently expresses floats and complex numbers with the
+            pandas display precision unless using the ``precision`` argument here. The
+            default formatter does not adjust the representation of missing values unless
+            the ``na_rep`` argument is used.
+
+            The ``subset`` argument defines which region to apply the formatting function
+            to. If the ``formatter`` argument is given in dict form but does not include
+            all columns within the subset then these columns will have the default formatter
+            applied. Any columns in the formatter dict excluded from the subset will
+            raise a ``KeyError``.
+
+            When using a ``formatter`` string the dtypes must be compatible, otherwise a
+            `ValueError` will be raised.
+
+            Examples
+            --------
+            Using ``na_rep`` and ``precision`` with the default ``formatter``
+
+            >>> df = pd.DataFrame([[np.nan, 1.0, 'A'], [2.0, np.nan, 3.0]])
+            >>> df.style.format(na_rep='MISS', precision=3)
+                    0       1       2
+            0    MISS   1.000       A
+            1   2.000    MISS   3.000
+
+            Using a ``formatter`` specification on consistent column dtypes
+
+            >>> df.style.format('{:.2f}', na_rep='MISS', subset=[0,1])
+                    0      1          2
+            0    MISS   1.00          A
+            1    2.00   MISS   3.000000
+
+            Using the default ``formatter`` for unspecified columns
+
+            >>> df.style.format({0: '{:.2f}', 1: '£ {:.1f}'}, na_rep='MISS', precision=1)
+                     0      1     2
+            0    MISS   £ 1.0     A
+            1    2.00    MISS   3.0
+
+            Multiple ``na_rep`` or ``precision`` specifications under the default
+            ``formatter``.
+
+            >>> df.style.format(na_rep='MISS', precision=1, subset=[0])
+            ...     .format(na_rep='PASS', precision=2, subset=[1, 2])
+                    0      1      2
+            0    MISS   1.00      A
+            1     2.0   PASS   3.00
+
+            Using a callable ``formatter`` function.
+
+            >>> func = lambda s: 'STRING' if isinstance(s, str) else 'FLOAT'
+            >>> df.style.format({0: '{:.1f}', 2: func}, precision=4, na_rep='MISS')
+                    0        1        2
+            0    MISS   1.0000   STRING
+            1     2.0     MISS    FLOAT
+
+            Using a ``formatter`` with HTML ``escape`` and ``na_rep``.
+
+            >>> df = pd.DataFrame([['<div></div>', '"A&B"', None]])
+            >>> s = df.style.format(
+            ...     '<a href="a.com/{0}">{0}</a>', escape="html", na_rep="NA"
+            ...     )
+            >>> s.render()
+            ...
+            <td .. ><a href="a.com/&lt;div&gt;&lt;/div&gt;">&lt;div&gt;&lt;/div&gt;</a></td>
+            <td .. ><a href="a.com/&#34;A&amp;B&#34;">&#34;A&amp;B&#34;</a></td>
+            <td .. >NA</td>
+            ...
+
+            Using a ``formatter`` with LaTeX ``escape``.
+
+            >>> df = pd.DataFrame([["123"], ["~ ^"], ["$%#"]])
+            >>> s = df.style.format("\\textbf{{{}}}", escape="latex").to_latex()
+            \begin{tabular}{ll}
+            {} & {0} \\
+            0 & \textbf{123} \\
+            1 & \textbf{\textasciitilde \space \textasciicircum } \\
+            2 & \textbf{\$\%\#} \\
+            \end{tabular}
+            """
+        if all(
+            (
+                formatter is None,
+                subset is None,
+                precision is None,
+                decimal == ".",
+                thousands is None,
+                na_rep is None,
+                escape is None,
+            )
+        ):
+            self._display_funcs.clear()
+            return self  # clear the formatter / revert to default and avoid looping
+
+        subset = slice(None) if subset is None else subset
+        subset = non_reducing_slice(subset)
+        data = self.data.loc[subset]
+
+        if not isinstance(formatter, dict):
+            formatter = {col: formatter for col in data.columns}
+
+        cis = self.columns.get_indexer_for(data.columns)
+        ris = self.index.get_indexer_for(data.index)
+        for ci in cis:
+            format_func = _maybe_wrap_formatter(
+                formatter.get(self.columns[ci]),
+                na_rep=na_rep,
+                precision=precision,
+                decimal=decimal,
+                thousands=thousands,
+                escape=escape,
+            )
+            for ri in ris:
+                self._display_funcs[(ri, ci)] = format_func
+
+        return self
+
+    # Allow use as a contextmanager
+    def __enter__(self):
+        return self
+
+    def __enter__(self):
+        return self
+
+    def __enter__(self):
+        return self
+
+    def __enter__(self):
+        return self
+
+    @classmethod
+    def _from_sequence(cls, scalars, dtype=None, copy=False):
+        return cls(scalars)
+
+    @classmethod
+    def _from_factorized(cls, values, original):
+        return cls(values)
+
+    @classmethod
+    def _concat_same_type(cls, to_concat):
+        return cls(np.concatenate([x._data for x in to_concat]))
+
+    @classmethod
+    def from_scalars(cls, values):
+        arr = pa.chunked_array([pa.array(np.asarray(values))])
+        return cls(arr)
+
+    @classmethod
+    def from_array(cls, arr):
+        assert isinstance(arr, pa.Array)
+        return cls(pa.chunked_array([arr]))
+
+    @classmethod
+    def _concat_same_type(cls, to_concat):
+        chunks = list(itertools.chain.from_iterable(x._data.chunks for x in to_concat))
+        arr = pa.chunked_array(chunks)
+        return cls(arr)
+
+    @classmethod
+    def _from_sequence(cls, scalars, dtype=None, copy=False):
+        return cls(scalars)
+
+    @classmethod
+    def _from_factorized(cls, values, original):
+        return cls([UserDict(x) for x in values if x != ()])
+
+    @classmethod
+    def _concat_same_type(cls, to_concat):
+        data = list(itertools.chain.from_iterable(x.data for x in to_concat))
+        return cls(data)
+
+    @classmethod
+    def _from_sequence(cls, scalars, dtype=None, copy=False):
+        data = np.empty(len(scalars), dtype=object)
+        data[:] = scalars
+        return cls(data)
+
+    @classmethod
+    def _concat_same_type(cls, to_concat):
+        data = np.concatenate([x.data for x in to_concat])
+        return cls(data)
+
+    def __enter__(self):
+        return self
+
+    @staticmethod
+    def _convert_categorical(from_frame: DataFrame) -> DataFrame:
+        """
+            Emulate the categorical casting behavior we expect from roundtripping.
+            """
+        for col in from_frame:
+            ser = from_frame[col]
+            if is_categorical_dtype(ser.dtype):
+                cat = ser._values.remove_unused_categories()
+                if cat.categories.dtype == object:
+                    categories = pd.Index(cat.categories._values)
+                    cat = cat.set_categories(categories)
+                from_frame[col] = cat
+        return from_frame
+
+    def test_python_engine_file_no_next(self, python_engine):
+        # see gh-16530
+        class NoNextBuffer:
+            def __init__(self, csv_data):
+                self.data = csv_data
+
+            def __iter__(self):
+                return self
+
+            def read(self):
+                return self.data
+
+        data = "a\n1"
+        msg = "The 'python' engine cannot iterate"
+
+        with pytest.raises(ValueError, match=msg):
+            read_csv(NoNextBuffer(data), engine=python_engine)
+
+    def __iter__(self):
+        return self
+
+    def astype(self, dtype, copy=False):
+        self.dtype = dtype
+        return self
+
+    def copy(self):
+        return self
+
+    def test_metadata_propagation_indiv(self):
+        # merging with override
+        # GH 6923
+        _metadata = DataFrame._metadata
+        _finalize = DataFrame.__finalize__
+
+        np.random.seed(10)
+        df1 = DataFrame(np.random.randint(0, 4, (3, 2)), columns=["a", "b"])
+        df2 = DataFrame(np.random.randint(0, 4, (3, 2)), columns=["c", "d"])
+        DataFrame._metadata = ["filename"]
+        df1.filename = "fname1.csv"
+        df2.filename = "fname2.csv"
+
+        def finalize(self, other, method=None, **kwargs):
+
+            for name in self._metadata:
+                if method == "merge":
+                    left, right = other.left, other.right
+                    value = getattr(left, name, "") + "|" + getattr(right, name, "")
+                    object.__setattr__(self, name, value)
+                else:
+                    object.__setattr__(self, name, getattr(other, name, ""))
+
+            return self
+
+        DataFrame.__finalize__ = finalize
+        result = df1.merge(df2, left_on=["a"], right_on=["c"], how="inner")
+        assert result.filename == "fname1.csv|fname2.csv"
+
+        # concat
+        # GH 6927
+        DataFrame._metadata = ["filename"]
+        df1 = DataFrame(np.random.randint(0, 4, (3, 2)), columns=list("ab"))
+        df1.filename = "foo"
+
+        def finalize(self, other, method=None, **kwargs):
+            for name in self._metadata:
+                if method == "concat":
+                    value = "+".join(
+                        getattr(o, name) for o in other.objs if getattr(o, name, None)
+                    )
+                    object.__setattr__(self, name, value)
+                else:
+                    object.__setattr__(self, name, getattr(other, name, None))
+
+            return self
+
+        DataFrame.__finalize__ = finalize
+
+        result = pd.concat([df1, df1])
+        assert result.filename == "foo+foo"
+
+        # reset
+        DataFrame._metadata = _metadata
+        DataFrame.__finalize__ = _finalize  # FIXME: use monkeypatch
+
+    def test_metadata_propagation_indiv(self):
+        # check that the metadata matches up on the resulting ops
+
+        o = Series(range(3), range(3))
+        o.name = "foo"
+        o2 = Series(range(3), range(3))
+        o2.name = "bar"
+
+        result = o.T
+        self.check_metadata(o, result)
+
+        _metadata = Series._metadata
+        _finalize = Series.__finalize__
+        Series._metadata = ["name", "filename"]
+        o.filename = "foo"
+        o2.filename = "bar"
+
+        def finalize(self, other, method=None, **kwargs):
+            for name in self._metadata:
+                if method == "concat" and name == "filename":
+                    value = "+".join(
+                        getattr(o, name) for o in other.objs if getattr(o, name, None)
+                    )
+                    object.__setattr__(self, name, value)
+                else:
+                    object.__setattr__(self, name, getattr(other, name, None))
+
+            return self
+
+        Series.__finalize__ = finalize
+
+        result = pd.concat([o, o2])
+        assert result.filename == "foo+bar"
+        assert result.name is None
+
+        # reset
+        Series._metadata = _metadata
+        Series.__finalize__ = _finalize  # FIXME: use monkeypatch
+
+    def test_iloc_setitem_custom_object(self):
+        # iloc with an object
+        class TO:
+            def __init__(self, value):
+                self.value = value
+
+            def __str__(self) -> str:
+                return f"[{self.value}]"
+
+            __repr__ = __str__
+
+            def __eq__(self, other) -> bool:
+                return self.value == other.value
+
+            def view(self):
+                return self
+
+        df = DataFrame(index=[0, 1], columns=[0])
+        df.iloc[1, 0] = TO(1)
+        df.iloc[1, 0] = TO(2)
+
+        result = DataFrame(index=[0, 1], columns=[0])
+        result.iloc[1, 0] = TO(2)
+
+        tm.assert_frame_equal(result, df)
+
+        # remains object dtype even after setting it back
+        df = DataFrame(index=[0, 1], columns=[0])
+        df.iloc[1, 0] = TO(1)
+        df.iloc[1, 0] = np.nan
+        result = DataFrame(index=[0, 1], columns=[0])
+
+        tm.assert_frame_equal(result, df)
+
+    def view(self):
+        return self
+
+    @Appender(
+        """
+            See Also
+            --------
+            matplotlib.pyplot.plot : Plot y versus x as lines and/or markers.
+
+            Examples
+            --------
+
+            .. plot::
+                :context: close-figs
+
+                >>> s = pd.Series([1, 3, 2])
+                >>> s.plot.line()
+
+            .. plot::
+                :context: close-figs
+
+                The following example shows the populations for some animals
+                over the years.
+
+                >>> df = pd.DataFrame({
+                ...    'pig': [20, 18, 489, 675, 1776],
+                ...    'horse': [4, 25, 281, 600, 1900]
+                ...    }, index=[1990, 1997, 2003, 2009, 2014])
+                >>> lines = df.plot.line()
+
+            .. plot::
+               :context: close-figs
+
+               An example with subplots, so an array of axes is returned.
+
+               >>> axes = df.plot.line(subplots=True)
+               >>> type(axes)
+               <class 'numpy.ndarray'>
+
+            .. plot::
+               :context: close-figs
+
+               Let's repeat the same example, but specifying colors for
+               each column (in this case, for each animal).
+
+               >>> axes = df.plot.line(
+               ...     subplots=True, color={"pig": "pink", "horse": "#742802"}
+               ... )
+
+            .. plot::
+                :context: close-figs
+
+                The following example shows the relationship between both
+                populations.
+
+                >>> lines = df.plot.line(x='pig', y='horse')
+            """
+    )
+    @Substitution(kind="line")
+    @Appender(_bar_or_line_doc)
+    def line(self, x=None, y=None, **kwargs):
+        """
+            Plot Series or DataFrame as lines.
+
+            This function is useful to plot lines using DataFrame's values
+            as coordinates.
+            """
+        return self(kind="line", x=x, y=y, **kwargs)
+
+    @Appender(
+        """
+            See Also
+            --------
+            DataFrame.plot.barh : Horizontal bar plot.
+            DataFrame.plot : Make plots of a DataFrame.
+            matplotlib.pyplot.bar : Make a bar plot with matplotlib.
+
+            Examples
+            --------
+            Basic plot.
+
+            .. plot::
+                :context: close-figs
+
+                >>> df = pd.DataFrame({'lab':['A', 'B', 'C'], 'val':[10, 30, 20]})
+                >>> ax = df.plot.bar(x='lab', y='val', rot=0)
+
+            Plot a whole dataframe to a bar plot. Each column is assigned a
+            distinct color, and each row is nested in a group along the
+            horizontal axis.
+
+            .. plot::
+                :context: close-figs
+
+                >>> speed = [0.1, 17.5, 40, 48, 52, 69, 88]
+                >>> lifespan = [2, 8, 70, 1.5, 25, 12, 28]
+                >>> index = ['snail', 'pig', 'elephant',
+                ...          'rabbit', 'giraffe', 'coyote', 'horse']
+                >>> df = pd.DataFrame({'speed': speed,
+                ...                    'lifespan': lifespan}, index=index)
+                >>> ax = df.plot.bar(rot=0)
+
+            Plot stacked bar charts for the DataFrame
+
+            .. plot::
+                :context: close-figs
+
+                >>> ax = df.plot.bar(stacked=True)
+
+            Instead of nesting, the figure can be split by column with
+            ``subplots=True``. In this case, a :class:`numpy.ndarray` of
+            :class:`matplotlib.axes.Axes` are returned.
+
+            .. plot::
+                :context: close-figs
+
+                >>> axes = df.plot.bar(rot=0, subplots=True)
+                >>> axes[1].legend(loc=2)  # doctest: +SKIP
+
+            If you don't like the default colours, you can specify how you'd
+            like each column to be colored.
+
+            .. plot::
+                :context: close-figs
+
+                >>> axes = df.plot.bar(
+                ...     rot=0, subplots=True, color={"speed": "red", "lifespan": "green"}
+                ... )
+                >>> axes[1].legend(loc=2)  # doctest: +SKIP
+
+            Plot a single column.
+
+            .. plot::
+                :context: close-figs
+
+                >>> ax = df.plot.bar(y='speed', rot=0)
+
+            Plot only selected categories for the DataFrame.
+
+            .. plot::
+                :context: close-figs
+
+                >>> ax = df.plot.bar(x='lifespan', rot=0)
+        """
+    )
+    @Substitution(kind="bar")
+    @Appender(_bar_or_line_doc)
+    def bar(self, x=None, y=None, **kwargs):
+        """
+            Vertical bar plot.
+
+            A bar plot is a plot that presents categorical data with
+            rectangular bars with lengths proportional to the values that they
+            represent. A bar plot shows comparisons among discrete categories. One
+            axis of the plot shows the specific categories being compared, and the
+            other axis represents a measured value.
+            """
+        return self(kind="bar", x=x, y=y, **kwargs)
+
+    @Appender(
+        """
+            See Also
+            --------
+            DataFrame.plot.bar: Vertical bar plot.
+            DataFrame.plot : Make plots of DataFrame using matplotlib.
+            matplotlib.axes.Axes.bar : Plot a vertical bar plot using matplotlib.
+
+            Examples
+            --------
+            Basic example
+
+            .. plot::
+                :context: close-figs
+
+                >>> df = pd.DataFrame({'lab': ['A', 'B', 'C'], 'val': [10, 30, 20]})
+                >>> ax = df.plot.barh(x='lab', y='val')
+
+            Plot a whole DataFrame to a horizontal bar plot
+
+            .. plot::
+                :context: close-figs
+
+                >>> speed = [0.1, 17.5, 40, 48, 52, 69, 88]
+                >>> lifespan = [2, 8, 70, 1.5, 25, 12, 28]
+                >>> index = ['snail', 'pig', 'elephant',
+                ...          'rabbit', 'giraffe', 'coyote', 'horse']
+                >>> df = pd.DataFrame({'speed': speed,
+                ...                    'lifespan': lifespan}, index=index)
+                >>> ax = df.plot.barh()
+
+            Plot stacked barh charts for the DataFrame
+
+            .. plot::
+                :context: close-figs
+
+                >>> ax = df.plot.barh(stacked=True)
+
+            We can specify colors for each column
+
+            .. plot::
+                :context: close-figs
+
+                >>> ax = df.plot.barh(color={"speed": "red", "lifespan": "green"})
+
+            Plot a column of the DataFrame to a horizontal bar plot
+
+            .. plot::
+                :context: close-figs
+
+                >>> speed = [0.1, 17.5, 40, 48, 52, 69, 88]
+                >>> lifespan = [2, 8, 70, 1.5, 25, 12, 28]
+                >>> index = ['snail', 'pig', 'elephant',
+                ...          'rabbit', 'giraffe', 'coyote', 'horse']
+                >>> df = pd.DataFrame({'speed': speed,
+                ...                    'lifespan': lifespan}, index=index)
+                >>> ax = df.plot.barh(y='speed')
+
+            Plot DataFrame versus the desired column
+
+            .. plot::
+                :context: close-figs
+
+                >>> speed = [0.1, 17.5, 40, 48, 52, 69, 88]
+                >>> lifespan = [2, 8, 70, 1.5, 25, 12, 28]
+                >>> index = ['snail', 'pig', 'elephant',
+                ...          'rabbit', 'giraffe', 'coyote', 'horse']
+                >>> df = pd.DataFrame({'speed': speed,
+                ...                    'lifespan': lifespan}, index=index)
+                >>> ax = df.plot.barh(x='lifespan')
+        """
+    )
+    @Substitution(kind="bar")
+    @Appender(_bar_or_line_doc)
+    def barh(self, x=None, y=None, **kwargs):
+        """
+            Make a horizontal bar plot.
+
+            A horizontal bar plot is a plot that presents quantitative data with
+            rectangular bars with lengths proportional to the values that they
+            represent. A bar plot shows comparisons among discrete categories. One
+            axis of the plot shows the specific categories being compared, and the
+            other axis represents a measured value.
+            """
+        return self(kind="barh", x=x, y=y, **kwargs)
+
+    def box(self, by=None, **kwargs):
+        r"""
+            Make a box plot of the DataFrame columns.
+
+            A box plot is a method for graphically depicting groups of numerical
+            data through their quartiles.
+            The box extends from the Q1 to Q3 quartile values of the data,
+            with a line at the median (Q2). The whiskers extend from the edges
+            of box to show the range of the data. The position of the whiskers
+            is set by default to 1.5*IQR (IQR = Q3 - Q1) from the edges of the
+            box. Outlier points are those past the end of the whiskers.
+
+            For further details see Wikipedia's
+            entry for `boxplot <https://en.wikipedia.org/wiki/Box_plot>`__.
+
+            A consideration when using this chart is that the box and the whiskers
+            can overlap, which is very common when plotting small sets of data.
+
+            Parameters
+            ----------
+            by : str or sequence
+                Column in the DataFrame to group by.
+            **kwargs
+                Additional keywords are documented in
+                :meth:`DataFrame.plot`.
+
+            Returns
+            -------
+            :class:`matplotlib.axes.Axes` or numpy.ndarray of them
+
+            See Also
+            --------
+            DataFrame.boxplot: Another method to draw a box plot.
+            Series.plot.box: Draw a box plot from a Series object.
+            matplotlib.pyplot.boxplot: Draw a box plot in matplotlib.
+
+            Examples
+            --------
+            Draw a box plot from a DataFrame with four columns of randomly
+            generated data.
+
+            .. plot::
+                :context: close-figs
+
+                >>> data = np.random.randn(25, 4)
+                >>> df = pd.DataFrame(data, columns=list('ABCD'))
+                >>> ax = df.plot.box()
+            """
+        return self(kind="box", by=by, **kwargs)
+
+    def hist(self, by=None, bins=10, **kwargs):
+        """
+            Draw one histogram of the DataFrame's columns.
+
+            A histogram is a representation of the distribution of data.
+            This function groups the values of all given Series in the DataFrame
+            into bins and draws all bins in one :class:`matplotlib.axes.Axes`.
+            This is useful when the DataFrame's Series are in a similar scale.
+
+            Parameters
+            ----------
+            by : str or sequence, optional
+                Column in the DataFrame to group by.
+            bins : int, default 10
+                Number of histogram bins to be used.
+            **kwargs
+                Additional keyword arguments are documented in
+                :meth:`DataFrame.plot`.
+
+            Returns
+            -------
+            class:`matplotlib.AxesSubplot`
+                Return a histogram plot.
+
+            See Also
+            --------
+            DataFrame.hist : Draw histograms per DataFrame's Series.
+            Series.hist : Draw a histogram with Series' data.
+
+            Examples
+            --------
+            When we draw a dice 6000 times, we expect to get each value around 1000
+            times. But when we draw two dices and sum the result, the distribution
+            is going to be quite different. A histogram illustrates those
+            distributions.
+
+            .. plot::
+                :context: close-figs
+
+                >>> df = pd.DataFrame(
+                ...     np.random.randint(1, 7, 6000),
+                ...     columns = ['one'])
+                >>> df['two'] = df['one'] + np.random.randint(1, 7, 6000)
+                >>> ax = df.plot.hist(bins=12, alpha=0.5)
+            """
+        return self(kind="hist", by=by, bins=bins, **kwargs)
+
+    def kde(self, bw_method=None, ind=None, **kwargs):
+        """
+            Generate Kernel Density Estimate plot using Gaussian kernels.
+
+            In statistics, `kernel density estimation`_ (KDE) is a non-parametric
+            way to estimate the probability density function (PDF) of a random
+            variable. This function uses Gaussian kernels and includes automatic
+            bandwidth determination.
+
+            .. _kernel density estimation:
+                https://en.wikipedia.org/wiki/Kernel_density_estimation
+
+            Parameters
+            ----------
+            bw_method : str, scalar or callable, optional
+                The method used to calculate the estimator bandwidth. This can be
+                'scott', 'silverman', a scalar constant or a callable.
+                If None (default), 'scott' is used.
+                See :class:`scipy.stats.gaussian_kde` for more information.
+            ind : NumPy array or int, optional
+                Evaluation points for the estimated PDF. If None (default),
+                1000 equally spaced points are used. If `ind` is a NumPy array, the
+                KDE is evaluated at the points passed. If `ind` is an integer,
+                `ind` number of equally spaced points are used.
+            **kwargs
+                Additional keyword arguments are documented in
+                :meth:`pandas.%(this-datatype)s.plot`.
+
+            Returns
+            -------
+            matplotlib.axes.Axes or numpy.ndarray of them
+
+            See Also
+            --------
+            scipy.stats.gaussian_kde : Representation of a kernel-density
+                estimate using Gaussian kernels. This is the function used
+                internally to estimate the PDF.
+
+            Examples
+            --------
+            Given a Series of points randomly sampled from an unknown
+            distribution, estimate its PDF using KDE with automatic
+            bandwidth determination and plot the results, evaluating them at
+            1000 equally spaced points (default):
+
+            .. plot::
+                :context: close-figs
+
+                >>> s = pd.Series([1, 2, 2.5, 3, 3.5, 4, 5])
+                >>> ax = s.plot.kde()
+
+            A scalar bandwidth can be specified. Using a small bandwidth value can
+            lead to over-fitting, while using a large bandwidth value may result
+            in under-fitting:
+
+            .. plot::
+                :context: close-figs
+
+                >>> ax = s.plot.kde(bw_method=0.3)
+
+            .. plot::
+                :context: close-figs
+
+                >>> ax = s.plot.kde(bw_method=3)
+
+            Finally, the `ind` parameter determines the evaluation points for the
+            plot of the estimated PDF:
+
+            .. plot::
+                :context: close-figs
+
+                >>> ax = s.plot.kde(ind=[1, 2, 3, 4, 5])
+
+            For DataFrame, it works in the same way:
+
+            .. plot::
+                :context: close-figs
+
+                >>> df = pd.DataFrame({
+                ...     'x': [1, 2, 2.5, 3, 3.5, 4, 5],
+                ...     'y': [4, 4, 4.5, 5, 5.5, 6, 6],
+                ... })
+                >>> ax = df.plot.kde()
+
+            A scalar bandwidth can be specified. Using a small bandwidth value can
+            lead to over-fitting, while using a large bandwidth value may result
+            in under-fitting:
+
+            .. plot::
+                :context: close-figs
+
+                >>> ax = df.plot.kde(bw_method=0.3)
+
+            .. plot::
+                :context: close-figs
+
+                >>> ax = df.plot.kde(bw_method=3)
+
+            Finally, the `ind` parameter determines the evaluation points for the
+            plot of the estimated PDF:
+
+            .. plot::
+                :context: close-figs
+
+                >>> ax = df.plot.kde(ind=[1, 2, 3, 4, 5, 6])
+            """
+        return self(kind="kde", bw_method=bw_method, ind=ind, **kwargs)
+
+    def area(self, x=None, y=None, **kwargs):
+        """
+            Draw a stacked area plot.
+
+            An area plot displays quantitative data visually.
+            This function wraps the matplotlib area function.
+
+            Parameters
+            ----------
+            x : label or position, optional
+                Coordinates for the X axis. By default uses the index.
+            y : label or position, optional
+                Column to plot. By default uses all columns.
+            stacked : bool, default True
+                Area plots are stacked by default. Set to False to create a
+                unstacked plot.
+            **kwargs
+                Additional keyword arguments are documented in
+                :meth:`DataFrame.plot`.
+
+            Returns
+            -------
+            matplotlib.axes.Axes or numpy.ndarray
+                Area plot, or array of area plots if subplots is True.
+
+            See Also
+            --------
+            DataFrame.plot : Make plots of DataFrame using matplotlib / pylab.
+
+            Examples
+            --------
+            Draw an area plot based on basic business metrics:
+
+            .. plot::
+                :context: close-figs
+
+                >>> df = pd.DataFrame({
+                ...     'sales': [3, 2, 3, 9, 10, 6],
+                ...     'signups': [5, 5, 6, 12, 14, 13],
+                ...     'visits': [20, 42, 28, 62, 81, 50],
+                ... }, index=pd.date_range(start='2018/01/01', end='2018/07/01',
+                ...                        freq='M'))
+                >>> ax = df.plot.area()
+
+            Area plots are stacked by default. To produce an unstacked plot,
+            pass ``stacked=False``:
+
+            .. plot::
+                :context: close-figs
+
+                >>> ax = df.plot.area(stacked=False)
+
+            Draw an area plot for a single column:
+
+            .. plot::
+                :context: close-figs
+
+                >>> ax = df.plot.area(y='sales')
+
+            Draw with a different `x`:
+
+            .. plot::
+                :context: close-figs
+
+                >>> df = pd.DataFrame({
+                ...     'sales': [3, 2, 3],
+                ...     'visits': [20, 42, 28],
+                ...     'day': [1, 2, 3],
+                ... })
+                >>> ax = df.plot.area(x='day')
+            """
+        return self(kind="area", x=x, y=y, **kwargs)
+
+    def pie(self, **kwargs):
+        """
+            Generate a pie plot.
+
+            A pie plot is a proportional representation of the numerical data in a
+            column. This function wraps :meth:`matplotlib.pyplot.pie` for the
+            specified column. If no column reference is passed and
+            ``subplots=True`` a pie plot is drawn for each numerical column
+            independently.
+
+            Parameters
+            ----------
+            y : int or label, optional
+                Label or position of the column to plot.
+                If not provided, ``subplots=True`` argument must be passed.
+            **kwargs
+                Keyword arguments to pass on to :meth:`DataFrame.plot`.
+
+            Returns
+            -------
+            matplotlib.axes.Axes or np.ndarray of them
+                A NumPy array is returned when `subplots` is True.
+
+            See Also
+            --------
+            Series.plot.pie : Generate a pie plot for a Series.
+            DataFrame.plot : Make plots of a DataFrame.
+
+            Examples
+            --------
+            In the example below we have a DataFrame with the information about
+            planet's mass and radius. We pass the 'mass' column to the
+            pie function to get a pie plot.
+
+            .. plot::
+                :context: close-figs
+
+                >>> df = pd.DataFrame({'mass': [0.330, 4.87 , 5.97],
+                ...                    'radius': [2439.7, 6051.8, 6378.1]},
+                ...                   index=['Mercury', 'Venus', 'Earth'])
+                >>> plot = df.plot.pie(y='mass', figsize=(5, 5))
+
+            .. plot::
+                :context: close-figs
+
+                >>> plot = df.plot.pie(subplots=True, figsize=(11, 6))
+            """
+        if (
+            isinstance(self._parent, ABCDataFrame)
+            and kwargs.get("y", None) is None
+            and not kwargs.get("subplots", False)
+        ):
+            raise ValueError("pie requires either y column or 'subplots=True'")
+        return self(kind="pie", **kwargs)
+
+    def scatter(self, x, y, s=None, c=None, **kwargs):
+        """
+            Create a scatter plot with varying marker point size and color.
+
+            The coordinates of each point are defined by two dataframe columns and
+            filled circles are used to represent each point. This kind of plot is
+            useful to see complex correlations between two variables. Points could
+            be for instance natural 2D coordinates like longitude and latitude in
+            a map or, in general, any pair of metrics that can be plotted against
+            each other.
+
+            Parameters
+            ----------
+            x : int or str
+                The column name or column position to be used as horizontal
+                coordinates for each point.
+            y : int or str
+                The column name or column position to be used as vertical
+                coordinates for each point.
+            s : str, scalar or array-like, optional
+                The size of each point. Possible values are:
+
+                - A string with the name of the column to be used for marker's size.
+
+                - A single scalar so all points have the same size.
+
+                - A sequence of scalars, which will be used for each point's size
+                  recursively. For instance, when passing [2,14] all points size
+                  will be either 2 or 14, alternatively.
+
+                  .. versionchanged:: 1.1.0
+
+            c : str, int or array-like, optional
+                The color of each point. Possible values are:
+
+                - A single color string referred to by name, RGB or RGBA code,
+                  for instance 'red' or '#a98d19'.
+
+                - A sequence of color strings referred to by name, RGB or RGBA
+                  code, which will be used for each point's color recursively. For
+                  instance ['green','yellow'] all points will be filled in green or
+                  yellow, alternatively.
+
+                - A column name or position whose values will be used to color the
+                  marker points according to a colormap.
+
+            **kwargs
+                Keyword arguments to pass on to :meth:`DataFrame.plot`.
+
+            Returns
+            -------
+            :class:`matplotlib.axes.Axes` or numpy.ndarray of them
+
+            See Also
+            --------
+            matplotlib.pyplot.scatter : Scatter plot using multiple input data
+                formats.
+
+            Examples
+            --------
+            Let's see how to draw a scatter plot using coordinates from the values
+            in a DataFrame's columns.
+
+            .. plot::
+                :context: close-figs
+
+                >>> df = pd.DataFrame([[5.1, 3.5, 0], [4.9, 3.0, 0], [7.0, 3.2, 1],
+                ...                    [6.4, 3.2, 1], [5.9, 3.0, 2]],
+                ...                   columns=['length', 'width', 'species'])
+                >>> ax1 = df.plot.scatter(x='length',
+                ...                       y='width',
+                ...                       c='DarkBlue')
+
+            And now with the color determined by a column as well.
+
+            .. plot::
+                :context: close-figs
+
+                >>> ax2 = df.plot.scatter(x='length',
+                ...                       y='width',
+                ...                       c='species',
+                ...                       colormap='viridis')
+            """
+        return self(kind="scatter", x=x, y=y, s=s, c=c, **kwargs)
+
+    def hexbin(self, x, y, C=None, reduce_C_function=None, gridsize=None, **kwargs):
+        """
+            Generate a hexagonal binning plot.
+
+            Generate a hexagonal binning plot of `x` versus `y`. If `C` is `None`
+            (the default), this is a histogram of the number of occurrences
+            of the observations at ``(x[i], y[i])``.
+
+            If `C` is specified, specifies values at given coordinates
+            ``(x[i], y[i])``. These values are accumulated for each hexagonal
+            bin and then reduced according to `reduce_C_function`,
+            having as default the NumPy's mean function (:meth:`numpy.mean`).
+            (If `C` is specified, it must also be a 1-D sequence
+            of the same length as `x` and `y`, or a column label.)
+
+            Parameters
+            ----------
+            x : int or str
+                The column label or position for x points.
+            y : int or str
+                The column label or position for y points.
+            C : int or str, optional
+                The column label or position for the value of `(x, y)` point.
+            reduce_C_function : callable, default `np.mean`
+                Function of one argument that reduces all the values in a bin to
+                a single number (e.g. `np.mean`, `np.max`, `np.sum`, `np.std`).
+            gridsize : int or tuple of (int, int), default 100
+                The number of hexagons in the x-direction.
+                The corresponding number of hexagons in the y-direction is
+                chosen in a way that the hexagons are approximately regular.
+                Alternatively, gridsize can be a tuple with two elements
+                specifying the number of hexagons in the x-direction and the
+                y-direction.
+            **kwargs
+                Additional keyword arguments are documented in
+                :meth:`DataFrame.plot`.
+
+            Returns
+            -------
+            matplotlib.AxesSubplot
+                The matplotlib ``Axes`` on which the hexbin is plotted.
+
+            See Also
+            --------
+            DataFrame.plot : Make plots of a DataFrame.
+            matplotlib.pyplot.hexbin : Hexagonal binning plot using matplotlib,
+                the matplotlib function that is used under the hood.
+
+            Examples
+            --------
+            The following examples are generated with random data from
+            a normal distribution.
+
+            .. plot::
+                :context: close-figs
+
+                >>> n = 10000
+                >>> df = pd.DataFrame({'x': np.random.randn(n),
+                ...                    'y': np.random.randn(n)})
+                >>> ax = df.plot.hexbin(x='x', y='y', gridsize=20)
+
+            The next example uses `C` and `np.sum` as `reduce_C_function`.
+            Note that `'observations'` values ranges from 1 to 5 but the result
+            plot shows values up to more than 25. This is because of the
+            `reduce_C_function`.
+
+            .. plot::
+                :context: close-figs
+
+                >>> n = 500
+                >>> df = pd.DataFrame({
+                ...     'coord_x': np.random.uniform(-3, 3, size=n),
+                ...     'coord_y': np.random.uniform(30, 50, size=n),
+                ...     'observations': np.random.randint(1,5, size=n)
+                ...     })
+                >>> ax = df.plot.hexbin(x='coord_x',
+                ...                     y='coord_y',
+                ...                     C='observations',
+                ...                     reduce_C_function=np.sum,
+                ...                     gridsize=10,
+                ...                     cmap="viridis")
+            """
+        if reduce_C_function is not None:
+            kwargs["reduce_C_function"] = reduce_C_function
+        if gridsize is not None:
+            kwargs["gridsize"] = gridsize
+
+        return self(kind="hexbin", x=x, y=y, C=C, **kwargs)
+
+    @staticmethod
+    def convert(value, unit, axis):
+        valid_types = (str, pydt.time)
+        if isinstance(value, valid_types) or is_integer(value) or is_float(value):
+            return time2num(value)
+        if isinstance(value, Index):
+            return value.map(time2num)
+        if isinstance(value, (list, tuple, np.ndarray, Index)):
+            return [time2num(x) for x in value]
+        return value
+
+    @staticmethod
+    def convert(values, units, axis):
+        if is_nested_list_like(values):
+            values = [PeriodConverter._convert_1d(v, units, axis) for v in values]
+        else:
+            values = PeriodConverter._convert_1d(values, units, axis)
+        return values
+
+    @staticmethod
+    def _convert_1d(values, units, axis):
+        if not hasattr(axis, "freq"):
+            raise TypeError("Axis must have `freq` set to convert to Periods")
+        valid_types = (str, datetime, Period, pydt.date, pydt.time, np.datetime64)
+        if isinstance(values, valid_types) or is_integer(values) or is_float(values):
+            return get_datevalue(values, axis.freq)
+        elif isinstance(values, PeriodIndex):
+            return values.asfreq(axis.freq).asi8
+        elif isinstance(values, Index):
+            return values.map(lambda x: get_datevalue(x, axis.freq))
+        elif lib.infer_dtype(values, skipna=False) == "period":
+            # https://github.com/pandas-dev/pandas/issues/24304
+            # convert ndarray[period] -> PeriodIndex
+            return PeriodIndex(values, freq=axis.freq).asi8
+        elif isinstance(values, (list, tuple, np.ndarray, Index)):
+            return [get_datevalue(x, axis.freq) for x in values]
+        return values
+
+    @staticmethod
+    def convert(values, unit, axis):
+        # values might be a 1-d array, or a list-like of arrays.
+        if is_nested_list_like(values):
+            values = [DatetimeConverter._convert_1d(v, unit, axis) for v in values]
+        else:
+            values = DatetimeConverter._convert_1d(values, unit, axis)
+        return values
+
+    @staticmethod
+    def _convert_1d(values, unit, axis):
+        def try_parse(values):
+            try:
+                return dates.date2num(tools.to_datetime(values))
+            except Exception:
+                return values
+
+        if isinstance(values, (datetime, pydt.date, np.datetime64, pydt.time)):
+            return dates.date2num(values)
+        elif is_integer(values) or is_float(values):
+            return values
+        elif isinstance(values, str):
+            return try_parse(values)
+        elif isinstance(values, (list, tuple, np.ndarray, Index, Series)):
+            if isinstance(values, Series):
+                # https://github.com/matplotlib/matplotlib/issues/11391
+                # Series was skipped. Convert to DatetimeIndex to get asi8
+                values = Index(values)
+            if isinstance(values, Index):
+                values = values.values
+            if not isinstance(values, np.ndarray):
+                values = com.asarray_tuplesafe(values)
+
+            if is_integer_dtype(values) or is_float_dtype(values):
+                return values
+
+            try:
+                values = tools.to_datetime(values)
+            except Exception:
+                pass
+
+            values = dates.date2num(values)
+
+        return values
+

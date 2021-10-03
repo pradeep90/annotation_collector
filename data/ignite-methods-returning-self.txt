@@ -1,0 +1,130 @@
+Methods with `self` or `cls` annotations: 0
+
+Methods returning `self` or `cls(...)`: 9
+    def __enter__(self) -> "Parallel":
+        if self.backend is not None and self._spawn_params is None:
+            idist.initialize(self.backend, init_method=self.init_method)
+
+        # The logger can be setup from now since idist.initialize() has been called (if needed)
+        self._logger = setup_logger(__name__ + "." + self.__class__.__name__)  # type: ignore[assignment]
+
+        if self.backend is not None:
+            if self._spawn_params is None:
+                self._logger.info(  # type: ignore[attr-defined]
+                    f"Initialized processing group with backend: '{self.backend}'"
+                )
+            else:
+                self._logger.info(  # type: ignore[attr-defined]
+                    f"Initialized distributed launcher with backend: '{self.backend}'"
+                )
+                msg = "\n\t".join([f"{k}: {v}" for k, v in self._spawn_params.items() if v is not None])
+                self._logger.info(  # type: ignore[attr-defined]
+                    f"- Parameters to spawn processes: \n\t{msg}"
+                )
+
+        return self
+
+    def __enter__(self) -> "BaseLogger":
+        return self
+
+    def __init__(self, *_: Any, **kwargs: Any):
+        try:
+            from clearml import Task
+            from clearml.binding.frameworks.tensorflow_bind import WeightsGradientHistHelper
+        except ImportError:
+            try:
+                # Backwards-compatibility for legacy Trains SDK
+                from trains import Task
+                from trains.binding.frameworks.tensorflow_bind import WeightsGradientHistHelper
+            except ImportError:
+                raise RuntimeError(
+                    "This contrib module requires clearml to be installed. "
+                    "You may install clearml using: \n pip install clearml \n"
+                )
+
+        experiment_kwargs = {k: v for k, v in kwargs.items() if k not in ("project_name", "task_name", "task_type")}
+
+        if self.bypass_mode():
+            warnings.warn("ClearMLSaver: running in bypass mode")
+
+            class _Stub(object):
+                def __call__(self, *_: Any, **__: Any) -> "_Stub":
+                    return self
+
+                def __getattr__(self, attr: str) -> "_Stub":
+                    if attr in ("name", "id"):
+                        return ""  # type: ignore[return-value]
+                    return self
+
+                def __setattr__(self, attr: str, val: Any) -> None:
+                    pass
+
+            self._task = _Stub()
+        else:
+            self._task = Task.init(
+                project_name=kwargs.get("project_name"),
+                task_name=kwargs.get("task_name"),
+                task_type=kwargs.get("task_type", Task.TaskTypes.training),
+                **experiment_kwargs,
+            )
+
+        self.clearml_logger = self._task.get_logger()
+
+        self.grad_helper = WeightsGradientHistHelper(logger=self.clearml_logger)
+
+    def __call__(self, *_: Any, **__: Any) -> "_Stub":
+        return self
+
+    def __getattr__(self, attr: str) -> "_Stub":
+        if attr in ("name", "id"):
+            return ""  # type: ignore[return-value]
+        return self
+
+    def __or__(self, other: Union[Events, CallableEventWithFilter]) -> "EventsList":
+        self._append(event=other)
+        return self
+
+    def __enter__(self) -> "RemovableEventHandle":
+        return self
+
+    def attach(
+        self,
+        engine: Engine,
+        start: Events = Events.STARTED,
+        pause: Events = Events.COMPLETED,
+        resume: Optional[Events] = None,
+        step: Optional[Events] = None,
+    ) -> "Timer":
+        """ Register callbacks to control the timer.
+
+            Args:
+                engine: Engine that this timer will be attached to.
+                start: Event which should start (reset) the timer.
+                pause: Event which should pause the timer.
+                resume: Event which should resume the timer.
+                step: Event which should call the `step` method of the counter.
+
+            Returns:
+                this timer
+            """
+
+        engine.add_event_handler(start, self.reset)
+        engine.add_event_handler(pause, self.pause)
+
+        if resume is not None:
+            engine.add_event_handler(resume, self.resume)
+
+        if step is not None:
+            engine.add_event_handler(step, self.step)
+
+        return self
+
+    def reset(self, *args: Any) -> "Timer":
+        """Reset the timer to zero."""
+        self._t0 = perf_counter()
+        self.total = 0.0
+        self.step_count = 0.0
+        self.running = True
+
+        return self
+

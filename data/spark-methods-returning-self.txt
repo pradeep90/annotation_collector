@@ -1,0 +1,2337 @@
+Methods with `self` or `cls` annotations: 57
+    @abstractmethod
+    def _apply_series_op(
+        self: T_Frame, op: Callable[["Series"], "Series"], should_resolve: bool = False
+    ) -> T_Frame: ...
+
+    @abstractmethod
+    def copy(self: T_Frame) -> T_Frame: ...
+
+    @abstractmethod
+    def head(self: T_Frame, n: int = 5) -> T_Frame: ...
+
+    # TODO: add 'axis' parameter
+    def cummin(self: T_Frame, skipna: bool = True) -> T_Frame: ...
+
+    # TODO: add 'axis' parameter
+    def cummax(self: T_Frame, skipna: bool = True) -> T_Frame: ...
+
+    # TODO: add 'axis' parameter
+    def cumsum(self: T_Frame, skipna: bool = True) -> T_Frame: ...
+
+    # TODO: add 'axis' parameter
+    # TODO: use pandas_udf to support negative values and other options later
+    #  other window except unbounded ones is supported as of Spark 3.0.
+    def cumprod(self: T_Frame, skipna: bool = True) -> T_Frame: ...
+
+    def abs(self: T_Frame) -> T_Frame: ...
+
+    @abstractmethod
+    def fillna(
+        self: T_Frame,
+        value: Optional[Any] = None,
+        method: Optional[str] = None,
+        axis: Optional[Union[int, str]] = None,
+        inplace: bool_type = False,
+        limit: Optional[int] = None,
+    ) -> T_Frame: ...
+
+    # TODO: add 'downcast' when value parameter exists
+    def bfill(
+        self: T_Frame,
+        axis: Optional[Union[int, str]] = None,
+        inplace: bool_type = False,
+        limit: Optional[int] = None,
+    ) -> T_Frame: ...
+
+    # TODO: add 'downcast' when value parameter exists
+    def ffill(
+        self: T_Frame,
+        axis: Optional[Union[int, str]] = None,
+        inplace: bool_type = False,
+        limit: Optional[int] = None,
+    ) -> T_Frame: ...
+
+    def setLeafCol(self: P, value: str) -> P: ...
+
+    def setInputCol(self: M, value: str) -> M: ...
+
+    def setOutputCol(self: M, value: str) -> M: ...
+
+    def setLabelCol(self: P, value: str) -> P: ...
+
+    def setFeaturesCol(self: P, value: str) -> P: ...
+
+    def setPredictionCol(self: P, value: str) -> P: ...
+
+    def setFeaturesCol(self: M, value: str) -> M: ...
+
+    def setPredictionCol(self: M, value: str) -> M: ...
+
+    @classmethod
+    def read(cls: Type[CrossValidator]) -> MLReader: ...
+
+    @classmethod
+    def read(cls: Type[CrossValidatorModel]) -> MLReader: ...
+
+    @classmethod
+    def read(cls: Type[TrainValidationSplit]) -> MLReader: ...
+
+    @classmethod
+    def read(cls: Type[TrainValidationSplitModel]) -> MLReader: ...
+
+    @classmethod
+    def read(cls: Type[R]) -> MLReader[R]: ...
+
+    @classmethod
+    def load(cls: Type[R], path: str) -> R: ...
+
+    @classmethod
+    def read(cls: Type[R]) -> JavaMLReader[R]: ...
+
+    @classmethod
+    def read(cls: Type[R]) -> MLReader[R]: ...
+
+    def copy(self: P, extra: Optional[ParamMap] = ...) -> P: ...
+
+    def setNumHashTables(self: P, value: int) -> P: ...
+
+    def setInputCol(self: P, value: str) -> P: ...
+
+    def setOutputCol(self: P, value: str) -> P: ...
+
+    def setInputCol(self: P, value: str) -> P: ...
+
+    def setOutputCol(self: P, value: str) -> P: ...
+
+    def setSelectorType(self: P, value: str) -> P: ...
+
+    def setNumTopFeatures(self: P, value: int) -> P: ...
+
+    def setPercentile(self: P, value: float) -> P: ...
+
+    def setFpr(self: P, value: float) -> P: ...
+
+    def setFdr(self: P, value: float) -> P: ...
+
+    def setFwe(self: P, value: float) -> P: ...
+
+    def setFeaturesCol(self: P, value: str) -> P: ...
+
+    def setOutputCol(self: P, value: str) -> P: ...
+
+    def setLabelCol(self: P, value: str) -> P: ...
+
+    def setFeaturesCol(self: P, value: str) -> P: ...
+
+    def setOutputCol(self: P, value: str) -> P: ...
+
+    def setRawPredictionCol(self: P, value: str) -> P: ...
+
+    def setRawPredictionCol(self: P, value: str) -> P: ...
+
+    def setProbabilityCol(self: P, value: str) -> P: ...
+
+    def setThresholds(self: P, value: List[float]) -> P: ...
+
+    def setProbabilityCol(self: M, value: str) -> M: ...
+
+    def setThresholds(self: M, value: List[float]) -> M: ...
+
+    def setRawPredictionCol(self: P, value: str) -> P: ...
+
+    def setThreshold(self: P, value: float) -> P: ...
+
+    def setThresholds(self: P, value: List[float]) -> P: ...
+
+    @classmethod
+    def getOrCreate(cls: type, sc: SparkContext) -> SQLContext: ...
+
+    def __call__(cls: Type[T]) -> T: ...
+
+    @classmethod
+    def from_dict(
+        cls: Any, data: Any, orient: Any = ..., dtype: Any = ..., columns: Any = ...
+    ) -> DataFrameLike: ...
+
+    @classmethod
+    def from_records(
+        cls: Any,
+        data: Any,
+        index: Any = ...,
+        exclude: Any = ...,
+        columns: Any = ...,
+        coerce_float: Any = ...,
+        nrows: Any = ...,
+    ) -> DataFrameLike: ...
+
+
+Methods returning `self` or `cls(...)`: 127
+    def set(self, key, value):
+        """Set a configuration property."""
+        # Try to set self._jconf first if JVM is created, set self._conf if JVM is not created yet.
+        if self._jconf is not None:
+            self._jconf.set(key, str(value))
+        else:
+            self._conf[key] = str(value)
+        return self
+
+    def setIfMissing(self, key, value):
+        """Set a configuration property, if not already set."""
+        if self.get(key) is None:
+            self.set(key, value)
+        return self
+
+    def setMaster(self, value):
+        """Set master URL to connect to."""
+        self.set("spark.master", value)
+        return self
+
+    def setAppName(self, value):
+        """Set application name."""
+        self.set("spark.app.name", value)
+        return self
+
+    def setSparkHome(self, value):
+        """Set path where Spark is installed on worker nodes."""
+        self.set("spark.home", value)
+        return self
+
+    def setExecutorEnv(self, key=None, value=None, pairs=None):
+        """Set an environment variable to be passed to executors."""
+        if (key is not None and pairs is not None) or (key is None and pairs is None):
+            raise RuntimeError("Either pass one key-value pair or a list of pairs")
+        elif key is not None:
+            self.set("spark.executorEnv." + key, value)
+        elif pairs is not None:
+            for (k, v) in pairs:
+                self.set("spark.executorEnv." + k, v)
+        return self
+
+    def setAll(self, pairs):
+        """
+            Set multiple parameters, passed as a list of key-value pairs.
+
+            Parameters
+            ----------
+            pairs : iterable of tuples
+                list of key-value pairs to set
+            """
+        for (k, v) in pairs:
+            self.set(k, v)
+        return self
+
+    def cache(self):
+        """
+            Persist this RDD with the default storage level (`MEMORY_ONLY`).
+            """
+        self.is_cached = True
+        self.persist(StorageLevel.MEMORY_ONLY)
+        return self
+
+    def persist(self, storageLevel=StorageLevel.MEMORY_ONLY):
+        """
+            Set this RDD's storage level to persist its values across operations
+            after the first time it is computed. This can only be used to assign
+            a new storage level if the RDD does not have a storage level set yet.
+            If no storage level is specified defaults to (`MEMORY_ONLY`).
+
+            Examples
+            --------
+            >>> rdd = sc.parallelize(["b", "a", "c"])
+            >>> rdd.persist().is_cached
+            True
+            """
+        self.is_cached = True
+        javaStorageLevel = self.ctx._getJavaStorageLevel(storageLevel)
+        self._jrdd.persist(javaStorageLevel)
+        return self
+
+    def unpersist(self, blocking=False):
+        """
+            Mark the RDD as non-persistent, and remove all blocks for it from
+            memory and disk.
+
+            .. versionchanged:: 3.0.0
+               Added optional argument `blocking` to specify whether to block until all
+               blocks are deleted.
+            """
+        self.is_cached = False
+        self._jrdd.unpersist(blocking)
+        return self
+
+    def _reserialize(self, serializer=None):
+        serializer = serializer or self.ctx.serializer
+        if self._jrdd_deserializer != serializer:
+            self = self.map(lambda x: x, preservesPartitioning=True)
+            self._jrdd_deserializer = serializer
+        return self
+
+    def setName(self, name):
+        """
+            Assign a name to this RDD.
+
+            Examples
+            --------
+            >>> rdd1 = sc.parallelize([1, 2])
+            >>> rdd1.setName('RDD1').name()
+            'RDD1'
+            """
+        self._jrdd.setName(name)
+        return self
+
+    def withResources(self, profile):
+        """
+            Specify a :class:`pyspark.resource.ResourceProfile` to use when calculating this RDD.
+            This is only supported on certain cluster managers and currently requires dynamic
+            allocation to be enabled. It will result in new executors with the resources specified
+            being acquired to calculate the RDD.
+
+            .. versionadded:: 3.1.0
+
+            Notes
+            -----
+            This API is experimental
+            """
+        self.has_resource_profile = True
+        if profile._java_resource_profile is not None:
+            jrp = profile._java_resource_profile
+        else:
+            builder = self.ctx._jvm.org.apache.spark.resource.ResourceProfileBuilder()
+            ereqs = ExecutorResourceRequests(self.ctx._jvm, profile._executor_resource_requests)
+            treqs = TaskResourceRequests(self.ctx._jvm, profile._task_resource_requests)
+            builder.require(ereqs._java_executor_resource_requests)
+            builder.require(treqs._java_task_resource_requests)
+            jrp = builder.build()
+
+        self._jrdd.withResources(jrp)
+        return self
+
+    def __enter__(self):
+        """
+            Enable 'with SparkContext(...) as sc: app(sc)' syntax.
+            """
+        return self
+
+    # Add a value into this StatCounter, updating the internal statistics.
+    def merge(self, value):
+        delta = value - self.mu
+        self.n += 1
+        self.mu += delta / self.n
+        self.m2 += delta * (value - self.mu)
+        self.maxValue = maximum(self.maxValue, value)
+        self.minValue = minimum(self.minValue, value)
+
+        return self
+
+    # Merge another StatCounter into this one, adding up the internal statistics.
+    def mergeStats(self, other):
+        if not isinstance(other, StatCounter):
+            raise TypeError("Can only merge StatCounter but got %s" % type(other))
+
+        if other is self:  # reference equality holds
+            self.merge(copy.deepcopy(other))  # Avoid overwriting fields in a weird order
+        else:
+            if self.n == 0:
+                self.mu = other.mu
+                self.m2 = other.m2
+                self.n = other.n
+                self.maxValue = other.maxValue
+                self.minValue = other.minValue
+
+            elif other.n != 0:
+                delta = other.mu - self.mu
+                if other.n * 10 < self.n:
+                    self.mu = self.mu + (delta * other.n) / (self.n + other.n)
+                elif self.n * 10 < other.n:
+                    self.mu = other.mu - (delta * self.n) / (self.n + other.n)
+                else:
+                    self.mu = (self.mu * self.n + other.mu * other.n) / (self.n + other.n)
+
+                self.maxValue = maximum(self.maxValue, other.maxValue)
+                self.minValue = minimum(self.minValue, other.minValue)
+
+                self.m2 += other.m2 + (delta * delta * self.n * other.n) / (self.n + other.n)
+                self.n += other.n
+        return self
+
+    def __iadd__(self, term):
+        """The += operator; adds a term to this accumulator's value"""
+        self.add(term)
+        return self
+
+    @staticmethod
+    def addInPlace(value1, value2):
+        if value1 is None:
+            return value2
+        value1.add(value2)
+        return value1
+
+    @since("1.5.0")
+    def setInitialWeights(self, initialWeights):
+        """
+            Set the initial value of weights.
+
+            This must be set before running trainOn and predictOn
+            """
+        initialWeights = _convert_to_vector(initialWeights)
+        self._model = LinearRegressionModel(initialWeights, 0)
+        return self
+
+    @classmethod
+    def load(cls, sc, path):
+        """Load the GaussianMixtureModel from disk.
+
+            .. versionadded:: 1.5.0
+
+            Parameters
+            ----------
+            sc : :py:class:`SparkContext`
+            path : str
+                Path to where the model is stored.
+            """
+        model = cls._load_java(sc, path)
+        wrapper = sc._jvm.org.apache.spark.mllib.api.python.GaussianMixtureModelWrapper(model)
+        return cls(wrapper)
+
+    @since('1.5.0')
+    def update(self, data, decayFactor, timeUnit):
+        """Update the centroids, according to data
+
+            .. versionadded:: 1.5.0
+
+            Parameters
+            ----------
+            data : :py:class:`pyspark.RDD`
+                RDD with new data for the model update.
+            decayFactor : float
+                Forgetfulness of the previous centroids.
+            timeUnit :  str
+                Can be "batches" or "points". If points, then the decay factor
+                is raised to the power of number of new points and if batches,
+                then decay factor will be used as is.
+            """
+        if not isinstance(data, RDD):
+            raise TypeError("Data should be of an RDD, got %s." % type(data))
+        data = data.map(_convert_to_vector)
+        decayFactor = float(decayFactor)
+        if timeUnit not in ["batches", "points"]:
+            raise ValueError(
+                "timeUnit should be 'batches' or 'points', got %s." % timeUnit)
+        vectorCenters = [_convert_to_vector(center) for center in self.centers]
+        updatedModel = callMLlibFunc(
+            "updateStreamingKMeansModel", vectorCenters, self._clusterWeights,
+            data, decayFactor, timeUnit)
+        self.centers = array(updatedModel[0])
+        self._clusterWeights = list(updatedModel[1])
+        return self
+
+    @since('1.5.0')
+    def setK(self, k):
+        """Set number of clusters."""
+        self._k = k
+        return self
+
+    @since('1.5.0')
+    def setDecayFactor(self, decayFactor):
+        """Set decay factor."""
+        self._decayFactor = decayFactor
+        return self
+
+    @since('1.5.0')
+    def setHalfLife(self, halfLife, timeUnit):
+        """
+            Set number of batches after which the centroids of that
+            particular batch has half the weightage.
+            """
+        self._timeUnit = timeUnit
+        self._decayFactor = exp(log(0.5) / halfLife)
+        return self
+
+    @since('1.5.0')
+    def setInitialCenters(self, centers, weights):
+        """
+            Set initial centers. Should be set before calling trainOn.
+            """
+        self._model = StreamingKMeansModel(centers, weights)
+        return self
+
+    @since('1.5.0')
+    def setRandomCenters(self, dim, weight, seed):
+        """
+            Set the initial centers to be random samples from
+            a gaussian population with constant weights.
+            """
+        rng = random.RandomState(seed)
+        clusterCenters = rng.randn(self._k, dim)
+        clusterWeights = tile(weight, self._k)
+        self._model = StreamingKMeansModel(clusterCenters, clusterWeights)
+        return self
+
+    @since('1.5.0')
+    def setInitialWeights(self, initialWeights):
+        """
+            Set the initial value of weights.
+
+            This must be set before running trainOn and predictOn.
+            """
+        initialWeights = _convert_to_vector(initialWeights)
+
+        # LogisticRegressionWithSGD does only binary classification.
+        self._model = LogisticRegressionModel(
+            initialWeights, 0, initialWeights.size, 2)
+        return self
+
+    @classmethod
+    @since("1.3.0")
+    def load(cls, sc, path):
+        """Load a model from the given path."""
+        java_model = cls._load_java(sc, path)
+        return cls(java_model)
+
+    @since('1.4.0')
+    def setWithMean(self, withMean):
+        """
+            Setter of the boolean which decides
+            whether it uses mean or not
+            """
+        self.call("setWithMean", withMean)
+        return self
+
+    @since('1.4.0')
+    def setWithStd(self, withStd):
+        """
+            Setter of the boolean which decides
+            whether it uses std or not
+            """
+        self.call("setWithStd", withStd)
+        return self
+
+    @since('2.1.0')
+    def setNumTopFeatures(self, numTopFeatures):
+        """
+            set numTopFeature for feature selection by number of top features.
+            Only applicable when selectorType = "numTopFeatures".
+            """
+        self.numTopFeatures = int(numTopFeatures)
+        return self
+
+    @since('2.1.0')
+    def setPercentile(self, percentile):
+        """
+            set percentile [0.0, 1.0] for feature selection by percentile.
+            Only applicable when selectorType = "percentile".
+            """
+        self.percentile = float(percentile)
+        return self
+
+    @since('2.1.0')
+    def setFpr(self, fpr):
+        """
+            set FPR [0.0, 1.0] for feature selection by FPR.
+            Only applicable when selectorType = "fpr".
+            """
+        self.fpr = float(fpr)
+        return self
+
+    @since('2.2.0')
+    def setFdr(self, fdr):
+        """
+            set FDR [0.0, 1.0] for feature selection by FDR.
+            Only applicable when selectorType = "fdr".
+            """
+        self.fdr = float(fdr)
+        return self
+
+    @since('2.2.0')
+    def setFwe(self, fwe):
+        """
+            set FWE [0.0, 1.0] for feature selection by FWE.
+            Only applicable when selectorType = "fwe".
+            """
+        self.fwe = float(fwe)
+        return self
+
+    @since('2.1.0')
+    def setSelectorType(self, selectorType):
+        """
+            set the selector type of the ChisqSelector.
+            Supported options: "numTopFeatures" (default), "percentile", "fpr", "fdr", "fwe".
+            """
+        self.selectorType = str(selectorType)
+        return self
+
+    @since("2.0.0")
+    def setBinary(self, value):
+        """
+            If True, term frequency vector will be binary such that non-zero
+            term counts will be set to 1
+            (default: False)
+            """
+        self.binary = value
+        return self
+
+    @since('1.2.0')
+    def setVectorSize(self, vectorSize):
+        """
+            Sets vector size (default: 100).
+            """
+        self.vectorSize = vectorSize
+        return self
+
+    @since('1.2.0')
+    def setLearningRate(self, learningRate):
+        """
+            Sets initial learning rate (default: 0.025).
+            """
+        self.learningRate = learningRate
+        return self
+
+    @since('1.2.0')
+    def setNumPartitions(self, numPartitions):
+        """
+            Sets number of partitions (default: 1). Use a small number for
+            accuracy.
+            """
+        self.numPartitions = numPartitions
+        return self
+
+    @since('1.2.0')
+    def setNumIterations(self, numIterations):
+        """
+            Sets number of iterations (default: 1), which should be smaller
+            than or equal to number of partitions.
+            """
+        self.numIterations = numIterations
+        return self
+
+    @since('1.2.0')
+    def setSeed(self, seed):
+        """
+            Sets random seed.
+            """
+        self.seed = seed
+        return self
+
+    @since('1.4.0')
+    def setMinCount(self, minCount):
+        """
+            Sets minCount, the minimum number of times a token must appear
+            to be included in the word2vec model's vocabulary (default: 5).
+            """
+        self.minCount = minCount
+        return self
+
+    @since('2.0.0')
+    def setWindowSize(self, windowSize):
+        """
+            Sets window size (default: 5).
+            """
+        self.windowSize = windowSize
+        return self
+
+    @since('2.0.0')
+    def cache(self):
+        """
+            Caches the underlying RDD.
+            """
+        self._java_matrix_wrapper.call("cache")
+        return self
+
+    @since('2.0.0')
+    def persist(self, storageLevel):
+        """
+            Persists the underlying RDD with the specified storage level.
+            """
+        if not isinstance(storageLevel, StorageLevel):
+            raise TypeError("`storageLevel` should be a StorageLevel, got %s" % type(storageLevel))
+        javaStorageLevel = self._java_matrix_wrapper._sc._getJavaStorageLevel(storageLevel)
+        self._java_matrix_wrapper.call("persist", javaStorageLevel)
+        return self
+
+    def cache(self):
+        """
+            Persist the RDDs of this DStream with the default storage level
+            (`MEMORY_ONLY`).
+            """
+        self.is_cached = True
+        self.persist(StorageLevel.MEMORY_ONLY)
+        return self
+
+    def persist(self, storageLevel):
+        """
+            Persist the RDDs of this DStream with the given storage level
+            """
+        self.is_cached = True
+        javaStorageLevel = self._sc._getJavaStorageLevel(storageLevel)
+        self._jdstream.persist(javaStorageLevel)
+        return self
+
+    def checkpoint(self, interval):
+        """
+            Enable periodic checkpointing of RDDs of this DStream
+
+            Parameters
+            ----------
+            interval : int
+                time in seconds, after each period of that, generated
+                RDD will be checkpointed
+            """
+        self.is_checkpointed = True
+        self._jdstream.checkpoint(self._ssc._jduration(interval))
+        return self
+
+    def rdd_wrapper(self, func):
+        self.rdd_wrap_func = func
+        return self
+
+    @keyword_only
+    def setParams(self, *, featuresCol="features", labelCol="label", predictionCol="prediction",
+                  maxIter=100, regParam=0.0, rawPredictionCol="rawPrediction"):
+        kwargs = self._input_kwargs
+        self._set(**kwargs)
+        return self
+
+    @classmethod
+    def _create_from_java_class(cls, java_class, *args):
+        """
+            Construct this object from given Java classname and arguments
+            """
+        java_obj = JavaWrapper._new_java_obj(java_class, *args)
+        return cls(java_obj)
+
+    @since("1.4.0")
+    def setThreshold(self, value):
+        """
+            Sets the value of :py:attr:`threshold`.
+            Clears value of :py:attr:`thresholds` if it has been set.
+            """
+        self._set(threshold=value)
+        self.clear(self.thresholds)
+        return self
+
+    @since("1.5.0")
+    def setThresholds(self, value):
+        """
+            Sets the value of :py:attr:`thresholds`.
+            Clears value of :py:attr:`threshold` if it has been set.
+            """
+        self._set(thresholds=value)
+        self.clear(self.threshold)
+        return self
+
+    @keyword_only
+    @since("1.3.0")
+    def setParams(self, *, featuresCol="features", labelCol="label", predictionCol="prediction",
+                  maxIter=100, regParam=0.0, elasticNetParam=0.0, tol=1e-6, fitIntercept=True,
+                  threshold=0.5, thresholds=None, probabilityCol="probability",
+                  rawPredictionCol="rawPrediction", standardization=True, weightCol=None,
+                  aggregationDepth=2, family="auto",
+                  lowerBoundsOnCoefficients=None, upperBoundsOnCoefficients=None,
+                  lowerBoundsOnIntercepts=None, upperBoundsOnIntercepts=None,
+                  maxBlockSizeInMB=0.0):
+        """
+            setParams(self, \\*, featuresCol="features", labelCol="label", predictionCol="prediction", \
+                      maxIter=100, regParam=0.0, elasticNetParam=0.0, tol=1e-6, fitIntercept=True, \
+                      threshold=0.5, thresholds=None, probabilityCol="probability", \
+                      rawPredictionCol="rawPrediction", standardization=True, weightCol=None, \
+                      aggregationDepth=2, family="auto", \
+                      lowerBoundsOnCoefficients=None, upperBoundsOnCoefficients=None, \
+                      lowerBoundsOnIntercepts=None, upperBoundsOnIntercepts=None, \
+                      maxBlockSizeInMB=0.0):
+            Sets params for logistic regression.
+            If the threshold and thresholds Params are both set, they must be equivalent.
+            """
+        kwargs = self._input_kwargs
+        self._set(**kwargs)
+        self._checkThresholdConsistency()
+        return self
+
+    def session(self, sparkSession):
+        """
+            Sets the Spark Session to use for saving/loading.
+            """
+        self._sparkSession = sparkSession
+        return self
+
+    def overwrite(self):
+        """Overwrites if the output path already exists."""
+        self.shouldOverwrite = True
+        return self
+
+    def option(self, key, value):
+        """
+            Adds an option to the underlying MLWriter. See the documentation for the specific model's
+            writer for possible options. The option name (key) is case-insensitive.
+            """
+        self.optionMap[key.lower()] = str(value)
+        return self
+
+    def format(self, source):
+        """
+            Specifies the format of ML export ("pmml", "internal", or the fully qualified class
+            name for export).
+            """
+        self.source = source
+        return self
+
+    def overwrite(self):
+        """Overwrites if the output path already exists."""
+        self._jwrite.overwrite()
+        return self
+
+    def option(self, key, value):
+        self._jwrite.option(key, value)
+        return self
+
+    def session(self, sparkSession):
+        """Sets the Spark Session to use for saving."""
+        self._jwrite.session(sparkSession._jsparkSession)
+        return self
+
+    def format(self, source):
+        """
+            Specifies the format of ML export ("pmml", "internal", or the fully qualified class
+            name for export).
+            """
+        self._jwrite.format(source)
+        return self
+
+    def session(self, sparkSession):
+        """Sets the Spark Session to use for loading."""
+        self._jread.session(sparkSession._jsparkSession)
+        return self
+
+    @since("1.4.0")
+    def addGrid(self, param, values):
+        """
+            Sets the given parameters in this grid to fixed values.
+
+            param must be an instance of Param associated with an instance of Params
+            (such as Estimator or Transformer).
+            """
+        if isinstance(param, Param):
+            self._param_grid[param] = values
+        else:
+            raise TypeError("param must be an instance of Param")
+
+        return self
+
+    @since("1.4.0")
+    def baseOn(self, *args):
+        """
+            Sets the given parameters in this grid to fixed values.
+            Accepts either a parameter dictionary or a list of (parameter, value) pairs.
+            """
+        if isinstance(args[0], dict):
+            self.baseOn(*args[0].items())
+        else:
+            for (param, value) in args:
+                self.addGrid(param, [value])
+
+        return self
+
+    @since("3.2.0")
+    def addRandom(self, param, x, y, n):
+        """
+            Adds n random values between x and y.
+            The arguments x and y can be integers, floats or a combination of the two. If either
+            x or y is a float, the domain of the random value will be float.
+            """
+        if type(x) == int and type(y) == int:
+            values = map(lambda _: random.randrange(x, y), range(n))
+        elif type(x) == float or type(y) == float:
+            values = map(lambda _: random.uniform(x, y), range(n))
+        else:
+            raise TypeError("unable to make range for types %s and %s" % type(x) % type(y))
+        self.addGrid(param, values)
+        return self
+
+    @since("3.2.0")
+    def addLog10Random(self, param, x, y, n):
+        """
+            Adds n random values scaled logarithmically (base 10) between x and y.
+            For instance, a distribution for x=1.0, y=10000.0 and n=5 might reasonably look like
+            [1.6, 65.3, 221.9, 1024.3, 8997.5]
+            """
+        def logarithmic_random():
+            rand = random.uniform(math.log10(x), math.log10(y))
+            value = 10 ** rand
+            if type(x) == int and type(y) == int:
+                value = int(value)
+            return value
+
+        values = map(lambda _: logarithmic_random(), range(n))
+        self.addGrid(param, values)
+
+        return self
+
+    def __iter__(self):
+        return self
+
+    @staticmethod
+    def identity(value):
+        """
+            Dummy converter that just returns value.
+            """
+        return value
+
+    def _set(self, **kwargs):
+        """
+            Sets user-supplied params.
+            """
+        for param, value in kwargs.items():
+            p = getattr(self, param)
+            if value is not None:
+                try:
+                    value = p.typeConverter(value)
+                except TypeError as e:
+                    raise TypeError('Invalid param value given for param "%s". %s' % (p.name, e))
+            self._paramMap[p] = value
+        return self
+
+    def _setDefault(self, **kwargs):
+        """
+            Sets default params.
+            """
+        for param, value in kwargs.items():
+            p = getattr(self, param)
+            if value is not None and not isinstance(value, JavaObject):
+                try:
+                    value = p.typeConverter(value)
+                except TypeError as e:
+                    raise TypeError('Invalid default param value given for param "%s". %s'
+                                    % (p.name, e))
+            self._defaultParamMap[p] = value
+        return self
+
+    def _resetUid(self, newUid):
+        """
+            Changes the uid of this instance. This updates both
+            the stored uid and the parent uid of params and param maps.
+            This is used by persistence (loading).
+
+            Parameters
+            ----------
+            newUid
+                new uid to use, which is converted to unicode
+
+            Returns
+            -------
+            :py:class:`Params`
+                same instance, but with the uid and Param.parent values
+                updated, including within param maps
+            """
+        newUid = str(newUid)
+        self.uid = newUid
+        newDefaultParamMap = dict()
+        newParamMap = dict()
+        for param in self.params:
+            newParam = copy.copy(param)
+            newParam.parent = newUid
+            if param in self._defaultParamMap:
+                newDefaultParamMap[newParam] = self._defaultParamMap[param]
+            if param in self._paramMap:
+                newParamMap[newParam] = self._paramMap[param]
+            param.parent = newUid
+        self._defaultParamMap = newDefaultParamMap
+        self._paramMap = newParamMap
+        return self
+
+    def require(self, resourceRequest):
+        if isinstance(resourceRequest, TaskResourceRequests):
+            if self._java_resource_profile_builder is not None:
+                if resourceRequest._java_task_resource_requests is not None:
+                    self._java_resource_profile_builder.require(
+                        resourceRequest._java_task_resource_requests)
+                else:
+                    taskReqs = TaskResourceRequests(self._jvm, resourceRequest.requests)
+                    self._java_resource_profile_builder.require(
+                        taskReqs._java_task_resource_requests)
+            else:
+                self._task_resource_requests.update(resourceRequest.requests)
+        else:
+            if self._java_resource_profile_builder is not None:
+                if resourceRequest._java_executor_resource_requests is not None:
+                    self._java_resource_profile_builder.require(
+                        resourceRequest._java_executor_resource_requests)
+                else:
+                    execReqs = ExecutorResourceRequests(self._jvm, resourceRequest.requests)
+                    self._java_resource_profile_builder.require(
+                        execReqs._java_executor_resource_requests)
+            else:
+                self._executor_resource_requests.update(resourceRequest.requests)
+        return self
+
+    def memory(self, amount):
+        if self._java_executor_resource_requests is not None:
+            self._java_executor_resource_requests.memory(amount)
+        else:
+            self._executor_resources[self._MEMORY] = ExecutorResourceRequest(self._MEMORY,
+                                                                             _parse_memory(amount))
+        return self
+
+    def memoryOverhead(self, amount):
+        if self._java_executor_resource_requests is not None:
+            self._java_executor_resource_requests.memoryOverhead(amount)
+        else:
+            self._executor_resources[self._OVERHEAD_MEM] = \
+                    ExecutorResourceRequest(self._OVERHEAD_MEM, _parse_memory(amount))
+        return self
+
+    def pysparkMemory(self, amount):
+        if self._java_executor_resource_requests is not None:
+            self._java_executor_resource_requests.pysparkMemory(amount)
+        else:
+            self._executor_resources[self._PYSPARK_MEM] = \
+                    ExecutorResourceRequest(self._PYSPARK_MEM, _parse_memory(amount))
+        return self
+
+    def offheapMemory(self, amount):
+        if self._java_executor_resource_requests is not None:
+            self._java_executor_resource_requests.offHeapMemory(amount)
+        else:
+            self._executor_resources[self._OFFHEAP_MEM] = \
+                    ExecutorResourceRequest(self._OFFHEAP_MEM, _parse_memory(amount))
+        return self
+
+    def cores(self, amount):
+        if self._java_executor_resource_requests is not None:
+            self._java_executor_resource_requests.cores(amount)
+        else:
+            self._executor_resources[self._CORES] = ExecutorResourceRequest(self._CORES, amount)
+        return self
+
+    def resource(self, resourceName, amount, discoveryScript="", vendor=""):
+        if self._java_executor_resource_requests is not None:
+            self._java_executor_resource_requests.resource(resourceName, amount, discoveryScript,
+                                                           vendor)
+        else:
+            self._executor_resources[resourceName] = \
+                    ExecutorResourceRequest(resourceName, amount, discoveryScript, vendor)
+        return self
+
+    def cpus(self, amount):
+        if self._java_task_resource_requests is not None:
+            self._java_task_resource_requests.cpus(amount)
+        else:
+            self._task_resources[self._CPUS] = TaskResourceRequest(self._CPUS, amount)
+        return self
+
+    def resource(self, resourceName, amount):
+        if self._java_task_resource_requests is not None:
+            self._java_task_resource_requests.resource(resourceName, float(amount))
+        else:
+            self._task_resources[resourceName] = TaskResourceRequest(resourceName, amount)
+        return self
+
+    @staticmethod
+    def restore_index(
+        pdf: pd.DataFrame,
+        *,
+        index_columns: List[str],
+        index_names: List[Tuple],
+        data_columns: List[str],
+        column_labels: List[Tuple],
+        column_label_names: List[Tuple],
+        fields: List[InternalField] = None,
+        ext_fields: Dict[str, InternalField] = None,
+    ) -> pd.DataFrame:
+        """
+            Restore pandas DataFrame indices using the metadata.
+
+            :param pdf: the pandas DataFrame to be processed.
+            :param index_columns: the original column names for index columns.
+            :param index_names: the index names after restored.
+            :param data_columns: the original column names for data columns.
+            :param column_labels: the column labels after restored.
+            :param column_label_names: the column label names after restored.
+            :param fields: the fields after restored.
+            :param ext_fields: the map from the original column names to extension data fields.
+            :return: the restored pandas DataFrame
+
+            >>> from numpy import dtype
+            >>> pdf = pd.DataFrame({"index": [10, 20, 30], "a": ['a', 'b', 'c'], "b": [0, 2, 1]})
+            >>> InternalFrame.restore_index(
+            ...     pdf,
+            ...     index_columns=["index"],
+            ...     index_names=[("idx",)],
+            ...     data_columns=["a", "b", "index"],
+            ...     column_labels=[("x",), ("y",), ("z",)],
+            ...     column_label_names=[("lv1",)],
+            ...     fields=[
+            ...         InternalField(
+            ...             dtype=dtype('int64'),
+            ...             struct_field=StructField(name='index', dataType=LongType(), nullable=False),
+            ...         ),
+            ...         InternalField(
+            ...             dtype=dtype('object'),
+            ...             struct_field=StructField(name='a', dataType=StringType(), nullable=False),
+            ...         ),
+            ...         InternalField(
+            ...             dtype=CategoricalDtype(categories=["i", "j", "k"]),
+            ...             struct_field=StructField(name='b', dataType=LongType(), nullable=False),
+            ...         ),
+            ...     ],
+            ...     ext_fields=None,
+            ... )  # doctest: +NORMALIZE_WHITESPACE
+            lv1  x  y   z
+            idx
+            10   a  i  10
+            20   b  k  20
+            30   c  j  30
+            """
+        if ext_fields is not None and len(ext_fields) > 0:
+            pdf = pdf.astype({col: field.dtype for col, field in ext_fields.items()}, copy=True)
+
+        for col, field in zip(pdf.columns, fields):
+            pdf[col] = DataTypeOps(field.dtype, field.spark_type).restore(pdf[col])
+
+        append = False
+        for index_field in index_columns:
+            drop = index_field not in data_columns
+            pdf = pdf.set_index(index_field, drop=drop, append=append)
+            append = True
+        pdf = pdf[data_columns]
+
+        pdf.index.names = [
+            name if name is None or len(name) > 1 else name[0] for name in index_names
+        ]
+
+        names = [name if name is None or len(name) > 1 else name[0] for name in column_label_names]
+        if len(column_label_names) > 1:
+            pdf.columns = pd.MultiIndex.from_tuples(column_labels, names=names)
+        else:
+            pdf.columns = pd.Index(
+                [None if label is None else label[0] for label in column_labels],
+                name=names[0],
+            )
+
+        return pdf
+
+    def __enter__(self):
+        return self
+
+    def line(self, x=None, y=None, **kwargs):
+        """
+            Plot DataFrame/Series as lines.
+
+            This function is useful to plot lines using Series's values
+            as coordinates.
+
+            Parameters
+            ----------
+            x : int or str, optional
+                Columns to use for the horizontal axis.
+                Either the location or the label of the columns to be used.
+                By default, it will use the DataFrame indices.
+            y : int, str, or list of them, optional
+                The values to be plotted.
+                Either the location or the label of the columns to be used.
+                By default, it will use the remaining DataFrame numeric columns.
+            **kwds
+                Keyword arguments to pass on to :meth:`Series.plot` or :meth:`DataFrame.plot`.
+
+            Returns
+            -------
+            :class:`plotly.graph_objs.Figure`
+                Return an custom object when ``backend!=plotly``.
+                Return an ndarray when ``subplots=True`` (matplotlib-only).
+
+            See Also
+            --------
+            plotly.express.line : Plot y versus x as lines and/or markers (plotly).
+            matplotlib.pyplot.plot : Plot y versus x as lines and/or markers (matplotlib).
+
+            Examples
+            --------
+            Basic plot.
+
+            For Series:
+
+            .. plotly::
+
+                >>> s = ps.Series([1, 3, 2])
+                >>> s.plot.line()  # doctest: +SKIP
+
+            For DataFrame:
+
+            .. plotly::
+
+                The following example shows the populations for some animals
+                over the years.
+
+                >>> df = ps.DataFrame({'pig': [20, 18, 489, 675, 1776],
+                ...                    'horse': [4, 25, 281, 600, 1900]},
+                ...                   index=[1990, 1997, 2003, 2009, 2014])
+                >>> df.plot.line()  # doctest: +SKIP
+
+            .. plotly::
+
+                The following example shows the relationship between both
+                populations.
+
+                >>> df = ps.DataFrame({'pig': [20, 18, 489, 675, 1776],
+                ...                    'horse': [4, 25, 281, 600, 1900]},
+                ...                   index=[1990, 1997, 2003, 2009, 2014])
+                >>> df.plot.line(x='pig', y='horse')  # doctest: +SKIP
+            """
+        return self(kind="line", x=x, y=y, **kwargs)
+
+    def hist(self, bins=10, **kwds):
+        """
+            Draw one histogram of the DataFrame’s columns.
+            A `histogram`_ is a representation of the distribution of data.
+            This function calls :meth:`plotting.backend.plot`,
+            on each series in the DataFrame, resulting in one histogram per column.
+
+            .. _histogram: https://en.wikipedia.org/wiki/Histogram
+
+            Parameters
+            ----------
+            bins : integer or sequence, default 10
+                Number of histogram bins to be used. If an integer is given, bins + 1
+                bin edges are calculated and returned. If bins is a sequence, gives
+                bin edges, including left edge of first bin and right edge of last
+                bin. In this case, bins is returned unmodified.
+            **kwds
+                All other plotting keyword arguments to be passed to
+                plotting backend.
+
+            Returns
+            -------
+            :class:`plotly.graph_objs.Figure`
+                Return an custom object when ``backend!=plotly``.
+                Return an ndarray when ``subplots=True`` (matplotlib-only).
+
+            Examples
+            --------
+            Basic plot.
+
+            For Series:
+
+            .. plotly::
+
+                >>> s = ps.Series([1, 3, 2])
+                >>> s.plot.hist()  # doctest: +SKIP
+
+            For DataFrame:
+
+            .. plotly::
+
+                >>> df = pd.DataFrame(
+                ...     np.random.randint(1, 7, 6000),
+                ...     columns=['one'])
+                >>> df['two'] = df['one'] + np.random.randint(1, 7, 6000)
+                >>> df = ps.from_pandas(df)
+                >>> df.plot.hist(bins=12, alpha=0.5)  # doctest: +SKIP
+            """
+        return self(kind="hist", bins=bins, **kwds)
+
+    def kde(self, bw_method=None, ind=None, **kwargs):
+        """
+            Generate Kernel Density Estimate plot using Gaussian kernels.
+
+            Parameters
+            ----------
+            bw_method : scalar
+                The method used to calculate the estimator bandwidth.
+                See KernelDensity in PySpark for more information.
+            ind : NumPy array or integer, optional
+                Evaluation points for the estimated PDF. If None (default),
+                1000 equally spaced points are used. If `ind` is a NumPy array, the
+                KDE is evaluated at the points passed. If `ind` is an integer,
+                `ind` number of equally spaced points are used.
+            **kwargs : optional
+                Keyword arguments to pass on to :meth:`pandas-on-Spark.Series.plot`.
+
+            Returns
+            -------
+            :class:`plotly.graph_objs.Figure`
+                Return an custom object when ``backend!=plotly``.
+                Return an ndarray when ``subplots=True`` (matplotlib-only).
+
+            Examples
+            --------
+            A scalar bandwidth should be specified. Using a small bandwidth value can
+            lead to over-fitting, while using a large bandwidth value may result
+            in under-fitting:
+
+            .. plotly::
+
+                >>> s = ps.Series([1, 2, 2.5, 3, 3.5, 4, 5])
+                >>> s.plot.kde(bw_method=0.3)  # doctest: +SKIP
+
+            .. plotly::
+
+                >>> s = ps.Series([1, 2, 2.5, 3, 3.5, 4, 5])
+                >>> s.plot.kde(bw_method=3)  # doctest: +SKIP
+
+            The `ind` parameter determines the evaluation points for the
+            plot of the estimated KDF:
+
+            .. plotly::
+
+                >>> s = ps.Series([1, 2, 2.5, 3, 3.5, 4, 5])
+                >>> s.plot.kde(ind=[1, 2, 3, 4, 5], bw_method=0.3)  # doctest: +SKIP
+
+            For DataFrame, it works in the same way as Series:
+
+            .. plotly::
+
+                >>> df = ps.DataFrame({
+                ...     'x': [1, 2, 2.5, 3, 3.5, 4, 5],
+                ...     'y': [4, 4, 4.5, 5, 5.5, 6, 6],
+                ... })
+                >>> df.plot.kde(bw_method=0.3)  # doctest: +SKIP
+
+            .. plotly::
+
+                >>> df = ps.DataFrame({
+                ...     'x': [1, 2, 2.5, 3, 3.5, 4, 5],
+                ...     'y': [4, 4, 4.5, 5, 5.5, 6, 6],
+                ... })
+                >>> df.plot.kde(bw_method=3)  # doctest: +SKIP
+
+            .. plotly::
+
+                >>> df = ps.DataFrame({
+                ...     'x': [1, 2, 2.5, 3, 3.5, 4, 5],
+                ...     'y': [4, 4, 4.5, 5, 5.5, 6, 6],
+                ... })
+                >>> df.plot.kde(ind=[1, 2, 3, 4, 5, 6], bw_method=0.3)  # doctest: +SKIP
+            """
+        return self(kind="kde", bw_method=bw_method, ind=ind, **kwargs)
+
+    def scatter(self, x, y, **kwds):
+        """
+            Create a scatter plot with varying marker point size and color.
+
+            The coordinates of each point are defined by two dataframe columns and
+            filled circles are used to represent each point. This kind of plot is
+            useful to see complex correlations between two variables. Points could
+            be for instance natural 2D coordinates like longitude and latitude in
+            a map or, in general, any pair of metrics that can be plotted against
+            each other.
+
+            Parameters
+            ----------
+            x : int or str
+                The column name or column position to be used as horizontal
+                coordinates for each point.
+            y : int or str
+                The column name or column position to be used as vertical
+                coordinates for each point.
+            s : scalar or array_like, optional
+                (matplotlib-only).
+            c : str, int or array_like, optional
+                (matplotlib-only).
+
+            **kwds: Optional
+                Keyword arguments to pass on to :meth:`pyspark.pandas.DataFrame.plot`.
+
+            Returns
+            -------
+            :class:`plotly.graph_objs.Figure`
+                Return an custom object when ``backend!=plotly``.
+                Return an ndarray when ``subplots=True`` (matplotlib-only).
+
+            See Also
+            --------
+            plotly.express.scatter : Scatter plot using multiple input data
+                formats (plotly).
+            matplotlib.pyplot.scatter : Scatter plot using multiple input data
+                formats (matplotlib).
+
+            Examples
+            --------
+            Let's see how to draw a scatter plot using coordinates from the values
+            in a DataFrame's columns.
+
+            .. plotly::
+
+                >>> df = ps.DataFrame([[5.1, 3.5, 0], [4.9, 3.0, 0], [7.0, 3.2, 1],
+                ...                    [6.4, 3.2, 1], [5.9, 3.0, 2]],
+                ...                   columns=['length', 'width', 'species'])
+                >>> df.plot.scatter(x='length', y='width')  # doctest: +SKIP
+
+            And now with dark scheme:
+
+            .. plotly::
+
+                >>> df = ps.DataFrame([[5.1, 3.5, 0], [4.9, 3.0, 0], [7.0, 3.2, 1],
+                ...                    [6.4, 3.2, 1], [5.9, 3.0, 2]],
+                ...                   columns=['length', 'width', 'species'])
+                >>> fig = df.plot.scatter(x='length', y='width')
+                >>> fig.update_layout(template="plotly_dark")  # doctest: +SKIP
+            """
+        return self(kind="scatter", x=x, y=y, **kwds)
+
+    def transpose(self) -> "Index":
+        """
+            Return the transpose, For index, It will be index itself.
+
+            Examples
+            --------
+            >>> idx = ps.Index(['a', 'b', 'c'])
+            >>> idx
+            Index(['a', 'b', 'c'], dtype='object')
+
+            >>> idx.transpose()
+            Index(['a', 'b', 'c'], dtype='object')
+
+            For MultiIndex
+
+            >>> midx = ps.MultiIndex.from_tuples([('a', 'x'), ('b', 'y'), ('c', 'z')])
+            >>> midx  # doctest: +SKIP
+            MultiIndex([('a', 'x'),
+                        ('b', 'y'),
+                        ('c', 'z')],
+                       )
+
+            >>> midx.transpose()  # doctest: +SKIP
+            MultiIndex([('a', 'x'),
+                        ('b', 'y'),
+                        ('c', 'z')],
+                       )
+            """
+        return self
+
+    def get_level_values(self, level: Union[int, Any, Tuple]) -> "Index":
+        """
+            Return Index if a valid level is given.
+
+            Examples:
+            --------
+            >>> psidx = ps.Index(['a', 'b', 'c'], name='ks')
+            >>> psidx.get_level_values(0)
+            Index(['a', 'b', 'c'], dtype='object', name='ks')
+
+            >>> psidx.get_level_values('ks')
+            Index(['a', 'b', 'c'], dtype='object', name='ks')
+            """
+        self._validate_index_level(level)
+        return self
+
+    def cache(self):
+        """Persists the :class:`DataFrame` with the default storage level (`MEMORY_AND_DISK`).
+
+            .. versionadded:: 1.3.0
+
+            Notes
+            -----
+            The default storage level has changed to `MEMORY_AND_DISK` to match Scala in 2.0.
+            """
+        self.is_cached = True
+        self._jdf.cache()
+        return self
+
+    def persist(self, storageLevel=StorageLevel.MEMORY_AND_DISK_DESER):
+        """Sets the storage level to persist the contents of the :class:`DataFrame` across
+            operations after the first time it is computed. This can only be used to assign
+            a new storage level if the :class:`DataFrame` does not have a storage level set yet.
+            If no storage level is specified defaults to (`MEMORY_AND_DISK_DESER`)
+
+            .. versionadded:: 1.3.0
+
+            Notes
+            -----
+            The default storage level has changed to `MEMORY_AND_DISK_DESER` to match Scala in 3.0.
+            """
+        self.is_cached = True
+        javaStorageLevel = self._sc._getJavaStorageLevel(storageLevel)
+        self._jdf.persist(javaStorageLevel)
+        return self
+
+    def unpersist(self, blocking=False):
+        """Marks the :class:`DataFrame` as non-persistent, and remove all blocks for it from
+            memory and disk.
+
+            .. versionadded:: 1.3.0
+
+            Notes
+            -----
+            `blocking` default has changed to ``False`` to match Scala in 2.0.
+            """
+        self.is_cached = False
+        self._jdf.unpersist(blocking)
+        return self
+
+    @since(2.0)
+    def __enter__(self):
+        """
+            Enable 'with SparkSession.builder.(...).getOrCreate() as session: app' syntax.
+            """
+        return self
+
+    def add(self, field, data_type=None, nullable=True, metadata=None):
+        """
+            Construct a StructType by adding new elements to it, to define the schema.
+            The method accepts either:
+
+                a) A single parameter which is a StructField object.
+                b) Between 2 and 4 parameters as (name, data_type, nullable (optional),
+                   metadata(optional). The data_type parameter may be either a String or a
+                   DataType object.
+
+            Parameters
+            ----------
+            field : str or :class:`StructField`
+                Either the name of the field or a StructField object
+            data_type : :class:`DataType`, optional
+                If present, the DataType of the StructField to create
+            nullable : bool, optional
+                Whether the field to add should be nullable (default True)
+            metadata : dict, optional
+                Any additional metadata (default None)
+
+            Returns
+            -------
+            :class:`StructType`
+
+            Examples
+            --------
+            >>> struct1 = StructType().add("f1", StringType(), True).add("f2", StringType(), True, None)
+            >>> struct2 = StructType([StructField("f1", StringType(), True), \\
+            ...     StructField("f2", StringType(), True, None)])
+            >>> struct1 == struct2
+            True
+            >>> struct1 = StructType().add(StructField("f1", StringType(), True))
+            >>> struct2 = StructType([StructField("f1", StringType(), True)])
+            >>> struct1 == struct2
+            True
+            >>> struct1 = StructType().add("f1", "string", True)
+            >>> struct2 = StructType([StructField("f1", StringType(), True)])
+            >>> struct1 == struct2
+            True
+            """
+        if isinstance(field, StructField):
+            self.fields.append(field)
+            self.names.append(field.name)
+        else:
+            if isinstance(field, str) and data_type is None:
+                raise ValueError("Must specify DataType if passing name of struct_field to create.")
+
+            if isinstance(data_type, str):
+                data_type_f = _parse_datatype_json_value(data_type)
+            else:
+                data_type_f = data_type
+            self.fields.append(StructField(field, data_type_f, nullable, metadata))
+            self.names.append(field)
+        # Precalculated list of fields that need conversion with fromInternal/toInternal functions
+        self._needConversion = [f.needConversion() for f in self]
+        self._needSerializeAnyField = any(self._needConversion)
+        return self
+
+    def format(self, source):
+        """Specifies the input data source format.
+
+            .. versionadded:: 1.4.0
+
+            Parameters
+            ----------
+            source : str
+                string, name of the data source, e.g. 'json', 'parquet'.
+
+            Examples
+            --------
+            >>> df = spark.read.format('json').load('python/test_support/sql/people.json')
+            >>> df.dtypes
+            [('age', 'bigint'), ('name', 'string')]
+
+            """
+        self._jreader = self._jreader.format(source)
+        return self
+
+    def schema(self, schema):
+        """Specifies the input schema.
+
+            Some data sources (e.g. JSON) can infer the input schema automatically from data.
+            By specifying the schema here, the underlying data source can skip the schema
+            inference step, and thus speed up data loading.
+
+            .. versionadded:: 1.4.0
+
+            Parameters
+            ----------
+            schema : :class:`pyspark.sql.types.StructType` or str
+                a :class:`pyspark.sql.types.StructType` object or a DDL-formatted string
+                (For example ``col0 INT, col1 DOUBLE``).
+
+            >>> s = spark.read.schema("col0 INT, col1 DOUBLE")
+            """
+        from pyspark.sql import SparkSession
+        spark = SparkSession.builder.getOrCreate()
+        if isinstance(schema, StructType):
+            jschema = spark._jsparkSession.parseDataType(schema.json())
+            self._jreader = self._jreader.schema(jschema)
+        elif isinstance(schema, str):
+            self._jreader = self._jreader.schema(schema)
+        else:
+            raise TypeError("schema should be StructType or string")
+        return self
+
+    @since(1.5)
+    def option(self, key, value):
+        """Adds an input option for the underlying data source.
+            """
+        self._jreader = self._jreader.option(key, to_str(value))
+        return self
+
+    @since(1.4)
+    def options(self, **options):
+        """Adds input options for the underlying data source.
+            """
+        for k in options:
+            self._jreader = self._jreader.option(k, to_str(options[k]))
+        return self
+
+    def mode(self, saveMode):
+        """Specifies the behavior when data or table already exists.
+
+            Options include:
+
+            * `append`: Append contents of this :class:`DataFrame` to existing data.
+            * `overwrite`: Overwrite existing data.
+            * `error` or `errorifexists`: Throw an exception if data already exists.
+            * `ignore`: Silently ignore this operation if data already exists.
+
+            .. versionadded:: 1.4.0
+
+            Examples
+            --------
+            >>> df.write.mode('append').parquet(os.path.join(tempfile.mkdtemp(), 'data'))
+            """
+        # At the JVM side, the default value of mode is already set to "error".
+        # So, if the given saveMode is None, we will not call JVM-side's mode method.
+        if saveMode is not None:
+            self._jwrite = self._jwrite.mode(saveMode)
+        return self
+
+    def format(self, source):
+        """Specifies the underlying output data source.
+
+            .. versionadded:: 1.4.0
+
+            Parameters
+            ----------
+            source : str
+                string, name of the data source, e.g. 'json', 'parquet'.
+
+            Examples
+            --------
+            >>> df.write.format('json').save(os.path.join(tempfile.mkdtemp(), 'data'))
+            """
+        self._jwrite = self._jwrite.format(source)
+        return self
+
+    @since(1.5)
+    def option(self, key, value):
+        """Adds an output option for the underlying data source.
+            """
+        self._jwrite = self._jwrite.option(key, to_str(value))
+        return self
+
+    @since(1.4)
+    def options(self, **options):
+        """Adds output options for the underlying data source.
+            """
+        for k in options:
+            self._jwrite = self._jwrite.option(k, to_str(options[k]))
+        return self
+
+    def partitionBy(self, *cols):
+        """Partitions the output by the given columns on the file system.
+
+            If specified, the output is laid out on the file system similar
+            to Hive's partitioning scheme.
+
+            .. versionadded:: 1.4.0
+
+            Parameters
+            ----------
+            cols : str or list
+                name of columns
+
+            Examples
+            --------
+            >>> df.write.partitionBy('year', 'month').parquet(os.path.join(tempfile.mkdtemp(), 'data'))
+            """
+        if len(cols) == 1 and isinstance(cols[0], (list, tuple)):
+            cols = cols[0]
+        self._jwrite = self._jwrite.partitionBy(_to_seq(self._spark._sc, cols))
+        return self
+
+    def bucketBy(self, numBuckets, col, *cols):
+        """Buckets the output by the given columns.If specified,
+            the output is laid out on the file system similar to Hive's bucketing scheme.
+
+            .. versionadded:: 2.3.0
+
+            Parameters
+            ----------
+            numBuckets : int
+                the number of buckets to save
+            col : str, list or tuple
+                a name of a column, or a list of names.
+            cols : str
+                additional names (optional). If `col` is a list it should be empty.
+
+            Notes
+            -----
+            Applicable for file-based data sources in combination with
+            :py:meth:`DataFrameWriter.saveAsTable`.
+
+            Examples
+            --------
+            >>> (df.write.format('parquet')  # doctest: +SKIP
+            ...     .bucketBy(100, 'year', 'month')
+            ...     .mode("overwrite")
+            ...     .saveAsTable('bucketed_table'))
+            """
+        if not isinstance(numBuckets, int):
+            raise TypeError("numBuckets should be an int, got {0}.".format(type(numBuckets)))
+
+        if isinstance(col, (list, tuple)):
+            if cols:
+                raise ValueError("col is a {0} but cols are not empty".format(type(col)))
+
+            col, cols = col[0], col[1:]
+
+        if not all(isinstance(c, str) for c in cols) or not(isinstance(col, str)):
+            raise TypeError("all names should be `str`")
+
+        self._jwrite = self._jwrite.bucketBy(numBuckets, col, _to_seq(self._spark._sc, cols))
+        return self
+
+    def sortBy(self, col, *cols):
+        """Sorts the output in each bucket by the given columns on the file system.
+
+            .. versionadded:: 2.3.0
+
+            Parameters
+            ----------
+            col : str, tuple or list
+                a name of a column, or a list of names.
+            cols : str
+                additional names (optional). If `col` is a list it should be empty.
+
+            Examples
+            --------
+            >>> (df.write.format('parquet')  # doctest: +SKIP
+            ...     .bucketBy(100, 'year', 'month')
+            ...     .sortBy('day')
+            ...     .mode("overwrite")
+            ...     .saveAsTable('sorted_bucketed_table'))
+            """
+        if isinstance(col, (list, tuple)):
+            if cols:
+                raise ValueError("col is a {0} but cols are not empty".format(type(col)))
+
+            col, cols = col[0], col[1:]
+
+        if not all(isinstance(c, str) for c in cols) or not(isinstance(col, str)):
+            raise TypeError("all names should be `str`")
+
+        self._jwrite = self._jwrite.sortBy(col, _to_seq(self._spark._sc, cols))
+        return self
+
+    @since(3.1)
+    def using(self, provider):
+        """
+            Specifies a provider for the underlying output data source.
+            Spark's default catalog supports "parquet", "json", etc.
+            """
+        self._jwriter.using(provider)
+        return self
+
+    @since(3.1)
+    def option(self, key, value):
+        """
+            Add a write option.
+            """
+        self._jwriter.option(key, to_str(value))
+        return self
+
+    @since(3.1)
+    def options(self, **options):
+        """
+            Add write options.
+            """
+        options = {k: to_str(v) for k, v in options.items()}
+        self._jwriter.options(options)
+        return self
+
+    @since(3.1)
+    def tableProperty(self, property, value):
+        """
+            Add table property.
+            """
+        self._jwriter.tableProperty(property, value)
+        return self
+
+    @since(3.1)
+    def partitionedBy(self, col, *cols):
+        """
+            Partition the output table created by `create`, `createOrReplace`, or `replace` using
+            the given columns or transforms.
+
+            When specified, the table data will be stored by these values for efficient reads.
+
+            For example, when a table is partitioned by day, it may be stored
+            in a directory layout like:
+
+            * `table/day=2019-06-01/`
+            * `table/day=2019-06-02/`
+
+            Partitioning is one of the most widely used techniques to optimize physical data layout.
+            It provides a coarse-grained index for skipping unnecessary data reads when queries have
+            predicates on the partitioned columns. In order for partitioning to work well, the number
+            of distinct values in each column should typically be less than tens of thousands.
+
+            `col` and `cols` support only the following functions:
+
+            * :py:func:`pyspark.sql.functions.years`
+            * :py:func:`pyspark.sql.functions.months`
+            * :py:func:`pyspark.sql.functions.days`
+            * :py:func:`pyspark.sql.functions.hours`
+            * :py:func:`pyspark.sql.functions.bucket`
+
+            """
+        col = _to_java_column(col)
+        cols = _to_seq(self._spark._sc, [_to_java_column(c) for c in cols])
+        return self
+
+    @classmethod
+    def _createForTesting(cls, sparkContext):
+        """(Internal use only) Create a new HiveContext for testing.
+
+            All test code that touches HiveContext *must* go through this method. Otherwise,
+            you may end up launching multiple derby instances and encounter with incredibly
+            confusing error messages.
+            """
+        jsc = sparkContext._jsc.sc()
+        jtestHive = sparkContext._jvm.org.apache.spark.sql.hive.test.TestHiveContext(jsc, False)
+        return cls(sparkContext, jtestHive)
+
+    # This function is for improving the online help system in the interactive interpreter.
+    # For example, the built-in help / pydoc.help. It wraps the UDF with the docstring and
+    # argument annotation. (See: SPARK-19161)
+    def _wrapped(self):
+        """
+            Wrap this udf with a function and attach docstring from func
+            """
+
+        # It is possible for a callable instance without __name__ attribute or/and
+        # __module__ attribute to be wrapped here. For example, functools.partial. In this case,
+        # we should avoid wrapping the attributes from the wrapped function to the wrapper
+        # function. So, we take out these attribute names from the default names to set and
+        # then manually assign it after being wrapped.
+        assignments = tuple(
+            a for a in functools.WRAPPER_ASSIGNMENTS if a != '__name__' and a != '__module__')
+
+        @functools.wraps(self.func, assigned=assignments)
+        def wrapper(*args):
+            return self(*args)
+
+        wrapper.__name__ = self._name
+        wrapper.__module__ = (self.func.__module__ if hasattr(self.func, '__module__')
+                              else self.func.__class__.__module__)
+
+        wrapper.func = self.func
+        wrapper.returnType = self.returnType
+        wrapper.evalType = self.evalType
+        wrapper.deterministic = self.deterministic
+        wrapper.asNondeterministic = functools.wraps(
+            self.asNondeterministic)(lambda: self.asNondeterministic()._wrapped())
+        wrapper._unwrapped = self
+        return wrapper
+
+    def asNondeterministic(self):
+        """
+            Updates UserDefinedFunction to nondeterministic.
+
+            .. versionadded:: 2.3
+            """
+        # Here, we explicitly clean the cache to create a JVM UDF instance
+        # with 'deterministic' updated. See SPARK-23233.
+        self._judf_placeholder = None
+        self.deterministic = False
+        return self
+
+    def format(self, source):
+        """Specifies the input data source format.
+
+            .. versionadded:: 2.0.0
+
+            Parameters
+            ----------
+            source : str
+                name of the data source, e.g. 'json', 'parquet'.
+
+            Notes
+            -----
+            This API is evolving.
+
+            Examples
+            --------
+            >>> s = spark.readStream.format("text")
+            """
+        self._jreader = self._jreader.format(source)
+        return self
+
+    def schema(self, schema):
+        """Specifies the input schema.
+
+            Some data sources (e.g. JSON) can infer the input schema automatically from data.
+            By specifying the schema here, the underlying data source can skip the schema
+            inference step, and thus speed up data loading.
+
+            .. versionadded:: 2.0.0
+
+            Parameters
+            ----------
+            schema : :class:`pyspark.sql.types.StructType` or str
+                a :class:`pyspark.sql.types.StructType` object or a DDL-formatted string
+                (For example ``col0 INT, col1 DOUBLE``).
+
+            Notes
+            -----
+            This API is evolving.
+
+            Examples
+            --------
+            >>> s = spark.readStream.schema(sdf_schema)
+            >>> s = spark.readStream.schema("col0 INT, col1 DOUBLE")
+            """
+        from pyspark.sql import SparkSession
+        spark = SparkSession.builder.getOrCreate()
+        if isinstance(schema, StructType):
+            jschema = spark._jsparkSession.parseDataType(schema.json())
+            self._jreader = self._jreader.schema(jschema)
+        elif isinstance(schema, str):
+            self._jreader = self._jreader.schema(schema)
+        else:
+            raise TypeError("schema should be StructType or string")
+        return self
+
+    def option(self, key, value):
+        """Adds an input option for the underlying data source.
+
+            .. versionadded:: 2.0.0
+
+            Notes
+            -----
+            This API is evolving.
+
+            Examples
+            --------
+            >>> s = spark.readStream.option("x", 1)
+            """
+        self._jreader = self._jreader.option(key, to_str(value))
+        return self
+
+    def options(self, **options):
+        """Adds input options for the underlying data source.
+
+            .. versionadded:: 2.0.0
+
+            Notes
+            -----
+            This API is evolving.
+
+            Examples
+            --------
+            >>> s = spark.readStream.options(x="1", y=2)
+            """
+        for k in options:
+            self._jreader = self._jreader.option(k, to_str(options[k]))
+        return self
+
+    def outputMode(self, outputMode):
+        """Specifies how data of a streaming DataFrame/Dataset is written to a streaming sink.
+
+            .. versionadded:: 2.0.0
+
+            Options include:
+
+            * `append`: Only the new rows in the streaming DataFrame/Dataset will be written to
+               the sink
+            * `complete`: All the rows in the streaming DataFrame/Dataset will be written to the sink
+               every time these are some updates
+            * `update`: only the rows that were updated in the streaming DataFrame/Dataset will be
+               written to the sink every time there are some updates. If the query doesn't contain
+               aggregations, it will be equivalent to `append` mode.
+
+            Notes
+            -----
+            This API is evolving.
+
+            Examples
+            --------
+            >>> writer = sdf.writeStream.outputMode('append')
+            """
+        if not outputMode or type(outputMode) != str or len(outputMode.strip()) == 0:
+            raise ValueError('The output mode must be a non-empty string. Got: %s' % outputMode)
+        self._jwrite = self._jwrite.outputMode(outputMode)
+        return self
+
+    def format(self, source):
+        """Specifies the underlying output data source.
+
+            .. versionadded:: 2.0.0
+
+            Parameters
+            ----------
+            source : str
+                string, name of the data source, which for now can be 'parquet'.
+
+            Notes
+            -----
+            This API is evolving.
+
+            Examples
+            --------
+            >>> writer = sdf.writeStream.format('json')
+            """
+        self._jwrite = self._jwrite.format(source)
+        return self
+
+    def option(self, key, value):
+        """Adds an output option for the underlying data source.
+
+            .. versionadded:: 2.0.0
+
+            Notes
+            -----
+            This API is evolving.
+            """
+        self._jwrite = self._jwrite.option(key, to_str(value))
+        return self
+
+    def options(self, **options):
+        """Adds output options for the underlying data source.
+
+            .. versionadded:: 2.0.0
+
+            Notes
+            -----
+            This API is evolving.
+            """
+        for k in options:
+            self._jwrite = self._jwrite.option(k, to_str(options[k]))
+        return self
+
+    def partitionBy(self, *cols):
+        """Partitions the output by the given columns on the file system.
+
+            If specified, the output is laid out on the file system similar
+            to Hive's partitioning scheme.
+
+            .. versionadded:: 2.0.0
+
+            Parameters
+            ----------
+            cols : str or list
+                name of columns
+
+            Notes
+            -----
+            This API is evolving.
+            """
+        if len(cols) == 1 and isinstance(cols[0], (list, tuple)):
+            cols = cols[0]
+        self._jwrite = self._jwrite.partitionBy(_to_seq(self._spark._sc, cols))
+        return self
+
+    def queryName(self, queryName):
+        """Specifies the name of the :class:`StreamingQuery` that can be started with
+            :func:`start`. This name must be unique among all the currently active queries
+            in the associated SparkSession.
+
+            .. versionadded:: 2.0.0
+
+            Parameters
+            ----------
+            queryName : str
+                unique name for the query
+
+            Notes
+            -----
+            This API is evolving.
+
+            Examples
+            --------
+            >>> writer = sdf.writeStream.queryName('streaming_query')
+            """
+        if not queryName or type(queryName) != str or len(queryName.strip()) == 0:
+            raise ValueError('The queryName must be a non-empty string. Got: %s' % queryName)
+        self._jwrite = self._jwrite.queryName(queryName)
+        return self
+
+    @keyword_only
+    def trigger(self, *, processingTime=None, once=None, continuous=None):
+        """Set the trigger for the stream query. If this is not set it will run the query as fast
+            as possible, which is equivalent to setting the trigger to ``processingTime='0 seconds'``.
+
+            .. versionadded:: 2.0.0
+
+            Parameters
+            ----------
+            processingTime : str, optional
+                a processing time interval as a string, e.g. '5 seconds', '1 minute'.
+                Set a trigger that runs a microbatch query periodically based on the
+                processing time. Only one trigger can be set.
+            once : bool, optional
+                if set to True, set a trigger that processes only one batch of data in a
+                streaming query then terminates the query. Only one trigger can be set.
+            continuous : str, optional
+                a time interval as a string, e.g. '5 seconds', '1 minute'.
+                Set a trigger that runs a continuous query with a given checkpoint
+                interval. Only one trigger can be set.
+
+            Notes
+            -----
+            This API is evolving.
+
+            Examples
+            --------
+            >>> # trigger the query for execution every 5 seconds
+            >>> writer = sdf.writeStream.trigger(processingTime='5 seconds')
+            >>> # trigger the query for just once batch of data
+            >>> writer = sdf.writeStream.trigger(once=True)
+            >>> # trigger the query for execution every 5 seconds
+            >>> writer = sdf.writeStream.trigger(continuous='5 seconds')
+            """
+        params = [processingTime, once, continuous]
+
+        if params.count(None) == 3:
+            raise ValueError('No trigger provided')
+        elif params.count(None) < 2:
+            raise ValueError('Multiple triggers not allowed.')
+
+        jTrigger = None
+        if processingTime is not None:
+            if type(processingTime) != str or len(processingTime.strip()) == 0:
+                raise ValueError('Value for processingTime must be a non empty string. Got: %s' %
+                                 processingTime)
+            interval = processingTime.strip()
+            jTrigger = self._spark._sc._jvm.org.apache.spark.sql.streaming.Trigger.ProcessingTime(
+                interval)
+
+        elif once is not None:
+            if once is not True:
+                raise ValueError('Value for once must be True. Got: %s' % once)
+            jTrigger = self._spark._sc._jvm.org.apache.spark.sql.streaming.Trigger.Once()
+
+        else:
+            if type(continuous) != str or len(continuous.strip()) == 0:
+                raise ValueError('Value for continuous must be a non empty string. Got: %s' %
+                                 continuous)
+            interval = continuous.strip()
+            jTrigger = self._spark._sc._jvm.org.apache.spark.sql.streaming.Trigger.Continuous(
+                interval)
+
+        self._jwrite = self._jwrite.trigger(jTrigger)
+        return self
+
+    def foreach(self, f):
+        """
+            Sets the output of the streaming query to be processed using the provided writer ``f``.
+            This is often used to write the output of a streaming query to arbitrary storage systems.
+            The processing logic can be specified in two ways.
+
+            #. A **function** that takes a row as input.
+                This is a simple way to express your processing logic. Note that this does
+                not allow you to deduplicate generated data when failures cause reprocessing of
+                some input data. That would require you to specify the processing logic in the next
+                way.
+
+            #. An **object** with a ``process`` method and optional ``open`` and ``close`` methods.
+                The object can have the following methods.
+
+                * ``open(partition_id, epoch_id)``: *Optional* method that initializes the processing
+                    (for example, open a connection, start a transaction, etc). Additionally, you can
+                    use the `partition_id` and `epoch_id` to deduplicate regenerated data
+                    (discussed later).
+
+                * ``process(row)``: *Non-optional* method that processes each :class:`Row`.
+
+                * ``close(error)``: *Optional* method that finalizes and cleans up (for example,
+                    close connection, commit transaction, etc.) after all rows have been processed.
+
+                The object will be used by Spark in the following way.
+
+                * A single copy of this object is responsible of all the data generated by a
+                    single task in a query. In other words, one instance is responsible for
+                    processing one partition of the data generated in a distributed manner.
+
+                * This object must be serializable because each task will get a fresh
+                    serialized-deserialized copy of the provided object. Hence, it is strongly
+                    recommended that any initialization for writing data (e.g. opening a
+                    connection or starting a transaction) is done after the `open(...)`
+                    method has been called, which signifies that the task is ready to generate data.
+
+                * The lifecycle of the methods are as follows.
+
+                    For each partition with ``partition_id``:
+
+                    ... For each batch/epoch of streaming data with ``epoch_id``:
+
+                    ....... Method ``open(partitionId, epochId)`` is called.
+
+                    ....... If ``open(...)`` returns true, for each row in the partition and
+                            batch/epoch, method ``process(row)`` is called.
+
+                    ....... Method ``close(errorOrNull)`` is called with error (if any) seen while
+                            processing rows.
+
+                Important points to note:
+
+                * The `partitionId` and `epochId` can be used to deduplicate generated data when
+                    failures cause reprocessing of some input data. This depends on the execution
+                    mode of the query. If the streaming query is being executed in the micro-batch
+                    mode, then every partition represented by a unique tuple (partition_id, epoch_id)
+                    is guaranteed to have the same data. Hence, (partition_id, epoch_id) can be used
+                    to deduplicate and/or transactionally commit data and achieve exactly-once
+                    guarantees. However, if the streaming query is being executed in the continuous
+                    mode, then this guarantee does not hold and therefore should not be used for
+                    deduplication.
+
+                * The ``close()`` method (if exists) will be called if `open()` method exists and
+                    returns successfully (irrespective of the return value), except if the Python
+                    crashes in the middle.
+
+            .. versionadded:: 2.4.0
+
+            Notes
+            -----
+            This API is evolving.
+
+            Examples
+            --------
+            >>> # Print every row using a function
+            >>> def print_row(row):
+            ...     print(row)
+            ...
+            >>> writer = sdf.writeStream.foreach(print_row)
+            >>> # Print every row using a object with process() method
+            >>> class RowPrinter:
+            ...     def open(self, partition_id, epoch_id):
+            ...         print("Opened %d, %d" % (partition_id, epoch_id))
+            ...         return True
+            ...     def process(self, row):
+            ...         print(row)
+            ...     def close(self, error):
+            ...         print("Closed with error: %s" % str(error))
+            ...
+            >>> writer = sdf.writeStream.foreach(RowPrinter())
+            """
+
+        from pyspark.rdd import _wrap_function
+        from pyspark.serializers import PickleSerializer, AutoBatchedSerializer
+        from pyspark.taskcontext import TaskContext
+
+        if callable(f):
+            # The provided object is a callable function that is supposed to be called on each row.
+            # Construct a function that takes an iterator and calls the provided function on each
+            # row.
+            def func_without_process(_, iterator):
+                for x in iterator:
+                    f(x)
+                return iter([])
+
+            func = func_without_process
+
+        else:
+            # The provided object is not a callable function. Then it is expected to have a
+            # 'process(row)' method, and optional 'open(partition_id, epoch_id)' and
+            # 'close(error)' methods.
+
+            if not hasattr(f, 'process'):
+                raise AttributeError("Provided object does not have a 'process' method")
+
+            if not callable(getattr(f, 'process')):
+                raise TypeError("Attribute 'process' in provided object is not callable")
+
+            def doesMethodExist(method_name):
+                exists = hasattr(f, method_name)
+                if exists and not callable(getattr(f, method_name)):
+                    raise TypeError(
+                        "Attribute '%s' in provided object is not callable" % method_name)
+                return exists
+
+            open_exists = doesMethodExist('open')
+            close_exists = doesMethodExist('close')
+
+            def func_with_open_process_close(partition_id, iterator):
+                epoch_id = TaskContext.get().getLocalProperty('streaming.sql.batchId')
+                if epoch_id:
+                    epoch_id = int(epoch_id)
+                else:
+                    raise RuntimeError("Could not get batch id from TaskContext")
+
+                # Check if the data should be processed
+                should_process = True
+                if open_exists:
+                    should_process = f.open(partition_id, epoch_id)
+
+                error = None
+
+                try:
+                    if should_process:
+                        for x in iterator:
+                            f.process(x)
+                except Exception as ex:
+                    error = ex
+                finally:
+                    if close_exists:
+                        f.close(error)
+                    if error:
+                        raise error
+
+                return iter([])
+
+            func = func_with_open_process_close
+
+        serializer = AutoBatchedSerializer(PickleSerializer())
+        wrapped_func = _wrap_function(self._spark._sc, func, serializer, serializer)
+        jForeachWriter = \
+                self._spark._sc._jvm.org.apache.spark.sql.execution.python.PythonForeachWriter(
+                wrapped_func, self._df._jdf.schema())
+        self._jwrite.foreach(jForeachWriter)
+        return self
+
+    def foreachBatch(self, func):
+        """
+            Sets the output of the streaming query to be processed using the provided
+            function. This is supported only the in the micro-batch execution modes (that is, when the
+            trigger is not continuous). In every micro-batch, the provided function will be called in
+            every micro-batch with (i) the output rows as a DataFrame and (ii) the batch identifier.
+            The batchId can be used deduplicate and transactionally write the output
+            (that is, the provided Dataset) to external systems. The output DataFrame is guaranteed
+            to exactly same for the same batchId (assuming all operations are deterministic in the
+            query).
+
+            .. versionadded:: 2.4.0
+
+            Notes
+            -----
+            This API is evolving.
+
+            Examples
+            --------
+            >>> def func(batch_df, batch_id):
+            ...     batch_df.collect()
+            ...
+            >>> writer = sdf.writeStream.foreachBatch(func)
+            """
+
+        from pyspark.java_gateway import ensure_callback_server_started
+        gw = self._spark._sc._gateway
+        java_import(gw.jvm, "org.apache.spark.sql.execution.streaming.sources.*")
+
+        wrapped_func = ForeachBatchFunction(self._spark, func)
+        gw.jvm.PythonForeachBatchHelper.callForeachBatch(self._jwrite, wrapped_func)
+        ensure_callback_server_started(gw)
+        return self

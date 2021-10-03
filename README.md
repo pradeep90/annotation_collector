@@ -421,6 +421,171 @@ self.register_buffer('running_mean', dense_module.running_mean.to_mkldnn())
 self.register_buffer('running_var', dense_module.running_var.to_mkldnn())
 ```
 
+# Methods returning `self` or `cls`
+
+If you have a method that returns an object of the same type, the way to write type annotations is as below:
+
+```python
+T = TypeVar("T", bound="Base")
+
+class Base:
+    @classmethod
+    def from_config(cls: Type[T], config: Dict[str, str]) -> T:
+        return cls(**config)
+
+class Child(Base):
+    def child_method(self) -> None:
+	    print("Child!")
+```
+
+Note that we have to use `Type[T]` as the type of `cls` and have a return type `T`. Otherwise, someone constructing a `Child` object using `from_config` will get an object of type `Base`, not `Child`.
+
+```python
+# If we used `Base` as the return type of `from_config`.
+
+class Base:
+    @classmethod
+    def from_config(cls: Type[T], config: Dict[str, str]) -> Base:
+        return cls(**config)
+
+class Child(Base):
+    def child_method(self) -> None:
+	    print("Child!")
+
+def main() -> None:
+	child = Child.from_config(config) # => actually of type Base
+	child.child_method() # error: No method `child_method` in class Base.
+```
+
+For more details, see [my presentation](https://www.youtube.com/watch?v=ld9rwCvGdhc&t=3260s) from the Typing Summit at PyCon 2021 ([slides](https://drive.google.com/file/d/1x-qoDVY_OvLpIV1EwT7m3vm4HrgubHPG/view)).
+
+## Methods where the `self` or `cls` parameter is annotated
+
+Run the script as below:
+
+```
+python self_annotation.py /Users/pradeepkumars/Programs/typeshed/stdlib/distutils/version.pyi /Users/pradeepkumars/Programs/typeshed/stdlib/ctypes/__init__.pyi --verbose
+
+Methods with `self` or `cls` annotations: 17
+    def __lt__(self: _T, other: Union[_T, str]) -> bool: ...
+
+    def __le__(self: _T, other: Union[_T, str]) -> bool: ...
+
+    def __gt__(self: _T, other: Union[_T, str]) -> bool: ...
+
+    def __ge__(self: _T, other: Union[_T, str]) -> bool: ...
+
+    @abstractmethod
+    def parse(self: _T, vstring: str) -> _T: ...
+
+    @abstractmethod
+    def _cmp(self: _T, other: Union[_T, str]) -> bool: ...
+
+    def parse(self: _T, vstring: str) -> _T: ...
+
+    def _cmp(self: _T, other: Union[_T, str]) -> bool: ...
+
+    def parse(self: _T, vstring: str) -> _T: ...
+
+    def _cmp(self: _T, other: Union[_T, str]) -> bool: ...
+
+    # By default mypy complains about the following two methods, because strictly speaking cls
+    # might not be a Type[_CT]. However this can never actually happen, because the only class that
+    # uses _CDataMeta as its metaclass is _CData. So it's safe to ignore the errors here.
+    def __mul__(cls: Type[_CT], other: int) -> Type[Array[_CT]]: ...  # type: ignore
+
+    def __rmul__(cls: Type[_CT], other: int) -> Type[Array[_CT]]: ...  # type: ignore
+
+    @classmethod
+    def from_buffer(cls: Type[_CT], source: _WritableBuffer, offset: int = ...) -> _CT: ...
+
+    @classmethod
+    def from_buffer_copy(cls: Type[_CT], source: _ReadOnlyBuffer, offset: int = ...) -> _CT: ...
+
+    @classmethod
+    def from_address(cls: Type[_CT], address: int) -> _CT: ...
+
+    @classmethod
+    def from_param(cls: Type[_CT], obj: Any) -> _UnionT[_CT, _CArgObject]: ...
+
+    @classmethod
+    def in_dll(cls: Type[_CT], library: CDLL, name: str) -> _CT: ...
+```
+
+## Methods that return `self` or `cls(...)` in their body
+
+Run the script as below:
+
+```
+python self_annotation.py /Users/pradeepkumars/Programs/github-clones/tensorflow/tensorflow/python/autograph/operators/variables.py /Users/pradeepkumars/Programs/github-clones/tensorflow/tensorflow/python/keras/layers/recurrent.py --verbose
+
+Methods returning `self` or `cls(...)`: 5
+    def __getitem__(self, i):
+        return self
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None):
+        from tensorflow.python.keras.layers import deserialize as deserialize_layer  # pylint: disable=g-import-not-at-top
+        cells = []
+        for cell_config in config.pop('cells'):
+            cells.append(
+                deserialize_layer(cell_config, custom_objects=custom_objects))
+        return cls(cells, **config)
+
+    @classmethod
+    def from_config(cls, config):
+        if 'implementation' in config:
+            config.pop('implementation')
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config):
+        if 'implementation' in config and config['implementation'] == 0:
+            config['implementation'] = 1
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config):
+        if 'implementation' in config and config['implementation'] == 0:
+            config['implementation'] = 1
+        return cls(**config)
+```
+
+## Stats
+
+### Typed Projects
+
+Here are stats for common OSS projects. Click the project name to see the raw methods. There are two columns:
+
++ Method signatures with `self` or `cls` annotation: These are methods that have signatures like `def foo(cls: Type[T]) -> T: ...`.
++ Method bodies returning `self` or `cls(...)`: These are usually methods that return `self` or `cls(<some arguments>)` in their body. See the previous section for examples.
+
+| Project                                                       | Method signatures with `self` or `cls` annotation | Method bodies returning `self` or `cls(...)` | Notes                                                                               |
+| -                                                             | -:                                                | -:                                           | -                                                                                   |
+| [typeshed](./data/typeshed-methods-with-self-annotations.txt) | 523                                               | 0                                            |                                                                                     |
+| [mypy](./data/mypy-non-typeshed-methods-returning-self.txt)   | 2                                                 | 8                                            |                                                                                     |
+| [tornado](./data/tornado-methods-returning-self.txt)          | 1                                                 | 4                                            | Filtered out methods with `self: Any`.                                              |
+| [spark](./data/spark-methods-returning-self.txt)              | 57                                                | 127                                          | Filtered methods that needed the exact generic parameters `self: RDD[Tuple[K, V]]`. |
+| [sphinx](./data/sphinx-methods-returning-self.txt)            | 0                                                 | 11                                           |                                                                                     |
+| [jax](./data/jax-methods-returning-self.txt)                  | 0                                                 | 28                                           |                                                                                     |
+| [ignite](./data/ignite-methods-returning-self.txt)            | 0                                                 | 9                                            |                                                                                     |
+| [vision](./data/vision-methods-returning-self.txt)            | 0                                                 | 2                                            |                                                                                     |
+| [pandas](./data/pandas-methods-returning-self.txt)            | 228                                               | 126                                          |                                                                                     |
+| [scipy](./data/scipy-methods-returning-self.txt)              | 0                                                 | 33                                           |                                                                                     |
+| [black](./data/black-methods-returning-self.txt)              | 3                                                 | 2                                            |                                                                                     |
+| Total                                                         | 814                                               | 350                                          |                                                                                     |
+
+### Script commands
+
+```
+# Ignore Mypy's copy of typeshed.
+time python self_annotation.py /Users/pradeepkumars/Programs/mypy/misc /Users/pradeepkumars/Programs/mypy/mypyc /Users/pradeepkumars/Programs/mypy/scripts /Users/pradeepkumars/Programs/mypy/mypy/dmypy /Users/pradeepkumars/Programs/mypy/mypy/plugins /Users/pradeepkumars/Programs/mypy/mypy/server /Users/pradeepkumars/Programs/mypy/mypy/test /Users/pradeepkumars/Programs/mypy/mypy/xml /Users/pradeepkumars/Programs/mypy/mypy/*.py --verbose > data/mypy-non-typeshed-methods-returning-self.txt
+
+time python self_annotation.py /Users/pradeepkumars/Programs/tornado/ --verbose > data/tornado-methods-returning-self.txt
+
+for project in spark sphinx jax ignite vision pandas scipy black; do echo $project; time python self_annotation.py /Users/pradeepkumars/Programs/$project --verbose > data/$project-methods-returning-self.txt; echo ''; done
+```
+
 # How does it work?
 
 This includes annotations from parameter types, return types, attribute types, etc.

@@ -1,0 +1,61 @@
+Could not parse path /Users/pradeepkumars/Programs/sphinx/tests/roots/test-ext-autodoc/target/pep570.py: Syntax Error @ 4:15.
+Incomplete input. Encountered '/', but expected ')'.
+
+def bar(a, b, /, c, d):
+              ^
+
+
+Could not parse path /Users/pradeepkumars/Programs/sphinx/tests/roots/test-pycode/cp_1251_coded.py: 'utf-8' codec can't decode byte 0xd5 in position 47: invalid continuation byte
+
+
+Methods with `self` or `cls` annotations: 0
+
+Methods returning `self` or `cls(...)`: 11
+    @classmethod
+    def fromstring(cls, string):
+        return cls(ElementTree.fromstring(string))
+
+    def __repr__(self):
+        return self
+
+    def __repr__(self):
+        return self
+
+    @classmethod
+    def read(cls, confdir: str, overrides: Dict = None, tags: Tags = None) -> "Config":
+        """Create a Config object from configuration file."""
+        filename = path.join(confdir, CONFIG_FILENAME)
+        if not path.isfile(filename):
+            raise ConfigError(__("config directory doesn't contain a conf.py file (%s)") %
+                              confdir)
+        namespace = eval_config_file(filename, tags)
+        return cls(namespace, overrides or {})
+
+    @property
+    def name(self) -> "ASTNestedName":
+        return self
+
+    @property
+    def name(self) -> "ASTNestedName":
+        return self
+
+    def __copy__(self) -> "_TranslationProxy":
+        return self
+
+    @classmethod
+    def from_reporter(cls, reporter: Reporter) -> "LoggingReporter":
+        """Create an instance of LoggingReporter from other reporter object."""
+        return cls(reporter.source, reporter.report_level, reporter.halt_level,
+                   reporter.debug_flag, reporter.error_handler)
+
+    def __enter__(self) -> "FileAvoidWrite":
+        return self
+
+    def __iter__(self) -> "peek_iter":
+        return self
+
+    @classmethod
+    def for_string(cls, string: str, modname: str, srcname: str = '<string>'
+                   ) -> "ModuleAnalyzer":
+        return cls(StringIO(string), modname, srcname)
+

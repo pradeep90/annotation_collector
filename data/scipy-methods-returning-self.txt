@@ -1,0 +1,828 @@
+Could not parse path /Users/pradeepkumars/Programs/scipy/scipy/optimize/_linprog_highs.py: Syntax Error @ 37:27.
+Internal error: There must be at least one space before 'as'.
+
+    as MODEL_STATUS_RDOVUB,
+                          ^
+
+
+Methods with `self` or `cls` annotations: 0
+
+Methods returning `self` or `cls(...)`: 33
+    def __enter__(self):
+        self.error = False
+        return self
+
+    def __iter__(self):
+        return self
+
+    def __enter__(self):
+        return self
+
+    @classmethod
+    def empty(cls, n):
+        """Create an "empty" instance.
+
+            This "empty" instance is required to allow working with unconstrained
+            problems as if they have some constraints.
+            """
+        empty_fun = np.empty(0)
+        empty_jac = np.empty((0, n))
+        empty_hess = sps.csr_matrix((n, n))
+
+        def fun(x):
+            return empty_fun, empty_fun
+
+        def jac(x):
+            return empty_jac, empty_jac
+
+        def hess(x, v_eq, v_ineq):
+            return empty_hess
+
+        return cls(0, 0, fun, jac, hess, np.empty(0, dtype=np.bool_))
+
+    @classmethod
+    def concatenate(cls, canonical_constraints, sparse_jacobian):
+        """Concatenate multiple `CanonicalConstraint` into one.
+
+            `sparse_jacobian` (bool) determines the Jacobian format of the
+            concatenated constraint. Note that items in `canonical_constraints`
+            must have their Jacobians in the same format.
+            """
+        def fun(x):
+            if canonical_constraints:
+                eq_all, ineq_all = zip(
+                        *[c.fun(x) for c in canonical_constraints])
+            else:
+                eq_all, ineq_all = [], []
+
+            return np.hstack(eq_all), np.hstack(ineq_all)
+
+        if sparse_jacobian:
+            vstack = sps.vstack
+        else:
+            vstack = np.vstack
+
+        def jac(x):
+            if canonical_constraints:
+                eq_all, ineq_all = zip(
+                        *[c.jac(x) for c in canonical_constraints])
+            else:
+                eq_all, ineq_all = [], []
+
+            return vstack(eq_all), vstack(ineq_all)
+
+        def hess(x, v_eq, v_ineq):
+            hess_all = []
+            index_eq = 0
+            index_ineq = 0
+            for c in canonical_constraints:
+                vc_eq = v_eq[index_eq:index_eq + c.n_eq]
+                vc_ineq = v_ineq[index_ineq:index_ineq + c.n_ineq]
+                hess_all.append(c.hess(x, vc_eq, vc_ineq))
+                index_eq += c.n_eq
+                index_ineq += c.n_ineq
+
+            def matvec(p):
+                result = np.zeros_like(p)
+                for h in hess_all:
+                    result += h.dot(p)
+                return result
+
+            n = x.shape[0]
+            return sps.linalg.LinearOperator((n, n), matvec, dtype=float)
+
+        n_eq = sum(c.n_eq for c in canonical_constraints)
+        n_ineq = sum(c.n_ineq for c in canonical_constraints)
+        keep_feasible = np.hstack([c.keep_feasible for c in
+                                   canonical_constraints])
+
+        return cls(n_eq, n_ineq, fun, jac, hess, keep_feasible)
+
+    @classmethod
+    def _equal_to_canonical(cls, cfun, value):
+        empty_fun = np.empty(0)
+        n = cfun.n
+
+        n_eq = value.shape[0]
+        n_ineq = 0
+        keep_feasible = np.empty(0, dtype=bool)
+
+        if cfun.sparse_jacobian:
+            empty_jac = sps.csr_matrix((0, n))
+        else:
+            empty_jac = np.empty((0, n))
+
+        def fun(x):
+            return cfun.fun(x) - value, empty_fun
+
+        def jac(x):
+            return cfun.jac(x), empty_jac
+
+        def hess(x, v_eq, v_ineq):
+            return cfun.hess(x, v_eq)
+
+        empty_fun = np.empty(0)
+        n = cfun.n
+        if cfun.sparse_jacobian:
+            empty_jac = sps.csr_matrix((0, n))
+        else:
+            empty_jac = np.empty((0, n))
+
+        return cls(n_eq, n_ineq, fun, jac, hess, keep_feasible)
+
+    @classmethod
+    def _less_to_canonical(cls, cfun, ub, keep_feasible):
+        empty_fun = np.empty(0)
+        n = cfun.n
+        if cfun.sparse_jacobian:
+            empty_jac = sps.csr_matrix((0, n))
+        else:
+            empty_jac = np.empty((0, n))
+
+        finite_ub = ub < np.inf
+        n_eq = 0
+        n_ineq = np.sum(finite_ub)
+
+        if np.all(finite_ub):
+            def fun(x):
+                return empty_fun, cfun.fun(x) - ub
+
+            def jac(x):
+                return empty_jac, cfun.jac(x)
+
+            def hess(x, v_eq, v_ineq):
+                return cfun.hess(x, v_ineq)
+        else:
+            finite_ub = np.nonzero(finite_ub)[0]
+            keep_feasible = keep_feasible[finite_ub]
+            ub = ub[finite_ub]
+
+            def fun(x):
+                return empty_fun, cfun.fun(x)[finite_ub] - ub
+
+            def jac(x):
+                return empty_jac, cfun.jac(x)[finite_ub]
+
+            def hess(x, v_eq, v_ineq):
+                v = np.zeros(cfun.m)
+                v[finite_ub] = v_ineq
+                return cfun.hess(x, v)
+
+        return cls(n_eq, n_ineq, fun, jac, hess, keep_feasible)
+
+    @classmethod
+    def _greater_to_canonical(cls, cfun, lb, keep_feasible):
+        empty_fun = np.empty(0)
+        n = cfun.n
+        if cfun.sparse_jacobian:
+            empty_jac = sps.csr_matrix((0, n))
+        else:
+            empty_jac = np.empty((0, n))
+
+        finite_lb = lb > -np.inf
+        n_eq = 0
+        n_ineq = np.sum(finite_lb)
+
+        if np.all(finite_lb):
+            def fun(x):
+                return empty_fun, lb - cfun.fun(x)
+
+            def jac(x):
+                return empty_jac, -cfun.jac(x)
+
+            def hess(x, v_eq, v_ineq):
+                return cfun.hess(x, -v_ineq)
+        else:
+            finite_lb = np.nonzero(finite_lb)[0]
+            keep_feasible = keep_feasible[finite_lb]
+            lb = lb[finite_lb]
+
+            def fun(x):
+                return empty_fun, lb - cfun.fun(x)[finite_lb]
+
+            def jac(x):
+                return empty_jac, -cfun.jac(x)[finite_lb]
+
+            def hess(x, v_eq, v_ineq):
+                v = np.zeros(cfun.m)
+                v[finite_lb] = -v_ineq
+                return cfun.hess(x, v)
+
+        return cls(n_eq, n_ineq, fun, jac, hess, keep_feasible)
+
+    @classmethod
+    def _interval_to_canonical(cls, cfun, lb, ub, keep_feasible):
+        lb_inf = lb == -np.inf
+        ub_inf = ub == np.inf
+        equal = lb == ub
+        less = lb_inf & ~ub_inf
+        greater = ub_inf & ~lb_inf
+        interval = ~equal & ~lb_inf & ~ub_inf
+
+        equal = np.nonzero(equal)[0]
+        less = np.nonzero(less)[0]
+        greater = np.nonzero(greater)[0]
+        interval = np.nonzero(interval)[0]
+        n_less = less.shape[0]
+        n_greater = greater.shape[0]
+        n_interval = interval.shape[0]
+        n_ineq = n_less + n_greater + 2 * n_interval
+        n_eq = equal.shape[0]
+
+        keep_feasible = np.hstack((keep_feasible[less],
+                                   keep_feasible[greater],
+                                   keep_feasible[interval],
+                                   keep_feasible[interval]))
+
+        def fun(x):
+            f = cfun.fun(x)
+            eq = f[equal] - lb[equal]
+            le = f[less] - ub[less]
+            ge = lb[greater] - f[greater]
+            il = f[interval] - ub[interval]
+            ig = lb[interval] - f[interval]
+            return eq, np.hstack((le, ge, il, ig))
+
+        def jac(x):
+            J = cfun.jac(x)
+            eq = J[equal]
+            le = J[less]
+            ge = -J[greater]
+            il = J[interval]
+            ig = -il
+            if sps.issparse(J):
+                ineq = sps.vstack((le, ge, il, ig))
+            else:
+                ineq = np.vstack((le, ge, il, ig))
+            return eq, ineq
+
+        def hess(x, v_eq, v_ineq):
+            n_start = 0
+            v_l = v_ineq[n_start:n_start + n_less]
+            n_start += n_less
+            v_g = v_ineq[n_start:n_start + n_greater]
+            n_start += n_greater
+            v_il = v_ineq[n_start:n_start + n_interval]
+            n_start += n_interval
+            v_ig = v_ineq[n_start:n_start + n_interval]
+
+            v = np.zeros_like(lb)
+            v[equal] = v_eq
+            v[less] = v_l
+            v[greater] = -v_g
+            v[interval] = v_il - v_ig
+
+            return cfun.hess(x, v)
+
+        return cls(n_eq, n_ineq, fun, jac, hess, keep_feasible)
+
+    def set_initial_value(self, y, t=0.0):
+        """Set initial conditions y(t) = y."""
+        if isscalar(y):
+            y = [y]
+        n_prev = len(self._y)
+        if not n_prev:
+            self.set_integrator('')  # find first available integrator
+        self._y = asarray(y, self._integrator.scalar)
+        self.t = t
+        self._integrator.reset(len(self._y), self.jac is not None)
+        return self
+
+    def set_integrator(self, name, **integrator_params):
+        """
+            Set integrator by name.
+
+            Parameters
+            ----------
+            name : str
+                Name of the integrator.
+            integrator_params
+                Additional parameters for the integrator.
+            """
+        integrator = find_integrator(name)
+        if integrator is None:
+            # FIXME: this really should be raise an exception. Will that break
+            # any code?
+            warnings.warn('No integrator name match with %r or is not '
+                          'available.' % name)
+        else:
+            self._integrator = integrator(**integrator_params)
+            if not len(self._y):
+                self.t = 0.0
+                self._y = array([0.0], self._integrator.scalar)
+            self._integrator.reset(len(self._y), self.jac is not None)
+        return self
+
+    def set_f_params(self, *args):
+        """Set extra parameters for user-supplied function f."""
+        self.f_params = args
+        return self
+
+    def set_jac_params(self, *args):
+        """Set extra parameters for user-supplied function jac."""
+        self.jac_params = args
+        return self
+
+    def __enter__(self):
+        return self
+
+    def __enter__(self):
+        return self
+
+    @classmethod
+    def from_number(cls, n, min=None):
+        """Given an integer, returns a "reasonable" IntFormat instance to represent
+            any number between 0 and n if n > 0, -n and n if n < 0
+
+            Parameters
+            ----------
+            n : int
+                max number one wants to be able to represent
+            min : int
+                minimum number of characters to use for the format
+
+            Returns
+            -------
+            res : IntFormat
+                IntFormat instance with reasonable (see Notes) computed width
+
+            Notes
+            -----
+            Reasonable should be understood as the minimal string length necessary
+            without losing precision. For example, IntFormat.from_number(1) will
+            return an IntFormat instance of width 2, so that any 0 and 1 may be
+            represented as 1-character strings without loss of information.
+            """
+        width = number_digits(n) + 1
+        if n < 0:
+            width += 1
+        repeat = 80 // width
+        return cls(width, min, repeat=repeat)
+
+    @classmethod
+    def from_number(cls, n, min=None):
+        """Given a float number, returns a "reasonable" ExpFormat instance to
+            represent any number between -n and n.
+
+            Parameters
+            ----------
+            n : float
+                max number one wants to be able to represent
+            min : int
+                minimum number of characters to use for the format
+
+            Returns
+            -------
+            res : ExpFormat
+                ExpFormat instance with reasonable (see Notes) computed width
+
+            Notes
+            -----
+            Reasonable should be understood as the minimal string length necessary
+            to avoid losing precision.
+            """
+        # len of one number in exp format: sign + 1|0 + "." +
+        # number of digit for fractional part + 'E' + sign of exponent +
+        # len of exponent
+        finfo = np.finfo(n.dtype)
+        # Number of digits for fractional part
+        n_prec = finfo.precision + 1
+        # Number of digits for exponential part
+        n_exp = number_digits(np.max(np.abs([finfo.maxexp, finfo.minexp])))
+        width = 1 + 1 + n_prec + 1 + n_exp + 1
+        if n < 0:
+            width += 1
+        repeat = int(np.floor(80 / width))
+        return cls(width, n_prec, min, repeat=repeat)
+
+    @classmethod
+    def from_data(cls, m, title="Default title", key="0", mxtype=None, fmt=None):
+        """Create a HBInfo instance from an existing sparse matrix.
+
+            Parameters
+            ----------
+            m : sparse matrix
+                the HBInfo instance will derive its parameters from m
+            title : str
+                Title to put in the HB header
+            key : str
+                Key
+            mxtype : HBMatrixType
+                type of the input matrix
+            fmt : dict
+                not implemented
+
+            Returns
+            -------
+            hb_info : HBInfo instance
+            """
+        m = m.tocsc(copy=False)
+
+        pointer = m.indptr
+        indices = m.indices
+        values = m.data
+
+        nrows, ncols = m.shape
+        nnon_zeros = m.nnz
+
+        if fmt is None:
+            # +1 because HB use one-based indexing (Fortran), and we will write
+            # the indices /pointer as such
+            pointer_fmt = IntFormat.from_number(np.max(pointer+1))
+            indices_fmt = IntFormat.from_number(np.max(indices+1))
+
+            if values.dtype.kind in np.typecodes["AllFloat"]:
+                values_fmt = ExpFormat.from_number(-np.max(np.abs(values)))
+            elif values.dtype.kind in np.typecodes["AllInteger"]:
+                values_fmt = IntFormat.from_number(-np.max(np.abs(values)))
+            else:
+                raise NotImplementedError("type %s not implemented yet" % values.dtype.kind)
+        else:
+            raise NotImplementedError("fmt argument not supported yet.")
+
+        if mxtype is None:
+            if not np.isrealobj(values):
+                raise ValueError("Complex values not supported yet")
+            if values.dtype.kind in np.typecodes["AllInteger"]:
+                tp = "integer"
+            elif values.dtype.kind in np.typecodes["AllFloat"]:
+                tp = "real"
+            else:
+                raise NotImplementedError("type %s for values not implemented"
+                                          % values.dtype)
+            mxtype = HBMatrixType(tp, "unsymmetric", "assembled")
+        else:
+            raise ValueError("mxtype argument not handled yet.")
+
+        def _nlines(fmt, size):
+            nlines = size // fmt.repeat
+            if nlines * fmt.repeat != size:
+                nlines += 1
+            return nlines
+
+        pointer_nlines = _nlines(pointer_fmt, pointer.size)
+        indices_nlines = _nlines(indices_fmt, indices.size)
+        values_nlines = _nlines(values_fmt, values.size)
+
+        total_nlines = pointer_nlines + indices_nlines + values_nlines
+
+        return cls(title, key,
+            total_nlines, pointer_nlines, indices_nlines, values_nlines,
+            mxtype, nrows, ncols, nnon_zeros,
+            pointer_fmt.fortran_format, indices_fmt.fortran_format,
+            values_fmt.fortran_format)
+
+    @classmethod
+    def from_file(cls, fid):
+        """Create a HBInfo instance from a file object containing a matrix in the
+            HB format.
+
+            Parameters
+            ----------
+            fid : file-like matrix
+                File or file-like object containing a matrix in the HB format.
+
+            Returns
+            -------
+            hb_info : HBInfo instance
+            """
+        # First line
+        line = fid.readline().strip("\n")
+        if not len(line) > 72:
+            raise ValueError("Expected at least 72 characters for first line, "
+                             "got: \n%s" % line)
+        title = line[:72]
+        key = line[72:]
+
+        # Second line
+        line = fid.readline().strip("\n")
+        if not len(line.rstrip()) >= 56:
+            raise ValueError("Expected at least 56 characters for second line, "
+                             "got: \n%s" % line)
+        total_nlines = _expect_int(line[:14])
+        pointer_nlines = _expect_int(line[14:28])
+        indices_nlines = _expect_int(line[28:42])
+        values_nlines = _expect_int(line[42:56])
+
+        rhs_nlines = line[56:72].strip()
+        if rhs_nlines == '':
+            rhs_nlines = 0
+        else:
+            rhs_nlines = _expect_int(rhs_nlines)
+        if not rhs_nlines == 0:
+            raise ValueError("Only files without right hand side supported for "
+                             "now.")
+
+        # Third line
+        line = fid.readline().strip("\n")
+        if not len(line) >= 70:
+            raise ValueError("Expected at least 72 character for third line, got:\n"
+                             "%s" % line)
+
+        mxtype_s = line[:3].upper()
+        if not len(mxtype_s) == 3:
+            raise ValueError("mxtype expected to be 3 characters long")
+
+        mxtype = HBMatrixType.from_fortran(mxtype_s)
+        if mxtype.value_type not in ["real", "integer"]:
+            raise ValueError("Only real or integer matrices supported for "
+                             "now (detected %s)" % mxtype)
+        if not mxtype.structure == "unsymmetric":
+            raise ValueError("Only unsymmetric matrices supported for "
+                             "now (detected %s)" % mxtype)
+        if not mxtype.storage == "assembled":
+            raise ValueError("Only assembled matrices supported for now")
+
+        if not line[3:14] == " " * 11:
+            raise ValueError("Malformed data for third line: %s" % line)
+
+        nrows = _expect_int(line[14:28])
+        ncols = _expect_int(line[28:42])
+        nnon_zeros = _expect_int(line[42:56])
+        nelementals = _expect_int(line[56:70])
+        if not nelementals == 0:
+            raise ValueError("Unexpected value %d for nltvl (last entry of line 3)"
+                             % nelementals)
+
+        # Fourth line
+        line = fid.readline().strip("\n")
+
+        ct = line.split()
+        if not len(ct) == 3:
+            raise ValueError("Expected 3 formats, got %s" % ct)
+
+        return cls(title, key,
+                   total_nlines, pointer_nlines, indices_nlines, values_nlines,
+                   mxtype, nrows, ncols, nnon_zeros,
+                   ct[0], ct[1], ct[2],
+                   rhs_nlines, nelementals)
+
+    @classmethod
+    def from_cython(cls, module, name, user_data=None, signature=None):
+        """
+            Create a low-level callback function from an exported Cython function.
+
+            Parameters
+            ----------
+            module : module
+                Cython module where the exported function resides
+            name : str
+                Name of the exported function
+            user_data : {PyCapsule, ctypes void pointer, cffi void pointer}, optional
+                User data to pass on to the callback function.
+            signature : str, optional
+                Signature of the function. If omitted, determined from *function*.
+
+            """
+        try:
+            function = module.__pyx_capi__[name]
+        except AttributeError as e:
+            raise ValueError("Given module is not a Cython module with __pyx_capi__ attribute") from e
+        except KeyError as e:
+            raise ValueError("No function {!r} found in __pyx_capi__ of the module".format(name)) from e
+        return cls(function, user_data, signature)
+
+    def __enter__(self):
+        return self
+
+    @classmethod
+    def from_derivatives(cls, xi, yi, orders=None, extrapolate=None):
+        """Construct a piecewise polynomial in the Bernstein basis,
+            compatible with the specified values and derivatives at breakpoints.
+
+            Parameters
+            ----------
+            xi : array_like
+                sorted 1-D array of x-coordinates
+            yi : array_like or list of array_likes
+                ``yi[i][j]`` is the ``j``th derivative known at ``xi[i]``
+            orders : None or int or array_like of ints. Default: None.
+                Specifies the degree of local polynomials. If not None, some
+                derivatives are ignored.
+            extrapolate : bool or 'periodic', optional
+                If bool, determines whether to extrapolate to out-of-bounds points
+                based on first and last intervals, or to return NaNs.
+                If 'periodic', periodic extrapolation is used. Default is True.
+
+            Notes
+            -----
+            If ``k`` derivatives are specified at a breakpoint ``x``, the
+            constructed polynomial is exactly ``k`` times continuously
+            differentiable at ``x``, unless the ``order`` is provided explicitly.
+            In the latter case, the smoothness of the polynomial at
+            the breakpoint is controlled by the ``order``.
+
+            Deduces the number of derivatives to match at each end
+            from ``order`` and the number of derivatives available. If
+            possible it uses the same number of derivatives from
+            each end; if the number is odd it tries to take the
+            extra one from y2. In any case if not enough derivatives
+            are available at one end or another it draws enough to
+            make up the total from the other end.
+
+            If the order is too high and not enough derivatives are available,
+            an exception is raised.
+
+            Examples
+            --------
+
+            >>> from scipy.interpolate import BPoly
+            >>> BPoly.from_derivatives([0, 1], [[1, 2], [3, 4]])
+
+            Creates a polynomial `f(x)` of degree 3, defined on `[0, 1]`
+            such that `f(0) = 1, df/dx(0) = 2, f(1) = 3, df/dx(1) = 4`
+
+            >>> BPoly.from_derivatives([0, 1, 2], [[0, 1], [0], [2]])
+
+            Creates a piecewise polynomial `f(x)`, such that
+            `f(0) = f(1) = 0`, `f(2) = 2`, and `df/dx(0) = 1`.
+            Based on the number of derivatives provided, the order of the
+            local polynomials is 2 on `[0, 1]` and 1 on `[1, 2]`.
+            Notice that no restriction is imposed on the derivatives at
+            ``x = 1`` and ``x = 2``.
+
+            Indeed, the explicit form of the polynomial is::
+
+                f(x) = | x * (1 - x),  0 <= x < 1
+                       | 2 * (x - 1),  1 <= x <= 2
+
+            So that f'(1-0) = -1 and f'(1+0) = 2
+
+            """
+        xi = np.asarray(xi)
+        if len(xi) != len(yi):
+            raise ValueError("xi and yi need to have the same length")
+        if np.any(xi[1:] - xi[:1] <= 0):
+            raise ValueError("x coordinates are not in increasing order")
+
+        # number of intervals
+        m = len(xi) - 1
+
+        # global poly order is k-1, local orders are <=k and can vary
+        try:
+            k = max(len(yi[i]) + len(yi[i+1]) for i in range(m))
+        except TypeError as e:
+            raise ValueError(
+                "Using a 1-D array for y? Please .reshape(-1, 1)."
+            ) from e
+
+        if orders is None:
+            orders = [None] * m
+        else:
+            if isinstance(orders, (int, np.integer)):
+                orders = [orders] * m
+            k = max(k, max(orders))
+
+            if any(o <= 0 for o in orders):
+                raise ValueError("Orders must be positive.")
+
+        c = []
+        for i in range(m):
+            y1, y2 = yi[i], yi[i+1]
+            if orders[i] is None:
+                n1, n2 = len(y1), len(y2)
+            else:
+                n = orders[i]+1
+                n1 = min(n//2, len(y1))
+                n2 = min(n - n1, len(y2))
+                n1 = min(n - n2, len(y2))
+                if n1+n2 != n:
+                    mesg = ("Point %g has %d derivatives, point %g"
+                            " has %d derivatives, but order %d requested" % (
+                               xi[i], len(y1), xi[i+1], len(y2), orders[i]))
+                    raise ValueError(mesg)
+
+                if not (n1 <= len(y1) and n2 <= len(y2)):
+                    raise ValueError("`order` input incompatible with"
+                                     " length y1 or y2.")
+
+            b = BPoly._construct_from_derivatives(xi[i], xi[i+1],
+                                                  y1[:n1], y2[:n2])
+            if len(b) < k:
+                b = BPoly._raise_degree(b, k - len(b))
+            c.append(b)
+
+        c = np.asarray(c)
+        return cls(c.swapaxes(0, 1), xi, extrapolate)
+
+    @classmethod
+    def fromspline(cls, xk, cvals, order, fill=0.0):
+        # Note: this spline representation is incompatible with FITPACK
+        N = len(xk)-1
+        sivals = np.empty((order+1, N), dtype=float)
+        for m in range(order, -1, -1):
+            fact = spec.gamma(m+1)
+            res = _fitpack._bspleval(xk[:-1], xk, cvals, order, m)
+            res /= fact
+            sivals[order-m, :] = res
+        return cls(sivals, xk, fill=fill)
+
+    def todok(self, copy=False):
+        if copy:
+            return self.copy()
+        return self
+
+    def __iadd__(self,other):
+        self[:,:] = self + other
+        return self
+
+    def __isub__(self,other):
+        self[:,:] = self - other
+        return self
+
+    def _adjoint(self):
+        return self
+
+    def reset(self) -> QMCEngine:
+        """Reset the engine to base state.
+
+            Returns
+            -------
+            engine : QMCEngine
+                Engine reset to its base state.
+
+            """
+        seed = copy.deepcopy(self.rng_seed)
+        self.rng = check_random_state(seed)
+        self.num_generated = 0
+        return self
+
+    def fast_forward(self, n: IntNumber) -> QMCEngine:
+        """Fast-forward the sequence by `n` positions.
+
+            Parameters
+            ----------
+            n : int
+                Number of points to skip in the sequence.
+
+            Returns
+            -------
+            engine : QMCEngine
+                Engine reset to its base state.
+
+            """
+        self.random(n=n)
+        return self
+
+    def reset(self) -> Sobol:
+        """Reset the engine to base state.
+
+            Returns
+            -------
+            engine : Sobol
+                Engine reset to its base state.
+
+            """
+        super().reset()
+        self._quasi = self._shift.copy()
+        return self
+
+    def fast_forward(self, n: IntNumber) -> Sobol:
+        """Fast-forward the sequence by `n` positions.
+
+            Parameters
+            ----------
+            n : int
+                Number of points to skip in the sequence.
+
+            Returns
+            -------
+            engine: Sobol
+                The fast-forwarded engine.
+
+            """
+        if self.num_generated == 0:
+            _fast_forward(n - 1, self.num_generated, self.d,
+                          self._sv, self._quasi)
+        else:
+            _fast_forward(n, self.num_generated - 1, self.d,
+                          self._sv, self._quasi)
+        self.num_generated += n
+        return self
+
+    def reset(self) -> MultivariateNormalQMC:
+        """Reset the engine to base state.
+
+            Returns
+            -------
+            engine : MultivariateNormalQMC
+                Engine reset to its base state.
+
+            """
+        super().reset()
+        self.engine.reset()
+        return self
+
+    def reset(self) -> MultinomialQMC:
+        """Reset the engine to base state.
+
+            Returns
+            -------
+            engine : MultinomialQMC
+                Engine reset to its base state.
+
+            """
+        super().reset()
+        self.engine.reset()
+        return self
+

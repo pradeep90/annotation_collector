@@ -1,0 +1,41 @@
+Methods with `self` or `cls` annotations: 1
+    def connect(
+        self: _IOStreamType, address: Any, server_hostname: Optional[str] = None
+    ) -> "Future[_IOStreamType]": ...
+
+
+Methods returning `self` or `cls(...)`: 4
+    def __aiter__(self) -> typing.AsyncIterator:
+        return self
+
+    def indent(self) -> "ContextManager":
+        class Indenter(object):
+            def __enter__(_) -> "_CodeWriter":
+                self._indent += 1
+                return self
+
+            def __exit__(_, *args: Any) -> None:
+                assert self._indent > 0
+                self._indent -= 1
+
+        return Indenter()
+
+    def include(self, template: Template, line: int) -> "ContextManager":
+        self.include_stack.append((self.current_template, line))
+        self.current_template = template
+
+        class IncludeTemplate(object):
+            def __enter__(_) -> "_CodeWriter":
+                return self
+
+            def __exit__(_, *args: Any) -> None:
+                self.current_template = self.include_stack.pop()[0]
+
+        return IncludeTemplate()
+
+    def __enter__(self) -> "ExpectLog":
+        if self.level is not None and self.level < self.logger.getEffectiveLevel():
+            self.orig_level = self.logger.level
+            self.logger.setLevel(self.level)
+        self.logger.addFilter(self)
+        return self
