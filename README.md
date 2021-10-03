@@ -1,5 +1,24 @@
 # Annotation Collector
 
+# Overall Stats in Typeshed
+
+See [here](./generic_annotations/data/typeshed-generic-annotations.txt) for the raw types.
+
+| Annotation name | Frequency in Typeshed |
+| -               | -:                    |
+| Optional        | 10237                 |
+| Tuple           | 2296                  |
+| Union           | 2162                  |
+| List            | 1937                  |
+| Callable        | 1314                  |
+| Dict            | 1286                  |
+| Iterable        | 1261                  |
+| Set             | 159                   |
+
+As of October 2021, `Callable` is the most frequently used special form that still requires an import. Others like `List` have a builtin equivalent like `list`. `Optional[int]` is very frequently used but is technically expressible as `int | None`. That may still be cumbersome, though.
+
+# Callable Annotations
+
 To get stats on `Callable` annotations, run:
 
 ```bash
@@ -565,7 +584,7 @@ Here are stats for common OSS projects. Click the project name to see the raw me
 | [typeshed](./data/typeshed-methods-with-self-annotations.txt) | 523                                               | 0                                            |                                                                                     |
 | [mypy](./data/mypy-non-typeshed-methods-returning-self.txt)   | 2                                                 | 8                                            |                                                                                     |
 | [tornado](./data/tornado-methods-returning-self.txt)          | 1                                                 | 4                                            | Filtered out methods with `self: Any`.                                              |
-| [spark](./data/spark-methods-returning-self.txt)              | 57                                                | 127                                          | Filtered methods that needed the exact generic parameters `self: RDD[Tuple[K, V]]`. |
+| [spark](./data/spark-methods-returning-self.txt)              | 57                                                | 127                                          | Filtered out methods that needed the exact generic parameters `self: RDD[Tuple[K, V]]`. |
 | [sphinx](./data/sphinx-methods-returning-self.txt)            | 0                                                 | 11                                           |                                                                                     |
 | [jax](./data/jax-methods-returning-self.txt)                  | 0                                                 | 28                                           |                                                                                     |
 | [ignite](./data/ignite-methods-returning-self.txt)            | 0                                                 | 9                                            |                                                                                     |
