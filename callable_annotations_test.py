@@ -194,10 +194,7 @@ class CallableAnnotationsTest(unittest.TestCase):
                         func(x)
                 """
             ),
-            [
-                "def foo(self, x, func, y): ...\n"
-                "    func(x)\n"
-            ],
+            ["def foo(self, x, func, y): ...\n" "    func(x)\n"],
         )
         self.assertEqual(
             get_callback_function_calls(
@@ -222,10 +219,7 @@ class CallableAnnotationsTest(unittest.TestCase):
                         func(42)
                 """
             ),
-            [
-                "def foo(self, func): ...\n"
-                "    func(42)\n"
-            ],
+            ["def foo(self, func): ...\n" "    func(42)\n"],
         )
         # Decorator that happens to use a function with the same name as a
         # parameter.

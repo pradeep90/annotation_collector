@@ -2,6 +2,7 @@
 from typing import Iterable, List
 
 import libcst as cst
+import libcst.matchers as m
 from pathlib import Path
 
 SHOW_PROGRESS_EVERY = 20
@@ -31,5 +32,32 @@ def get_modules(roots: Iterable[Path], show_progress: bool) -> List[cst.Module]:
 def expression_to_string(expression: cst.BaseExpression) -> str:
     return cst.Module([cst.SimpleStatementLine([cst.Expr(expression)])]).code.strip()
 
+
 def statement_to_string(statement: cst.CSTNode) -> str:
     return cst.Module([statement]).code.strip()
+
+
+def type_subscript_matcher(inner_matcher: m.BaseMatcherNode) -> m.BaseMatcherNode:
+    return (
+        m.Subscript(
+            slice=[
+                m.ZeroOrMore(),
+                m.SubscriptElement(slice=m.Index(inner_matcher)),
+                m.ZeroOrMore(),
+            ]
+        )
+        | m.BinaryOperation(left=inner_matcher)
+        | m.BinaryOperation(right=inner_matcher)
+    )
+
+
+def type_matcher(toplevel_matcher: m.BaseMatcherNode) -> m.BaseMatcherNode:
+    """Matches `toplevel_matcher` anywhere - as <type>, List[<type>], List[List[<type>]].
+
+    This currently only goes two levels deep."""
+
+    return m.Annotation(
+        toplevel_matcher
+        | type_subscript_matcher(toplevel_matcher)
+        | type_subscript_matcher(type_subscript_matcher(toplevel_matcher))
+    )

@@ -10,35 +10,14 @@ import argparse
 import textwrap
 import dataclasses
 
-from util import get_modules, expression_to_string
-
-
-def type_subscript_matcher(inner_matcher: m.BaseMatcherNode) -> m.BaseMatcherNode:
-    return (
-        m.Subscript(
-            slice=[
-                m.ZeroOrMore(),
-                m.SubscriptElement(slice=m.Index(inner_matcher)),
-                m.ZeroOrMore(),
-            ]
-        )
-        | m.BinaryOperation(left=inner_matcher)
-        | m.BinaryOperation(right=inner_matcher)
-    )
+from util import get_modules, expression_to_string, type_matcher
 
 
 top_level_callable_annotation_matcher = m.SaveMatchedNode(
     m.Name("Callable"), name="callable"
 ) | m.SaveMatchedNode(m.Subscript(m.Name("Callable")), name="callable")
 
-
-callable_annotation_matcher = m.Annotation(
-    top_level_callable_annotation_matcher
-    | type_subscript_matcher(top_level_callable_annotation_matcher)
-    | type_subscript_matcher(
-        type_subscript_matcher(top_level_callable_annotation_matcher)
-    )
-)
+callable_annotation_matcher = type_matcher(top_level_callable_annotation_matcher)
 
 arbitrary_parameter_callable_matcher = m.Annotation(
     ~m.Subscript(
