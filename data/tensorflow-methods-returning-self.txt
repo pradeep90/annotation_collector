@@ -1,0 +1,2567 @@
+Could not parse path /Users/pradeepkumars/Programs/github-clones/tensorflow/tensorflow/compiler/xla/python/xla_extension/ops.pyi: Syntax Error @ 170:52.
+Cannot have a non-default argument following a default argument.
+
+    preferred_element_type: Optional[PrimitiveType]) -> XlaOp: ...
+                                                   ^
+
+
+Methods with `self` or `cls` annotations: 2
+    def add_outfeed(
+        builder: XlaBuilder,
+        token: XlaOp,
+        consumer_id: int,
+        arrays: Sequence[XlaOp]) -> XlaOp: ...
+
+    def execute_sharded_on_local_devices(
+      arguments: Sequence[List[DeviceArray]]) -> List[List[DeviceArray]]: ...
+
+
+Methods returning `self` or `cls(...)`: 200
+    def __enter__(self):
+        if self.options.user_requested:
+            self.autograph_ctx.__enter__()
+        if self.use_name_scope:
+            self.name_scope.__enter__()
+        if self.use_auto_deps:
+            self.autodeps_scope.__enter__()
+        return self
+
+    def __enter__(self):
+        _control_ctx().append(self)
+        return self
+
+    def __getitem__(self, i):
+        return self
+
+    def test_attribute(self):
+
+        class TestClass(object):
+
+            def __init__(self):
+                self.v = 1
+
+            def __add__(self, other):
+                self.v += other
+                return self
+
+        def f(l):
+            return l.v
+
+        tc = TestClass()
+        tr = self.transform_with_test_ld(f)
+
+        self.assertEqual(tr(tc), 2)
+
+    def __add__(self, other):
+        self.v += other
+        return self
+
+    def test_subscript(self):
+
+        class TestClass(object):
+
+            def __init__(self):
+                self.v = 1
+
+            def __add__(self, other):
+                self.v += other
+                return self
+
+            def __getitem__(self, _):
+                return self.v
+
+        def f(l):
+            return l[0]
+
+        tc = TestClass()
+        tr = self.transform_with_test_ld(f)
+
+        self.assertEqual(tr(tc), 2)
+
+    def __add__(self, other):
+        self.v += other
+        return self
+
+    def test_call(self):
+
+        class TestClass(object):
+
+            def __init__(self):
+                self.v = 1
+
+            def __add__(self, other):
+                self.v += other
+                return self
+
+            def __call__(self):
+                return self.v
+
+        def f(l):
+            return l()
+
+        tc = TestClass()
+        tr = self.transform_with_test_ld(f)
+
+        self.assertEqual(tr(tc), 2)
+
+    def __add__(self, other):
+        self.v += other
+        return self
+
+    def __enter__(self):
+        self.enter()
+        return self
+
+    @property
+    def enclosing_scope(self):
+        assert self.is_final
+        if self.parent is not None and not self.isolated:
+            return self.parent
+        return self
+
+    def simple_method(self):
+        return self
+
+    @classmethod
+    def from_config(cls, config):
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config):
+        """Creates a regularizer from its config.
+
+        This method is the reverse of `get_config`,
+        capable of instantiating the same regularizer from the config
+        dictionary.
+
+        This method is used by Keras `model_to_estimator`, saving and
+        loading models to HDF5 formats, Keras model cloning, some visualization
+        utilities, and exporting models to and from JSON.
+
+        Args:
+            config: A Python dictionary, typically the output of get_config.
+
+        Returns:
+            A regularizer instance.
+        """
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config):
+        """Instantiates a `Loss` from its config (output of `get_config()`).
+
+        Args:
+            config: Output of `get_config()`.
+
+        Returns:
+            A `Loss` instance.
+        """
+        return cls(**config)
+
+    def set_params(self, **params):
+        """Sets the parameters of this estimator.
+
+        Args:
+            **params: Dictionary of parameter names mapped to their values.
+
+        Returns:
+            self
+        """
+        self.check_params(params)
+        self.sk_params.update(params)
+        return self
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None):
+        from tensorflow.python.keras.layers import deserialize as deserialize_layer  # pylint: disable=g-import-not-at-top
+        cells = []
+        for cell_config in config.pop('cells'):
+            cells.append(
+                deserialize_layer(cell_config, custom_objects=custom_objects))
+        return cls(cells, **config)
+
+    @classmethod
+    def from_config(cls, config):
+        if 'implementation' in config:
+            config.pop('implementation')
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config):
+        if 'implementation' in config and config['implementation'] == 0:
+            config['implementation'] = 1
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config):
+        if 'implementation' in config and config['implementation'] == 0:
+            config['implementation'] = 1
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None):
+        config = config.copy()
+        function = cls._parse_function_from_config(
+            config, custom_objects, 'function', 'module', 'function_type')
+
+        output_shape = cls._parse_function_from_config(
+            config, custom_objects, 'output_shape', 'output_shape_module',
+            'output_shape_type')
+        if 'mask' in config:
+            mask = cls._parse_function_from_config(
+                config, custom_objects, 'mask', 'mask_module', 'mask_type')
+        else:
+            mask = None
+
+        config['function'] = function
+        config['output_shape'] = output_shape
+        config['mask'] = mask
+
+        # If arguments were numpy array, they have been saved as
+        # list. We need to recover the ndarray
+        if 'arguments' in config:
+            for key in config['arguments']:
+                if isinstance(config['arguments'][key], dict):
+                    arg_dict = config['arguments'][key]
+                    if 'type' in arg_dict and arg_dict['type'] == 'ndarray':
+                        # Overwrite the argument with its numpy translation
+                        config['arguments'][key] = np.array(arg_dict['value'])
+
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None):
+        config = config.copy()
+        symbol_name = config['function']
+        function = get_symbol_from_name(symbol_name)
+        if not function:
+            raise ValueError(
+                'TF symbol `tf.%s` could not be found.' % symbol_name)
+
+        config['function'] = function
+
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None):
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None):
+        config = config.copy()
+        symbol_name = config.pop('cls_symbol')
+        cls_ref = get_symbol_from_name(symbol_name)
+        if not cls_ref:
+            raise ValueError(
+                'TF symbol `tf.%s` could not be found.' % symbol_name)
+
+        config['cls_ref'] = cls_ref
+
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None):
+        config = config.copy()
+        from tensorflow.python.keras.layers.serialization import deserialize as deserialize_layer  # pylint: disable=g-import-not-at-top
+        cell = deserialize_layer(config.pop("cell"), custom_objects=custom_objects)
+        return cls(cell, **config)
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None):
+        from tensorflow.python.keras.layers import deserialize as deserialize_layer  # pylint: disable=g-import-not-at-top
+        # Avoid mutating the input dict
+        config = copy.deepcopy(config)
+        layer = deserialize_layer(
+            config.pop('layer'), custom_objects=custom_objects)
+        return cls(layer, **config)
+
+    @classmethod
+    def from_config(cls, config):
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config):
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config):
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config):
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None):
+        # Import here to avoid circular imports.
+        from tensorflow.python.feature_column import serialization  # pylint: disable=g-import-not-at-top
+        config_cp = config.copy()
+        columns_by_name = {}
+        config_cp['feature_columns'] = [serialization.deserialize_feature_column(
+            c, custom_objects, columns_by_name) for c in config['feature_columns']]
+        config_cp['partitioner'] = generic_utils.deserialize_keras_object(
+            config['partitioner'], custom_objects)
+
+        return cls(**config_cp)
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None):
+        linear_config = config.pop('linear_model')
+        linear_model = layer_module.deserialize(linear_config, custom_objects)
+        dnn_config = config.pop('dnn_model')
+        dnn_model = layer_module.deserialize(dnn_config, custom_objects)
+        activation = activations.deserialize(
+            config.pop('activation', None), custom_objects=custom_objects)
+        return cls(
+            linear_model=linear_model,
+            dnn_model=dnn_model,
+            activation=activation,
+            **config)
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None):
+        del custom_objects
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config):
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None):
+        del custom_objects
+        if 'loss_scale' in config:
+            config = config.copy()
+            # Policy.get_config in TensorFlow 2.3 and below had a loss_scale. We
+            # silently drop it.
+            del config['loss_scale']
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None):
+        if 'loss_scale' in config and isinstance(config['loss_scale'], dict):
+            config = config.copy()
+            config['loss_scale'] = keras_loss_scale_module.deserialize(
+                config['loss_scale'], custom_objects=custom_objects)
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None):
+        config = config.copy()  # Make a copy, since we mutate config
+        if 'loss_scale' in config:
+            # If loss_scale is in config, we assume we are deserializing a
+            # LossScaleOptimizer from TF 2.3 or below. We convert the config so it
+            # can be deserialized in the current LossScaleOptimizer.
+            loss_scale = keras_loss_scale_module.deserialize(
+                config.pop('loss_scale'))
+            if isinstance(loss_scale, loss_scale_module.FixedLossScale):
+                config['dynamic'] = False
+                config['initial_scale'] = loss_scale._loss_scale_value  # pylint: disable=protected-access
+            elif isinstance(loss_scale, loss_scale_module.DynamicLossScale):
+                config['dynamic'] = True
+                config['initial_scale'] = loss_scale.initial_loss_scale
+                config['dynamic_growth_steps'] = loss_scale.increment_period
+                if loss_scale.multiplier != 2:
+                    raise ValueError('Cannot deserialize LossScaleOptimizer with a '
+                                     'DynamicLossScale whose multiplier is not 2. Got '
+                                     'DynamicLossScale: %s' % (loss_scale,))
+            else:
+                raise ValueError(
+                    'Serialized LossScaleOptimizers with a LossScale that is neither a '
+                    'FixedLossScale nor a DynamicLossScale can no longer be '
+                    'deserialized')
+            config['inner_optimizer'] = config.pop('optimizer')
+        config['inner_optimizer'] = optimizers.deserialize(
+            config['inner_optimizer'], custom_objects=custom_objects)
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None):
+        config = config.copy()  # Make a copy, since we mutate config
+
+        # If loss_scale is in config, we assume we are deserializing a
+        # LossScaleOptimizer from TF 2.3 or below. Otherwise, we assume we are
+        # deserializing a LossScaleOptimizer from TF 2.4 or above.
+        if 'loss_scale' in config:
+            config['loss_scale'] = keras_loss_scale_module.deserialize(
+                config['loss_scale'])
+            if (isinstance(config['loss_scale'], loss_scale_module.DynamicLossScale)
+                and config['loss_scale'].multiplier != 2):
+                raise ValueError('Cannot deserialize LossScaleOptimizer with a '
+                                 'DynamicLossScale whose multiplier is not 2. Got '
+                                 'DynamicLossScale: %s' % (config['loss_scale'],))
+            config['optimizer'] = optimizers.deserialize(
+                config['optimizer'], custom_objects=custom_objects)
+            return cls(**config)
+
+        # We convert the config, as generated by LossScaleOptimizer.get_config, to a
+        # version that can be passed to LossScaleOptimizerV1.__init__
+        if config['dynamic']:
+            config['loss_scale'] = loss_scale_module.DynamicLossScale(
+                config['initial_scale'], config['dynamic_growth_steps'], multiplier=2)
+        else:
+            config['loss_scale'] = loss_scale_module.FixedLossScale(
+                config['initial_scale'])
+
+        del config['dynamic']
+        del config['initial_scale']
+        del config['dynamic_growth_steps']
+        config['optimizer'] = optimizers.deserialize(
+            config.pop('inner_optimizer'), custom_objects=custom_objects)
+        return cls(**config)
+
+    def __enter__(self):
+        self.backup = _GLOBAL_CUSTOM_OBJECTS.copy()
+        for objects in self.custom_objects:
+            _GLOBAL_CUSTOM_OBJECTS.update(objects)
+        return self
+
+    def __enter__(self):
+        if _shared_object_disabled():
+            return NoopLoadingScope()
+
+        global SHARED_OBJECT_LOADING
+        SHARED_OBJECT_LOADING.scope = self
+        self._obj_ids_to_obj = {}
+        return self
+
+    def __enter__(self):
+        if _shared_object_disabled():
+            return None
+
+        global SHARED_OBJECT_SAVING
+
+        # Serialization can happen at a number of layers for a number of reasons.
+        # We may end up with a case where we're opening a saving scope within
+        # another saving scope. In that case, we'd like to use the outermost scope
+        # available and ignore inner scopes, since there is not (yet) a reasonable
+        # use case for having these nested and distinct.
+        if _shared_object_saving_scope() is not None:
+            self._passthrough = True
+            return _shared_object_saving_scope()
+        else:
+            self._passthrough = False
+
+        SHARED_OBJECT_SAVING.scope = self
+        self._shared_objects_config = weakref.WeakKeyDictionary()
+        self._next_id = 0
+        return self
+
+    @classmethod
+    def from_config(cls, config):
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config):
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config):
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config):
+        return cls(**config)
+
+    def __iter__(self):
+        return self
+
+    @classmethod
+    def from_config(cls, config):
+        """Instantiates a `LearningRateSchedule` from its config.
+
+        Args:
+            config: Output of `get_config()`.
+
+        Returns:
+            A `LearningRateSchedule` instance.
+        """
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None):
+        """Creates an optimizer from its config.
+
+        This method is the reverse of `get_config`,
+        capable of instantiating the same optimizer from the config
+        dictionary.
+
+        Args:
+            config: A Python dictionary, typically the output of get_config.
+            custom_objects: A Python dictionary mapping names to additional Python
+              objects used to create this optimizer, such as a function used for a
+              hyperparameter.
+
+        Returns:
+            An optimizer instance.
+        """
+        if 'initial_accumulator_value' not in config:
+            config['initial_accumulator_value'] = 0.1
+        if 'lr' in config:
+            config['learning_rate'] = config.pop('lr')
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None):
+        """Creates an optimizer from its config.
+
+        This method is the reverse of `get_config`,
+        capable of instantiating the same optimizer from the config
+        dictionary.
+
+        Args:
+            config: A Python dictionary, typically the output of get_config.
+            custom_objects: A Python dictionary mapping names to additional Python
+              objects used to create this optimizer, such as a function used for a
+              hyperparameter.
+
+        Returns:
+            An optimizer instance.
+        """
+        if "lr" in config:
+            config["learning_rate"] = config.pop("lr")
+        if "learning_rate" in config:
+            if isinstance(config["learning_rate"], dict):
+                config["learning_rate"] = learning_rate_schedule.deserialize(
+                    config["learning_rate"], custom_objects=custom_objects)
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config):
+        return cls(generic_utils.deserialize_keras_object(
+            config['inner_layer']))
+
+    @classmethod
+    def from_config(cls, config):
+        return cls()
+
+    @classmethod
+    def from_config(cls, config):
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config):
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config):
+        return cls(config['num_classes'], name=config.get('name'))
+
+    @keras_parameterized.run_with_all_model_types
+    @keras_parameterized.run_all_keras_modes(always_skip_v1=True)
+    def test_finite_dataset_unknown_cardinality_no_step_with_train_and_val(self):
+
+        class CaptureStdout(object):
+
+            def __enter__(self):
+                self._stdout = sys.stdout
+                string_io = io.StringIO()
+                sys.stdout = string_io
+                self._stringio = string_io
+                return self
+
+            def __exit__(self, *args):
+                self.output = self._stringio.getvalue()
+                sys.stdout = self._stdout
+
+        model = testing_utils.get_small_mlp(1, 4, input_dim=3)
+        model.compile(
+            'rmsprop', 'mse', run_eagerly=testing_utils.should_run_eagerly())
+
+        inputs = np.zeros((100, 3), dtype=np.float32)
+        targets = np.random.randint(0, 4, size=100, dtype=np.int32)
+        dataset = dataset_ops.Dataset.from_tensor_slices((inputs, targets))
+        dataset = dataset.filter(lambda x, y: True).batch(10)
+        self.assertEqual(
+            keras.backend.get_value(cardinality.cardinality(dataset)),
+            cardinality.UNKNOWN)
+
+        batch_counter = BatchCounterCallback()
+        with CaptureStdout() as capture:
+            history = model.fit(
+                dataset,
+                epochs=2,
+                callbacks=[batch_counter],
+                validation_data=dataset.take(3))
+
+        lines = capture.output.splitlines()
+
+        self.assertIn('10/10', lines[-1])
+
+        self.assertLen(history.history['loss'], 2)
+        self.assertEqual(batch_counter.batch_begin_count, 21)
+        self.assertEqual(batch_counter.batch_end_count, 20)
+        model.evaluate(dataset)
+        out = model.predict(dataset)
+        self.assertEqual(out.shape[0], 100)
+
+    def __enter__(self):
+        self._stdout = sys.stdout
+        string_io = io.StringIO()
+        sys.stdout = string_io
+        self._stringio = string_io
+        return self
+
+    @classmethod
+    def from_config(cls, config):
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config):
+        """Creates a layer from its config.
+
+        This method is the reverse of `get_config`,
+        capable of instantiating the same layer from the config
+        dictionary. It does not handle layer connectivity
+        (handled by Network), nor weights (handled by `set_weights`).
+
+        Args:
+            config: A Python dictionary, typically the
+                output of get_config.
+
+        Returns:
+            A layer instance.
+        """
+        return cls(**config)
+
+    @classmethod
+    def from_value(cls, value):
+        return cls(value.x.shape, value.x.dtype, value.y.shape, value.y.dtype,
+                   value.color)
+
+    def _get_callback_model(self):
+        """Returns the Callback Model for this Model."""
+
+        if hasattr(self, '_replicated_model') and self._replicated_model:
+            # When using training_distributed, we set the callback model
+            # to an instance of the `DistributedModel` that we create in
+            # the `compile` call. The `DistributedModel` is initialized
+            # with the first replicated model. We need to set the callback
+            # model to a DistributedModel to allow us to override saving
+            # and loading weights when we checkpoint the model during training.
+            return self._replicated_model
+        if hasattr(self, 'callback_model') and self.callback_model:
+            return self.callback_model
+        return self
+
+    @classmethod
+    def from_type_spec(cls, type_spec, name=None):
+        return cls(type_spec=type_spec, name=name)
+
+    @classmethod
+    def from_tensor(cls, tensor):
+        return cls(tensor)
+
+    def __iter__(self):
+        return self
+
+    def predict_step(self, data):
+        """The logic for one inference step.
+
+        This method can be overridden to support custom inference logic.
+        This method is called by `Model.make_predict_function`.
+
+        This method should contain the mathematical logic for one step of inference.
+        This typically includes the forward pass.
+
+        Configuration details for *how* this logic is run (e.g. `tf.function` and
+        `tf.distribute.Strategy` settings), should be left to
+        `Model.make_predict_function`, which can also be overridden.
+
+        Args:
+          data: A nested structure of `Tensor`s.
+
+        Returns:
+          The result of one inference step, typically the output of calling the
+          `Model` on data.
+        """
+        data = data_adapter.expand_1d(data)
+        x, _, _ = data_adapter.unpack_x_y_sample_weight(data)
+        return self(x, training=False)
+
+    def _get_callback_model(self):
+        return self
+
+    @classmethod
+    def from_config(cls, config):
+        """Creates a layer from its config.
+
+        This method is the reverse of `get_config`,
+        capable of instantiating the same layer from the config
+        dictionary. It does not handle layer connectivity
+        (handled by Network), nor weights (handled by `set_weights`).
+
+        Args:
+            config: A Python dictionary, typically the
+                output of get_config.
+
+        Returns:
+            A layer instance.
+        """
+        return cls(**config)
+
+    @classmethod
+    def from_config(cls, config):
+        """Instantiates an initializer from a configuration dictionary.
+
+        Example:
+
+        ```python
+        initializer = RandomUniform(-1, 1)
+        config = initializer.get_config()
+        initializer = RandomUniform.from_config(config)
+        ```
+
+        Args:
+          config: A Python dictionary, the output of `get_config`.
+
+        Returns:
+          A `tf.keras.initializers.Initializer` instance.
+        """
+        config.pop('dtype', None)
+        return cls(**config)
+
+    def testTarget__get__IsProxied(self):
+        class Descr(object):
+
+            def __get__(self, instance, owner):
+                return self
+
+        class Foo(object):
+            foo = tf_decorator.TFDecorator('Descr', Descr())
+
+        self.assertIsInstance(Foo.foo, Descr)
+
+    def __get__(self, instance, owner):
+        return self
+
+    def __enter__(self):
+        # Any given instance is assumed to be used by a single thread, which reduces
+        # expensive thread local lookups.
+        if self._thread_key is None:
+            self._thread_key = _get_thread_key()
+        else:
+            assert self._thread_key == _get_thread_key(), 'Shared across threads?'
+
+        stack = self._stack_dict[self._thread_key]
+        self.parent = stack[-1]
+        stack.append(self)
+        self.update()
+        return self
+
+    @classmethod
+    def from_value(cls, value):
+        return cls(value.x.shape, value.x.dtype, value.y.shape, value.y.dtype,
+                   value.color)
+
+    @classmethod
+    def from_value(cls, value):
+        return cls(type_spec.type_spec_from_value(value.x),
+                   type_spec.type_spec_from_value(value.y),
+                   value.color)
+
+    @classmethod
+    def from_value(cls, value):
+        return cls(nest.map_structure(type_spec.type_spec_from_value, value.nest))
+
+    @classmethod
+    def _deserialize(cls, spec):
+        return cls(spec)
+
+    def __enter__(self):
+        if context.executing_eagerly():
+            return self
+        # This code assumes no other thread is adding ops to the graph while
+        # we're adding ops to the graph.
+        # TODO(apassos): Fix this by locking the graph or using a temporary
+        # graph (but that would mess up devices and collections at least,
+        # probably other things as well).
+        self._graph = ops.get_default_graph()
+        self._graph._add_control_dependencies = True  # pylint: disable=protected-access
+        self._n_operations = len(self._graph.get_operations())
+        return self
+
+    @traceme_wrapper
+    def __enter__(self):
+        self._trace_me = TraceMe('with MemoryChecker():')
+        self._trace_me.__enter__()
+        self._python_memory_checker = _PythonMemoryChecker()
+        if CppMemoryChecker:
+            self._cpp_memory_checker = CppMemoryChecker(_get_test_name_best_effort())
+        return self
+
+    @classmethod
+    def from_spec(cls, spec, name=None):
+        """Returns a `TensorSpec` with the same shape and dtype as `spec`.
+
+        >>> spec = tf.TensorSpec(shape=[8, 3], dtype=tf.int32, name="OriginalName")
+        >>> tf.TensorSpec.from_spec(spec, "NewName")
+        TensorSpec(shape=(8, 3), dtype=tf.int32, name='NewName')
+
+        Args:
+          spec: The `TypeSpec` used to create the new `TensorSpec`.
+          name: The name for the new `TensorSpec`.  Defaults to `spec.name`.
+        """
+        return cls(spec.shape, spec.dtype, name or spec.name)
+
+    def __copy__(self):
+        # Eager Tensors are immutable so it's safe to return themselves as a copy.
+        return self
+
+    def __deepcopy__(self, memo):
+        # Eager Tensors are immutable so it's safe to return themselves as a copy.
+        del memo
+        return self
+
+    def __iadd__(self, other):
+        if other.statistic_type != self.statistic_type:
+            raise ValueError("Can't add an OpStat of type %s to one of %s." %
+                             (self.statistic_type, other.statistic_type))
+        if self.value is None:
+            self.value = other.value
+        elif other.value is not None:
+            self._value += other.value
+        return self
+
+    def __iter__(self):
+        return self
+
+    @classmethod
+    def _deserialize(cls, serialization):
+        """Reconstructs a TypeSpec from a value returned by `serialize`.
+
+        Args:
+          serialization: A value returned by _serialize.  In some contexts,
+            `namedtuple`s in `serialization` may not have the identical type
+            that was returned by `_serialize` (but its type will still be a
+            `namedtuple` type with the same type name and field names).  For
+            example, the code that loads a SavedModel does not have access to
+            the original `namedtuple` type, so it dynamically creates a new
+            `namedtuple` type with the same type name and field names as the
+            original one.  If necessary, you can check `serialization` for these
+            duck-typed `nametuple` types, and restore them to the original type.
+            (E.g., this would be necessary if you rely on type checks such as
+            `isinstance` for this `TypeSpec`'s member variables).
+
+        Returns:
+          A `TypeSpec` of type `cls`.
+        """
+        return cls(*serialization)
+
+    @staticmethod
+    def __nested_list_to_tuple(value):
+        """Converts a nested list to a corresponding nested tuple."""
+        if isinstance(value, list):
+            return tuple(TypeSpec.__nested_list_to_tuple(v) for v in value)
+        return value
+
+    @staticmethod
+    def __most_specific_compatible_type_serialization(a, b):
+        """Helper for most_specific_compatible_type.
+
+        Combines two type serializations as follows:
+
+        * If they are both tuples of the same length, then recursively combine
+          the respective tuple elements.
+        * If they are both dicts with the same keys, then recursively combine
+          the respective dict elements.
+        * If they are both TypeSpecs, then combine using
+          TypeSpec.most_specific_compatible_type.
+        * If they are both TensorShapes, then combine using
+          TensorShape.most_specific_compatible_shape.
+        * If they are both TensorSpecs with the same dtype, then combine using
+          TensorShape.most_specific_compatible_shape to combine shapes.
+        * If they are equal, then return a.
+        * If none of the above, then raise a ValueError.
+
+        Args:
+          a: A serialized TypeSpec or nested component from a serialized TypeSpec.
+          b: A serialized TypeSpec or nested component from a serialized TypeSpec.
+
+        Returns:
+          A value with the same type and structure as `a` and `b`.
+
+        Raises:
+          ValueError: If `a` and `b` are incompatible.
+        """
+        if not TypeSpec.__same_types(a, b):
+            raise ValueError("Types are not compatible: %r vs %r" % (a, b))
+        if nest.is_namedtuple(a):
+            assert a._fields == b._fields  # Implied by __same_types(a, b).
+            return type(a)(*[
+                TypeSpec.__most_specific_compatible_type_serialization(x, y)
+                for (x, y) in zip(a, b)])
+        if isinstance(a, (list, tuple)):
+            if len(a) != len(b):
+                raise ValueError("Types are not compatible: %r vs %r" % (a, b))
+            return tuple(TypeSpec.__most_specific_compatible_type_serialization(x, y)
+                         for (x, y) in zip(a, b))
+        if isinstance(a, collections.OrderedDict):
+            a_keys, b_keys = a.keys(), b.keys()
+            if len(a) != len(b) or a_keys != b_keys:
+                raise ValueError("Types are not compatible: %r vs %r" % (a, b))
+            return collections.OrderedDict([
+                (k,
+                 TypeSpec.__most_specific_compatible_type_serialization(a[k], b[k]))
+                for k in a_keys
+            ])
+        if isinstance(a, dict):
+            a_keys, b_keys = sorted(a.keys()), sorted(b.keys())
+            if len(a) != len(b) or a_keys != b_keys:
+                raise ValueError("Types are not compatible: %r vs %r" % (a, b))
+            return {
+                k: TypeSpec.__most_specific_compatible_type_serialization(a[k], b[k])
+                for k in a_keys
+            }
+        if isinstance(a, tensor_shape.TensorShape):
+            return a.most_specific_compatible_shape(b)
+        if isinstance(a, list):
+            raise AssertionError("_serialize() should not return list values.")
+        if isinstance(a, TypeSpec):
+            return a.most_specific_compatible_type(b)
+        if a != b:
+            raise ValueError("Types are not compatible: %r vs %r" % (a, b))
+        return a
+
+    @classmethod
+    def from_string(cls, spec):
+        """Construct a `DeviceSpec` from a string.
+
+        Args:
+          spec: a string of the form
+           /job:<name>/replica:<id>/task:<id>/device:CPU:<id>
+          or
+           /job:<name>/replica:<id>/task:<id>/device:GPU:<id>
+          as cpu and gpu are mutually exclusive.
+          All entries are optional.
+
+        Returns:
+          A DeviceSpec.
+        """
+        return cls(*cls._string_to_components(spec))
+
+    def parse_from_string(self, spec):
+        (self.job, self.replica, self.task, self.device_type, self.device_index
+        ) = self._string_to_components(spec)
+
+        return self
+
+    @classmethod
+    def __tf_dispatch__(cls, api_name, api_func, args):
+        Trace.log.append("__tf_dispatch__%s" % ((cls.__name__, api_name),))
+        if "disabled" in str(args) or api_name == "disabled":
+            return NotImplemented
+        del api_func  # not used
+        return cls(api_name, *args)
+
+    @classmethod
+    def __tf_dispatch__(cls, api_name, api_func, args):
+        del api_name  # unused
+        weights = [arg.weight for arg in args if isinstance(arg, WeightedTensor)]
+        tensors = [
+            arg.tensor if isinstance(arg, WeightedTensor) else arg for arg in args
+        ]
+        tensor_result = api_func(*tensors)
+        avg_weight = sum(weights) / len(weights)
+        return cls(tensor_result, avg_weight)
+
+    def __enter__(self):
+        """Enters a context inside which operations are recorded on this tape."""
+        self._ctx_manager = context_stack.set_default(self._tape_context)
+        self._ctx_manager.__enter__()
+        return self
+
+    def finalize(self):
+        """Creates operations if needed and finalizes the graph."""
+        if self._init_op is None:
+
+            def default_init_op():
+                return control_flow_ops.group(
+                    variables.global_variables_initializer(),
+                    resources.initialize_resources(resources.shared_resources()),
+                    ops.get_collection('saved_model_initializers'))
+
+            self._init_op = Scaffold.get_or_default('init_op', ops.GraphKeys.INIT_OP,
+                                                    default_init_op)
+        if self._ready_op is None:
+
+            def default_ready_op():
+                return array_ops.concat([
+                    variables.report_uninitialized_variables(),
+                    resources.report_uninitialized_resources()
+                ], 0)
+
+            self._ready_op = Scaffold.get_or_default('ready_op',
+                                                     ops.GraphKeys.READY_OP,
+                                                     default_ready_op)
+        if self._ready_for_local_init_op is None:
+
+            def default_ready_for_local_init_op():
+                return array_ops.concat([
+                    variables.report_uninitialized_variables(
+                        variables.global_variables()),
+                    resources.report_uninitialized_resources(
+                        resources.shared_resources())
+                ], 0)
+
+            self._ready_for_local_init_op = Scaffold.get_or_default(
+                'ready_for_local_init_op', ops.GraphKeys.READY_FOR_LOCAL_INIT_OP,
+                default_ready_for_local_init_op)
+        if self._local_init_op is None:
+            self._local_init_op = Scaffold.get_or_default(
+                'local_init_op', ops.GraphKeys.LOCAL_INIT_OP,
+                Scaffold.default_local_init_op)
+        if self._summary_op is None:
+            self._summary_op = Scaffold.get_or_default('summary_op',
+                                                       ops.GraphKeys.SUMMARY_OP,
+                                                       summary.merge_all)
+        # pylint: disable=g-long-lambda
+        if self._saver is None:
+            self._saver = training_saver._get_saver_or_default()  # pylint: disable=protected-access
+        # pylint: enable=g-long-lambda
+        if isinstance(self._saver, trackable_util.Checkpoint):
+            self._saver = training_saver.Saver(
+                var_list=graph_view.ObjectGraphView(
+                    self._saver).frozen_saveable_objects(),
+                sharded=True)
+        else:
+            self._saver.build()
+
+        ops.get_default_graph().finalize()
+        logging.info('Graph was finalized.')
+        return self
+
+    def __enter__(self):
+        return self
+
+    def merge_with(self, other):
+        if self != other:
+            raise ValueError("SparseMetaData objects are incompatible: %s vs. %s"
+                             % (self, other))
+        if self.sparse:
+            self.rank.merge_with(other.rank)
+        return self
+
+    @staticmethod
+    def _scale_loss(loss_value):
+        ops.get_default_graph()._is_loss_scaled_by_optimizer = False  # pylint: disable=protected-access
+        if distribute_lib.get_loss_reduction() == ds_reduce_util.ReduceOp.MEAN:
+            num_replicas = distribute_ctx.get_strategy().num_replicas_in_sync
+            if num_replicas > 1:
+                loss_value *= (1. / num_replicas)
+                ops.get_default_graph()._is_loss_scaled_by_optimizer = True  # pylint: disable=protected-access
+        return loss_value
+
+    @classmethod
+    def from_config(cls, config):
+        """Creates the LossScale from its config."""
+        return cls(**config)
+
+    def expect_partial(self):
+        """Silence warnings about incomplete checkpoint restores."""
+        return self
+
+    def assert_consumed(self):
+        """Asserts that all objects in the checkpoint have been created/matched.
+
+        Returns:
+          `self` for chaining.
+        Raises:
+          AssertionError: If there are any Python objects in the dependency graph
+            which have not been restored from this checkpoint or a later `restore`,
+            or if there are any checkpointed values which have not been matched to
+            Python objects.
+        """
+        pretty_printer = _ObjectGraphProtoPrettyPrinter(
+            self._checkpoint.object_graph_proto)
+        self.assert_existing_objects_matched()
+        for node_id, node in enumerate(self._checkpoint.object_graph_proto.nodes):
+            if not node.attributes:
+                # Only raise exceptions for the nodes with attributes themselves. Either
+                # they're ultimately not important, or they have a child with an
+                # attribute.
+                continue
+            trackable = self._checkpoint.object_by_proto_id.get(node_id, None)
+            if trackable is None:
+                raise AssertionError("Unresolved object in checkpoint {}: {}"
+                                     .format(pretty_printer.node_names[node_id], node))
+        if self._checkpoint.slot_restorations:
+            # Sanity check; this collection should be clear if everything has been
+            # restored.
+            raise AssertionError("Unresolved slot restorations: %s" %
+                                 (self._checkpoint.slot_restorations,))
+        if self._checkpoint.unused_attributes:
+            unused_attribute_messages = []
+            for node_id, attribute in six.iteritems(
+                self._checkpoint.unused_attributes):
+                obj = self._checkpoint.object_by_proto_id[node_id]
+                unused_attribute_messages.append(
+                    "{} ({}): {}"
+                    .format(pretty_printer.node_names[node_id], obj, attribute))
+            raise AssertionError(
+                ("Unused attributes in these objects (the attributes exist in the "
+                 "checkpoint but were not restored):\n{}")
+                .format("\n".join(unused_attribute_messages)))
+        return self
+
+    def assert_existing_objects_matched(self):
+        """Asserts that trackable Python objects have been matched.
+
+        Note that this is a weaker assertion than `assert_consumed`. It will only
+        fail for existing Python objects which are (transitive) dependencies of the
+        root object and which do not have an entry in the checkpoint.
+
+        It will not fail, for example, if a `tf.keras.Layer` object has not yet been
+        built and so has not created any `tf.Variable` objects.
+
+        Returns:
+          `self` for chaining.
+
+        Raises:
+          AssertionError: If a Python object exists in the transitive dependencies
+            of the root object but does not have a value in the checkpoint.
+        """
+        for node_id, node in enumerate(self._checkpoint.object_graph_proto.nodes):
+            trackable = self._checkpoint.object_by_proto_id.get(node_id, None)
+            if (trackable is not None and
+                trackable._update_uid < self._checkpoint.restore_uid):  # pylint: disable=protected-access
+                raise AssertionError("Object not assigned a value from checkpoint: %s" %
+                                     (node,))
+        for trackable_object in self._graph_view.list_objects():
+            # Remove data structures that do not contain any variables from
+            # restoration checks.
+            if (isinstance(trackable_object,
+                           data_structures.TrackableDataStructure) and
+                not trackable_object._checkpoint_dependencies):
+                continue
+            self._checkpoint.all_python_objects.add(trackable_object)
+        unused_python_objects = (
+            object_identity.ObjectIdentitySet(
+                _objects_with_attributes(
+                    self._checkpoint.all_python_objects)) -
+            object_identity.ObjectIdentitySet(
+                self._checkpoint.object_by_proto_id.values()))
+        if unused_python_objects:
+            raise AssertionError(
+                ("Some Python objects were not bound to checkpointed values, likely "
+                 "due to changes in the Python program: %s") %
+                (list(unused_python_objects),))
+        return self
+
+    def assert_nontrivial_match(self):
+        """Raises an exception if only the root object matched."""
+        for trackable_object in self._graph_view.list_objects():
+            self._checkpoint.all_python_objects.add(trackable_object)
+        if len(self._checkpoint.object_by_proto_id) <= 1:
+            unused_python_objects = (
+                object_identity.ObjectIdentitySet(
+                    _objects_with_attributes(self._checkpoint.all_python_objects))
+                - object_identity.ObjectIdentitySet(
+                    self._checkpoint.object_by_proto_id.values()))
+            if unused_python_objects:
+                raise AssertionError(
+                    ("Nothing except the root object matched a checkpointed value. "
+                     "Typically this means that the checkpoint does not match the "
+                     "Python program. The following objects have no matching "
+                     "checkpointed value: %s") % (list(unused_python_objects),))
+            else:
+                raise AssertionError(
+                    "Nothing to load. No dependencies have been added to %s yet." %
+                    (self._graph_view.root,))
+        return self
+
+    def expect_partial(self):
+        """Silence warnings about incomplete checkpoint restores."""
+        self._checkpoint.expect_partial = True
+        return self
+
+    def assert_consumed(self):
+        """Raises an exception if any variables are unmatched."""
+        unused_attributes = list(self._checkpoint.unused_attributes.items())
+        unused_attributes = [
+            a for a in unused_attributes
+            if all(a[0] is not x for x in self._optionally_restored)
+        ]
+        if unused_attributes:
+            unused_attribute_strings = [
+                "\n    {}: {}".format(obj, attributes)
+                for obj, attributes in unused_attributes
+            ]
+            raise AssertionError(
+                "Some objects had attributes which were not restored:{}".format(
+                    "".join(unused_attribute_strings)))
+        for trackable in self._graph_view.list_objects():
+            # pylint: disable=protected-access
+            trackable._maybe_initialize_trackable()
+            if trackable._update_uid < self._checkpoint.restore_uid:
+                raise AssertionError("Object not restored: %s" % (trackable,))
+            # pylint: enable=protected-access
+        return self
+
+    @property
+    def _values(self):
+        """Collect values for TrackableDataStructure."""
+        return self
+
+    def __iadd__(self, values):
+        self.extend(values)
+        return self
+
+    def __imul__(self, y):
+        if y <= 0:
+            raise ValueError(
+                "List only supports append, multiplying in place by %d removes "
+                "elements." % y)
+
+        n = len(self._storage)
+        for _ in range(y - 1):
+            for i in range(n):
+                self.append(self._storage[i])
+
+        return self
+
+    @property
+    def _values(self):
+        """Collect values for TrackableDataStructure."""
+        return self
+
+    # __enter__ and __exit__ allow use as a context manager.
+    def __enter__(self):
+        return self
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None, columns_by_name=None):
+        """See 'FeatureColumn` base class."""
+        _check_config_keys(config, cls._fields)
+        from tensorflow.python.feature_column import serialization  # pylint: disable=g-import-not-at-top
+        kwargs = _standardize_and_copy_config(config)
+        kwargs['normalizer_fn'] = serialization._deserialize_keras_object(  # pylint: disable=protected-access
+            config['normalizer_fn'], custom_objects=custom_objects)
+        kwargs['dtype'] = dtypes.as_dtype(config['dtype'])
+
+        return cls(**kwargs)
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None, columns_by_name=None):
+        """See 'FeatureColumn` base class."""
+        from tensorflow.python.feature_column.serialization import deserialize_feature_column  # pylint: disable=g-import-not-at-top
+        _check_config_keys(config, cls._fields)
+        kwargs = _standardize_and_copy_config(config)
+        kwargs['source_column'] = deserialize_feature_column(
+            config['source_column'], custom_objects, columns_by_name)
+        return cls(**kwargs)
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None, columns_by_name=None):
+        """See 'FeatureColumn` base class."""
+        if 'use_safe_embedding_lookup' not in config:
+            config['use_safe_embedding_lookup'] = True
+        from tensorflow.python.feature_column import serialization  # pylint: disable=g-import-not-at-top
+        _check_config_keys(config, cls._fields)
+        kwargs = _standardize_and_copy_config(config)
+        kwargs['categorical_column'] = serialization.deserialize_feature_column(
+            config['categorical_column'], custom_objects, columns_by_name)
+        all_initializers = dict(tf_inspect.getmembers(init_ops, tf_inspect.isclass))
+        kwargs['initializer'] = serialization._deserialize_keras_object(  # pylint: disable=protected-access
+            config['initializer'],
+            module_objects=all_initializers,
+            custom_objects=custom_objects)
+        return cls(**kwargs)
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None, columns_by_name=None):
+        """See 'FeatureColumn` base class."""
+        _check_config_keys(config, cls._fields)
+        kwargs = _standardize_and_copy_config(config)
+        kwargs['dtype'] = dtypes.as_dtype(config['dtype'])
+        return cls(**kwargs)
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None, columns_by_name=None):
+        """See 'FeatureColumn` base class."""
+        _check_config_keys(config, cls._fields)
+        kwargs = _standardize_and_copy_config(config)
+        kwargs['dtype'] = dtypes.as_dtype(config['dtype'])
+        return cls(**kwargs)
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None, columns_by_name=None):
+        """See 'FeatureColumn` base class."""
+        _check_config_keys(config, cls._fields)
+        kwargs = _standardize_and_copy_config(config)
+        kwargs['dtype'] = dtypes.as_dtype(config['dtype'])
+        return cls(**kwargs)
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None, columns_by_name=None):
+        """See 'FeatureColumn` base class."""
+        _check_config_keys(config, cls._fields)
+        kwargs = _standardize_and_copy_config(config)
+        return cls(**kwargs)
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None, columns_by_name=None):
+        """See 'FeatureColumn` base class."""
+        from tensorflow.python.feature_column.serialization import deserialize_feature_column  # pylint: disable=g-import-not-at-top
+        _check_config_keys(config, cls._fields)
+        kwargs = _standardize_and_copy_config(config)
+        kwargs['categorical_column'] = deserialize_feature_column(
+            config['categorical_column'], custom_objects, columns_by_name)
+        kwargs['dtype'] = dtypes.as_dtype(config['dtype'])
+        return cls(**kwargs)
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None, columns_by_name=None):
+        """See 'FeatureColumn` base class."""
+        from tensorflow.python.feature_column.serialization import deserialize_feature_column  # pylint: disable=g-import-not-at-top
+        _check_config_keys(config, cls._fields)
+        kwargs = _standardize_and_copy_config(config)
+        kwargs['keys'] = tuple([
+            deserialize_feature_column(c, custom_objects, columns_by_name)
+            for c in config['keys']
+        ])
+        return cls(**kwargs)
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None, columns_by_name=None):
+        """See 'FeatureColumn` base class."""
+        from tensorflow.python.feature_column.serialization import deserialize_feature_column  # pylint: disable=g-import-not-at-top
+        _check_config_keys(config, cls._fields)
+        kwargs = _standardize_and_copy_config(config)
+        kwargs['categorical_column'] = deserialize_feature_column(
+            config['categorical_column'], custom_objects, columns_by_name)
+        return cls(**kwargs)
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None, columns_by_name=None):
+        """See 'FeatureColumn` base class."""
+        from tensorflow.python.feature_column.serialization import deserialize_feature_column  # pylint: disable=g-import-not-at-top
+        _check_config_keys(config, cls._fields)
+        kwargs = _standardize_and_copy_config(config)
+        kwargs['categorical_column'] = deserialize_feature_column(
+            config['categorical_column'], custom_objects, columns_by_name)
+        return cls(**kwargs)
+
+    @classmethod
+    def from_config(cls, config, custom_objects=None, columns_by_name=None):
+        """See 'FeatureColumn` base class."""
+        fc._check_config_keys(config, cls._fields)
+        kwargs = fc._standardize_and_copy_config(config)
+        kwargs['dtype'] = dtypes.as_dtype(config['dtype'])
+        return cls(**kwargs)
+
+    def __iter__(self):
+        return self
+
+    @classmethod
+    def _from_num_gpus(cls, num_gpus):
+        return cls(device_util.local_devices_from_num_gpus(num_gpus))
+
+    def assign(self, value, use_locking=None, name=None, read_value=True):
+        for i, v in enumerate(self._variables):
+            v.assign(array_ops.slice(value, self._var_offsets[i], v.shape.as_list()))
+        return self
+
+    def assign_add(self, delta, use_locking=False, name=None, read_value=True):
+        for i, v in enumerate(self._variables):
+            v.assign_add(
+                array_ops.slice(delta, self._var_offsets[i], v.shape.as_list()))
+        return self
+
+    def assign_sub(self, delta, use_locking=False, name=None, read_value=True):
+        for i, v in enumerate(self._variables):
+            v.assign_sub(
+                array_ops.slice(delta, self._var_offsets[i], v.shape.as_list()))
+        return self
+
+    # ==================== scatter ops implementations ======================== #
+
+    def scatter_add(self, sparse_delta, use_locking=False, name=None):
+        """Implements tf.Variable.scatter_add."""
+        per_var_sparse_delta = self._decompose_indexed_slices(sparse_delta)
+        for i, v in enumerate(self._variables):
+            new_name = None
+            if name is not None:
+                new_name = '{}/part_{}'.format(name, i)
+            v.scatter_add(per_var_sparse_delta[i], name=new_name)
+        return self
+
+    def scatter_div(self, sparse_delta, use_locking=False, name=None):
+        """Implements tf.Variable.scatter_div."""
+        per_var_sparse_delta = self._decompose_indexed_slices(sparse_delta)
+        for i, v in enumerate(self._variables):
+            new_name = None
+            if name is not None:
+                new_name = '{}/part_{}'.format(name, i)
+            v.scatter_div(per_var_sparse_delta[i], name=new_name)
+        return self
+
+    def scatter_max(self, sparse_delta, use_locking=False, name=None):
+        """Implements tf.Variable.scatter_max."""
+        per_var_sparse_delta = self._decompose_indexed_slices(sparse_delta)
+        for i, v in enumerate(self._variables):
+            new_name = None
+            if name is not None:
+                new_name = '{}/part_{}'.format(name, i)
+            v.scatter_max(per_var_sparse_delta[i], name=new_name)
+        return self
+
+    def scatter_min(self, sparse_delta, use_locking=False, name=None):
+        """Implements tf.Variable.scatter_min."""
+        per_var_sparse_delta = self._decompose_indexed_slices(sparse_delta)
+        for i, v in enumerate(self._variables):
+            new_name = None
+            if name is not None:
+                new_name = '{}/part_{}'.format(name, i)
+            v.scatter_min(per_var_sparse_delta[i], name=new_name)
+        return self
+
+    def scatter_mul(self, sparse_delta, use_locking=False, name=None):
+        """Implements tf.Variable.scatter_mul."""
+        per_var_sparse_delta = self._decompose_indexed_slices(sparse_delta)
+        for i, v in enumerate(self._variables):
+            new_name = None
+            if name is not None:
+                new_name = '{}/part_{}'.format(name, i)
+            v.scatter_mul(per_var_sparse_delta[i], name=new_name)
+        return self
+
+    def scatter_sub(self, sparse_delta, use_locking=False, name=None):
+        """Implements tf.Variable.scatter_sub."""
+        per_var_sparse_delta = self._decompose_indexed_slices(sparse_delta)
+        for i, v in enumerate(self._variables):
+            new_name = None
+            if name is not None:
+                new_name = '{}/part_{}'.format(name, i)
+            v.scatter_sub(per_var_sparse_delta[i], name=new_name)
+        return self
+
+    def scatter_update(self, sparse_delta, use_locking=False, name=None):
+        """Implements tf.Variable.scatter_update."""
+        per_var_sparse_delta = self._decompose_indexed_slices(sparse_delta)
+        for i, v in enumerate(self._variables):
+            new_name = None
+            if name is not None:
+                new_name = '{}/part_{}'.format(name, i)
+            v.scatter_update(per_var_sparse_delta[i], name=new_name)
+        return self
+
+    def batch_scatter_update(self, sparse_delta, use_locking=False, name=None):
+        """Implements tf.Variable.batch_scatter_update."""
+        per_var_sparse_delta = self._decompose_indexed_slices(sparse_delta)
+        for i, v in enumerate(self._variables):
+            new_name = None
+            if name is not None:
+                new_name = '{}/part_{}'.format(name, i)
+            v.batch_scatter_update(per_var_sparse_delta[i], name=new_name)
+        return self
+
+    def __enter__(self):
+        """Runs ops in parallel, makes variables which save independent buffers."""
+        if (self._device_scope is not None or self._saving_scope is not None):
+            raise AssertionError(
+                "Re-entered a ParallelDevice scope without first exiting it.")
+        self._assert_eager()
+        self._device_scope = ops.device(self._name)
+        self._saving_scope = saving.independent_buffers(self)
+        self._device_scope.__enter__()
+        # TODO(allenl): Fixing saving in Python is a bit odd. One alternative would
+        # be to provide a hook for the custom device to create save specs/etc., then
+        # call that hook from the default variable implementation if the variable is
+        # on a custom device. We'll likely want similar hooks for repr() and such.
+        self._saving_scope.__enter__()
+        return self
+
+    def __deepcopy__(self, memo):
+        # TODO(b/73668574): Remove this once RunConfig avoids performing deepcopy.
+        return self
+
+    def __enter__(self):
+        """Make usable with "with" statement."""
+        return self
+
+    def __iter__(self):
+        return self
+
+    def GetWhileContext(self):
+        return self
+
+    @classmethod
+    def from_config(cls, config):
+        """Instantiates an initializer from a configuration dictionary.
+
+        Example:
+
+        ```python
+        initializer = RandomUniform(-1, 1)
+        config = initializer.get_config()
+        initializer = RandomUniform.from_config(config)
+        ```
+
+        Args:
+          config: A Python dictionary. It will typically be the output of
+            `get_config`.
+
+        Returns:
+          An Initializer instance.
+        """
+        return cls(**config)
+
+    def __copy__(self):
+        return self
+
+    @classmethod
+    def from_state(cls, state, alg):
+        """Creates a generator from a state.
+
+        See `__init__` for description of `state` and `alg`.
+
+        Args:
+          state: the new state.
+          alg: the RNG algorithm.
+
+        Returns:
+          The new generator.
+        """
+        return cls(alg=alg, state=state)
+
+    @classmethod
+    def from_seed(cls, seed, alg=None):
+        """Creates a generator from a seed.
+
+        A seed is a 1024-bit unsigned integer represented either as a Python
+        integer or a vector of integers. Seeds shorter than 1024-bit will be
+        padded. The padding, the internal structure of a seed and the way a seed
+        is converted to a state are all opaque (unspecified). The only semantics
+        specification of seeds is that two different seeds are likely to produce
+        two independent generators (but no guarantee).
+
+        Args:
+          seed: the seed for the RNG.
+          alg: (optional) the RNG algorithm. If None, it will be auto-selected. See
+            `__init__` for its possible values.
+
+        Returns:
+          The new generator.
+        """
+        if alg is None:
+            # TODO(b/170668986): more sophisticated algorithm selection
+            alg = DEFAULT_ALGORITHM
+        alg = stateless_random_ops.convert_alg_to_int(alg)
+        state = create_rng_state(seed, alg)
+        return cls(state=state, alg=alg)
+
+    @classmethod
+    def from_non_deterministic_state(cls, alg=None):
+        """Creates a generator by non-deterministically initializing its state.
+
+        The source of the non-determinism will be platform- and time-dependent.
+
+        Args:
+          alg: (optional) the RNG algorithm. If None, it will be auto-selected. See
+            `__init__` for its possible values.
+
+        Returns:
+          The new generator.
+        """
+        if alg is None:
+            # TODO(b/170668986): more sophisticated algorithm selection
+            alg = DEFAULT_ALGORITHM
+        alg = stateless_random_ops.convert_alg_to_int(alg)
+        state = non_deterministic_ints(shape=[_get_state_size(alg)],
+                                       dtype=SEED_TYPE)
+        return cls(state=state, alg=alg)
+
+    @classmethod
+    def from_key_counter(cls, key, counter, alg):
+        """Creates a generator from a key and a counter.
+
+        This constructor only applies if the algorithm is a counter-based algorithm.
+        See method `key` for the meaning of "key" and "counter".
+
+        Args:
+          key: the key for the RNG, a scalar of type STATE_TYPE.
+          counter: a vector of dtype STATE_TYPE representing the initial counter for
+            the RNG, whose length is algorithm-specific.,
+          alg: the RNG algorithm. If None, it will be auto-selected. See
+            `__init__` for its possible values.
+
+        Returns:
+          The new generator.
+        """
+        counter = _convert_to_state_tensor(counter)
+        key = _convert_to_state_tensor(key)
+        alg = stateless_random_ops.convert_alg_to_int(alg)
+        counter.shape.assert_is_compatible_with([_get_state_size(alg) - 1])
+        key.shape.assert_is_compatible_with([])
+        key = array_ops.reshape(key, [1])
+        state = array_ops.concat([counter, key], 0)
+        return cls(state=state, alg=alg)
+
+    @classmethod
+    def from_config(cls, config):
+        """Instantiates an initializer from a configuration dictionary.
+
+        Example:
+
+        ```python
+        initializer = RandomUniform(-1, 1)
+        config = initializer.get_config()
+        initializer = RandomUniform.from_config(config)
+        ```
+
+        Args:
+          config: A Python dictionary.
+            It will typically be the output of `get_config`.
+
+        Returns:
+          An Initializer instance.
+        """
+        config.pop("dtype", None)
+        return cls(**config)
+
+    @classmethod
+    def from_operator(cls, operator):
+        """Builds a `_LinearOperatorSpec` from a `LinearOperator` instance.
+
+        Args:
+          operator: An instance of `LinearOperator`.
+
+        Returns:
+          linear_operator_spec: An instance of `_LinearOperatorSpec` to be used as
+            the `TypeSpec` of `operator`.
+        """
+        validation_fields = ("is_non_singular", "is_self_adjoint",
+                             "is_positive_definite", "is_square")
+        kwargs = _extract_attrs(
+            operator,
+            keys=set(operator._composite_tensor_fields + validation_fields))  # pylint: disable=protected-access
+
+        non_tensor_params = {}
+        param_specs = {}
+        for k, v in list(kwargs.items()):
+            type_spec_or_v = _extract_type_spec_recursively(v)
+            is_tensor = [isinstance(x, type_spec.TypeSpec)
+                         for x in nest.flatten(type_spec_or_v)]
+            if all(is_tensor):
+                param_specs[k] = type_spec_or_v
+            elif not any(is_tensor):
+                non_tensor_params[k] = v
+            else:
+                raise NotImplementedError(f"Field {k} contains a mix of `Tensor` and "
+                                          f" non-`Tensor` values.")
+
+        return cls(
+            param_specs=param_specs,
+            non_tensor_params=non_tensor_params,
+            prefer_static_fields=operator._composite_tensor_prefer_static_fields)  # pylint: disable=protected-access
+
+    #=============================================================================
+    # Factory Methods
+    #=============================================================================
+
+    @classmethod
+    def _from_row_partition(cls, values, row_partition, validate=True):
+        """Creates a `RaggedTensor` with a row partition.
+
+        This is used as a way for RaggedTensors to share row partitions.
+
+        The outer dimension of values must be equal to `partition.nvals()`.
+
+        Args:
+          values: A potentially ragged tensor.
+          row_partition: a `RowPartition`: can be shared between tensors.
+          validate: If true, then use assertions to check that the arguments form a
+            valid `RaggedTensor`.
+
+        Returns:
+          A `RaggedTensor`.  `result.rank = values.rank + 1`.
+          `result.ragged_rank = values.ragged_rank + 1`.
+
+        Raises:
+          ValueError: If partition.nvals() != _nrows(values)
+        """
+        if not isinstance(row_partition, RowPartition):
+            raise TypeError("row_partition must be a RowPartition")
+        if not isinstance(validate, bool):
+            raise TypeError("validate must have type bool")
+        values, row_partition = cls._convert_values_and_partition(
+            values, row_partition, "partition")
+        if row_partition.has_precomputed_value_rowids():
+            value_rowids_shape = row_partition.value_rowids().shape
+            values.shape[:1].assert_is_compatible_with(value_rowids_shape)
+        if validate:
+            msg = "Arguments to _from_row_partition do not form a valid RaggedTensor"
+            nvals = _nrows(values, row_partition.dtype)
+            checks = [
+                check_ops.assert_equal(
+                    row_partition.nvals(out_type=row_partition.dtype),
+                    nvals,
+                    message=msg),
+            ]
+            if not isinstance(values, RaggedTensor):
+                checks.append(check_ops.assert_rank_at_least(values, 1))
+            row_partition = row_partition.with_dependencies(checks)
+        return cls(values=values, internal=True, row_partition=row_partition)
+
+    def _to_legacy_output_classes(self):
+        return self
+
+    @classmethod
+    def _deserialize(cls, serialization):
+        # Remove TensorShape wrappers from serialization.
+        (nrows, nvals, uniform_row_length, dtype) = serialization
+        nrows = tensor_shape.dimension_value(nrows[0])
+        nvals = tensor_shape.dimension_value(nvals[0])
+        return cls(nrows, nvals, uniform_row_length, dtype)
+
+    @classmethod
+    def from_value(cls, value):
+        if not isinstance(value, RowPartition):
+            raise TypeError("Expected `value` to be a `RowPartition`")
+        return cls(value.static_nrows, value.static_nvals,
+                   value.static_uniform_row_length, value.dtype)
+
+    @classmethod
+    def from_fields(cls,
+                    fields,
+                    shape=(),
+                    nrows=None,
+                    row_partitions=None,
+                    validate=False):
+        """Creates a `StructuredTensor` from a dictionary of fields.
+
+        Args:
+          fields: A dictionary mapping from string to `Tensor`, `RaggedTensor`, or
+            `StructuredTensor`, providing the values for individual fields in each
+            structure.  If `shape.rank > 0`, then every tensor in `fields` must have
+            the same shape in the first `shape.rank` dimensions; and that shape must
+            be compatible with `shape`; and `result[i1...iN][key] =
+            fields[key][i1...iN]` (where `N==shape.rank`).
+          shape: A `TensorShape`: static information about the shape of the
+            `StructuredTensor`.  Must have a known `rank`.  Defaults to scalar shape
+            (i.e. `rank=0`).
+          nrows: scalar integer tensor containing the number of rows in this
+            `StructuredTensor`.  Should only be specified if `shape.rank > 0`.
+            Default value is inferred from the `fields` values.  If `fields` is
+            empty, then this must be specified.
+          row_partitions: A list of `RowPartition`s describing the (possibly ragged)
+            shape of this `StructuredTensor`.  Should only be specified if
+            `shape.rank > 1`.  Default value is inferred from the `fields` values.
+            If `fields` is empty, then this must be specified.
+          validate: If true, then add runtime validation ops that check that the
+            field values all have compatible shapes in the outer `shape.rank`
+            dimensions.
+
+        Returns:
+          A `StructuredTensor`.
+
+        Examples:
+
+          >>> StructuredTensor.from_fields({'x': 1, 'y': [1, 2, 3]})
+          <StructuredTensor(
+            fields={
+              "x": tf.Tensor(1, shape=(), dtype=int32),
+              "y": tf.Tensor([1 2 3], shape=(3,), dtype=int32)},
+            shape=())>
+
+          >>> StructuredTensor.from_fields({'foo': [1, 2], 'bar': [3, 4]},
+          ...                              shape=[2])
+          <StructuredTensor(
+            fields={
+              "bar": tf.Tensor([3 4], shape=(2,), dtype=int32),
+              "foo": tf.Tensor([1 2], shape=(2,), dtype=int32)},
+            shape=(2,))>
+        """
+        shape = tensor_shape.as_shape(shape)
+        rank = shape.rank
+        if rank is None:
+            raise ValueError("StructuredTensor's shape must have known rank.")
+        if not isinstance(fields, dict):
+            raise TypeError('fields must be a dictionary, got %s' %
+                            type(fields).__name__)
+        if rank < 2 and row_partitions:
+            raise ValueError('row_partitions must be None or [] if shape.rank<2')
+        if rank == 0 and nrows is not None:
+            raise ValueError('nrows must be None if shape.rank==0')
+        if row_partitions is not None:
+            row_partitions = tuple(row_partitions)
+            if len(row_partitions) != max(0, rank - 1):
+                raise ValueError('len(row_partitions) must be shape.rank-1')
+        elif rank < 2:
+            row_partitions = ()
+
+        fields = dict(fields)  # Make a private copy.
+        with ops.name_scope(None, 'StructuredTensor', fields.values()):
+
+            # Validate keys and convert field values to tensors.
+            for key, value in fields.items():
+                if not isinstance(key, str):
+                    raise TypeError('Unexpected type for key in `fields`: %r' % key)
+                if not _FIELD_NAME_RE.match(key):
+                    raise ValueError('Field name %r is not currently allowed.' % key)
+                fields[key] = _convert_to_structured_field_value(value)
+
+            # Determine dtype for row_partitions and nrows.
+            shape_dtype = _find_shape_dtype(fields, nrows, row_partitions)
+            if nrows is not None:
+                nrows = ops.convert_to_tensor(nrows, shape_dtype)
+
+            # Get the static TensorShape for this StructuredTensor.
+            if rank > 0:
+                for key, value in fields.items():
+                    if not shape.is_compatible_with(value.shape[:rank]):
+                        raise ValueError('Field {} has shape {}, which is incompatible '
+                                         'with the shape that was specified or inferred '
+                                         'from other fields: {}'.format(
+                                             key, value.shape[:rank], shape))
+                    shape = shape.merge_with(value.shape[:rank])
+
+            if rank == 1:
+                # Find a consistent value for `nrows`.
+                static_nrows = tensor_shape.dimension_at_index(shape, 0)
+                for value in fields.values():
+                    nrows, static_nrows = _merge_nrows(nrows, static_nrows, value,
+                                                       shape_dtype, validate)
+                if nrows is None:
+                    if static_nrows.value is None:
+                        raise ValueError('nrows must be specified if rank==1 '
+                                         'and `fields` is empty.')
+                    else:
+                        nrows = constant_op.constant(static_nrows.value, shape_dtype)
+
+            if rank > 1:
+                # Find a consistent list of RowPartitions.
+                for value in fields.values():
+                    row_partitions = _merge_row_partitions(row_partitions, value, rank,
+                                                           shape_dtype, validate)
+                if row_partitions is None:
+                    if not shape.is_fully_defined():
+                        raise ValueError('row_partitions must be specified if rank>1 '
+                                         'and `fields` is empty.')
+                    else:
+                        row_partitions = _row_partitions_for_uniform_shape(
+                            np.array(shape.as_list(), dtype=shape_dtype.as_numpy_dtype),
+                            shape.rank)
+                assert len(row_partitions) == rank - 1
+                nrows = row_partitions[0].nrows()
+                # Update all field values to use the shared RowPartition objects.
+                fields = dict([(k, _replace_row_partitions(v, row_partitions))
+                               for (k, v) in fields.items()])
+
+        return cls(
+            fields,
+            shape,
+            nrows,
+            row_partitions,
+            internal=_structured_tensor_factory_key)
+
+    @classmethod
+    def from_value(cls, value):
+        field_specs = dict((k, type_spec.type_spec_from_value(v))
+                           for (k, v) in value._fields.items())
+        return cls(value.shape, field_specs)
+
+    @property
+    def pfor_converter(self):
+        """Return a converter for the while loop."""
+        return self
+
+    def __enter__(self):
+        # Starting the TraceMe clock here would require an extra Python->C++ call.
+        return self
+
+    def with_max_depth(self, max_depth):
+        """Set the maximum depth of display.
+
+        The depth depends on profiling view. For 'scope' view, it's the
+        depth of name scope hierarchy (tree), for 'op' view, it's the number
+        of operation types (list), etc.
+
+        Args:
+          max_depth: Maximum depth of the data structure to display.
+        Returns:
+          self
+        """
+        self._options['max_depth'] = max_depth
+        return self
+
+    def with_min_memory(self,
+                        min_bytes=0,
+                        min_peak_bytes=0,
+                        min_residual_bytes=0,
+                        min_output_bytes=0):
+        """Only show profiler nodes consuming no less than 'min_bytes'.
+
+        Args:
+          min_bytes: Only show profiler nodes requested to allocate no less bytes
+              than this.
+          min_peak_bytes: Only show profiler nodes using no less than this bytes
+              at peak (high watermark). For profiler nodes consist of multiple
+              graph nodes, it sums the graph nodes' peak_bytes.
+          min_residual_bytes: Only show profiler nodes have no less than
+              this bytes not being de-allocated after Compute() ends. For
+              profiler nodes consist of multiple graph nodes, it sums the
+              graph nodes' residual_bytes.
+          min_output_bytes: Only show profiler nodes have no less than this bytes
+              output. The output are not necessarily allocated by this profiler
+              nodes.
+        Returns:
+          self
+        """
+        self._options['min_bytes'] = min_bytes
+        self._options['min_peak_bytes'] = min_peak_bytes
+        self._options['min_residual_bytes'] = min_residual_bytes
+        self._options['min_output_bytes'] = min_output_bytes
+        return self
+
+    def with_min_execution_time(self,
+                                min_micros=0,
+                                min_accelerator_micros=0,
+                                min_cpu_micros=0):
+        """Only show profiler nodes consuming no less than 'min_micros'.
+
+        Args:
+          min_micros: Only show profiler nodes with execution time
+              no less than this. It sums accelerator and cpu times.
+          min_accelerator_micros: Only show profiler nodes spend no less than
+              this time on accelerator (e.g. GPU).
+          min_cpu_micros: Only show profiler nodes spend no less than
+              this time on cpu.
+        Returns:
+          self
+        """
+        self._options['min_micros'] = min_micros
+        self._options['min_accelerator_micros'] = min_accelerator_micros
+        self._options['min_cpu_micros'] = min_cpu_micros
+        return self
+
+    def with_min_parameters(self, min_params):
+        """Only show profiler nodes holding no less than 'min_params' parameters.
+
+        'Parameters' normally refers the weights of in TensorFlow variables.
+        It reflects the 'capacity' of models.
+
+        Args:
+          min_params: Only show profiler nodes holding number parameters
+              no less than this.
+        Returns:
+          self
+        """
+        self._options['min_params'] = min_params
+        return self
+
+    def with_min_occurrence(self, min_occurrence):
+        # pylint: disable=line-too-long
+        """Only show profiler nodes including no less than 'min_occurrence' graph nodes.
+
+        A "node" means a profiler output node, which can be a python line
+        (code view), an operation type (op view), or a graph node
+        (graph/scope view). A python line includes all graph nodes created by that
+        line, while an operation type includes all graph nodes of that type.
+
+        Args:
+          min_occurrence: Only show nodes including no less than this.
+        Returns:
+          self
+        """
+        # pylint: enable=line-too-long
+        self._options['min_occurrence'] = min_occurrence
+        return self
+
+    def with_min_float_operations(self, min_float_ops):
+        # pylint: disable=line-too-long
+        """Only show profiler nodes consuming no less than 'min_float_ops'.
+
+        Please see https://github.com/tensorflow/tensorflow/tree/master/tensorflow/core/profiler/g3doc/profile_model_architecture.md
+        on the caveats of calculating float operations.
+
+        Args:
+          min_float_ops: Only show profiler nodes with float operations
+              no less than this.
+        Returns:
+          self
+        """
+        # pylint: enable=line-too-long
+        self._options['min_float_ops'] = min_float_ops
+        return self
+
+    def with_accounted_types(self, account_type_regexes):
+        """Selectively counting statistics based on node types.
+
+        Here, 'types' means the profiler nodes' properties. Profiler by default
+        consider device name (e.g. /job:xx/.../device:GPU:0) and operation type
+        (e.g. MatMul) as profiler nodes' properties. User can also associate
+        customized 'types' to profiler nodes through OpLogProto proto.
+
+        For example, user can select profiler nodes placed on gpu:0 with:
+        `account_type_regexes=['.*gpu:0.*']`
+
+        If none of a node's properties match the specified regexes, the node is
+        not displayed nor accounted.
+
+        Args:
+          account_type_regexes: A list of regexes specifying the types.
+        Returns:
+          self.
+        """
+        self._options['account_type_regexes'] = copy.copy(account_type_regexes)
+        return self
+
+    def with_node_names(self,
+                        start_name_regexes=None,
+                        show_name_regexes=None,
+                        hide_name_regexes=None,
+                        trim_name_regexes=None):
+        """Regular expressions used to select profiler nodes to display.
+
+        After 'with_accounted_types' is evaluated, 'with_node_names' are
+        evaluated as follows:
+
+          For a profile data structure, profiler first finds the profiler
+          nodes matching 'start_name_regexes', and starts displaying profiler
+          nodes from there. Then, if a node matches 'show_name_regexes' and
+          doesn't match 'hide_name_regexes', it's displayed. If a node matches
+          'trim_name_regexes', profiler stops further searching that branch.
+
+        Args:
+          start_name_regexes: list of node name regexes to start displaying.
+          show_name_regexes: list of node names regexes to display.
+          hide_name_regexes: list of node_names regexes that should be hidden.
+          trim_name_regexes: list of node name regexes from where to stop.
+        Returns:
+          self
+        """
+        if start_name_regexes is not None:
+            self._options['start_name_regexes'] = copy.copy(start_name_regexes)
+        if show_name_regexes is not None:
+            self._options['show_name_regexes'] = copy.copy(show_name_regexes)
+        if hide_name_regexes is not None:
+            self._options['hide_name_regexes'] = copy.copy(hide_name_regexes)
+        if trim_name_regexes is not None:
+            self._options['trim_name_regexes'] = copy.copy(trim_name_regexes)
+        return self
+
+    def account_displayed_op_only(self, is_true):
+        """Whether only account the statistics of displayed profiler nodes.
+
+        Args:
+          is_true: If true, only account statistics of nodes eventually
+              displayed by the outputs.
+              Otherwise, a node's statistics are accounted by its parents
+              as long as it's types match 'account_type_regexes', even if
+              it is hidden from the output, say, by hide_name_regexes.
+        Returns:
+          self
+        """
+        self._options['account_displayed_op_only'] = is_true
+        return self
+
+    def with_empty_output(self):
+        """Do not generate side-effect outputs."""
+        self._options['output'] = 'none'
+        return self
+
+    def with_stdout_output(self):
+        """Print the result to stdout."""
+        self._options['output'] = 'stdout'
+        return self
+
+    def with_file_output(self, outfile):
+        """Print the result to a file."""
+        self._options['output'] = 'file:outfile=%s' % outfile
+        return self
+
+    def with_timeline_output(self, timeline_file):
+        """Generate a timeline json file."""
+        self._options['output'] = 'timeline:outfile=%s' % timeline_file
+        return self
+
+    def with_pprof_output(self, pprof_file):
+        """Generate a pprof profile gzip file.
+
+        To use the pprof file:
+          pprof -png --nodecount=100 --sample_index=1 <pprof_file>
+
+        Args:
+          pprof_file: filename for output, usually suffixed with .pb.gz.
+        Returns:
+          self.
+        """
+        self._options['output'] = 'pprof:outfile=%s' % pprof_file
+        return self
+
+    def order_by(self, attribute):
+        # pylint: disable=line-too-long
+        """Order the displayed profiler nodes based on a attribute.
+
+        Supported attribute includes micros, bytes, occurrence, params, etc.
+        https://github.com/tensorflow/tensorflow/tree/master/tensorflow/core/profiler/g3doc/options.md
+
+        Args:
+          attribute: An attribute the profiler node has.
+        Returns:
+          self
+        """
+        # pylint: enable=line-too-long
+        self._options['order_by'] = attribute
+        return self
+
+    def select(self, attributes):
+        # pylint: disable=line-too-long
+        """Select the attributes to display.
+
+        See https://github.com/tensorflow/tensorflow/tree/master/tensorflow/core/profiler/g3doc/options.md
+        for supported attributes.
+
+        Args:
+          attributes: A list of attribute the profiler node has.
+        Returns:
+          self
+        """
+        # pylint: enable=line-too-long
+        self._options['select'] = copy.copy(attributes)
+        return self
+
+    def with_step(self, step):
+        """Which profile step to use for profiling.
+
+        The 'step' here refers to the step defined by `Profiler.add_step()` API.
+
+        Args:
+          step: When multiple steps of profiles are available, select which step's
+             profile to use. If -1, use average of all available steps.
+        Returns:
+          self
+        """
+        self._options['step'] = step
+        return self
+
+    def _to_legacy_output_types(self):
+        return self
+
+    def _to_legacy_output_shapes(self):
+        return self
+
+    def _to_legacy_output_classes(self):
+        return self
+
+    def most_specific_compatible_shape(self, other):
+        if type(self) is not type(other):
+            raise ValueError("No TypeSpec is compatible with both %s and %s" %
+                             (self, other))
+        return self
+
+    @combinations.generate(test_base.default_test_combinations())
+    def testFromGeneratorDestructorCalled(self):
+        # Use an `Event` to signal that the generator has been deleted.
+        event = threading.Event()
+
+        class GeneratorWrapper(object):
+
+            def __iter__(self):
+                return self
+
+            def next(self):
+                return self.__next__()
+
+            def __next__(self):
+                return 42
+
+            def __del__(self):
+                event.set()
+
+        dataset = dataset_ops.Dataset.from_generator(
+            GeneratorWrapper, output_types=dtypes.int64).take(2)
+        get_next = self.getNext(dataset)
+
+        self.assertAllEqual(42, self.evaluate(get_next()))
+        self.assertAllEqual(42, self.evaluate(get_next()))
+        with self.assertRaises(errors.OutOfRangeError):
+            self.evaluate(get_next())
+        # Test that `GeneratorWrapper` object is destroyed when the
+        # iterator terminates (and the generator iterator is deleted).
+        self.assertTrue(event.is_set())
+
+    def __iter__(self):
+        return self
+
+    def __iter__(self):
+        return self
+
+    def __iter__(self):
+        return self
+
+    def _to_legacy_output_types(self):
+        return self
+
+    def _to_legacy_output_shapes(self):
+        return self
+
+    def _to_legacy_output_classes(self):
+        return self
+
+    def _to_legacy_output_types(self):
+        return self
+
+    def _to_legacy_output_shapes(self):
+        return self
+
+    def _to_legacy_output_classes(self):
+        return self
+
+    def __iter__(self):
+        return self
+
+    def testDefaultLogDevicePlacement(self):
+
+        class CaptureStderr(str):
+            """Class to capture stderr from C++ shared library."""
+
+            def __enter__(self):
+                self._esc = compat.as_str('\b')
+                self._output = compat.as_str('')
+                self._stderr = sys.stderr
+                self._fd = self._stderr.fileno()
+                self._out_pipe, in_pipe = os.pipe()
+                # Save the original io stream.
+                self._dup_fd = os.dup(self._fd)
+                # Replace the original io stream with in pipe.
+                os.dup2(in_pipe, self._fd)
+                return self
+
+            def __exit__(self, *args):
+                self._stderr.write(self._esc)
+                self._stderr.flush()
+                self.read()
+                os.close(self._out_pipe)
+                # Restore the original io stream.
+                os.dup2(self._dup_fd, self._fd)
+
+            def read(self):
+                while True:
+                    data = os.read(self._out_pipe, 1)
+                    if not data or compat.as_str(data) == self._esc:
+                        break
+                    self._output += compat.as_str(data)
+
+            def __str__(self):
+                return self._output
+
+        context.set_log_device_placement(True)
+        if context.executing_eagerly():
+            with CaptureStderr() as log:
+                a = constant_op.constant(1)
+                b = constant_op.constant(2)
+                c = a + b
+                # Ensure if the same kernel with the same arguments is executed then its
+                # execution is logged.
+                d = a + b
+        else:
+            # Passing the config to the server, but not the session should still
+            # result in logging device placement.
+            config_pb = config_pb2.ConfigProto(log_device_placement=True)
+            server = server_lib.Server.create_local_server(config=config_pb)
+            a = constant_op.constant(1)
+            b = constant_op.constant(2)
+            c = a + b
+            d = a + b
+            with session.Session(server.target) as sess:
+                with CaptureStderr() as log:
+                    c, d = sess.run([c, d])
+
+        self.assertEqual(c, 3)
+        self.assertEqual(d, 3)
+        # Ensure that we did log device placement.
+        add_executions = [l for l in str(log).splitlines() if 'AddV2' in l]
+        self.assertEqual(len(add_executions), 2)
+
+        @def_function.function
+        def fn(a, b):
+            c = a + b
+            # These two AddV2 cannot use the same argument in tf.function since an
+            # optimization pass will remove duplicate ops and only run it once.
+            d = a + c
+            return c, d
+
+        with CaptureStderr() as log:
+            c, d = self.evaluate(fn(constant_op.constant(1), constant_op.constant(2)))
+        self.assertEqual(c, 3)
+        self.assertEqual(d, 4)
+        # Ensure that we did log device placement.
+        add_executions = [l for l in str(log).splitlines() if 'AddV2' in l]
+        self.assertEqual(len(add_executions), 2)
+
+    def __enter__(self):
+        self._esc = compat.as_str('\b')
+        self._output = compat.as_str('')
+        self._stderr = sys.stderr
+        self._fd = self._stderr.fileno()
+        self._out_pipe, in_pipe = os.pipe()
+        # Save the original io stream.
+        self._dup_fd = os.dup(self._fd)
+        # Replace the original io stream with in pipe.
+        os.dup2(in_pipe, self._fd)
+        return self
+
+    def __enter__(self):
+        self.t = time.time()
+        return self
+
+    def __enter__(self):
+        self._variable_watcher = pywrap_tfe.TFE_Py_VariableWatcherNew()
+        return self
+
+    def __enter__(self):
+        self._push_accumulator()
+        return self
+
+    def __enter__(self):
+        """Enters a context inside which operations are recorded on this tape."""
+        self._push_tape()
+        return self
+
+    def __iadd__(self, other: "DataFrame") -> "DataFrame":
+        tmp = self + other
+        self._column_names = tmp._column_names
+        self._rows, self._columns = tmp._rows, tmp._columns
+        return self
+
+    def __iter__(self):
+        return self
+
+    def __enter__(self):
+        """Make usable with "with" statement."""
+        return self
+
+    def watch_gradients_by_tensor_names(self, graph, tensor_name_regex):
+        """Watch gradient tensors by name(s) of the x-tensor(s).
+
+        The side effect of this method is that when gradient tensor(s) are created
+        with respect to the x-tensors, the gradient tensor(s) will be registered
+        with this `GradientsDebugger` instance and can later be retrieved.
+
+        Unlike the `identify_gradient` method, this method is used after the
+        construction of the forward graph has completed. Unlike the
+        `watch_gradients_by_tensor` method, this method does not use handles to the
+        tensors of interest; it uses their names.
+
+        This method is the same as `watch_gradients_by_tensors` except that the
+        x-tensors are specified by name patterns, instead of `tf.Tensor` or
+        `tf.Variable` objects.
+
+        Example:
+
+        ```python
+        x = tf.Variable(1.0, name="x")
+        y = tf.add(x, x, name="y")
+        z = tf.square(debug_y)
+
+        # Create a train op under the grad_debugger context.
+        grad_debugger = tf_debug.GradientsDebugger()
+        with grad_debugger.watch_gradients_by_tensor_names(r"(x|y):0$"):
+          train_op = tf.compat.v1.train.GradientDescentOptimizer(z)
+
+        # Now we can reflect through grad_debugger to get the gradient tensor
+        # with respect to x and y.
+        x_grad = grad_debugger.gradient_tensor("x:0")
+        y_grad = grad_debugger.gradient_tensor("y:0")
+        ```
+
+        Args:
+          graph: the `tf.Graph` to watch the gradients on.
+          tensor_name_regex: the regular-expression pattern of the name(s) of the
+            x-tensor(s) to watch. x-tensor refers to the tensors on the denominator
+            of the differentiation.
+
+        Returns:
+          The GradientsDebugger instance itself.
+        """
+        tensor_name_pattern = re.compile(tensor_name_regex)
+        with graph.as_default():
+            for op in graph.get_operations():
+                for output in op.outputs:
+                    if tensor_name_pattern.match(output.name):
+                        debug_op = self.identify_gradient(output)
+
+                        # Make a copy of output.consumers() since we'll modify the consumers
+                        # TODO(skyewm): this is unnecessary once the C API is enabled
+                        for consumer in list(output.consumers()):
+                            if consumer == debug_op.op:
+                                continue
+
+                            # Locate the slot index of the original input.
+                            for i, consumer_input in enumerate(consumer.inputs):
+                                if consumer_input == output:
+                                    consumer._update_input(i, debug_op)  # pylint: disable=protected-access
+        return self
+
+    def __enter__(self):
+        return self
+
+    def __enter__(self):
+        return self
+
+    @classmethod
+    def from_concrete_functions(cls, funcs, trackable_obj=None):
+        """Creates a TFLiteConverter object from ConcreteFunctions.
+
+        Args:
+          funcs: List of TensorFlow ConcreteFunctions. The list should not contain
+            duplicate elements. Currently converter can only convert a single
+            ConcreteFunction. Converting multiple functions is under development.
+          trackable_obj:   An `AutoTrackable` object (typically `tf.module`)
+            associated with `funcs`. A reference to this object needs to be
+            maintained so that Variables do not get garbage collected since
+            functions have a weak reference to Variables.
+
+        Returns:
+          TFLiteConverter object.
+
+        Raises:
+          Invalid input type.
+        """
+        for func in funcs:
+            if not isinstance(func, _function.ConcreteFunction):
+                message = "This function takes in a list of ConcreteFunction."
+                if isinstance(func, _def_function.Function):
+                    message += (" To get the ConcreteFunction from a Function,"
+                                " call get_concrete_function.")
+                raise ValueError(message)
+        return cls(funcs, trackable_obj)
+
+    @classmethod
+    def from_saved_model(cls, saved_model_dir, signature_keys=None, tags=None):
+        """Creates a TFLiteConverter object from a SavedModel directory.
+
+        Args:
+          saved_model_dir: SavedModel directory to convert.
+          signature_keys: List of keys identifying SignatureDef containing inputs
+            and outputs. Elements should not be duplicated. By default the
+            `signatures` attribute of the MetaGraphdef is used. (default
+            saved_model.signatures)
+          tags: Set of tags identifying the MetaGraphDef within the SavedModel to
+            analyze. All tags in the tag set must be present. (default
+            {tf.saved_model.SERVING} or {'serve'})
+
+        Returns:
+          TFLiteConverter object.
+
+        Raises:
+          Invalid signature keys.
+        """
+        # When run without eager enabled, this will return the legacy
+        # TFLiteConverter.
+        if not context.executing_eagerly():
+            signature_key = None
+            if signature_keys:
+                if len(signature_keys) != 1:
+                    raise ValueError("Only support a single signature key.")
+                else:
+                    signature_key = signature_keys[0]
+            logging.warning("Invoking the TF1 implementation of TFLiteConverter "
+                            "because eager is disabled. Consider enabling eager.")
+            return TFLiteConverter.from_saved_model(
+                saved_model_dir, signature_key=signature_key, tag_set=tags)
+
+        # Ensures any graphs created in Eager mode are able to run. This is required
+        # in order to create a tf.estimator.Exporter that exports a TFLite model.
+        if tags is None:
+            tags = set([_tag_constants.SERVING])
+
+        with context.eager_mode():
+            saved_model = _load(saved_model_dir, tags)
+        if not signature_keys:
+            signature_keys = saved_model.signatures
+
+        if not signature_keys:
+            raise ValueError("Only support at least one signature key.")
+
+        funcs = []
+        for key in signature_keys:
+            if key not in saved_model.signatures:
+                raise ValueError("Invalid signature key '{}' found. Valid keys are "
+                                 "'{}'.".format(key, ",".join(saved_model.signatures)))
+            funcs.append(saved_model.signatures[key])
+
+        saved_model_converter = TFLiteSavedModelConverterV2(saved_model_dir, tags,
+                                                            signature_keys,
+                                                            saved_model)
+        if saved_model_converter.saved_model_dir:
+            return saved_model_converter
+
+        return cls(funcs, saved_model)
+
+    @classmethod
+    def from_session(cls, sess, input_tensors, output_tensors):
+        """Creates a TFLiteConverter class from a TensorFlow Session.
+
+        Args:
+          sess: TensorFlow Session.
+          input_tensors: List of input tensors. Type and shape are computed using
+            `foo.shape` and `foo.dtype`.
+          output_tensors: List of output tensors (only .name is used from this).
+
+        Returns:
+          TFLiteConverter class.
+        """
+        graph_def = _freeze_graph(sess, input_tensors, output_tensors)
+        return cls(
+            graph_def,
+            input_tensors,
+            output_tensors,
+            experimental_debug_info_func=_build_debug_info_func(sess.graph))
+
+    @classmethod
+    def from_saved_model(cls,
+                         saved_model_dir,
+                         input_arrays=None,
+                         input_shapes=None,
+                         output_arrays=None,
+                         tag_set=None,
+                         signature_key=None):
+        """Creates a TFLiteConverter class from a SavedModel.
+
+        Args:
+          saved_model_dir: SavedModel directory to convert.
+          input_arrays: List of input tensors to freeze graph with. Uses input
+            arrays from SignatureDef when none are provided. (default None)
+          input_shapes: Dict of strings representing input tensor names to list of
+            integers representing input shapes (e.g., {"foo" : [1, 16, 16, 3]}).
+            Automatically determined when input shapes is None (e.g., {"foo" :
+              None}). (default None)
+          output_arrays: List of output tensors to freeze graph with. Uses output
+            arrays from SignatureDef when none are provided. (default None)
+          tag_set: Set of tags identifying the MetaGraphDef within the SavedModel to
+            analyze. All tags in the tag set must be present. (default
+            {tf.saved_model.SERVING})
+          signature_key: Key identifying SignatureDef containing inputs and outputs.
+            (default tf.saved_model.DEFAULT_SERVING_SIGNATURE_DEF_KEY)
+
+        Returns:
+          TFLiteConverter class.
+        """
+        if tag_set is None:
+            tag_set = set([_tag_constants.SERVING])
+        if signature_key is None:
+            signature_key = _signature_constants.DEFAULT_SERVING_SIGNATURE_DEF_KEY
+
+        saved_model_converter = TFLiteSavedModelConverter(saved_model_dir, tag_set,
+                                                          [signature_key])
+        if saved_model_converter.saved_model_dir:
+            return saved_model_converter
+
+        result = _freeze_saved_model(saved_model_dir, input_arrays, input_shapes,
+                                     output_arrays, tag_set, signature_key)
+
+        return cls(
+            graph_def=result[0],
+            input_tensors=result[1],
+            output_tensors=result[2],
+            experimental_debug_info_func=_build_debug_info_func(result[3]))
+
+    def __get__(self, instance, cls):
+        """A Python descriptor interface."""
+        self._obj_func = self._func.__get__(instance, cls)
+        return self
+
