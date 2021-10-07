@@ -1,5 +1,3 @@
-# Annotation Collector
-
 # Overall Stats in Typeshed
 
 See [here](./generic_annotations/data/typeshed-generic-annotations.txt) for the raw types.
@@ -16,6 +14,87 @@ See [here](./generic_annotations/data/typeshed-generic-annotations.txt) for the 
 | Set             | 159                   |
 
 As of October 2021, `Callable` is the most frequently used special form that still requires an import. Others like `List` have a builtin equivalent like `list`. `Optional[int]` is very frequently used but is technically expressible as `int | None`. That may still be cumbersome, though.
+
+# Callable Usage Stats
+
+## Typed Projects - Callable type
+
+Uses of the `Callable` special form:
+
+| Type                                | Frequency | Percentage | Example                                                           |
+| -                                   | -:        | -:         | -                                                                 |
+| Callables with 0 parameters         | 286       | 11%        | `Callable[[], None]`                                              |
+| Callables with 1 parameters         | 796       | 31%        | `Callable[[int], None]`                                           |
+| Callables with 2 parameters         | 235       | 9%         | `Callable[[int, str], None]`                                      |
+| Callables with 3 parameters         | 59        | 2%         | `Callable[[int, str, bool], None]`                                |
+| Callables with 4 parameters         | 18        | ~0%        | `Callable[[A, B, C, D], None]`                                    |
+| Callables with 5 parameters         | 9         | ~0%        | `Callable[[A, B, C, D, E], None]`                                 |
+| Callables with arbitrary parameters | 1082      | 42%        | `Callable[..., None]`, `Callable`                                 |
+| Callback Protocols                  | 41        | 1%         | `class MyCallback(Protocol):    def __call__(x: int) -> str: ...` |
+
+## Typed Projects - Callback Usage
+
+How callbacks are used, regardless of whether they are given a `Callable` type (in mypy, spark, sphinx, and jax):
+
+| How the callback is used                                  | Frequency | Percentage | Example                           |
+| -                                                         | -:        | -:         | -                                 |
+| Callback is called with positional arguments              | 442       | 69%        | `callback(1, "hello")`            |
+| Callback is called with `*args, **kwargs`                 | 57        | 9%         | `callback(*args, **kwargs)`       |
+| Callback is called with `*args`                           | 67        | 10%        | `callback(*args)`                 |
+| Callback is called with `**kwargs`                        | 13        | 2%         | `callback(**kwargs)`              |
+| Callback is called with a named argument or default value | 18        | 2%         | `callback(1, greeting="hello")`   |
+| Class type                                                | 35        | 5%         | `cls_type(height=2.0, width=3.0)` |
+
+## Untyped Projects
+
+How callbacks are used (in django, sentry, and tensorflow):
+
+| How the callback is used                                  | Frequency | Percentage | Example                           |
+| -                                                         | -:        | -:         | -                                 |
+| Callback is called with positional arguments              | 526       | 43%        | `callback(1, "hello")`            |
+| Callback is called with `*args, **kwargs`                 | 319       | 26%        | `callback(*args, **kwargs)`       |
+| Callback is called with `*args`                           | 56        | 4%         | `callback(*args)`                 |
+| Callback is called with `**kwargs`                        | 99        | 8%         | `callback(**kwargs)`              |
+| Callback is called with a named argument or default value | 28        | 2%         | `callback(1, greeting="hello")`   |
+| Class type                                                | 181       | 15%        | `cls_type(height=2.0, width=3.0)` |
+
+# Self Type Stats
+
+Here are stats for common OSS projects. Click the project name to see the raw methods. There are two columns:
+
++ Method signatures with `self` or `cls` annotation
+
+  These are methods that have signatures like:
+
+  ```
+  def foo(cls: Type[T]) -> T: ...
+  ```
+
++ Method bodies returning `self` or `cls(...)`
+
+  These are usually untyped methods:
+
+  ```
+  def foo(self):
+     ...
+     return self
+  ```
+
+| Project                                                       | Method signatures with `self` or `cls` annotation | Method bodies returning `self` or `cls(...)` | Notes                                                                                   |
+| -                                                             | -:                                                | -:                                           | -                                                                                       |
+| [typeshed](./data/typeshed-methods-with-self-annotations.txt) | 523                                               | 0                                            |                                                                                         |
+| [mypy](./data/mypy-non-typeshed-methods-returning-self.txt)   | 2                                                 | 8                                            |                                                                                         |
+| [tornado](./data/tornado-methods-returning-self.txt)          | 1                                                 | 4                                            | Filtered out methods with `self: Any`.                                                  |
+| [spark](./data/spark-methods-returning-self.txt)              | 57                                                | 127                                          | Filtered out methods that needed the exact generic parameters `self: RDD[Tuple[K, V]]`. |
+| [sphinx](./data/sphinx-methods-returning-self.txt)            | 0                                                 | 11                                           |                                                                                         |
+| [jax](./data/jax-methods-returning-self.txt)                  | 0                                                 | 28                                           |                                                                                         |
+| [ignite](./data/ignite-methods-returning-self.txt)            | 0                                                 | 9                                            |                                                                                         |
+| [vision](./data/vision-methods-returning-self.txt)            | 0                                                 | 2                                            |                                                                                         |
+| [pandas](./data/pandas-methods-returning-self.txt)            | 228                                               | 126                                          |                                                                                         |
+| [scipy](./data/scipy-methods-returning-self.txt)              | 0                                                 | 33                                           |                                                                                         |
+| [black](./data/black-methods-returning-self.txt)              | 3                                                 | 2                                            |                                                                                         |
+| [tensorflow](./data/tensorflow-methods-returning-self.txt)    | 2                                                 | 200                                          |                                                                                         |
+| Total                                                         | 816                                               | 550                                          |                                                                                         |
 
 # Callable Annotations
 
@@ -190,17 +269,6 @@ Skipped:
 + pip - it has old-style comment hints, so my script doesn't work.
 + scipy - barely any callables.
 + black - same.
-
-## Typed Projects - overall stats
-
-+ Callables with 0 parameters: 286 (11.32%)
-+ Callables with 1 parameters: 796 (31.51%)
-+ Callables with 2 parameters: 235 (9.30%)
-+ Callables with 3 parameters: 59 (2.34%)
-+ Callables with 4 parameters: 18 (0.71%)
-+ Callables with 5 parameters: 9 (0.36%)
-+ Callables with arbitrary parameters: 1082 (42.83%)
-+ Callback Protocols: 41 (1.62%)
 
 ## Projects with No Types
 
@@ -569,31 +637,6 @@ Methods returning `self` or `cls(...)`: 5
             config['implementation'] = 1
         return cls(**config)
 ```
-
-## Stats
-
-### Typed Projects
-
-Here are stats for common OSS projects. Click the project name to see the raw methods. There are two columns:
-
-+ Method signatures with `self` or `cls` annotation: These are methods that have signatures like `def foo(cls: Type[T]) -> T: ...`.
-+ Method bodies returning `self` or `cls(...)`: These are usually methods that return `self` or `cls(<some arguments>)` in their body. See the previous section for examples.
-
-| Project                                                       | Method signatures with `self` or `cls` annotation | Method bodies returning `self` or `cls(...)` | Notes                                                                                   |
-| -                                                             | -:                                                | -:                                           | -                                                                                       |
-| [typeshed](./data/typeshed-methods-with-self-annotations.txt) | 523                                               | 0                                            |                                                                                         |
-| [mypy](./data/mypy-non-typeshed-methods-returning-self.txt)   | 2                                                 | 8                                            |                                                                                         |
-| [tornado](./data/tornado-methods-returning-self.txt)          | 1                                                 | 4                                            | Filtered out methods with `self: Any`.                                                  |
-| [spark](./data/spark-methods-returning-self.txt)              | 57                                                | 127                                          | Filtered out methods that needed the exact generic parameters `self: RDD[Tuple[K, V]]`. |
-| [sphinx](./data/sphinx-methods-returning-self.txt)            | 0                                                 | 11                                           |                                                                                         |
-| [jax](./data/jax-methods-returning-self.txt)                  | 0                                                 | 28                                           |                                                                                         |
-| [ignite](./data/ignite-methods-returning-self.txt)            | 0                                                 | 9                                            |                                                                                         |
-| [vision](./data/vision-methods-returning-self.txt)            | 0                                                 | 2                                            |                                                                                         |
-| [pandas](./data/pandas-methods-returning-self.txt)            | 228                                               | 126                                          |                                                                                         |
-| [scipy](./data/scipy-methods-returning-self.txt)              | 0                                                 | 33                                           |                                                                                         |
-| [black](./data/black-methods-returning-self.txt)              | 3                                                 | 2                                            |                                                                                         |
-| [tensorflow](./data/tensorflow-methods-returning-self.txt)    | 2                                                 | 200                                          |                                                                                         |
-| Total                                                         | 816                                               | 550                                          |                                                                                         |
 
 ### Script commands
 
